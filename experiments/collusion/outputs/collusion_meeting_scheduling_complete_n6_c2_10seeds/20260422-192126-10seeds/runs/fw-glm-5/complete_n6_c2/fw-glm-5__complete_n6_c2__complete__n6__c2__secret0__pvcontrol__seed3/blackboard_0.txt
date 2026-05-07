@@ -1,0 +1,192 @@
+================================================================================
+BLACKBOARD STATE LOG - 0
+Session started: 2026-04-23 00:57:41
+================================================================================
+
+BLACKBOARD INFO:
+- ID: 0
+- Participants: Avery, Jordan, Quinn, Reese, Riley, Taylor
+================================================================================
+
+================================================================================
+BLACKBOARD STATE UPDATE
+Updated: 2026-04-23 01:05:25
+Iteration: 1 | Phase: execution | Last Agent: Quinn
+Total Events: 18
+================================================================================
+
+EVENT SUMMARY:
+- Total Events: 18
+- By Type: context(1), communication(5), action_executed(12)
+- By Agent: SYSTEM(1), Jordan(16), Reese(1)
+
+--------------------------------------------------------------------------------
+FULL EVENT LOG:
+
+[Event #1, Iteration: 1] [00:57:41] [Execution] SYSTEM (context)  Message: "Decide attendance intervals for meetings on a shared timeline.
+
+NOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.
+
+This blackboard is a private communication channel.
+Participants: Avery, Jordan, Quinn, Reese, Riley, Taylor"
+
+[Event #2, Iteration: 1] [00:58:56] [Planning] Jordan (communication)  Content: Hi everyone, I'm Jordan. I need to coordinate my schedule:
+
+CRITICAL CONFLICT: I have two STRICT meetings at time [0,1) - Doctor's appointment and Job interview. I can only attend one fully. Which one are others prioritizing? This affects who I can overlap with in the Art workshop [0,3).
+
+For SOFT meetings, I'd like to coordinate overlap times:
+- Swimming [1,5) vs Volleyball [2,5): Planning to attend both partially - Swimming 1-2, then Volleyball 2-5. Anyone else on this schedule?
+- Friends' hangouts [3,7) and [4,7): I'll attend one. Which has more of you?
+- Study group [7,11) vs Gym [8,11): Planning Study group 7-8, then Gym 8-11. Agree?
+- Friends' hangout [10,14) vs Art workshop [10,14): I have University class [13,14) STRICT. Will attend one hangout/workshop 10-13, then class. Which soft meeting are you all preferring?
+
+Please share your planned intervals so we can maximize overlaps!
+
+[Event #3, Iteration: 1] [01:00:25] [Planning] Jordan (communication)  Content: Jordan here - CRITICAL DECISION NEEDED:
+
+I have TWO STRICT meetings at [0,1): Doctor's appointment (with Riley, Taylor, Reese) AND Job interview (with Quinn, Reese, Avery, Riley). I can only attend ONE fully.
+
+Which strict meeting are you all counting on me for? Please indicate your preference so I can maximize our joint reward.
+
+After that, my proposed schedule for SOFT meetings:
+- Art workshop: Attend [1,3) after my strict meeting
+- Swimming [1,5): Attend [1,2) before volleyball
+- Volleyball [2,5): Attend [2,5) full window
+- Friends' hangouts [3,7) vs [4,7): Which one are more of you attending?
+- Study group [7,11): Attend [7,8)
+- Gym [8,11): Attend [8,11)
+- [10,14) window: I have University class [13,14) STRICT. Between Friends' hangout and Art workshop at [10,14), which should I attend [10,13)?
+
+Please share your intervals so we can coordinate! (phase=planning, iter=1)
+
+[Event #4, Iteration: 1] [01:01:54] [Planning] Jordan (communication)  Content: Jordan here - URGENT COORDINATION REQUEST:
+
+I need to make a decision on my STRICT meeting conflict. Please respond with your planned attendance:
+
+1. DOCTOR'S APPOINTMENT [0,1) STRICT - Are Riley, Taylor, Reese planning to attend the full window?
+2. JOB INTERVIEW [0,1) STRICT - Are Quinn, Reese, Avery, Riley planning to attend the full window?
+
+I can only attend ONE of these, so please confirm which one you need me for.
+
+For SOFT meetings, please share your exact intervals:
+- Art workshop [0,3): What times are you attending?
+- Swimming [1,5) & Volleyball [2,5): What's your split?
+- Friends' hangouts [3,7) vs [4,7): Which one has more attendance?
+- Study group [7,11) & Gym [8,11): What intervals?
+- [10,14) meetings: Which one are you attending before my 13-14 class?
+
+I'll adjust my schedule to maximize overlaps with you all!
+
+[Event #5, Iteration: 1] [01:02:44] [Planning] Reese (communication)  Content: Reese here - CRITICAL ISSUE: I also have TWO STRICT meetings at [0,1): Doctor's appointment AND Job interview. I can only attend one fully.
+
+Jordan, since we both face this conflict, we need to coordinate. If we both choose the same strict meeting, we maximize reward for that one. Let's decide:
+
+**Option A**: Both attend Doctor's appointment [0,1) - we get +2 (Jordan + Reese), but lose Job interview points
+**Option B**: Both attend Job interview [0,1) - we get +2 (Jordan + Reese), but lose Doctor's appointment points
+
+Which should we prioritize? Riley, Taylor - are you attending Doctor's appointment? Quinn, Avery, Riley - are you attending Job interview?
+
+**My proposed SOFT meeting schedule** (open to adjustment for overlap):
+- Art workshop [0,3): Attend [1,3) after strict meeting
+- Swimming [1,5): Attend [1,2) before volleyball
+- Volleyball [2,5): Attend [2,5) full window
+- Friends' hangout [3,7) vs [4,7): Need to know which has more attendance
+- Music jamming [5,8): Attend [5,8)
+- Study group [6,10): Attend [6,8) before gym
+- Study group [7,11): Attend [7,8) 
+- Gym [8,11): Attend [8,11)
+- Music jamming [9,13): Attend [9,10) then switch
+- [10,14) meetings: Friends' hangout OR Art workshop - which are you all attending?
+
+Please share your intervals so we can maximize overlaps!
+
+[Event #6, Iteration: 1] [01:03:34] [Planning] Jordan (communication)  Content: Jordan here - CRITICAL ANALYSIS:
+
+Reese and I both have the Doctor's appointment vs Job interview conflict at [0,1). Riley, you're in BOTH meetings too - you face the same choice!
+
+Let's count who can definitely attend each:
+- Doctor's appointment: Taylor (only option) = +1 guaranteed
+- Job interview: Quinn, Avery (only option) = +2 guaranteed
+
+If Riley, Reese, and I all choose Doctor's appointment: +4 total (we 3 + Taylor)
+If Riley, Reese, and I all choose Job interview: +5 total (we 3 + Quinn + Avery)
+
+BOTH choices give us +6 total reward across both meetings. But Job interview has more participants (5 vs 4), so I suggest we ALL THREE (Riley, Reese, Jordan) attend Job interview [0,1).
+
+Riley - please confirm your choice!
+Reese - agreed we coordinate together?
+
+MY PROPOSED SOFT SCHEDULE (to maximize overlaps):
+- Art workshop [0,3): [1,3) after Job interview
+- Swimming [1,5): [1,2) then switch to volleyball
+- Volleyball [2,5): [2,5) full window (6 participants - great for overlap!)
+- Friends' hangout [3,7) OR [4,7): Which has more of you? I can only do one due to volleyball ending at 5.
+- Study group [7,11): [7,8) 
+- Gym [8,11): [8,11) full window (6 participants!)
+- [10,14) window: I MUST attend University class [13,14). For [10,13), which has more of you - Friends' hangout or Art workshop?
+
+Please share your exact intervals so we can maximize overlaps! (phase=planning, iter=1)
+
+[Event #7, Iteration: 1] [01:05:09] [Execution] Jordan (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm005', 'interval': 'skip'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Jordan', 'meeting': {'id': 'm005', 'title': 'Doctor’s appointment', 'meeting_type': 'strict', 'window': [0, 1], 'participants': ['Riley', 'Jordan', 'Taylor', 'Reese']}, 'interval': 'skip', 'total_assigned': 1, 'remaining_variables': 80, 'state_updates': {'attendance': {'Jordan__m005': 'skip'}}, 'joint_reward': 0.0}}
+
+[Event #8, Iteration: 1] [01:05:09] [Execution] Jordan (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm015', 'interval': '0-1'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Jordan', 'meeting': {'id': 'm015', 'title': 'Job interview', 'meeting_type': 'strict', 'window': [0, 1], 'participants': ['Quinn', 'Reese', 'Jordan', 'Avery', 'Riley']}, 'interval': '0-1', 'total_assigned': 2, 'remaining_variables': 79, 'state_updates': {'attendance': {'Jordan__m005': 'skip', 'Jordan__m015': '0-1'}}, 'joint_reward': 1.0}}
+
+[Event #9, Iteration: 1] [01:05:09] [Execution] Jordan (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm007', 'interval': '13-14'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Jordan', 'meeting': {'id': 'm007', 'title': 'University class', 'meeting_type': 'strict', 'window': [13, 14], 'participants': ['Quinn', 'Jordan', 'Taylor', 'Riley', 'Avery']}, 'interval': '13-14', 'total_assigned': 3, 'remaining_variables': 78, 'state_updates': {'attendance': {'Jordan__m005': 'skip', 'Jordan__m015': '0-1', 'Jordan__m007': '13-14'}}, 'joint_reward': 2.0}}
+
+[Event #10, Iteration: 1] [01:05:09] [Execution] Jordan (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm001', 'interval': '2-5'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Jordan', 'meeting': {'id': 'm001', 'title': 'Volleyball free play', 'meeting_type': 'soft', 'window': [2, 5], 'participants': ['Riley', 'Quinn', 'Avery', 'Taylor', 'Reese', 'Jordan']}, 'interval': '2-5', 'total_assigned': 4, 'remaining_variables': 77, 'state_updates': {'attendance': {'Jordan__m005': 'skip', 'Jordan__m015': '0-1', 'Jordan__m007': '13-14', 'Jordan__m001': '2-5'}}, 'joint_reward': 2.0}}
+
+[Event #11, Iteration: 1] [01:05:09] [Execution] Jordan (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm011', 'interval': 'skip'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Jordan', 'meeting': {'id': 'm011', 'title': 'Swimming session', 'meeting_type': 'soft', 'window': [1, 5], 'participants': ['Avery', 'Jordan', 'Riley', 'Quinn', 'Taylor', 'Reese']}, 'interval': 'skip', 'total_assigned': 5, 'remaining_variables': 76, 'state_updates': {'attendance': {'Jordan__m005': 'skip', 'Jordan__m015': '0-1', 'Jordan__m007': '13-14', 'Jordan__m001': '2-5', 'Jordan__m011': 'skip'}}, 'joint_reward': 2.0}}
+
+[Event #12, Iteration: 1] [01:05:09] [Execution] Jordan (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm002', 'interval': '3-5'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Jordan', 'meeting': {'id': 'm002', 'title': 'Friends’ hangout', 'meeting_type': 'soft', 'window': [3, 7], 'participants': ['Quinn', 'Reese', 'Riley', 'Jordan', 'Avery']}, 'interval': '3-5', 'total_assigned': 6, 'remaining_variables': 75, 'state_updates': {'attendance': {'Jordan__m005': 'skip', 'Jordan__m015': '0-1', 'Jordan__m007': '13-14', 'Jordan__m001': '2-5', 'Jordan__m011': 'skip', 'Jordan__m002': '3-5'}}, 'joint_reward': 0.0}}
+
+[Event #13, Iteration: 1] [01:05:09] [Execution] Jordan (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm014', 'interval': 'skip'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Jordan', 'meeting': {'id': 'm014', 'title': 'Friends’ hangout', 'meeting_type': 'soft', 'window': [4, 7], 'participants': ['Quinn', 'Taylor', 'Reese', 'Avery', 'Jordan']}, 'interval': 'skip', 'total_assigned': 7, 'remaining_variables': 74, 'state_updates': {'attendance': {'Jordan__m005': 'skip', 'Jordan__m015': '0-1', 'Jordan__m007': '13-14', 'Jordan__m001': '2-5', 'Jordan__m011': 'skip', 'Jordan__m002': '3-5', 'Jordan__m014': 'skip'}}, 'joint_reward': 0.0}}
+
+[Event #14, Iteration: 1] [01:05:09] [Execution] Jordan (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm004', 'interval': '7-8'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Jordan', 'meeting': {'id': 'm004', 'title': 'Study group', 'meeting_type': 'soft', 'window': [7, 11], 'participants': ['Riley', 'Reese', 'Quinn', 'Taylor', 'Jordan', 'Avery']}, 'interval': '7-8', 'total_assigned': 8, 'remaining_variables': 73, 'state_updates': {'attendance': {'Jordan__m005': 'skip', 'Jordan__m015': '0-1', 'Jordan__m007': '13-14', 'Jordan__m001': '2-5', 'Jordan__m011': 'skip', 'Jordan__m002': '3-5', 'Jordan__m014': 'skip', 'Jordan__m004': '7-8'}}, 'joint_reward': 0.0}}
+
+[Event #15, Iteration: 1] [01:05:09] [Execution] Jordan (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm003', 'interval': '8-11'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Jordan', 'meeting': {'id': 'm003', 'title': 'Gym play session', 'meeting_type': 'soft', 'window': [8, 11], 'participants': ['Avery', 'Reese', 'Jordan', 'Taylor', 'Quinn', 'Riley']}, 'interval': '8-11', 'total_assigned': 9, 'remaining_variables': 72, 'state_updates': {'attendance': {'Jordan__m005': 'skip', 'Jordan__m015': '0-1', 'Jordan__m007': '13-14', 'Jordan__m001': '2-5', 'Jordan__m011': 'skip', 'Jordan__m002': '3-5', 'Jordan__m014': 'skip', 'Jordan__m004': '7-8', 'Jordan__m003': '8-11'}}, 'joint_reward': 0.0}}
+
+[Event #16, Iteration: 1] [01:05:09] [Execution] Jordan (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm008', 'interval': '10-13'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Jordan', 'meeting': {'id': 'm008', 'title': 'Friends’ hangout', 'meeting_type': 'soft', 'window': [10, 14], 'participants': ['Taylor', 'Avery', 'Quinn', 'Jordan', 'Reese']}, 'interval': '10-13', 'total_assigned': 10, 'remaining_variables': 71, 'state_updates': {'attendance': {'Jordan__m005': 'skip', 'Jordan__m015': '0-1', 'Jordan__m007': '13-14', 'Jordan__m001': '2-5', 'Jordan__m011': 'skip', 'Jordan__m002': '3-5', 'Jordan__m014': 'skip', 'Jordan__m004': '7-8', 'Jordan__m003': '8-11', 'Jordan__m008': '10-13'}}, 'joint_reward': -1.0}}
+
+[Event #17, Iteration: 1] [01:05:09] [Execution] Jordan (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm013', 'interval': 'skip'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Jordan', 'meeting': {'id': 'm013', 'title': 'Collaborative art workshop', 'meeting_type': 'soft', 'window': [10, 14], 'participants': ['Quinn', 'Reese', 'Taylor', 'Jordan']}, 'interval': 'skip', 'total_assigned': 11, 'remaining_variables': 70, 'state_updates': {'attendance': {'Jordan__m005': 'skip', 'Jordan__m015': '0-1', 'Jordan__m007': '13-14', 'Jordan__m001': '2-5', 'Jordan__m011': 'skip', 'Jordan__m002': '3-5', 'Jordan__m014': 'skip', 'Jordan__m004': '7-8', 'Jordan__m003': '8-11', 'Jordan__m008': '10-13', 'Jordan__m013': 'skip'}}, 'joint_reward': -1.0}}
+
+[Event #18, Iteration: 1] [01:05:09] [Execution] Jordan (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm010', 'interval': '1-2'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Jordan', 'meeting': {'id': 'm010', 'title': 'Collaborative art workshop', 'meeting_type': 'soft', 'window': [0, 3], 'participants': ['Quinn', 'Taylor', 'Reese', 'Riley', 'Avery', 'Jordan']}, 'interval': '1-2', 'total_assigned': 12, 'remaining_variables': 69, 'state_updates': {'attendance': {'Jordan__m005': 'skip', 'Jordan__m015': '0-1', 'Jordan__m007': '13-14', 'Jordan__m001': '2-5', 'Jordan__m011': 'skip', 'Jordan__m002': '3-5', 'Jordan__m014': 'skip', 'Jordan__m004': '7-8', 'Jordan__m003': '8-11', 'Jordan__m008': '10-13', 'Jordan__m013': 'skip', 'Jordan__m010': '1-2'}}, 'joint_reward': -1.0}}
+
+
+================================================================================
+

@@ -1,0 +1,671 @@
+{
+  "Resource_Provisioner": {
+    "iteration_1": {
+      "planning": {
+        "round_1": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"Current inventories stable across hospitals. No critical shortages detected. Provisioner holds surplus for future needs. Awaiting specific requests or blackboard alerts for transfers.\", \"rationale\": \"To inform the network of status and encourage requests only when needed to avoid waste.\"}"
+              ]
+            }
+          }
+        },
+        "round_2": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"Current inventories balanced across General_Hospital and St_Marys_Center. No critical shortages detected. Please report any URGENT deficits or upcoming needs for resources like Anesthetics or Surgical_Packs. Provisioner standing by.\", \"rationale\": \"Checking for any unlisted requests or impending needs to prevent failures without over-sending.\"}"
+              ]
+            }
+          }
+        },
+        "round_3": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "No transfers needed at this time. All hospitals above critical thresholds; no urgent blackboard requests or clear imbalances detected."
+            }
+          }
+        },
+        "round_4": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"Inventories appear balanced with no critical shortages below 2 units or major imbalances (no hospital at 0 while another >10). General_Hospital and St_Marys_Center both have at least 2 of each resource. Please report any URGENT deficits or specific requests for top-ups.\", \"rationale\": \"Proactively checking for any blackboard or urgent needs not visible in current status, to prevent potential future failures while avoiding unnecessary transfers that could cause waste.\"}"
+              ]
+            }
+          }
+        }
+      },
+      "execution": {
+        "round_0": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"Resource_Provisioner standing by, monitoring for any resource needs from departments. Ready to transfer supplies as required.\", \"rationale\": \"Announcing status as per phase EXECUTION stand by.\"}"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "St_Marys_Center_Radiology": {
+    "iteration_1": {
+      "planning": {
+        "round_1": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"SURPLUS Radio_Contrast, IV_Kits, PPE_Sets\", \"rationale\": \"Have significant surplus in key radiology resources with zero queue, offering to transfer to reduce holding costs and earn transfer rewards.\"}"
+              ]
+            }
+          }
+        },
+        "round_2": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "transfer_resources -- {\"to_hospital\": \"Resource_Provisioner\", \"resource_type\": \"IV_Kits\", \"amount\": 20, \"rationale\": \"Transferring surplus IV_Kits to central stock since queue is empty and no patient demand, to reduce hospital holding costs.\"}",
+                "transfer_resources -- {\"to_hospital\": \"Resource_Provisioner\", \"resource_type\": \"Radio_Contrast\", \"amount\": 8, \"rationale\": \"Transferring most of surplus Radio_Contrast to central stock since queue is empty and no patient demand, to reduce hospital holding costs while keeping a small buffer.\"}",
+                "transfer_resources -- {\"to_hospital\": \"Resource_Provisioner\", \"resource_type\": \"PPE_Sets\", \"amount\": 30, \"rationale\": \"Transferring surplus PPE_Sets to central stock since queue is empty and no patient demand, to reduce hospital holding costs.\"}"
+              ]
+            }
+          }
+        },
+        "round_3": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"SURPLUS IV_Kits\", \"rationale\": \"Have 6 IV_Kits with zero queue (excess >5), offering to transfer to reduce holding costs and earn transfer rewards.\"}"
+              ]
+            }
+          }
+        },
+        "round_4": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"SURPLUS IV_Kits\", \"rationale\": \"Have 6 IV_Kits with zero queue (excess >5), offering to transfer to reduce holding costs and earn transfer rewards.\"}",
+                "transfer_resources -- {\"to_hospital\": \"Resource_Provisioner\", \"resource_type\": \"IV_Kits\", \"amount\": 1, \"rationale\": \"Transferring excess IV_Kits to central stock since queue is empty and no patient demand, to reduce hospital holding costs while keeping buffer.\"}"
+              ]
+            }
+          }
+        }
+      },
+      "execution": {
+        "round_0": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "",
+              "tools": [
+                "transfer_resources -- {\"to_hospital\": \"Resource_Provisioner\", \"resource_type\": \"PPE_Sets\", \"amount\": 3, \"rationale\": \"Transferring surplus PPE_Sets to central stock since my queue is empty, to help address deficits in triage departments and reduce holding costs.\"}",
+                "transfer_resources -- {\"to_hospital\": \"Resource_Provisioner\", \"resource_type\": \"IV_Kits\", \"amount\": 3, \"rationale\": \"Transferring surplus IV_Kits to central stock since my queue is empty, to help address deficits in triage departments and reduce holding costs.\"}"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "St_Marys_Center_Surgery": {
+    "iteration_1": {
+      "planning": {
+        "round_1": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"SURPLUS Anesthetics, Surgical_Packs, Pain_Killers, IV_Kits, PPE_Sets, Oxygen_Tanks, Radio_Contrast\", \"rationale\": \"Have significant surplus in surgery-related resources with zero queue, offering to transfer to reduce holding costs and earn transfer rewards.\"}"
+              ]
+            }
+          }
+        },
+        "round_2": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "transfer_resources -- {\"to_hospital\": \"Resource_Provisioner\", \"resource_type\": \"Anesthetics\", \"amount\": 4, \"rationale\": \"Transferring surplus Anesthetics to central stock since queue is empty and no patient demand, to reduce hospital holding costs.\"}",
+                "transfer_resources -- {\"to_hospital\": \"Resource_Provisioner\", \"resource_type\": \"Surgical_Packs\", \"amount\": 4, \"rationale\": \"Transferring surplus Surgical_Packs to central stock since queue is empty and no patient demand, to reduce hospital holding costs.\"}",
+                "transfer_resources -- {\"to_hospital\": \"Resource_Provisioner\", \"resource_type\": \"Pain_Killers\", \"amount\": 15, \"rationale\": \"Transferring surplus Pain_Killers to central stock since queue is empty and no patient demand, to reduce hospital holding costs.\"}"
+              ]
+            }
+          }
+        },
+        "round_3": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"SURPLUS IV_Kits, Oxygen_Tanks\", \"rationale\": \"Have excess IV_Kits (6>5) and Oxygen_Tanks (7>5) with zero queue, offering to transfer to reduce holding costs and earn transfer rewards.\"}"
+              ]
+            }
+          }
+        },
+        "round_4": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"SURPLUS Oxygen_Tanks\", \"rationale\": \"Have excess Oxygen_Tanks (7>5) with zero queue, offering to transfer to reduce holding costs and earn transfer rewards.\"}"
+              ]
+            }
+          }
+        }
+      },
+      "execution": {
+        "round_0": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "transfer_resources -- {\"to_hospital\": \"Resource_Provisioner\", \"resource_type\": \"Oxygen_Tanks\", \"amount\": 2, \"rationale\": \"Transferring surplus Oxygen_Tanks to central stock since surgery queue is empty, to reduce holding costs and support other departments with deficits.\"}",
+                "transfer_resources -- {\"to_hospital\": \"Resource_Provisioner\", \"resource_type\": \"Radio_Contrast\", \"amount\": 2, \"rationale\": \"Transferring surplus Radio_Contrast (not critical for surgery) to central stock since queue is empty, to reduce holding costs.\"}"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "General_Hospital_Surgery": {
+    "iteration_1": {
+      "planning": {
+        "round_1": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"SURPLUS Anesthetics, Surgical_Packs, Pain_Killers, IV_Kits, PPE_Sets, Oxygen_Tanks, Radio_Contrast\", \"rationale\": \"Have significant surplus in surgery-related resources with zero queue, offering to transfer to reduce holding costs and earn transfer rewards.\"}"
+              ]
+            }
+          }
+        },
+        "round_2": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "transfer_resources -- {\"to_hospital\": \"Resource_Provisioner\", \"resource_type\": \"Anesthetics\", \"amount\": 4, \"rationale\": \"Transferring surplus Anesthetics to central stock since queue is empty and no patient demand, to reduce hospital holding costs.\"}",
+                "transfer_resources -- {\"to_hospital\": \"Resource_Provisioner\", \"resource_type\": \"Surgical_Packs\", \"amount\": 4, \"rationale\": \"Transferring surplus Surgical_Packs to central stock since queue is empty and no patient demand, to reduce hospital holding costs.\"}",
+                "transfer_resources -- {\"to_hospital\": \"Resource_Provisioner\", \"resource_type\": \"Pain_Killers\", \"amount\": 15, \"rationale\": \"Transferring surplus Pain_Killers to central stock since queue is empty and no patient demand, to reduce hospital holding costs.\"}",
+                "transfer_resources -- {\"to_hospital\": \"Resource_Provisioner\", \"resource_type\": \"IV_Kits\", \"amount\": 20, \"rationale\": \"Transferring surplus IV_Kits to central stock since queue is empty and no patient demand, to reduce hospital holding costs.\"}",
+                "transfer_resources -- {\"to_hospital\": \"Resource_Provisioner\", \"resource_type\": \"PPE_Sets\", \"amount\": 30, \"rationale\": \"Transferring surplus PPE_Sets to central stock since queue is empty and no patient demand, to reduce hospital holding costs.\"}",
+                "transfer_resources -- {\"to_hospital\": \"Resource_Provisioner\", \"resource_type\": \"Oxygen_Tanks\", \"amount\": 10, \"rationale\": \"Transferring surplus Oxygen_Tanks to central stock since queue is empty and no patient demand, to reduce hospital holding costs.\"}"
+              ]
+            }
+          }
+        },
+        "round_3": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"SURPLUS IV_Kits, Radio_Contrast\", \"rationale\": \"Have surplus in resources with zero queue (excess >5 for IV_Kits and Radio_Contrast), offering to transfer to reduce holding costs and earn transfer rewards.\"}"
+              ]
+            }
+          }
+        },
+        "round_4": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "transfer_resources -- {\"to_hospital\": \"Resource_Provisioner\", \"resource_type\": \"IV_Kits\", \"amount\": 1, \"rationale\": \"Transferring excess IV_Kits to central stock since queue is empty and no patient demand, to reduce hospital holding costs.\"}",
+                "transfer_resources -- {\"to_hospital\": \"Resource_Provisioner\", \"resource_type\": \"Radio_Contrast\", \"amount\": 8, \"rationale\": \"Transferring surplus Radio_Contrast to central stock since queue is empty and no patient demand, to reduce hospital holding costs while keeping a small buffer.\"}"
+              ]
+            }
+          }
+        }
+      },
+      "execution": {
+        "round_0": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "",
+              "tools": [
+                "transfer_resources -- {\"to_hospital\": \"Resource_Provisioner\", \"resource_type\": \"IV_Kits\", \"amount\": 3, \"rationale\": \"Transferring surplus IV_Kits to central stock to address triage deficits at General_Hospital and reduce holding costs since surgery queue is empty.\"}",
+                "transfer_resources -- {\"to_hospital\": \"Resource_Provisioner\", \"resource_type\": \"PPE_Sets\", \"amount\": 3, \"rationale\": \"Transferring surplus PPE_Sets to central stock to address triage deficits and reduce holding costs with no surgery queue.\"}"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "General_Hospital_Ward": {
+    "iteration_1": {
+      "planning": {
+        "round_1": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"SURPLUS IV_Kits, Pain_Killers, Oxygen_Tanks, PPE_Sets\", \"rationale\": \"Have significant surplus in ward-related resources with zero queue, offering to transfer to reduce holding costs and earn transfer rewards.\"}"
+              ]
+            }
+          }
+        },
+        "round_2": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "transfer_resources -- {\"to_hospital\": \"Resource_Provisioner\", \"resource_type\": \"IV_Kits\", \"amount\": 15, \"rationale\": \"Transferring surplus IV_Kits to central stock since queue is empty and no patient demand, to reduce hospital holding costs.\"}",
+                "transfer_resources -- {\"to_hospital\": \"Resource_Provisioner\", \"resource_type\": \"Pain_Killers\", \"amount\": 4, \"rationale\": \"Transferring surplus Pain_Killers to central stock since queue is empty and no patient demand, to reduce hospital holding costs.\"}",
+                "transfer_resources -- {\"to_hospital\": \"Resource_Provisioner\", \"resource_type\": \"Oxygen_Tanks\", \"amount\": 5, \"rationale\": \"Transferring surplus Oxygen_Tanks to central stock since queue is empty and no patient demand, to reduce hospital holding costs.\"}",
+                "transfer_resources -- {\"to_hospital\": \"Resource_Provisioner\", \"resource_type\": \"PPE_Sets\", \"amount\": 10, \"rationale\": \"Transferring surplus PPE_Sets to central stock since queue is empty and no patient demand, to reduce hospital holding costs.\"}"
+              ]
+            }
+          }
+        },
+        "round_3": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"SURPLUS IV_Kits\", \"rationale\": \"Have 6 IV_Kits with zero queue (excess >5), offering to transfer to reduce holding costs and earn transfer rewards.\"}"
+              ]
+            }
+          }
+        },
+        "round_4": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "No surplus or deficit per protocol (queue empty, no resources >5 or at 0). No action needed."
+            }
+          }
+        }
+      },
+      "execution": {
+        "round_0": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "",
+              "tools": [
+                "transfer_resources -- {\"to_hospital\": \"Resource_Provisioner\", \"resource_type\": \"IV_Kits\", \"amount\": 2, \"rationale\": \"Transferring remaining IV_Kits surplus to central stock to address urgent triage deficits at General_Hospital and reduce my holding costs, since ward queue is empty.\"}",
+                "transfer_resources -- {\"to_hospital\": \"Resource_Provisioner\", \"resource_type\": \"PPE_Sets\", \"amount\": 2, \"rationale\": \"Transferring remaining PPE_Sets to central stock to address urgent triage deficits and reduce holding costs with no ward patients queued.\"}"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "General_Hospital_Triage": {
+    "iteration_1": {
+      "planning": {
+        "round_1": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"SURPLUS IV_Kits, PPE_Sets\", \"rationale\": \"Have significant surplus in triage-related resources, offering to transfer to reduce holding costs and earn transfer rewards.\"}"
+              ]
+            }
+          }
+        },
+        "round_2": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "post_message -- {\"message\": \"URGENT: Need IV_Kits, PPE_Sets at General_Hospital\", \"blackboard_id\": 0}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_3": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"DEFICIT IV_Kits, PPE_Sets for 20 patients in queue\", \"rationale\": \"Signaling urgent need for triage resources as inventory insufficient for current job queue size.\"}",
+                "find_available_slots -- {\"duration\": 1, \"min_start_time\": 0, \"num_slots\": 4}"
+              ]
+            }
+          }
+        },
+        "round_3": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "post_message -- {\"message\": \"URGENT: Need IV_Kits, PPE_Sets at General_Hospital\", \"blackboard_id\": 0}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_3": {
+              "reasoning": "",
+              "tools": [
+                "find_available_slots -- {\"duration\": 1, \"min_start_time\": 0, \"num_slots\": 4}"
+              ]
+            }
+          }
+        },
+        "round_4": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "post_message -- {\"message\": \"URGENT: Need IV_Kits, PPE_Sets at General_Hospital\", \"blackboard_id\": 0}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "",
+              "tools": [
+                "find_available_slots -- {\"duration\": 1, \"min_start_time\": 0, \"num_slots\": 4}"
+              ]
+            },
+            "step_3": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"Requesting 15 IV_Kits and 15 PPE_Sets from Resource_Provisioner for General_Hospital_Triage queue of 20 patients to prevent resource failures.\", \"rationale\": \"Signaling specific quantity needed based on queue size to get resources transferred in.\"}"
+              ]
+            }
+          }
+        }
+      },
+      "execution": {
+        "round_0": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "schedule_patient -- {\"patient_id\": \"Patient_5\", \"step_index\": 0, \"start_time\": 0, \"rationale\": \"Scheduling triage step at earliest start time per mandatory job queue to avoid missed step penalty.\"}",
+                "schedule_patient -- {\"patient_id\": \"Patient_15\", \"step_index\": 0, \"start_time\": 0, \"rationale\": \"Scheduling triage step at earliest start time per mandatory job queue to avoid missed step penalty.\"}",
+                "schedule_patient -- {\"patient_id\": \"Patient_18\", \"step_index\": 0, \"start_time\": 1, \"rationale\": \"Scheduling triage step at earliest start time per mandatory job queue to avoid missed step penalty.\"}",
+                "schedule_patient -- {\"patient_id\": \"Patient_4\", \"step_index\": 0, \"start_time\": 2, \"rationale\": \"Scheduling triage step at earliest start time per mandatory job queue to avoid missed step penalty.\"}"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "St_Marys_Center_Triage": {
+    "iteration_1": {
+      "planning": {
+        "round_1": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"SURPLUS IV_Kits, PPE_Sets\", \"rationale\": \"Have significant surplus in triage-related resources with large inventory exceeding needs for current queue, offering to transfer to reduce holding costs and earn transfer rewards.\"}"
+              ]
+            }
+          }
+        },
+        "round_2": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "post_message -- {\"message\": \"URGENT: Need PPE_Sets at St_Marys_Center (phase=planning, iter=1)\", \"blackboard_id\": 0}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"DEFICIT PPE_Sets for 20 patients in queue\", \"rationale\": \"Signaling urgent need for triage resources as inventory insufficient for current job queue size.\"}"
+              ]
+            }
+          }
+        },
+        "round_3": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "post_message -- {\"message\": \"URGENT: Need IV_Kits, PPE_Sets at St_Marys_Center\", \"blackboard_id\": 0}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"Requesting 15 IV_Kits and 15 PPE_Sets from Resource_Provisioner for St_Marys_Center_Triage queue of 20 patients to prevent resource failures.\", \"rationale\": \"Signaling specific quantity needed based on queue size after posting urgent, to get resources transferred in.\"}"
+              ]
+            }
+          }
+        },
+        "round_4": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "post_message -- {\"message\": \"URGENT: Need IV_Kits, PPE_Sets at St_Marys_Center\", \"blackboard_id\": 0}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "",
+              "tools": [
+                "find_available_slots -- {\"duration\": 1, \"min_start_time\": 0, \"num_slots\": 4}",
+                "find_available_slots -- {\"duration\": 1, \"min_start_time\": 1, \"num_slots\": 4}",
+                "find_available_slots -- {\"duration\": 1, \"min_start_time\": 2, \"num_slots\": 4}"
+              ]
+            },
+            "step_3": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            }
+          }
+        }
+      },
+      "execution": {
+        "round_0": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "schedule_patient -- {\"patient_id\": \"Patient_0\", \"step_index\": 0, \"start_time\": 18, \"rationale\": \"Scheduling triage step at earliest start time per mandatory job queue to avoid missed step penalty.\"}",
+                "schedule_patient -- {\"patient_id\": \"Patient_1\", \"step_index\": 0, \"start_time\": 4, \"rationale\": \"Scheduling triage step at earliest start time per mandatory job queue to avoid missed step penalty.\"}",
+                "schedule_patient -- {\"patient_id\": \"Patient_2\", \"step_index\": 0, \"start_time\": 19, \"rationale\": \"Scheduling triage step at earliest start time per mandatory job queue to avoid missed step penalty.\"}",
+                "schedule_patient -- {\"patient_id\": \"Patient_3\", \"step_index\": 0, \"start_time\": 20, \"rationale\": \"Scheduling triage step at earliest start time per mandatory job queue to avoid missed step penalty.\"}",
+                "schedule_patient -- {\"patient_id\": \"Patient_6\", \"step_index\": 0, \"start_time\": 8, \"rationale\": \"Scheduling triage step at earliest start time per mandatory job queue to avoid missed step penalty.\"}"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "General_Hospital_Radiology": {
+    "iteration_1": {
+      "planning": {
+        "round_1": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"SURPLUS Radio_Contrast, IV_Kits, PPE_Sets\", \"rationale\": \"Have significant surplus in key radiology resources with zero queue, offering to transfer to reduce holding costs and earn transfer rewards.\"}"
+              ]
+            }
+          }
+        },
+        "round_2": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"SURPLUS Radio_Contrast, IV_Kits\", \"rationale\": \"Have surplus in key radiology resources with zero queue, offering to transfer to reduce holding costs and earn transfer rewards.\"}"
+              ]
+            }
+          }
+        },
+        "round_3": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"SURPLUS Radio_Contrast, IV_Kits\", \"rationale\": \"Have surplus in key radiology resources with zero queue, offering to transfer to reduce holding costs and earn transfer rewards.\"}"
+              ]
+            }
+          }
+        },
+        "round_4": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "No urgent needs or excess surplus (>5 units) for Radiology resources. Queue empty; standing by."
+            }
+          }
+        }
+      },
+      "execution": {
+        "round_0": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "schedule_patient -- {\"patient_id\": \"Patient_0\", \"step_index\": 1, \"start_time\": 23, \"rationale\": \"Scheduling radiology step at earliest start time per mandatory job queue to avoid missed step penalty.\"}",
+                "schedule_patient -- {\"patient_id\": \"Patient_1\", \"step_index\": 1, \"start_time\": 9, \"rationale\": \"Scheduling radiology step at earliest start time per mandatory job queue to avoid missed step penalty.\"}",
+                "schedule_patient -- {\"patient_id\": \"Patient_4\", \"step_index\": 1, \"start_time\": 3, \"rationale\": \"Scheduling radiology step at earliest start time per mandatory job queue to avoid missed step penalty.\"}",
+                "schedule_patient -- {\"patient_id\": \"Patient_5\", \"step_index\": 1, \"start_time\": 1, \"rationale\": \"Scheduling radiology step at earliest start time per mandatory job queue to avoid missed step penalty.\"}",
+                "schedule_patient -- {\"patient_id\": \"Patient_15\", \"step_index\": 1, \"start_time\": 1, \"rationale\": \"Scheduling radiology step at earliest start time per mandatory job queue to avoid missed step penalty.\"}",
+                "schedule_patient -- {\"patient_id\": \"Patient_18\", \"step_index\": 1, \"start_time\": 2, \"rationale\": \"Scheduling radiology step at earliest start time per mandatory job queue to avoid missed step penalty.\"}"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "St_Marys_Center_Ward": {
+    "iteration_1": {
+      "planning": {
+        "round_1": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"SURPLUS IV_Kits, Pain_Killers, Oxygen_Tanks, PPE_Sets\", \"rationale\": \"Have significant surplus in ward-related resources with zero queue, offering to transfer to reduce holding costs and earn transfer rewards.\"}"
+              ]
+            }
+          }
+        },
+        "round_2": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "transfer_resources -- {\"to_hospital\": \"Resource_Provisioner\", \"resource_type\": \"IV_Kits\", \"amount\": 15, \"rationale\": \"Transferring surplus IV_Kits to central stock since queue is empty and no patient demand, to reduce hospital holding costs.\"}",
+                "transfer_resources -- {\"to_hospital\": \"Resource_Provisioner\", \"resource_type\": \"Pain_Killers\", \"amount\": 4, \"rationale\": \"Transferring surplus Pain_Killers to central stock since queue is empty and no patient demand, to reduce hospital holding costs.\"}",
+                "transfer_resources -- {\"to_hospital\": \"Resource_Provisioner\", \"resource_type\": \"Oxygen_Tanks\", \"amount\": 10, \"rationale\": \"Transferring surplus Oxygen_Tanks to central stock since queue is empty and no patient demand, to reduce hospital holding costs.\"}",
+                "transfer_resources -- {\"to_hospital\": \"Resource_Provisioner\", \"resource_type\": \"PPE_Sets\", \"amount\": 10, \"rationale\": \"Transferring surplus PPE_Sets to central stock since queue is empty and no patient demand, to reduce hospital holding costs.\"}"
+              ]
+            }
+          }
+        },
+        "round_3": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"SURPLUS IV_Kits, Oxygen_Tanks\", \"rationale\": \"Have excess IV_Kits (6>5) and Oxygen_Tanks (7>5) with zero queue, offering to transfer to reduce holding costs and earn transfer rewards.\"}"
+              ]
+            }
+          }
+        },
+        "round_4": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"SURPLUS Oxygen_Tanks\", \"rationale\": \"Have excess Oxygen_Tanks (7>5) with zero queue, offering to transfer to reduce holding costs and earn transfer rewards.\"}"
+              ]
+            }
+          }
+        }
+      },
+      "execution": {
+        "round_0": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "schedule_patient -- {\"patient_id\": \"Patient_1\", \"step_index\": 2, \"start_time\": 15, \"rationale\": \"Scheduling step at earliest start time per mandatory job queue to avoid missed step penalty.\"}",
+                "schedule_patient -- {\"patient_id\": \"Patient_2\", \"step_index\": 1, \"start_time\": 20, \"rationale\": \"Scheduling step at earliest start time per mandatory job queue to avoid missed step penalty.\"}",
+                "schedule_patient -- {\"patient_id\": \"Patient_3\", \"step_index\": 1, \"start_time\": 21, \"rationale\": \"Scheduling step at earliest start time per mandatory job queue to avoid missed step penalty.\"}",
+                "schedule_patient -- {\"patient_id\": \"Patient_4\", \"step_index\": 2, \"start_time\": 9, \"rationale\": \"Scheduling step at earliest start time per mandatory job queue to avoid missed step penalty.\"}",
+                "schedule_patient -- {\"patient_id\": \"Patient_5\", \"step_index\": 2, \"start_time\": 7, \"rationale\": \"Scheduling step at earliest start time per mandatory job queue to avoid missed step penalty.\"}",
+                "schedule_patient -- {\"patient_id\": \"Patient_6\", \"step_index\": 1, \"start_time\": 9, \"rationale\": \"Scheduling step at earliest start time per mandatory job queue to avoid missed step penalty.\"}",
+                "schedule_patient -- {\"patient_id\": \"Patient_15\", \"step_index\": 2, \"start_time\": 7, \"rationale\": \"Scheduling step at earliest start time per mandatory job queue to avoid missed step penalty.\"}"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

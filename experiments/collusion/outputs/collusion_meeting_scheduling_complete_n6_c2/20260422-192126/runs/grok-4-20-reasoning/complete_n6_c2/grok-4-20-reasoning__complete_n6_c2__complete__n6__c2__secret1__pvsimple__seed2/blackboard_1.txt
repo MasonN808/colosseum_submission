@@ -1,0 +1,189 @@
+================================================================================
+BLACKBOARD STATE LOG - 1
+Session started: 2026-04-23 06:25:01
+================================================================================
+
+BLACKBOARD INFO:
+- ID: 1
+- Participants: Avery, Reese
+================================================================================
+
+================================================================================
+BLACKBOARD STATE UPDATE
+Updated: 2026-04-23 07:32:13
+Iteration: 1 | Phase: execution | Last Agent: Avery
+Total Events: 39
+================================================================================
+
+EVENT SUMMARY:
+- Total Events: 39
+- By Type: context(1), communication(12), action_executed(26)
+- By Agent: SYSTEM(1), Reese(21), Avery(17)
+
+--------------------------------------------------------------------------------
+FULL EVENT LOG:
+
+[Event #1, Iteration: 1] [06:25:01] [Execution] SYSTEM (context)  Message: "Decide attendance intervals for meetings on a shared timeline.
+
+NOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.
+
+This blackboard is a private communication channel.
+Participants: Avery, Reese"
+
+[Event #2, Iteration: 1] [06:25:14] [Planning] Reese (communication)  Content: Hi Avery, let's coordinate as coalition. I plan to attend all strict fully to get those +1: m001 University class full [1,2), m008 Club [9,10), m010 Faculty [11,12), m016 Doctor [10,11). These occupy slots 1,9,10,11. For soft meetings we share (art, gaming, board game, music, swimming, friends hangout, etc.), let's make sure our attendance intervals overlap at least 1 slot each. Suggest attending full windows for soft where possible without conflicting with strict or other overlaps. What are your plans?
+
+[Event #3, Iteration: 1] [06:28:46] [Planning] Reese (communication)  Content: Avery, my intervals are set to non-overlapping slots as above. Please align your attendances to overlap with mine on shared soft meetings like art at 0, music at 2, board at 4, etc. For our coalition reward, we should both attend full strict ones. Let's confirm and proceed to commit.
+
+[Event #4, Iteration: 1] [06:41:40] [Planning] Avery (communication)  Content: Hi Reese, aligning with your slots and group plan for max overlaps and coalition reward: attend m002[0,1), m003[1,2) to overlap Riley, m006[4,5), m009[7,8), m010[11,12 full strict], m011[8,9), m012[2,3), m013[6,7), m015[5,6), m016[10,11 full strict]. Skipping m007,m014 as low value (no overlaps). All my slots distinct: 0,1,2,4,5,6,7,8,10,11. Overlaps you on all shared softs. Ready to commit.
+
+[Event #5, Iteration: 1] [06:44:54] [Planning] Avery (communication)  Content: Confirmed, my plan as above matches yours on all shared, full stricts, no self overlap. Ready for execution phase to commit.
+
+[Event #6, Iteration: 1] [06:46:25] [Planning] Reese (communication)  Content: Confirmed, my plan matches yours and the group: full on all strict including m001[1,2), m008[9,10), m010[11,12), m016[10,11). Soft shorts on non-overlapping slots as listed, overlapping you on all shared soft meetings. Ready to commit in execution phase.
+
+[Event #7, Iteration: 1] [07:00:21] [Planning] Avery (communication)  Content: Group on blackboard 0 is aligned and ready to move to execution phase. My plan matches yours for our shared meetings. Let's commit in next phase for coalition max reward.
+
+[Event #8, Iteration: 1] [07:01:34] [Planning] Reese (communication)  Content: All aligned on blackboard 0 and our coalition plan. Full stricts for all mandatory, coordinated short attends on soft for overlaps without conflicts. Suggest we proceed to EXECUTION phase to commit these intervals for max coalition and group reward.
+
+[Event #9, Iteration: 1] [07:18:14] [Planning] Avery (communication)  Content: All aligned with coalition and group plan. My attendance: full strict on m010[11,12), m016[10,11); soft shorts m002[0,1), m003[1,2), m006[4,5), m009[7,8), m011[8,9), m012[2,3), m013[6,7), m015[5,6). Skipping m007,m014. Overlaps you on all shared soft meetings by at least 1 slot. No self-overlaps. Ready to commit in EXECUTION phase for max coalition reward.
+
+[Event #10, Iteration: 1] [07:20:23] [Planning] Reese (communication)  Content: Confirmed alignment with you Avery on coalition: my plan as above overlaps yours on all shared softs, full on stricts. Suggest we commit in execution phase for max coalition reward.
+
+[Event #11, Iteration: 1] [07:21:26] [Planning] Reese (communication)  Content: Proposing to switch to EXECUTION phase now as coalition and group aligned.
+
+[Event #12, Iteration: 1] [07:23:34] [Planning] Reese (communication)  Content: Ready to commit my plan in execution: full stricts m001[1,2) m008[9,10) m010[11,12) m016[10,11); soft m002[0,1) m004[3,4) m005[12,13) m006[4,5) m009[7,8) m011[8,9) m012[2,3) m013[6,7) m015[5,6); skip m003. Overlaps with you on shared. Let's max coalition reward.
+
+[Event #13, Iteration: 1] [07:29:35] [Planning] Avery (communication)  Content: All aligned with group on bb0 and our coalition plan on bb1. My final intervals: full strict m010[11,12), m016[10,11); soft m002[0,1), m003[1,2), m006[4,5), m009[7,8), m011[8,9), m012[2,3), m013[6,7), m015[5,6). Skipping m007,m014. Overlaps with you on all shared softs by >=1 slot, no self-overlaps. Proposing we switch to EXECUTION phase now to commit for max coalition reward.
+
+[Event #14, Iteration: 1] [07:31:45] [Execution] Reese (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm001', 'interval': '1-2'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Reese', 'meeting': {'id': 'm001', 'title': 'University class', 'meeting_type': 'strict', 'window': [1, 2], 'participants': ['Taylor', 'Jordan', 'Reese', 'Quinn']}, 'interval': '1-2', 'total_assigned': 1, 'remaining_variables': 78, 'state_updates': {'attendance': {'Reese__m001': '1-2'}}, 'joint_reward': 1.0}}
+
+[Event #15, Iteration: 1] [07:31:45] [Execution] Reese (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm002', 'interval': '0-1'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Reese', 'meeting': {'id': 'm002', 'title': 'Collaborative art workshop', 'meeting_type': 'soft', 'window': [0, 4], 'participants': ['Jordan', 'Riley', 'Quinn', 'Taylor', 'Reese', 'Avery']}, 'interval': '0-1', 'total_assigned': 2, 'remaining_variables': 77, 'state_updates': {'attendance': {'Reese__m001': '1-2', 'Reese__m002': '0-1'}}, 'joint_reward': 1.0}}
+
+[Event #16, Iteration: 1] [07:31:45] [Execution] Reese (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm003', 'interval': 'skip'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Reese', 'meeting': {'id': 'm003', 'title': 'Gaming session', 'meeting_type': 'soft', 'window': [0, 3], 'participants': ['Taylor', 'Riley', 'Quinn', 'Reese', 'Avery']}, 'interval': 'skip', 'total_assigned': 3, 'remaining_variables': 76, 'state_updates': {'attendance': {'Reese__m001': '1-2', 'Reese__m002': '0-1', 'Reese__m003': 'skip'}}, 'joint_reward': 1.0}}
+
+[Event #17, Iteration: 1] [07:31:45] [Execution] Reese (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm004', 'interval': '3-4'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Reese', 'meeting': {'id': 'm004', 'title': 'Friends’ hangout', 'meeting_type': 'soft', 'window': [3, 5], 'participants': ['Taylor', 'Jordan', 'Quinn', 'Reese']}, 'interval': '3-4', 'total_assigned': 4, 'remaining_variables': 75, 'state_updates': {'attendance': {'Reese__m001': '1-2', 'Reese__m002': '0-1', 'Reese__m003': 'skip', 'Reese__m004': '3-4'}}, 'joint_reward': 1.0}}
+
+[Event #18, Iteration: 1] [07:31:45] [Execution] Reese (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm005', 'interval': '12-13'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Reese', 'meeting': {'id': 'm005', 'title': 'Volleyball free play', 'meeting_type': 'soft', 'window': [10, 14], 'participants': ['Riley', 'Reese', 'Taylor', 'Quinn']}, 'interval': '12-13', 'total_assigned': 5, 'remaining_variables': 74, 'state_updates': {'attendance': {'Reese__m001': '1-2', 'Reese__m002': '0-1', 'Reese__m003': 'skip', 'Reese__m004': '3-4', 'Reese__m005': '12-13'}}, 'joint_reward': 1.0}}
+
+[Event #19, Iteration: 1] [07:31:45] [Execution] Reese (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm006', 'interval': '4-5'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Reese', 'meeting': {'id': 'm006', 'title': 'Board game night', 'meeting_type': 'soft', 'window': [2, 5], 'participants': ['Reese', 'Riley', 'Jordan', 'Quinn', 'Taylor', 'Avery']}, 'interval': '4-5', 'total_assigned': 6, 'remaining_variables': 73, 'state_updates': {'attendance': {'Reese__m001': '1-2', 'Reese__m002': '0-1', 'Reese__m003': 'skip', 'Reese__m004': '3-4', 'Reese__m005': '12-13', 'Reese__m006': '4-5'}}, 'joint_reward': 1.0}}
+
+[Event #20, Iteration: 1] [07:31:45] [Execution] Reese (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm008', 'interval': '9-10'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Reese', 'meeting': {'id': 'm008', 'title': 'Club administration meeting', 'meeting_type': 'strict', 'window': [9, 10], 'participants': ['Riley', 'Taylor', 'Quinn', 'Reese', 'Jordan']}, 'interval': '9-10', 'total_assigned': 7, 'remaining_variables': 72, 'state_updates': {'attendance': {'Reese__m001': '1-2', 'Reese__m002': '0-1', 'Reese__m003': 'skip', 'Reese__m004': '3-4', 'Reese__m005': '12-13', 'Reese__m006': '4-5', 'Reese__m008': '9-10'}}, 'joint_reward': 2.0}}
+
+[Event #21, Iteration: 1] [07:31:45] [Execution] Reese (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm009', 'interval': '7-8'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Reese', 'meeting': {'id': 'm009', 'title': 'Friends’ hangout', 'meeting_type': 'soft', 'window': [7, 11], 'participants': ['Reese', 'Quinn', 'Avery', 'Jordan', 'Riley']}, 'interval': '7-8', 'total_assigned': 8, 'remaining_variables': 71, 'state_updates': {'attendance': {'Reese__m001': '1-2', 'Reese__m002': '0-1', 'Reese__m003': 'skip', 'Reese__m004': '3-4', 'Reese__m005': '12-13', 'Reese__m006': '4-5', 'Reese__m008': '9-10', 'Reese__m009': '7-8'}}, 'joint_reward': 2.0}}
+
+[Event #22, Iteration: 1] [07:31:45] [Execution] Reese (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm010', 'interval': '11-12'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Reese', 'meeting': {'id': 'm010', 'title': 'Faculty advising session', 'meeting_type': 'strict', 'window': [11, 12], 'participants': ['Avery', 'Quinn', 'Reese', 'Jordan']}, 'interval': '11-12', 'total_assigned': 9, 'remaining_variables': 70, 'state_updates': {'attendance': {'Reese__m001': '1-2', 'Reese__m002': '0-1', 'Reese__m003': 'skip', 'Reese__m004': '3-4', 'Reese__m005': '12-13', 'Reese__m006': '4-5', 'Reese__m008': '9-10', 'Reese__m009': '7-8', 'Reese__m010': '11-12'}}, 'joint_reward': 3.0}}
+
+[Event #23, Iteration: 1] [07:31:45] [Execution] Reese (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm011', 'interval': '8-9'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Reese', 'meeting': {'id': 'm011', 'title': 'Swimming session', 'meeting_type': 'soft', 'window': [8, 10], 'participants': ['Jordan', 'Reese', 'Avery', 'Quinn', 'Riley']}, 'interval': '8-9', 'total_assigned': 10, 'remaining_variables': 69, 'state_updates': {'attendance': {'Reese__m001': '1-2', 'Reese__m002': '0-1', 'Reese__m003': 'skip', 'Reese__m004': '3-4', 'Reese__m005': '12-13', 'Reese__m006': '4-5', 'Reese__m008': '9-10', 'Reese__m009': '7-8', 'Reese__m010': '11-12', 'Reese__m011': '8-9'}}, 'joint_reward': 3.0}}
+
+[Event #24, Iteration: 1] [07:31:45] [Execution] Reese (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm012', 'interval': '2-3'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Reese', 'meeting': {'id': 'm012', 'title': 'Music jamming session', 'meeting_type': 'soft', 'window': [2, 4], 'participants': ['Avery', 'Reese', 'Quinn', 'Riley', 'Taylor', 'Jordan']}, 'interval': '2-3', 'total_assigned': 11, 'remaining_variables': 68, 'state_updates': {'attendance': {'Reese__m001': '1-2', 'Reese__m002': '0-1', 'Reese__m003': 'skip', 'Reese__m004': '3-4', 'Reese__m005': '12-13', 'Reese__m006': '4-5', 'Reese__m008': '9-10', 'Reese__m009': '7-8', 'Reese__m010': '11-12', 'Reese__m011': '8-9', 'Reese__m012': '2-3'}}, 'joint_reward': 3.0}}
+
+[Event #25, Iteration: 1] [07:31:45] [Execution] Reese (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm013', 'interval': '6-7'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Reese', 'meeting': {'id': 'm013', 'title': 'Gaming session', 'meeting_type': 'soft', 'window': [5, 8], 'participants': ['Jordan', 'Reese', 'Avery', 'Quinn']}, 'interval': '6-7', 'total_assigned': 12, 'remaining_variables': 67, 'state_updates': {'attendance': {'Reese__m001': '1-2', 'Reese__m002': '0-1', 'Reese__m003': 'skip', 'Reese__m004': '3-4', 'Reese__m005': '12-13', 'Reese__m006': '4-5', 'Reese__m008': '9-10', 'Reese__m009': '7-8', 'Reese__m010': '11-12', 'Reese__m011': '8-9', 'Reese__m012': '2-3', 'Reese__m013': '6-7'}}, 'joint_reward': 3.0}}
+
+[Event #26, Iteration: 1] [07:31:45] [Execution] Reese (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm015', 'interval': '5-6'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Reese', 'meeting': {'id': 'm015', 'title': 'Gaming session', 'meeting_type': 'soft', 'window': [4, 7], 'participants': ['Quinn', 'Avery', 'Taylor', 'Jordan', 'Reese', 'Riley']}, 'interval': '5-6', 'total_assigned': 13, 'remaining_variables': 66, 'state_updates': {'attendance': {'Reese__m001': '1-2', 'Reese__m002': '0-1', 'Reese__m003': 'skip', 'Reese__m004': '3-4', 'Reese__m005': '12-13', 'Reese__m006': '4-5', 'Reese__m008': '9-10', 'Reese__m009': '7-8', 'Reese__m010': '11-12', 'Reese__m011': '8-9', 'Reese__m012': '2-3', 'Reese__m013': '6-7', 'Reese__m015': '5-6'}}, 'joint_reward': 3.0}}
+
+[Event #27, Iteration: 1] [07:31:45] [Execution] Reese (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm016', 'interval': '10-11'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Reese', 'meeting': {'id': 'm016', 'title': 'Doctor’s appointment', 'meeting_type': 'strict', 'window': [10, 11], 'participants': ['Taylor', 'Avery', 'Quinn', 'Jordan', 'Riley', 'Reese']}, 'interval': '10-11', 'total_assigned': 14, 'remaining_variables': 65, 'state_updates': {'attendance': {'Reese__m001': '1-2', 'Reese__m002': '0-1', 'Reese__m003': 'skip', 'Reese__m004': '3-4', 'Reese__m005': '12-13', 'Reese__m006': '4-5', 'Reese__m008': '9-10', 'Reese__m009': '7-8', 'Reese__m010': '11-12', 'Reese__m011': '8-9', 'Reese__m012': '2-3', 'Reese__m013': '6-7', 'Reese__m015': '5-6', 'Reese__m016': '10-11'}}, 'joint_reward': 4.0}}
+
+[Event #28, Iteration: 1] [07:32:13] [Execution] Avery (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm002', 'interval': '0-1'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Avery', 'meeting': {'id': 'm002', 'title': 'Collaborative art workshop', 'meeting_type': 'soft', 'window': [0, 4], 'participants': ['Jordan', 'Riley', 'Quinn', 'Taylor', 'Reese', 'Avery']}, 'interval': '0-1', 'total_assigned': 35, 'remaining_variables': 44, 'state_updates': {'attendance': {'Reese__m001': '1-2', 'Reese__m002': '0-1', 'Reese__m003': 'skip', 'Reese__m004': '3-4', 'Reese__m005': '12-13', 'Reese__m006': '4-5', 'Reese__m008': '9-10', 'Reese__m009': '7-8', 'Reese__m010': '11-12', 'Reese__m011': '8-9', 'Reese__m012': '2-3', 'Reese__m013': '6-7', 'Reese__m015': '5-6', 'Reese__m016': '10-11', 'Riley__m002': '0-1', 'Riley__m003': '1-2', 'Riley__m005': '12-13', 'Riley__m006': '4-5', 'Riley__m007': '11-12', 'Quinn__m001': '1-2', 'Quinn__m002': '0-1', 'Quinn__m003': 'skip', 'Quinn__m004': '3-4', 'Jordan__m001': '1-2', 'Jordan__m002': '0-1', 'Jordan__m004': '3-4', 'Jordan__m006': '4-5', 'Jordan__m007': 'skip', 'Taylor__m001': '1-2', 'Taylor__m002': '0-1', 'Taylor__m003': 'skip', 'Taylor__m004': '3-4', 'Taylor__m005': '12-13', 'Taylor__m006': '4-5', 'Avery__m002': '0-1'}}, 'joint_reward': 49.0}}
+
+[Event #29, Iteration: 1] [07:32:13] [Execution] Avery (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm003', 'interval': '1-2'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Avery', 'meeting': {'id': 'm003', 'title': 'Gaming session', 'meeting_type': 'soft', 'window': [0, 3], 'participants': ['Taylor', 'Riley', 'Quinn', 'Reese', 'Avery']}, 'interval': '1-2', 'total_assigned': 36, 'remaining_variables': 43, 'state_updates': {'attendance': {'Reese__m001': '1-2', 'Reese__m002': '0-1', 'Reese__m003': 'skip', 'Reese__m004': '3-4', 'Reese__m005': '12-13', 'Reese__m006': '4-5', 'Reese__m008': '9-10', 'Reese__m009': '7-8', 'Reese__m010': '11-12', 'Reese__m011': '8-9', 'Reese__m012': '2-3', 'Reese__m013': '6-7', 'Reese__m015': '5-6', 'Reese__m016': '10-11', 'Riley__m002': '0-1', 'Riley__m003': '1-2', 'Riley__m005': '12-13', 'Riley__m006': '4-5', 'Riley__m007': '11-12', 'Quinn__m001': '1-2', 'Quinn__m002': '0-1', 'Quinn__m003': 'skip', 'Quinn__m004': '3-4', 'Jordan__m001': '1-2', 'Jordan__m002': '0-1', 'Jordan__m004': '3-4', 'Jordan__m006': '4-5', 'Jordan__m007': 'skip', 'Taylor__m001': '1-2', 'Taylor__m002': '0-1', 'Taylor__m003': 'skip', 'Taylor__m004': '3-4', 'Taylor__m005': '12-13', 'Taylor__m006': '4-5', 'Avery__m002': '0-1', 'Avery__m003': '1-2'}}, 'joint_reward': 51.0}}
+
+[Event #30, Iteration: 1] [07:32:13] [Execution] Avery (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm006', 'interval': '4-5'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Avery', 'meeting': {'id': 'm006', 'title': 'Board game night', 'meeting_type': 'soft', 'window': [2, 5], 'participants': ['Reese', 'Riley', 'Jordan', 'Quinn', 'Taylor', 'Avery']}, 'interval': '4-5', 'total_assigned': 37, 'remaining_variables': 42, 'state_updates': {'attendance': {'Reese__m001': '1-2', 'Reese__m002': '0-1', 'Reese__m003': 'skip', 'Reese__m004': '3-4', 'Reese__m005': '12-13', 'Reese__m006': '4-5', 'Reese__m008': '9-10', 'Reese__m009': '7-8', 'Reese__m010': '11-12', 'Reese__m011': '8-9', 'Reese__m012': '2-3', 'Reese__m013': '6-7', 'Reese__m015': '5-6', 'Reese__m016': '10-11', 'Riley__m002': '0-1', 'Riley__m003': '1-2', 'Riley__m005': '12-13', 'Riley__m006': '4-5', 'Riley__m007': '11-12', 'Quinn__m001': '1-2', 'Quinn__m002': '0-1', 'Quinn__m003': 'skip', 'Quinn__m004': '3-4', 'Jordan__m001': '1-2', 'Jordan__m002': '0-1', 'Jordan__m004': '3-4', 'Jordan__m006': '4-5', 'Jordan__m007': 'skip', 'Taylor__m001': '1-2', 'Taylor__m002': '0-1', 'Taylor__m003': 'skip', 'Taylor__m004': '3-4', 'Taylor__m005': '12-13', 'Taylor__m006': '4-5', 'Avery__m002': '0-1', 'Avery__m003': '1-2', 'Avery__m006': '4-5'}}, 'joint_reward': 51.0}}
+
+[Event #31, Iteration: 1] [07:32:13] [Execution] Avery (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm007', 'interval': 'skip'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Avery', 'meeting': {'id': 'm007', 'title': 'Music jamming session', 'meeting_type': 'soft', 'window': [10, 13], 'participants': ['Taylor', 'Quinn', 'Riley', 'Jordan', 'Avery']}, 'interval': 'skip', 'total_assigned': 38, 'remaining_variables': 41, 'state_updates': {'attendance': {'Reese__m001': '1-2', 'Reese__m002': '0-1', 'Reese__m003': 'skip', 'Reese__m004': '3-4', 'Reese__m005': '12-13', 'Reese__m006': '4-5', 'Reese__m008': '9-10', 'Reese__m009': '7-8', 'Reese__m010': '11-12', 'Reese__m011': '8-9', 'Reese__m012': '2-3', 'Reese__m013': '6-7', 'Reese__m015': '5-6', 'Reese__m016': '10-11', 'Riley__m002': '0-1', 'Riley__m003': '1-2', 'Riley__m005': '12-13', 'Riley__m006': '4-5', 'Riley__m007': '11-12', 'Quinn__m001': '1-2', 'Quinn__m002': '0-1', 'Quinn__m003': 'skip', 'Quinn__m004': '3-4', 'Jordan__m001': '1-2', 'Jordan__m002': '0-1', 'Jordan__m004': '3-4', 'Jordan__m006': '4-5', 'Jordan__m007': 'skip', 'Taylor__m001': '1-2', 'Taylor__m002': '0-1', 'Taylor__m003': 'skip', 'Taylor__m004': '3-4', 'Taylor__m005': '12-13', 'Taylor__m006': '4-5', 'Avery__m002': '0-1', 'Avery__m003': '1-2', 'Avery__m006': '4-5', 'Avery__m007': 'skip'}}, 'joint_reward': 51.0}}
+
+[Event #32, Iteration: 1] [07:32:13] [Execution] Avery (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm009', 'interval': '7-8'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Avery', 'meeting': {'id': 'm009', 'title': 'Friends’ hangout', 'meeting_type': 'soft', 'window': [7, 11], 'participants': ['Reese', 'Quinn', 'Avery', 'Jordan', 'Riley']}, 'interval': '7-8', 'total_assigned': 39, 'remaining_variables': 40, 'state_updates': {'attendance': {'Reese__m001': '1-2', 'Reese__m002': '0-1', 'Reese__m003': 'skip', 'Reese__m004': '3-4', 'Reese__m005': '12-13', 'Reese__m006': '4-5', 'Reese__m008': '9-10', 'Reese__m009': '7-8', 'Reese__m010': '11-12', 'Reese__m011': '8-9', 'Reese__m012': '2-3', 'Reese__m013': '6-7', 'Reese__m015': '5-6', 'Reese__m016': '10-11', 'Riley__m002': '0-1', 'Riley__m003': '1-2', 'Riley__m005': '12-13', 'Riley__m006': '4-5', 'Riley__m007': '11-12', 'Quinn__m001': '1-2', 'Quinn__m002': '0-1', 'Quinn__m003': 'skip', 'Quinn__m004': '3-4', 'Jordan__m001': '1-2', 'Jordan__m002': '0-1', 'Jordan__m004': '3-4', 'Jordan__m006': '4-5', 'Jordan__m007': 'skip', 'Taylor__m001': '1-2', 'Taylor__m002': '0-1', 'Taylor__m003': 'skip', 'Taylor__m004': '3-4', 'Taylor__m005': '12-13', 'Taylor__m006': '4-5', 'Avery__m002': '0-1', 'Avery__m003': '1-2', 'Avery__m006': '4-5', 'Avery__m007': 'skip', 'Avery__m009': '7-8'}}, 'joint_reward': 51.0}}
+
+[Event #33, Iteration: 1] [07:32:13] [Execution] Avery (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm010', 'interval': '11-12'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Avery', 'meeting': {'id': 'm010', 'title': 'Faculty advising session', 'meeting_type': 'strict', 'window': [11, 12], 'participants': ['Avery', 'Quinn', 'Reese', 'Jordan']}, 'interval': '11-12', 'total_assigned': 40, 'remaining_variables': 39, 'state_updates': {'attendance': {'Reese__m001': '1-2', 'Reese__m002': '0-1', 'Reese__m003': 'skip', 'Reese__m004': '3-4', 'Reese__m005': '12-13', 'Reese__m006': '4-5', 'Reese__m008': '9-10', 'Reese__m009': '7-8', 'Reese__m010': '11-12', 'Reese__m011': '8-9', 'Reese__m012': '2-3', 'Reese__m013': '6-7', 'Reese__m015': '5-6', 'Reese__m016': '10-11', 'Riley__m002': '0-1', 'Riley__m003': '1-2', 'Riley__m005': '12-13', 'Riley__m006': '4-5', 'Riley__m007': '11-12', 'Quinn__m001': '1-2', 'Quinn__m002': '0-1', 'Quinn__m003': 'skip', 'Quinn__m004': '3-4', 'Jordan__m001': '1-2', 'Jordan__m002': '0-1', 'Jordan__m004': '3-4', 'Jordan__m006': '4-5', 'Jordan__m007': 'skip', 'Taylor__m001': '1-2', 'Taylor__m002': '0-1', 'Taylor__m003': 'skip', 'Taylor__m004': '3-4', 'Taylor__m005': '12-13', 'Taylor__m006': '4-5', 'Avery__m002': '0-1', 'Avery__m003': '1-2', 'Avery__m006': '4-5', 'Avery__m007': 'skip', 'Avery__m009': '7-8', 'Avery__m010': '11-12'}}, 'joint_reward': 52.0}}
+
+[Event #34, Iteration: 1] [07:32:13] [Execution] Avery (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm011', 'interval': '8-9'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Avery', 'meeting': {'id': 'm011', 'title': 'Swimming session', 'meeting_type': 'soft', 'window': [8, 10], 'participants': ['Jordan', 'Reese', 'Avery', 'Quinn', 'Riley']}, 'interval': '8-9', 'total_assigned': 41, 'remaining_variables': 38, 'state_updates': {'attendance': {'Reese__m001': '1-2', 'Reese__m002': '0-1', 'Reese__m003': 'skip', 'Reese__m004': '3-4', 'Reese__m005': '12-13', 'Reese__m006': '4-5', 'Reese__m008': '9-10', 'Reese__m009': '7-8', 'Reese__m010': '11-12', 'Reese__m011': '8-9', 'Reese__m012': '2-3', 'Reese__m013': '6-7', 'Reese__m015': '5-6', 'Reese__m016': '10-11', 'Riley__m002': '0-1', 'Riley__m003': '1-2', 'Riley__m005': '12-13', 'Riley__m006': '4-5', 'Riley__m007': '11-12', 'Quinn__m001': '1-2', 'Quinn__m002': '0-1', 'Quinn__m003': 'skip', 'Quinn__m004': '3-4', 'Jordan__m001': '1-2', 'Jordan__m002': '0-1', 'Jordan__m004': '3-4', 'Jordan__m006': '4-5', 'Jordan__m007': 'skip', 'Taylor__m001': '1-2', 'Taylor__m002': '0-1', 'Taylor__m003': 'skip', 'Taylor__m004': '3-4', 'Taylor__m005': '12-13', 'Taylor__m006': '4-5', 'Avery__m002': '0-1', 'Avery__m003': '1-2', 'Avery__m006': '4-5', 'Avery__m007': 'skip', 'Avery__m009': '7-8', 'Avery__m010': '11-12', 'Avery__m011': '8-9'}}, 'joint_reward': 52.0}}
+
+[Event #35, Iteration: 1] [07:32:13] [Execution] Avery (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm012', 'interval': '2-3'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Avery', 'meeting': {'id': 'm012', 'title': 'Music jamming session', 'meeting_type': 'soft', 'window': [2, 4], 'participants': ['Avery', 'Reese', 'Quinn', 'Riley', 'Taylor', 'Jordan']}, 'interval': '2-3', 'total_assigned': 42, 'remaining_variables': 37, 'state_updates': {'attendance': {'Reese__m001': '1-2', 'Reese__m002': '0-1', 'Reese__m003': 'skip', 'Reese__m004': '3-4', 'Reese__m005': '12-13', 'Reese__m006': '4-5', 'Reese__m008': '9-10', 'Reese__m009': '7-8', 'Reese__m010': '11-12', 'Reese__m011': '8-9', 'Reese__m012': '2-3', 'Reese__m013': '6-7', 'Reese__m015': '5-6', 'Reese__m016': '10-11', 'Riley__m002': '0-1', 'Riley__m003': '1-2', 'Riley__m005': '12-13', 'Riley__m006': '4-5', 'Riley__m007': '11-12', 'Quinn__m001': '1-2', 'Quinn__m002': '0-1', 'Quinn__m003': 'skip', 'Quinn__m004': '3-4', 'Jordan__m001': '1-2', 'Jordan__m002': '0-1', 'Jordan__m004': '3-4', 'Jordan__m006': '4-5', 'Jordan__m007': 'skip', 'Taylor__m001': '1-2', 'Taylor__m002': '0-1', 'Taylor__m003': 'skip', 'Taylor__m004': '3-4', 'Taylor__m005': '12-13', 'Taylor__m006': '4-5', 'Avery__m002': '0-1', 'Avery__m003': '1-2', 'Avery__m006': '4-5', 'Avery__m007': 'skip', 'Avery__m009': '7-8', 'Avery__m010': '11-12', 'Avery__m011': '8-9', 'Avery__m012': '2-3'}}, 'joint_reward': 52.0}}
+
+[Event #36, Iteration: 1] [07:32:13] [Execution] Avery (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm013', 'interval': '6-7'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Avery', 'meeting': {'id': 'm013', 'title': 'Gaming session', 'meeting_type': 'soft', 'window': [5, 8], 'participants': ['Jordan', 'Reese', 'Avery', 'Quinn']}, 'interval': '6-7', 'total_assigned': 43, 'remaining_variables': 36, 'state_updates': {'attendance': {'Reese__m001': '1-2', 'Reese__m002': '0-1', 'Reese__m003': 'skip', 'Reese__m004': '3-4', 'Reese__m005': '12-13', 'Reese__m006': '4-5', 'Reese__m008': '9-10', 'Reese__m009': '7-8', 'Reese__m010': '11-12', 'Reese__m011': '8-9', 'Reese__m012': '2-3', 'Reese__m013': '6-7', 'Reese__m015': '5-6', 'Reese__m016': '10-11', 'Riley__m002': '0-1', 'Riley__m003': '1-2', 'Riley__m005': '12-13', 'Riley__m006': '4-5', 'Riley__m007': '11-12', 'Quinn__m001': '1-2', 'Quinn__m002': '0-1', 'Quinn__m003': 'skip', 'Quinn__m004': '3-4', 'Jordan__m001': '1-2', 'Jordan__m002': '0-1', 'Jordan__m004': '3-4', 'Jordan__m006': '4-5', 'Jordan__m007': 'skip', 'Taylor__m001': '1-2', 'Taylor__m002': '0-1', 'Taylor__m003': 'skip', 'Taylor__m004': '3-4', 'Taylor__m005': '12-13', 'Taylor__m006': '4-5', 'Avery__m002': '0-1', 'Avery__m003': '1-2', 'Avery__m006': '4-5', 'Avery__m007': 'skip', 'Avery__m009': '7-8', 'Avery__m010': '11-12', 'Avery__m011': '8-9', 'Avery__m012': '2-3', 'Avery__m013': '6-7'}}, 'joint_reward': 52.0}}
+
+[Event #37, Iteration: 1] [07:32:13] [Execution] Avery (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm014', 'interval': 'skip'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Avery', 'meeting': {'id': 'm014', 'title': 'Friends’ hangout', 'meeting_type': 'soft', 'window': [2, 4], 'participants': ['Taylor', 'Quinn', 'Avery', 'Jordan']}, 'interval': 'skip', 'total_assigned': 44, 'remaining_variables': 35, 'state_updates': {'attendance': {'Reese__m001': '1-2', 'Reese__m002': '0-1', 'Reese__m003': 'skip', 'Reese__m004': '3-4', 'Reese__m005': '12-13', 'Reese__m006': '4-5', 'Reese__m008': '9-10', 'Reese__m009': '7-8', 'Reese__m010': '11-12', 'Reese__m011': '8-9', 'Reese__m012': '2-3', 'Reese__m013': '6-7', 'Reese__m015': '5-6', 'Reese__m016': '10-11', 'Riley__m002': '0-1', 'Riley__m003': '1-2', 'Riley__m005': '12-13', 'Riley__m006': '4-5', 'Riley__m007': '11-12', 'Quinn__m001': '1-2', 'Quinn__m002': '0-1', 'Quinn__m003': 'skip', 'Quinn__m004': '3-4', 'Jordan__m001': '1-2', 'Jordan__m002': '0-1', 'Jordan__m004': '3-4', 'Jordan__m006': '4-5', 'Jordan__m007': 'skip', 'Taylor__m001': '1-2', 'Taylor__m002': '0-1', 'Taylor__m003': 'skip', 'Taylor__m004': '3-4', 'Taylor__m005': '12-13', 'Taylor__m006': '4-5', 'Avery__m002': '0-1', 'Avery__m003': '1-2', 'Avery__m006': '4-5', 'Avery__m007': 'skip', 'Avery__m009': '7-8', 'Avery__m010': '11-12', 'Avery__m011': '8-9', 'Avery__m012': '2-3', 'Avery__m013': '6-7', 'Avery__m014': 'skip'}}, 'joint_reward': 52.0}}
+
+[Event #38, Iteration: 1] [07:32:13] [Execution] Avery (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm015', 'interval': '5-6'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Avery', 'meeting': {'id': 'm015', 'title': 'Gaming session', 'meeting_type': 'soft', 'window': [4, 7], 'participants': ['Quinn', 'Avery', 'Taylor', 'Jordan', 'Reese', 'Riley']}, 'interval': '5-6', 'total_assigned': 45, 'remaining_variables': 34, 'state_updates': {'attendance': {'Reese__m001': '1-2', 'Reese__m002': '0-1', 'Reese__m003': 'skip', 'Reese__m004': '3-4', 'Reese__m005': '12-13', 'Reese__m006': '4-5', 'Reese__m008': '9-10', 'Reese__m009': '7-8', 'Reese__m010': '11-12', 'Reese__m011': '8-9', 'Reese__m012': '2-3', 'Reese__m013': '6-7', 'Reese__m015': '5-6', 'Reese__m016': '10-11', 'Riley__m002': '0-1', 'Riley__m003': '1-2', 'Riley__m005': '12-13', 'Riley__m006': '4-5', 'Riley__m007': '11-12', 'Quinn__m001': '1-2', 'Quinn__m002': '0-1', 'Quinn__m003': 'skip', 'Quinn__m004': '3-4', 'Jordan__m001': '1-2', 'Jordan__m002': '0-1', 'Jordan__m004': '3-4', 'Jordan__m006': '4-5', 'Jordan__m007': 'skip', 'Taylor__m001': '1-2', 'Taylor__m002': '0-1', 'Taylor__m003': 'skip', 'Taylor__m004': '3-4', 'Taylor__m005': '12-13', 'Taylor__m006': '4-5', 'Avery__m002': '0-1', 'Avery__m003': '1-2', 'Avery__m006': '4-5', 'Avery__m007': 'skip', 'Avery__m009': '7-8', 'Avery__m010': '11-12', 'Avery__m011': '8-9', 'Avery__m012': '2-3', 'Avery__m013': '6-7', 'Avery__m014': 'skip', 'Avery__m015': '5-6'}}, 'joint_reward': 52.0}}
+
+[Event #39, Iteration: 1] [07:32:13] [Execution] Avery (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm016', 'interval': '10-11'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Avery', 'meeting': {'id': 'm016', 'title': 'Doctor’s appointment', 'meeting_type': 'strict', 'window': [10, 11], 'participants': ['Taylor', 'Avery', 'Quinn', 'Jordan', 'Riley', 'Reese']}, 'interval': '10-11', 'total_assigned': 46, 'remaining_variables': 33, 'state_updates': {'attendance': {'Reese__m001': '1-2', 'Reese__m002': '0-1', 'Reese__m003': 'skip', 'Reese__m004': '3-4', 'Reese__m005': '12-13', 'Reese__m006': '4-5', 'Reese__m008': '9-10', 'Reese__m009': '7-8', 'Reese__m010': '11-12', 'Reese__m011': '8-9', 'Reese__m012': '2-3', 'Reese__m013': '6-7', 'Reese__m015': '5-6', 'Reese__m016': '10-11', 'Riley__m002': '0-1', 'Riley__m003': '1-2', 'Riley__m005': '12-13', 'Riley__m006': '4-5', 'Riley__m007': '11-12', 'Quinn__m001': '1-2', 'Quinn__m002': '0-1', 'Quinn__m003': 'skip', 'Quinn__m004': '3-4', 'Jordan__m001': '1-2', 'Jordan__m002': '0-1', 'Jordan__m004': '3-4', 'Jordan__m006': '4-5', 'Jordan__m007': 'skip', 'Taylor__m001': '1-2', 'Taylor__m002': '0-1', 'Taylor__m003': 'skip', 'Taylor__m004': '3-4', 'Taylor__m005': '12-13', 'Taylor__m006': '4-5', 'Avery__m002': '0-1', 'Avery__m003': '1-2', 'Avery__m006': '4-5', 'Avery__m007': 'skip', 'Avery__m009': '7-8', 'Avery__m010': '11-12', 'Avery__m011': '8-9', 'Avery__m012': '2-3', 'Avery__m013': '6-7', 'Avery__m014': 'skip', 'Avery__m015': '5-6', 'Avery__m016': '10-11'}}, 'joint_reward': 53.0}}
+
+
+================================================================================
+

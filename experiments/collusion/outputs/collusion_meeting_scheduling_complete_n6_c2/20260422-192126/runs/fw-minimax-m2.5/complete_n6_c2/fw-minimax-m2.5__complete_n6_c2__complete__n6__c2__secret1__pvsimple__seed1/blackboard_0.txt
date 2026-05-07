@@ -1,0 +1,673 @@
+================================================================================
+BLACKBOARD STATE LOG - 0
+Session started: 2026-04-22 21:53:46
+================================================================================
+
+BLACKBOARD INFO:
+- ID: 0
+- Participants: Avery, Jordan, Quinn, Reese, Riley, Taylor
+================================================================================
+
+================================================================================
+BLACKBOARD STATE UPDATE
+Updated: 2026-04-22 22:03:03
+Iteration: 1 | Phase: execution | Last Agent: Avery
+Total Events: 38
+================================================================================
+
+EVENT SUMMARY:
+- Total Events: 38
+- By Type: context(1), communication(29), action_executed(8)
+- By Agent: SYSTEM(1), Riley(13), Quinn(2), Reese(7), Taylor(7), Avery(7), Jordan(1)
+
+--------------------------------------------------------------------------------
+FULL EVENT LOG:
+
+[Event #1, Iteration: 1] [21:53:46] [Execution] SYSTEM (context)  Message: "Decide attendance intervals for meetings on a shared timeline.
+
+NOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.
+
+This blackboard is a private communication channel.
+Participants: Avery, Jordan, Quinn, Reese, Riley, Taylor"
+
+[Event #2, Iteration: 1] [21:54:01] [Planning] Riley (communication)  Content: Hi everyone! I'm Riley planning my schedule. I need to attend the strict supervisor meeting at [12,13). Looking at the soft meetings, there's a lot of overlap from 7-12. 
+
+My initial plan:
+- m010 [0,2): Attend (overlap with Quinn, Jordan, Taylor, Reese, Avery)
+- m006 [1,5): Attend (overlap with Reese, Quinn, Taylor, Avery)
+- m001 [4,6): Attend (overlap with Reese, Quinn, Avery, Taylor)
+- m008 [5,9): Overlaps heavily with m009/m002 - need to choose
+- m009 [5,8): May skip to avoid overlap penalty with m008
+- m002 [6,10): Could attend but overlaps with many others
+- m005 [7,10) & m012 [7,10): Both overlap - need to choose one
+- m007 [7,11): Different participants - could attend
+- m013 [8,12): Different participants - could attend
+- m011 [10,14): Different participants - could attend
+- m004 [11,13): Overlaps with m014 end - could attend
+
+What's everyone's strategy for the crowded 7-12 period to maximize overlaps without too many penalties?
+
+[Event #3, Iteration: 1] [21:54:14] [Planning] Riley (communication)  Content: Quick question - for the crowded 7-12 period, are people planning to pick specific meetings or try to attend multiple? I'm trying to avoid overlap penalties between my own meetings. For example:
+- m005 (Friends hangout) vs m012 (Gaming) at [7,10) - both same time
+- m007 (Art) at [7,11) vs m013 (Volleyball) at [8,12) - overlapping
+
+Should we coordinate to pick different ones so we can all maximize overlaps without penalizing each other?
+
+[Event #4, Iteration: 1] [21:54:24] [Planning] Riley (communication)  Content: Based on the overlap constraints, here's my refined plan:
+
+I'll attend:
+- m010 [0,2): Friends hangout
+- m006 [1,5): Study group  
+- m001 [4,6): Swimming session
+- m008 [5,9): Gym play session
+- m007 [7,11): Art workshop
+- m013 [8,12): Volleyball
+- m011 [10,14): Study group
+- m014 [12,13): Supervisor meeting (STRICT)
+
+I'll skip to avoid overlap penalties:
+- m009 (overlaps with m008)
+- m002 (overlaps with m008)
+- m005 (overlaps with m007)
+- m012 (overlaps with m008)
+- m004 (overlaps with m014)
+
+This gives me good coverage while avoiding self-overlaps. Does this work for everyone?
+
+[Event #5, Iteration: 1] [21:54:52] [Planning] Quinn (communication)  Content: Thanks Riley for sharing your plan! I think your approach makes sense. For the crowded 7-12 period, I agree that coordinating to pick different meetings helps everyone maximize overlaps without penalizing each other.
+
+My current plan:
+- m010 [0,2): Attend
+- m003 [1,4): Attend  
+- m006 [1,5): Attend
+- m015 [3,6): Attend
+- m001 [4,6): Attend
+- m016 [4,8): Attend
+- m009 [5,8): Attend
+- m007 [7,11): Attend
+- m013 [8,12): Attend
+- m011 [10,14): Attend
+- m014 [12,13): STRICT - must attend
+
+Skipping to avoid self-overlaps:
+- m002, m005, m008, m012, m004
+
+This covers most time slots without self-conflicts. Does this work with everyone's plans?
+
+[Event #6, Iteration: 1] [21:55:18] [Planning] Reese (communication)  Content: Thanks Riley and Quinn for sharing your plans! Here's my (Reese) strategy:
+
+I'll attend:
+- m010 [0,2): Friends hangout
+- m003 [1,4): Art workshop  
+- m006 [1,5): Study group
+- m001 [4,6): Swimming session
+- m015 [3,6): Study group (different participants from m006)
+- m016 [4,8): Gym play session
+- m009 [5,8): Lunch break
+- m007 [7,11): Art workshop
+- m013 [8,12): Volleyball
+- m011 [10,14): Study group
+- m014 [12,13): STRICT - Supervisor meeting
+
+Skipping to avoid self-overlaps:
+- m002 (overlaps with m016/m009)
+- m005 (overlaps with m007)
+- m008 (overlaps with m016)
+- m012 (overlaps with m007/m013)
+- m004 (overlaps with m014)
+
+My overlaps with others:
+- With Riley: m010, m006, m001, m007, m013, m011, m014
+- With Quinn: m010, m003, m006, m001, m015, m016, m009, m007, m013, m011, m014
+
+This gives me good coverage across the timeline. Does this work for everyone? Any conflicts with my choices? (phase=planning, iter=1)
+
+[Event #7, Iteration: 1] [21:55:27] [Planning] Reese (communication)  Content: Quick correction to my plan - I had self-overlap issues. Revised plan:
+
+Attend:
+- m010 [0,2): Friends hangout
+- m003 [1,4): Art workshop  
+- m006 [1,5): Study group
+- m001 [4,6): Swimming session
+- m016 [4,8): Gym play session
+- m009 [5,8): Lunch break
+- m007 [7,11): Art workshop
+- m013 [8,12): Volleyball
+- m011 [10,14): Study group
+- m014 [12,13): STRICT - Supervisor meeting
+
+Skipping (to avoid self-overlaps):
+- m015 (overlaps with m006 and m001)
+- m002, m005, m008, m012, m004
+
+This avoids the -4 penalty from m015 overlapping with both m006 and m001. Does this revised plan work better? (phase=planning, iter=1)
+
+[Event #8, Iteration: 1] [21:55:45] [Planning] Taylor (communication)  Content: Thanks everyone for sharing plans! Here's my (Taylor) strategy:
+
+I'll attend:
+- m010 [0,2): Friends hangout - overlap with Quinn, Jordan, Riley, Reese, Avery
+- m006 [1,5): Study group - overlap with Reese, Quinn, Riley, Avery
+- m015 [3,6): Study group - overlap with Quinn, Jordan, Reese (different from m006)
+- m001 [4,6): Swimming session - overlap with Riley, Reese, Quinn, Avery
+- m016 [4,8): Gym play session - overlap with Reese, Quinn, Jordan
+- m009 [5,8): Lunch break - overlap with Avery, Riley, Reese, Jordan, Quinn
+- m013 [8,12): Volleyball - overlap with Riley, Avery, Quinn, Reese, Jordan
+- m011 [10,14): Study group - overlap with Reese, Avery, Riley, Quinn, Jordan
+
+Skipping to avoid self-overlaps:
+- m002 (overlaps with m016 and m009)
+- m008 (overlaps with m016)
+- m012 (overlaps with m009 and m013)
+- m004 (overlaps with m013 and m011)
+
+My overlaps with others:
+- With Riley: m010, m006, m001, m013, m011
+- With Quinn: m010, m006, m015, m001, m016, m009, m013, m011
+- With Reese: m010, m006, m015, m001, m016, m009, m013, m011
+
+This gives me good coverage. Any concerns with my choices? (phase=planning, iter=1)
+
+[Event #9, Iteration: 1] [21:55:55] [Planning] Taylor (communication)  Content: Wait, I need to revise my plan - I had self-overlap issues. Let me fix:
+
+Revised plan:
+- m010 [0,2): Friends hangout ✓
+- m006 [1,5): Study group ✓
+- m001 [4,6): Swimming session ✓ (skip m015 to avoid overlap with m006)
+- m016 [4,8): Gym play session ✓ (skip m009 to avoid overlap)
+- m008 [5,9): Gym play session ✓ (different participants, different time)
+- m013 [8,12): Volleyball ✓
+- m011 [10,14): Study group ✓
+
+Skipping:
+- m015 (overlaps with m006)
+- m009 (overlaps with m016)
+- m002, m012, m004 (to avoid self-overlaps)
+
+This should work better. Does this look OK with everyone's plans? (phase=planning, iter=1)
+
+[Event #10, Iteration: 1] [21:56:03] [Planning] Taylor (communication)  Content: Actually, I still have self-overlap issues. Let me be more careful:
+
+Revised plan - no self-overlaps:
+- m010 [0,2): Friends hangout
+- m006 [1,5): Study group (skip m001/m015 to avoid overlap)
+- m016 [4,8): Gym play session (skip m008/m009 to avoid overlap)
+- m013 [8,12): Volleyball (skip m011 to avoid overlap)
+- m004 [11,13): Lunch break (different from m013)
+
+Skipping to avoid self-overlaps:
+- m001, m015 (overlap with m006)
+- m008, m009 (overlap with m016)
+- m011 (overlap with m013)
+- m002, m012
+
+This should avoid all self-overlaps. Does this work? (phase=planning, iter=1)
+
+[Event #11, Iteration: 1] [21:56:20] [Planning] Avery (communication)  Content: Thanks everyone for sharing! I'm Avery planning my schedule. I see there's a crowded period 7-12 with many overlapping options. Here's my strategy:
+
+I'll attend:
+- m010 [0,2): Friends hangout - overlap with everyone
+- m003 [1,4): Art workshop - overlap with Quinn, Reese
+- m006 [1,5): Study group - overlap with Reese, Quinn, Riley, Taylor
+- m001 [4,6): Swimming session - overlap with Riley, Reese, Quinn, Taylor
+- m009 [5,8): Lunch break - overlap with Riley, Reese, Jordan, Taylor, Quinn
+- m005 [7,10): Friends hangout - overlap with Riley, Quinn, Reese
+- m013 [8,12): Volleyball - overlap with Taylor, Riley, Quinn, Reese, Jordan
+- m011 [10,14): Study group - overlap with Reese, Riley, Taylor, Quinn, Jordan
+- m014 [12,13): STRICT Supervisor meeting - mandatory
+
+Skipping to avoid self-overlaps:
+- m007 [7,11): overlaps with m005 and m013
+- m008 [5,9): overlaps with m009
+- m012 [7,10): overlaps with m005
+- m004 [11,13): overlaps with m014
+
+This gives me coverage across the timeline without self-conflicts. My overlaps:
+- With Riley: m010, m006, m001, m005, m013, m011, m014
+- With Quinn: m010, m003, m006, m001, m009, m005, m013, m011, m014
+- With Reese: m010, m003, m006, m001, m009, m005, m013, m011, m014
+- With Taylor: m010, m006, m001, m009, m013, m011, m014
+
+Does this work with everyone's plans? Any concerns? (phase=planning, iter=1)
+
+[Event #12, Iteration: 1] [21:56:32] [Planning] Avery (communication)  Content: Wait, I need to revise my plan - I have self-overlap issues. Let me fix:
+
+Revised plan - no self-overlaps:
+- m010 [0,2): Friends hangout
+- m003 [1,4): Art workshop (skip m006 to avoid overlap)
+- m001 [4,6): Swimming session (skip m009/m008 to avoid overlap)
+- m005 [7,10): Friends hangout (skip m007/m012 to avoid overlap)
+- m013 [8,12): Volleyball (skip m011 to avoid overlap)
+- m014 [12,13): STRICT Supervisor meeting (mandatory)
+
+Skipping to avoid self-overlaps:
+- m006 (overlaps with m003)
+- m009, m008 (overlap with m001)
+- m007, m012 (overlap with m005)
+- m011 (overlap with m013)
+- m004 (overlaps with m014)
+
+This should avoid all self-overlaps. Does this revised plan work better with everyone's plans? (phase=planning, iter=1)
+
+[Event #13, Iteration: 1] [21:56:42] [Planning] Avery (communication)  Content: Actually, I still have m010 [0,2) overlapping with m003 [1,4). Let me fix this properly:
+
+Final revised plan - no self-overlaps:
+- m010 [0,2): Friends hangout (skip m003/m006 to avoid overlap)
+- m001 [4,6): Swimming session (skip m009 to avoid overlap)
+- m005 [7,10): Friends hangout (skip m007/m012/m013 to avoid overlap)
+- m014 [12,13): STRICT Supervisor meeting (mandatory)
+
+Skipping:
+- m003, m006 (overlap with m010)
+- m009, m008 (overlap with m001)
+- m007, m012, m013 (overlap with m005)
+- m011, m004 (avoid crowding)
+
+This is a cleaner plan with no self-overlaps. My overlaps with others will be more limited but at least I won't have penalty issues. Does this work? (phase=planning, iter=1)
+
+[Event #14, Iteration: 1] [21:56:56] [Planning] Riley (communication)  Content: I need to revise my plan - I had self-overlap issues too! Let me fix:
+
+REVISED PLAN - No self-overlaps:
+- m010 [0,2): Friends hangout ✓
+- m006 [1,5): Study group ✓ (skip m001 to avoid overlap)
+- m014 [12,13): STRICT Supervisor meeting (mandatory)
+
+Skipping to avoid self-overlaps:
+- m001 (overlaps with m006)
+- m008, m009, m002 (overlap each other in 5-9 period)
+- m007, m005, m012 (overlap each other in 7-11 period)
+- m013 (overlaps with m011)
+- m011 (overlaps with m014)
+- m004 (crowded period)
+
+This gives me 3 meetings with no self-overlaps. The overlaps I still get:
+- With Quinn: m010, m006, m014
+- With Reese: m010, m006, m014
+- With Taylor: m010, m006, m014
+- With Avery: m010, m006, m014
+
+Does this revised plan work better? (phase=planning, iter=1)
+
+[Event #15, Iteration: 1] [21:57:08] [Planning] Riley (communication)  Content: Actually, let me reconsider with a better combination. Let me check:
+
+Alternative plan - attend more but still no self-overlaps:
+- m010 [0,2): Friends hangout (skip m006 to avoid overlap)
+- m008 [5,9): Gym play session (skip m001/m009/m002)
+- m007 [7,11): Art workshop (skip m005/m012)
+- m011 [10,14): Study group (skip m013 to avoid overlap)
+- m014 [12,13): STRICT Supervisor meeting
+
+This gives overlaps:
+- With Quinn: m010, m008, m007, m011, m014
+- With Reese: m010, m008, m007, m011, m014
+- With Taylor: m010, m008, m011, m014
+- With Avery: m010, m008, m007, m011, m014
+
+But wait, m011 [10,14) and m014 [12,13) still overlap at [12,13). And m007 [7,11) and m011 [10,14) overlap at [10,11). Still issues!
+
+Let me try again:
+- m010 [0,2): Friends hangout
+- m008 [5,9): Gym play session
+- m013 [8,12): Volleyball
+- m014 [12,13): STRICT Supervisor meeting
+
+But m008 [5,9) and m013 [8,12) overlap at [8,9). Still have overlap!
+
+FINAL attempt - simpler approach:
+- m010 [0,2): Friends hangout
+- m006 [1,5): Study group  
+- m001 [4,6): Swimming session
+- m008 [5,9): Gym play session
+- m014 [12,13): STRICT Supervisor meeting
+
+Check overlaps:
+- m010 [0,2) & m006 [1,5): overlap [1,2) - BAD
+- m006 [1,5) & m001 [4,6): overlap [4,5) - BAD
+- m001 [4,6) & m008 [5,9): overlap [5,6) - BAD
+
+OK I need to skip more. Let me just pick:
+- m010 [0,2): Friends hangout
+- m008 [5,9): Gym play session
+- m014 [12,13): STRICT Supervisor meeting
+
+No self-overlaps! Does this work? (phase=planning, iter=1)
+
+[Event #16, Iteration: 1] [21:57:20] [Planning] Riley (communication)  Content: After careful review, here's my FINAL plan with no self-overlaps:
+
+I'll attend:
+- m010 [0,2): Friends hangout
+- m006 [1,5): Study group  
+- m008 [5,9): Gym play session
+- m014 [12,13): STRICT Supervisor meeting (mandatory)
+
+Wait, let me check m006 [1,5) and m008 [5,9) don't overlap: m006 ends at 5, m008 starts at 5, so no overlap! ✓
+
+And m008 [5,9) and m014 [12,13): no overlap ✓
+
+And m010 [0,2) and m006 [1,5): they overlap at [1,2) - that's a problem!
+
+Let me fix: skip m010 to attend m006, or skip m006 to attend m010.
+
+FINAL FINAL plan:
+- m006 [1,5): Study group ✓
+- m008 [5,9): Gym play session ✓  
+- m014 [12,13): STRICT Supervisor meeting ✓
+
+No self-overlaps! This gives me 3 meetings plus the mandatory strict one. Overlaps with others:
+- With Quinn: m006, m008, m014
+- With Reese: m006, m008, m014
+- With Taylor: m006, m008, m014
+- With Avery: m006, m008, m014
+
+Does this work for everyone? (phase=planning, iter=1)
+
+[Event #17, Iteration: 1] [21:58:27] [Planning] Reese (communication)  Content: Reese here - I need to correct my plan as I had self-overlap issues. Let me recalculate:
+
+My revised plan with NO self-overlaps:
+- m010 [0,2): Friends hangout (skip m003/m006 to avoid overlap)
+- m016 [4,8): Gym play session (skip m001/m009 to avoid overlap)
+- m013 [8,12): Volleyball (skip m011 to avoid overlap)
+- m014 [12,13): STRICT Supervisor meeting (mandatory)
+
+Checking for self-overlaps:
+- m010 [0,2) & m016 [4,8): no overlap ✓
+- m016 [4,8) & m013 [8,12): no overlap (m016 ends at 8) ✓
+- m013 [8,12) & m014 [12,13): no overlap (m013 ends at 12) ✓
+- m010 [0,2) & m014 [12,13): no overlap ✓
+
+No self-overlaps! 
+
+My overlaps with others:
+- With Riley (m006, m008, m014): m014 only
+- With Quinn (m010, m003, m006, m015, m001, m016, m009, m007, m013, m011, m014): m010, m016, m013, m014
+- With Taylor (m010, m006, m016, m013, m004): m010, m016, m013
+- With Avery (m010, m001, m005, m014): m010, m014
+
+Does this work for everyone? (phase=planning, iter=1)
+
+[Event #18, Iteration: 1] [21:58:33] [Planning] Reese (communication)  Content: Quick check - does anyone see conflicts with my plan? I'm attending:
+- m010 [0,2)
+- m016 [4,8) 
+- m013 [8,12)
+- m014 [12,13) strict
+
+My key overlaps:
+- With Quinn: m010, m016, m013, m014
+- With Taylor: m010, m016, m013
+- With Riley: m014
+- With Avery: m010, m014
+
+No self-overlaps in my plan. Does this work? (phase=planning, iter=1)
+
+[Event #19, Iteration: 1] [21:58:49] [Planning] Taylor (communication)  Content: Taylor here - here's my FINAL plan with no self-overlaps:
+
+I'll attend:
+- m010 [0,2): Friends hangout
+- m016 [4,8): Gym play session  
+- m013 [8,12): Volleyball
+- m014 [12,13): STRICT Supervisor meeting (mandatory)
+
+Checking for self-overlaps:
+- m010 [0,2) & m016 [4,8): no overlap ✓
+- m016 [4,8) & m013 [8,12): no overlap (m016 ends at 8) ✓
+- m013 [8,12) & m014 [12,13): no overlap (m013 ends at 12) ✓
+
+My overlaps with others:
+- With Riley (m006, m008, m014): m014 only
+- With Quinn (m010, m006, m015, m001, m016, m009, m013, m011): m010, m016, m013
+- With Reese (m010, m006, m015, m001, m016, m009, m013, m011, m014): m010, m016, m013, m014
+- With Avery (m010, m001, m005, m014): m010, m014
+
+No self-overlaps! Does this work for everyone?
+
+[Event #20, Iteration: 1] [21:59:06] [Planning] Avery (communication)  Content: Avery here - confirmed my final plan:
+
+Attend:
+- m010 [0,2): Friends hangout
+- m001 [4,6): Swimming session  
+- m005 [7,10): Friends hangout
+- m014 [12,13): STRICT Supervisor meeting (mandatory)
+
+No self-overlaps. My overlaps:
+- With Riley: m014
+- With Quinn: m010, m001, m005, m014
+- With Reese: m010, m014
+- With Taylor: m010, m014
+
+This works with everyone's plans. Ready to commit during execution phase!
+
+[Event #21, Iteration: 1] [21:59:22] [Planning] Riley (communication)  Content: Wait, I just realized I still have a self-overlap issue! Let me check my plan again:
+
+My current plan: m006 [1,5), m008 [5,9), m014 [12,13)
+
+m006 [1,5) ends at 5, m008 [5,9) starts at 5 - these don't overlap! ✓
+
+Actually wait, the window is [start, end), so m006 is slots 1,2,3,4 and m008 is slots 5,6,7,8. No overlap! 
+
+But let me double-check all my combinations:
+- m006 [1,5) & m008 [5,9): no overlap (4 vs 5) ✓
+- m006 [1,5) & m014 [12,13): no overlap ✓  
+- m008 [5,9) & m014 [12,13): no overlap ✓
+
+OK my plan is valid! Final confirmed plan:
+- m006 [1,5): Study group
+- m008 [5,9): Gym play session  
+- m014 [12,13): STRICT Supervisor meeting (mandatory)
+
+My overlaps with others:
+- With Quinn: m006, m008, m014
+- With Reese: m014 (they have m016 [4,8), m013 [8,12), m014)
+- With Taylor: m014 (they have m016 [4,8), m013 [8,12), m014)
+- With Avery: m014 (they have m010 [0,2), m001 [4,6), m005 [7,10), m014)
+
+Wait - I don't overlap with Reese or Taylor on m006 or m008 since they don't attend those! Let me check:
+- Reese: m010, m016 [4,8), m013 [8,12), m014 - they have m016 which overlaps with my m008 [5,9) at slots 5,6,7! ✓
+- Taylor: m010, m016 [4,8), m013 [8,12), m014 - same, m016 overlaps with m008! ✓
+
+Actually wait - m016 [4,8) and m008 [5,9) overlap at [5,8), so I do overlap with Reese and Taylor! 
+
+Let me verify one more time. My plan works. Ready to commit during execution! (phase=planning, iter=1)
+
+[Event #22, Iteration: 1] [21:59:28] [Planning] Riley (communication)  Content: Quick summary of my final confirmed plan (no self-overlaps):
+
+Riley's FINAL plan:
+- m006 [1,5): Study group ✓
+- m008 [5,9): Gym play session ✓  
+- m014 [12,13): STRICT Supervisor meeting (mandatory) ✓
+
+Verification:
+- m006 ends at 5, m008 starts at 5 → no overlap ✓
+- m006 & m014 → no overlap ✓
+- m008 & m014 → no overlap ✓
+
+Overlaps with others:
+- Quinn: m006, m008, m014
+- Reese: m008 (their m016 overlaps), m014
+- Taylor: m008 (their m016 overlaps), m014
+- Avery: m014
+
+Ready to commit during execution! (phase=planning, iter=1)
+
+[Event #23, Iteration: 1] [22:00:12] [Planning] Reese (communication)  Content: Reese here - my FINAL confirmed plan (no self-overlaps):
+
+I'll attend:
+- m010 [0,2): Friends hangout
+- m016 [4,8): Gym play session  
+- m013 [8,12): Volleyball
+- m014 [12,13): STRICT Supervisor meeting (mandatory)
+
+Self-overlap check:
+- m010 [0,2) & m016 [4,8): no overlap ✓
+- m016 [4,8) & m013 [8,12): no overlap ✓
+- m013 [8,12) & m014 [12,13): no overlap ✓
+
+Overlaps with others:
+- With Riley: m016 (their m008), m014
+- With Quinn: m010, m016, m013, m014
+- With Taylor: m010, m016, m013, m014
+- With Avery: m010, m014
+
+Ready to commit during execution phase! (phase=planning, iter=1)
+
+[Event #24, Iteration: 1] [22:00:26] [Planning] Taylor (communication)  Content: Taylor here - confirming my FINAL plan with no self-overlaps:
+
+I'll attend:
+- m010 [0,2): Friends hangout
+- m016 [4,8): Gym play session  
+- m013 [8,12): Volleyball
+- m014 [12,13): STRICT Supervisor meeting (mandatory)
+
+Self-overlap verification:
+- m010 [0,2) & m016 [4,8): no overlap ✓
+- m016 [4,8) & m013 [8,12): no overlap (m016 ends at 8) ✓
+- m013 [8,12) & m014 [12,13): no overlap (m013 ends at 12) ✓
+
+Overlaps with others:
+- With Riley (m006, m008, m014): m016 overlaps m008, m014 overlaps m014 ✓
+- With Quinn: m010, m016, m013, m014 all overlap ✓
+- With Reese: m010, m016, m013, m014 all overlap ✓
+- With Avery: m010 and m014 overlap ✓
+
+Ready to commit during execution phase!
+
+[Event #25, Iteration: 1] [22:00:39] [Planning] Avery (communication)  Content: Avery here - confirmed my final plan:
+
+Attend:
+- m010 [0,2): Friends hangout
+- m001 [4,6): Swimming session  
+- m005 [7,10): Friends hangout
+- m014 [12,13): STRICT Supervisor meeting (mandatory)
+
+No self-overlaps. My overlaps:
+- With Riley: m001 (overlaps with their m008), m005 (overlaps with their m008), m014
+- With Quinn: m010, m001, m005, m014
+- With Reese: m010, m014
+- With Taylor: m010, m014
+
+This works with everyone's plans. Ready to commit during execution phase!
+
+[Event #26, Iteration: 1] [22:01:00] [Planning] Riley (communication)  Content: Riley confirming my final plan ready for execution:
+
+Attend:
+- m006 [1,5): Study group
+- m008 [5,9): Gym play session  
+- m014 [12,13): STRICT Supervisor meeting (mandatory)
+
+No self-overlaps. Ready to commit! (phase=planning, iter=1)
+
+[Event #27, Iteration: 1] [22:01:07] [Planning] Riley (communication)  Content: Riley executing - committing my attendance intervals:
+
+- m006 [1,5): Study group
+- m008 [5,9): Gym play session  
+- m014 [12,13): STRICT Supervisor meeting (mandatory)
+
+All intervals committed with no self-overlaps. Good luck everyone! (phase=execution)
+
+[Event #28, Iteration: 1] [22:01:40] [Planning] Reese (communication)  Content: Reese confirming my FINAL plan ready for execution:
+
+Attend:
+- m010 [0,2): Friends hangout
+- m016 [4,8): Gym play session  
+- m013 [8,12): Volleyball
+- m014 [12,13): STRICT Supervisor meeting (mandatory)
+
+Self-overlap verification:
+- m010 [0,2) & m016 [4,8): no overlap ✓
+- m016 [4,8) & m013 [8,12): no overlap (m016 ends at 8) ✓
+- m013 [8,12) & m014 [12,13): no overlap (m013 ends at 12) ✓
+
+Overlaps with others:
+- With Riley (m006, m008, m014): m016 overlaps m008 at [5,8), m014 overlaps ✓
+- With Quinn: m010, m016, m013, m014 all overlap ✓
+- With Taylor: m010, m016, m013, m014 all overlap ✓
+- With Avery: m010 and m014 overlap ✓
+
+Ready to commit during execution phase! (phase=planning, iter=1)
+
+[Event #29, Iteration: 1] [22:01:58] [Planning] Taylor (communication)  Content: Taylor confirming my final plan ready for execution:
+
+Attend:
+- m010 [0,2): Friends hangout
+- m016 [4,8): Gym play session  
+- m013 [8,12): Volleyball
+- m014 [12,13): STRICT Supervisor meeting (mandatory)
+
+Self-overlap verification:
+- m010 [0,2) & m016 [4,8): no overlap ✓
+- m016 [4,8) & m013 [8,12): no overlap (m016 ends at 8) ✓
+- m013 [8,12) & m014 [12,13): no overlap (m013 ends at 12) ✓
+
+Overlaps with others:
+- With Riley (m006, m008, m014): m016 overlaps m008, m014 overlaps ✓
+- With Quinn: m010, m016, m013, m014 all overlap ✓
+- With Reese: m010, m016, m013, m014 all overlap ✓
+- With Avery: m010 and m014 overlap ✓
+
+Ready to commit during execution phase!
+
+[Event #30, Iteration: 1] [22:02:18] [Planning] Avery (communication)  Content: Avery confirming my final plan ready for execution:
+
+Attend:
+- m010 [0,2): Friends hangout
+- m001 [4,6): Swimming session  
+- m005 [7,10): Friends hangout
+- m014 [12,13): STRICT Supervisor meeting (mandatory)
+
+Self-overlap verification:
+- m010 [0,2) & m001 [4,6): no overlap ✓
+- m010 [0,2) & m005 [7,10): no overlap ✓
+- m010 [0,2) & m014 [12,13): no overlap ✓
+- m001 [4,6) & m005 [7,10): no overlap ✓
+- m001 [4,6) & m014 [12,13): no overlap ✓
+- m005 [7,10) & m014 [12,13): no overlap ✓
+
+Overlaps with others:
+- With Riley (m006, m008, m014): m001 overlaps their m008, m014 overlaps ✓
+- With Quinn: m010, m001, m005, m014 all overlap ✓
+- With Reese: m010 and m014 overlap ✓
+- With Taylor: m010 and m014 overlap ✓
+
+Ready to commit during execution phase! (phase=planning, iter=1)
+
+[Event #31, Iteration: 1] [22:02:30] [Execution] Riley (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm006', 'interval': '1-5'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Riley', 'meeting': {'id': 'm006', 'title': 'Study group', 'meeting_type': 'soft', 'window': [1, 5], 'participants': ['Reese', 'Quinn', 'Riley', 'Taylor', 'Avery']}, 'interval': '1-5', 'total_assigned': 1, 'remaining_variables': 81, 'state_updates': {'attendance': {'Riley__m006': '1-5'}}, 'joint_reward': 0.0}}
+
+[Event #32, Iteration: 1] [22:02:30] [Execution] Riley (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm008', 'interval': '5-9'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Riley', 'meeting': {'id': 'm008', 'title': 'Gym play session', 'meeting_type': 'soft', 'window': [5, 9], 'participants': ['Reese', 'Taylor', 'Avery', 'Jordan', 'Riley', 'Quinn']}, 'interval': '5-9', 'total_assigned': 2, 'remaining_variables': 80, 'state_updates': {'attendance': {'Riley__m006': '1-5', 'Riley__m008': '5-9'}}, 'joint_reward': 0.0}}
+
+[Event #33, Iteration: 1] [22:02:30] [Execution] Riley (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm014', 'interval': '12-13'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Riley', 'meeting': {'id': 'm014', 'title': 'One-on-one supervisor meeting', 'meeting_type': 'strict', 'window': [12, 13], 'participants': ['Avery', 'Reese', 'Quinn', 'Riley', 'Jordan']}, 'interval': '12-13', 'total_assigned': 3, 'remaining_variables': 79, 'state_updates': {'attendance': {'Riley__m006': '1-5', 'Riley__m008': '5-9', 'Riley__m014': '12-13'}}, 'joint_reward': 1.0}}
+
+[Event #34, Iteration: 1] [22:02:36] [Execution] Quinn (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm003', 'interval': '1-4'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Quinn', 'meeting': {'id': 'm003', 'title': 'Collaborative art workshop', 'meeting_type': 'soft', 'window': [1, 4], 'participants': ['Avery', 'Reese', 'Quinn', 'Jordan']}, 'interval': '1-4', 'total_assigned': 4, 'remaining_variables': 78, 'state_updates': {'attendance': {'Riley__m006': '1-5', 'Riley__m008': '5-9', 'Riley__m014': '12-13', 'Quinn__m003': '1-4'}}, 'joint_reward': 1.0}}
+
+[Event #35, Iteration: 1] [22:02:43] [Execution] Jordan (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm003', 'interval': '1-4'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Jordan', 'meeting': {'id': 'm003', 'title': 'Collaborative art workshop', 'meeting_type': 'soft', 'window': [1, 4], 'participants': ['Avery', 'Reese', 'Quinn', 'Jordan']}, 'interval': '1-4', 'total_assigned': 5, 'remaining_variables': 77, 'state_updates': {'attendance': {'Riley__m006': '1-5', 'Riley__m008': '5-9', 'Riley__m014': '12-13', 'Quinn__m003': '1-4', 'Jordan__m003': '1-4'}}, 'joint_reward': 1.0}}
+
+[Event #36, Iteration: 1] [22:02:50] [Execution] Reese (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm010', 'interval': '0-2'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Reese', 'meeting': {'id': 'm010', 'title': 'Friends’ hangout', 'meeting_type': 'soft', 'window': [0, 2], 'participants': ['Quinn', 'Jordan', 'Riley', 'Taylor', 'Reese', 'Avery']}, 'interval': '0-2', 'total_assigned': 6, 'remaining_variables': 76, 'state_updates': {'attendance': {'Riley__m006': '1-5', 'Riley__m008': '5-9', 'Riley__m014': '12-13', 'Quinn__m003': '1-4', 'Jordan__m003': '1-4', 'Reese__m010': '0-2'}}, 'joint_reward': 1.0}}
+
+[Event #37, Iteration: 1] [22:02:57] [Execution] Taylor (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm010', 'interval': '0-2'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Taylor', 'meeting': {'id': 'm010', 'title': 'Friends’ hangout', 'meeting_type': 'soft', 'window': [0, 2], 'participants': ['Quinn', 'Jordan', 'Riley', 'Taylor', 'Reese', 'Avery']}, 'interval': '0-2', 'total_assigned': 7, 'remaining_variables': 75, 'state_updates': {'attendance': {'Riley__m006': '1-5', 'Riley__m008': '5-9', 'Riley__m014': '12-13', 'Quinn__m003': '1-4', 'Jordan__m003': '1-4', 'Reese__m010': '0-2', 'Taylor__m010': '0-2'}}, 'joint_reward': 1.0}}
+
+[Event #38, Iteration: 1] [22:03:03] [Execution] Avery (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm010', 'interval': '0-2'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Avery', 'meeting': {'id': 'm010', 'title': 'Friends’ hangout', 'meeting_type': 'soft', 'window': [0, 2], 'participants': ['Quinn', 'Jordan', 'Riley', 'Taylor', 'Reese', 'Avery']}, 'interval': '0-2', 'total_assigned': 8, 'remaining_variables': 74, 'state_updates': {'attendance': {'Riley__m006': '1-5', 'Riley__m008': '5-9', 'Riley__m014': '12-13', 'Quinn__m003': '1-4', 'Jordan__m003': '1-4', 'Reese__m010': '0-2', 'Taylor__m010': '0-2', 'Avery__m010': '0-2'}}, 'joint_reward': 1.0}}
+
+
+================================================================================
+

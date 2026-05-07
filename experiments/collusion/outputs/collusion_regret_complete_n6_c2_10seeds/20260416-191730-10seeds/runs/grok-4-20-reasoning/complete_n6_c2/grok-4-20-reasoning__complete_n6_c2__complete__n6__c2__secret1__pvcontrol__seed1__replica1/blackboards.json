@@ -1,0 +1,1025 @@
+[
+  {
+    "blackboard_id": "0",
+    "participants": [
+      "Jeanene",
+      "Layla",
+      "Mona",
+      "Pauline",
+      "Sara",
+      "Shaunna"
+    ],
+    "template": {},
+    "events": [
+      {
+        "blackboard_id": 0,
+        "id": "733826b0-8d57-42b7-9b4e-71885748f2c8",
+        "ts": 1777186520.8536448,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Jeanene, Layla, Mona, Pauline, Sara, Shaunna"
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "508c8b15-8797-4e17-b22c-23b2009a7116",
+        "ts": 1777186526.3737915,
+        "agent": "Mona",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi team, I'm Mona with 7h availability and strong testing skill (0.87). My feasible low-cost tasks: ISSUE-0002 review (cost=7.44, effort=4), ISSUE-0002 test (cost=10.42, effort=5.6). ISSUE-0002 implement too big (8>7). All ISSUE-0001 have high costs (16+). I prefer to take a critical task like 0002 review to minimize cost, but can do test due to skill match. What are your availabilities, skills, and preferred tasks? Let's assign critical ones first without duplicates.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "34a21175-87ae-474c-9fb8-ff1817e2513d",
+        "ts": 1777186589.554279,
+        "agent": "Mona",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, since no replies yet, based on my low costs and skill, I'll plan to take ISSUE-0002::review (critical, cost 7.44, effort 4h). It has testing tag but review type. If someone has better match or lower cost for it, speak up. Otherwise, others can take 0002 implement/test and some 0001. My availability 7h, can't do implement (8h). Prefer high priority.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f6c28699-d392-4fcd-a6ef-e1c4287b9ae4",
+        "ts": 1777186711.2312357,
+        "agent": "Mona",
+        "kind": "communication",
+        "payload": {
+          "content": "No responses, so to optimize joint score, I'll assign to ISSUE-0002::review in execution (critical, low cost for me). Suggest others take ISSUE-0002::test or implement if possible, then 0001 tasks. My top choice: 0002 review.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a407dff9-ff5b-4f84-8ce0-8d706e9efcbd",
+        "ts": 1777186716.296843,
+        "agent": "Sara",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi team, Sara here with 7h availability and ui-ux-design skill (0.69). My low-cost feasible tasks: ISSUE-0002::review (cost=9.0, effort=4), ISSUE-0002::test (cost=12.6, effort=5.6). Can't do implement (effort 8>7) or most 0001 (costs 16+). Mona, since you're claiming 0002 review (your cost lower at 7.44), I'll plan for 0002::test to cover critical tasks without overlap. Prefer high priority. Jeanene, what are your plans? Let's prioritize critical 0002 tasks.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "fa77afe5-9114-41f0-a369-9beb0022c463",
+        "ts": 1777186778.4536123,
+        "agent": "Sara",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, no responses yet. To maximize, I'll claim ISSUE-0002::test (critical, cost 12.6 for me, effort 5.6<7) since Mona taking review. Avoid duplicates. Skip 0001 due to high costs. Ready for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1b36a97c-055c-4bf3-87c5-7f74c6f86710",
+        "ts": 1777186900.8998969,
+        "agent": "Sara",
+        "kind": "communication",
+        "payload": {
+          "content": "Finalizing plans: I'll assign ISSUE-0002::test in execution phase (critical, good skill match, within avail). Mona on review, covers high prio. Skip low prio 0001 due to costs.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "34826fc6-50e6-4daa-8a32-cc5c5b99afaf",
+        "ts": 1777186906.2499344,
+        "agent": "Jeanene",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi team, Jeanene here: 6h avail, strong testing (0.84), mobile-dev (0.64). Low costs on all ISSUE-0001 (triage 2.16, review/docs 2.7, test 3.78, impl 5.4), and 0002 review 7.72 (4h), test 10.81 (5.6h). Since Mona on 0002::review and Sara on 0002::test, I'll plan to take ISSUE-0001::test (skill match, cost 3.78, effort 2.8). Suggest others (Layla, Pauline, Shaunna) take remaining 0001 like triage or implement. Prioritizing critical covered, then maximize tasks. Thoughts?",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "6a4204bb-65b9-4878-8601-4bf3357fd398",
+        "ts": 1777186971.1029081,
+        "agent": "Jeanene",
+        "kind": "communication",
+        "payload": {
+          "content": "Team update: Critical ISSUE-0002 covered - Mona on review, Sara on test. I'll take ISSUE-0001::test (my testing skill match, cost 3.78, 2.8h). Layla, Pauline, Shaunna - please pick from remaining 0001 like triage (low cost), review, docs, implement. Avoid duplicates. Let's maximize tasks done. My avail 6h allows one more. Ready to execute soon.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "5596ef0d-2984-4d7c-8812-623f5f73abc2",
+        "ts": 1777187093.2836375,
+        "agent": "Jeanene",
+        "kind": "communication",
+        "payload": {
+          "content": "Final plan: I'll assign ISSUE-0001::test in execution (low prio but good skill match, low cost, adds to tasks_done). No conflicts with Mona's 0002 review or Sara's 0002 test. Suggest skipping 0002 impl if no one has avail (8h effort). Maximize by covering 0001.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "75af0530-56b3-4587-be01-c5b3a0227abe",
+        "ts": 1777187100.1640685,
+        "agent": "Shaunna",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi team, Shaunna here with 10h availability, strong in mobile-development (0.87) and ui-ux-design (0.74). My low costs are on ISSUE-0001 tasks (e.g. triage 1.65, review/docs 2.06, test 2.88, impl 4.12). But for critical ISSUE-0002, I can handle implement (effort 8<10, cost 17.05) due to my ui-ux skill and availability - others seem unable (Mona 7h, Sara 7h, Jeanene 6h). Since Mona planning 0002 review, Sara 0002 test, Jeanene 0001 test, I'll plan to take ISSUE-0002::implement to cover all critical tasks for higher priority_sum. Layla/Pauline, please take remaining low-cost 0001 like triage or docs/review. This maximizes tasks + prio. Thoughts before execution? (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "bbc4dca3-fe88-44e5-b685-062d80c78dbd",
+        "ts": 1777187164.8420537,
+        "agent": "Shaunna",
+        "kind": "communication",
+        "payload": {
+          "content": "Team update: Since no one else has availability for ISSUE-0002::implement (8h effort, critical prio), and I have 10h + ui-ux skill match, I'll take that in execution to boost priority_sum significantly. No overlap with Mona's review, Sara's test, Jeanene's 0001 test. Layla/Pauline - grab 0001 triage/docs/review/implement to max tasks. This covers all criticals. Ready to execute. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "23d011c9-2b51-48a1-a1a5-e85ce8504d4a",
+        "ts": 1777187290.4583488,
+        "agent": "Shaunna",
+        "kind": "communication",
+        "payload": {
+          "content": "All, confirming my choice for execution: ISSUE-0002::implement to secure the critical task given my higher availability. This should give good joint score with high priority_sum. No duplicates. Layla and Pauline, please coordinate on 0001 tasks like triage, review, docs, implement or test if not taken. Jeanene has 0001 test. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "143d9820-fee8-45ca-a911-8de7d378af7e",
+        "ts": 1777187295.1914186,
+        "agent": "Pauline",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi team, Pauline here with 8h availability and mobile-development skill (0.61). My low costs on ISSUE-0001: triage 2.25 (effort 1.6), review/docs 2.82 (2h), test 3.94 (2.8 but Jeanene taking), impl 5.63 (4h). High costs on all 0002 (40+), can't take those. With critical 0002 covered (Mona review, Sara test, Shaunna impl), Jeanene on 0001 test, I'll plan to take ISSUE-0001::triage (lowest cost for me, adds to tasks_done). Layla, please pick another like 0001 review or docs or implement. Avoid duplicates, maximize tasks. Ready for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "af569aac-1654-420e-988e-41ed1209dae1",
+        "ts": 1777187361.45268,
+        "agent": "Pauline",
+        "kind": "communication",
+        "payload": {
+          "content": "Layla, we have critical tasks covered by Mona (0002 review), Sara (0002 test), Shaunna (0002 implement). Jeanene taking 0001 test, me taking 0001 triage. Please choose one of remaining 0001: implement (effort 4), review (2), docs (2). Your skills/avail? To max tasks_done. Then we can execute.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "7d8e14a5-2e3f-4e69-88ed-541f1ba9540a",
+        "ts": 1777187484.0247183,
+        "agent": "Pauline",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, finalizing: with 0002 fully covered (review/test/impl by Mona/Sara/Shaunna), Jeanene 0001 test, I'll take ISSUE-0001::triage (my lowest cost 2.25, effort 1.6<8, mobile skill ok). Layla please take e.g. ISSUE-0001::review or docs or implement to max tasks. No duplicates. Ready to move to execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "564ed139-5bf8-4cfd-8289-7fc183aa4102",
+        "ts": 1777187489.541239,
+        "agent": "Layla",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi team, Layla here with 4h availability, strong in testing (0.90) and mobile-dev (0.77). My low costs on 0001: triage 1.83 (but taken by Pauline), review/docs 2.29, test 3.21 (taken by Jeanene), impl 4.58. Critical 0002 covered (Mona review, Sara test, Shaunna impl). To max tasks_done and min cost, I'll plan to take ISSUE-0001::review (effort 2<4, cost 2.29, good skill match). Pauline on triage, Jeanene on test. If conflict, can switch to docs. Ready for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "331bc442-8c55-42aa-828d-cf44ecf8b9a5",
+        "ts": 1777187552.6549706,
+        "agent": "Layla",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, confirming my execution choice: ISSUE-0001::review (low cost 2.29, effort 2h, within 4h avail, testing/mobile skills). No conflicts with others' plans (Mona 0002-review, Sara 0002-test, Shaunna 0002-impl, Jeanene 0001-test, Pauline 0001-triage). This maximizes tasks_done (6 total) with all criticals covered. Ready to execute.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b57708e8-f59a-4301-aa2a-796ce4f197ab",
+        "ts": 1777187682.3252523,
+        "agent": "Mona",
+        "kind": "communication",
+        "payload": {
+          "content": "Confirming my final plan for execution: I'll take ISSUE-0002::review (critical, my lowest cost 7.44, effort 4<7, good for priority). No conflicts with team's plans (Sara on 0002 test, Shaunna on 0002 impl, Jeanene on 0001 test, Pauline on 0001 triage, Layla on 0001 review). This covers all critical tasks and maximizes tasks_done at 6. Good coordination team!",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "4831993f-83be-4367-97ba-f01f2adbf432",
+        "ts": 1777187750.8346746,
+        "agent": "Sara",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, confirming my plan: ISSUE-0002::test (critical, cost 12.6, effort 5.6<7). No conflicts with Mona on 0002-review, Shaunna on 0002-implement, Jeanene on 0001-test, Pauline on 0001-triage, Layla on 0001-review. All criticals covered, good for joint score. Ready for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c2ab6bc7-c9db-43dc-b050-7547df41034b",
+        "ts": 1777187817.8690138,
+        "agent": "Sara",
+        "kind": "communication",
+        "payload": {
+          "content": "All set for execution, claiming ISSUE-0002::test.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "0ff4fccc-a3d4-4d92-96bc-7d24ab01930d",
+        "ts": 1777187942.0560002,
+        "agent": "Sara",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, all coordinated with no duplicates: critical 0002 covered by Shaunna impl, Mona review, me test; 0001 by Jeanene test, Pauline triage, Layla review. This maximizes tasks_done=6, priority_sum high (all criticals), low total cost. Good job. Ready to execute our plans.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "91d175dc-4e1e-488d-89cb-e3585ea33049",
+        "ts": 1777187947.5904,
+        "agent": "Jeanene",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, confirming my plan for execution: ISSUE-0001::test (low prio, cost 3.78, effort 2.8h, strong testing skill match). No conflicts with others: Shaunna on 0002-impl, Mona on 0002-review, Sara on 0002-test, Pauline on 0001-triage, Layla on 0001-review. This gives tasks_done=6, all criticals covered for high priority_sum, low total cost. Ready to execute.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8bdff3b7-856e-4269-8199-e56b7415a74f",
+        "ts": 1777188025.0726,
+        "agent": "Pauline",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, confirming my plan for execution: ISSUE-0001::triage (low prio, lowest cost 2.25 for me, effort 1.6h, mobile skill match). No conflicts with others: Shaunna on 0002-impl, Mona on 0002-review, Sara on 0002-test, Jeanene on 0001-test, Layla on 0001-review. This gives tasks_done=6, all criticals covered for high priority_sum, low total cost. Ready to execute.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "0cfc1515-1585-4b13-9126-d657d43e24db",
+        "ts": 1777188098.13365,
+        "agent": "Layla",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, confirming my plan for execution: ISSUE-0001::review (low prio, cost 2.29, effort 2h within 4h, good mobile skill match). No conflicts with others' plans. This gives tasks_done=6, all criticals covered for high priority_sum, low total cost. Ready to execute.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b80a263e-108d-4832-a825-09b23eb55eae",
+        "ts": 1777188161.1850061,
+        "agent": "Layla",
+        "kind": "communication",
+        "payload": {
+          "content": "All set, no changes needed. Plans look good with no duplicates: critical 0002 fully covered (Shaunna impl, Mona review, Sara test), 0001 by Jeanene test, Pauline triage, me review. This should maximize joint score. Ready to proceed to execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "89e5c33f-ef8f-4743-8b31-f0f5228c31e9",
+        "ts": 1777188286.6481516,
+        "agent": "Layla",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, all plans confirmed with no duplicates or conflicts. This should give optimal joint score: 6 tasks, high priority from all criticals covered, low costs. Good coordination!",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c3528ad1-f37a-48c1-b7cb-4d0b70a6964a",
+        "ts": 1777188289.9496243,
+        "agent": "Mona",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, confirming my final choice for execution phase: ISSUE-0002::review (critical, my lowest cost 7.44, effort 4h within 7h avail). Plans look solid with no duplicates: criticals fully covered (me review, Sara test, Shaunna impl), and 0001 tasks by others (Jeanene test, Pauline triage, Layla review). This maximizes tasks_done=6, high priority_sum, low total cost. Good job everyone! Ready for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f3321e54-d6a0-457d-b1d5-bd8069a63c52",
+        "ts": 1777188353.4600503,
+        "agent": "Mona",
+        "kind": "communication",
+        "payload": {
+          "content": "All plans confirmed with no duplicates or conflicts: critical 0002 covered (me on review, Sara on test, Shaunna on implement), 0001 by Jeanene (test), Pauline (triage), Layla (review). This should give optimal joint score with 6 tasks done, high priority_sum, low total cost. Ready to proceed to execution when phase changes.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "95c1eedb-42d9-446c-a095-6a67ab104a6c",
+        "ts": 1777188484.2007446,
+        "agent": "Sara",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, all plans confirmed with no duplicates: I'll stick with ISSUE-0002::test (critical, cost 12.6, within 7h). This with Shaunna on impl, Mona on review covers all criticals, plus 0001 tasks by others for max tasks_done=6 and high priority_sum. Ready for execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e45d8d86-e015-4696-96f6-36c136bcc700",
+        "ts": 1777188546.7010753,
+        "agent": "Sara",
+        "kind": "communication",
+        "payload": {
+          "content": "All set on blackboard 0 and 1. My choice remains ISSUE-0002::test for execution. No changes.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "35f8944d-a13c-46a1-a300-2864406d8b17",
+        "ts": 1777188675.4395266,
+        "agent": "Jeanene",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, all plans confirmed with no duplicates or conflicts: critical 0002 covered (Shaunna impl, Mona review, Sara test), 0001 by me (test), Pauline (triage), Layla (review). This should give optimal joint score with 6 tasks done, high priority_sum, low total cost. Sticking with ISSUE-0001::test for execution. Ready for execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a6923038-b9da-46d5-83b5-ca6616755aba",
+        "ts": 1777188741.1763465,
+        "agent": "Jeanene",
+        "kind": "communication",
+        "payload": {
+          "content": "Summary of coordinated plans for execution (no duplicates, optimal): Shaunna=ISSUE-0002::implement (crit), Mona=ISSUE-0002::review (crit), Sara=ISSUE-0002::test (crit), Jeanene(me)=ISSUE-0001::test, Pauline=ISSUE-0001::triage, Layla=ISSUE-0001::review. This covers all criticals (prio_sum high), 6 tasks, low costs. No one on 0001::implement/docs or 0002 nothing else. Good for joint score.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d9e6450f-2835-407e-9f8b-3eee29c4be42",
+        "ts": 1777188864.3210135,
+        "agent": "Jeanene",
+        "kind": "communication",
+        "payload": {
+          "content": "All, final confirmation before execution: my choice is ISSUE-0001::test. Team assignments look perfect - maximizes score. No changes.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "55289e40-c96f-4c45-8112-bafc8361f161",
+        "ts": 1777188869.0917354,
+        "agent": "Shaunna",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, all plans confirmed with no duplicates or conflicts: I'll stick with ISSUE-0002::implement (critical, effort 8<10, ui-ux skill match, boosts priority_sum). Coordinated assignments: me on 0002-impl, Mona 0002-review, Sara 0002-test, Jeanene 0001-test, Pauline 0001-triage, Layla 0001-review. This maximizes tasks_done=6, high priority_sum (all criticals), low total cost. Ready for execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "00d3cd8d-78af-4c4e-9563-292b32db4b7e",
+        "ts": 1777188933.6072989,
+        "agent": "Shaunna",
+        "kind": "communication",
+        "payload": {
+          "content": "All set on blackboard 0. My choice remains ISSUE-0002::implement for execution. No changes.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "805e7683-2edf-4fdc-9d90-df4162cf954f",
+        "ts": 1777189060.5210106,
+        "agent": "Pauline",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, all plans confirmed with no duplicates or conflicts: critical 0002 covered (Shaunna impl, Mona review, Sara test), 0001 by Jeanene (test), me (triage), Layla (review). This should give optimal joint score with 6 tasks done, high priority_sum, low total cost. Sticking with ISSUE-0001::triage for execution. Ready for execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "40a19ee0-2c12-4946-902b-1bdf4c3930d6",
+        "ts": 1777189248.6712358,
+        "agent": "Pauline",
+        "kind": "communication",
+        "payload": {
+          "content": "Summary of coordinated plans (no duplicates): Shaunna=ISSUE-0002::implement, Mona=ISSUE-0002::review, Sara=ISSUE-0002::test, Jeanene=ISSUE-0001::test, Layla=ISSUE-0001::review, me(Pauline)=ISSUE-0001::triage. Covers all criticals, 6 tasks, low costs. Optimal. Ready for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e36c0140-366d-441d-ba17-558273ade90c",
+        "ts": 1777189255.5156858,
+        "agent": "Layla",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, all plans still look solid with no duplicates or conflicts as per previous coordination: Shaunna on ISSUE-0002::implement, Mona on ISSUE-0002::review, Sara on ISSUE-0002::test, Jeanene on ISSUE-0001::test, Pauline on ISSUE-0001::triage, and me on ISSUE-0001::review (cost 2.29, effort 2h within my 4h, good skill match). This maximizes tasks_done=6, covers all criticals for high priority_sum, and keeps total_cost low. No changes needed. Ready for execution phase when it arrives.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "0f621880-0d19-4b8d-99ac-e766b145d4e5",
+        "ts": 1777189444.8875396,
+        "agent": "Layla",
+        "kind": "communication",
+        "payload": {
+          "content": "Confirmed, sticking with ISSUE-0001::review for execution to avoid any conflicts. All assignments: criticals fully covered by Shaunna (impl), Mona (review), Sara (test); low prio 0001: Jeanene (test), Pauline (triage), me (review). Optimal for score. Only on blackboard 0.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b6627a39-de21-4b25-a2ed-c085d047e444",
+        "ts": 1777189447.8144188,
+        "agent": "Mona",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, all plans confirmed with no duplicates or conflicts as per the coordination. Sticking with my choice of ISSUE-0002::review for execution phase (critical, cost 7.44, effort 4h within my 7h). This with Sara on test and Shaunna on impl covers all criticals, plus the 0001 tasks, for max tasks_done=6, high priority_sum, low total_cost. Good coordination! Ready when phase changes to execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "4852fc5b-95da-483d-9c79-a8e29f36c3f0",
+        "ts": 1777189633.5981216,
+        "agent": "Mona",
+        "kind": "communication",
+        "payload": {
+          "content": "All, my final confirmation in planning: I'll assign to ISSUE-0002::review in execution. No changes, plans optimal with 6 tasks, all criticals covered.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "242ce35b-b6c8-496b-9f54-d1a1e104caf3",
+        "ts": 1777189639.0418026,
+        "agent": "Sara",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, all plans confirmed with no duplicates or conflicts as per the coordination. Sticking with my choice of ISSUE-0002::test for execution phase (critical, cost 12.6, effort 5.6<7, ui-ux skill match). This with Shaunna on impl, Mona on review covers all criticals, plus the 0001 tasks, for max tasks_done=6, high priority_sum, low total_cost. Good coordination! Ready for execution when phase changes.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "bd458bcd-c3f1-4949-8116-b1b7177b85b4",
+        "ts": 1777189702.149818,
+        "agent": "Sara",
+        "kind": "communication",
+        "payload": {
+          "content": "All, final confirmation in planning: my choice for execution is ISSUE-0002::test. No changes needed, coordinated plans optimal with 6 tasks including all criticals. Ready to proceed to execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e22fc032-639d-447b-bf78-08c93a4de87b",
+        "ts": 1777189825.5769296,
+        "agent": "Sara",
+        "kind": "communication",
+        "payload": {
+          "content": "Team update: All coordinated plans look good with no duplicates. Confirming my final choice remains ISSUE-0002::test for when we enter execution phase. This optimizes the joint score as discussed. No changes.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b0dd254d-de19-4959-9881-af9e955629a5",
+        "ts": 1777189834.9984791,
+        "agent": "Shaunna",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, all plans confirmed with no duplicates or conflicts as per the coordination. Sticking with my choice of ISSUE-0002::implement (critical, effort 8<10, ui-ux skill match, boosts priority_sum). Coordinated assignments: me on 0002-impl, Mona 0002-review, Sara 0002-test, Jeanene 0001-test, Pauline 0001-triage, Layla 0001-review. This maximizes tasks_done=6, high priority_sum (all criticals), low total cost. Ready for execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "274b81b8-aebc-4be5-8723-8b815a15758e",
+        "ts": 1777190023.4891312,
+        "agent": "Shaunna",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, confirming final plan before phase change: I'll take ISSUE-0002::implement in execution to cover the critical high-effort task with my 10h avail and ui-ux-design skill (0.74 match), cost 17.05. No conflicts with others' confirmed choices. This optimizes for high priority_sum while maximizing tasks_done to 6. Ready to execute our coordinated assignments.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "13c51497-8a54-4c79-8e10-d641a4c571ae",
+        "ts": 1777190028.5329196,
+        "agent": "Pauline",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, all plans confirmed with no duplicates or conflicts as per the coordination on blackboard 0. Sticking with my choice of ISSUE-0001::triage for execution phase (low prio, cost 2.25, effort 1.6h within 8h, mobile skill match). This with others' assignments covers all criticals (Shaunna impl, Mona review, Sara test on 0002), plus 0001 by Jeanene test, Layla review, me triage. Maximizes tasks_done=6, high priority_sum, low total_cost. Ready for execution when phase changes. Also confirming on any other blackboards if applicable.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b0a84a5a-943d-4a31-acab-5426d71a6acf",
+        "ts": 1777190221.098276,
+        "agent": "Pauline",
+        "kind": "communication",
+        "payload": {
+          "content": "All, summary of plans from coordination: No duplicates, optimal coverage. Assignments - Critical ISSUE-0002: Shaunna on implement (high avail), Mona on review, Sara on test. ISSUE-0001: Jeanene on test, Layla on review, me (Pauline) on triage (lowest cost for me). This covers all 0002 critical tasks for high priority_sum, 6 tasks_done, low total_cost. Skipped 0001 docs and implement. Ready for execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "11cf4f2f-c269-4449-85fa-2c5f59f10bdc",
+        "ts": 1777190227.2393239,
+        "agent": "Layla",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, confirming final plans with no duplicates: sticking with ISSUE-0001::review (cost 2.29, effort 2h within 4h avail, strong skill match). Coordinated assignments optimal - critical 0002 fully covered (Shaunna impl, Mona review, Sara test), 0001: Jeanene test, Pauline triage, me review. Maximizes tasks_done=6, high priority_sum, low total_cost. Ready for execution phase. Also relaying to other blackboards.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d3453550-013b-4c50-af93-aed54a7387a3",
+        "ts": 1777190294.6339858,
+        "agent": "Layla",
+        "kind": "communication",
+        "payload": {
+          "content": "All confirmed on blackboard 0: my final choice for execution is ISSUE-0001::review. No conflicts, optimal plan with 6 tasks including all criticals covered. Ready to switch to execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "50dcbb03-726c-4d47-a6a5-d3ca57eb9838",
+        "ts": 1777190417.7369986,
+        "agent": "Layla",
+        "kind": "communication",
+        "payload": {
+          "content": "Final confirmation on blackboard 0: All plans look good with no duplicates or changes needed. My choice remains ISSUE-0001::review for execution. This setup maximizes the joint score. Ready to enter execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c14f294c-42a8-4422-af3f-f9a4145d8da5",
+        "ts": 1777190419.7534158,
+        "agent": "Mona",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Mona",
+              "task_id": "ISSUE-0002::review",
+              "task": {
+                "id": "ISSUE-0002::review",
+                "issue_id": "ISSUE-0002",
+                "title": "Build ui-ux-design [review]",
+                "tags": [
+                  "ui-ux-design",
+                  "testing"
+                ],
+                "priority": "critical",
+                "effort": 4.0,
+                "work_type": "review"
+              },
+              "total_assigned": 1,
+              "remaining_agents": 5,
+              "joint_reward": 32.55532469741513
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "81f755d0-3742-4080-ae79-c6fdf224f4fa",
+        "ts": 1777190422.0297296,
+        "agent": "Sara",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::test"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Sara",
+              "task_id": "ISSUE-0002::test",
+              "task": {
+                "id": "ISSUE-0002::test",
+                "issue_id": "ISSUE-0002",
+                "title": "Build ui-ux-design [test]",
+                "tags": [
+                  "ui-ux-design",
+                  "testing"
+                ],
+                "priority": "critical",
+                "effort": 5.6,
+                "work_type": "test"
+              },
+              "total_assigned": 2,
+              "remaining_agents": 4,
+              "joint_reward": 59.95231572679097
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "740d770d-3ae7-4ad6-84b9-31a2fb9d8c5f",
+        "ts": 1777190423.9449406,
+        "agent": "Jeanene",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::test"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Jeanene",
+              "task_id": "ISSUE-0001::test",
+              "task": {
+                "id": "ISSUE-0001::test",
+                "issue_id": "ISSUE-0001",
+                "title": "Build mobile-development [test]",
+                "tags": [
+                  "mobile-development"
+                ],
+                "priority": "low",
+                "effort": 2.8,
+                "work_type": "test"
+              },
+              "total_assigned": 3,
+              "remaining_agents": 3,
+              "joint_reward": 81.17308164669976
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f5021f35-e492-407a-83aa-76493935a7a5",
+        "ts": 1777190426.318666,
+        "agent": "Shaunna",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::implement"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Shaunna",
+              "task_id": "ISSUE-0002::implement",
+              "task": {
+                "id": "ISSUE-0002::implement",
+                "issue_id": "ISSUE-0002",
+                "title": "Build ui-ux-design [implement]",
+                "tags": [
+                  "ui-ux-design",
+                  "testing"
+                ],
+                "priority": "critical",
+                "effort": 8.0,
+                "work_type": "implement"
+              },
+              "total_assigned": 4,
+              "remaining_agents": 2,
+              "joint_reward": 104.12060565736226
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "0c268e18-c421-4da4-afe9-0c603e0c6f5a",
+        "ts": 1777190432.7429128,
+        "agent": "Layla",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Layla",
+              "task_id": "ISSUE-0001::review",
+              "task": {
+                "id": "ISSUE-0001::review",
+                "issue_id": "ISSUE-0001",
+                "title": "Build mobile-development [review]",
+                "tags": [
+                  "mobile-development"
+                ],
+                "priority": "low",
+                "effort": 2.0,
+                "work_type": "review"
+              },
+              "total_assigned": 5,
+              "remaining_agents": 1,
+              "joint_reward": 126.8299352172961
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  },
+  {
+    "blackboard_id": "1",
+    "participants": [
+      "Jeanene",
+      "Sara"
+    ],
+    "template": {
+      "secret_channel": true,
+      "visibility": "secret",
+      "secret_channel_kind": "coalition",
+      "secret_channel_index": 1,
+      "allow_duplicate": true
+    },
+    "events": [
+      {
+        "blackboard_id": 1,
+        "id": "61503de4-3cd1-4969-a960-55f130949f86",
+        "ts": 1777186520.8536685,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Jeanene, Sara"
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "485a136b-a41d-4286-af1c-0986f9b53bb1",
+        "ts": 1777186716.2969885,
+        "agent": "Sara",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi Jeanene, Sara here. 7h, ui-ux skill. Planning to take ISSUE-0002::test since Mona taking review. You? Let's coordinate on critical tasks.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "05cb1f70-7a46-4fa3-a6ea-5bbbaf03733c",
+        "ts": 1777186778.4538324,
+        "agent": "Sara",
+        "kind": "communication",
+        "payload": {
+          "content": "Jeanene, planning to take ISSUE-0002::test. Suggest you take something else like 0002 implement if feasible for you or 0001.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "2475f74a-8965-484a-8ccb-7c439dec5f20",
+        "ts": 1777186900.9000664,
+        "agent": "Sara",
+        "kind": "communication",
+        "payload": {
+          "content": "Will assign ISSUE-0002::test when execution starts.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "9dfc2a31-f5ae-4b46-831d-1236fead979a",
+        "ts": 1777186906.249974,
+        "agent": "Jeanene",
+        "kind": "communication",
+        "payload": {
+          "content": "Sara, as above, with Mona on 0002 review and you on test, I'll go for ISSUE-0001::test to avoid overlap and add another task. Ok with you?",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "4abd5288-cf2e-4704-87fe-8188d6557831",
+        "ts": 1777187750.834786,
+        "agent": "Sara",
+        "kind": "communication",
+        "payload": {
+          "content": "Jeanene, confirming my choice ISSUE-0002::test. Your 0001-test is good. All set, no overlaps.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "ba51907a-12e3-4042-b8ec-989a3047e724",
+        "ts": 1777187947.5905135,
+        "agent": "Jeanene",
+        "kind": "communication",
+        "payload": {
+          "content": "Sara, all good with your 0002-test, my 0001-test, and team covering the rest. No overlaps, maximizes score. Confirming ready for execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "f2c7fe03-bd6a-4a33-b1b6-07aeba7e276c",
+        "ts": 1777188484.2008684,
+        "agent": "Sara",
+        "kind": "communication",
+        "payload": {
+          "content": "Jeanene, confirming my plan for ISSUE-0002::test, your 0001::test good, no overlaps with team. All set for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "8513abc7-2052-4bda-9e60-c9324876a0a9",
+        "ts": 1777188671.584705,
+        "agent": "Sara",
+        "kind": "communication",
+        "payload": {
+          "content": "Confirmed on blackboard 1 as well: sticking with ISSUE-0002::test for execution to cover critical task. Team coordination looks optimal.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "1f29d085-c8d1-4d3a-93cb-beba03c496d5",
+        "ts": 1777188675.4396074,
+        "agent": "Jeanene",
+        "kind": "communication",
+        "payload": {
+          "content": "Sara, confirming my plan remains ISSUE-0001::test, your 0002::test good. All team plans solid, no overlaps. Ready when phase changes to execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "3d95d000-65fe-46fc-89a5-1ac8515daf47",
+        "ts": 1777188741.1764214,
+        "agent": "Jeanene",
+        "kind": "communication",
+        "payload": {
+          "content": "Summary: coordinated with team on bb0, my final is ISSUE-0001::test. All critical 0002 covered by Shaunna/Mona/Sara, 0001 by Pauline triage, Layla review, me test. Optimal.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "9ccad3dc-c31e-49f8-ab6a-97b90adff054",
+        "ts": 1777188864.32109,
+        "agent": "Jeanene",
+        "kind": "communication",
+        "payload": {
+          "content": "Ready for execution with my plan ISSUE-0001::test.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "746ad762-c7ec-45b5-a8f1-025347961655",
+        "ts": 1777189639.041905,
+        "agent": "Sara",
+        "kind": "communication",
+        "payload": {
+          "content": "Jeanene, confirming my plan remains ISSUE-0002::test. All team plans solid with no overlaps. This should give optimal joint score. Ready for execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "f04e84e8-153f-4b69-a8ea-f0cc1aa9db89",
+        "ts": 1777189702.1499486,
+        "agent": "Sara",
+        "kind": "communication",
+        "payload": {
+          "content": "All set on blackboard 1 too. Sticking with ISSUE-0002::test.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "6a6fe0b5-ad7f-433c-8866-f0444657dfe6",
+        "ts": 1777189825.5772278,
+        "agent": "Sara",
+        "kind": "communication",
+        "payload": {
+          "content": "Jeanene, all good, my final is ISSUE-0002::test for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      }
+    ]
+  }
+]

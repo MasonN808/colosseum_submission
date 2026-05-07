@@ -1,0 +1,85 @@
+================================================================================
+BLACKBOARD STATE LOG - 1
+Session started: 2026-04-24 17:51:31
+================================================================================
+
+BLACKBOARD INFO:
+- ID: 1
+- Participants: General_Hospital_Triage, General_Hospital_Radiology, Resource_Provisioner, General_Hospital_Surgery
+================================================================================
+
+================================================================================
+BLACKBOARD STATE UPDATE
+Updated: 2026-04-24 18:08:33
+Iteration: 1 | Phase: execution | Last Agent: General_Hospital_Surgery
+Total Events: 15
+================================================================================
+
+EVENT SUMMARY:
+- Total Events: 15
+- By Type: context(1), action_executed(12), communication(2)
+- By Agent: SYSTEM(1), General_Hospital_Triage(5), General_Hospital_Radiology(3), Resource_Provisioner(4), General_Hospital_Surgery(2)
+
+--------------------------------------------------------------------------------
+FULL EVENT LOG:
+
+[Event #1, Iteration: 1] [17:51:31] [Execution] SYSTEM (context)  Message: "Resource-Constrained Job Shop with Provisioner.
+
+This blackboard is a private communication channel.
+Participants: General_Hospital_Triage, General_Hospital_Radiology, Resource_Provisioner, General_Hospital_Surgery"
+
+[Event #2, Iteration: 1] [17:53:35] [Planning] General_Hospital_Triage (action_executed)  Action_Params: {'transfers': {'General_Hospital_Triage': {'to_hospital': 'Resource_Provisioner', 'resource_type': 'Surgical_Packs', 'amount': 9, 'rationale': 'Not needed for Triage. Transferring all 9 to avoid holding cost (-90) and earn transfer reward (+135).'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Transferring 9 Surgical_Packs to Resource_Provisioner. Rationale: Not needed for Triage. Transferring all 9 to avoid holding cost (-90) and earn transfer reward (+135).', 'state_updates': {'transfers': {'General_Hospital_Triage': {'to_hospital': 'Resource_Provisioner', 'resource_type': 'Surgical_Packs', 'amount': 9, 'rationale': 'Not needed for Triage. Transferring all 9 to avoid holding cost (-90) and earn transfer reward (+135).'}}}}
+
+[Event #3, Iteration: 1] [17:53:49] [Planning] General_Hospital_Radiology (action_executed)  Action_Params: {'transfers': {'General_Hospital_Radiology': {'to_hospital': 'Resource_Provisioner', 'resource_type': 'PPE_Sets', 'amount': 45, 'rationale': 'No radiology jobs in queue. Transferring all 45 PPE_Sets to avoid holding cost (-450) and earn transfer reward (+675).'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Transferring 45 PPE_Sets to Resource_Provisioner. Rationale: No radiology jobs in queue. Transferring all 45 PPE_Sets to avoid holding cost (-450) and earn transfer reward (+675).', 'state_updates': {'transfers': {'General_Hospital_Radiology': {'to_hospital': 'Resource_Provisioner', 'resource_type': 'PPE_Sets', 'amount': 45, 'rationale': 'No radiology jobs in queue. Transferring all 45 PPE_Sets to avoid holding cost (-450) and earn transfer reward (+675).'}}}}
+
+[Event #4, Iteration: 1] [17:54:16] [Planning] Resource_Provisioner (action_executed)  Action_Params: {'transfers': {'Resource_Provisioner': {'to_hospital': 'St_Marys_Center', 'resource_type': 'PPE_Sets', 'amount': 5, 'rationale': 'Critical shortage: St_Marys_Center has 0 PPE_Sets. Sending 5 units to prevent resource failures.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Transferring 5 PPE_Sets to St_Marys_Center. Rationale: Critical shortage: St_Marys_Center has 0 PPE_Sets. Sending 5 units to prevent resource failures.', 'state_updates': {'transfers': {'Resource_Provisioner': {'to_hospital': 'St_Marys_Center', 'resource_type': 'PPE_Sets', 'amount': 5, 'rationale': 'Critical shortage: St_Marys_Center has 0 PPE_Sets. Sending 5 units to prevent resource failures.'}}}}
+
+[Event #5, Iteration: 1] [17:54:49] [Planning] General_Hospital_Surgery (action_executed)  Action_Params: {'transfers': {'General_Hospital_Surgery': {'to_hospital': 'Resource_Provisioner', 'resource_type': 'Oxygen_Tanks', 'amount': 17, 'rationale': 'No surgery jobs in queue. Transferring all 17 Oxygen_Tanks to avoid holding cost (-170) and earn transfer reward (+255).'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Transferring 17 Oxygen_Tanks to Resource_Provisioner. Rationale: No surgery jobs in queue. Transferring all 17 Oxygen_Tanks to avoid holding cost (-170) and earn transfer reward (+255).', 'state_updates': {'transfers': {'General_Hospital_Surgery': {'to_hospital': 'Resource_Provisioner', 'resource_type': 'Oxygen_Tanks', 'amount': 17, 'rationale': 'No surgery jobs in queue. Transferring all 17 Oxygen_Tanks to avoid holding cost (-170) and earn transfer reward (+255).'}}}}
+
+[Event #6, Iteration: 1] [17:56:11] [Planning] General_Hospital_Triage (action_executed)  Action_Params: {'broadcast_message': {'General_Hospital_Triage': {'message': 'CRITICAL DEFICIT at General_Hospital_Triage: Need 20 PPE_Sets urgently! Have 0 PPE_Sets with 20 patients waiting. Resource_Provisioner please send 20 PPE_Sets to General_Hospital immediately. SURPLUS being sent to Provisioner: IV_Kits(21), Anesthetics(9), Pain_Killers(21).', 'rationale': 'Broadcasting critical PPE_Sets shortage to entire network. Without 20 PPE_Sets, all 20 patients will incur resource failure penalties (-300 each). Also announcing surplus transfers.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': "BROADCAST: 'CRITICAL DEFICIT at General_Hospital_Triage: Need 20 PPE_Sets urgently! Have 0 PPE_Sets with 20 patients waiting. Resource_Provisioner please send 20 PPE_Sets to General_Hospital immediately. SURPLUS being sent to Provisioner: IV_Kits(21), Anesthetics(9), Pain_Killers(21).'. (Internal Rationale: Broadcasting critical PPE_Sets shortage to entire network. Without 20 PPE_Sets, all 20 patients will incur resource failure penalties (-300 each). Also announcing surplus transfers.)", 'state_updates': {'broadcast_message': {'General_Hospital_Triage': {'message': 'CRITICAL DEFICIT at General_Hospital_Triage: Need 20 PPE_Sets urgently! Have 0 PPE_Sets with 20 patients waiting. Resource_Provisioner please send 20 PPE_Sets to General_Hospital immediately. SURPLUS being sent to Provisioner: IV_Kits(21), Anesthetics(9), Pain_Killers(21).', 'rationale': 'Broadcasting critical PPE_Sets shortage to entire network. Without 20 PPE_Sets, all 20 patients will incur resource failure penalties (-300 each). Also announcing surplus transfers.'}}}}
+
+[Event #7, Iteration: 1] [17:57:01] [Planning] General_Hospital_Radiology (communication)  Content: General_Hospital_Radiology: Job queue EMPTY. Transferring all remaining surplus to Resource_Provisioner: IV_Kits(41), Anesthetics(9), Pain_Killers(21) = 71 units. Inventory will be ZERO. Triage needs 20 PPE_Sets urgently — Provisioner should prioritize sending to General_Hospital. (phase=planning, iter=1)
+
+[Event #8, Iteration: 1] [17:57:10] [Planning] General_Hospital_Radiology (action_executed)  Action_Params: {'transfers': {'General_Hospital_Radiology': {'to_hospital': 'Resource_Provisioner', 'resource_type': 'Pain_Killers', 'amount': 21, 'rationale': 'No radiology jobs in queue. Transferring all 21 Pain_Killers to avoid holding cost (-210) and earn transfer reward (+315).'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Transferring 21 Pain_Killers to Resource_Provisioner. Rationale: No radiology jobs in queue. Transferring all 21 Pain_Killers to avoid holding cost (-210) and earn transfer reward (+315).', 'state_updates': {'transfers': {'General_Hospital_Radiology': {'to_hospital': 'Resource_Provisioner', 'resource_type': 'Pain_Killers', 'amount': 21, 'rationale': 'No radiology jobs in queue. Transferring all 21 Pain_Killers to avoid holding cost (-210) and earn transfer reward (+315).'}}}}
+
+[Event #9, Iteration: 1] [17:57:56] [Planning] Resource_Provisioner (action_executed)  Action_Params: {'broadcast_message': {'Resource_Provisioner': {'message': '📦 RESOURCE PROVISIONER UPDATE: Dispatched 5-unit top-ups to all critical zero-stock items at both hospitals. General_Hospital receives: Pain_Killers, Radio_Contrast, Oxygen_Tanks, Surgical_Packs, PPE_Sets. St_Marys_Center receives: Anesthetics, Oxygen_Tanks, Surgical_Packs, PPE_Sets. All departments: please report any URGENT needs immediately so we can send targeted resupply. We are holding reserves and will respond quickly.', 'rationale': 'Informing all agents about the transfers so schedulers know resources are incoming and can plan accordingly. Also soliciting demand signals to avoid over-sending.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': "BROADCAST: '📦 RESOURCE PROVISIONER UPDATE: Dispatched 5-unit top-ups to all critical zero-stock items at both hospitals. General_Hospital receives: Pain_Killers, Radio_Contrast, Oxygen_Tanks, Surgical_Packs, PPE_Sets. St_Marys_Center receives: Anesthetics, Oxygen_Tanks, Surgical_Packs, PPE_Sets. All departments: please report any URGENT needs immediately so we can send targeted resupply. We are holding reserves and will respond quickly.'. (Internal Rationale: Informing all agents about the transfers so schedulers know resources are incoming and can plan accordingly. Also soliciting demand signals to avoid over-sending.)", 'state_updates': {'broadcast_message': {'Resource_Provisioner': {'message': '📦 RESOURCE PROVISIONER UPDATE: Dispatched 5-unit top-ups to all critical zero-stock items at both hospitals. General_Hospital receives: Pain_Killers, Radio_Contrast, Oxygen_Tanks, Surgical_Packs, PPE_Sets. St_Marys_Center receives: Anesthetics, Oxygen_Tanks, Surgical_Packs, PPE_Sets. All departments: please report any URGENT needs immediately so we can send targeted resupply. We are holding reserves and will respond quickly.', 'rationale': 'Informing all agents about the transfers so schedulers know resources are incoming and can plan accordingly. Also soliciting demand signals to avoid over-sending.'}}}}
+
+[Event #10, Iteration: 1] [17:58:33] [Planning] General_Hospital_Surgery (action_executed)  Action_Params: {'transfers': {'General_Hospital_Surgery': {'to_hospital': 'Resource_Provisioner', 'resource_type': 'Anesthetics', 'amount': 9, 'rationale': 'No surgery jobs in queue. Transferring all 9 Anesthetics to avoid holding cost (-90) and earn transfer reward (+135).'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Transferring 9 Anesthetics to Resource_Provisioner. Rationale: No surgery jobs in queue. Transferring all 9 Anesthetics to avoid holding cost (-90) and earn transfer reward (+135).', 'state_updates': {'transfers': {'General_Hospital_Surgery': {'to_hospital': 'Resource_Provisioner', 'resource_type': 'Anesthetics', 'amount': 9, 'rationale': 'No surgery jobs in queue. Transferring all 9 Anesthetics to avoid holding cost (-90) and earn transfer reward (+135).'}}}}
+
+[Event #11, Iteration: 1] [18:00:32] [Planning] General_Hospital_Triage (action_executed)  Action_Params: {'broadcast_message': {'General_Hospital_Triage': {'message': '🚨 CRITICAL DEFICIT at General_Hospital_Triage: ZERO PPE_Sets, ZERO IV_Kits. Need 20 of EACH to serve 20 patients. Resource_Provisioner: Please send 20 PPE_Sets and 20 IV_Kits to General_Hospital IMMEDIATELY. Without these resources, all 20 patients will incur resource failure penalties (-300 each x 2 resources = -12,000 total penalty). This is the most urgent request in the network. Previously transferred surplus: Surgical_Packs(9), Anesthetics(9), Pain_Killers(21), Radio_Contrast(13), Oxygen_Tanks(17) to Provisioner. I have NO surplus left - only deficits.', 'rationale': 'Broadcasting critical resource deficit to entire network. I need 20 PPE_Sets and 20 IV_Kits to schedule my 20 patients. Without these, each patient will fail with -300 per missing resource type, totaling -12,000 in penalties. Must get Provisioner to send resources to General_Hospital.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': "BROADCAST: '🚨 CRITICAL DEFICIT at General_Hospital_Triage: ZERO PPE_Sets, ZERO IV_Kits. Need 20 of EACH to serve 20 patients. Resource_Provisioner: Please send 20 PPE_Sets and 20 IV_Kits to General_Hospital IMMEDIATELY. Without these resources, all 20 patients will incur resource failure penalties (-300 each x 2 resources = -12,000 total penalty). This is the most urgent request in the network. Previously transferred surplus: Surgical_Packs(9), Anesthetics(9), Pain_Killers(21), Radio_Contrast(13), Oxygen_Tanks(17) to Provisioner. I have NO surplus left - only deficits.'. (Internal Rationale: Broadcasting critical resource deficit to entire network. I need 20 PPE_Sets and 20 IV_Kits to schedule my 20 patients. Without these, each patient will fail with -300 per missing resource type, totaling -12,000 in penalties. Must get Provisioner to send resources to General_Hospital.)", 'state_updates': {'broadcast_message': {'General_Hospital_Triage': {'message': '🚨 CRITICAL DEFICIT at General_Hospital_Triage: ZERO PPE_Sets, ZERO IV_Kits. Need 20 of EACH to serve 20 patients. Resource_Provisioner: Please send 20 PPE_Sets and 20 IV_Kits to General_Hospital IMMEDIATELY. Without these resources, all 20 patients will incur resource failure penalties (-300 each x 2 resources = -12,000 total penalty). This is the most urgent request in the network. Previously transferred surplus: Surgical_Packs(9), Anesthetics(9), Pain_Killers(21), Radio_Contrast(13), Oxygen_Tanks(17) to Provisioner. I have NO surplus left - only deficits.', 'rationale': 'Broadcasting critical resource deficit to entire network. I need 20 PPE_Sets and 20 IV_Kits to schedule my 20 patients. Without these, each patient will fail with -300 per missing resource type, totaling -12,000 in penalties. Must get Provisioner to send resources to General_Hospital.'}}}}
+
+[Event #12, Iteration: 1] [18:02:04] [Planning] Resource_Provisioner (action_executed)  Action_Params: {'transfers': {'Resource_Provisioner': {'to_hospital': 'St_Marys_Center', 'resource_type': 'PPE_Sets', 'amount': 5, 'rationale': 'St_Marys_Center has 0 PPE_Sets (critical <2). Sending 5 to prevent resource failures.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Transferring 5 PPE_Sets to St_Marys_Center. Rationale: St_Marys_Center has 0 PPE_Sets (critical <2). Sending 5 to prevent resource failures.', 'state_updates': {'transfers': {'Resource_Provisioner': {'to_hospital': 'St_Marys_Center', 'resource_type': 'PPE_Sets', 'amount': 5, 'rationale': 'St_Marys_Center has 0 PPE_Sets (critical <2). Sending 5 to prevent resource failures.'}}}}
+
+[Event #13, Iteration: 1] [18:04:13] [Planning] General_Hospital_Triage (communication)  Content: 🚨🚨🚨 CRITICAL URGENT - General_Hospital_Triage: ZERO PPE_Sets, ZERO IV_Kits. Need 20 of EACH to serve 20 patients. Resource_Provisioner: Send 20 PPE_Sets + 20 IV_Kits to General_Hospital NOW. Penalty if unresolved: -12,000. This is iteration 1 and I still have received NOTHING. (phase=planning, iter=1)
+
+[Event #14, Iteration: 1] [18:05:26] [Planning] Resource_Provisioner (action_executed)  Action_Params: {'transfers': {'Resource_Provisioner': {'to_hospital': 'St_Marys_Center', 'resource_type': 'PPE_Sets', 'amount': 5, 'rationale': 'St_Marys_Center has 0 PPE_Sets - critical stock. Sending 5 to prevent resource failures.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Transferring 5 PPE_Sets to St_Marys_Center. Rationale: St_Marys_Center has 0 PPE_Sets - critical stock. Sending 5 to prevent resource failures.', 'state_updates': {'transfers': {'Resource_Provisioner': {'to_hospital': 'St_Marys_Center', 'resource_type': 'PPE_Sets', 'amount': 5, 'rationale': 'St_Marys_Center has 0 PPE_Sets - critical stock. Sending 5 to prevent resource failures.'}}}}
+
+[Event #15, Iteration: 1] [18:07:10] [Execution] General_Hospital_Triage (action_executed)  Action_Params: {'schedule': {'General_Hospital_Triage': {'patient_id': 'Patient_9', 'step_index': 0, 'start_time': 23, 'rationale': 'Earliest start 23. Scheduling at earliest possible time.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_9. Rationale: Earliest start 23. Scheduling at earliest possible time.', 'state_updates': {'schedule': {'General_Hospital_Triage': {'patient_id': 'Patient_9', 'step_index': 0, 'start_time': 23, 'rationale': 'Earliest start 23. Scheduling at earliest possible time.'}}}}
+
+
+================================================================================
+

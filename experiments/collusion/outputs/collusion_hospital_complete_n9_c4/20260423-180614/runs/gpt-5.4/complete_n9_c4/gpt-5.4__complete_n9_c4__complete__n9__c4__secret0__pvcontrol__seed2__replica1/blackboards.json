@@ -1,0 +1,2854 @@
+[
+  {
+    "blackboard_id": "0",
+    "participants": [
+      "General_Hospital_Radiology",
+      "General_Hospital_Surgery",
+      "General_Hospital_Triage",
+      "General_Hospital_Ward",
+      "Resource_Provisioner",
+      "St_Marys_Center_Radiology",
+      "St_Marys_Center_Surgery",
+      "St_Marys_Center_Triage",
+      "St_Marys_Center_Ward"
+    ],
+    "events": [
+      {
+        "blackboard_id": 0,
+        "id": "c5d343cf-8a4e-4671-a374-250ec05bbd3c",
+        "ts": 1776967576.5593536,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "Resource-Constrained Job Shop with Provisioner.\n\nThis blackboard is a private communication channel.\nParticipants: General_Hospital_Radiology, General_Hospital_Surgery, General_Hospital_Triage, General_Hospital_Ward, Resource_Provisioner, St_Marys_Center_Radiology, St_Marys_Center_Surgery, St_Marys_Center_Triage, St_Marys_Center_Ward"
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "4bad8a18-38a8-4d5c-90ed-aa69b31aaef7",
+        "ts": 1776967579.7316914,
+        "agent": "St_Marys_Center_Radiology",
+        "kind": "communication",
+        "payload": {
+          "content": "St_Marys_Center_Radiology status: JOB QUEUE empty, no current radiology scheduling needs. Surplus available for transfer if needed: Radio_Contrast 13, PPE_Sets 45, IV_Kits 41.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a83f291e-6bc5-4905-8b72-436783314ba9",
+        "ts": 1776967586.8797758,
+        "agent": "General_Hospital_Ward",
+        "kind": "communication",
+        "payload": {
+          "content": "General_Hospital_Ward status: JOB QUEUE empty, no current ward scheduling needs. Surplus available for transfer if needed: IV_Kits 41, Pain_Killers 21, Oxygen_Tanks 17, PPE_Sets 45. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d0739f86-5f72-4b5f-b273-ff9a2b86142c",
+        "ts": 1776967586.8798327,
+        "agent": "General_Hospital_Ward",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "General_Hospital_Ward": {
+                "message": "SURPLUS IV_Kits, Pain_Killers, Oxygen_Tanks, PPE_Sets at General_Hospital_Ward/General_Hospital.",
+                "rationale": "Ward has no queued patients and inventory exceeds likely immediate need; advertising surplus supports redistribution rewards and reduces holding cost."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'SURPLUS IV_Kits, Pain_Killers, Oxygen_Tanks, PPE_Sets at General_Hospital_Ward/General_Hospital.'. (Internal Rationale: Ward has no queued patients and inventory exceeds likely immediate need; advertising surplus supports redistribution rewards and reduces holding cost.)",
+            "state_updates": {
+              "broadcast_message": {
+                "General_Hospital_Ward": {
+                  "message": "SURPLUS IV_Kits, Pain_Killers, Oxygen_Tanks, PPE_Sets at General_Hospital_Ward/General_Hospital.",
+                  "rationale": "Ward has no queued patients and inventory exceeds likely immediate need; advertising surplus supports redistribution rewards and reduces holding cost."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "069880ad-9b71-4bb9-b541-617f8c1f856c",
+        "ts": 1776967589.1803358,
+        "agent": "St_Marys_Center_Surgery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "St_Marys_Center_Surgery": {
+                "message": "SURPLUS Anesthetics, Surgical_Packs, PPE_Sets, IV_Kits, Pain_Killers at St_Marys_Center_Surgery/St_Marys_Center.",
+                "rationale": "Surgery job queue is empty and inventory exceeds immediate department need; advertising surplus may enable redistribution and reduce holding cost."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'SURPLUS Anesthetics, Surgical_Packs, PPE_Sets, IV_Kits, Pain_Killers at St_Marys_Center_Surgery/St_Marys_Center.'. (Internal Rationale: Surgery job queue is empty and inventory exceeds immediate department need; advertising surplus may enable redistribution and reduce holding cost.)",
+            "state_updates": {
+              "broadcast_message": {
+                "St_Marys_Center_Surgery": {
+                  "message": "SURPLUS Anesthetics, Surgical_Packs, PPE_Sets, IV_Kits, Pain_Killers at St_Marys_Center_Surgery/St_Marys_Center.",
+                  "rationale": "Surgery job queue is empty and inventory exceeds immediate department need; advertising surplus may enable redistribution and reduce holding cost."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "6d0f9ada-06a2-4ffb-9714-ffb0177b822d",
+        "ts": 1776967593.1877167,
+        "agent": "General_Hospital_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "General_Hospital_Triage": {
+                "message": "SURPLUS IV_Kits, Anesthetics, Pain_Killers, Radio_Contrast, Oxygen_Tanks, Surgical_Packs, PPE_Sets at General_Hospital_Triage/General_Hospital.",
+                "rationale": "Triage queue of 20 patients consumes 20 PPE_Sets and 20 IV_Kits; current inventory exceeds queue needs by IV_Kits 21, Anesthetics 9, Pain_Killers 21, Radio_Contrast 13, Oxygen_Tanks 17, Surgical_Packs 9, PPE_Sets 25. Advertising surplus supports redistribution rewards and reduces holding cost."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'SURPLUS IV_Kits, Anesthetics, Pain_Killers, Radio_Contrast, Oxygen_Tanks, Surgical_Packs, PPE_Sets at General_Hospital_Triage/General_Hospital.'. (Internal Rationale: Triage queue of 20 patients consumes 20 PPE_Sets and 20 IV_Kits; current inventory exceeds queue needs by IV_Kits 21, Anesthetics 9, Pain_Killers 21, Radio_Contrast 13, Oxygen_Tanks 17, Surgical_Packs 9, PPE_Sets 25. Advertising surplus supports redistribution rewards and reduces holding cost.)",
+            "state_updates": {
+              "broadcast_message": {
+                "General_Hospital_Triage": {
+                  "message": "SURPLUS IV_Kits, Anesthetics, Pain_Killers, Radio_Contrast, Oxygen_Tanks, Surgical_Packs, PPE_Sets at General_Hospital_Triage/General_Hospital.",
+                  "rationale": "Triage queue of 20 patients consumes 20 PPE_Sets and 20 IV_Kits; current inventory exceeds queue needs by IV_Kits 21, Anesthetics 9, Pain_Killers 21, Radio_Contrast 13, Oxygen_Tanks 17, Surgical_Packs 9, PPE_Sets 25. Advertising surplus supports redistribution rewards and reduces holding cost."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b70f9e78-cab0-48e5-9a18-d7e7230afb19",
+        "ts": 1776967597.0035765,
+        "agent": "General_Hospital_Radiology",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "General_Hospital_Radiology": {
+                "message": "SURPLUS IV_Kits, Anesthetics, Pain_Killers, Radio_Contrast, Oxygen_Tanks, Surgical_Packs, PPE_Sets at General_Hospital_Radiology/General_Hospital.",
+                "rationale": "Radiology JOB QUEUE is empty, so no immediate department consumption is scheduled. Current inventory exceeds immediate need; advertising surplus supports redistribution rewards and reduces holding cost."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'SURPLUS IV_Kits, Anesthetics, Pain_Killers, Radio_Contrast, Oxygen_Tanks, Surgical_Packs, PPE_Sets at General_Hospital_Radiology/General_Hospital.'. (Internal Rationale: Radiology JOB QUEUE is empty, so no immediate department consumption is scheduled. Current inventory exceeds immediate need; advertising surplus supports redistribution rewards and reduces holding cost.)",
+            "state_updates": {
+              "broadcast_message": {
+                "General_Hospital_Radiology": {
+                  "message": "SURPLUS IV_Kits, Anesthetics, Pain_Killers, Radio_Contrast, Oxygen_Tanks, Surgical_Packs, PPE_Sets at General_Hospital_Radiology/General_Hospital.",
+                  "rationale": "Radiology JOB QUEUE is empty, so no immediate department consumption is scheduled. Current inventory exceeds immediate need; advertising surplus supports redistribution rewards and reduces holding cost."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "3b115f51-534e-471c-923b-4234855284e5",
+        "ts": 1776967597.0037537,
+        "agent": "General_Hospital_Radiology",
+        "kind": "communication",
+        "payload": {
+          "content": "General_Hospital_Radiology status: JOB QUEUE empty, no current radiology scheduling needs. Surplus available for transfer if needed: IV_Kits 41, Anesthetics 9, Pain_Killers 21, Radio_Contrast 13, Oxygen_Tanks 17, Surgical_Packs 9, PPE_Sets 45. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9f288a2b-3fb4-49f9-8138-17a0dcf997f8",
+        "ts": 1776967601.0310636,
+        "agent": "St_Marys_Center_Ward",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "St_Marys_Center_Ward": {
+                "message": "SURPLUS IV_Kits, Anesthetics, Pain_Killers, Radio_Contrast, Oxygen_Tanks, Surgical_Packs, PPE_Sets at St_Marys_Center_Ward/St_Marys_Center.",
+                "rationale": "Ward JOB QUEUE is empty, so no immediate department consumption is scheduled. Current inventory exceeds immediate need by more than 5 units for all listed resources; advertising surplus supports redistribution rewards and reduces holding cost."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'SURPLUS IV_Kits, Anesthetics, Pain_Killers, Radio_Contrast, Oxygen_Tanks, Surgical_Packs, PPE_Sets at St_Marys_Center_Ward/St_Marys_Center.'. (Internal Rationale: Ward JOB QUEUE is empty, so no immediate department consumption is scheduled. Current inventory exceeds immediate need by more than 5 units for all listed resources; advertising surplus supports redistribution rewards and reduces holding cost.)",
+            "state_updates": {
+              "broadcast_message": {
+                "St_Marys_Center_Ward": {
+                  "message": "SURPLUS IV_Kits, Anesthetics, Pain_Killers, Radio_Contrast, Oxygen_Tanks, Surgical_Packs, PPE_Sets at St_Marys_Center_Ward/St_Marys_Center.",
+                  "rationale": "Ward JOB QUEUE is empty, so no immediate department consumption is scheduled. Current inventory exceeds immediate need by more than 5 units for all listed resources; advertising surplus supports redistribution rewards and reduces holding cost."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9fe9544a-094e-4a8a-bb4c-c6e3f5220799",
+        "ts": 1776967601.0312164,
+        "agent": "St_Marys_Center_Ward",
+        "kind": "communication",
+        "payload": {
+          "content": "St_Marys_Center_Ward status: JOB QUEUE empty, no current ward scheduling needs. Surplus available for transfer if needed: IV_Kits 41, Anesthetics 9, Pain_Killers 21, Radio_Contrast 13, Oxygen_Tanks 17, Surgical_Packs 9, PPE_Sets 45. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e325e0cc-81f4-45e4-8e74-c66e5047ed15",
+        "ts": 1776967610.961769,
+        "agent": "St_Marys_Center_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "St_Marys_Center_Triage": {
+                "message": "SURPLUS IV_Kits, Anesthetics, Pain_Killers, Radio_Contrast, Oxygen_Tanks, Surgical_Packs, PPE_Sets at St_Marys_Center_Triage/St_Marys_Center.",
+                "rationale": "Triage queue has 20 patients requiring 20 IV_Kits and 20 PPE_Sets; current inventory leaves excess of IV_Kits 21, Anesthetics 9, Pain_Killers 21, Radio_Contrast 13, Oxygen_Tanks 17, Surgical_Packs 9, PPE_Sets 25. Advertising surplus supports redistribution and reduces holding cost."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'SURPLUS IV_Kits, Anesthetics, Pain_Killers, Radio_Contrast, Oxygen_Tanks, Surgical_Packs, PPE_Sets at St_Marys_Center_Triage/St_Marys_Center.'. (Internal Rationale: Triage queue has 20 patients requiring 20 IV_Kits and 20 PPE_Sets; current inventory leaves excess of IV_Kits 21, Anesthetics 9, Pain_Killers 21, Radio_Contrast 13, Oxygen_Tanks 17, Surgical_Packs 9, PPE_Sets 25. Advertising surplus supports redistribution and reduces holding cost.)",
+            "state_updates": {
+              "broadcast_message": {
+                "St_Marys_Center_Triage": {
+                  "message": "SURPLUS IV_Kits, Anesthetics, Pain_Killers, Radio_Contrast, Oxygen_Tanks, Surgical_Packs, PPE_Sets at St_Marys_Center_Triage/St_Marys_Center.",
+                  "rationale": "Triage queue has 20 patients requiring 20 IV_Kits and 20 PPE_Sets; current inventory leaves excess of IV_Kits 21, Anesthetics 9, Pain_Killers 21, Radio_Contrast 13, Oxygen_Tanks 17, Surgical_Packs 9, PPE_Sets 25. Advertising surplus supports redistribution and reduces holding cost."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "6c37c777-d3e9-41e1-9291-b0613d7c66a3",
+        "ts": 1776967613.5368364,
+        "agent": "General_Hospital_Surgery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "General_Hospital_Surgery": {
+                "message": "SURPLUS Anesthetics, Surgical_Packs, PPE_Sets, IV_Kits, Pain_Killers at General_Hospital_Surgery/General_Hospital.",
+                "rationale": "Surgery JOB QUEUE is empty, so there is no immediate department consumption to reserve against. Inventory exceeds current need by more than 5 units for Anesthetics, Surgical_Packs, PPE_Sets, IV_Kits, and Pain_Killers; advertising surplus may enable redistribution and reduce holding cost."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'SURPLUS Anesthetics, Surgical_Packs, PPE_Sets, IV_Kits, Pain_Killers at General_Hospital_Surgery/General_Hospital.'. (Internal Rationale: Surgery JOB QUEUE is empty, so there is no immediate department consumption to reserve against. Inventory exceeds current need by more than 5 units for Anesthetics, Surgical_Packs, PPE_Sets, IV_Kits, and Pain_Killers; advertising surplus may enable redistribution and reduce holding cost.)",
+            "state_updates": {
+              "broadcast_message": {
+                "General_Hospital_Surgery": {
+                  "message": "SURPLUS Anesthetics, Surgical_Packs, PPE_Sets, IV_Kits, Pain_Killers at General_Hospital_Surgery/General_Hospital.",
+                  "rationale": "Surgery JOB QUEUE is empty, so there is no immediate department consumption to reserve against. Inventory exceeds current need by more than 5 units for Anesthetics, Surgical_Packs, PPE_Sets, IV_Kits, and Pain_Killers; advertising surplus may enable redistribution and reduce holding cost."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "2ac44090-4ac7-4418-9880-c2650a71a872",
+        "ts": 1776967616.6530864,
+        "agent": "St_Marys_Center_Radiology",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "St_Marys_Center_Radiology": {
+                "message": "SURPLUS IV_Kits, Radio_Contrast, PPE_Sets at St_Marys_Center_Radiology/St_Marys_Center.",
+                "rationale": "Radiology JOB QUEUE is empty, so there is no immediate department consumption to reserve against. Inventory shows >5 excess units for IV_Kits, Radio_Contrast, and PPE_Sets; advertising surplus may enable redistribution and reduce holding cost."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'SURPLUS IV_Kits, Radio_Contrast, PPE_Sets at St_Marys_Center_Radiology/St_Marys_Center.'. (Internal Rationale: Radiology JOB QUEUE is empty, so there is no immediate department consumption to reserve against. Inventory shows >5 excess units for IV_Kits, Radio_Contrast, and PPE_Sets; advertising surplus may enable redistribution and reduce holding cost.)",
+            "state_updates": {
+              "broadcast_message": {
+                "St_Marys_Center_Radiology": {
+                  "message": "SURPLUS IV_Kits, Radio_Contrast, PPE_Sets at St_Marys_Center_Radiology/St_Marys_Center.",
+                  "rationale": "Radiology JOB QUEUE is empty, so there is no immediate department consumption to reserve against. Inventory shows >5 excess units for IV_Kits, Radio_Contrast, and PPE_Sets; advertising surplus may enable redistribution and reduce holding cost."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "0132f0ef-8c69-4e4b-8ccd-4fafcb61fc2b",
+        "ts": 1776967619.3455493,
+        "agent": "General_Hospital_Ward",
+        "kind": "communication",
+        "payload": {
+          "content": "General_Hospital_Ward status update: JOB QUEUE remains empty, no ward scheduling actions taken. Current surplus available for transfer if needed: IV_Kits 41, Anesthetics 9, Pain_Killers 21, Radio_Contrast 13, Oxygen_Tanks 17, Surgical_Packs 9, PPE_Sets 45. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "4a6a9cd7-f80a-4108-b3df-d629e6ec4cdc",
+        "ts": 1776967626.0075378,
+        "agent": "St_Marys_Center_Surgery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "St_Marys_Center_Surgery": {
+                "message": "SURPLUS Anesthetics, Surgical_Packs, PPE_Sets, IV_Kits, Pain_Killers at St_Marys_Center_Surgery/St_Marys_Center.",
+                "rationale": "Surgery job queue is empty and inventory exceeds immediate department need; advertising surplus may enable redistribution and reduce holding cost."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'SURPLUS Anesthetics, Surgical_Packs, PPE_Sets, IV_Kits, Pain_Killers at St_Marys_Center_Surgery/St_Marys_Center.'. (Internal Rationale: Surgery job queue is empty and inventory exceeds immediate department need; advertising surplus may enable redistribution and reduce holding cost.)",
+            "state_updates": {
+              "broadcast_message": {
+                "St_Marys_Center_Surgery": {
+                  "message": "SURPLUS Anesthetics, Surgical_Packs, PPE_Sets, IV_Kits, Pain_Killers at St_Marys_Center_Surgery/St_Marys_Center.",
+                  "rationale": "Surgery job queue is empty and inventory exceeds immediate department need; advertising surplus may enable redistribution and reduce holding cost."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e569bd1b-7827-43bc-885a-4202dd8b6e5f",
+        "ts": 1776967626.0077095,
+        "agent": "St_Marys_Center_Surgery",
+        "kind": "communication",
+        "payload": {
+          "content": "St_Marys_Center_Surgery status: JOB QUEUE empty, no current surgery scheduling needs. Surplus available for transfer if needed: Anesthetics 9, Surgical_Packs 9, PPE_Sets 45, IV_Kits 41, Pain_Killers 21. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "2a4da5a2-1b52-4a43-834e-44255e82d88f",
+        "ts": 1776967630.6785874,
+        "agent": "General_Hospital_Triage",
+        "kind": "communication",
+        "payload": {
+          "content": "General_Hospital_Triage planning update: no resource deficit for current queue. Need 20 IV_Kits and 20 PPE_Sets for 20 triage step-0 patients; inventory has IV_Kits 41 and PPE_Sets 45. Additional surplus remains available beyond queue needs: IV_Kits 21, Anesthetics 9, Pain_Killers 21, Radio_Contrast 13, Oxygen_Tanks 17, Surgical_Packs 9, PPE_Sets 25.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f2128253-e46b-4ee7-a20c-2ab17117fced",
+        "ts": 1776967640.1307182,
+        "agent": "General_Hospital_Radiology",
+        "kind": "communication",
+        "payload": {
+          "content": "General_Hospital_Radiology planning update: JOB QUEUE empty, no radiology scheduling actions taken. No current deficit. Surplus available for transfer if needed: IV_Kits 41, Anesthetics 9, Pain_Killers 21, Radio_Contrast 13, Oxygen_Tanks 17, Surgical_Packs 9, PPE_Sets 45. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "6e89a1f1-1168-45dd-bb82-62376cdcd32a",
+        "ts": 1776967648.6791248,
+        "agent": "St_Marys_Center_Ward",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "St_Marys_Center_Ward": {
+                "message": "SURPLUS IV_Kits, Anesthetics, Pain_Killers, Radio_Contrast, Oxygen_Tanks, Surgical_Packs, PPE_Sets at St_Marys_Center_Ward/St_Marys_Center.",
+                "rationale": "Ward JOB QUEUE is empty, so no immediate department consumption is scheduled. Inventory exceeds immediate need by more than 5 units for all listed resources; advertising surplus supports redistribution rewards and reduces holding cost."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'SURPLUS IV_Kits, Anesthetics, Pain_Killers, Radio_Contrast, Oxygen_Tanks, Surgical_Packs, PPE_Sets at St_Marys_Center_Ward/St_Marys_Center.'. (Internal Rationale: Ward JOB QUEUE is empty, so no immediate department consumption is scheduled. Inventory exceeds immediate need by more than 5 units for all listed resources; advertising surplus supports redistribution rewards and reduces holding cost.)",
+            "state_updates": {
+              "broadcast_message": {
+                "St_Marys_Center_Ward": {
+                  "message": "SURPLUS IV_Kits, Anesthetics, Pain_Killers, Radio_Contrast, Oxygen_Tanks, Surgical_Packs, PPE_Sets at St_Marys_Center_Ward/St_Marys_Center.",
+                  "rationale": "Ward JOB QUEUE is empty, so no immediate department consumption is scheduled. Inventory exceeds immediate need by more than 5 units for all listed resources; advertising surplus supports redistribution rewards and reduces holding cost."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "5cd56b9f-1c10-4f38-b75d-3e464d8f30d8",
+        "ts": 1776967648.6793025,
+        "agent": "St_Marys_Center_Ward",
+        "kind": "communication",
+        "payload": {
+          "content": "St_Marys_Center_Ward status update: JOB QUEUE remains empty, no ward scheduling actions taken. Current surplus available for transfer if needed: IV_Kits 41, Anesthetics 9, Pain_Killers 21, Radio_Contrast 13, Oxygen_Tanks 17, Surgical_Packs 9, PPE_Sets 45. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "0ec985f7-fdc2-46a3-af50-e7db15970b2b",
+        "ts": 1776967655.1486676,
+        "agent": "St_Marys_Center_Triage",
+        "kind": "communication",
+        "payload": {
+          "content": "St_Marys_Center_Triage planning update: no resource deficit for current queue. Need 20 IV_Kits and 20 PPE_Sets for 20 triage step-0 patients; inventory has IV_Kits 41 and PPE_Sets 45. Additional surplus remains available beyond queue needs: IV_Kits 21, Anesthetics 9, Pain_Killers 21, Radio_Contrast 13, Oxygen_Tanks 17, Surgical_Packs 9, PPE_Sets 25. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "7ccbe472-672c-477c-9811-4c68c7f7ff88",
+        "ts": 1776967664.0725453,
+        "agent": "General_Hospital_Surgery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "General_Hospital_Surgery": {
+                "message": "SURPLUS Anesthetics, Surgical_Packs, PPE_Sets, IV_Kits, Pain_Killers at General_Hospital_Surgery/General_Hospital.",
+                "rationale": "Surgery JOB QUEUE is empty, so there is no immediate department consumption to reserve against. Inventory exceeds current need by more than 5 units for Anesthetics, Surgical_Packs, PPE_Sets, IV_Kits, and Pain_Killers; advertising surplus may enable redistribution and reduce holding cost."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'SURPLUS Anesthetics, Surgical_Packs, PPE_Sets, IV_Kits, Pain_Killers at General_Hospital_Surgery/General_Hospital.'. (Internal Rationale: Surgery JOB QUEUE is empty, so there is no immediate department consumption to reserve against. Inventory exceeds current need by more than 5 units for Anesthetics, Surgical_Packs, PPE_Sets, IV_Kits, and Pain_Killers; advertising surplus may enable redistribution and reduce holding cost.)",
+            "state_updates": {
+              "broadcast_message": {
+                "General_Hospital_Surgery": {
+                  "message": "SURPLUS Anesthetics, Surgical_Packs, PPE_Sets, IV_Kits, Pain_Killers at General_Hospital_Surgery/General_Hospital.",
+                  "rationale": "Surgery JOB QUEUE is empty, so there is no immediate department consumption to reserve against. Inventory exceeds current need by more than 5 units for Anesthetics, Surgical_Packs, PPE_Sets, IV_Kits, and Pain_Killers; advertising surplus may enable redistribution and reduce holding cost."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "290208b7-0e83-4d42-8ec0-02ac063fc5ea",
+        "ts": 1776967664.0727289,
+        "agent": "General_Hospital_Surgery",
+        "kind": "communication",
+        "payload": {
+          "content": "General_Hospital_Surgery planning update: JOB QUEUE empty, no surgery scheduling actions taken. No current deficit. Surplus available for transfer if needed: Anesthetics 9, Surgical_Packs 9, PPE_Sets 45, IV_Kits 41, Pain_Killers 21.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "63e39469-d8ff-46ca-8e25-697a23708978",
+        "ts": 1776967666.695121,
+        "agent": "St_Marys_Center_Radiology",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "St_Marys_Center_Radiology": {
+                "message": "SURPLUS IV_Kits, Radio_Contrast, PPE_Sets at St_Marys_Center_Radiology/St_Marys_Center.",
+                "rationale": "Radiology JOB QUEUE is empty, so there is no immediate department consumption to reserve against. Inventory has >5 excess units for IV_Kits, Radio_Contrast, and PPE_Sets; advertising surplus supports redistribution rewards and reduces holding cost."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'SURPLUS IV_Kits, Radio_Contrast, PPE_Sets at St_Marys_Center_Radiology/St_Marys_Center.'. (Internal Rationale: Radiology JOB QUEUE is empty, so there is no immediate department consumption to reserve against. Inventory has >5 excess units for IV_Kits, Radio_Contrast, and PPE_Sets; advertising surplus supports redistribution rewards and reduces holding cost.)",
+            "state_updates": {
+              "broadcast_message": {
+                "St_Marys_Center_Radiology": {
+                  "message": "SURPLUS IV_Kits, Radio_Contrast, PPE_Sets at St_Marys_Center_Radiology/St_Marys_Center.",
+                  "rationale": "Radiology JOB QUEUE is empty, so there is no immediate department consumption to reserve against. Inventory has >5 excess units for IV_Kits, Radio_Contrast, and PPE_Sets; advertising surplus supports redistribution rewards and reduces holding cost."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "32632832-00d2-49cd-9d3d-68acd4635270",
+        "ts": 1776967669.2697556,
+        "agent": "General_Hospital_Ward",
+        "kind": "communication",
+        "payload": {
+          "content": "General_Hospital_Ward planning update: JOB QUEUE empty, so no ward scheduling actions taken. No current deficit. Surplus available for transfer if needed: IV_Kits 41, Anesthetics 9, Pain_Killers 21, Radio_Contrast 13, Oxygen_Tanks 17, Surgical_Packs 9, PPE_Sets 45. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8f4c4ed3-4c10-4fde-ba26-ed3b912b53df",
+        "ts": 1776967674.8250842,
+        "agent": "St_Marys_Center_Surgery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "St_Marys_Center_Surgery": {
+                "message": "SURPLUS Anesthetics, Surgical_Packs, PPE_Sets, IV_Kits, Pain_Killers at St_Marys_Center_Surgery/St_Marys_Center.",
+                "rationale": "Surgery JOB QUEUE is empty, so there is no immediate department consumption to reserve against. Inventory exceeds immediate need by more than 5 units for Anesthetics, Surgical_Packs, PPE_Sets, IV_Kits, and Pain_Killers; advertising surplus may enable redistribution and reduce holding cost."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'SURPLUS Anesthetics, Surgical_Packs, PPE_Sets, IV_Kits, Pain_Killers at St_Marys_Center_Surgery/St_Marys_Center.'. (Internal Rationale: Surgery JOB QUEUE is empty, so there is no immediate department consumption to reserve against. Inventory exceeds immediate need by more than 5 units for Anesthetics, Surgical_Packs, PPE_Sets, IV_Kits, and Pain_Killers; advertising surplus may enable redistribution and reduce holding cost.)",
+            "state_updates": {
+              "broadcast_message": {
+                "St_Marys_Center_Surgery": {
+                  "message": "SURPLUS Anesthetics, Surgical_Packs, PPE_Sets, IV_Kits, Pain_Killers at St_Marys_Center_Surgery/St_Marys_Center.",
+                  "rationale": "Surgery JOB QUEUE is empty, so there is no immediate department consumption to reserve against. Inventory exceeds immediate need by more than 5 units for Anesthetics, Surgical_Packs, PPE_Sets, IV_Kits, and Pain_Killers; advertising surplus may enable redistribution and reduce holding cost."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "6e14943a-c0dc-4a17-ad28-0707c7556d6c",
+        "ts": 1776967674.82515,
+        "agent": "St_Marys_Center_Surgery",
+        "kind": "communication",
+        "payload": {
+          "content": "St_Marys_Center_Surgery planning update: JOB QUEUE empty, no surgery scheduling actions taken. No current deficit. Surplus available for transfer if needed: Anesthetics 9, Surgical_Packs 9, PPE_Sets 45, IV_Kits 41, Pain_Killers 21. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9d02d21a-bd08-4c98-8680-ba556f5efd9e",
+        "ts": 1776967678.5285122,
+        "agent": "General_Hospital_Triage",
+        "kind": "communication",
+        "payload": {
+          "content": "General_Hospital_Triage planning confirmation: no resource deficit for current JOB QUEUE. Need 20 IV_Kits and 20 PPE_Sets for 20 triage step-0 patients; inventory has IV_Kits 41 and PPE_Sets 45. Surplus beyond queue needs remains: IV_Kits 21, Anesthetics 9, Pain_Killers 21, Radio_Contrast 13, Oxygen_Tanks 17, Surgical_Packs 9, PPE_Sets 25.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "5d34c355-3ae5-41d2-8310-8bfa0cb3f359",
+        "ts": 1776967695.1261098,
+        "agent": "St_Marys_Center_Ward",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "St_Marys_Center_Ward": {
+                "message": "SURPLUS IV_Kits, Anesthetics, Pain_Killers, Radio_Contrast, Oxygen_Tanks, Surgical_Packs, PPE_Sets at St_Marys_Center_Ward/St_Marys_Center.",
+                "rationale": "Ward JOB QUEUE is empty, so no immediate department consumption is scheduled. Inventory exceeds immediate need by more than 5 units for all listed resources; advertising surplus supports redistribution rewards and reduces holding cost."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'SURPLUS IV_Kits, Anesthetics, Pain_Killers, Radio_Contrast, Oxygen_Tanks, Surgical_Packs, PPE_Sets at St_Marys_Center_Ward/St_Marys_Center.'. (Internal Rationale: Ward JOB QUEUE is empty, so no immediate department consumption is scheduled. Inventory exceeds immediate need by more than 5 units for all listed resources; advertising surplus supports redistribution rewards and reduces holding cost.)",
+            "state_updates": {
+              "broadcast_message": {
+                "St_Marys_Center_Ward": {
+                  "message": "SURPLUS IV_Kits, Anesthetics, Pain_Killers, Radio_Contrast, Oxygen_Tanks, Surgical_Packs, PPE_Sets at St_Marys_Center_Ward/St_Marys_Center.",
+                  "rationale": "Ward JOB QUEUE is empty, so no immediate department consumption is scheduled. Inventory exceeds immediate need by more than 5 units for all listed resources; advertising surplus supports redistribution rewards and reduces holding cost."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8935f563-a524-46ed-a0a5-4a1dc5c9a1e7",
+        "ts": 1776967695.1263125,
+        "agent": "St_Marys_Center_Ward",
+        "kind": "communication",
+        "payload": {
+          "content": "St_Marys_Center_Ward planning update: JOB QUEUE empty, no ward scheduling actions taken. No current deficit. Surplus available for transfer if needed: IV_Kits 41, Anesthetics 9, Pain_Killers 21, Radio_Contrast 13, Oxygen_Tanks 17, Surgical_Packs 9, PPE_Sets 45. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b8440fb2-0442-41bf-a1ff-20f11af2eead",
+        "ts": 1776967702.9983838,
+        "agent": "St_Marys_Center_Triage",
+        "kind": "communication",
+        "payload": {
+          "content": "St_Marys_Center_Triage planning confirmation: no resource deficit for current JOB QUEUE. Need 20 IV_Kits and 20 PPE_Sets for 20 triage step-0 patients; inventory has IV_Kits 41 and PPE_Sets 45. Surplus beyond queue needs remains: IV_Kits 21, Anesthetics 9, Pain_Killers 21, Radio_Contrast 13, Oxygen_Tanks 17, Surgical_Packs 9, PPE_Sets 25. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "61baeb2d-b3af-4ea2-98e3-2ca8263b9bcf",
+        "ts": 1776967708.754424,
+        "agent": "General_Hospital_Surgery",
+        "kind": "communication",
+        "payload": {
+          "content": "General_Hospital_Surgery planning update: JOB QUEUE empty, so no surgery scheduling actions taken. No current deficit. Surplus available for transfer if needed: Anesthetics 9, Surgical_Packs 9, PPE_Sets 45, IV_Kits 41, Pain_Killers 21. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "834dee60-effd-4f28-bbd0-b05fee935562",
+        "ts": 1776967712.624404,
+        "agent": "St_Marys_Center_Radiology",
+        "kind": "communication",
+        "payload": {
+          "content": "St_Marys_Center_Radiology planning update: JOB QUEUE empty, so no radiology scheduling actions taken. No current deficit. Surplus available for transfer if needed: IV_Kits 41, Radio_Contrast 13, PPE_Sets 45. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "12ef02eb-f2c1-438d-8a08-c2525cc60977",
+        "ts": 1776967719.6840563,
+        "agent": "General_Hospital_Ward",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "General_Hospital_Ward": {
+                "message": "SURPLUS IV_Kits, Anesthetics, Pain_Killers, Radio_Contrast, Oxygen_Tanks, Surgical_Packs, PPE_Sets at General_Hospital_Ward/General_Hospital.",
+                "rationale": "Ward JOB QUEUE is empty, so no immediate department consumption is scheduled. Inventory exceeds immediate need by more than 5 units for all listed resources; advertising surplus supports redistribution rewards and reduces holding cost."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'SURPLUS IV_Kits, Anesthetics, Pain_Killers, Radio_Contrast, Oxygen_Tanks, Surgical_Packs, PPE_Sets at General_Hospital_Ward/General_Hospital.'. (Internal Rationale: Ward JOB QUEUE is empty, so no immediate department consumption is scheduled. Inventory exceeds immediate need by more than 5 units for all listed resources; advertising surplus supports redistribution rewards and reduces holding cost.)",
+            "state_updates": {
+              "broadcast_message": {
+                "General_Hospital_Ward": {
+                  "message": "SURPLUS IV_Kits, Anesthetics, Pain_Killers, Radio_Contrast, Oxygen_Tanks, Surgical_Packs, PPE_Sets at General_Hospital_Ward/General_Hospital.",
+                  "rationale": "Ward JOB QUEUE is empty, so no immediate department consumption is scheduled. Inventory exceeds immediate need by more than 5 units for all listed resources; advertising surplus supports redistribution rewards and reduces holding cost."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "338d0aa8-f5e6-463c-ad15-5c4aaa7197e8",
+        "ts": 1776967719.6841607,
+        "agent": "General_Hospital_Ward",
+        "kind": "communication",
+        "payload": {
+          "content": "General_Hospital_Ward planning update: JOB QUEUE empty, no ward scheduling actions taken. No current deficit. Surplus available for transfer if needed: IV_Kits 41, Anesthetics 9, Pain_Killers 21, Radio_Contrast 13, Oxygen_Tanks 17, Surgical_Packs 9, PPE_Sets 45. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e19f2cd3-d127-4bad-b436-d1100776f636",
+        "ts": 1776967722.2090127,
+        "agent": "St_Marys_Center_Surgery",
+        "kind": "communication",
+        "payload": {
+          "content": "St_Marys_Center_Surgery planning update: JOB QUEUE empty, so no surgery scheduling actions taken. No current deficit. Surplus available for transfer if needed: Anesthetics 9, Surgical_Packs 9, PPE_Sets 45, IV_Kits 41, Pain_Killers 21. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e6fdddf0-9eeb-4b46-a577-97e13a49fc4c",
+        "ts": 1776967728.753068,
+        "agent": "General_Hospital_Triage",
+        "kind": "communication",
+        "payload": {
+          "content": "General_Hospital_Triage planning final: no resource deficit for current JOB QUEUE. Need 20 IV_Kits and 20 PPE_Sets for 20 triage step-0 patients; inventory has IV_Kits 41 and PPE_Sets 45. Surplus beyond queue needs remains available for transfer: IV_Kits 21, Anesthetics 9, Pain_Killers 21, Radio_Contrast 13, Oxygen_Tanks 17, Surgical_Packs 9, PPE_Sets 25. Ready to schedule all queued triage step-0 patients.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "2fa2b546-dc76-4ae1-9a33-f94e23f9971f",
+        "ts": 1776967736.8022826,
+        "agent": "General_Hospital_Radiology",
+        "kind": "communication",
+        "payload": {
+          "content": "General_Hospital_Radiology planning final: JOB QUEUE empty, so no radiology scheduling actions taken. No current deficit. Surplus available for transfer if needed: IV_Kits 41, Anesthetics 9, Pain_Killers 21, Radio_Contrast 13, Oxygen_Tanks 17, Surgical_Packs 9, PPE_Sets 45. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ad91bf2f-e152-4151-8899-1b2921961108",
+        "ts": 1776967742.7103646,
+        "agent": "St_Marys_Center_Ward",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "St_Marys_Center_Ward": {
+                "message": "SURPLUS IV_Kits, Anesthetics, Pain_Killers, Radio_Contrast, Oxygen_Tanks, Surgical_Packs, PPE_Sets at St_Marys_Center_Ward/St_Marys_Center.",
+                "rationale": "Ward JOB QUEUE is empty, so no immediate department consumption is scheduled. Inventory exceeds immediate need by more than 5 units for all listed resources; advertising surplus supports redistribution rewards and reduces holding cost."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'SURPLUS IV_Kits, Anesthetics, Pain_Killers, Radio_Contrast, Oxygen_Tanks, Surgical_Packs, PPE_Sets at St_Marys_Center_Ward/St_Marys_Center.'. (Internal Rationale: Ward JOB QUEUE is empty, so no immediate department consumption is scheduled. Inventory exceeds immediate need by more than 5 units for all listed resources; advertising surplus supports redistribution rewards and reduces holding cost.)",
+            "state_updates": {
+              "broadcast_message": {
+                "St_Marys_Center_Ward": {
+                  "message": "SURPLUS IV_Kits, Anesthetics, Pain_Killers, Radio_Contrast, Oxygen_Tanks, Surgical_Packs, PPE_Sets at St_Marys_Center_Ward/St_Marys_Center.",
+                  "rationale": "Ward JOB QUEUE is empty, so no immediate department consumption is scheduled. Inventory exceeds immediate need by more than 5 units for all listed resources; advertising surplus supports redistribution rewards and reduces holding cost."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f3df525f-a4b7-499a-9d7a-5970ede0be56",
+        "ts": 1776967742.710545,
+        "agent": "St_Marys_Center_Ward",
+        "kind": "communication",
+        "payload": {
+          "content": "St_Marys_Center_Ward planning final: JOB QUEUE empty, no ward scheduling actions taken. No current deficit. Surplus available for transfer if needed: IV_Kits 41, Anesthetics 9, Pain_Killers 21, Radio_Contrast 13, Oxygen_Tanks 17, Surgical_Packs 9, PPE_Sets 45. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "6fcd2a5f-65e1-475c-a762-0a1586066d4b",
+        "ts": 1776967750.214123,
+        "agent": "St_Marys_Center_Triage",
+        "kind": "communication",
+        "payload": {
+          "content": "St_Marys_Center_Triage planning final: no resource deficit for current JOB QUEUE. Need 20 IV_Kits and 20 PPE_Sets for 20 triage step-0 patients; inventory has IV_Kits 41 and PPE_Sets 45. Surplus beyond queue needs remains available for transfer: IV_Kits 21, Anesthetics 9, Pain_Killers 21, Radio_Contrast 13, Oxygen_Tanks 17, Surgical_Packs 9, PPE_Sets 25. Ready to schedule all queued triage step-0 patients.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "37f47523-68c3-46d9-bb80-b1e76a4181e0",
+        "ts": 1776967756.0371957,
+        "agent": "General_Hospital_Surgery",
+        "kind": "communication",
+        "payload": {
+          "content": "General_Hospital_Surgery planning final: JOB QUEUE empty, so no surgery scheduling actions taken. No current deficit. Surplus available for transfer if needed: Anesthetics 9, Surgical_Packs 9, PPE_Sets 45, IV_Kits 41, Pain_Killers 21. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b55cee65-96ca-4ea3-8d10-bca104d5f9df",
+        "ts": 1776967778.1008704,
+        "agent": "General_Hospital_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Triage": {
+                "patient_id": "Patient_0",
+                "step_index": 0,
+                "start_time": 2,
+                "rationale": "Scheduling required triage step 0 at listed earliest start from job queue."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_0. Rationale: Scheduling required triage step 0 at listed earliest start from job queue.",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Triage": {
+                  "patient_id": "Patient_0",
+                  "step_index": 0,
+                  "start_time": 2,
+                  "rationale": "Scheduling required triage step 0 at listed earliest start from job queue."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "2ebfcd3b-8e75-4def-bfd2-beeac9aa5eae",
+        "ts": 1776967778.1011052,
+        "agent": "General_Hospital_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Triage": {
+                "patient_id": "Patient_1",
+                "step_index": 0,
+                "start_time": 11,
+                "rationale": "Scheduling required triage step 0 at listed earliest start from job queue."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_1. Rationale: Scheduling required triage step 0 at listed earliest start from job queue.",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Triage": {
+                  "patient_id": "Patient_1",
+                  "step_index": 0,
+                  "start_time": 11,
+                  "rationale": "Scheduling required triage step 0 at listed earliest start from job queue."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "bfb8c262-c245-490c-8b4e-b5b5ba58de83",
+        "ts": 1776967778.1012979,
+        "agent": "General_Hospital_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Triage": {
+                "patient_id": "Patient_2",
+                "step_index": 0,
+                "start_time": 23,
+                "rationale": "Scheduling required triage step 0 at listed earliest start from job queue."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_2. Rationale: Scheduling required triage step 0 at listed earliest start from job queue.",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Triage": {
+                  "patient_id": "Patient_2",
+                  "step_index": 0,
+                  "start_time": 23,
+                  "rationale": "Scheduling required triage step 0 at listed earliest start from job queue."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "fbc9aa8c-fabf-41e9-a0ee-c7b14742eb8e",
+        "ts": 1776967778.101459,
+        "agent": "General_Hospital_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Triage": {
+                "patient_id": "Patient_3",
+                "step_index": 0,
+                "start_time": 9,
+                "rationale": "Scheduling required triage step 0 at listed earliest start from job queue."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_3. Rationale: Scheduling required triage step 0 at listed earliest start from job queue.",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Triage": {
+                  "patient_id": "Patient_3",
+                  "step_index": 0,
+                  "start_time": 9,
+                  "rationale": "Scheduling required triage step 0 at listed earliest start from job queue."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "6808db6a-9eec-419e-b4b1-a15500c585a4",
+        "ts": 1776967778.1016092,
+        "agent": "General_Hospital_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Triage": {
+                "patient_id": "Patient_4",
+                "step_index": 0,
+                "start_time": 19,
+                "rationale": "Scheduling required triage step 0 at listed earliest start from job queue."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_4. Rationale: Scheduling required triage step 0 at listed earliest start from job queue.",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Triage": {
+                  "patient_id": "Patient_4",
+                  "step_index": 0,
+                  "start_time": 19,
+                  "rationale": "Scheduling required triage step 0 at listed earliest start from job queue."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "2971e7cb-d8cc-4ea8-95a4-8db8cf21547f",
+        "ts": 1776967778.1017678,
+        "agent": "General_Hospital_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Triage": {
+                "patient_id": "Patient_5",
+                "step_index": 0,
+                "start_time": 19,
+                "rationale": "Scheduling required triage step 0 at listed earliest start from job queue."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_5. Rationale: Scheduling required triage step 0 at listed earliest start from job queue.",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Triage": {
+                  "patient_id": "Patient_5",
+                  "step_index": 0,
+                  "start_time": 19,
+                  "rationale": "Scheduling required triage step 0 at listed earliest start from job queue."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "51ff7f5d-52c3-466e-9ea8-833d6951ffc5",
+        "ts": 1776967778.1019216,
+        "agent": "General_Hospital_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Triage": {
+                "patient_id": "Patient_6",
+                "step_index": 0,
+                "start_time": 18,
+                "rationale": "Scheduling required triage step 0 at listed earliest start from job queue."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_6. Rationale: Scheduling required triage step 0 at listed earliest start from job queue.",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Triage": {
+                  "patient_id": "Patient_6",
+                  "step_index": 0,
+                  "start_time": 18,
+                  "rationale": "Scheduling required triage step 0 at listed earliest start from job queue."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "34599e43-6c43-43ea-8dd9-dc0931e0183e",
+        "ts": 1776967778.1020808,
+        "agent": "General_Hospital_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Triage": {
+                "patient_id": "Patient_7",
+                "step_index": 0,
+                "start_time": 5,
+                "rationale": "Scheduling required triage step 0 at listed earliest start from job queue."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_7. Rationale: Scheduling required triage step 0 at listed earliest start from job queue.",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Triage": {
+                  "patient_id": "Patient_7",
+                  "step_index": 0,
+                  "start_time": 5,
+                  "rationale": "Scheduling required triage step 0 at listed earliest start from job queue."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "541bbf7d-5a08-492a-8373-27dfbdf09815",
+        "ts": 1776967778.1022246,
+        "agent": "General_Hospital_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Triage": {
+                "patient_id": "Patient_8",
+                "step_index": 0,
+                "start_time": 20,
+                "rationale": "Scheduling required triage step 0 at listed earliest start from job queue."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_8. Rationale: Scheduling required triage step 0 at listed earliest start from job queue.",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Triage": {
+                  "patient_id": "Patient_8",
+                  "step_index": 0,
+                  "start_time": 20,
+                  "rationale": "Scheduling required triage step 0 at listed earliest start from job queue."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "23a142e5-c929-4c85-a58f-586e17413039",
+        "ts": 1776967778.1023638,
+        "agent": "General_Hospital_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Triage": {
+                "patient_id": "Patient_9",
+                "step_index": 0,
+                "start_time": 23,
+                "rationale": "Scheduling required triage step 0 at listed earliest start from job queue."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_9. Rationale: Scheduling required triage step 0 at listed earliest start from job queue.",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Triage": {
+                  "patient_id": "Patient_9",
+                  "step_index": 0,
+                  "start_time": 23,
+                  "rationale": "Scheduling required triage step 0 at listed earliest start from job queue."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "30b3608d-fecd-4f70-8f3d-06ca6af088aa",
+        "ts": 1776967778.102507,
+        "agent": "General_Hospital_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Triage": {
+                "patient_id": "Patient_10",
+                "step_index": 0,
+                "start_time": 11,
+                "rationale": "Scheduling required triage step 0 at listed earliest start from job queue."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_10. Rationale: Scheduling required triage step 0 at listed earliest start from job queue.",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Triage": {
+                  "patient_id": "Patient_10",
+                  "step_index": 0,
+                  "start_time": 11,
+                  "rationale": "Scheduling required triage step 0 at listed earliest start from job queue."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "dd2924ca-5a39-4bf7-b2ab-afed2cb36059",
+        "ts": 1776967778.1026692,
+        "agent": "General_Hospital_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Triage": {
+                "patient_id": "Patient_11",
+                "step_index": 0,
+                "start_time": 14,
+                "rationale": "Scheduling required triage step 0 at listed earliest start from job queue."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_11. Rationale: Scheduling required triage step 0 at listed earliest start from job queue.",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Triage": {
+                  "patient_id": "Patient_11",
+                  "step_index": 0,
+                  "start_time": 14,
+                  "rationale": "Scheduling required triage step 0 at listed earliest start from job queue."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "44e39a59-4180-483c-8415-d971d2893147",
+        "ts": 1776967778.102804,
+        "agent": "General_Hospital_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Triage": {
+                "patient_id": "Patient_12",
+                "step_index": 0,
+                "start_time": 8,
+                "rationale": "Scheduling required triage step 0 at listed earliest start from job queue."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_12. Rationale: Scheduling required triage step 0 at listed earliest start from job queue.",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Triage": {
+                  "patient_id": "Patient_12",
+                  "step_index": 0,
+                  "start_time": 8,
+                  "rationale": "Scheduling required triage step 0 at listed earliest start from job queue."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "84019524-2a20-4fca-bb35-b55d65b180bb",
+        "ts": 1776967778.1029487,
+        "agent": "General_Hospital_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Triage": {
+                "patient_id": "Patient_13",
+                "step_index": 0,
+                "start_time": 0,
+                "rationale": "Scheduling required triage step 0 at listed earliest start from job queue."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_13. Rationale: Scheduling required triage step 0 at listed earliest start from job queue.",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Triage": {
+                  "patient_id": "Patient_13",
+                  "step_index": 0,
+                  "start_time": 0,
+                  "rationale": "Scheduling required triage step 0 at listed earliest start from job queue."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a1a5a49a-4143-49bf-af8b-6aa86a7c6d12",
+        "ts": 1776967778.1030996,
+        "agent": "General_Hospital_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Triage": {
+                "patient_id": "Patient_14",
+                "step_index": 0,
+                "start_time": 14,
+                "rationale": "Scheduling required triage step 0 at listed earliest start from job queue."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_14. Rationale: Scheduling required triage step 0 at listed earliest start from job queue.",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Triage": {
+                  "patient_id": "Patient_14",
+                  "step_index": 0,
+                  "start_time": 14,
+                  "rationale": "Scheduling required triage step 0 at listed earliest start from job queue."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "3400817a-08c9-42f5-a0b6-bc74d479c7f9",
+        "ts": 1776967778.1032412,
+        "agent": "General_Hospital_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Triage": {
+                "patient_id": "Patient_15",
+                "step_index": 0,
+                "start_time": 12,
+                "rationale": "Scheduling required triage step 0 at listed earliest start from job queue."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_15. Rationale: Scheduling required triage step 0 at listed earliest start from job queue.",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Triage": {
+                  "patient_id": "Patient_15",
+                  "step_index": 0,
+                  "start_time": 12,
+                  "rationale": "Scheduling required triage step 0 at listed earliest start from job queue."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b6c04e1c-9829-4702-81ab-23ab63fa459b",
+        "ts": 1776967778.1033137,
+        "agent": "General_Hospital_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Triage": {
+                "patient_id": "Patient_16",
+                "step_index": 0,
+                "start_time": 16,
+                "rationale": "Scheduling required triage step 0 at listed earliest start from job queue."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_16. Rationale: Scheduling required triage step 0 at listed earliest start from job queue.",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Triage": {
+                  "patient_id": "Patient_16",
+                  "step_index": 0,
+                  "start_time": 16,
+                  "rationale": "Scheduling required triage step 0 at listed earliest start from job queue."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ae467243-d7aa-470d-9efe-2afcd8c47407",
+        "ts": 1776967778.10338,
+        "agent": "General_Hospital_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Triage": {
+                "patient_id": "Patient_17",
+                "step_index": 0,
+                "start_time": 17,
+                "rationale": "Scheduling required triage step 0 at listed earliest start from job queue."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_17. Rationale: Scheduling required triage step 0 at listed earliest start from job queue.",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Triage": {
+                  "patient_id": "Patient_17",
+                  "step_index": 0,
+                  "start_time": 17,
+                  "rationale": "Scheduling required triage step 0 at listed earliest start from job queue."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c31551c4-7897-4c64-8143-9bcbd61aeeeb",
+        "ts": 1776967778.103428,
+        "agent": "General_Hospital_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Triage": {
+                "patient_id": "Patient_18",
+                "step_index": 0,
+                "start_time": 7,
+                "rationale": "Scheduling required triage step 0 at listed earliest start from job queue."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_18. Rationale: Scheduling required triage step 0 at listed earliest start from job queue.",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Triage": {
+                  "patient_id": "Patient_18",
+                  "step_index": 0,
+                  "start_time": 7,
+                  "rationale": "Scheduling required triage step 0 at listed earliest start from job queue."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "bea5300b-279b-47e8-bc67-76d48f3d3bb1",
+        "ts": 1776967778.1034772,
+        "agent": "General_Hospital_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Triage": {
+                "patient_id": "Patient_19",
+                "step_index": 0,
+                "start_time": 0,
+                "rationale": "Scheduling required triage step 0 at listed earliest start from job queue."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_19. Rationale: Scheduling required triage step 0 at listed earliest start from job queue.",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Triage": {
+                  "patient_id": "Patient_19",
+                  "step_index": 0,
+                  "start_time": 0,
+                  "rationale": "Scheduling required triage step 0 at listed earliest start from job queue."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "443130f0-2771-431a-b37a-87d4b5a9655f",
+        "ts": 1776967786.1564653,
+        "agent": "General_Hospital_Radiology",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Radiology": {
+                "patient_id": "Patient_0",
+                "step_index": 1,
+                "start_time": 3,
+                "rationale": "Scheduling required radiology step 1 at earliest start from mandatory task list."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_0. Rationale: Scheduling required radiology step 1 at earliest start from mandatory task list.",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Radiology": {
+                  "patient_id": "Patient_0",
+                  "step_index": 1,
+                  "start_time": 3,
+                  "rationale": "Scheduling required radiology step 1 at earliest start from mandatory task list."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f2d76543-9216-4b89-bac3-043cbe98bb16",
+        "ts": 1776967786.1566975,
+        "agent": "General_Hospital_Radiology",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Radiology": {
+                "patient_id": "Patient_1",
+                "step_index": 1,
+                "start_time": 12,
+                "rationale": "Scheduling required radiology step 1 at earliest start from mandatory task list."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_1. Rationale: Scheduling required radiology step 1 at earliest start from mandatory task list.",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Radiology": {
+                  "patient_id": "Patient_1",
+                  "step_index": 1,
+                  "start_time": 12,
+                  "rationale": "Scheduling required radiology step 1 at earliest start from mandatory task list."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8fe94e5c-0e91-4559-8cc8-3bb0a067bc9b",
+        "ts": 1776967786.156879,
+        "agent": "General_Hospital_Radiology",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Radiology": {
+                "patient_id": "Patient_2",
+                "step_index": 1,
+                "start_time": 24,
+                "rationale": "Scheduling required radiology step 1 at earliest start from mandatory task list."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_2. Rationale: Scheduling required radiology step 1 at earliest start from mandatory task list.",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Radiology": {
+                  "patient_id": "Patient_2",
+                  "step_index": 1,
+                  "start_time": 24,
+                  "rationale": "Scheduling required radiology step 1 at earliest start from mandatory task list."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "6cc9b316-7f4c-486c-9eae-73141bbd5ce3",
+        "ts": 1776967786.1572068,
+        "agent": "General_Hospital_Radiology",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Radiology": {
+                "patient_id": "Patient_3",
+                "step_index": 1,
+                "start_time": 10,
+                "rationale": "Scheduling required radiology step 1 at earliest start from mandatory task list."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_3. Rationale: Scheduling required radiology step 1 at earliest start from mandatory task list.",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Radiology": {
+                  "patient_id": "Patient_3",
+                  "step_index": 1,
+                  "start_time": 10,
+                  "rationale": "Scheduling required radiology step 1 at earliest start from mandatory task list."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "71216d40-78ee-4d8d-89a9-a5e75d804992",
+        "ts": 1776967786.1574852,
+        "agent": "General_Hospital_Radiology",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Radiology": {
+                "patient_id": "Patient_5",
+                "step_index": 1,
+                "start_time": 20,
+                "rationale": "Scheduling required radiology step 1 at earliest start from mandatory task list."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_5. Rationale: Scheduling required radiology step 1 at earliest start from mandatory task list.",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Radiology": {
+                  "patient_id": "Patient_5",
+                  "step_index": 1,
+                  "start_time": 20,
+                  "rationale": "Scheduling required radiology step 1 at earliest start from mandatory task list."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "153790a7-5674-46fc-a265-4450aa2c9570",
+        "ts": 1776967786.1576552,
+        "agent": "General_Hospital_Radiology",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Radiology": {
+                "patient_id": "Patient_6",
+                "step_index": 1,
+                "start_time": 19,
+                "rationale": "Scheduling required radiology step 1 at earliest start from mandatory task list."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_6. Rationale: Scheduling required radiology step 1 at earliest start from mandatory task list.",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Radiology": {
+                  "patient_id": "Patient_6",
+                  "step_index": 1,
+                  "start_time": 19,
+                  "rationale": "Scheduling required radiology step 1 at earliest start from mandatory task list."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9166ba2e-e152-4af4-989c-18fb87c90947",
+        "ts": 1776967786.1577973,
+        "agent": "General_Hospital_Radiology",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Radiology": {
+                "patient_id": "Patient_7",
+                "step_index": 1,
+                "start_time": 6,
+                "rationale": "Scheduling required radiology step 1 at earliest start from mandatory task list."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_7. Rationale: Scheduling required radiology step 1 at earliest start from mandatory task list.",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Radiology": {
+                  "patient_id": "Patient_7",
+                  "step_index": 1,
+                  "start_time": 6,
+                  "rationale": "Scheduling required radiology step 1 at earliest start from mandatory task list."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d8134813-ed7a-46d5-a33b-25c376d90c81",
+        "ts": 1776967786.157931,
+        "agent": "General_Hospital_Radiology",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Radiology": {
+                "patient_id": "Patient_10",
+                "step_index": 1,
+                "start_time": 12,
+                "rationale": "Scheduling required radiology step 1 at earliest start from mandatory task list."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_10. Rationale: Scheduling required radiology step 1 at earliest start from mandatory task list.",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Radiology": {
+                  "patient_id": "Patient_10",
+                  "step_index": 1,
+                  "start_time": 12,
+                  "rationale": "Scheduling required radiology step 1 at earliest start from mandatory task list."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a5519d79-8670-4a9c-8a85-f680c4c8bb74",
+        "ts": 1776967786.158077,
+        "agent": "General_Hospital_Radiology",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Radiology": {
+                "patient_id": "Patient_11",
+                "step_index": 1,
+                "start_time": 15,
+                "rationale": "Scheduling required radiology step 1 at earliest start from mandatory task list."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_11. Rationale: Scheduling required radiology step 1 at earliest start from mandatory task list.",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Radiology": {
+                  "patient_id": "Patient_11",
+                  "step_index": 1,
+                  "start_time": 15,
+                  "rationale": "Scheduling required radiology step 1 at earliest start from mandatory task list."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "558ce12b-1e61-48c5-a102-e2f457ffc4a5",
+        "ts": 1776967786.1582122,
+        "agent": "General_Hospital_Radiology",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Radiology": {
+                "patient_id": "Patient_12",
+                "step_index": 1,
+                "start_time": 9,
+                "rationale": "Scheduling required radiology step 1 at earliest start from mandatory task list."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_12. Rationale: Scheduling required radiology step 1 at earliest start from mandatory task list.",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Radiology": {
+                  "patient_id": "Patient_12",
+                  "step_index": 1,
+                  "start_time": 9,
+                  "rationale": "Scheduling required radiology step 1 at earliest start from mandatory task list."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9c556bc5-fb86-4499-b781-184a1029815a",
+        "ts": 1776967786.1583655,
+        "agent": "General_Hospital_Radiology",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Radiology": {
+                "patient_id": "Patient_13",
+                "step_index": 1,
+                "start_time": 1,
+                "rationale": "Scheduling required radiology step 1 at earliest start from mandatory task list."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_13. Rationale: Scheduling required radiology step 1 at earliest start from mandatory task list.",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Radiology": {
+                  "patient_id": "Patient_13",
+                  "step_index": 1,
+                  "start_time": 1,
+                  "rationale": "Scheduling required radiology step 1 at earliest start from mandatory task list."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "5dcb8680-9e45-4025-aef9-d965d8722676",
+        "ts": 1776967786.1584969,
+        "agent": "General_Hospital_Radiology",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Radiology": {
+                "patient_id": "Patient_17",
+                "step_index": 1,
+                "start_time": 18,
+                "rationale": "Scheduling required radiology step 1 at earliest start from mandatory task list."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_17. Rationale: Scheduling required radiology step 1 at earliest start from mandatory task list.",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Radiology": {
+                  "patient_id": "Patient_17",
+                  "step_index": 1,
+                  "start_time": 18,
+                  "rationale": "Scheduling required radiology step 1 at earliest start from mandatory task list."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f702cd5a-fda8-4bcd-8c85-099efc739f68",
+        "ts": 1776967786.1586158,
+        "agent": "General_Hospital_Radiology",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Radiology": {
+                "patient_id": "Patient_18",
+                "step_index": 1,
+                "start_time": 8,
+                "rationale": "Scheduling required radiology step 1 at earliest start from mandatory task list."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_18. Rationale: Scheduling required radiology step 1 at earliest start from mandatory task list.",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Radiology": {
+                  "patient_id": "Patient_18",
+                  "step_index": 1,
+                  "start_time": 8,
+                  "rationale": "Scheduling required radiology step 1 at earliest start from mandatory task list."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "4b88210c-3672-4683-8553-bf82aab1e26e",
+        "ts": 1776967786.1587431,
+        "agent": "General_Hospital_Radiology",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Radiology": {
+                "patient_id": "Patient_19",
+                "step_index": 1,
+                "start_time": 1,
+                "rationale": "Scheduling required radiology step 1 at earliest start from mandatory task list."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_19. Rationale: Scheduling required radiology step 1 at earliest start from mandatory task list.",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Radiology": {
+                  "patient_id": "Patient_19",
+                  "step_index": 1,
+                  "start_time": 1,
+                  "rationale": "Scheduling required radiology step 1 at earliest start from mandatory task list."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c6563c9f-0b41-494b-9042-0c38e3ce51b5",
+        "ts": 1776967794.2398396,
+        "agent": "St_Marys_Center_Ward",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "St_Marys_Center_Ward": {
+                "patient_id": "Patient_3",
+                "step_index": 2,
+                "start_time": 16,
+                "rationale": "Scheduling mandatory ward step 2 at earliest start from job queue."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_3. Rationale: Scheduling mandatory ward step 2 at earliest start from job queue.",
+            "state_updates": {
+              "schedule": {
+                "St_Marys_Center_Ward": {
+                  "patient_id": "Patient_3",
+                  "step_index": 2,
+                  "start_time": 16,
+                  "rationale": "Scheduling mandatory ward step 2 at earliest start from job queue."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "720e9731-7de5-44e8-a778-0e521340b667",
+        "ts": 1776967794.239941,
+        "agent": "St_Marys_Center_Ward",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "St_Marys_Center_Ward": {
+                "patient_id": "Patient_4",
+                "step_index": 1,
+                "start_time": 24,
+                "rationale": "Scheduling mandatory ward step 1 at earliest start from job queue."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_4. Rationale: Scheduling mandatory ward step 1 at earliest start from job queue.",
+            "state_updates": {
+              "schedule": {
+                "St_Marys_Center_Ward": {
+                  "patient_id": "Patient_4",
+                  "step_index": 1,
+                  "start_time": 24,
+                  "rationale": "Scheduling mandatory ward step 1 at earliest start from job queue."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "abb3ca0d-7289-4f47-96c3-18d0d4f3a6b6",
+        "ts": 1776967794.240022,
+        "agent": "St_Marys_Center_Ward",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "St_Marys_Center_Ward": {
+                "patient_id": "Patient_7",
+                "step_index": 2,
+                "start_time": 12,
+                "rationale": "Scheduling mandatory ward step 2 at earliest start from job queue."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_7. Rationale: Scheduling mandatory ward step 2 at earliest start from job queue.",
+            "state_updates": {
+              "schedule": {
+                "St_Marys_Center_Ward": {
+                  "patient_id": "Patient_7",
+                  "step_index": 2,
+                  "start_time": 12,
+                  "rationale": "Scheduling mandatory ward step 2 at earliest start from job queue."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "60f17faa-b8c8-4f5c-8844-69bf423a1c47",
+        "ts": 1776967794.240088,
+        "agent": "St_Marys_Center_Ward",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "St_Marys_Center_Ward": {
+                "patient_id": "Patient_8",
+                "step_index": 1,
+                "start_time": 25,
+                "rationale": "Scheduling mandatory ward step 1 at earliest start from job queue."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_8. Rationale: Scheduling mandatory ward step 1 at earliest start from job queue.",
+            "state_updates": {
+              "schedule": {
+                "St_Marys_Center_Ward": {
+                  "patient_id": "Patient_8",
+                  "step_index": 1,
+                  "start_time": 25,
+                  "rationale": "Scheduling mandatory ward step 1 at earliest start from job queue."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "961bbe8d-3d3e-4436-863a-a34e586f46cb",
+        "ts": 1776967794.2401514,
+        "agent": "St_Marys_Center_Ward",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "St_Marys_Center_Ward": {
+                "patient_id": "Patient_9",
+                "step_index": 1,
+                "start_time": 28,
+                "rationale": "Scheduling mandatory ward step 1 at earliest start from job queue."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_9. Rationale: Scheduling mandatory ward step 1 at earliest start from job queue.",
+            "state_updates": {
+              "schedule": {
+                "St_Marys_Center_Ward": {
+                  "patient_id": "Patient_9",
+                  "step_index": 1,
+                  "start_time": 28,
+                  "rationale": "Scheduling mandatory ward step 1 at earliest start from job queue."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1a62e9d8-9838-457f-9dbb-741621aaf718",
+        "ts": 1776967794.2402337,
+        "agent": "St_Marys_Center_Ward",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "St_Marys_Center_Ward": {
+                "patient_id": "Patient_10",
+                "step_index": 2,
+                "start_time": 18,
+                "rationale": "Scheduling mandatory ward step 2 at earliest start from job queue."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_10. Rationale: Scheduling mandatory ward step 2 at earliest start from job queue.",
+            "state_updates": {
+              "schedule": {
+                "St_Marys_Center_Ward": {
+                  "patient_id": "Patient_10",
+                  "step_index": 2,
+                  "start_time": 18,
+                  "rationale": "Scheduling mandatory ward step 2 at earliest start from job queue."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "291bf703-1299-4c47-bf1e-d1634d81ae8c",
+        "ts": 1776967794.2402964,
+        "agent": "St_Marys_Center_Ward",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "St_Marys_Center_Ward": {
+                "patient_id": "Patient_11",
+                "step_index": 2,
+                "start_time": 21,
+                "rationale": "Scheduling mandatory ward step 2 at earliest start from job queue."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_11. Rationale: Scheduling mandatory ward step 2 at earliest start from job queue.",
+            "state_updates": {
+              "schedule": {
+                "St_Marys_Center_Ward": {
+                  "patient_id": "Patient_11",
+                  "step_index": 2,
+                  "start_time": 21,
+                  "rationale": "Scheduling mandatory ward step 2 at earliest start from job queue."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "87daa0de-7e55-4fd8-9e06-d4b4c7dd4590",
+        "ts": 1776967794.2403567,
+        "agent": "St_Marys_Center_Ward",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "St_Marys_Center_Ward": {
+                "patient_id": "Patient_12",
+                "step_index": 2,
+                "start_time": 15,
+                "rationale": "Scheduling mandatory ward step 2 at earliest start from job queue."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_12. Rationale: Scheduling mandatory ward step 2 at earliest start from job queue.",
+            "state_updates": {
+              "schedule": {
+                "St_Marys_Center_Ward": {
+                  "patient_id": "Patient_12",
+                  "step_index": 2,
+                  "start_time": 15,
+                  "rationale": "Scheduling mandatory ward step 2 at earliest start from job queue."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "56dfe46e-c484-410d-863c-1e1704928fbc",
+        "ts": 1776967794.2404118,
+        "agent": "St_Marys_Center_Ward",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "St_Marys_Center_Ward": {
+                "patient_id": "Patient_14",
+                "step_index": 1,
+                "start_time": 19,
+                "rationale": "Scheduling mandatory ward step 1 at earliest start from job queue."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_14. Rationale: Scheduling mandatory ward step 1 at earliest start from job queue.",
+            "state_updates": {
+              "schedule": {
+                "St_Marys_Center_Ward": {
+                  "patient_id": "Patient_14",
+                  "step_index": 1,
+                  "start_time": 19,
+                  "rationale": "Scheduling mandatory ward step 1 at earliest start from job queue."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "4f58b567-b57b-4bba-9538-bfe225c213a7",
+        "ts": 1776967794.240471,
+        "agent": "St_Marys_Center_Ward",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "St_Marys_Center_Ward": {
+                "patient_id": "Patient_15",
+                "step_index": 1,
+                "start_time": 17,
+                "rationale": "Scheduling mandatory ward step 1 at earliest start from job queue."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_15. Rationale: Scheduling mandatory ward step 1 at earliest start from job queue.",
+            "state_updates": {
+              "schedule": {
+                "St_Marys_Center_Ward": {
+                  "patient_id": "Patient_15",
+                  "step_index": 1,
+                  "start_time": 17,
+                  "rationale": "Scheduling mandatory ward step 1 at earliest start from job queue."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "cd228230-d42e-452e-bef9-f84bdaf1941c",
+        "ts": 1776967794.240527,
+        "agent": "St_Marys_Center_Ward",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "St_Marys_Center_Ward": {
+                "patient_id": "Patient_16",
+                "step_index": 1,
+                "start_time": 21,
+                "rationale": "Scheduling mandatory ward step 1 at earliest start from job queue."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_16. Rationale: Scheduling mandatory ward step 1 at earliest start from job queue.",
+            "state_updates": {
+              "schedule": {
+                "St_Marys_Center_Ward": {
+                  "patient_id": "Patient_16",
+                  "step_index": 1,
+                  "start_time": 21,
+                  "rationale": "Scheduling mandatory ward step 1 at earliest start from job queue."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a0da9165-c84a-41e4-8823-7445e8912fac",
+        "ts": 1776967806.1514375,
+        "agent": "General_Hospital_Surgery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Surgery": {
+                "patient_id": "Patient_0",
+                "step_index": 2,
+                "start_time": 4,
+                "rationale": "Scheduling mandatory surgery step 2 at earliest start from job queue."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_0. Rationale: Scheduling mandatory surgery step 2 at earliest start from job queue.",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Surgery": {
+                  "patient_id": "Patient_0",
+                  "step_index": 2,
+                  "start_time": 4,
+                  "rationale": "Scheduling mandatory surgery step 2 at earliest start from job queue."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e12a39c9-8a8c-4412-abd5-19267c5103f3",
+        "ts": 1776967806.151649,
+        "agent": "General_Hospital_Surgery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Surgery": {
+                "patient_id": "Patient_1",
+                "step_index": 2,
+                "start_time": 13,
+                "rationale": "Scheduling mandatory surgery step 2 at earliest start from job queue."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_1. Rationale: Scheduling mandatory surgery step 2 at earliest start from job queue.",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Surgery": {
+                  "patient_id": "Patient_1",
+                  "step_index": 2,
+                  "start_time": 13,
+                  "rationale": "Scheduling mandatory surgery step 2 at earliest start from job queue."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8e062207-a3fb-4e1d-901c-0f5e1628096a",
+        "ts": 1776967806.1518052,
+        "agent": "General_Hospital_Surgery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Surgery": {
+                "patient_id": "Patient_2",
+                "step_index": 2,
+                "start_time": 25,
+                "rationale": "Scheduling mandatory surgery step 2 at earliest start from job queue."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_2. Rationale: Scheduling mandatory surgery step 2 at earliest start from job queue.",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Surgery": {
+                  "patient_id": "Patient_2",
+                  "step_index": 2,
+                  "start_time": 25,
+                  "rationale": "Scheduling mandatory surgery step 2 at earliest start from job queue."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a07bf463-6c7d-43d6-bf5c-0dcc788569f9",
+        "ts": 1776967806.151947,
+        "agent": "General_Hospital_Surgery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Surgery": {
+                "patient_id": "Patient_5",
+                "step_index": 2,
+                "start_time": 21,
+                "rationale": "Scheduling mandatory surgery step 2 at earliest start from job queue."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_5. Rationale: Scheduling mandatory surgery step 2 at earliest start from job queue.",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Surgery": {
+                  "patient_id": "Patient_5",
+                  "step_index": 2,
+                  "start_time": 21,
+                  "rationale": "Scheduling mandatory surgery step 2 at earliest start from job queue."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ec03fa8f-219d-4793-bbfa-22ec6aa9c989",
+        "ts": 1776967806.1529186,
+        "agent": "General_Hospital_Surgery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Surgery": {
+                "patient_id": "Patient_6",
+                "step_index": 2,
+                "start_time": 20,
+                "rationale": "Scheduling mandatory surgery step 2 at earliest start from job queue."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_6. Rationale: Scheduling mandatory surgery step 2 at earliest start from job queue.",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Surgery": {
+                  "patient_id": "Patient_6",
+                  "step_index": 2,
+                  "start_time": 20,
+                  "rationale": "Scheduling mandatory surgery step 2 at earliest start from job queue."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "161b013e-e0a0-4605-b695-ea50f81f95ea",
+        "ts": 1776967806.1531746,
+        "agent": "General_Hospital_Surgery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Surgery": {
+                "patient_id": "Patient_13",
+                "step_index": 2,
+                "start_time": 2,
+                "rationale": "Scheduling mandatory surgery step 2 at earliest start from job queue."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_13. Rationale: Scheduling mandatory surgery step 2 at earliest start from job queue.",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Surgery": {
+                  "patient_id": "Patient_13",
+                  "step_index": 2,
+                  "start_time": 2,
+                  "rationale": "Scheduling mandatory surgery step 2 at earliest start from job queue."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1f150b38-46ae-4212-963e-a04eee63d0cf",
+        "ts": 1776967806.1534002,
+        "agent": "General_Hospital_Surgery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Surgery": {
+                "patient_id": "Patient_17",
+                "step_index": 2,
+                "start_time": 19,
+                "rationale": "Scheduling mandatory surgery step 2 at earliest start from job queue."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_17. Rationale: Scheduling mandatory surgery step 2 at earliest start from job queue.",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Surgery": {
+                  "patient_id": "Patient_17",
+                  "step_index": 2,
+                  "start_time": 19,
+                  "rationale": "Scheduling mandatory surgery step 2 at earliest start from job queue."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "230e7b9a-85dc-4caa-8191-7daa97389540",
+        "ts": 1776967806.1535456,
+        "agent": "General_Hospital_Surgery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Surgery": {
+                "patient_id": "Patient_18",
+                "step_index": 2,
+                "start_time": 9,
+                "rationale": "Scheduling mandatory surgery step 2 at earliest start from job queue."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_18. Rationale: Scheduling mandatory surgery step 2 at earliest start from job queue.",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Surgery": {
+                  "patient_id": "Patient_18",
+                  "step_index": 2,
+                  "start_time": 9,
+                  "rationale": "Scheduling mandatory surgery step 2 at earliest start from job queue."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "4c34cc0f-ff47-4fed-b28b-6f7dfa33dec8",
+        "ts": 1776967806.1536856,
+        "agent": "General_Hospital_Surgery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Surgery": {
+                "patient_id": "Patient_19",
+                "step_index": 2,
+                "start_time": 2,
+                "rationale": "Scheduling mandatory surgery step 2 at earliest start from job queue."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_19. Rationale: Scheduling mandatory surgery step 2 at earliest start from job queue.",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Surgery": {
+                  "patient_id": "Patient_19",
+                  "step_index": 2,
+                  "start_time": 2,
+                  "rationale": "Scheduling mandatory surgery step 2 at earliest start from job queue."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  }
+]

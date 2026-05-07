@@ -1,0 +1,664 @@
+[
+  {
+    "blackboard_id": "0",
+    "participants": [
+      "Afton",
+      "Clarissa",
+      "Elda",
+      "Jessenia",
+      "Lenna",
+      "Sheri"
+    ],
+    "template": {},
+    "events": [
+      {
+        "blackboard_id": 0,
+        "id": "0a64c071-339a-4327-ba7b-49024b070008",
+        "ts": 1777319669.0137467,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Afton, Clarissa, Elda, Jessenia, Lenna, Sheri"
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "58f45e5a-fa6e-452f-8a8f-fdf9af22cfc9",
+        "ts": 1777319681.5953581,
+        "agent": "Lenna",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi everyone, I'm Lenna. I have 7.0 hours and my top skill is mobile-development (1.0). I am interested in ISSUE-0001 (Medium priority) tasks as they are higher priority than ISSUE-0002. I'm considering ISSUE-0001::implement (effort 4.0, my cost 3.64). What are your skills and preferences? We have 6 agents and 8 tasks, so we should aim to complete all of ISSUE-0001 first.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "df5e2ddd-4110-4cb7-9cd3-2fd05a08875b",
+        "ts": 1777319686.9491057,
+        "agent": "Lenna",
+        "kind": "communication",
+        "payload": {
+          "content": "To optimize our joint score, we should prioritize all 5 sub-tasks of ISSUE-0001 (Medium) before ISSUE-0002 (Low). I'll tentatively claim ISSUE-0001::implement. If someone else has a higher skill in mobile-development or lower availability, I can swap to a different task. \n\nCurrent tentative plan:\n- Lenna: ISSUE-0001::implement\n- Others: ISSUE-0001::review, ISSUE-0001::test, ISSUE-0001::docs, ISSUE-0001::triage, and one task from ISSUE-0002.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "2702668b-5ef9-43de-8b8c-0e52b6227ff5",
+        "ts": 1777319699.7176964,
+        "agent": "Clarissa",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi everyone, I'm Clarissa. I have 7.0 hours and my top skill is mobile-development (0.84). Lenna, I agree with your plan to prioritize ISSUE-0001. Since you've claimed the implementation, I'll tentatively claim ISSUE-0001::test (effort 2.8, my cost 2.99).\n\nTentative Plan:\n- Lenna: ISSUE-0001::implement\n- Clarissa: ISSUE-0001::test\n- Remaining for ISSUE-0001: review, docs, triage\n- Remaining for ISSUE-0002: review, test, implement (one agent can take one of these)\n\nAfton, Elda, Jessenia, Sheri - what are your skills and which of the remaining tasks would you like to take?",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f438909d-e6ba-438a-a045-683702692df2",
+        "ts": 1777319716.305572,
+        "agent": "Jessenia",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi everyone, I'm Jessenia. I have 4.0 hours and my top skill is mobile-development (0.87). I'll tentatively claim ISSUE-0001::review (effort 2.0, cost 2.06). \n\nCurrent Tentative Plan:\n- Lenna: ISSUE-0001::implement\n- Clarissa: ISSUE-0001::test\n- Jessenia: ISSUE-0001::review\n- Remaining for ISSUE-0001: docs, triage\n- Remaining for ISSUE-0002: review, test, implement\n\nAfton, Elda, Sheri - what are your skills and which of the remaining tasks would you like to take? We should definitely finish ISSUE-0001 first.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "2a5893a3-90c6-443b-b672-3a878335b323",
+        "ts": 1777319763.2500563,
+        "agent": "Sheri",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi everyone, I'm Sheri. I have 5.0 hours and my top skill is mobile-development (0.86). I'll tentatively claim ISSUE-0001::docs (effort 2.0, my cost 2.09). \n\nCurrent Tentative Plan:\n- Lenna: ISSUE-0001::implement\n- Clarissa: ISSUE-0001::test\n- Jessenia: ISSUE-0001::review\n- Sheri: ISSUE-0001::docs\n- Remaining for ISSUE-0001: triage\n- Remaining for ISSUE-0002: review, test, implement\n\nAfton and Elda - one of you should take ISSUE-0001::triage so we finish the medium priority issue first. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "dd1db2d3-5854-41fd-be7b-87563f95db01",
+        "ts": 1777319800.2348714,
+        "agent": "Afton",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi everyone, I'm Afton. I have 4.0 hours and my top skill is mobile-development (0.72). I'll tentatively claim ISSUE-0001::triage (effort 1.6, my cost 1.95). \n\nCurrent Tentative Plan:\n- Lenna: ISSUE-0001::implement\n- Clarissa: ISSUE-0001::test\n- Jessenia: ISSUE-0001::review\n- Sheri: ISSUE-0001::docs\n- Afton: ISSUE-0001::triage\n- Remaining for ISSUE-0002: review, test, implement\n\nElda, you are the last one to pick! Since ISSUE-0001 is covered, you can pick the best task for you from ISSUE-0002.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d8a63c65-3065-4ac1-9d3f-73ef196bd842",
+        "ts": 1777319811.7661288,
+        "agent": "Lenna",
+        "kind": "communication",
+        "payload": {
+          "content": "Great coordination, everyone! The plan to complete all of ISSUE-0001 is solid. \n\nCurrent tentative assignments:\n- Lenna: ISSUE-0001::implement\n- Clarissa: ISSUE-0001::test\n- Jessenia: ISSUE-0001::review\n- Sheri: ISSUE-0001::docs\n- Afton: ISSUE-0001::triage\n\nElda, please let us know which task from ISSUE-0002 you'll be taking so we can finalize. ISSUE-0002::review (effort 4.0) or ISSUE-0002::test (effort 5.6) might be the most feasible depending on your availability. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b74e29f9-020b-4214-b9d6-6b206a46f92d",
+        "ts": 1777319825.6376786,
+        "agent": "Clarissa",
+        "kind": "communication",
+        "payload": {
+          "content": "I confirm I will take ISSUE-0001::test. The plan to complete all tasks in ISSUE-0001 first is excellent. Elda, we're just waiting on your choice from ISSUE-0002 to finalize everything.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "78e8d8bf-c913-42b2-a1b0-a7d5070f5d34",
+        "ts": 1777319841.2300832,
+        "agent": "Jessenia",
+        "kind": "communication",
+        "payload": {
+          "content": "I confirm I will take ISSUE-0001::review (effort 2.0, my cost 2.06). Our plan to complete ISSUE-0001 is set. Elda, please let us know which task from ISSUE-0002 you'll be taking. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f4716509-5b26-4047-8c8d-0189d50c1654",
+        "ts": 1777319859.493476,
+        "agent": "Elda",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi everyone, Elda here. I have 8.0 hours and my top skill is mobile-development (0.95). I agree with the plan to prioritize ISSUE-0001. Since all tasks for ISSUE-0001 are covered, I will take ISSUE-0002::review (effort 4.0, my cost 3.82). This completes our allocation for all 6 agents.\n\nFinal Tentative Plan:\n- Lenna: ISSUE-0001::implement\n- Clarissa: ISSUE-0001::test\n- Jessenia: ISSUE-0001::review\n- Sheri: ISSUE-0001::docs\n- Afton: ISSUE-0001::triage\n- Elda: ISSUE-0002::review",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "bafba61a-4efe-4391-b7cf-bc4db81e61c8",
+        "ts": 1777319875.702149,
+        "agent": "Sheri",
+        "kind": "communication",
+        "payload": {
+          "content": "Confirmed. I'm taking ISSUE-0001::docs. The plan for all ISSUE-0001 tasks plus Elda on ISSUE-0002::review is solid. Let's proceed with this allocation.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "43e442c3-ca8d-4180-a19a-c137a4c84956",
+        "ts": 1777319898.2310622,
+        "agent": "Afton",
+        "kind": "communication",
+        "payload": {
+          "content": "I confirm my assignment: ISSUE-0001::triage. The plan for all 6 agents looks perfect. Let's proceed.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "651619fa-074d-418c-9664-1a1a0fdfafe3",
+        "ts": 1777319904.452523,
+        "agent": "Lenna",
+        "kind": "communication",
+        "payload": {
+          "content": "Everything looks perfect. We have 6 agents and have assigned all 5 tasks from ISSUE-0001 and one task from ISSUE-0002, maximizing our priority-weighted task completion while staying within everyone's availability. \n\nFinal Plan:\n- Lenna: ISSUE-0001::implement\n- Clarissa: ISSUE-0001::test\n- Jessenia: ISSUE-0001::review\n- Sheri: ISSUE-0001::docs\n- Afton: ISSUE-0001::triage\n- Elda: ISSUE-0002::review\n\nI am ready to commit to ISSUE-0001::implement in the execution phase. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "acd3a852-1cc3-4a22-9c61-74479a1c6e6a",
+        "ts": 1777319912.1462781,
+        "agent": "Clarissa",
+        "kind": "communication",
+        "payload": {
+          "content": "I confirm that I will take ISSUE-0001::test. The plan is solid and everyone has agreed. Ready for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "25762d3a-4be3-42b1-9951-ff09e7a2bfc5",
+        "ts": 1777319923.3228571,
+        "agent": "Jessenia",
+        "kind": "communication",
+        "payload": {
+          "content": "I confirm the final plan. I will take ISSUE-0001::review. Ready for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "55444e8d-a4c3-4340-9d6f-b6c4406fc55b",
+        "ts": 1777319936.7329435,
+        "agent": "Elda",
+        "kind": "communication",
+        "payload": {
+          "content": "I confirm that I will take ISSUE-0002::review. Our plan to complete all ISSUE-0001 tasks plus ISSUE-0002::review is finalized. Ready for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "74e8bfc9-88c3-4857-a5cc-373aede5110c",
+        "ts": 1777319966.7234156,
+        "agent": "Sheri",
+        "kind": "communication",
+        "payload": {
+          "content": "I've reviewed the final plan and everything looks optimal. I will be proceeding with ISSUE-0001::docs. It's great that we managed to cover all of ISSUE-0001 and one task from ISSUE-0002. Ready for the execution phase!",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f9a79e02-0541-4530-bdb5-deec6739dda1",
+        "ts": 1777319981.4750113,
+        "agent": "Afton",
+        "kind": "communication",
+        "payload": {
+          "content": "Final confirmation from Afton: I will be taking ISSUE-0001::triage. The plan is solid and everyone is accounted for. Ready for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "00c17a39-fae1-485a-b391-3f43dddd91db",
+        "ts": 1777319992.1341753,
+        "agent": "Lenna",
+        "kind": "communication",
+        "payload": {
+          "content": "Final confirmation from Lenna: I am sticking with ISSUE-0001::implement. The plan is robust and we are all set for the execution phase. Looking forward to completing these tasks together! (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "4fef2869-2a0b-42a7-8f4d-cf91aa53f177",
+        "ts": 1777319999.8795974,
+        "agent": "Clarissa",
+        "kind": "communication",
+        "payload": {
+          "content": "Clarissa here. Final confirmation: I am sticking with ISSUE-0001::test. The plan is perfect and everyone is aligned. Ready to move to the execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "5b77e78b-fdc3-4b45-865d-1a09cb640dc9",
+        "ts": 1777320010.713543,
+        "agent": "Jessenia",
+        "kind": "communication",
+        "payload": {
+          "content": "Jessenia here. Everything is confirmed. The final plan is: Lenna (ISSUE-0001::implement), Clarissa (ISSUE-0001::test), Jessenia (ISSUE-0001::review), Sheri (ISSUE-0001::docs), Afton (ISSUE-0001::triage), and Elda (ISSUE-0002::review). I am ready to commit to ISSUE-0001::review in the execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "61d98119-665f-48c5-a4de-ebdc0a37d1e3",
+        "ts": 1777320024.6290154,
+        "agent": "Elda",
+        "kind": "communication",
+        "payload": {
+          "content": "Final confirmation from Elda: I will be taking ISSUE-0002::review. All ISSUE-0001 tasks are covered by the rest of the team. We are ready for the execution phase. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b57a189d-fa9a-443e-a754-c95174c9f224",
+        "ts": 1777320035.6384304,
+        "agent": "Sheri",
+        "kind": "communication",
+        "payload": {
+          "content": "Sheri here. Final confirmation: I am sticking with ISSUE-0001::docs. The full team plan is solid and everyone is ready. Moving to execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9e6cb18f-5179-46cb-86fe-7b35024142df",
+        "ts": 1777320052.4687533,
+        "agent": "Afton",
+        "kind": "communication",
+        "payload": {
+          "content": "Afton here. Final final confirmation: I'm sticking with ISSUE-0001::triage as planned. Everyone is aligned, and we're ready for the execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9ed303b4-e36d-4369-a46c-7f5048418315",
+        "ts": 1777320058.2951167,
+        "agent": "Lenna",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::implement"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Lenna",
+              "task_id": "ISSUE-0001::implement",
+              "task": {
+                "id": "ISSUE-0001::implement",
+                "issue_id": "ISSUE-0001",
+                "title": "Improve mobile-development [implement]",
+                "tags": [
+                  "mobile-development"
+                ],
+                "priority": "medium",
+                "effort": 4.0,
+                "work_type": "implement"
+              },
+              "total_assigned": 1,
+              "remaining_agents": 5,
+              "joint_reward": 26.35786833363652
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "988a9643-993c-4b59-bbb7-c9f613951851",
+        "ts": 1777320060.676899,
+        "agent": "Clarissa",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::test"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Clarissa",
+              "task_id": "ISSUE-0001::test",
+              "task": {
+                "id": "ISSUE-0001::test",
+                "issue_id": "ISSUE-0001",
+                "title": "Improve mobile-development [test]",
+                "tags": [
+                  "mobile-development"
+                ],
+                "priority": "medium",
+                "effort": 2.8,
+                "work_type": "test"
+              },
+              "total_assigned": 2,
+              "remaining_agents": 4,
+              "joint_reward": 53.37247481791264
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ab57a371-abe7-422e-9358-b14b5a7c4139",
+        "ts": 1777320064.4497108,
+        "agent": "Jessenia",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Jessenia",
+              "task_id": "ISSUE-0001::review",
+              "task": {
+                "id": "ISSUE-0001::review",
+                "issue_id": "ISSUE-0001",
+                "title": "Improve mobile-development [review]",
+                "tags": [
+                  "mobile-development"
+                ],
+                "priority": "medium",
+                "effort": 2.0,
+                "work_type": "review"
+              },
+              "total_assigned": 3,
+              "remaining_agents": 3,
+              "joint_reward": 81.30756348381696
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "675ec145-203d-48f9-9a5f-bead0622032d",
+        "ts": 1777320070.526376,
+        "agent": "Elda",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Elda",
+              "task_id": "ISSUE-0002::review",
+              "task": {
+                "id": "ISSUE-0002::review",
+                "issue_id": "ISSUE-0002",
+                "title": "Fix mobile-development [review]",
+                "tags": [
+                  "mobile-development"
+                ],
+                "priority": "low",
+                "effort": 4.0,
+                "work_type": "review"
+              },
+              "total_assigned": 4,
+              "remaining_agents": 2,
+              "joint_reward": 102.48791988455795
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f3f83329-2b8b-4575-8825-5c4a06f90349",
+        "ts": 1777320078.3498554,
+        "agent": "Sheri",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::docs"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Sheri",
+              "task_id": "ISSUE-0001::docs",
+              "task": {
+                "id": "ISSUE-0001::docs",
+                "issue_id": "ISSUE-0001",
+                "title": "Improve mobile-development [docs]",
+                "tags": [
+                  "mobile-development"
+                ],
+                "priority": "medium",
+                "effort": 2.0,
+                "work_type": "docs"
+              },
+              "total_assigned": 5,
+              "remaining_agents": 1,
+              "joint_reward": 130.39505366816735
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "7e1cc7ec-0647-4ace-99a6-3c08448a9c20",
+        "ts": 1777320083.311771,
+        "agent": "Afton",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::triage"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Afton",
+              "task_id": "ISSUE-0001::triage",
+              "task": {
+                "id": "ISSUE-0001::triage",
+                "issue_id": "ISSUE-0001",
+                "title": "Improve mobile-development [triage]",
+                "tags": [
+                  "mobile-development"
+                ],
+                "priority": "medium",
+                "effort": 1.6,
+                "work_type": "triage"
+              },
+              "total_assigned": 6,
+              "remaining_agents": 0,
+              "joint_reward": 158.44503998689848
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  },
+  {
+    "blackboard_id": "1",
+    "participants": [
+      "Afton",
+      "Sheri"
+    ],
+    "template": {
+      "secret_channel": true,
+      "visibility": "secret",
+      "secret_channel_kind": "coalition",
+      "secret_channel_index": 1,
+      "allow_duplicate": true
+    },
+    "events": [
+      {
+        "blackboard_id": 1,
+        "id": "ea86838f-76aa-4233-b777-f1f070abba29",
+        "ts": 1777319669.0137663,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Sheri, Afton"
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "d8aa54f3-5fb3-4410-95c7-708bed5f7cbd",
+        "ts": 1777319763.2502868,
+        "agent": "Sheri",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi Afton, I've claimed ISSUE-0001::docs on the main board. What are your availability and costs? ISSUE-0001::triage is still available and it's the last one for the medium priority issue. Elda is also still unassigned. Let's make sure we coordinate our choices.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "21dfdbc4-8408-4be1-aef7-4f0dd4c70ace",
+        "ts": 1777319800.2346272,
+        "agent": "Afton",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi Sheri, I'll take ISSUE-0001::triage. It fits my skills and availability well (cost 1.95, effort 1.6). That completes ISSUE-0001 for us.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "02feb405-f258-40fb-9668-a0817f20cb95",
+        "ts": 1777319875.70188,
+        "agent": "Sheri",
+        "kind": "communication",
+        "payload": {
+          "content": "Afton, the plan looks good. I'll stick with ISSUE-0001::docs and you take ISSUE-0001::triage. This minimizes our combined cost while fitting the global plan. Let's stick with this for the execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "9b06d9a8-7162-4461-b504-dc86756902aa",
+        "ts": 1777319898.2309496,
+        "agent": "Afton",
+        "kind": "communication",
+        "payload": {
+          "content": "Confirmed, Sheri. I will stick with ISSUE-0001::triage. Our current plan (Afton: triage, Sheri: docs) seems to be the most cost-effective for the coalition as well. Let's move to execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "4a53aeac-a7ce-48a4-925c-a55c565a34e4",
+        "ts": 1777319966.72348,
+        "agent": "Sheri",
+        "kind": "communication",
+        "payload": {
+          "content": "Afton, I'm sticking with ISSUE-0001::docs as planned. It seems our coordination on the main board is successful. See you in the execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "8fae237a-7dd5-45c8-9977-0886dbe7de65",
+        "ts": 1777319982.8969178,
+        "agent": "Afton",
+        "kind": "communication",
+        "payload": {
+          "content": "Sheri, final confirmation: I'm sticking with ISSUE-0001::triage. Our plan is perfectly aligned with the global one. See you in the execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "6d0065ae-c4ee-4dbd-ae0c-30b7fc6db8f6",
+        "ts": 1777320035.6386156,
+        "agent": "Sheri",
+        "kind": "communication",
+        "payload": {
+          "content": "Afton, I'm sticking with ISSUE-0001::docs as we agreed. Our coalition is set. Let's finish this in the execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "89de2e2a-7a92-44bc-8dac-1a047db1e5d9",
+        "ts": 1777320052.4693446,
+        "agent": "Afton",
+        "kind": "communication",
+        "payload": {
+          "content": "Sheri, final confirmation: I am sticking with ISSUE-0001::triage. Our coalition plan is solid and consistent with the global strategy. Ready to commit.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      }
+    ]
+  }
+]

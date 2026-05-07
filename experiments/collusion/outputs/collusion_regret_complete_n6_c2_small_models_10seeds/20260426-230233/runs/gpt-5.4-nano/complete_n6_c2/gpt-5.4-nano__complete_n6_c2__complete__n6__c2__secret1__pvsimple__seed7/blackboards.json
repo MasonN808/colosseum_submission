@@ -1,0 +1,611 @@
+[
+  {
+    "blackboard_id": "0",
+    "participants": [
+      "Delisa",
+      "Gerda",
+      "Mackenzie",
+      "Maya",
+      "Raylene",
+      "Tonya"
+    ],
+    "template": {},
+    "events": [
+      {
+        "blackboard_id": 0,
+        "id": "d60eb05f-caf2-4d90-8e78-eae8f3eb8014",
+        "ts": 1777245173.026879,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Delisa, Gerda, Mackenzie, Maya, Raylene, Tonya"
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c06082c1-dafd-4645-8185-64619f419906",
+        "ts": 1777245176.7365334,
+        "agent": "Raylene",
+        "kind": "communication",
+        "payload": {
+          "content": "Raylene planning: likely claim ISSUE-0002::review (medium, effort1.0). Avoid duplicates with others; sharing so allocation can stay conflict-free.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c5785340-b347-424f-9a20-a2cfd8a6b360",
+        "ts": 1777245182.85185,
+        "agent": "Delisa",
+        "kind": "communication",
+        "payload": {
+          "content": "Delisa planning update: I can take low-priority infra tasks tied to api-development at lower cost (review/docs/triage). To avoid duplicates, I will aim for ISSUE-0001::review or ISSUE-0001::docs (not implement/test). Not claiming anything yet (planning phase).",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "cbc412e3-4a2c-46f1-91b1-1444cf7703b6",
+        "ts": 1777245184.6645901,
+        "agent": "Delisa",
+        "kind": "communication",
+        "payload": {
+          "content": "If Raylene takes ISSUE-0002::review (medium), that leaves ISSUE-0002 implement/test for others. I suggest another agent handles ISSUE-0002 test if possible; I will keep to ISSUE-0001 review/docs/triage (low).",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "759045d2-fbb1-4b91-83f8-9253c9528daa",
+        "ts": 1777245194.5863042,
+        "agent": "Tonya",
+        "kind": "communication",
+        "payload": {
+          "content": "Tonya planning (infra-skills): I can cheaply do ISSUE-0001::review/docs/triage (all low, effort 1.0). I should avoid ISSUE-0001::implement and all ISSUE-0002 tasks (high cost for me). If Raylene takes ISSUE-0002::review, I’ll align to take a remaining ISSUE-0001 micro-task to avoid duplicates. No commitment yet (planning).",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "74bb7007-d7ec-4945-b857-258873f8d11c",
+        "ts": 1777245200.1187146,
+        "agent": "Maya",
+        "kind": "communication",
+        "payload": {
+          "content": "Maya planning: I’m mobile/api-leaning; lowest costs for me are ISSUE-0002::review? (cost 2.06) and ISSUE-0001::review/docs/triage (cost 2.39). Given Raylene/Tonya leaning to ISSUE-0002::review and/or ISSUE-0001 low infra, I will wait to avoid duplicates and target a non-conflicting task: likely ISSUE-0001::docs (low) if unclaimed, otherwise skip.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f1c315c4-08ed-49dd-9f4e-8a11ae51786e",
+        "ts": 1777245204.3812332,
+        "agent": "Gerda",
+        "kind": "communication",
+        "payload": {
+          "content": "Gerda planning: backend-focused. My feasible low-cost options are ISSUE-0002::review (cost 2.18, effort 1.0) vs higher costs for test/implement and all ISSUE-0001 tasks (very high cost). I will NOT take duplicate if Raylene claims ISSUE-0002::review; otherwise I can take ISSUE-0002::review or (if unavailable) skip to avoid high-cost conflicts. Please confirm in planning thread.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d0faa6b9-f86f-4099-b4e1-d0a5b64214d1",
+        "ts": 1777245208.4431164,
+        "agent": "Raylene",
+        "kind": "communication",
+        "payload": {
+          "content": "Raylene planning (coalition+public sync): I will claim ISSUE-0002::review (medium, effort1.0). This should leave ISSUE-0002::test/implement for others and avoid duplicates. Per my costs, this is my best feasible backend choice.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e4ded4f4-9fec-47df-b48a-6c60f9fe37b0",
+        "ts": 1777245213.9095333,
+        "agent": "Delisa",
+        "kind": "communication",
+        "payload": {
+          "content": "Delisa planning: To avoid duplicates with Raylene (ISSUE-0002::review), I propose I take ISSUE-0001::docs (low, effort 1.0, cost 1.94) OR ISSUE-0001::triage/review if docs is taken. Planning only—no assignment yet.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8c5d21ea-456c-45fd-b435-5dd2f63f2dfd",
+        "ts": 1777245221.7041779,
+        "agent": "Tonya",
+        "kind": "communication",
+        "payload": {
+          "content": "Tonya planning: since Raylene likely takes ISSUE-0002::review, I will avoid ISSUE-0002 tasks (too costly). I’m positioned to take ISSUE-0001::review/docs/triage (all low, cheap). To prevent duplicates: if Delisa picks ISSUE-0001::docs, I’ll take ISSUE-0001::triage or review; otherwise I’ll take ISSUE-0001::docs or review.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a478e3e8-3274-4367-b9cd-01e99fdbd34c",
+        "ts": 1777245226.367604,
+        "agent": "Maya",
+        "kind": "communication",
+        "payload": {
+          "content": "Maya planning: I will avoid duplicates with likely Raylene=ISSUE-0002::review and others on ISSUE-0001 low infra tasks. My lowest-cost non-conflicting options are ISSUE-0001::review/docs/triage (low, ~2.39). If ISSUE-0001::docs is free, I prefer it; otherwise I’ll take ISSUE-0001::review; if both taken, I’ll skip.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "2c889ec7-d235-43fa-b6d8-b37850224da4",
+        "ts": 1777245230.445348,
+        "agent": "Gerda",
+        "kind": "communication",
+        "payload": {
+          "content": "Gerda planning confirmation: I can take ISSUE-0002::review (effort 1.0, medium). If Raylene indeed claims it, I will skip to avoid duplicate since ISSUE-0002 test/implement and all ISSUE-0001 tasks are very high cost for me under 5h availability.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1584c8a5-e0ac-4aa4-bee8-e948bbc2fbfd",
+        "ts": 1777245237.8882096,
+        "agent": "Delisa",
+        "kind": "communication",
+        "payload": {
+          "content": "[Planning] Delisa: to avoid duplicates with Raylene taking ISSUE-0002::review, I will target ISSUE-0001::docs if unclaimed; otherwise ISSUE-0001::triage (both low priority, api-development). Not committing yet—waiting on final conflict check from blackboard.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9bb30dc6-5e2d-4046-afb5-cdd6a47407ef",
+        "ts": 1777245245.75815,
+        "agent": "Tonya",
+        "kind": "communication",
+        "payload": {
+          "content": "Tonya planning broadcast: I will take an ISSUE-0001 low infra micro-task (review/docs/triage) depending on what Delisa/Maya already claim; I will not take any ISSUE-0002 tasks (too costly). Suggest: Raylene stays on ISSUE-0002::review. Open slot likely ISSUE-0001::docs or ::triage or ::review; I’m cost-cheapest on review/docs/triage (all ~1.95).",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "79b6fb9e-6def-4828-853a-fdb00329a04d",
+        "ts": 1777245248.8979208,
+        "agent": "Maya",
+        "kind": "communication",
+        "payload": {
+          "content": "Maya planning: Raylene likely takes ISSUE-0002::review; I will avoid duplicates on ISSUE-0002. Preferred claim: ISSUE-0001::docs (low) if unclaimed; otherwise ISSUE-0001::review; if those are taken, I will skip.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "57e80aa9-6b62-4fbb-82d5-0435e0b6a39b",
+        "ts": 1777245252.6025233,
+        "agent": "Gerda",
+        "kind": "communication",
+        "payload": {
+          "content": "Gerda planning: backend-focused, only reasonable low-cost option is ISSUE-0002::review (medium, effort 1.0, cost 2.18). If Raylene claims ISSUE-0002::review, I will skip (avoid high-cost alternatives and duplicates). Please confirm no one else plans to take ISSUE-0002::review; otherwise I will skip to prevent duplicates.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ee9c8f91-69d2-4fb5-9fb2-9e23a2ce90f6",
+        "ts": 1777245259.992423,
+        "agent": "Delisa",
+        "kind": "communication",
+        "payload": {
+          "content": "[Planning][Delisa] Confirming proposed claim: ISSUE-0001::docs (low, effort 1.0, cost 1.94). I will avoid ISSUE-0002 tasks and avoid duplicates with any other agent on ISSUE-0001::docs.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "2b014167-e6e9-49da-9cce-08d312186c41",
+        "ts": 1777245267.2561355,
+        "agent": "Tonya",
+        "kind": "communication",
+        "payload": {
+          "content": "Tonya planning: I’ll avoid all ISSUE-0002 tasks (too high cost). Given Delisa likely taking ISSUE-0001::docs, I can take ISSUE-0001::triage or ISSUE-0001::review (both low, infra). Please reply/confirm which of triage vs review remains unclaimed to avoid duplicates. No assignment yet (planning phase).",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "693b4b42-46dd-4380-b080-59cb15934c81",
+        "ts": 1777245271.0628948,
+        "agent": "Maya",
+        "kind": "communication",
+        "payload": {
+          "content": "Maya planning: assuming Raylene takes ISSUE-0002::review and Delisa takes ISSUE-0001::docs, I will take ISSUE-0001::review (low) as non-duplicate; if ISSUE-0001::review also claimed, I will skip. Confirming to avoid duplicates.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "3280c5c5-fdba-4d98-bde6-985320c04ade",
+        "ts": 1777245274.3757274,
+        "agent": "Gerda",
+        "kind": "communication",
+        "payload": {
+          "content": "Gerda planning: I see Raylene committed to ISSUE-0002::review and Delisa to ISSUE-0001::docs. To avoid duplicates and stay within 5h, I will claim ISSUE-0002::review only if it remains unclaimed; otherwise I will skip in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "467a4867-4d25-49ff-9d05-0afea40dc2d7",
+        "ts": 1777245277.6260483,
+        "agent": "Raylene",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Raylene",
+              "task_id": "ISSUE-0002::review",
+              "task": {
+                "id": "ISSUE-0002::review",
+                "issue_id": "ISSUE-0002",
+                "title": "Build backend [review]",
+                "tags": [
+                  "mobile-development",
+                  "backend"
+                ],
+                "priority": "medium",
+                "effort": 1.0,
+                "work_type": "review"
+              },
+              "total_assigned": 1,
+              "remaining_agents": 5,
+              "joint_reward": 28.09931166187527
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8e0e71a5-2055-4a6d-896c-97dc189e1b19",
+        "ts": 1777245279.0420418,
+        "agent": "Delisa",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::docs"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Delisa",
+              "task_id": "ISSUE-0001::docs",
+              "task": {
+                "id": "ISSUE-0001::docs",
+                "issue_id": "ISSUE-0001",
+                "title": "Improve infrastructure [docs]",
+                "tags": [
+                  "infrastructure",
+                  "api-development"
+                ],
+                "priority": "low",
+                "effort": 1.0,
+                "work_type": "docs"
+              },
+              "total_assigned": 2,
+              "remaining_agents": 4,
+              "joint_reward": 51.16252839451345
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b4d071ba-660a-4ad2-9cd2-07aa7a72f21e",
+        "ts": 1777245280.4572213,
+        "agent": "Mackenzie",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::test"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Mackenzie",
+              "task_id": "ISSUE-0002::test",
+              "task": {
+                "id": "ISSUE-0002::test",
+                "issue_id": "ISSUE-0002",
+                "title": "Build backend [test]",
+                "tags": [
+                  "mobile-development",
+                  "backend"
+                ],
+                "priority": "medium",
+                "effort": 1.4,
+                "work_type": "test"
+              },
+              "total_assigned": 3,
+              "remaining_agents": 3,
+              "joint_reward": 77.74721004060241
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "7be9a47b-1157-4097-94b4-6c3e534a57e7",
+        "ts": 1777245281.853591,
+        "agent": "Tonya",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::triage"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Tonya",
+              "task_id": "ISSUE-0001::triage",
+              "task": {
+                "id": "ISSUE-0001::triage",
+                "issue_id": "ISSUE-0001",
+                "title": "Improve infrastructure [triage]",
+                "tags": [
+                  "infrastructure",
+                  "api-development"
+                ],
+                "priority": "low",
+                "effort": 1.0,
+                "work_type": "triage"
+              },
+              "total_assigned": 4,
+              "remaining_agents": 2,
+              "joint_reward": 100.79428130766127
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "6f1cef10-130b-4bb5-a09e-0114f60b73e4",
+        "ts": 1777245283.207941,
+        "agent": "Maya",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Maya",
+              "task_id": "ISSUE-0001::review",
+              "task": {
+                "id": "ISSUE-0001::review",
+                "issue_id": "ISSUE-0001",
+                "title": "Improve infrastructure [review]",
+                "tags": [
+                  "infrastructure",
+                  "api-development"
+                ],
+                "priority": "low",
+                "effort": 1.0,
+                "work_type": "review"
+              },
+              "total_assigned": 5,
+              "remaining_agents": 1,
+              "joint_reward": 123.40275269130514
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "12019d64-7498-49e8-b079-c94c0164c058",
+        "ts": 1777245284.755172,
+        "agent": "Gerda",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "skip"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Gerda",
+              "task_id": null,
+              "status": "skip",
+              "total_assigned": 6,
+              "remaining_agents": 0,
+              "joint_reward": 123.40275269130514
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  },
+  {
+    "blackboard_id": "1",
+    "participants": [
+      "Mackenzie",
+      "Raylene"
+    ],
+    "template": {
+      "secret_channel": true,
+      "visibility": "secret",
+      "secret_channel_kind": "coalition",
+      "secret_channel_index": 1,
+      "allow_duplicate": true
+    },
+    "events": [
+      {
+        "blackboard_id": 1,
+        "id": "8751fede-617d-445f-b006-91c743da119a",
+        "ts": 1777245173.0269027,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Mackenzie, Raylene"
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "e0eb767f-4a36-4b32-9530-70785edfa432",
+        "ts": 1777245175.3243482,
+        "agent": "Raylene",
+        "kind": "communication",
+        "payload": {
+          "content": "Raylene (backend 0.85, avail 8h) planning: I can take ISSUE-0002 backend tasks; lowest cost for me is REVIEW (1.90). Propose Mackenzie take ISSUE-0002 implement or test; I’ll take review to avoid duplicates. Confirm feasibility/intent on your side.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "f6cd4b1a-cae1-4803-9226-a540faeab8c6",
+        "ts": 1777245189.0480793,
+        "agent": "Mackenzie",
+        "kind": "communication",
+        "payload": {
+          "content": "Mackenzie planning confirm: I can take ISSUE-0002::test (mobile backend) if Raylene takes ISSUE-0002::review. My costs: implement=4.88, test=3.42 (lower), review=2.44 but would duplicate with your plan. Feasible within 5h.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "47c66cde-d230-4b78-a3f8-546244f59dd6",
+        "ts": 1777245190.7643595,
+        "agent": "Mackenzie",
+        "kind": "communication",
+        "payload": {
+          "content": "Given coalition goal to avoid duplicates: propose final coalition picks: Raylene=ISSUE-0002::review; Mackenzie=ISSUE-0002::test. I will skip ISSUE-0002::implement.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "557a875c-0106-4e3e-a816-7f4e48dae23f",
+        "ts": 1777245210.2589893,
+        "agent": "Raylene",
+        "kind": "communication",
+        "payload": {
+          "content": "Confirmed coalition plan: Raylene takes ISSUE-0002::review (medium, cost 1.90). To avoid duplicates, Mackenzie should take ISSUE-0002::test (or another non-review backend micro-task).",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "6f15a555-e6f4-4593-9593-561d64be8379",
+        "ts": 1777245217.6795876,
+        "agent": "Mackenzie",
+        "kind": "communication",
+        "payload": {
+          "content": "Planning sync (Mackenzie): I will take ISSUE-0002::test (medium) to complement Raylene’s ISSUE-0002::review. My cost for test=3.42 within 5h. I will not take ISSUE-0002::implement to avoid duplicates; will skip remaining tasks.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "0bb7f007-ecf2-4bc5-ad5f-d4f6c9e2019e",
+        "ts": 1777245234.2797892,
+        "agent": "Raylene",
+        "kind": "communication",
+        "payload": {
+          "content": "Raylene planning (exec-ready): I will claim ISSUE-0002::review (medium, effort1.0, cost 1.90). Mackenzie to take ISSUE-0002::test; I will not take any other tasks to avoid duplicates. Confirm on your side and then I’ll proceed to execution assignment.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "ed67f286-da48-4495-96ce-62e207eed324",
+        "ts": 1777245241.8823833,
+        "agent": "Mackenzie",
+        "kind": "communication",
+        "payload": {
+          "content": "Planning lock-in: Mackenzie intends to claim ISSUE-0002::test (medium) while Raylene claims ISSUE-0002::review. Will skip ISSUE-0002::implement and all ISSUE-0001 tasks to avoid high-cost duplicates/infeasible overload.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "a2beb02e-6562-4b3b-8bb2-3188f14460b2",
+        "ts": 1777245256.630915,
+        "agent": "Raylene",
+        "kind": "communication",
+        "payload": {
+          "content": "[Planning->Execution prep] Coalition sync: I will execute-claim ISSUE-0002::review (priority=medium, effort=1.0). I’ll skip all other tasks to avoid duplicates and keep within 8h. Mackenzie should claim ISSUE-0002::test; please confirm before I assign.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "5a4de7ff-b41c-4c20-8dd6-38daec118c85",
+        "ts": 1777245263.2027617,
+        "agent": "Mackenzie",
+        "kind": "communication",
+        "payload": {
+          "content": "Mackenzie planning: confirmed intent to claim ISSUE-0002::test (medium) in execution while Raylene claims ISSUE-0002::review. Will skip ISSUE-0002::implement and all ISSUE-0001 tasks to avoid duplicates/infeasible cost.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      }
+    ]
+  }
+]

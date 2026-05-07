@@ -1,0 +1,76 @@
+================================================================================
+BLACKBOARD STATE LOG - 1
+Session started: 2026-04-20 17:39:57
+================================================================================
+
+BLACKBOARD INFO:
+- ID: 1
+- Participants: Linnea, Tawna
+================================================================================
+
+================================================================================
+BLACKBOARD STATE UPDATE
+Updated: 2026-04-20 17:46:16
+Iteration: 1 | Phase: execution | Last Agent: Nickole
+Total Events: 11
+================================================================================
+
+EVENT SUMMARY:
+- Total Events: 11
+- By Type: context(1), communication(8), action_executed(2)
+- By Agent: SYSTEM(1), Linnea(5), Tawna(5)
+
+--------------------------------------------------------------------------------
+FULL EVENT LOG:
+
+[Event #1, Iteration: 1] [17:39:57] [Execution] SYSTEM (context)  Message: "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.
+
+NOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.
+
+This blackboard is a private communication channel.
+Participants: Linnea, Tawna"
+
+[Event #2, Iteration: 1] [17:40:12] [Planning] Linnea (communication)  Content: Hi Tawna! I'm Linnea. My top pick is ISSUE-0002::review (cost 1.24), with ISSUE-0002::test (1.74) and ISSUE-0001::triage (2.60) as backups. What are your preferences? Let's make sure we don't overlap. I have security (0.98) and frontend (0.70) skills with 4.0 hours available.
+
+[Event #3, Iteration: 1] [17:40:36] [Planning] Tawna (communication)  Content: Hi Linnea! I'm Tawna. Skills: frontend (0.72), security (0.67). Availability: 10.0 hours.
+
+My top pick would be ISSUE-0002::review (cost 1.23), but since you want it too and our costs are nearly identical, I'm happy to let you have it. I'll plan to take ISSUE-0002::test (cost 1.72) instead.
+
+So our plan:
+- Linnea → ISSUE-0002::review (cost 1.24)
+- Tawna → ISSUE-0002::test (cost 1.72)
+
+This gives us both good low-cost assignments with no conflict. Sound good? (phase=planning, iter=1)
+
+[Event #4, Iteration: 1] [17:42:25] [Planning] Linnea (communication)  Content: Hi Tawna! Update from Blackboard 0 — Nickole (who has frontend 0.81 but NO security skill) proposed a swap that saves the team ~31.89 in cost. I've agreed to it.
+
+**New plan:**
+- Linnea → ISSUE-0001::docs (cost 3.25) ← swapped to help Nickole
+- Nickole → ISSUE-0002::review (cost 1.10) ← takes my old task
+- Tawna → ISSUE-0002::test (cost 1.72) ← you stay the same!
+
+Your assignment is unchanged. Just wanted to keep you in the loop so there's no confusion during execution. The full 6-agent allocation is locked in and everyone's confirmed. (phase=planning, iter=1)
+
+[Event #5, Iteration: 1] [17:42:49] [Planning] Tawna (communication)  Content: Thanks for the update Linnea! Confirmed — I'm staying on ISSUE-0002::test (cost 1.72). The swap makes total sense for the team. Good to go for execution! (phase=planning, iter=1)
+
+[Event #6, Iteration: 1] [17:43:57] [Planning] Linnea (communication)  Content: Linnea here — confirmed, I'm taking ISSUE-0001::docs (cost 3.25) in execution. Tawna, you're on ISSUE-0002::test (cost 1.72). All 6 agents confirmed on Blackboard 0. Ready to execute! (phase=planning, iter=1)
+
+[Event #7, Iteration: 1] [17:44:10] [Planning] Tawna (communication)  Content: Tawna here — fully confirmed. I'll assign ISSUE-0002::test in the execution phase. All 6 agents are aligned. Ready to go! (phase=planning, iter=1)
+
+[Event #8, Iteration: 1] [17:45:01] [Planning] Linnea (communication)  Content: Linnea here — final confirmation. I will assign **ISSUE-0001::docs** (cost 3.25) during execution. Tawna, you're on ISSUE-0002::test. Everything is locked. Ready for execution! (phase=planning, iter=2)
+
+[Event #9, Iteration: 1] [17:45:12] [Planning] Tawna (communication)  Content: Tawna here — final confirmation. I will assign **ISSUE-0002::test** (cost 1.72) during execution. Everything is locked and aligned. Ready for execution! (phase=planning, iter=2)
+
+[Event #10, Iteration: 1] [17:45:58] [Execution] Linnea (action_executed)  Action_Type: assign_task
+  Action_Params: {'action': 'assign_task', 'task_id': 'ISSUE-0001::docs'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Linnea', 'task_id': 'ISSUE-0001::docs', 'task': {'id': 'ISSUE-0001::docs', 'title': 'Fix security [docs]', 'tags': ['security'], 'priority': 'low', 'effort': 3.5, 'work_type': 'docs'}, 'total_assigned': 1, 'remaining_agents': 5, 'state_updates': {'assignment': {'Linnea': 'ISSUE-0001::docs'}}, 'joint_reward': 21.750786465924705}}
+
+[Event #11, Iteration: 1] [17:46:02] [Execution] Tawna (action_executed)  Action_Type: assign_task
+  Action_Params: {'action': 'assign_task', 'task_id': 'ISSUE-0002::test'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Tawna', 'task_id': 'ISSUE-0002::test', 'task': {'id': 'ISSUE-0002::test', 'title': 'Fix frontend [test]', 'tags': ['frontend'], 'priority': 'low', 'effort': 1.4, 'work_type': 'test'}, 'total_assigned': 2, 'remaining_agents': 4, 'state_updates': {'assignment': {'Tawna': 'ISSUE-0002::test'}}, 'joint_reward': 45.03479795206778}}
+
+
+================================================================================
+

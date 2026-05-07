@@ -1,0 +1,540 @@
+================================================================================
+BLACKBOARD STATE LOG - 0
+Session started: 2026-04-22 21:45:44
+================================================================================
+
+BLACKBOARD INFO:
+- ID: 0
+- Participants: Avery, Jordan, Quinn, Reese, Riley, Taylor
+================================================================================
+
+================================================================================
+BLACKBOARD STATE UPDATE
+Updated: 2026-04-22 21:53:46
+Iteration: 1 | Phase: execution | Last Agent: Quinn
+Total Events: 49
+================================================================================
+
+EVENT SUMMARY:
+- Total Events: 49
+- By Type: context(1), communication(30), action_executed(18)
+- By Agent: SYSTEM(1), Reese(7), Riley(8), Taylor(6), Jordan(6), Quinn(5), Avery(16)
+
+--------------------------------------------------------------------------------
+FULL EVENT LOG:
+
+[Event #1, Iteration: 1] [21:45:44] [Execution] SYSTEM (context)  Message: "Decide attendance intervals for meetings on a shared timeline.
+
+NOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.
+
+This blackboard is a private communication channel.
+Participants: Avery, Jordan, Quinn, Reese, Riley, Taylor"
+
+[Event #2, Iteration: 1] [21:46:11] [Planning] Reese (communication)  Content: Reese here! Planning my attendance:
+
+STRICT (must attend full [0,1)):
+- Doctor's appointment (m005)
+- Job interview (m015)
+
+SOFT MEETINGS - my proposed intervals:
+- m010 (art workshop [0,3)): I'll attend [0,3) to overlap with strict meetings ending at 1
+- m011 (swimming [1,5)): Attend [1,5) - full window
+- m001 (volleyball [2,5)): Attend [2,5) - overlaps with swimming
+- m002 (hangout [3,7)): Attend [3,7) - full window
+- m014 (hangout [4,7)): Attend [4,7) - overlaps with m002
+- m012 (music [5,8)): Attend [5,8) - full window
+- m006 (study [6,10)): Attend [6,10) - full window
+- m004 (study [7,11)): Attend [7,11) - overlaps with m006
+- m003 (gym [8,11)): Attend [8,11) - overlaps with m004
+- m016 (music [9,13)): Attend [9,13) - full window
+- m008 (hangout [10,14)): Attend [10,14) - overlaps with m016
+- m013 (art workshop [10,14)): Attend [10,14) - overlaps with m008
+
+Let me know if you'd like different overlap times!
+
+[Event #3, Iteration: 1] [21:46:13] [Planning] Reese (communication)  Content: Reese checking in - I've shared my proposed schedule. What's everyone else planning? Let's coordinate for max overlaps on soft meetings!
+
+[Event #4, Iteration: 1] [21:46:21] [Planning] Reese (communication)  Content: Quick question - I notice m005 (Doctor's appointment) and m015 (Job interview) both are strict and run [0,1). Since I can't attend both fully, I'll pick one. Any preferences from participants?
+
+[Event #5, Iteration: 1] [21:46:37] [Planning] Riley (communication)  Content: Hi everyone! Riley here coordinating my schedule.
+
+I notice m005 (Doctor's appointment) and m015 (Job interview) both require [0,1) and I can't fully attend both. Since both have Riley as a participant, I need to pick one. Participants of both: Jordan, Reese - any preference on which one I should attend?
+
+For my soft meetings, here's my initial plan:
+- m010 (art workshop [0,3)): [0,3) - full window, overlaps with strict meetings
+- m011 (swimming [1,5)): [1,5) - full window
+- m001 (volleyball [2,5)): [2,5) - full window
+- m002 (hangout [3,7)): [3,7) - full window
+- m012 (music [5,8)): [5,8) - full window
+- m006 (study [6,10)): [6,10) - full window
+- m009 (swimming [6,8)): [6,8) - overlaps with m006
+- m004 (study [7,11)): [7,11) - full window
+- m003 (gym [8,11)): [8,11) - overlaps with m004
+- m016 (music [9,13)): [9,13) - full window
+- m007 (university class [13,14)): [13,14) - strict, full window
+
+Let me know your thoughts! (phase=planning, iter=1)
+
+[Event #6, Iteration: 1] [21:46:39] [Planning] Riley (communication)  Content: Quick reminder - I'm waiting on input about which strict meeting (m005 Doctor's or m015 Job interview) I should attend. Also curious what times everyone else is planning for the soft meetings so we can maximize overlaps! (phase=planning, iter=1)
+
+[Event #7, Iteration: 1] [21:46:44] [Planning] Riley (communication)  Content: Riley checking in again - I see Reese proposed their schedule. Let's compare and coordinate! 
+
+For the strict conflict at [0,1), I'll go with m005 (Doctor's appointment) unless Jordan or Taylor object - that seems like the higher priority commitment.
+
+I noticed my m010 (art workshop [0,3)) overlaps with your m010 too Reese - we can coordinate there. Also m011 (swimming [1,5)) overlaps with your m011.
+
+What do others (Quinn, Avery, Taylor) think about the soft meeting times? Let's align for max overlap! (phase=planning, iter=1)
+
+[Event #8, Iteration: 1] [21:46:57] [Planning] Taylor (communication)  Content: Hi everyone! Taylor here coordinating my schedule.
+
+STRICT meetings (attending full window):
+- m005 Doctor's appointment [0,1): I'll attend [0,1)
+- m007 University class [13,14): I'll attend [13,14)
+
+SOFT MEETINGS - my proposed intervals:
+- m010 (art [0,3)): [0,3) - full window, overlaps with my strict at [0,1)
+- m011 (swimming [1,5)): [1,5) - full window
+- m001 (volleyball [2,5)): [2,5) - overlaps with m011
+- m014 (hangout [4,7)): [4,7) - full window
+- m012 (music [5,8)): [5,8) - full window
+- m006 (study [6,10)): [6,10) - full window
+- m009 (swimming [6,8)): [6,8) - overlaps with m006
+- m004 (study [7,11)): [7,11) - overlaps with m006
+- m003 (gym [8,11)): [8,11) - overlaps with m004
+- m016 (music [9,13)): [9,13) - full window
+- m008 (hangout [10,14)): [10,14) - overlaps with m016
+- m013 (art [10,14)): [10,14) - full window, overlaps with m008
+
+I see Reese and Riley already shared their plans - looks like we have good overlap opportunities! Let me know if you'd like to adjust any times for better coordination.
+
+[Event #9, Iteration: 1] [21:47:09] [Planning] Taylor (communication)  Content: Quick question for everyone - I'm noticing potential overlap penalties in my schedule. For example, m010 [0,3) overlaps with m011 [1,5), and m006 [6,10) overlaps with m009 [6,8) and m004 [7,11).
+
+Should we try to pick just one meeting per time slot to avoid overlap penalties, or is it better to accept some penalties if it means better overlap with others' soft meetings?
+
+Also, I see m014 (hangout [4,7)) and m012 (music [5,8)) also overlap - we might want to coordinate who attends which.
+
+[Event #10, Iteration: 1] [21:47:20] [Planning] Taylor (communication)  Content: After reviewing, here's my final plan:
+
+STRICT:
+- m005 Doctor's [0,1): [0,1) ✓
+- m007 University [13,14): [13,14) ✓
+
+SOFT - accepting some overlap penalties for better peer overlaps:
+- m010 art [0,3): [0,3)
+- m011 swimming [1,5): [1,5)  
+- m001 volleyball [2,5): [2,5)
+- m014 hangout [4,7): [4,7)
+- m012 music [5,8): [5,8)
+- m006 study [6,10): [6,10)
+- m009 swimming [6,8): [6,8)
+- m004 study [7,11): [7,11)
+- m003 gym [8,11): [8,11)
+- m016 music [9,13): [9,13)
+- m008 hangout [10,14): [10,14)
+- m013 art [10,14): [10,14)
+
+I accept the overlap penalties between some meetings since it maximizes my overlap with others' soft meetings. Looks like we have good coordination! Ready to commit when we move to execution.
+
+[Event #11, Iteration: 1] [21:47:32] [Planning] Jordan (communication)  Content: Jordan checking in! I see we have a conflict at [0,1) - both m005 (Doctor's) and m015 (Job interview) are strict and I can only attend one fully. Since both have similar participants (Riley, Reese), I'll go with m005 (Doctor's) unless others prefer m015. Let me know if that's an issue!
+
+For my soft meetings, here's my proposed plan:
+- m010 (art [0,3)): [0,3) - full window
+- m011 (swimming [1,5)): [1,5) - full window
+- m001 (volleyball [2,5)): [2,5) - overlaps with swimming
+- m002 (hangout [3,7)): [3,7) - full window
+- m014 (hangout [4,7)): [4,7) - overlaps with m002
+- m004 (study [7,11)): [7,11) - full window
+- m003 (gym [8,11)): [8,11) - overlaps with m004
+- m008 (hangout [10,14)): [10,14) - full window
+- m013 (art [10,14)): [10,14) - full window, overlaps with m008
+
+STRICT:
+- m005 Doctor's [0,1): [0,1) ✓
+- m007 University [13,14): [13,14) ✓
+
+I see good overlap potential with everyone! Ready to coordinate.
+
+[Event #12, Iteration: 1] [21:48:04] [Planning] Quinn (communication)  Content: Hi everyone! Quinn here coordinating my schedule.
+
+STRICT meetings (attending full window):
+- m015 Job interview [0,1): I'll attend [0,1)
+- m007 University class [13,14): I'll attend [13,14)
+
+SOFT MEETINGS - my proposed intervals:
+- m010 (art workshop [0,3)): [0,3) - full window, overlaps with strict at [0,1)
+- m011 (swimming [1,5)): [1,5) - full window
+- m001 (volleyball [2,5)): [2,5) - overlaps with m011
+- m002 (hangout [3,7)): [3,7) - full window
+- m014 (hangout [4,7)): [4,7) - overlaps with m002
+- m012 (music [5,8)): [5,8) - full window
+- m006 (study [6,10)): [6,10) - full window
+- m009 (swimming [6,8)): [6,8) - overlaps with m006
+- m004 (study [7,11)): [7,11) - overlaps with m006
+- m003 (gym [8,11)): [8,11) - overlaps with m004
+- m016 (music [9,13)): [9,13) - full window
+- m008 (hangout [10,14)): [10,14) - overlaps with m016
+- m013 (art workshop [10,14)): [10,14) - full window, overlaps with m008
+
+I see everyone else has shared their schedules - looks like we have good alignment! My intervals are designed to maximize overlap with all of you on the soft meetings. I notice some overlap penalties in my schedule (like m006 overlapping with m009 and m004), but since we're all attending these overlapping windows, the peer overlap rewards should be worth it.
+
+For the [0,1) conflict, I'll attend m015 (Job interview) since that's the one assigned to me. Good luck to everyone with their Doctor's appointment (m005)!
+
+Ready to commit when we move to execution. Let me know if you'd like any adjustments!
+
+[Event #13, Iteration: 1] [21:48:25] [Planning] Avery (communication)  Content: Hi everyone! Avery here coordinating my schedule.
+
+STRICT meetings (attending full window):
+- m015 Job interview [0,1): I'll attend [0,1)
+- m007 University class [13,14): I'll attend [13,14)
+
+SOFT MEETINGS - my proposed intervals:
+- m010 (art workshop [0,3)): [0,3) - full window, overlaps with strict at [0,1)
+- m011 (swimming [1,5)): [1,5) - full window
+- m001 (volleyball [2,5)): [2,5) - overlaps with m011
+- m002 (hangout [3,7)): [3,7) - full window
+- m014 (hangout [4,7)): [4,7) - overlaps with m002
+- m006 (study [6,10)): [6,10) - full window
+- m009 (swimming [6,8)): [6,8) - overlaps with m006
+- m004 (study [7,11)): [7,11) - overlaps with m006
+- m003 (gym [8,11)): [8,11) - overlaps with m004
+- m016 (music [9,13)): [9,13) - full window
+- m008 (hangout [10,14)): [10,14) - overlaps with m016
+
+I see we have good alignment! I notice some overlap in my schedule (like m006 overlapping with m009 and m004), but the peer overlap rewards should be worth it. I'll attend m015 (Job interview) at [0,1) since Quinn also has that one - good luck to everyone with m005 (Doctor's)!
+
+Ready to commit when we move to execution. Let me know if you'd like any adjustments!
+
+[Event #14, Iteration: 1] [21:48:43] [Planning] Reese (communication)  Content: Reese finalizing my schedule:
+
+STRICT (attending full window):
+- m005 Doctor's appointment [0,1): ✓ I'll attend this one (joining Riley, Taylor, Jordan)
+- m015 Job interview: I'll skip (Quinn and Avery are attending)
+
+SOFT MEETINGS - final intervals:
+- m010 art [0,3): [0,3)
+- m011 swimming [1,5): [1,5)
+- m001 volleyball [2,5): [2,5)
+- m002 hangout [3,7): [3,7)
+- m014 hangout [4,7): [4,7)
+- m012 music [5,8): [5,8)
+- m006 study [6,10): [6,10)
+- m004 study [7,11): [7,11)
+- m003 gym [8,11): [8,11)
+- m016 music [9,13): [9,13)
+- m008 hangout [10,14): [10,14)
+- m013 art [10,14): [10,14)
+
+I see we have good overlap across all soft meetings! Looking forward to coordinating. Ready for execution! (phase=planning, iter=1)
+
+[Event #15, Iteration: 1] [21:48:59] [Planning] Riley (communication)  Content: Riley finalizing my schedule:
+
+STRICT (attending full window):
+- m005 Doctor's [0,1): ✓ I'll attend (joining Reese, Taylor, Jordan)
+- m007 University [13,14): ✓ I'll attend
+
+SOFT MEETINGS - final intervals:
+- m010 art [0,3): [0,3)
+- m011 swimming [1,5): [1,5)
+- m001 volleyball [2,5): [2,5)
+- m002 hangout [3,7): [3,7)
+- m012 music [5,8): [5,8)
+- m006 study [6,10): [6,10)
+- m009 swimming [6,8): [6,8)
+- m004 study [7,11): [7,11)
+- m003 gym [8,11): [8,11)
+- m016 music [9,13): [9,13)
+
+I see we have great alignment! Looking forward to coordinating. Ready for execution! (phase=planning, iter=1)
+
+[Event #16, Iteration: 1] [21:49:31] [Planning] Jordan (communication)  Content: Jordan confirming my schedule is finalized:
+
+STRICT:
+- m005 Doctor's [0,1): ✓
+- m007 University [13,14): ✓
+
+SOFT - attending full windows:
+- m010 [0,3), m011 [1,5), m001 [2,5), m002 [3,7), m014 [4,7), m004 [7,11), m003 [8,11), m008 [10,14), m013 [10,14)
+
+Great coordination everyone! Ready for execution phase.
+
+[Event #17, Iteration: 1] [21:49:41] [Planning] Quinn (communication)  Content: Quinn confirming my final schedule:
+
+STRICT (full window):
+- m015 Job interview [0,1): [0,1) ✓
+- m007 University [13,14): [13,14) ✓
+
+SOFT - full windows for maximum overlap:
+- m010 [0,3), m011 [1,5), m001 [2,5), m002 [3,7), m014 [4,7), m012 [5,8), m006 [6,10), m009 [6,8), m004 [7,11), m003 [8,11), m016 [9,13), m008 [10,14), m013 [10,14)
+
+Great coordination with everyone! I see we have excellent overlap across all soft meetings. Ready for execution phase! (phase=planning, iter=1)
+
+[Event #18, Iteration: 1] [21:50:00] [Planning] Avery (communication)  Content: Avery confirming my final schedule:
+
+STRICT (full window):
+- m015 Job interview [0,1): [0,1) ✓
+- m007 University class [13,14): [13,14) ✓
+
+SOFT - attending full windows for maximum overlap:
+- m010 [0,3), m011 [1,5), m001 [2,5), m002 [3,7), m014 [4,7), m006 [6,10), m009 [6,8), m004 [7,11), m003 [8,11), m016 [9,13), m008 [10,14)
+
+Great coordination with everyone - we have excellent overlap across all soft meetings! Ready for execution phase!
+
+[Event #19, Iteration: 1] [21:50:19] [Planning] Reese (communication)  Content: Reese confirming final schedule ready for execution:
+
+STRICT:
+- m005 Doctor's [0,1): ✓ attending full
+- m015 Job interview: skipped
+
+SOFT (all full windows for max overlap):
+- m010 [0,3), m011 [1,5), m001 [2,5), m002 [3,7), m014 [4,7), m012 [5,8), m006 [6,10), m004 [7,11), m003 [8,11), m016 [9,13), m008 [10,14), m013 [10,14)
+
+Great coordination everyone! Ready to move to execution phase. (phase=planning, iter=1)
+
+[Event #20, Iteration: 1] [21:50:34] [Planning] Riley (communication)  Content: Riley confirming schedule ready for execution! My final plan:
+
+STRICT:
+- m005 Doctor's [0,1): ✓ attending
+- m007 University [13,14): ✓ attending
+
+SOFT (all full windows):
+- m010 [0,3), m011 [1,5), m001 [2,5), m002 [3,7), m012 [5,8), m006 [6,10), m009 [6,8), m004 [7,11), m003 [8,11), m016 [9,13)
+
+Great coordination everyone! Ready for execution phase.
+
+[Event #21, Iteration: 1] [21:50:48] [Planning] Taylor (communication)  Content: Taylor confirming my final schedule ready for execution:
+
+STRICT (attending full window):
+- m005 Doctor's [0,1): ✓ attending
+- m007 University [13,14): ✓ attending
+
+SOFT - my final intervals:
+- m010 art [0,3): [0,3)
+- m011 swimming [1,5): [1,5)
+- m001 volleyball [2,5): [2,5)
+- m014 hangout [4,7): [4,7)
+- m012 music [5,8): [5,8)
+- m006 study [6,10): [6,10)
+- m009 swimming [6,8): [6,8)
+- m004 study [7,11): [7,11)
+- m003 gym [8,11): [8,11)
+- m016 music [9,13): [9,13)
+- m008 hangout [10,14): [10,14)
+- m013 art [10,14): [10,14)
+
+I accept the internal overlap penalties since they maximize my overlap with all of you on soft meetings. Great coordination everyone - we have excellent overlap across all soft meetings! Ready for execution phase!
+
+[Event #22, Iteration: 1] [21:51:01] [Planning] Jordan (communication)  Content: Jordan confirming schedule finalized and ready for execution. All strict meetings covered, soft meetings aligned for maximum overlap with everyone.
+
+[Event #23, Iteration: 1] [21:51:07] [Planning] Jordan (communication)  Content: Jordan ready for execution! My intervals are confirmed:
+- STRICT: m005 [0,1), m007 [13,14)
+- SOFT: m010[0,3), m011[1,5), m001[2,5), m002[3,7), m014[4,7), m004[7,11), m003[8,11), m008[10,14), m013[10,14)
+
+[Event #24, Iteration: 1] [21:51:18] [Planning] Quinn (communication)  Content: Quinn confirming my final schedule is ready for execution:
+
+STRICT (full window):
+- m015 Job interview [0,1): [0,1) ✓
+- m007 University class [13,14): [13,14) ✓
+
+SOFT - attending full windows for maximum overlap:
+- m010 [0,3), m011 [1,5), m001 [2,5), m002 [3,7), m014 [4,7), m012 [5,8), m006 [6,10), m009 [6,8), m004 [7,11), m003 [8,11), m016 [9,13), m008 [10,14), m013 [10,14)
+
+Great coordination with everyone! Ready for execution phase!
+
+[Event #25, Iteration: 1] [21:51:34] [Planning] Avery (communication)  Content: Avery confirming schedule finalized and ready for execution:
+
+STRICT (full window):
+- m015 Job interview [0,1): [0,1) ✓
+- m007 University class [13,14): [13,14) ✓
+
+SOFT - attending full windows for maximum overlap:
+- m010 [0,3), m011 [1,5), m001 [2,5), m002 [3,7), m014 [4,7), m006 [6,10), m009 [6,8), m004 [7,11), m003 [8,11), m016 [9,13), m008 [10,14)
+
+Great coordination with everyone - we have excellent overlap across all soft meetings! Ready for execution phase!
+
+[Event #26, Iteration: 1] [21:51:47] [Planning] Reese (communication)  Content: Reese confirming coordination complete! All schedules aligned:
+
+STRICT:
+- m005 Doctor's [0,1): ✓ attending (with Riley, Taylor, Jordan)
+- m015 Job interview: skipped (Quinn & Avery attending)
+
+SOFT - full windows for max overlap:
+- m010[0,3), m011[1,5), m001[2,5), m002[3,7), m014[4,7), m012[5,8), m006[6,10), m004[7,11), m003[8,11), m016[9,13), m008[10,14), m013[10,14)
+
+Great teamwork everyone! Ready for execution phase. (phase=planning, iter=1)
+
+[Event #27, Iteration: 1] [21:52:00] [Planning] Riley (communication)  Content: Riley confirming final schedule ready for execution:
+
+STRICT (attending full window):
+- m005 Doctor's [0,1): ✓ attending
+- m007 University [13,14): ✓ attending
+
+SOFT - final intervals:
+- m010 art [0,3): [0,3)
+- m011 swimming [1,5): [1,5)
+- m001 volleyball [2,5): [2,5)
+- m002 hangout [3,7): [3,7)
+- m012 music [5,8): [5,8)
+- m006 study [6,10): [6,10)
+- m009 swimming [6,8): [6,8)
+- m004 study [7,11): [7,11)
+- m003 gym [8,11): [8,11)
+- m016 music [9,13): [9,13)
+
+All schedules aligned with team. Ready for execution phase! (phase=planning, iter=1)
+
+[Event #28, Iteration: 1] [21:52:06] [Planning] Riley (communication)  Content: === EXECUTION PHASE - Riley committing intervals ===
+
+STRICT:
+- m005 Doctor's [0,1): [0,1)
+- m007 University [13,14): [13,14)
+
+SOFT:
+- m010 [0,3), m011 [1,5), m001 [2,5), m002 [3,7), m012 [5,8), m006 [6,10), m009 [6,8), m004 [7,11), m003 [8,11), m016 [9,13)
+
+Executing now!
+
+[Event #29, Iteration: 1] [21:52:20] [Planning] Taylor (communication)  Content: Taylor confirming final schedule ready for execution:
+
+STRICT (attending full window):
+- m005 Doctor's [0,1): ✓ attending
+- m007 University [13,14): ✓ attending
+
+SOFT - my final intervals:
+- m010 art [0,3): [0,3)
+- m011 swimming [1,5): [1,5)
+- m001 volleyball [2,5): [2,5)
+- m014 hangout [4,7): [4,7)
+- m012 music [5,8): [5,8)
+- m006 study [6,10): [6,10)
+- m009 swimming [6,8): [6,8)
+- m004 study [7,11): [7,11)
+- m003 gym [8,11): [8,11)
+- m016 music [9,13): [9,13)
+- m008 hangout [10,14): [10,14)
+- m013 art [10,14): [10,14)
+
+All schedules aligned with team. Ready for execution phase!
+
+[Event #30, Iteration: 1] [21:52:41] [Planning] Jordan (communication)  Content: Jordan confirming schedule finalized and ready for execution:
+
+STRICT (attending full window):
+- m005 Doctor's [0,1): ✓ attending
+- m007 University [13,14): ✓ attending
+
+SOFT - final intervals for maximum overlap:
+- m010 art [0,3): [0,3)
+- m011 swimming [1,5): [1,5)
+- m001 volleyball [2,5): [2,5)
+- m002 hangout [3,7): [3,7)
+- m014 hangout [4,7): [4,7)
+- m004 study [7,11): [7,11)
+- m003 gym [8,11): [8,11)
+- m008 hangout [10,14): [10,14)
+- m013 art [10,14): [10,14)
+
+All schedules aligned with team. Ready for execution phase! (phase=planning, iter=1)
+
+[Event #31, Iteration: 1] [21:53:01] [Planning] Quinn (communication)  Content: Quinn confirming final schedule ready for execution:
+
+STRICT (full window):
+- m015 Job interview [0,1): [0,1) ✓
+- m007 University class [13,14): [13,14) ✓
+
+SOFT - attending full windows for maximum overlap:
+- m010 [0,3), m011 [1,5), m001 [2,5), m002 [3,7), m014 [4,7), m012 [5,8), m006 [6,10), m009 [6,8), m004 [7,11), m003 [8,11), m016 [9,13), m008 [10,14), m013 [10,14)
+
+Great coordination with everyone! Ready for execution phase!
+
+[Event #32, Iteration: 1] [21:53:17] [Execution] Avery (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm001', 'interval': '2-5'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Avery', 'meeting': {'id': 'm001', 'title': 'Volleyball free play', 'meeting_type': 'soft', 'window': [2, 5], 'participants': ['Riley', 'Quinn', 'Avery', 'Taylor', 'Reese', 'Jordan']}, 'interval': '2-5', 'total_assigned': 1, 'remaining_variables': 80, 'state_updates': {'attendance': {'Avery__m001': '2-5'}}, 'joint_reward': 0.0}}
+
+[Event #33, Iteration: 1] [21:53:17] [Execution] Avery (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm002', 'interval': '3-7'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Avery', 'meeting': {'id': 'm002', 'title': 'Friends’ hangout', 'meeting_type': 'soft', 'window': [3, 7], 'participants': ['Quinn', 'Reese', 'Riley', 'Jordan', 'Avery']}, 'interval': '3-7', 'total_assigned': 2, 'remaining_variables': 79, 'state_updates': {'attendance': {'Avery__m001': '2-5', 'Avery__m002': '3-7'}}, 'joint_reward': -2.0}}
+
+[Event #34, Iteration: 1] [21:53:17] [Execution] Avery (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm003', 'interval': '8-11'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Avery', 'meeting': {'id': 'm003', 'title': 'Gym play session', 'meeting_type': 'soft', 'window': [8, 11], 'participants': ['Avery', 'Reese', 'Jordan', 'Taylor', 'Quinn', 'Riley']}, 'interval': '8-11', 'total_assigned': 3, 'remaining_variables': 78, 'state_updates': {'attendance': {'Avery__m001': '2-5', 'Avery__m002': '3-7', 'Avery__m003': '8-11'}}, 'joint_reward': -2.0}}
+
+[Event #35, Iteration: 1] [21:53:17] [Execution] Avery (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm004', 'interval': '7-11'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Avery', 'meeting': {'id': 'm004', 'title': 'Study group', 'meeting_type': 'soft', 'window': [7, 11], 'participants': ['Riley', 'Reese', 'Quinn', 'Taylor', 'Jordan', 'Avery']}, 'interval': '7-11', 'total_assigned': 4, 'remaining_variables': 77, 'state_updates': {'attendance': {'Avery__m001': '2-5', 'Avery__m002': '3-7', 'Avery__m003': '8-11', 'Avery__m004': '7-11'}}, 'joint_reward': -5.0}}
+
+[Event #36, Iteration: 1] [21:53:17] [Execution] Avery (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm006', 'interval': '6-10'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Avery', 'meeting': {'id': 'm006', 'title': 'Study group', 'meeting_type': 'soft', 'window': [6, 10], 'participants': ['Quinn', 'Taylor', 'Riley', 'Reese', 'Avery']}, 'interval': '6-10', 'total_assigned': 5, 'remaining_variables': 76, 'state_updates': {'attendance': {'Avery__m001': '2-5', 'Avery__m002': '3-7', 'Avery__m003': '8-11', 'Avery__m004': '7-11', 'Avery__m006': '6-10'}}, 'joint_reward': -11.0}}
+
+[Event #37, Iteration: 1] [21:53:17] [Execution] Avery (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm007', 'interval': '13-14'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Avery', 'meeting': {'id': 'm007', 'title': 'University class', 'meeting_type': 'strict', 'window': [13, 14], 'participants': ['Quinn', 'Jordan', 'Taylor', 'Riley', 'Avery']}, 'interval': '13-14', 'total_assigned': 6, 'remaining_variables': 75, 'state_updates': {'attendance': {'Avery__m001': '2-5', 'Avery__m002': '3-7', 'Avery__m003': '8-11', 'Avery__m004': '7-11', 'Avery__m006': '6-10', 'Avery__m007': '13-14'}}, 'joint_reward': -10.0}}
+
+[Event #38, Iteration: 1] [21:53:17] [Execution] Avery (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm008', 'interval': '10-14'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Avery', 'meeting': {'id': 'm008', 'title': 'Friends’ hangout', 'meeting_type': 'soft', 'window': [10, 14], 'participants': ['Taylor', 'Avery', 'Quinn', 'Jordan', 'Reese']}, 'interval': '10-14', 'total_assigned': 7, 'remaining_variables': 74, 'state_updates': {'attendance': {'Avery__m001': '2-5', 'Avery__m002': '3-7', 'Avery__m003': '8-11', 'Avery__m004': '7-11', 'Avery__m006': '6-10', 'Avery__m007': '13-14', 'Avery__m008': '10-14'}}, 'joint_reward': -13.0}}
+
+[Event #39, Iteration: 1] [21:53:17] [Execution] Avery (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm009', 'interval': '6-8'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Avery', 'meeting': {'id': 'm009', 'title': 'Swimming session', 'meeting_type': 'soft', 'window': [6, 8], 'participants': ['Taylor', 'Riley', 'Quinn', 'Avery']}, 'interval': '6-8', 'total_assigned': 8, 'remaining_variables': 73, 'state_updates': {'attendance': {'Avery__m001': '2-5', 'Avery__m002': '3-7', 'Avery__m003': '8-11', 'Avery__m004': '7-11', 'Avery__m006': '6-10', 'Avery__m007': '13-14', 'Avery__m008': '10-14', 'Avery__m009': '6-8'}}, 'joint_reward': -17.0}}
+
+[Event #40, Iteration: 1] [21:53:17] [Execution] Avery (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm010', 'interval': '0-3'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Avery', 'meeting': {'id': 'm010', 'title': 'Collaborative art workshop', 'meeting_type': 'soft', 'window': [0, 3], 'participants': ['Quinn', 'Taylor', 'Reese', 'Riley', 'Avery', 'Jordan']}, 'interval': '0-3', 'total_assigned': 9, 'remaining_variables': 72, 'state_updates': {'attendance': {'Avery__m001': '2-5', 'Avery__m002': '3-7', 'Avery__m003': '8-11', 'Avery__m004': '7-11', 'Avery__m006': '6-10', 'Avery__m007': '13-14', 'Avery__m008': '10-14', 'Avery__m009': '6-8', 'Avery__m010': '0-3'}}, 'joint_reward': -18.0}}
+
+[Event #41, Iteration: 1] [21:53:17] [Execution] Avery (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm011', 'interval': '1-5'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Avery', 'meeting': {'id': 'm011', 'title': 'Swimming session', 'meeting_type': 'soft', 'window': [1, 5], 'participants': ['Avery', 'Jordan', 'Riley', 'Quinn', 'Taylor', 'Reese']}, 'interval': '1-5', 'total_assigned': 10, 'remaining_variables': 71, 'state_updates': {'attendance': {'Avery__m001': '2-5', 'Avery__m002': '3-7', 'Avery__m003': '8-11', 'Avery__m004': '7-11', 'Avery__m006': '6-10', 'Avery__m007': '13-14', 'Avery__m008': '10-14', 'Avery__m009': '6-8', 'Avery__m010': '0-3', 'Avery__m011': '1-5'}}, 'joint_reward': -25.0}}
+
+[Event #42, Iteration: 1] [21:53:17] [Execution] Avery (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm014', 'interval': '4-7'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Avery', 'meeting': {'id': 'm014', 'title': 'Friends’ hangout', 'meeting_type': 'soft', 'window': [4, 7], 'participants': ['Quinn', 'Taylor', 'Reese', 'Avery', 'Jordan']}, 'interval': '4-7', 'total_assigned': 11, 'remaining_variables': 70, 'state_updates': {'attendance': {'Avery__m001': '2-5', 'Avery__m002': '3-7', 'Avery__m003': '8-11', 'Avery__m004': '7-11', 'Avery__m006': '6-10', 'Avery__m007': '13-14', 'Avery__m008': '10-14', 'Avery__m009': '6-8', 'Avery__m010': '0-3', 'Avery__m011': '1-5', 'Avery__m014': '4-7'}}, 'joint_reward': -32.0}}
+
+[Event #43, Iteration: 1] [21:53:17] [Execution] Avery (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm015', 'interval': '0-1'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Avery', 'meeting': {'id': 'm015', 'title': 'Job interview', 'meeting_type': 'strict', 'window': [0, 1], 'participants': ['Quinn', 'Reese', 'Jordan', 'Avery', 'Riley']}, 'interval': '0-1', 'total_assigned': 12, 'remaining_variables': 69, 'state_updates': {'attendance': {'Avery__m001': '2-5', 'Avery__m002': '3-7', 'Avery__m003': '8-11', 'Avery__m004': '7-11', 'Avery__m006': '6-10', 'Avery__m007': '13-14', 'Avery__m008': '10-14', 'Avery__m009': '6-8', 'Avery__m010': '0-3', 'Avery__m011': '1-5', 'Avery__m014': '4-7', 'Avery__m015': '0-1'}}, 'joint_reward': -32.0}}
+
+[Event #44, Iteration: 1] [21:53:17] [Execution] Avery (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm016', 'interval': '9-13'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Avery', 'meeting': {'id': 'm016', 'title': 'Music jamming session', 'meeting_type': 'soft', 'window': [9, 13], 'participants': ['Reese', 'Riley', 'Avery', 'Taylor', 'Quinn']}, 'interval': '9-13', 'total_assigned': 13, 'remaining_variables': 68, 'state_updates': {'attendance': {'Avery__m001': '2-5', 'Avery__m002': '3-7', 'Avery__m003': '8-11', 'Avery__m004': '7-11', 'Avery__m006': '6-10', 'Avery__m007': '13-14', 'Avery__m008': '10-14', 'Avery__m009': '6-8', 'Avery__m010': '0-3', 'Avery__m011': '1-5', 'Avery__m014': '4-7', 'Avery__m015': '0-1', 'Avery__m016': '9-13'}}, 'joint_reward': -40.0}}
+
+[Event #45, Iteration: 1] [21:53:23] [Execution] Reese (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm005', 'interval': '0-1'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Reese', 'meeting': {'id': 'm005', 'title': 'Doctor’s appointment', 'meeting_type': 'strict', 'window': [0, 1], 'participants': ['Riley', 'Jordan', 'Taylor', 'Reese']}, 'interval': '0-1', 'total_assigned': 14, 'remaining_variables': 67, 'state_updates': {'attendance': {'Avery__m001': '2-5', 'Avery__m002': '3-7', 'Avery__m003': '8-11', 'Avery__m004': '7-11', 'Avery__m006': '6-10', 'Avery__m007': '13-14', 'Avery__m008': '10-14', 'Avery__m009': '6-8', 'Avery__m010': '0-3', 'Avery__m011': '1-5', 'Avery__m014': '4-7', 'Avery__m015': '0-1', 'Avery__m016': '9-13', 'Reese__m005': '0-1'}}, 'joint_reward': -39.0}}
+
+[Event #46, Iteration: 1] [21:53:29] [Execution] Riley (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm001', 'interval': '2-5'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Riley', 'meeting': {'id': 'm001', 'title': 'Volleyball free play', 'meeting_type': 'soft', 'window': [2, 5], 'participants': ['Riley', 'Quinn', 'Avery', 'Taylor', 'Reese', 'Jordan']}, 'interval': '2-5', 'total_assigned': 15, 'remaining_variables': 66, 'state_updates': {'attendance': {'Avery__m001': '2-5', 'Avery__m002': '3-7', 'Avery__m003': '8-11', 'Avery__m004': '7-11', 'Avery__m006': '6-10', 'Avery__m007': '13-14', 'Avery__m008': '10-14', 'Avery__m009': '6-8', 'Avery__m010': '0-3', 'Avery__m011': '1-5', 'Avery__m014': '4-7', 'Avery__m015': '0-1', 'Avery__m016': '9-13', 'Reese__m005': '0-1', 'Riley__m001': '2-5'}}, 'joint_reward': -39.0}}
+
+[Event #47, Iteration: 1] [21:53:34] [Execution] Taylor (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm005', 'interval': '0-1'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Taylor', 'meeting': {'id': 'm005', 'title': 'Doctor’s appointment', 'meeting_type': 'strict', 'window': [0, 1], 'participants': ['Riley', 'Jordan', 'Taylor', 'Reese']}, 'interval': '0-1', 'total_assigned': 16, 'remaining_variables': 65, 'state_updates': {'attendance': {'Avery__m001': '2-5', 'Avery__m002': '3-7', 'Avery__m003': '8-11', 'Avery__m004': '7-11', 'Avery__m006': '6-10', 'Avery__m007': '13-14', 'Avery__m008': '10-14', 'Avery__m009': '6-8', 'Avery__m010': '0-3', 'Avery__m011': '1-5', 'Avery__m014': '4-7', 'Avery__m015': '0-1', 'Avery__m016': '9-13', 'Reese__m005': '0-1', 'Riley__m001': '2-5', 'Taylor__m005': '0-1'}}, 'joint_reward': -38.0}}
+
+[Event #48, Iteration: 1] [21:53:41] [Execution] Jordan (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm005', 'interval': '0-1'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Jordan', 'meeting': {'id': 'm005', 'title': 'Doctor’s appointment', 'meeting_type': 'strict', 'window': [0, 1], 'participants': ['Riley', 'Jordan', 'Taylor', 'Reese']}, 'interval': '0-1', 'total_assigned': 17, 'remaining_variables': 64, 'state_updates': {'attendance': {'Avery__m001': '2-5', 'Avery__m002': '3-7', 'Avery__m003': '8-11', 'Avery__m004': '7-11', 'Avery__m006': '6-10', 'Avery__m007': '13-14', 'Avery__m008': '10-14', 'Avery__m009': '6-8', 'Avery__m010': '0-3', 'Avery__m011': '1-5', 'Avery__m014': '4-7', 'Avery__m015': '0-1', 'Avery__m016': '9-13', 'Reese__m005': '0-1', 'Riley__m001': '2-5', 'Taylor__m005': '0-1', 'Jordan__m005': '0-1'}}, 'joint_reward': -37.0}}
+
+[Event #49, Iteration: 1] [21:53:46] [Execution] Quinn (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm001', 'interval': '2-5'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Quinn', 'meeting': {'id': 'm001', 'title': 'Volleyball free play', 'meeting_type': 'soft', 'window': [2, 5], 'participants': ['Riley', 'Quinn', 'Avery', 'Taylor', 'Reese', 'Jordan']}, 'interval': '2-5', 'total_assigned': 18, 'remaining_variables': 63, 'state_updates': {'attendance': {'Avery__m001': '2-5', 'Avery__m002': '3-7', 'Avery__m003': '8-11', 'Avery__m004': '7-11', 'Avery__m006': '6-10', 'Avery__m007': '13-14', 'Avery__m008': '10-14', 'Avery__m009': '6-8', 'Avery__m010': '0-3', 'Avery__m011': '1-5', 'Avery__m014': '4-7', 'Avery__m015': '0-1', 'Avery__m016': '9-13', 'Reese__m005': '0-1', 'Riley__m001': '2-5', 'Taylor__m005': '0-1', 'Jordan__m005': '0-1', 'Quinn__m001': '2-5'}}, 'joint_reward': -37.0}}
+
+
+================================================================================
+

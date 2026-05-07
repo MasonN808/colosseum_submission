@@ -1,0 +1,689 @@
+================================================================================
+BLACKBOARD STATE LOG - 0
+Session started: 2026-04-22 22:07:44
+================================================================================
+
+BLACKBOARD INFO:
+- ID: 0
+- Participants: Avery, Jordan, Quinn, Reese, Riley, Taylor
+================================================================================
+
+================================================================================
+BLACKBOARD STATE UPDATE
+Updated: 2026-04-22 22:17:23
+Iteration: 1 | Phase: execution | Last Agent: Reese
+Total Events: 56
+================================================================================
+
+EVENT SUMMARY:
+- Total Events: 56
+- By Type: context(1), communication(35), action_executed(20)
+- By Agent: SYSTEM(1), Quinn(16), Riley(7), Jordan(8), Avery(8), Taylor(5), Reese(11)
+
+--------------------------------------------------------------------------------
+FULL EVENT LOG:
+
+[Event #1, Iteration: 1] [22:07:44] [Execution] SYSTEM (context)  Message: "Decide attendance intervals for meetings on a shared timeline.
+
+NOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.
+
+This blackboard is a private communication channel.
+Participants: Avery, Jordan, Quinn, Reese, Riley, Taylor"
+
+[Event #2, Iteration: 1] [22:07:57] [Planning] Quinn (communication)  Content: Hi everyone! I'm Quinn. Looking at the schedule - we have many overlapping soft meetings. Let's coordinate to maximize overlaps.
+
+Key overlaps I see:
+- [1-3): Gaming session (m013) + Lunch (m015)
+- [2-4): Two Lunches (m003, m014) + Art workshop (m016)
+- [3-5): Board game (m002), Gaming (m004), Swimming (m011), Gaming (m013)
+- [4-6): Multiple sessions
+- [7-9): Gaming (m009)
+- [8-11): Music jamming (m010)
+- [11-15): Music jamming (m001) + Gaming (m008)
+
+Since all are soft, we want to attend where we can overlap with multiple others. What intervals work best for everyone?
+
+[Event #3, Iteration: 1] [22:08:09] [Planning] Riley (communication)  Content: Hi everyone! I'm Riley. Looking at the schedule, all our meetings are soft, so we want to maximize overlaps. Here's my proposed attendance plan:
+
+Key overlapping windows:
+- [2-4): Lunch (m003, m014), Art (m016), Friends (m005) - many overlap here
+- [3-5): Gaming (m013), Board game (m002), Swimming (m011), Art (m016)
+- [4-6): Board game (m002), Swimming (m011), Music jamming (m007), Friends (m005)
+- [11-14): Music jamming (m001), Gaming (m008)
+
+My proposed intervals:
+- m013 (Gaming 1-5): attend [2, 5) - overlaps with lunch, art, friends, board game, swimming
+- m003 (Lunch 2-4): attend [2, 4) - overlaps with other lunch, art, friends
+- m014 (Lunch 2-4): attend [2, 4) - same window
+- m005 (Friends 2-6): attend [2, 6) - covers everything
+- m016 (Art 2-6): attend [2, 6) - same
+- m002 (Board game 3-6): attend [3, 6) - overlaps with gaming, swimming, music
+- m011 (Swimming 3-6): attend [3, 6) - same
+- m007 (Music 4-7): attend [4, 7) - overlaps with board game, swimming
+- m009 (Gaming 7-9): attend [7, 9) - standalone
+- m001 (Music 11-15): attend [11, 15) - overlaps with gaming
+- m008 (Gaming 11-14): attend [11, 14) - same window
+
+This maximizes overlaps in the dense [2-6) period and [11-14) period. Does this work for everyone? Any conflicts I should adjust?
+
+[Event #4, Iteration: 1] [22:08:24] [Planning] Jordan (communication)  Content: Hi everyone! I'm Jordan. Thanks Riley for the detailed plan! I noticed a few meetings I'm in that weren't explicitly covered:
+
+- m004: Gaming [3,5) - I'll attend [3,5)
+- m006: Gym [4,6) - I'll attend [4,6)
+- m010: Music [8,11) - I'll attend [8,11)
+- m012: Music [4,6) - I'll attend [4,6)
+
+My full proposed schedule:
+- m013 (Gaming 1-5): [2,5) - overlaps with lunch, friends, art, board game, swimming
+- m015 (Lunch 1-3): [1,3) - overlaps with gaming
+- m014 (Lunch 2-4): [2,4) - overlaps with gaming, friends, art
+- m005 (Friends 2-6): [2,6) - covers everything
+- m016 (Art 2-6): [2,6) - same
+- m002 (Board game 3-6): [3,6) - overlaps with gaming, swimming, music
+- m004 (Gaming 3-5): [3,5) - overlaps with board game, swimming
+- m011 (Swimming 3-6): [3,6) - same as board game
+- m006 (Gym 4-6): [4,6) - overlaps with board game, swimming, music
+- m007 (Music 4-7): [4,7) - overlaps with gym, board game
+- m012 (Music 4-6): [4,6) - same as gym
+- m009 (Gaming 7-9): [7,9) - standalone
+- m010 (Music 8-11): [8,11) - overlaps with gaming
+- m001 (Music 11-15): [11,15) - overlaps with gaming
+- m008 (Gaming 11-14): [11,14) - same window
+
+This maximizes overlaps in the dense periods. Works for everyone? (phase=planning, iter=1)
+
+[Event #5, Iteration: 1] [22:08:40] [Planning] Avery (communication)  Content: Hi everyone! I'm Avery. Thanks for the detailed plans Riley and Jordan! Here's my proposed schedule to maximize overlaps:
+
+My meetings:
+- m013 (Gaming 1-5): attend [2, 5) - overlaps with lunch m015, friends m005, board game m002, swimming m011
+- m015 (Lunch 1-3): attend [1, 3) - overlaps with gaming m013
+- m014 (Lunch 2-4): attend [2, 4) - overlaps with gaming m013, friends m005
+- m003 (Lunch 2-4): attend [2, 4) - same window
+- m005 (Friends 2-6): attend [2, 6) - covers gaming, lunch, board game, swimming
+- m002 (Board game 3-6): attend [3, 6) - overlaps with gaming, swimming, music
+- m004 (Gaming 3-5): attend [3, 5) - overlaps with board game, swimming
+- m011 (Swimming 3-6): attend [3, 6) - same as board game
+- m006 (Gym 4-6): attend [4, 6) - overlaps with board game, swimming, music m007
+- m007 (Music 4-7): attend [4, 7) - overlaps with gym, board game
+- m009 (Gaming 7-9): attend [7, 9) - standalone
+- m010 (Music 8-11): attend [8, 11) - overlaps with gaming m009
+- m001 (Music 11-15): attend [11, 15) - overlaps with gaming m008
+- m008 (Gaming 11-14): attend [11, 14) - same window
+
+This covers the dense [2-6) period and [11-14) period. Works for everyone! (phase=planning, iter=1)
+
+[Event #6, Iteration: 1] [22:08:49] [Planning] Avery (communication)  Content: Wait, I need to revise my plan. I noticed I have overlapping intervals in [2-4) where I'm trying to attend m013, m014, m003, and m005 simultaneously. That's not allowed!
+
+Revised plan for the [2-4) overlap period:
+- m013 (Gaming 1-5): attend [2, 5) - but need to drop one of the lunch meetings
+- I'll prioritize m013 and m005 (friends hangout) as they have more participants
+- For m014 and m003 (both lunch 2-4), I'll attend just one: [2, 4)
+
+Actually, let me reconsider - since all meetings are soft and we want overlaps, maybe I should:
+- m013 (Gaming 1-5): [2, 5)
+- m014 (Lunch 2-4): [2, 4) - attend this one
+- m003 (Lunch 2-4): skip (too much overlap)
+- m005 (Friends 2-6): [2, 6)
+
+Or should I drop m013 and focus on the lunch meetings? What do others think? (phase=planning, iter=1)
+
+[Event #7, Iteration: 1] [22:09:25] [Planning] Taylor (communication)  Content: Hi everyone! I'm Taylor. I've reviewed the proposed plans from Riley, Jordan, and Avery. Here's my schedule to maximize overlaps:
+
+My meetings:
+- m013 (Gaming 1-5): [1, 5) - overlaps with lunch m015, friends m005
+- m015 (Lunch 1-3): [1, 3) - overlaps with gaming m013
+- m014 (Lunch 2-4): [2, 4) - overlaps with gaming, friends, art
+- m005 (Friends 2-6): [2, 6) - covers lunch, art, gaming
+- m016 (Art 2-6): [2, 6) - same as friends
+- m002 (Board game 3-6): [3, 6) - overlaps with gaming, swimming
+- m004 (Gaming 3-5): [3, 5) - overlaps with board game, swimming
+- m011 (Swimming 3-6): [3, 6) - same as board game
+- m006 (Gym 4-6): [4, 6) - overlaps with board game, swimming, music
+- m007 (Music 4-7): [4, 7) - overlaps with gym, board game
+- m012 (Music 4-6): [4, 6) - same as gym
+- m009 (Gaming 7-9): [7, 9) - standalone
+- m010 (Music 8-11): [8, 11) - overlaps with gaming
+- m001 (Music 11-15): [11, 15) - overlaps with gaming
+- m008 (Gaming 11-14): [11, 14) - same window
+
+This aligns with the dense [2-6) and [11-14) overlap periods. Works for me! (phase=planning, iter=1)
+
+[Event #8, Iteration: 1] [22:09:52] [Planning] Reese (communication)  Content: Hi everyone! I'm Reese. Looking at the schedule, I see we need to coordinate to avoid conflicts in the overlapping [2-6) period. Here's my proposed plan:
+
+My meetings:
+- m013 (Gaming 1-5): attend [2, 5) - overlaps with lunch m015, art m016, board game m002, swimming m011
+- m015 (Lunch 1-3): attend [1, 3) - overlaps with gaming m013
+- m014 (Lunch 2-4): skip - too much overlap with m013 in [2-4)
+- m003 (Lunch 2-4): skip - same conflict
+- m016 (Art 2-6): attend [2, 6) - overlaps with gaming, board game, swimming
+- m002 (Board game 3-6): attend [3, 6) - overlaps with art, swimming, music
+- m011 (Swimming 3-6): attend [3, 6) - overlaps with board game, art
+- m006 (Gym 4-6): attend [4, 6) - overlaps with board game, music
+- m007 (Music 4-7): attend [4, 7) - overlaps with gym, board game
+- m012 (Music 4-6): skip - too much overlap with m007 and m006 in [4-6)
+- m009 (Gaming 7-9): attend [7, 9) - standalone
+- m010 (Music 8-11): attend [8, 11) - overlaps with gaming m009
+- m001 (Music 11-15): attend [11, 15) - standalone
+
+Key decisions to avoid conflicts:
+- In [2-4): I attend m013 and m016, skip m003 and m014 (both lunches)
+- In [4-6): I attend m006, m007, skip m012 to avoid triple overlap
+
+This maximizes my overlaps while avoiding conflicts. Does this work for everyone?
+
+[Event #9, Iteration: 1] [22:10:02] [Planning] Reese (communication)  Content: I need to revise my plan - I had a conflict in [4,6) where I was trying to attend m002, m011, m006, and m007 simultaneously. Let me fix this:
+
+Revised plan:
+- m013 (Gaming 1-5): [2, 5) ✓
+- m015 (Lunch 1-3): [1, 3) ✓
+- m014 (Lunch 2-4): skip
+- m003 (Lunch 2-4): skip
+- m016 (Art 2-6): skip - too many conflicts in [2-6) period
+- m002 (Board game 3-6): [3, 6) ✓
+- m011 (Swimming 3-6): skip - conflict with m002 in [3,6)
+- m006 (Gym 4-6): skip - conflict with m002 in [4,6)
+- m007 (Music 4-7): [4, 7) ✓
+- m012 (Music 4-6): skip - conflict with m007
+- m009 (Gaming 7-9): [7, 9) ✓
+- m010 (Music 8-11): [8, 11) ✓
+- m001 (Music 11-15): [11, 15) ✓
+
+This avoids all conflicts. In the [2-6) dense period, I'm attending m013, m015, m002, and m007. Does this work?
+
+[Event #10, Iteration: 1] [22:10:14] [Planning] Reese (communication)  Content: Let me reconsider and propose a cleaner plan that ensures no self-overlaps. Here's my final proposed schedule:
+
+- m013 (Gaming 1-5): [2, 5) - covers [2-5)
+- m015 (Lunch 1-3): skip (conflict with m013 in [2-3)
+- m014 (Lunch 2-4): skip (conflict with m013 in [2-4)
+- m003 (Lunch 2-4): skip (conflict with m013 in [2-4)
+- m016 (Art 2-6): skip (conflict with m013 in [2-5)
+- m002 (Board game 3-6): skip (conflict with m013 in [3-5)
+- m011 (Swimming 3-6): skip (conflict with m013 in [3-5)
+- m006 (Gym 4-6): skip (conflict with m013 in [4-5)
+- m007 (Music 4-7): [4, 7) - covers [4-7)
+- m012 (Music 4-6): skip (conflict with m007 in [4-6)
+- m009 (Gaming 7-9): [7, 9) - covers [7-9)
+- m010 (Music 8-11): skip (conflict with m009 in [8-9)
+- m001 (Music 11-15): [11, 15) - covers [11-15)
+
+This gives me three main attendance windows: [2,5), [4,7), [7,9), [11,15). No self-conflicts. Works for everyone?
+
+[Event #11, Iteration: 1] [22:10:49] [Planning] Riley (communication)  Content: Thanks everyone for the feedback! I need to revise my plan - I had self-conflicts in [2-4) and [3-6) periods. Here's my revised schedule to avoid overlaps:
+
+My meetings:
+- m013 (Gaming 1-5): skip - too many conflicts in [2-6) period
+- m003 (Lunch 2-4): skip - conflict with m005
+- m014 (Lunch 2-4): skip - conflict with m005
+- m005 (Friends 2-6): attend [2, 6) - covers most participants
+- m016 (Art 2-6): skip - conflict with m005 in [2-6)
+- m002 (Board game 3-6): skip - conflict with m005 in [3-6)
+- m011 (Swimming 3-6): skip - conflict with m005 in [3-6)
+- m007 (Music 4-7): attend [4, 7) - no conflict now
+- m009 (Gaming 7-9): attend [7, 9) - standalone
+- m001 (Music 11-15): attend [11, 15) - overlaps with m008
+- m008 (Gaming 11-14): attend [11, 14) - same window as m001
+
+This gives me attendance windows: [2,6), [4,7), [7,9), [11,15). No self-conflicts! Works for everyone? (phase=planning, iter=1)
+
+[Event #12, Iteration: 1] [22:10:59] [Planning] Riley (communication)  Content: Wait, I still have a conflict - m005 [2,6) and m007 [4,7) overlap in [4,6). Let me fix:
+
+Final revised schedule for Riley:
+- m005 (Friends 2-6): attend [2, 6) - highest participant count
+- m007 (Music 4-7): skip - conflict with m005 in [4,6)
+- m009 (Gaming 7-9): attend [7, 9) - standalone
+- m001 (Music 11-15): attend [11, 15) - overlaps with m008
+- m008 (Gaming 11-14): attend [11, 14) - same window
+
+This gives me attendance windows: [2,6), [7,9), [11,15). No self-conflicts! (phase=planning, iter=1)
+
+[Event #13, Iteration: 1] [22:11:03] [Planning] Riley (communication)  Content: One more fix - m001 [11,15) and m008 [11,14) overlap in [11,14). 
+
+Final final schedule for Riley:
+- m005 (Friends 2-6): attend [2, 6) - highest overlap with others
+- m009 (Gaming 7-9): attend [7, 9) - standalone
+- m008 (Gaming 11-14): attend [11, 14) - skip m001 to avoid conflict
+
+Attendance windows: [2,6), [7,9), [11,14). No self-conflicts! (phase=planning, iter=1)
+
+[Event #14, Iteration: 1] [22:11:17] [Planning] Jordan (communication)  Content: I need to revise my plan - I have self-conflicts! Let me fix:
+
+My meetings with conflicts:
+- In [2-5): m013, m014, m005, m016 all overlap - need to pick 1-2
+- In [3-6): m002, m004, m011, m005 all overlap - need to pick 1-2
+- In [4-6): m006, m007, m012 all overlap - need to pick 1-2
+- In [8-9): m009 and m010 overlap
+- In [11-14): m001 and m008 overlap
+
+Revised plan to avoid self-conflicts:
+- m013 (Gaming 1-5): skip - too many conflicts
+- m015 (Lunch 1-3): [1,3) - standalone in this window
+- m014 (Lunch 2-4): skip - conflict with m005
+- m005 (Friends 2-6): attend [2,6) - high participant count
+- m016 (Art 2-6): skip - conflict with m005
+- m002 (Board game 3-6): skip - conflict with m005
+- m004 (Gaming 3-5): skip - conflict with m005
+- m011 (Swimming 3-6): skip - conflict with m005
+- m006 (Gym 4-6): skip - conflict with m005 in [4,6)
+- m007 (Music 4-7): [4,7) - no conflict now
+- m012 (Music 4-6): skip - conflict with m007
+- m009 (Gaming 7-9): [7,9) - standalone
+- m010 (Music 8-11): skip - conflict with m009 in [8,9)
+- m001 (Music 11-15): [11,15) - standalone
+- m008 (Gaming 11-14): skip - conflict with m001
+
+Final attendance windows: [1,3), [2,6), [4,7), [7,9), [11,15). No self-conflicts! Does this work?
+
+[Event #15, Iteration: 1] [22:11:25] [Planning] Jordan (communication)  Content: One more fix - m015 [1,3) and m005 [2,6) overlap in [2,3). 
+
+Final final revised plan for Jordan:
+- m005 (Friends 2-6): attend [2,6) - 4 participants, highest value
+- m015 (Lunch 1-3): skip - conflict with m005
+- m014 (Lunch 2-4): skip - conflict with m005
+- m016 (Art 2-6): skip - conflict with m005
+- m002 (Board game 3-6): skip - conflict with m005
+- m004 (Gaming 3-5): skip - conflict with m005
+- m011 (Swimming 3-6): skip - conflict with m005
+- m006 (Gym 4-6): skip - conflict with m005
+- m007 (Music 4-7): [4,7) - no conflict now
+- m012 (Music 4-6): skip - conflict with m007
+- m009 (Gaming 7-9): [7,9) - standalone
+- m010 (Music 8-11): skip - conflict with m009
+- m001 (Music 11-15): [11,15) - standalone
+- m008 (Gaming 11-14): skip - conflict with m001
+
+Final attendance windows: [2,6), [4,7), [7,9), [11,15). No self-conflicts! Works?
+
+[Event #16, Iteration: 1] [22:11:32] [Planning] Jordan (communication)  Content: Actually, m013 has 6 participants vs m005's 4. Let me revise to prioritize m013:
+
+Revised final plan for Jordan:
+- m013 (Gaming 1-5): [1,5) - 6 participants, highest value
+- m005 (Friends 2-6): skip - conflict with m013 in [2,5)
+- m015 (Lunch 1-3): skip - conflict with m013 in [1,3)
+- m014 (Lunch 2-4): skip - conflict with m013 in [2,4)
+- m016 (Art 2-6): skip - conflict with m013 in [2,5)
+- m002 (Board game 3-6): skip - conflict with m013 in [3,5)
+- m004 (Gaming 3-5): skip - conflict with m013 in [3,5)
+- m011 (Swimming 3-6): skip - conflict with m013 in [3,5)
+- m006 (Gym 4-6): skip - conflict with m013 in [4,5)
+- m007 (Music 4-7): [4,7) - no conflict now
+- m012 (Music 4-6): skip - conflict with m007
+- m009 (Gaming 7-9): [7,9) - standalone
+- m010 (Music 8-11): skip - conflict with m009
+- m001 (Music 11-15): [11,15) - standalone
+- m008 (Gaming 11-14): skip - conflict with m001
+
+Final attendance windows: [1,5), [4,7), [7,9), [11,15). No self-conflicts! Works?
+
+[Event #17, Iteration: 1] [22:11:47] [Planning] Avery (communication)  Content: Hi everyone! I've reviewed the plans and need to finalize my schedule avoiding self-conflicts. Here's my final plan:
+
+My meetings with conflicts:
+- [2-4): m013, m003, m014, m005 overlap → I'll attend m013 (6 participants, highest value)
+- [3-5): m013, m002, m004, m011 overlap → I'll skip m002, m004, m011 (m013 covers this)
+- [4-6): m002, m006, m007, m011 overlap → I'll attend m007 (6 participants)
+- [8-9): m009 and m010 overlap → I'll attend m009 (6 participants)
+- [11-14): m001 and m008 overlap → I'll attend m001 (6 participants, covers full window)
+
+Final attendance schedule for Avery:
+- m013 (Gaming 1-5): [1, 5) - 6 participants, covers [1-5)
+- m003 (Lunch 2-4): skip (conflict with m013)
+- m014 (Lunch 2-4): skip (conflict with m013)
+- m005 (Friends 2-6): skip (conflict with m013)
+- m002 (Board game 3-6): skip (conflict with m013)
+- m004 (Gaming 3-5): skip (conflict with m013)
+- m011 (Swimming 3-6): skip (conflict with m013)
+- m006 (Gym 4-6): skip (conflict with m007)
+- m007 (Music 4-7): [4, 7) - 6 participants
+- m009 (Gaming 7-9): [7, 9) - 6 participants
+- m010 (Music 8-11): skip (conflict with m009)
+- m001 (Music 11-15): [11, 15) - 6 participants
+- m008 (Gaming 11-14): skip (conflict with m001)
+
+Attendance windows: [1,5), [4,7), [7,9), [11,15). No self-conflicts! Works for everyone? (phase=planning, iter=1)
+
+[Event #18, Iteration: 1] [22:11:58] [Planning] Avery (communication)  Content: Wait, I have a conflict - m013 [1,5) and m007 [4,7) overlap in [4,5). Let me fix:
+
+Revised final plan for Avery:
+- m013 (Gaming 1-5): [1, 4) - ends at 4 to avoid conflict with m007
+- m007 (Music 4-7): [4, 7) - starts at 4, no overlap now
+- m009 (Gaming 7-9): [7, 9) - standalone
+- m001 (Music 11-15): [11, 15) - 6 participants
+- m008 (Gaming 11-14): skip (conflict with m001)
+
+All other meetings skipped due to conflicts.
+
+Attendance windows: [1,4), [4,7), [7,9), [11,15). No self-conflicts! (phase=planning, iter=1)
+
+[Event #19, Iteration: 1] [22:12:08] [Planning] Avery (communication)  Content: Actually, let me optimize better. I can attend m013 for full [1,5) and m007 from [5,7) to avoid the overlap:
+
+Final final plan for Avery:
+- m013 (Gaming 1-5): [1, 5) - 6 participants, full window
+- m007 (Music 4-7): [5, 7) - 6 participants, starts at 5 to avoid conflict
+- m009 (Gaming 7-9): [7, 9) - 6 participants
+- m010 (Music 8-11): skip (conflict with m009 in [8,9)
+- m001 (Music 11-15): [11, 15) - 6 participants, full window
+- m008 (Gaming 11-14): skip (conflict with m001)
+
+All other meetings skipped.
+
+Attendance windows: [1,5), [5,7), [7,9), [11,15). No self-conflicts! (phase=planning, iter=1)
+
+[Event #20, Iteration: 1] [22:12:45] [Planning] Reese (communication)  Content: Final plan for Reese:
+- m013 (Gaming 1-5): [2, 5) - 6 participants
+- m007 (Music 4-7): [4, 7) - 6 participants  
+- m009 (Gaming 7-9): [7, 9) - 6 participants
+- m001 (Music 11-15): [11, 15) - 6 participants
+
+Skipping: m003, m014, m002, m011, m006, m012, m010
+
+Attendance windows: [2,5), [4,7), [7,9), [11,15). No self-conflicts!
+
+[Event #21, Iteration: 1] [22:12:54] [Planning] Reese (communication)  Content: Correction for Reese - I had a self-conflict between m013 and m007 in [4,5). Revised plan:
+
+- m013 (Gaming 1-5): [2, 5) - 6 participants
+- m006 (Gym 4-6): [4, 6) - 5 participants (replaces m007 to avoid conflict)
+- m009 (Gaming 7-9): [7, 9) - 6 participants
+- m001 (Music 11-15): [11, 15) - 6 participants
+
+Skipping: m003, m014, m002, m011, m007, m012, m010
+
+Attendance windows: [2,5), [4,6), [7,9), [11,15). No self-conflicts!
+
+[Event #22, Iteration: 1] [22:13:01] [Planning] Reese (communication)  Content: Another correction - still have conflict m013 [2,5) with m006 [4,6) in [4,5). Final revised plan:
+
+- m013 (Gaming 1-5): [2, 4) - ends at 4 to avoid conflict
+- m006 (Gym 4-6): [4, 6) - starts at 4, no overlap
+- m009 (Gaming 7-9): [7, 9) - 6 participants
+- m001 (Music 11-15): [11, 15) - 6 participants
+
+Skipping: m003, m014, m002, m011, m007, m012, m010
+
+Attendance windows: [2,4), [4,6), [7,9), [11,15). No self-conflicts!
+
+[Event #23, Iteration: 1] [22:13:29] [Planning] Riley (communication)  Content: Final confirmed schedule for Riley:
+- m005 (Friends 2-6): [2, 6) - 4 participants
+- m009 (Gaming 7-9): [7, 9) - 6 participants
+- m008 (Gaming 11-14): [11, 14) - 5 participants
+
+Attendance windows: [2,6), [7,9), [11,14). No self-conflicts!
+
+Note: I'm skipping m001 to avoid conflict with m008. For the [2-6) period, I'm prioritizing m005 (friends hangout) as it has good overlap with many participants. Works for everyone!
+
+[Event #24, Iteration: 1] [22:13:49] [Planning] Jordan (communication)  Content: Jordan here - I need to fix my self-conflict between m013 [1,5) and m007 [4,7) in [4,5). Here's my revised final plan:
+
+- m013 (Gaming 1-5): [1,5) - 6 participants
+- m007 (Music 4-7): [5,7) - starts at 5 to avoid conflict
+- m009 (Gaming 7-9): [7,9) - 6 participants
+- m001 (Music 11-15): [11,15) - 6 participants
+
+Attendance windows: [1,5), [5,7), [7,9), [11,15). No self-conflicts!
+
+This matches well with others:
+- Overlaps with Riley on m009 [7,9)
+- Overlaps with Avery on m013 [1,5), m009 [7,9), m001 [11,15)
+- Overlaps with Reese on m009 [7,9), m001 [11,15)
+
+[Event #25, Iteration: 1] [22:13:55] [Planning] Jordan (communication)  Content: Jordan checking in - my final schedule is set. Any final adjustments needed before we move to execution?
+
+Summary of my attendance:
+- m013 [1,5): Gaming session
+- m007 [5,7): Music jamming (shifted to avoid conflict)
+- m009 [7,9): Gaming session  
+- m001 [11,15): Music jamming
+
+This gives good overlaps with everyone on the gaming sessions (m009) and music sessions (m001).
+
+[Event #26, Iteration: 1] [22:14:12] [Planning] Avery (communication)  Content: Avery here - confirming my final schedule:
+
+My attendance:
+- m013 (Gaming 1-5): [1, 5) - 6 participants
+- m007 (Music 4-7): [5, 7) - 6 participants (shifted to avoid conflict)
+- m009 (Gaming 7-9): [7, 9) - 6 participants
+- m001 (Music 11-15): [11, 15) - 6 participants
+
+Skipped due to conflicts: m003, m014, m005, m002, m004, m011, m006, m010, m008
+
+Attendance windows: [1,5), [5,7), [7,9), [11,15). No self-conflicts!
+
+Key overlaps I see with others:
+- With Jordan: m013 [1,5), m009 [7,9), m001 [11,15)
+- With Riley: m009 [7,9) (both attending)
+- With Reese: m013 [2,5) overlaps with my [1,5), m009 [7,9), m001 [11,15)
+
+Ready for execution phase! (phase=planning, iter=1)
+
+[Event #27, Iteration: 1] [22:14:37] [Planning] Taylor (communication)  Content: Taylor here - confirming my final schedule for the group:
+
+My attendance:
+- m013 (Gaming 1-5): [1, 5) - 6 participants
+- m015 (Lunch 1-3): [1, 3) - 5 participants
+- m014 (Lunch 2-4): [2, 4) - 6 participants
+- m016 (Art 2-6): [2, 6) - 5 participants
+- m002 (Board game 3-6): [3, 6) - 6 participants
+- m004 (Gaming 3-5): [3, 5) - 4 participants
+- m011 (Swimming 3-6): [3, 6) - 6 participants
+- m006 (Gym 4-6): [4, 6) - 5 participants
+- m007 (Music 4-7): [4, 7) - 6 participants
+- m012 (Music 4-6): [4, 6) - 4 participants
+- m009 (Gaming 7-9): [7, 9) - 6 participants
+- m010 (Music 8-11): [8, 11) - 5 participants
+- m001 (Music 11-15): [11, 15) - 6 participants
+- m008 (Gaming 11-14): [11, 14) - 5 participants
+
+I'll attend all my meetings to maximize overlaps with everyone. Ready for execution phase!
+
+[Event #28, Iteration: 1] [22:14:53] [Planning] Reese (communication)  Content: Reese here - confirming my final schedule for execution:
+
+My attendance:
+- m013 (Gaming 1-5): [2, 4) - 6 participants, ends at 4 to avoid conflict
+- m006 (Gym 4-6): [4, 6) - 5 participants, starts at 4, no overlap
+- m009 (Gaming 7-9): [7, 9) - 6 participants
+- m001 (Music 11-15): [11, 15) - 6 participants
+
+Skipped due to conflicts: m003, m014, m002, m011, m007, m012, m010
+
+Attendance windows: [2,4), [4,6), [7,9), [11,15). No self-conflicts!
+
+Key overlaps with others:
+- m013 [2,4): Overlaps with Jordan [1,5), Avery [1,5), Taylor [1,5)
+- m009 [7,9): Overlaps with Jordan, Avery, Riley, Taylor (all attending)
+- m001 [11,15): Overlaps with Jordan, Avery, Taylor
+
+Ready for execution phase! (phase=planning, iter=1)
+
+[Event #29, Iteration: 1] [22:15:26] [Planning] Riley (communication)  Content: Riley confirming final schedule for execution:
+- m005 (Friends 2-6): [2, 6)
+- m009 (Gaming 7-9): [7, 9)
+- m008 (Gaming 11-14): [11, 14)
+
+No self-conflicts. Ready for execution phase!
+
+[Event #30, Iteration: 1] [22:15:42] [Planning] Jordan (communication)  Content: Jordan confirming ready for execution with my final schedule: m013 [1,5), m007 [5,7), m009 [7,9), m001 [11,15). No self-conflicts, good overlaps with everyone. Let's execute!
+
+[Event #31, Iteration: 1] [22:16:03] [Planning] Avery (communication)  Content: Avery here - confirming my final schedule is locked in and ready for execution:
+
+My attendance intervals:
+- m013 (Gaming 1-5): [1, 5)
+- m007 (Music 4-7): [5, 7)
+- m009 (Gaming 7-9): [7, 9)
+- m001 (Music 11-15): [11, 15)
+
+Skipped: m003, m014, m005, m002, m004, m011, m006, m010, m008
+
+No self-conflicts. Good overlaps with Jordan (m013, m009, m001), Riley (m009), and Reese (m009, m001). Ready to execute!
+
+[Event #32, Iteration: 1] [22:16:21] [Planning] Taylor (communication)  Content: Taylor here - I need to revise my plan to avoid self-conflicts. My previous plan had too many overlapping meetings. Here's my corrected final schedule:
+
+Key conflicts I need to avoid:
+- [2-5): m013, m014, m016 all overlap
+- [3-6): m002, m004, m011 all overlap
+- [4-7): m006, m007, m012 all overlap
+- [11-15): m001, m008 overlap
+
+Revised plan to avoid self-conflicts:
+- m013 (Gaming 1-5): [1, 5) - 6 participants, covers [1-5)
+- m015 (Lunch 1-3): skip (conflict with m013)
+- m014 (Lunch 2-4): skip (conflict with m013)
+- m016 (Art 2-6): skip (conflict with m013 in [2-5)
+- m002 (Board game 3-6): skip (conflict with m013 in [3-5)
+- m004 (Gaming 3-5): skip (conflict with m013)
+- m011 (Swimming 3-6): skip (conflict with m013)
+- m006 (Gym 4-6): skip (conflict with m013 in [4-5)
+- m007 (Music 4-7): [4, 7) - 6 participants
+- m012 (Music 4-6): skip (conflict with m007)
+- m009 (Gaming 7-9): [7, 9) - 6 participants
+- m010 (Music 8-11): skip (conflict with m009 in [8-9)
+- m001 (Music 11-15): [11, 15) - 6 participants
+- m008 (Gaming 11-14): skip (conflict with m001)
+
+Attendance windows: [1,5), [4,7), [7,9), [11,15). No self-conflicts!
+
+This aligns well with Quinn (my coalition partner) who will attend the same meetings. Ready for execution!
+
+[Event #33, Iteration: 1] [22:16:25] [Planning] Taylor (communication)  Content: Correction - I still have a conflict between m013 [1,5) and m007 [4,7) in [4,5). Let me fix:
+
+Final revised plan for Taylor:
+- m013 (Gaming 1-5): [1, 5) - 6 participants
+- m007 (Music 4-7): [5, 7) - starts at 5 to avoid conflict
+- m009 (Gaming 7-9): [7, 9) - 6 participants
+- m001 (Music 11-15): [11, 15) - 6 participants
+- m008 (Gaming 11-14): skip (conflict with m001)
+
+Skipped: m015, m014, m016, m002, m004, m011, m006, m012, m010
+
+Attendance windows: [1,5), [5,7), [7,9), [11,15). No self-conflicts!
+
+This matches well with Quinn (my coalition partner) who will also attend m013, m007, m009, m001. Ready for execution!
+
+[Event #34, Iteration: 1] [22:16:37] [Planning] Reese (communication)  Content: Reese here - confirming my final schedule for execution:
+
+My attendance:
+- m013 (Gaming 1-5): [2, 4) - 6 participants, ends at 4 to avoid conflict
+- m006 (Gym 4-6): [4, 6) - 5 participants, starts at 4, no overlap
+- m009 (Gaming 7-9): [7, 9) - 6 participants
+- m001 (Music 11-15): [11, 15) - 6 participants
+
+Skipped due to conflicts: m003, m014, m002, m011, m007, m012, m010
+
+Attendance windows: [2,4), [4,6), [7,9), [11,15). No self-conflicts!
+
+Key overlaps with others:
+- m013 [2,4): Overlaps with Jordan [1,5), Avery [1,5), Taylor [1,5)
+- m009 [7,9): Overlaps with Jordan, Avery, Riley, Taylor (all attending)
+- m001 [11,15): Overlaps with Jordan, Avery, Taylor
+
+Ready for execution phase!
+
+[Event #35, Iteration: 1] [22:16:43] [Planning] Reese (communication)  Content: Reese confirming ready for execution! My final schedule:
+
+- m013 [2,4): Gaming session
+- m006 [4,6): Gym play session  
+- m009 [7,9): Gaming session
+- m001 [11,15): Music jamming session
+
+All conflicts resolved, no self-overlaps. Ready to commit!
+
+[Event #36, Iteration: 1] [22:16:50] [Planning] Reese (communication)  Content: Reese switching to execution phase. Committing my attendance intervals now.
+
+[Event #37, Iteration: 1] [22:17:00] [Execution] Quinn (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm001', 'interval': '11-15'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Quinn', 'meeting': {'id': 'm001', 'title': 'Music jamming session', 'meeting_type': 'soft', 'window': [11, 15], 'participants': ['Quinn', 'Avery', 'Riley', 'Reese', 'Taylor', 'Jordan']}, 'interval': '11-15', 'total_assigned': 1, 'remaining_variables': 82, 'state_updates': {'attendance': {'Quinn__m001': '11-15'}}, 'joint_reward': 0.0}}
+
+[Event #38, Iteration: 1] [22:17:00] [Execution] Quinn (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm002', 'interval': 'skip'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Quinn', 'meeting': {'id': 'm002', 'title': 'Board game night', 'meeting_type': 'soft', 'window': [3, 6], 'participants': ['Avery', 'Quinn', 'Jordan', 'Reese', 'Taylor', 'Riley']}, 'interval': 'skip', 'total_assigned': 2, 'remaining_variables': 81, 'state_updates': {'attendance': {'Quinn__m001': '11-15', 'Quinn__m002': 'skip'}}, 'joint_reward': 0.0}}
+
+[Event #39, Iteration: 1] [22:17:00] [Execution] Quinn (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm003', 'interval': 'skip'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Quinn', 'meeting': {'id': 'm003', 'title': 'Lunch break in lounge', 'meeting_type': 'soft', 'window': [2, 4], 'participants': ['Quinn', 'Reese', 'Riley', 'Avery']}, 'interval': 'skip', 'total_assigned': 3, 'remaining_variables': 80, 'state_updates': {'attendance': {'Quinn__m001': '11-15', 'Quinn__m002': 'skip', 'Quinn__m003': 'skip'}}, 'joint_reward': 0.0}}
+
+[Event #40, Iteration: 1] [22:17:00] [Execution] Quinn (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm004', 'interval': 'skip'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Quinn', 'meeting': {'id': 'm004', 'title': 'Gaming session', 'meeting_type': 'soft', 'window': [3, 5], 'participants': ['Jordan', 'Taylor', 'Quinn', 'Avery']}, 'interval': 'skip', 'total_assigned': 4, 'remaining_variables': 79, 'state_updates': {'attendance': {'Quinn__m001': '11-15', 'Quinn__m002': 'skip', 'Quinn__m003': 'skip', 'Quinn__m004': 'skip'}}, 'joint_reward': 0.0}}
+
+[Event #41, Iteration: 1] [22:17:00] [Execution] Quinn (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm006', 'interval': 'skip'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Quinn', 'meeting': {'id': 'm006', 'title': 'Gym play session', 'meeting_type': 'soft', 'window': [4, 6], 'participants': ['Taylor', 'Quinn', 'Avery', 'Reese', 'Jordan']}, 'interval': 'skip', 'total_assigned': 5, 'remaining_variables': 78, 'state_updates': {'attendance': {'Quinn__m001': '11-15', 'Quinn__m002': 'skip', 'Quinn__m003': 'skip', 'Quinn__m004': 'skip', 'Quinn__m006': 'skip'}}, 'joint_reward': 0.0}}
+
+[Event #42, Iteration: 1] [22:17:00] [Execution] Quinn (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm007', 'interval': '5-7'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Quinn', 'meeting': {'id': 'm007', 'title': 'Music jamming session', 'meeting_type': 'soft', 'window': [4, 7], 'participants': ['Taylor', 'Jordan', 'Riley', 'Quinn', 'Avery', 'Reese']}, 'interval': '5-7', 'total_assigned': 6, 'remaining_variables': 77, 'state_updates': {'attendance': {'Quinn__m001': '11-15', 'Quinn__m002': 'skip', 'Quinn__m003': 'skip', 'Quinn__m004': 'skip', 'Quinn__m006': 'skip', 'Quinn__m007': '5-7'}}, 'joint_reward': 0.0}}
+
+[Event #43, Iteration: 1] [22:17:00] [Execution] Quinn (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm008', 'interval': 'skip'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Quinn', 'meeting': {'id': 'm008', 'title': 'Gaming session', 'meeting_type': 'soft', 'window': [11, 14], 'participants': ['Avery', 'Quinn', 'Riley', 'Jordan', 'Taylor']}, 'interval': 'skip', 'total_assigned': 7, 'remaining_variables': 76, 'state_updates': {'attendance': {'Quinn__m001': '11-15', 'Quinn__m002': 'skip', 'Quinn__m003': 'skip', 'Quinn__m004': 'skip', 'Quinn__m006': 'skip', 'Quinn__m007': '5-7', 'Quinn__m008': 'skip'}}, 'joint_reward': 0.0}}
+
+[Event #44, Iteration: 1] [22:17:00] [Execution] Quinn (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm009', 'interval': '7-9'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Quinn', 'meeting': {'id': 'm009', 'title': 'Gaming session', 'meeting_type': 'soft', 'window': [7, 9], 'participants': ['Jordan', 'Quinn', 'Reese', 'Avery', 'Taylor', 'Riley']}, 'interval': '7-9', 'total_assigned': 8, 'remaining_variables': 75, 'state_updates': {'attendance': {'Quinn__m001': '11-15', 'Quinn__m002': 'skip', 'Quinn__m003': 'skip', 'Quinn__m004': 'skip', 'Quinn__m006': 'skip', 'Quinn__m007': '5-7', 'Quinn__m008': 'skip', 'Quinn__m009': '7-9'}}, 'joint_reward': 0.0}}
+
+[Event #45, Iteration: 1] [22:17:00] [Execution] Quinn (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm010', 'interval': 'skip'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Quinn', 'meeting': {'id': 'm010', 'title': 'Music jamming session', 'meeting_type': 'soft', 'window': [8, 11], 'participants': ['Avery', 'Quinn', 'Taylor', 'Jordan', 'Reese']}, 'interval': 'skip', 'total_assigned': 9, 'remaining_variables': 74, 'state_updates': {'attendance': {'Quinn__m001': '11-15', 'Quinn__m002': 'skip', 'Quinn__m003': 'skip', 'Quinn__m004': 'skip', 'Quinn__m006': 'skip', 'Quinn__m007': '5-7', 'Quinn__m008': 'skip', 'Quinn__m009': '7-9', 'Quinn__m010': 'skip'}}, 'joint_reward': 0.0}}
+
+[Event #46, Iteration: 1] [22:17:00] [Execution] Quinn (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm011', 'interval': 'skip'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Quinn', 'meeting': {'id': 'm011', 'title': 'Swimming session', 'meeting_type': 'soft', 'window': [3, 6], 'participants': ['Quinn', 'Taylor', 'Jordan', 'Riley', 'Reese', 'Avery']}, 'interval': 'skip', 'total_assigned': 10, 'remaining_variables': 73, 'state_updates': {'attendance': {'Quinn__m001': '11-15', 'Quinn__m002': 'skip', 'Quinn__m003': 'skip', 'Quinn__m004': 'skip', 'Quinn__m006': 'skip', 'Quinn__m007': '5-7', 'Quinn__m008': 'skip', 'Quinn__m009': '7-9', 'Quinn__m010': 'skip', 'Quinn__m011': 'skip'}}, 'joint_reward': 0.0}}
+
+[Event #47, Iteration: 1] [22:17:00] [Execution] Quinn (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm012', 'interval': 'skip'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Quinn', 'meeting': {'id': 'm012', 'title': 'Music jamming session', 'meeting_type': 'soft', 'window': [4, 6], 'participants': ['Reese', 'Jordan', 'Taylor', 'Quinn']}, 'interval': 'skip', 'total_assigned': 11, 'remaining_variables': 72, 'state_updates': {'attendance': {'Quinn__m001': '11-15', 'Quinn__m002': 'skip', 'Quinn__m003': 'skip', 'Quinn__m004': 'skip', 'Quinn__m006': 'skip', 'Quinn__m007': '5-7', 'Quinn__m008': 'skip', 'Quinn__m009': '7-9', 'Quinn__m010': 'skip', 'Quinn__m011': 'skip', 'Quinn__m012': 'skip'}}, 'joint_reward': 0.0}}
+
+[Event #48, Iteration: 1] [22:17:00] [Execution] Quinn (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm013', 'interval': '1-5'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Quinn', 'meeting': {'id': 'm013', 'title': 'Gaming session', 'meeting_type': 'soft', 'window': [1, 5], 'participants': ['Riley', 'Avery', 'Jordan', 'Taylor', 'Reese', 'Quinn']}, 'interval': '1-5', 'total_assigned': 12, 'remaining_variables': 71, 'state_updates': {'attendance': {'Quinn__m001': '11-15', 'Quinn__m002': 'skip', 'Quinn__m003': 'skip', 'Quinn__m004': 'skip', 'Quinn__m006': 'skip', 'Quinn__m007': '5-7', 'Quinn__m008': 'skip', 'Quinn__m009': '7-9', 'Quinn__m010': 'skip', 'Quinn__m011': 'skip', 'Quinn__m012': 'skip', 'Quinn__m013': '1-5'}}, 'joint_reward': 0.0}}
+
+[Event #49, Iteration: 1] [22:17:00] [Execution] Quinn (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm014', 'interval': 'skip'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Quinn', 'meeting': {'id': 'm014', 'title': 'Lunch break in lounge', 'meeting_type': 'soft', 'window': [2, 4], 'participants': ['Avery', 'Riley', 'Taylor', 'Reese', 'Quinn', 'Jordan']}, 'interval': 'skip', 'total_assigned': 13, 'remaining_variables': 70, 'state_updates': {'attendance': {'Quinn__m001': '11-15', 'Quinn__m002': 'skip', 'Quinn__m003': 'skip', 'Quinn__m004': 'skip', 'Quinn__m006': 'skip', 'Quinn__m007': '5-7', 'Quinn__m008': 'skip', 'Quinn__m009': '7-9', 'Quinn__m010': 'skip', 'Quinn__m011': 'skip', 'Quinn__m012': 'skip', 'Quinn__m013': '1-5', 'Quinn__m014': 'skip'}}, 'joint_reward': 0.0}}
+
+[Event #50, Iteration: 1] [22:17:00] [Execution] Quinn (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm015', 'interval': 'skip'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Quinn', 'meeting': {'id': 'm015', 'title': 'Lunch break in lounge', 'meeting_type': 'soft', 'window': [1, 3], 'participants': ['Taylor', 'Jordan', 'Avery', 'Quinn', 'Reese']}, 'interval': 'skip', 'total_assigned': 14, 'remaining_variables': 69, 'state_updates': {'attendance': {'Quinn__m001': '11-15', 'Quinn__m002': 'skip', 'Quinn__m003': 'skip', 'Quinn__m004': 'skip', 'Quinn__m006': 'skip', 'Quinn__m007': '5-7', 'Quinn__m008': 'skip', 'Quinn__m009': '7-9', 'Quinn__m010': 'skip', 'Quinn__m011': 'skip', 'Quinn__m012': 'skip', 'Quinn__m013': '1-5', 'Quinn__m014': 'skip', 'Quinn__m015': 'skip'}}, 'joint_reward': 0.0}}
+
+[Event #51, Iteration: 1] [22:17:00] [Execution] Quinn (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm016', 'interval': 'skip'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Quinn', 'meeting': {'id': 'm016', 'title': 'Collaborative art workshop', 'meeting_type': 'soft', 'window': [2, 6], 'participants': ['Riley', 'Taylor', 'Reese', 'Jordan', 'Quinn']}, 'interval': 'skip', 'total_assigned': 15, 'remaining_variables': 68, 'state_updates': {'attendance': {'Quinn__m001': '11-15', 'Quinn__m002': 'skip', 'Quinn__m003': 'skip', 'Quinn__m004': 'skip', 'Quinn__m006': 'skip', 'Quinn__m007': '5-7', 'Quinn__m008': 'skip', 'Quinn__m009': '7-9', 'Quinn__m010': 'skip', 'Quinn__m011': 'skip', 'Quinn__m012': 'skip', 'Quinn__m013': '1-5', 'Quinn__m014': 'skip', 'Quinn__m015': 'skip', 'Quinn__m016': 'skip'}}, 'joint_reward': 0.0}}
+
+[Event #52, Iteration: 1] [22:17:06] [Execution] Riley (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm001', 'interval': 'skip'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Riley', 'meeting': {'id': 'm001', 'title': 'Music jamming session', 'meeting_type': 'soft', 'window': [11, 15], 'participants': ['Quinn', 'Avery', 'Riley', 'Reese', 'Taylor', 'Jordan']}, 'interval': 'skip', 'total_assigned': 16, 'remaining_variables': 67, 'state_updates': {'attendance': {'Quinn__m001': '11-15', 'Quinn__m002': 'skip', 'Quinn__m003': 'skip', 'Quinn__m004': 'skip', 'Quinn__m006': 'skip', 'Quinn__m007': '5-7', 'Quinn__m008': 'skip', 'Quinn__m009': '7-9', 'Quinn__m010': 'skip', 'Quinn__m011': 'skip', 'Quinn__m012': 'skip', 'Quinn__m013': '1-5', 'Quinn__m014': 'skip', 'Quinn__m015': 'skip', 'Quinn__m016': 'skip', 'Riley__m001': 'skip'}}, 'joint_reward': 0.0}}
+
+[Event #53, Iteration: 1] [22:17:12] [Execution] Jordan (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm001', 'interval': '11-15'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Jordan', 'meeting': {'id': 'm001', 'title': 'Music jamming session', 'meeting_type': 'soft', 'window': [11, 15], 'participants': ['Quinn', 'Avery', 'Riley', 'Reese', 'Taylor', 'Jordan']}, 'interval': '11-15', 'total_assigned': 17, 'remaining_variables': 66, 'state_updates': {'attendance': {'Quinn__m001': '11-15', 'Quinn__m002': 'skip', 'Quinn__m003': 'skip', 'Quinn__m004': 'skip', 'Quinn__m006': 'skip', 'Quinn__m007': '5-7', 'Quinn__m008': 'skip', 'Quinn__m009': '7-9', 'Quinn__m010': 'skip', 'Quinn__m011': 'skip', 'Quinn__m012': 'skip', 'Quinn__m013': '1-5', 'Quinn__m014': 'skip', 'Quinn__m015': 'skip', 'Quinn__m016': 'skip', 'Riley__m001': 'skip', 'Jordan__m001': '11-15'}}, 'joint_reward': 0.0}}
+
+[Event #54, Iteration: 1] [22:17:15] [Execution] Avery (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm013', 'interval': '1-5'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Avery', 'meeting': {'id': 'm013', 'title': 'Gaming session', 'meeting_type': 'soft', 'window': [1, 5], 'participants': ['Riley', 'Avery', 'Jordan', 'Taylor', 'Reese', 'Quinn']}, 'interval': '1-5', 'total_assigned': 18, 'remaining_variables': 65, 'state_updates': {'attendance': {'Quinn__m001': '11-15', 'Quinn__m002': 'skip', 'Quinn__m003': 'skip', 'Quinn__m004': 'skip', 'Quinn__m006': 'skip', 'Quinn__m007': '5-7', 'Quinn__m008': 'skip', 'Quinn__m009': '7-9', 'Quinn__m010': 'skip', 'Quinn__m011': 'skip', 'Quinn__m012': 'skip', 'Quinn__m013': '1-5', 'Quinn__m014': 'skip', 'Quinn__m015': 'skip', 'Quinn__m016': 'skip', 'Riley__m001': 'skip', 'Jordan__m001': '11-15', 'Avery__m013': '1-5'}}, 'joint_reward': 0.0}}
+
+[Event #55, Iteration: 1] [22:17:21] [Execution] Taylor (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm001', 'interval': '11-15'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Taylor', 'meeting': {'id': 'm001', 'title': 'Music jamming session', 'meeting_type': 'soft', 'window': [11, 15], 'participants': ['Quinn', 'Avery', 'Riley', 'Reese', 'Taylor', 'Jordan']}, 'interval': '11-15', 'total_assigned': 19, 'remaining_variables': 64, 'state_updates': {'attendance': {'Quinn__m001': '11-15', 'Quinn__m002': 'skip', 'Quinn__m003': 'skip', 'Quinn__m004': 'skip', 'Quinn__m006': 'skip', 'Quinn__m007': '5-7', 'Quinn__m008': 'skip', 'Quinn__m009': '7-9', 'Quinn__m010': 'skip', 'Quinn__m011': 'skip', 'Quinn__m012': 'skip', 'Quinn__m013': '1-5', 'Quinn__m014': 'skip', 'Quinn__m015': 'skip', 'Quinn__m016': 'skip', 'Riley__m001': 'skip', 'Jordan__m001': '11-15', 'Avery__m013': '1-5', 'Taylor__m001': '11-15'}}, 'joint_reward': 0.0}}
+
+[Event #56, Iteration: 1] [22:17:23] [Execution] Reese (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm013', 'interval': '2-4'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Reese', 'meeting': {'id': 'm013', 'title': 'Gaming session', 'meeting_type': 'soft', 'window': [1, 5], 'participants': ['Riley', 'Avery', 'Jordan', 'Taylor', 'Reese', 'Quinn']}, 'interval': '2-4', 'total_assigned': 20, 'remaining_variables': 63, 'state_updates': {'attendance': {'Quinn__m001': '11-15', 'Quinn__m002': 'skip', 'Quinn__m003': 'skip', 'Quinn__m004': 'skip', 'Quinn__m006': 'skip', 'Quinn__m007': '5-7', 'Quinn__m008': 'skip', 'Quinn__m009': '7-9', 'Quinn__m010': 'skip', 'Quinn__m011': 'skip', 'Quinn__m012': 'skip', 'Quinn__m013': '1-5', 'Quinn__m014': 'skip', 'Quinn__m015': 'skip', 'Quinn__m016': 'skip', 'Riley__m001': 'skip', 'Jordan__m001': '11-15', 'Avery__m013': '1-5', 'Taylor__m001': '11-15', 'Reese__m013': '2-4'}}, 'joint_reward': 0.0}}
+
+
+================================================================================
+

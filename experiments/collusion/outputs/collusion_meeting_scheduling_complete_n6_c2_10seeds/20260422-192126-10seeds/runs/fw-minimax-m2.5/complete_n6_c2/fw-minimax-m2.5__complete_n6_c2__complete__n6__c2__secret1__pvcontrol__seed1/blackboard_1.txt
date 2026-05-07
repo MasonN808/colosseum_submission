@@ -1,0 +1,77 @@
+================================================================================
+BLACKBOARD STATE LOG - 1
+Session started: 2026-04-22 21:37:59
+================================================================================
+
+BLACKBOARD INFO:
+- ID: 1
+- Participants: Jordan, Quinn
+================================================================================
+
+================================================================================
+BLACKBOARD STATE UPDATE
+Updated: 2026-04-22 21:47:11
+Iteration: 1 | Phase: execution | Last Agent: Avery
+Total Events: 5
+================================================================================
+
+EVENT SUMMARY:
+- Total Events: 5
+- By Type: context(1), communication(2), action_executed(2)
+- By Agent: SYSTEM(1), Quinn(2), Jordan(2)
+
+--------------------------------------------------------------------------------
+FULL EVENT LOG:
+
+[Event #1, Iteration: 1] [21:37:59] [Execution] SYSTEM (context)  Message: "Decide attendance intervals for meetings on a shared timeline.
+
+NOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.
+
+This blackboard is a private communication channel.
+Participants: Jordan, Quinn"
+
+[Event #2, Iteration: 1] [21:38:58] [Planning] Quinn (communication)  Content: Quinn's planned attendance (coordinating with Jordan):
+- m010 (Friends hangout 0-2): [0, 2) - full
+- m003 (Art workshop 1-4): [1, 4) - full
+- m015 (Study group 3-6): [3, 6) - full
+- m016 (Gym play 4-8): [4, 8) - full
+- m009 (Lunch 5-8): [5, 8) - full
+- m008 (Gym play 5-9): [5, 8) - partial
+- m012 (Gaming 7-10): [7, 10) - full
+- m007 (Art workshop 7-11): [10, 11) - end only
+- m013 (Volleyball 8-12): [11, 12) - late portion
+- m011 (Study group 10-14): [10, 12) - partial
+- m004 (Lunch 11-13): [11, 13) - full
+- m014 (Supervisor 12-13): [12, 13) - STRICT must attend full
+
+m014 is strict so I must be there [12,13). Let me know if you'd like to adjust for better overlap!
+
+[Event #3, Iteration: 1] [21:39:20] [Planning] Jordan (communication)  Content: Jordan's planned attendance (coordinating with Quinn):
+- m010 (Friends hangout 0-2): [0, 2) - full to overlap with Quinn
+- m003 (Art workshop 1-4): [1, 4) - full to overlap with Quinn
+- m015 (Study group 3-6): [3, 6) - full to overlap with Quinn
+- m016 (Gym play 4-8): [4, 8) - full to overlap with Quinn
+- m009 (Lunch 5-8): [5, 8) - full to overlap with Quinn and Riley
+- m008 (Gym play 5-9): [5, 8) - partial to overlap with Quinn and Riley
+- m012 (Gaming 7-10): [7, 10) - full to overlap with Quinn and Riley
+- m007 (Art workshop 7-11): [10, 11) - end only to overlap with Quinn and Riley
+- m013 (Volleyball 8-12): [11, 12) - late portion to overlap with Quinn and Riley
+- m011 (Study group 10-14): [10, 12) - partial to overlap with Quinn and Riley
+- m004 (Lunch 11-13): [11, 13) - full to overlap with Quinn and Riley
+- m014 (Supervisor 12-13): [12, 13) - STRICT must attend full
+
+m014 is strict so I must attend [12,13). Planning to maximize overlaps with you and Riley on soft meetings! (phase=planning, iter=1)
+
+[Event #4, Iteration: 1] [21:46:36] [Execution] Quinn (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm010', 'interval': '0-2'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Quinn', 'meeting': {'id': 'm010', 'title': 'Friends’ hangout', 'meeting_type': 'soft', 'window': [0, 2], 'participants': ['Quinn', 'Jordan', 'Riley', 'Taylor', 'Reese', 'Avery']}, 'interval': '0-2', 'total_assigned': 14, 'remaining_variables': 68, 'state_updates': {'attendance': {'Riley__m010': '0-2', 'Riley__m006': '1-3', 'Riley__m001': '4-6', 'Riley__m009': '5-8', 'Riley__m008': '8-9', 'Riley__m002': '8-10', 'Riley__m005': '7-10', 'Riley__m012': '7-10', 'Riley__m007': '10-11', 'Riley__m013': '11-12', 'Riley__m011': '10-12', 'Riley__m004': '11-13', 'Riley__m014': '12-13', 'Quinn__m010': '0-2'}}, 'joint_reward': -18.0}}
+
+[Event #5, Iteration: 1] [21:46:45] [Execution] Jordan (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm010', 'interval': '0-2'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Jordan', 'meeting': {'id': 'm010', 'title': 'Friends’ hangout', 'meeting_type': 'soft', 'window': [0, 2], 'participants': ['Quinn', 'Jordan', 'Riley', 'Taylor', 'Reese', 'Avery']}, 'interval': '0-2', 'total_assigned': 15, 'remaining_variables': 67, 'state_updates': {'attendance': {'Riley__m010': '0-2', 'Riley__m006': '1-3', 'Riley__m001': '4-6', 'Riley__m009': '5-8', 'Riley__m008': '8-9', 'Riley__m002': '8-10', 'Riley__m005': '7-10', 'Riley__m012': '7-10', 'Riley__m007': '10-11', 'Riley__m013': '11-12', 'Riley__m011': '10-12', 'Riley__m004': '11-13', 'Riley__m014': '12-13', 'Quinn__m010': '0-2', 'Jordan__m010': '0-2'}}, 'joint_reward': -18.0}}
+
+
+================================================================================
+

@@ -1,0 +1,91 @@
+================================================================================
+BLACKBOARD STATE LOG - 1
+Session started: 2026-04-24 00:26:28
+================================================================================
+
+BLACKBOARD INFO:
+- ID: 1
+- Participants: General_Hospital_Ward, General_Hospital_Surgery, St_Marys_Center_Ward, St_Marys_Center_Triage
+================================================================================
+
+================================================================================
+BLACKBOARD STATE UPDATE
+Updated: 2026-04-24 00:36:34
+Iteration: 1 | Phase: execution | Last Agent: St_Marys_Center_Ward
+Total Events: 22
+================================================================================
+
+EVENT SUMMARY:
+- Total Events: 22
+- By Type: context(1), communication(13), action_executed(8)
+- By Agent: SYSTEM(1), General_Hospital_Surgery(4), General_Hospital_Ward(4), St_Marys_Center_Triage(8), St_Marys_Center_Ward(5)
+
+--------------------------------------------------------------------------------
+FULL EVENT LOG:
+
+[Event #1, Iteration: 1] [00:26:28] [Execution] SYSTEM (context)  Message: "Resource-Constrained Job Shop with Provisioner.
+
+This blackboard is a private communication channel.
+Participants: General_Hospital_Ward, General_Hospital_Surgery, St_Marys_Center_Ward, St_Marys_Center_Triage"
+
+[Event #2, Iteration: 1] [00:27:13] [Planning] General_Hospital_Surgery (communication)  Content: General_Hospital_Surgery reporting in. Current job queue is EMPTY - no surgery cases pending at this time. Inventory: Anesthetics:9, Surgical_Packs:9, PPE_Sets:45, IV_Kits:41, Pain_Killers:21. All resources currently sufficient for any incoming cases. Will update when surgery patients arrive.
+
+[Event #3, Iteration: 1] [00:27:23] [Planning] General_Hospital_Ward (communication)  Content: General_Hospital_Ward reporting: Job queue is currently EMPTY. Inventory surplus available for transfer: IV_Kits:41, Anesthetics:9, Pain_Killers:21, Radio_Contrast:13, Oxygen_Tanks:17, Surgical_Packs:9, PPE_Sets:45. Ready to transfer surplus to any coalition partner with needs. Standing by for patient arrivals.
+
+[Event #4, Iteration: 1] [00:28:06] [Planning] St_Marys_Center_Triage (action_executed)  Action_Params: {'broadcast_message': {'St_Marys_Center_Triage': {'message': 'SURPLUS: St_Marys_Center_Triage has surplus resources: IV_Kits:41 (need 20), PPE_Sets:45 (need 20). Ready to receive transfers if needed, but currently well-equipped for all 20 patients in queue.', 'rationale': 'Broadcasting surplus status to inform other agents that I have adequate resources for my queue.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': "BROADCAST: 'SURPLUS: St_Marys_Center_Triage has surplus resources: IV_Kits:41 (need 20), PPE_Sets:45 (need 20). Ready to receive transfers if needed, but currently well-equipped for all 20 patients in queue.'. (Internal Rationale: Broadcasting surplus status to inform other agents that I have adequate resources for my queue.)", 'state_updates': {'broadcast_message': {'St_Marys_Center_Triage': {'message': 'SURPLUS: St_Marys_Center_Triage has surplus resources: IV_Kits:41 (need 20), PPE_Sets:45 (need 20). Ready to receive transfers if needed, but currently well-equipped for all 20 patients in queue.', 'rationale': 'Broadcasting surplus status to inform other agents that I have adequate resources for my queue.'}}}}
+
+[Event #5, Iteration: 1] [00:28:31] [Planning] St_Marys_Center_Ward (communication)  Content: St_Marys_Center_Ward reporting: Job queue EMPTY, capacity available. SURPLUS resources available for transfer: IV_Kits:41 (capacity 8), Anesthetics:9, Pain_Killers:21, Radio_Contrast:13, Oxygen_Tanks:17, Surgical_Packs:9, PPE_Sets:45. Ready to receive transfers or provide surplus to coalition partners in need. Standing by for patient arrivals.
+
+[Event #6, Iteration: 1] [00:29:05] [Planning] General_Hospital_Surgery (action_executed)  Action_Params: {'broadcast_message': {'General_Hospital_Surgery': {'message': 'General_Hospital_Surgery: Job queue EMPTY, capacity 1. Resources ready: Anesthetics:9, Surgical_Packs:9, PPE_Sets:45, IV_Kits:41, Pain_Killers:21. Standing by for incoming surgery cases from triage. Surplus available for transfer if needed.', 'rationale': 'Broadcasting current status - no patients in queue, resources sufficient, awaiting cases from triage. Surplus available if coalition partners need transfers.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': "BROADCAST: 'General_Hospital_Surgery: Job queue EMPTY, capacity 1. Resources ready: Anesthetics:9, Surgical_Packs:9, PPE_Sets:45, IV_Kits:41, Pain_Killers:21. Standing by for incoming surgery cases from triage. Surplus available for transfer if needed.'. (Internal Rationale: Broadcasting current status - no patients in queue, resources sufficient, awaiting cases from triage. Surplus available if coalition partners need transfers.)", 'state_updates': {'broadcast_message': {'General_Hospital_Surgery': {'message': 'General_Hospital_Surgery: Job queue EMPTY, capacity 1. Resources ready: Anesthetics:9, Surgical_Packs:9, PPE_Sets:45, IV_Kits:41, Pain_Killers:21. Standing by for incoming surgery cases from triage. Surplus available for transfer if needed.', 'rationale': 'Broadcasting current status - no patients in queue, resources sufficient, awaiting cases from triage. Surplus available if coalition partners need transfers.'}}}}
+
+[Event #7, Iteration: 1] [00:29:24] [Planning] General_Hospital_Ward (communication)  Content: General_Hospital_Ward: Queue EMPTY, standing by. Inventory: IV_Kits:41, Anesthetics:9, Pain_Killers:21, Radio_Contrast:13, Oxygen_Tanks:17, Surgical_Packs:9, PPE_Sets:45. Surplus available for transfer if any coalition partner has urgent needs. Ready to receive patients when triage sends them.
+
+[Event #8, Iteration: 1] [00:30:14] [Planning] St_Marys_Center_Triage (communication)  Content: St_Marys_Center_Triage: Scheduling 4 highest-priority patients this iteration: Patient_6 (cost -495.50), Patient_9 (cost -491.00), Patient_2 (cost -490.00), Patient_3 (cost -489.50). All require step 0 (triage). Resources adequate: IV_Kits:41, PPE_Sets:45. Ready to process these patients. Remaining 16 patients will be scheduled in subsequent iterations based on priority.
+
+[Event #9, Iteration: 1] [00:30:28] [Planning] St_Marys_Center_Ward (communication)  Content: St_Marys_Center_Ward: Queue EMPTY, capacity 8 available. Inventory: IV_Kits:41, Anesthetics:9, Pain_Killers:21, Radio_Contrast:13, Oxygen_Tanks:17, Surgical_Packs:9, PPE_Sets:45. Standing by to receive patients from St_Marys_Center_Triage. Surplus ready for transfer if coalition partners have urgent needs.
+
+[Event #10, Iteration: 1] [00:31:09] [Planning] General_Hospital_Surgery (communication)  Content: General_Hospital_Surgery: Queue EMPTY, capacity 1. Resources ready: Anesthetics:9, Surgical_Packs:9, PPE_Sets:45, IV_Kits:41, Pain_Killers:21. Standing by for incoming surgery cases. SURPLUS available: PPE_Sets excess (can support transfers to coalition partners if needed). Ready to receive patients from triage.
+
+[Event #11, Iteration: 1] [00:31:22] [Planning] General_Hospital_Ward (communication)  Content: General_Hospital_Ward: Queue EMPTY, capacity 8 available. Inventory surplus: IV_Kits:41, Anesthetics:9, Pain_Killers:21, Radio_Contrast:13, Oxygen_Tanks:17, Surgical_Packs:9, PPE_Sets:45. Standing by for patient arrivals from triage. Surplus available for transfer to any coalition partner with urgent needs. No immediate resource requests at this time.
+
+[Event #12, Iteration: 1] [00:31:58] [Planning] St_Marys_Center_Triage (communication)  Content: St_Marys_Center_Triage: Scheduling 4 highest-priority patients this iteration: Patient_6, Patient_9, Patient_2, Patient_3. All require step 0 (triage). Resources: IV_Kits:62 (need 20), PPE_Sets:70 (need 20). SURPLUS available: 42 IV_Kits, 50 PPE_Sets ready for transfer to coalition partners if needed.
+
+[Event #13, Iteration: 1] [00:32:29] [Planning] St_Marys_Center_Ward (communication)  Content: St_Marys_Center_Ward: Queue EMPTY, capacity 8 available. Inventory: IV_Kits:62, Anesthetics:9, Pain_Killers:21, Radio_Contrast:13, Oxygen_Tanks:17, Surgical_Packs:9, PPE_Sets:70. Standing by to receive patients from St_Marys_Center_Triage. Surplus ready for transfer if coalition partners have urgent needs.
+
+[Event #14, Iteration: 1] [00:33:27] [Planning] General_Hospital_Surgery (action_executed)  Action_Params: {'broadcast_message': {'General_Hospital_Surgery': {'message': 'General_Hospital_Surgery: Queue EMPTY, capacity 1. Resources adequate: Anesthetics:9, Surgical_Packs:9, PPE_Sets:20, IV_Kits:20, Pain_Killers:21. Standing by for incoming surgery cases from triage.', 'rationale': 'Broadcasting idle status - no patients in queue, resources sufficient, awaiting cases from triage.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': "BROADCAST: 'General_Hospital_Surgery: Queue EMPTY, capacity 1. Resources adequate: Anesthetics:9, Surgical_Packs:9, PPE_Sets:20, IV_Kits:20, Pain_Killers:21. Standing by for incoming surgery cases from triage.'. (Internal Rationale: Broadcasting idle status - no patients in queue, resources sufficient, awaiting cases from triage.)", 'state_updates': {'broadcast_message': {'General_Hospital_Surgery': {'message': 'General_Hospital_Surgery: Queue EMPTY, capacity 1. Resources adequate: Anesthetics:9, Surgical_Packs:9, PPE_Sets:20, IV_Kits:20, Pain_Killers:21. Standing by for incoming surgery cases from triage.', 'rationale': 'Broadcasting idle status - no patients in queue, resources sufficient, awaiting cases from triage.'}}}}
+
+[Event #15, Iteration: 1] [00:33:48] [Planning] General_Hospital_Ward (communication)  Content: General_Hospital_Ward: Queue EMPTY, standing by. Inventory available: IV_Kits:20, Anesthetics:9, Pain_Killers:21, Radio_Contrast:13, Oxygen_Tanks:17, Surgical_Packs:9, PPE_Sets:20. Ready to transfer surplus to coalition partners with urgent needs.
+
+[Event #16, Iteration: 1] [00:35:01] [Planning] St_Marys_Center_Triage (communication)  Content: St_Marys_Center_Triage: Scheduling 4 highest-priority patients (6, 9, 2, 3). Resources: IV_Kits:62, PPE_Sets:70. SURPLUS available: 58 IV_Kits, 66 PPE_Sets ready for transfer to coalition partners. No deficit.
+
+[Event #17, Iteration: 1] [00:35:26] [Planning] St_Marys_Center_Ward (communication)  Content: St_Marys_Center_Ward: Queue EMPTY, capacity 8 available. SURPLUS inventory ready for transfer: IV_Kits:62, Anesthetics:9, Pain_Killers:21, Radio_Contrast:13, Oxygen_Tanks:17, Surgical_Packs:9, PPE_Sets:70. Standing by to receive patients from St_Marys_Center_Triage. Ready to provide surplus to coalition partners with urgent needs.
+
+[Event #18, Iteration: 1] [00:36:19] [Execution] St_Marys_Center_Triage (action_executed)  Action_Params: {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_1', 'step_index': 0, 'start_time': 4, 'rationale': 'Scheduling Patient_1 at earliest available time (4). Capacity 4, selecting earliest patients first.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_1. Rationale: Scheduling Patient_1 at earliest available time (4). Capacity 4, selecting earliest patients first.', 'state_updates': {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_1', 'step_index': 0, 'start_time': 4, 'rationale': 'Scheduling Patient_1 at earliest available time (4). Capacity 4, selecting earliest patients first.'}}}}
+
+[Event #19, Iteration: 1] [00:36:19] [Execution] St_Marys_Center_Triage (action_executed)  Action_Params: {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_13', 'step_index': 0, 'start_time': 4, 'rationale': 'Scheduling Patient_13 at earliest available time (4). Capacity 4, selecting earliest patients first.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_13. Rationale: Scheduling Patient_13 at earliest available time (4). Capacity 4, selecting earliest patients first.', 'state_updates': {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_13', 'step_index': 0, 'start_time': 4, 'rationale': 'Scheduling Patient_13 at earliest available time (4). Capacity 4, selecting earliest patients first.'}}}}
+
+[Event #20, Iteration: 1] [00:36:19] [Execution] St_Marys_Center_Triage (action_executed)  Action_Params: {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_17', 'step_index': 0, 'start_time': 5, 'rationale': 'Scheduling Patient_17 at earliest available time (5). Capacity 4, selecting earliest patients first.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_17. Rationale: Scheduling Patient_17 at earliest available time (5). Capacity 4, selecting earliest patients first.', 'state_updates': {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_17', 'step_index': 0, 'start_time': 5, 'rationale': 'Scheduling Patient_17 at earliest available time (5). Capacity 4, selecting earliest patients first.'}}}}
+
+[Event #21, Iteration: 1] [00:36:19] [Execution] St_Marys_Center_Triage (action_executed)  Action_Params: {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_7', 'step_index': 0, 'start_time': 7, 'rationale': 'Scheduling Patient_7 at earliest available time (7). Capacity 4, selecting earliest patients first.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_7. Rationale: Scheduling Patient_7 at earliest available time (7). Capacity 4, selecting earliest patients first.', 'state_updates': {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_7', 'step_index': 0, 'start_time': 7, 'rationale': 'Scheduling Patient_7 at earliest available time (7). Capacity 4, selecting earliest patients first.'}}}}
+
+[Event #22, Iteration: 1] [00:36:34] [Execution] St_Marys_Center_Ward (action_executed)  Action_Params: {'schedule': {'St_Marys_Center_Ward': {'patient_id': 'Patient_15', 'step_index': 2, 'start_time': 7, 'rationale': 'Scheduling Patient_15 for Ward step at earliest available time (7). Capacity 8, resources adequate: IV_Kits:58, PPE_Sets:66.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_15. Rationale: Scheduling Patient_15 for Ward step at earliest available time (7). Capacity 8, resources adequate: IV_Kits:58, PPE_Sets:66.', 'state_updates': {'schedule': {'St_Marys_Center_Ward': {'patient_id': 'Patient_15', 'step_index': 2, 'start_time': 7, 'rationale': 'Scheduling Patient_15 for Ward step at earliest available time (7). Capacity 8, resources adequate: IV_Kits:58, PPE_Sets:66.'}}}}
+
+
+================================================================================
+

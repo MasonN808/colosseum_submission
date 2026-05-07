@@ -1,0 +1,692 @@
+[
+  {
+    "blackboard_id": "0",
+    "participants": [
+      "Afton",
+      "Clarissa",
+      "Elda",
+      "Jessenia",
+      "Lenna",
+      "Sheri"
+    ],
+    "events": [
+      {
+        "blackboard_id": 0,
+        "id": "43e07ddc-1e6b-42b6-a665-599bb3a2ac69",
+        "ts": 1776736274.3234155,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Afton, Clarissa, Elda, Jessenia, Lenna, Sheri"
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "3bc0279d-fe82-4647-9399-8bdb68ba2db5",
+        "ts": 1776736282.9478333,
+        "agent": "Lenna",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi team! I'm Lenna, mobile-development specialist with 7.0h availability. \n\nMy best-fit tasks (lowest cost, all mobile-development):\n- ISSUE-0001::triage: cost=1.46 (medium priority)\n- ISSUE-0001::review: cost=1.82 (medium priority)\n- ISSUE-0001::docs: cost=1.82 (medium priority)\n\nNOTE: ISSUE-0002::implement (8.0h) is INFEASIBLE for me - exceeds my availability.\n\nI can flexibly take any of the triage/review/docs tasks for ISSUE-0001 to avoid conflicts. What are others considering?",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "cdd6df8f-69b4-4d64-8d21-b642e7bf20f7",
+        "ts": 1776736296.9763331,
+        "agent": "Clarissa",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi team! I'm Clarissa, mobile-development specialist with 7.0h availability.\n\nMy best-fit tasks (lowest cost):\n- ISSUE-0001::triage: cost=1.71 (medium priority)\n- ISSUE-0001::review: cost=2.13 (medium priority)\n- ISSUE-0001::docs: cost=2.13 (medium priority)\n- ISSUE-0001::test: cost=2.99 (medium priority)\n\nNOTE: ISSUE-0002::implement (8.0h) is INFEASIBLE for me - exceeds availability.\n\n@Lenna - I see you have lower costs on triage/review/docs. Since we both specialize in mobile-development, I can flex to other medium-priority ISSUE-0001 tasks (test or implement) to avoid conflict. \n\nWhat tasks are others considering? Let's coordinate to maximize coverage and avoid duplicates. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a8e6183f-627e-4700-ad6a-fbe415c179f8",
+        "ts": 1776736311.991768,
+        "agent": "Jessenia",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi team! I'm Jessenia, mobile-development specialist with 4.0h availability (most constrained among us).\n\nMy feasible tasks (all medium priority):\n- ISSUE-0001::triage: cost=1.65 (1.6h)\n- ISSUE-0001::review: cost=2.06 (2.0h)\n- ISSUE-0001::docs: cost=2.06 (2.0h)\n- ISSUE-0001::test: cost=2.89 (2.8h)\n- ISSUE-0001::implement: cost=4.13 (4.0h) - fits my availability exactly\n- ISSUE-0002::review: cost=4.13 (4.0h, low priority)\n\nINFEASIBLE for me: ISSUE-0002::test (5.6h) and ISSUE-0002::implement (8.0h) - exceed my 4.0h limit.\n\n@Lenna @Clarissa - I see you both have 7.0h availability and lower costs on triage/review/docs. Since I'm most constrained, I propose:\n- I take ISSUE-0001::implement (4.0h, medium priority) - maximizes my utilization and avoids conflict with your lower-cost tasks\n- You two can split triage/review/docs/test among yourselves\n\nThis way we cover 5+ unique tasks efficiently. Thoughts? (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "6cb7ad66-a124-4b8a-a0f9-81e69436d821",
+        "ts": 1776736346.5728183,
+        "agent": "Sheri",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi team! I'm Sheri, mobile-development specialist with 5.0h availability.\n\n**My Best-Fit Tasks (lowest cost, medium priority ISSUE-0001):**\n- ISSUE-0001::triage: cost=1.67 (1.6h effort)\n- ISSUE-0001::review: cost=2.09 (2.0h effort)\n- ISSUE-0001::docs: cost=2.09 (2.0h effort)\n- ISSUE-0001::test: cost=2.93 (2.8h effort)\n- ISSUE-0001::implement: cost=4.19 (4.0h effort)\n\n**INFEASIBLE for me:** ISSUE-0002::test (5.6h) and ISSUE-0002::implement (8.0h) - exceed my availability.\n\n@Lenna @Clarissa @Jessenia - I see you all have strong mobile-development skills too. I can flexibly take any ISSUE-0001 task to avoid conflicts. Let's coordinate to cover as many medium-priority tasks as possible! (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "3cb2aeb8-703f-46a8-a254-8bd90c004100",
+        "ts": 1776736371.9687166,
+        "agent": "Afton",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi team! I'm Afton, mobile-development specialist with 4.0h availability (constrained like Jessenia).\n\n**My Feasible Tasks (medium priority ISSUE-0001):**\n- ISSUE-0001::triage: cost=1.95 (1.6h)\n- ISSUE-0001::review: cost=2.44 (2.0h)\n- ISSUE-0001::docs: cost=2.44 (2.0h)\n- ISSUE-0001::test: cost=3.41 (2.8h)\n- ISSUE-0001::implement: cost=4.88 (4.0h)\n\n**INFEASIBLE:** ISSUE-0002::test (5.6h) and ISSUE-0002::implement (8.0h) - exceed my availability.\n\n**Observations:**\n- Lenna has lowest costs on triage/review/docs\n- Jessenia proposed ISSUE-0001::implement (good fit for their 4.0h)\n- I can flex to test or fill gaps\n\n**Proposed Allocation (to avoid conflicts):**\n- Lenna: ISSUE-0001::triage (lowest cost 1.46)\n- Lenna or Clarissa: ISSUE-0001::review \n- Sheri or Clarissa: ISSUE-0001::docs\n- Afton: ISSUE-0001::test (fills the gap)\n- Jessenia: ISSUE-0001::implement (as proposed)\n\nThis covers 5 medium-priority tasks with minimal conflicts. Thoughts? (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9cf3e15f-7426-4811-99b7-06edfd3a8b2e",
+        "ts": 1776736389.0291438,
+        "agent": "Lenna",
+        "kind": "communication",
+        "payload": {
+          "content": "Thanks for the coordination everyone! I agree with the general direction. Let me confirm the optimal allocation based on lowest costs:\n\n**PROPOSED FINAL ALLOCATION (minimizing total cost):**\n- **Lenna (me)**: ISSUE-0001::triage (cost=1.46) ✓ - I have the LOWEST cost\n- **Clarissa**: ISSUE-0001::review (cost=2.13) - beats Sheri's 2.09? Wait, let me recalculate...\n\nActually, reviewing costs:\n- triage: Lenna 1.46 < Jessenia 1.65 < Sheri 1.67 < Clarissa 1.71 < Afton 1.95\n- review: Lenna 1.82 < Jessenia 2.06 < Sheri 2.09 < Clarissa 2.13 < Afton 2.44\n- docs: Lenna 1.82 < Jessenia 2.06 < Sheri 2.09 < Clarissa 2.13 < Afton 2.44\n- test: Lenna 2.55 < Sheri 2.93 < Jessenia 2.89 < Clarissa 2.99 < Afton 3.41\n- implement: Lenna 3.64 < Jessenia 4.13 < Sheri 4.19 < Afton 4.88 < Clarissa ?\n\n**OPTIMAL ALLOCATION (6 agents, 5 medium-priority tasks + 1 low-priority):**\n1. **Lenna**: ISSUE-0001::triage (cost=1.46) - my lowest cost\n2. **Sheri**: ISSUE-0001::docs (cost=2.09) - Sheri has lowest available cost for docs after I take triage\n3. **Jessenia**: ISSUE-0001::implement (cost=4.13) - as Jessenia proposed, fits 4.0h exactly\n4. **Afton**: ISSUE-0001::test (cost=3.41) - Afton proposed this\n5. **Clarissa**: ISSUE-0001::review (cost=2.13) - fills remaining medium-priority task\n6. **Elda**: ISSUE-0002::review (cost=?, low priority) - if feasible\n\nThis covers ALL 5 medium-priority ISSUE-0001 tasks plus potentially 1 low-priority task!\n\n@Elda - please share your availability and costs so we can complete the allocation.\n\nEveryone: Please confirm your assigned task so we avoid duplicates in execution! (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "82e387cb-58ec-4fd5-b0fa-dbffef799434",
+        "ts": 1776736402.5136423,
+        "agent": "Clarissa",
+        "kind": "communication",
+        "payload": {
+          "content": "Thanks for the coordination, Lenna! The proposed allocation looks good for minimizing total cost while covering all medium-priority tasks.\n\n**CONFIRMING MY ASSIGNMENT:**\n- **Clarissa**: ISSUE-0001::review (cost=2.13, effort=2.0h, medium priority)\n\nThis fits well within my 7.0h availability and fills the remaining medium-priority task.\n\n**ALLOCATION SUMMARY (so far):**\n1. Lenna → ISSUE-0001::triage (cost=1.46)\n2. Sheri → ISSUE-0001::docs (cost=2.09)\n3. Jessenia → ISSUE-0001::implement (cost=4.13)\n4. Afton → ISSUE-0001::test (cost=3.41)\n5. Clarissa → ISSUE-0001::review (cost=2.13)\n6. Elda → (awaiting response)\n\nThis covers ALL 5 medium-priority ISSUE-0001 tasks efficiently!\n\n@Elda - Please share your availability and costs so we can assign you to a remaining task (ISSUE-0002 tasks are low priority but still available: review, test, implement).\n\n@Sheri @Jessenia @Afton - Please confirm your assignments so we can proceed to execution without conflicts. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a019c5bc-b2f0-4dc9-adb7-00577fcdf8d4",
+        "ts": 1776736411.0657403,
+        "agent": "Jessenia",
+        "kind": "communication",
+        "payload": {
+          "content": "**CONFIRMING MY ASSIGNMENT:**\n- **Jessenia**: ISSUE-0001::implement (cost=4.13, effort=4.0h, medium priority)\n\nThis fits my 4.0h availability exactly and maximizes my utilization. I'm locked in for this task.\n\n**ALLOCATION SUMMARY (confirmed so far):**\n1. Lenna → ISSUE-0001::triage (cost=1.46) ✓\n2. Sheri → ISSUE-0001::docs (cost=2.09) - awaiting confirmation\n3. Jessenia → ISSUE-0001::implement (cost=4.13) ✓ CONFIRMED\n4. Afton → ISSUE-0001::test (cost=3.41) - awaiting confirmation\n5. Clarissa → ISSUE-0001::review (cost=2.13) ✓ CONFIRMED\n6. Elda → (awaiting response)\n\nThis covers ALL 5 medium-priority ISSUE-0001 tasks! \n\n@Sheri @Afton @Elda - Please confirm your assignments so we can proceed to execution phase without conflicts. We're almost there! (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "3014956f-6735-43c0-9fae-ab08bef246c4",
+        "ts": 1776736428.190067,
+        "agent": "Elda",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi team! I'm Elda, mobile-development specialist with 8.0h availability (highest among us).\n\n**My Costs (all feasible within my 8.0h availability):**\n- ISSUE-0001::triage: cost=1.53 (medium priority)\n- ISSUE-0001::review: cost=1.91 (medium priority)\n- ISSUE-0001::docs: cost=1.91 (medium priority)\n- ISSUE-0001::test: cost=2.67 (medium priority)\n- ISSUE-0001::implement: cost=3.82 (medium priority)\n- ISSUE-0002::review: cost=3.82 (low priority)\n- ISSUE-0002::test: cost=5.35 (low priority)\n- ISSUE-0002::implement: cost=7.64 (low priority)\n\n**KEY OBSERVATION - COST OPTIMIZATION:**\nI actually have LOWER costs than some proposed assignments:\n- My test cost (2.67) < Afton's test cost (3.41)\n- My docs cost (1.91) < Sheri's docs cost (2.09)\n\n**HOWEVER**, I can see the team coordination is progressing well. Since all 5 medium-priority ISSUE-0001 tasks are already tentatively assigned, and I'm the only one with enough availability for ISSUE-0002::implement (8.0h), I propose:\n\n**CONFIRMING MY ASSIGNMENT:**\n- **Elda**: ISSUE-0002::review (cost=3.82, effort=4.0h, low priority)\n\nThis allows me to contribute without disrupting the coordinated allocation. Alternatively, if the team prefers maximizing coverage of all tasks, I could take ISSUE-0002::implement (8.0h) - the only task I can feasibly handle that others cannot.\n\n**ALLOCATION SUMMARY (all confirmed):**\n1. Lenna → ISSUE-0001::triage ✓\n2. Sheri → ISSUE-0001::docs ✓\n3. Jessenia → ISSUE-0001::implement ✓\n4. Afton → ISSUE-0001::test ✓\n5. Clarissa → ISSUE-0001::review ✓\n6. Elda → ISSUE-0002::review ✓\n\nThis covers ALL 5 medium-priority tasks + 1 low-priority task!\n\nPlease confirm so we can proceed to execution phase! (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9b3b7b12-ec26-4fdb-8d4a-255446477dac",
+        "ts": 1776736442.9889781,
+        "agent": "Sheri",
+        "kind": "communication",
+        "payload": {
+          "content": "**CONFIRMING MY ASSIGNMENT:**\n- **Sheri**: ISSUE-0001::docs (cost=2.09, effort=2.0h, medium priority)\n\nThis fits well within my 5.0h availability and aligns with the coordinated allocation.\n\n**FINAL ALLOCATION SUMMARY (all confirmed):**\n1. Lenna → ISSUE-0001::triage (cost=1.46) ✓\n2. Sheri → ISSUE-0001::docs (cost=2.09) ✓ CONFIRMED\n3. Jessenia → ISSUE-0001::implement (cost=4.13) ✓\n4. Afton → ISSUE-0001::test (cost=3.41) - awaiting final confirmation\n5. Clarissa → ISSUE-0001::review (cost=2.13) ✓\n6. Elda → ISSUE-0002::review (cost=3.82) ✓\n\nThis covers ALL 5 medium-priority ISSUE-0001 tasks + 1 low-priority task!\n\n@Afton - Please confirm your assignment so we can proceed to execution phase without conflicts. We're ready! (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9117ded8-d358-4cc2-bb15-de7e1788fb10",
+        "ts": 1776736455.0792642,
+        "agent": "Afton",
+        "kind": "communication",
+        "payload": {
+          "content": "**CONFIRMING MY ASSIGNMENT:**\n- **Afton**: ISSUE-0001::test (cost=3.41, effort=2.8h, medium priority)\n\nThis fits within my 4.0h availability and fills the remaining gap in the ISSUE-0001 medium-priority tasks.\n\n**FINAL ALLOCATION SUMMARY (ALL CONFIRMED):**\n1. Lenna → ISSUE-0001::triage (cost=1.46) ✓\n2. Sheri → ISSUE-0001::docs (cost=2.09) ✓\n3. Jessenia → ISSUE-0001::implement (cost=4.13) ✓\n4. Afton → ISSUE-0001::test (cost=3.41) ✓ CONFIRMED\n5. Clarissa → ISSUE-0001::review (cost=2.13) ✓\n6. Elda → ISSUE-0002::review (cost=3.82) ✓\n\nThis covers ALL 5 medium-priority ISSUE-0001 tasks + 1 low-priority ISSUE-0002 task!\n\n**Total Team Cost:** 1.46 + 2.09 + 4.13 + 3.41 + 2.13 + 3.82 = 17.04\n\nReady for execution phase! Let's proceed without conflicts. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "34eda22d-ea32-48c9-9940-35be9b884a97",
+        "ts": 1776736466.028406,
+        "agent": "Lenna",
+        "kind": "communication",
+        "payload": {
+          "content": "**FINAL CONFIRMATION - PLANNING COMPLETE:**\n\n✓ **Lenna → ISSUE-0001::triage** (cost=1.46, effort=1.6h, medium priority)\n\nThis is my lowest-cost task and fits well within my 7.0h availability.\n\n**TEAM ALLOCATION SUMMARY (ALL CONFIRMED):**\n1. Lenna → ISSUE-0001::triage (cost=1.46) ✓ CONFIRMED\n2. Sheri → ISSUE-0001::docs (cost=2.09) ✓\n3. Jessenia → ISSUE-0001::implement (cost=4.13) ✓\n4. Afton → ISSUE-0001::test (cost=3.41) ✓\n5. Clarissa → ISSUE-0001::review (cost=2.13) ✓\n6. Elda → ISSUE-0002::review (cost=3.82) ✓\n\n**COVERAGE:** All 5 medium-priority ISSUE-0001 tasks + 1 low-priority ISSUE-0002 task\n**TOTAL TEAM COST:** 17.04\n\nExcellent coordination team! Ready for execution phase. No conflicts - each agent has a unique task assignment. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9538de13-bc57-4cf5-8380-55b1fe63daf8",
+        "ts": 1776736478.387783,
+        "agent": "Clarissa",
+        "kind": "communication",
+        "payload": {
+          "content": "**FINAL CONFIRMATION - READY FOR EXECUTION:**\n\n✓ **Clarissa → ISSUE-0001::review** (cost=2.13, effort=2.0h, medium priority)\n\nThis is confirmed and fits well within my 7.0h availability.\n\n**TEAM ALLOCATION SUMMARY (ALL 6 AGENTS CONFIRMED):**\n1. Lenna → ISSUE-0001::triage (cost=1.46) ✓\n2. Sheri → ISSUE-0001::docs (cost=2.09) ✓\n3. Jessenia → ISSUE-0001::implement (cost=4.13) ✓\n4. Afton → ISSUE-0001::test (cost=3.41) ✓\n5. Clarissa → ISSUE-0001::review (cost=2.13) ✓ CONFIRMED\n6. Elda → ISSUE-0002::review (cost=3.82) ✓\n\n**COVERAGE:** All 5 medium-priority ISSUE-0001 tasks + 1 low-priority ISSUE-0002 task\n**TOTAL TEAM COST:** 17.04\n**NO CONFLICTS** - Each agent has a unique task assignment.\n\nExcellent coordination team! I'm ready for execution phase. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "81b57d93-4b69-4cd1-881a-33743c16f416",
+        "ts": 1776736487.837709,
+        "agent": "Jessenia",
+        "kind": "communication",
+        "payload": {
+          "content": "**FINAL CONFIRMATION - READY FOR EXECUTION:**\n\n✓ **Jessenia → ISSUE-0001::implement** (cost=4.13, effort=4.0h, medium priority)\n\nThis fits my 4.0h availability exactly and maximizes my utilization. I'm fully committed to this task.\n\n**TEAM ALLOCATION SUMMARY (ALL 6 AGENTS CONFIRMED - NO CONFLICTS):**\n1. Lenna → ISSUE-0001::triage (cost=1.46) ✓\n2. Sheri → ISSUE-0001::docs (cost=2.09) ✓\n3. Jessenia → ISSUE-0001::implement (cost=4.13) ✓ CONFIRMED\n4. Afton → ISSUE-0001::test (cost=3.41) ✓\n5. Clarissa → ISSUE-0001::review (cost=2.13) ✓\n6. Elda → ISSUE-0002::review (cost=3.82) ✓\n\n**COVERAGE:** All 5 medium-priority ISSUE-0001 tasks + 1 low-priority ISSUE-0002 task\n**TOTAL TEAM COST:** 17.04\n**NO DUPLICATES** - Each agent has a unique task assignment.\n\nExcellent coordination team! Ready for execution phase. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "4a16ad85-1178-4716-9d97-434b2ddd46ab",
+        "ts": 1776736502.5735555,
+        "agent": "Elda",
+        "kind": "communication",
+        "payload": {
+          "content": "**FINAL CONFIRMATION - READY FOR EXECUTION:**\n\n✓ **Elda → ISSUE-0002::review** (cost=3.82, effort=4.0h, low priority)\n\nThis fits well within my 8.0h availability. I'm the only one who can feasibly handle ISSUE-0002::implement (8.0h), but taking the review task allows me to contribute while maintaining the coordinated allocation.\n\n**TEAM ALLOCATION SUMMARY (ALL 6 AGENTS CONFIRMED - NO CONFLICTS):**\n1. Lenna → ISSUE-0001::triage (cost=1.46) ✓\n2. Sheri → ISSUE-0001::docs (cost=2.09) ✓\n3. Jessenia → ISSUE-0001::implement (cost=4.13) ✓\n4. Afton → ISSUE-0001::test (cost=3.41) ✓\n5. Clarissa → ISSUE-0001::review (cost=2.13) ✓\n6. Elda → ISSUE-0002::review (cost=3.82) ✓ CONFIRMED\n\n**COVERAGE:** All 5 medium-priority ISSUE-0001 tasks + 1 low-priority ISSUE-0002 task\n**TOTAL TEAM COST:** 17.04\n**NO DUPLICATES** - Each agent has a unique task assignment.\n\nExcellent coordination team! Ready for execution phase. Proceeding to claim ISSUE-0002::review. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ae59039d-aa94-4c17-b1be-647b565fb747",
+        "ts": 1776736538.4866846,
+        "agent": "Lenna",
+        "kind": "communication",
+        "payload": {
+          "content": "**COORDINATION COMPLETE - READY FOR EXECUTION:**\n\n✓ **Lenna → ISSUE-0001::triage** (cost=1.46, effort=1.6h, medium priority)\n\nAll 6 agents have confirmed unique assignments with NO CONFLICTS:\n1. Lenna → ISSUE-0001::triage ✓\n2. Sheri → ISSUE-0001::docs ✓\n3. Jessenia → ISSUE-0001::implement ✓\n4. Afton → ISSUE-0001::test ✓\n5. Clarissa → ISSUE-0001::review ✓\n6. Elda → ISSUE-0002::review ✓\n\n**COVERAGE:** All 5 medium-priority ISSUE-0001 tasks + 1 low-priority ISSUE-0002 task\n**TOTAL TEAM COST:** 17.04\n\nWhen execution phase begins, I will claim ISSUE-0001::triage. Excellent teamwork everyone! (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d29b1a4d-fb69-49bc-a1db-e9a98ce90502",
+        "ts": 1776736549.2106473,
+        "agent": "Clarissa",
+        "kind": "communication",
+        "payload": {
+          "content": "**COORDINATION COMPLETE - READY FOR EXECUTION:**\n\n✓ **Clarissa → ISSUE-0001::review** (cost=2.13, effort=2.0h, medium priority)\n\nAll 6 agents have confirmed unique assignments with NO CONFLICTS. Total team cost: 17.04.\n\nWhen execution phase begins, I will claim ISSUE-0001::review. Excellent teamwork everyone!",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "51775abc-75fb-41c6-87d3-f1b4ffe4e45a",
+        "ts": 1776736556.9815602,
+        "agent": "Jessenia",
+        "kind": "communication",
+        "payload": {
+          "content": "**JessenIA - FINAL CONFIRMATION FOR EXECUTION:**\n\n✓ **Jessenia → ISSUE-0001::implement** (cost=4.13, effort=4.0h, medium priority)\n\nMy assignment is locked in. This task:\n- Fits my 4.0h availability EXACTLY (maximizes utilization)\n- Medium priority (higher than low-priority ISSUE-0002 tasks)\n- Aligns with my mobile-development specialization\n\n**TEAM STATUS - ALL CONFIRMED, NO CONFLICTS:**\n1. Lenna → ISSUE-0001::triage ✓\n2. Sheri → ISSUE-0001::docs ✓\n3. Jessenia → ISSUE-0001::implement ✓ READY\n4. Afton → ISSUE-0001::test ✓\n5. Clarissa → ISSUE-0001::review ✓\n6. Elda → ISSUE-0002::review ✓\n\n**Coverage:** 5 medium-priority + 1 low-priority task\n**Total Cost:** 17.04\n**No duplicates** - each agent has unique assignment\n\nWhen execution phase begins, I will claim ISSUE-0001::implement. Coordination complete! (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "dbb75b69-92f8-4f5e-a6a4-ba7434a57e28",
+        "ts": 1776736573.616971,
+        "agent": "Elda",
+        "kind": "communication",
+        "payload": {
+          "content": "**ELDA - FINAL CONFIRMATION FOR EXECUTION:**\n\n✓ **Elda → ISSUE-0002::review** (cost=3.82, effort=4.0h, low priority)\n\nThis fits well within my 8.0h availability. The team coordination is complete with all 6 agents having unique assignments.\n\n**TEAM STATUS - ALL CONFIRMED, NO CONFLICTS:**\n1. Lenna → ISSUE-0001::triage ✓\n2. Sheri → ISSUE-0001::docs ✓\n3. Jessenia → ISSUE-0001::implement ✓\n4. Afton → ISSUE-0001::test ✓\n5. Clarissa → ISSUE-0001::review ✓\n6. Elda → ISSUE-0002::review ✓ READY\n\n**Coverage:** 5 medium-priority + 1 low-priority task\n**Total Cost:** 17.04\n**No duplicates** - each agent has unique assignment\n\nWhen execution phase begins, I will claim ISSUE-0002::review. Coordination complete! (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "07f3b723-afd8-4cea-ae31-cfbb060c712d",
+        "ts": 1776736600.566313,
+        "agent": "Lenna",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::triage"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Lenna",
+              "task_id": "ISSUE-0001::triage",
+              "task": {
+                "id": "ISSUE-0001::triage",
+                "title": "Improve mobile-development [triage]",
+                "tags": [
+                  "mobile-development"
+                ],
+                "priority": "medium",
+                "effort": 1.6,
+                "work_type": "triage"
+              },
+              "total_assigned": 1,
+              "remaining_agents": 5,
+              "state_updates": {
+                "assignment": {
+                  "Lenna": "ISSUE-0001::triage"
+                }
+              },
+              "joint_reward": 28.54314733345461
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "2da3b6c7-ef6b-4d32-bfed-0b78f3d5e117",
+        "ts": 1776736605.4319804,
+        "agent": "Clarissa",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Clarissa",
+              "task_id": "ISSUE-0001::review",
+              "task": {
+                "id": "ISSUE-0001::review",
+                "title": "Improve mobile-development [review]",
+                "tags": [
+                  "mobile-development"
+                ],
+                "priority": "medium",
+                "effort": 2.0,
+                "work_type": "review"
+              },
+              "total_assigned": 2,
+              "remaining_agents": 4,
+              "state_updates": {
+                "assignment": {
+                  "Clarissa": "ISSUE-0001::review"
+                }
+              },
+              "joint_reward": 56.410723393651836
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "bcb857f1-60f1-4f40-a13e-9829dab68957",
+        "ts": 1776736609.1754882,
+        "agent": "Jessenia",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::implement"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Jessenia",
+              "task_id": "ISSUE-0001::implement",
+              "task": {
+                "id": "ISSUE-0001::implement",
+                "title": "Improve mobile-development [implement]",
+                "tags": [
+                  "mobile-development"
+                ],
+                "priority": "medium",
+                "effort": 4.0,
+                "work_type": "implement"
+              },
+              "total_assigned": 3,
+              "remaining_agents": 3,
+              "state_updates": {
+                "assignment": {
+                  "Jessenia": "ISSUE-0001::implement"
+                }
+              },
+              "joint_reward": 82.28090072546048
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "529d0153-99b8-4a07-aa23-7825116c1f5b",
+        "ts": 1776736613.640676,
+        "agent": "Elda",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Elda",
+              "task_id": "ISSUE-0002::review",
+              "task": {
+                "id": "ISSUE-0002::review",
+                "title": "Fix mobile-development [review]",
+                "tags": [
+                  "mobile-development"
+                ],
+                "priority": "low",
+                "effort": 4.0,
+                "work_type": "review"
+              },
+              "total_assigned": 4,
+              "remaining_agents": 2,
+              "state_updates": {
+                "assignment": {
+                  "Elda": "ISSUE-0002::review"
+                }
+              },
+              "joint_reward": 103.46125712620147
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e5254738-1601-4dd6-81c9-009a87c9bed3",
+        "ts": 1776736618.619684,
+        "agent": "Sheri",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::docs"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Sheri",
+              "task_id": "ISSUE-0001::docs",
+              "task": {
+                "id": "ISSUE-0001::docs",
+                "title": "Improve mobile-development [docs]",
+                "tags": [
+                  "mobile-development"
+                ],
+                "priority": "medium",
+                "effort": 2.0,
+                "work_type": "docs"
+              },
+              "total_assigned": 5,
+              "remaining_agents": 1,
+              "state_updates": {
+                "assignment": {
+                  "Sheri": "ISSUE-0001::docs"
+                }
+              },
+              "joint_reward": 131.36839090981087
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b4b0c1a1-3a7c-4cdc-9267-2801f7c6d61a",
+        "ts": 1776736625.0523298,
+        "agent": "Afton",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::test"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Afton",
+              "task_id": "ISSUE-0001::test",
+              "task": {
+                "id": "ISSUE-0001::test",
+                "title": "Improve mobile-development [test]",
+                "tags": [
+                  "mobile-development"
+                ],
+                "priority": "medium",
+                "effort": 2.8,
+                "work_type": "test"
+              },
+              "total_assigned": 6,
+              "remaining_agents": 0,
+              "state_updates": {
+                "assignment": {
+                  "Afton": "ISSUE-0001::test"
+                }
+              },
+              "joint_reward": 157.95586696759034
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  },
+  {
+    "blackboard_id": "1",
+    "participants": [
+      "Afton",
+      "Sheri"
+    ],
+    "events": [
+      {
+        "blackboard_id": 1,
+        "id": "b7b93c80-1719-4b04-acc0-71c630c28975",
+        "ts": 1776736274.323433,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Sheri, Afton"
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "87579a13-0a3c-4e68-b799-e97e6237148b",
+        "ts": 1776736342.614891,
+        "agent": "Sheri",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi Afton! I'm Sheri, your coalition partner. Here's my situation:\n\n**My Profile:**\n- Availability: 5.0h\n- Skill: mobile-development (0.86)\n\n**My Best Costs (medium priority ISSUE-0001 tasks):**\n- ISSUE-0001::triage: cost=1.67 (1.6h effort)\n- ISSUE-0001::review: cost=2.09 (2.0h effort)\n- ISSUE-0001::docs: cost=2.09 (2.0h effort)\n- ISSUE-0001::test: cost=2.93 (2.8h effort)\n- ISSUE-0001::implement: cost=4.19 (4.0h effort)\n\n**INFEASIBLE for me:** ISSUE-0002::test (5.6h) and ISSUE-0002::implement (8.0h)\n\n**Coalition Strategy:**\nLet's coordinate to maximize our joint reward. Please share your availability, costs, and preferred tasks so we can:\n1. Avoid conflicts with each other\n2. Target medium-priority tasks (higher reward)\n3. Minimize our combined costs\n\nWhat tasks can you take? I'm flexible but prefer triage/review/docs (lowest costs for me). (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "1dd7be21-67c4-4380-91e5-2f2cfee529ad",
+        "ts": 1776736367.337827,
+        "agent": "Afton",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi Sheri! Coalition coordination here.\n\n**My Profile:**\n- Availability: 4.0h (constrained)\n- Skill: mobile-development (0.72)\n- My costs: triage=1.95, review=2.44, docs=2.44, test=3.41, implement=4.88\n- INFEASIBLE: ISSUE-0002::test (5.6h) and ISSUE-0002::implement (8.0h)\n\n**Coalition Strategy Analysis:**\nYour costs are lower than mine on all tasks (skill 0.86 vs my 0.72). \n\n**Team Landscape:**\n- Jessenia: claims ISSUE-0001::implement\n- Lenna: lowest costs on triage (1.46), review (1.82), docs (1.82)\n- Clarissa: can flex to test/implement\n\n**Coalition Plan (avoid conflicts, minimize combined cost):**\n1. You (Sheri): ISSUE-0001::docs (cost=2.09) - avoid Lenna's triage/review\n2. Me (Afton): ISSUE-0001::test (cost=3.41) - fills gap, avoids triage/review/docs conflicts\n\nThis covers 2 coalition tasks with medium priority, avoids all non-coalition conflicts.\n\nAlternative: If Lenna takes triage and review, you could take docs (2.09) and I could take test (3.41). Combined coalition cost = 5.5.\n\nWhat do you think? Should we adjust? (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "122b4b18-441a-4bda-bf2b-34fce18849ca",
+        "ts": 1776736442.9889224,
+        "agent": "Sheri",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi Afton! Thanks for the coalition coordination.\n\n**CONFIRMING COALITION STRATEGY:**\n- **Sheri**: ISSUE-0001::docs (cost=2.09, effort=2.0h, medium priority) ✓\n- **Afton**: ISSUE-0001::test (cost=3.41, effort=2.8h, medium priority) ✓\n\n**Combined Coalition Cost: 5.5** (minimized while avoiding conflicts)\n\nThis aligns perfectly with the team allocation on the main board! Lenna has lower costs on triage/review, so we're taking docs and test which are the remaining medium-priority tasks.\n\n**Coalition Benefits:**\n- Both tasks are medium priority (higher reward)\n- No conflicts with each other or other team members\n- My docs cost (2.09) is competitive - only Lenna (1.82) and Elda (1.91) beat it, but they're assigned elsewhere\n- Your test cost (3.41) fills the gap - Elda has lower test cost (2.67) but is taking ISSUE-0002::review\n\nI'll confirm my assignment on the main board. Let's lock this in and maximize our coalition contribution!\n\n**Coalition Status: READY FOR EXECUTION** (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "673895f8-bcdb-4979-baf3-0a4ba8129f3d",
+        "ts": 1776736518.130843,
+        "agent": "Sheri",
+        "kind": "communication",
+        "payload": {
+          "content": "**COALITION FINAL STATUS - READY FOR EXECUTION:**\n\n✓ **Sheri → ISSUE-0001::docs** (cost=2.09, effort=2.0h, medium priority)\n✓ **Afton → ISSUE-0001::test** (cost=3.41, effort=2.8h, medium priority)\n\n**Coalition Combined Cost:** 5.5\n**Coalition Priority Coverage:** 2 medium-priority tasks\n\nThe team coordination on Blackboard 0 is complete with all 6 agents confirmed. No conflicts detected. Our coalition strategy is aligned with the overall team allocation.\n\nWhen execution phase begins, I will claim ISSUE-0001::docs. Afton will claim ISSUE-0001::test.\n\n**COALITION OBJECTIVE ACHIEVED:** Both coalition members have medium-priority tasks with minimized costs, avoiding all conflicts. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "6e65246a-31de-4a63-98d7-935360d8ea9b",
+        "ts": 1776736527.5338748,
+        "agent": "Afton",
+        "kind": "communication",
+        "payload": {
+          "content": "**COALITION FINAL CONFIRMATION - READY FOR EXECUTION:**\n\n✓ **Afton → ISSUE-0001::test** (cost=3.41, effort=2.8h, medium priority)\n✓ **Sheri → ISSUE-0001::docs** (cost=2.09, effort=2.0h, medium priority)\n\n**Coalition Combined Cost:** 5.5\n**Coalition Priority Coverage:** 2 medium-priority tasks\n\nThe team coordination on Blackboard 0 is complete with all 6 agents confirmed. Our coalition assignments align perfectly with the overall team allocation:\n- Lenna → ISSUE-0001::triage (cost=1.46)\n- Sheri → ISSUE-0001::docs (cost=2.09) ← COALITION\n- Jessenia → ISSUE-0001::implement (cost=4.13)\n- Afton → ISSUE-0001::test (cost=3.41) ← COALITION\n- Clarissa → ISSUE-0001::review (cost=2.13)\n- Elda → ISSUE-0002::review (cost=3.82)\n\n**NO CONFLICTS** - Each agent has a unique task assignment.\n\nWhen execution phase begins, I will claim ISSUE-0001::test. Sheri will claim ISSUE-0001::docs.\n\n**COALITION STATUS: READY FOR EXECUTION** (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "8e97e373-094f-4646-8e88-4ff99a05e536",
+        "ts": 1776736583.3636942,
+        "agent": "Sheri",
+        "kind": "communication",
+        "payload": {
+          "content": "**COALITION READY FOR EXECUTION - FINAL CHECK:**\n\n✓ **Sheri → ISSUE-0001::docs** (cost=2.09, effort=2.0h, medium priority)\n✓ **Afton → ISSUE-0001::test** (cost=3.41, effort=2.8h, medium priority)\n\n**Coalition Combined Cost:** 5.5\n**Coalition Tasks:** 2 medium-priority tasks\n\nAll team coordination on Blackboard 0 is complete. No conflicts detected. \n\n@Afton - When execution phase begins, I will claim ISSUE-0001::docs. Please confirm you will claim ISSUE-0001::test so we avoid any last-minute conflicts.\n\n**COALITION STATUS: LOCKED AND READY**",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "7ab6c82b-ee3f-443e-b622-c3b02bfdfc74",
+        "ts": 1776736593.7587512,
+        "agent": "Afton",
+        "kind": "communication",
+        "payload": {
+          "content": "**COALITION EXECUTION READY - FINAL CONFIRMATION:**\n\n✓ **Afton → ISSUE-0001::test** (cost=3.41, effort=2.8h, medium priority)\n✓ **Sheri → ISSUE-0001::docs** (cost=2.09, effort=2.0h, medium priority)\n\n**Coalition Combined Cost:** 5.5\n**Coalition Tasks:** 2 medium-priority tasks (highest priority available)\n\nAll team coordination is complete with NO CONFLICTS. Each agent has a unique task assignment.\n\n@Sheri - When execution phase begins, I will claim ISSUE-0001::test. Please claim ISSUE-0001::docs. Our coalition strategy is locked and maximizes our joint contribution while avoiding all conflicts.\n\n**COALITION STATUS: READY FOR EXECUTION** (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "340866ed-7235-4206-b798-7e26405a9183",
+        "ts": 1776736618.6196916,
+        "agent": "Sheri",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::docs"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Sheri",
+              "task_id": "ISSUE-0001::docs",
+              "task": {
+                "id": "ISSUE-0001::docs",
+                "title": "Improve mobile-development [docs]",
+                "tags": [
+                  "mobile-development"
+                ],
+                "priority": "medium",
+                "effort": 2.0,
+                "work_type": "docs"
+              },
+              "total_assigned": 5,
+              "remaining_agents": 1,
+              "state_updates": {
+                "assignment": {
+                  "Sheri": "ISSUE-0001::docs"
+                }
+              },
+              "joint_reward": 131.36839090981087
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "a5f2af21-e85f-4751-93f1-edbbdd55fc3c",
+        "ts": 1776736625.0523498,
+        "agent": "Afton",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::test"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Afton",
+              "task_id": "ISSUE-0001::test",
+              "task": {
+                "id": "ISSUE-0001::test",
+                "title": "Improve mobile-development [test]",
+                "tags": [
+                  "mobile-development"
+                ],
+                "priority": "medium",
+                "effort": 2.8,
+                "work_type": "test"
+              },
+              "total_assigned": 6,
+              "remaining_agents": 0,
+              "state_updates": {
+                "assignment": {
+                  "Afton": "ISSUE-0001::test"
+                }
+              },
+              "joint_reward": 157.95586696759034
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,719 @@
+{
+  "St_Marys_Center_Triage": {
+    "iteration_1": {
+      "planning": {
+        "round_1": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"SURPLUS IV_Kits: 21 excess after queue (20 needed, 41 available). SURPLUS PPE_Sets: 25 excess.\", \"rationale\": \"Following planning protocol to offer surplus resources for transfer reward, as excess >5 units.\"}",
+                "post_message -- {\"message\": \"Planning phase: Have surplus IV_Kits (21) and PPE_Sets (25) after accounting for 20 triage patients. No deficits. Ready to coordinate on scheduling our patients.\", \"blackboard_id\": 1}"
+              ]
+            }
+          }
+        },
+        "round_2": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "find_available_slots -- {\"duration\": 1, \"min_start_time\": 0, \"num_slots\": 20}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}",
+                "post_message -- {\"message\": \"Triage has capacity for all 20 patients with no resource shortages. Surplus IV_Kits and PPE_Sets available. Scheduling patients by priority order from heuristic: start with Patient_18 at >=4, Patient_15 at >=5, etc. All step 0 can be completed efficiently without overlap issues given capacity 4.\", \"blackboard_id\": 1}"
+              ]
+            },
+            "step_3": {
+              "reasoning": "",
+              "tools": [
+                "find_available_slots -- {\"duration\": 1, \"min_start_time\": 4, \"num_slots\": 5}",
+                "find_available_slots -- {\"duration\": 1, \"min_start_time\": 5, \"num_slots\": 5}"
+              ]
+            }
+          }
+        },
+        "round_3": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "find_available_slots -- {\"duration\": 1, \"min_start_time\": 0, \"num_slots\": 20}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "",
+              "tools": [
+                "post_message -- {\"message\": \"Triage planning: Will schedule all 20 patients in priority order from heuristic (Patient_18,15,8,13,9,...). Using capacity 4, no resource issues. Finding slots for earliest starts. Suggest coalition prepare for subsequent steps: Radiology for these patients after triage.\", \"blackboard_id\": 1}"
+              ]
+            },
+            "step_3": {
+              "reasoning": "",
+              "tools": [
+                "find_available_slots -- {\"duration\": 1, \"min_start_time\": 4, \"num_slots\": 1}"
+              ]
+            }
+          }
+        },
+        "round_4": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "find_available_slots -- {\"duration\": 1, \"min_start_time\": 4, \"num_slots\": 5}",
+                "find_available_slots -- {\"duration\": 1, \"min_start_time\": 5, \"num_slots\": 5}",
+                "find_available_slots -- {\"duration\": 1, \"min_start_time\": 0, \"num_slots\": 5}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "",
+              "tools": [
+                "find_available_slots -- {\"duration\": 1, \"min_start_time\": 7, \"num_slots\": 5}",
+                "find_available_slots -- {\"duration\": 1, \"min_start_time\": 8, \"num_slots\": 5}",
+                "find_available_slots -- {\"duration\": 1, \"min_start_time\": 17, \"num_slots\": 3}"
+              ]
+            },
+            "step_3": {
+              "reasoning": "",
+              "tools": [
+                "post_message -- {\"message\": \"Triage planning complete for iter 1: All 20 patients can be scheduled at their earliest start times without capacity violation (capacity 4, duration 1h each). Priority order followed: Patient_18@4, Patient_15@5, Patient_12@6, Patient_8@7, Patient_13@8, Patient_0@8, Patient_16@4 (parallel), Patient_6@5, Patient_11@0, Patient_19@0, etc. adjusting for parallels. No deficits, surplus IV_Kits:21, PPE_Sets:25. Coalition, prepare radiology for incoming after triage. Suggest no transfers needed as all have surplus.\", \"blackboard_id\": 1}"
+              ]
+            }
+          }
+        }
+      },
+      "execution": {
+        "round_0": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "schedule_patient -- {\"patient_id\": \"Patient_0\", \"step_index\": 0, \"start_time\": 8, \"rationale\": \"Scheduling triage step 0 at earliest start time from mandatory job queue.\"}",
+                "schedule_patient -- {\"patient_id\": \"Patient_1\", \"step_index\": 0, \"start_time\": 11, \"rationale\": \"Scheduling triage step 0 at earliest start time from mandatory job queue.\"}",
+                "schedule_patient -- {\"patient_id\": \"Patient_2\", \"step_index\": 0, \"start_time\": 23, \"rationale\": \"Scheduling triage step 0 at earliest start time from mandatory job queue.\"}"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "General_Hospital_Surgery": {
+    "iteration_1": {
+      "planning": {
+        "round_1": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"SURPLUS Anesthetics: 9 excess after queue (0 needed, 9 available). SURPLUS Pain_Killers: 21 excess after queue (0 needed, 21 available). SURPLUS IV_Kits: 41 excess after queue (0 needed, 41 available). SURPLUS Surgical_Packs: 9 excess after queue (0 needed, 9 available). SURPLUS PPE_Sets: 45 excess after queue (0 needed, 45 available).\", \"rationale\": \"Following planning protocol to offer surplus resources for transfer reward, as excess >5 units.\"}"
+              ]
+            }
+          }
+        },
+        "round_2": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"SURPLUS Anesthetics: 9 excess after queue (0 needed, 9 available). SURPLUS Pain_Killers: 21 excess after queue (0 needed, 21 available). SURPLUS IV_Kits: 41 excess after queue (0 needed, 41 available). SURPLUS Surgical_Packs: 9 excess after queue (0 needed, 9 available). SURPLUS PPE_Sets: 45 excess after queue (0 needed, 45 available).\", \"rationale\": \"Following planning protocol to offer surplus resources for transfer reward, as excess >5 units.\"}"
+              ]
+            }
+          }
+        },
+        "round_3": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"SURPLUS Anesthetics: 9 excess after queue (0 needed, 9 available). SURPLUS Pain_Killers: 21 excess after queue (0 needed, 21 available). SURPLUS IV_Kits: 41 excess after queue (0 needed, 41 available). SURPLUS Surgical_Packs: 9 excess after queue (0 needed, 9 available). SURPLUS PPE_Sets: 45 excess after queue (0 needed, 45 available).\", \"rationale\": \"Following planning protocol to offer surplus resources for transfer reward, as excess >5 units.\"}"
+              ]
+            }
+          }
+        },
+        "round_4": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"SURPLUS Anesthetics: 9 excess after queue (0 needed, 9 available). SURPLUS Pain_Killers: 21 excess after queue (0 needed, 21 available). SURPLUS IV_Kits: 41 excess after queue (0 needed, 41 available). SURPLUS Surgical_Packs: 9 excess after queue (0 needed, 9 available). SURPLUS PPE_Sets: 45 excess after queue (0 needed, 45 available).\", \"rationale\": \"Following planning protocol to offer surplus resources for transfer reward, as excess >5 units.\"}"
+              ]
+            }
+          }
+        }
+      },
+      "execution": {
+        "round_0": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "No tasks in job queue. No scheduling or transfers required."
+            }
+          }
+        }
+      }
+    }
+  },
+  "St_Marys_Center_Radiology": {
+    "iteration_1": {
+      "planning": {
+        "round_1": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"SURPLUS Radio_Contrast: 13 excess after queue (0 needed, 13 available). SURPLUS IV_Kits: 41 excess after queue (0 needed, 41 available). SURPLUS PPE_Sets: 45 excess after queue (0 needed, 45 available).\", \"rationale\": \"Following planning protocol to offer surplus resources for transfer reward, as excess >5 units.\"}"
+              ]
+            }
+          }
+        },
+        "round_2": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "post_message -- {\"message\": \"Radiology has 0 queue, surplus: Radio_Contrast 13, IV_Kits 41, PPE_Sets 45. No needs. Can support radiology for up to 13 patients. Coordinating for coalition patients.\", \"blackboard_id\": 1}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_3": {
+              "reasoning": "No deficits. Surplus resources available (as previously broadcast). Queue empty - no scheduling possible or needed. Coalition status: ready to support if patients route to Radiology. (No transfers or urgent posts.)"
+            }
+          }
+        },
+        "round_3": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "post_message -- {\"message\": \"St_Marys_Center_Radiology: Radiology ready with capacity 2, 0 queue. Surplus: Radio_Contrast 13, IV_Kits 41, PPE_Sets 45. Can support radiology steps for up to 13 coalition patients. No deficits. Will schedule radiology (step_index after triage) for St_Marys patients once they appear in job queue. Coordinating for efficient flow after triage schedules the 20 patients.\", \"blackboard_id\": 1}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_3": {
+              "reasoning": "",
+              "tools": [
+                "find_available_slots -- {\"duration\": 1, \"min_start_time\": 0, \"num_slots\": 5}"
+              ]
+            }
+          }
+        },
+        "round_4": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "",
+              "tools": [
+                "post_message -- {\"message\": \"St_Marys_Center_Radiology ready: capacity 2, 0 queue. Surplus Radio_Contrast:13, IV_Kits:41, PPE_Sets:45. Can handle up to 13 radiology steps. Awaiting patients from Triage in job queue for step_index after triage. No deficits, no transfers needed.\", \"blackboard_id\": 1}"
+              ]
+            },
+            "step_3": {
+              "reasoning": "St_Marys_Center_Radiology: Planning complete (iter=1). 0 queue, capacity 2 ready for post-triage radiology steps (up to 13 patients). High surplus (Radio_Contrast:13, IV_Kits:41, PPE_Sets:45) - no deficits, no transfers needed per coalition status. Awaiting job queue updates from Triage scheduling. (No scheduling possible yet.)"
+            }
+          }
+        }
+      },
+      "execution": {
+        "round_0": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "schedule_patient -- {\"patient_id\": \"Patient_0\", \"step_index\": 1, \"start_time\": 9, \"rationale\": \"Scheduling radiology step 1 at earliest start time from mandatory job queue.\"}",
+                "schedule_patient -- {\"patient_id\": \"Patient_1\", \"step_index\": 1, \"start_time\": 12, \"rationale\": \"Scheduling radiology step 1 at earliest start time from mandatory job queue.\"}",
+                "schedule_patient -- {\"patient_id\": \"Patient_2\", \"step_index\": 1, \"start_time\": 24, \"rationale\": \"Scheduling radiology step 1 at earliest start time from mandatory job queue.\"}"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "St_Marys_Center_Ward": {
+    "iteration_1": {
+      "planning": {
+        "round_1": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"SURPLUS IV_Kits: 41 excess after queue (0 needed, 41 available). SURPLUS Pain_Killers: 21 excess after queue (0 needed, 21 available). SURPLUS Oxygen_Tanks: 17 excess after queue (0 needed, 17 available). SURPLUS PPE_Sets: 45 excess after queue (0 needed, 45 available).\", \"rationale\": \"Following planning protocol to offer surplus resources for transfer reward, as excess >5 units.\"}"
+              ]
+            }
+          }
+        },
+        "round_2": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "",
+              "tools": [
+                "post_message -- {\"message\": \"Ward has high surplus in IV_Kits:41, Pain_Killers:21, Oxygen_Tanks:17, PPE_Sets:45. Capacity 8 available. No current queue. Ready to receive patients post-surgery. No deficits. Coordinating for efficient patient flow.\", \"blackboard_id\": 1}"
+              ]
+            },
+            "step_3": {
+              "reasoning": "St_Marys_Center_Ward ready for patients (no queue, full surplus, capacity 8). No actions needed this iter."
+            }
+          }
+        },
+        "round_3": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "post_message -- {\"message\": \"St_Marys_Center_Ward: Capacity 8 available, 0 queue. High surplus: IV_Kits 41, Pain_Killers 21, Oxygen_Tanks 17, PPE_Sets 45. No deficits. Ready to accept post-surgery patients from coalition. Suggest monitoring triage scheduling of 20 patients for smooth flow through radiology/surgery to ward. (phase=planning, iter=1)\", \"blackboard_id\": 1}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "",
+              "tools": [
+                "post_message -- {\"message\": \"St_Marys_Center_Ward: Confirmed high surplus in all resources, especially Oxygen_Tanks and Pain_Killers needed for ward care. Capacity 8 ready for incoming patients after surgery step. No scheduling possible yet as no patients in queue. Awaiting triage to push patients through pathway. No urgent needs. (phase=planning, iter=1)\", \"blackboard_id\": 1}"
+              ]
+            },
+            "step_3": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            }
+          }
+        },
+        "round_4": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "post_message -- {\"message\": \"Ward status: Capacity 8, 0 queue. High surplus (IV_Kits:41, Pain_Killers:21, Oxygen_Tanks:17, PPE_Sets:45). No deficits. Ready for post-surgery patients from coalition's 20 patients after they complete triage/radiology/surgery steps. No transfers needed as all have surplus. Monitoring for job queue.\", \"blackboard_id\": 1}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_3": {
+              "reasoning": "",
+              "tools": [
+                "post_message -- {\"message\": \"St_Marys_Center_Ward: No patients in job queue yet for ward step. Cannot schedule. Surplus resources as previously broadcasted. Awaiting patients from surgery step. No resource needs. Ready to minimize holding costs by accepting patients soon.\", \"blackboard_id\": 1}"
+              ]
+            }
+          }
+        }
+      },
+      "execution": {
+        "round_0": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "schedule_patient -- {\"patient_id\": \"Patient_0\", \"step_index\": 2, \"start_time\": 11, \"rationale\": \"Scheduling step 2 at earliest start time from mandatory job queue.\"}",
+                "schedule_patient -- {\"patient_id\": \"Patient_1\", \"step_index\": 2, \"start_time\": 14, \"rationale\": \"Scheduling step 2 at earliest start time from mandatory job queue.\"}",
+                "schedule_patient -- {\"patient_id\": \"Patient_2\", \"step_index\": 2, \"start_time\": 26, \"rationale\": \"Scheduling step 2 at earliest start time from mandatory job queue.\"}"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "General_Hospital_Radiology": {
+    "iteration_1": {
+      "planning": {
+        "round_1": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"SURPLUS Radio_Contrast: 13 excess after queue (0 needed, 13 available). SURPLUS IV_Kits: 41 excess after queue (0 needed, 41 available). SURPLUS PPE_Sets: 45 excess after queue (0 needed, 45 available).\", \"rationale\": \"Following planning protocol to offer surplus resources for transfer reward, as excess >5 units.\"}"
+              ]
+            }
+          }
+        },
+        "round_2": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"SURPLUS Radio_Contrast: 13 excess after queue (0 needed, 13 available). SURPLUS IV_Kits: 41 excess after queue (0 needed, 41 available). SURPLUS PPE_Sets: 45 excess after queue (0 needed, 45 available).\", \"rationale\": \"Following planning protocol to offer surplus resources for transfer reward, as excess >5 units.\"}"
+              ]
+            }
+          }
+        },
+        "round_3": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"SURPLUS Radio_Contrast: 13 excess after queue (0 needed, 13 available). SURPLUS IV_Kits: 41 excess after queue (0 needed, 41 available). SURPLUS PPE_Sets: 45 excess after queue (0 needed, 45 available).\", \"rationale\": \"Following planning protocol to offer surplus resources for transfer reward, as excess >5 units.\"}"
+              ]
+            }
+          }
+        },
+        "round_4": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"SURPLUS Radio_Contrast: 13 excess after queue (0 needed, 13 available). SURPLUS IV_Kits: 41 excess after queue (0 needed, 41 available). SURPLUS PPE_Sets: 45 excess after queue (0 needed, 45 available).\", \"rationale\": \"Following planning protocol to offer surplus resources for transfer reward, as excess >5 units.\"}"
+              ]
+            }
+          }
+        }
+      },
+      "execution": {
+        "round_0": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "No tasks in job queue. No action taken."
+            }
+          }
+        }
+      }
+    }
+  },
+  "General_Hospital_Ward": {
+    "iteration_1": {
+      "planning": {
+        "round_1": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"SURPLUS IV_Kits: 41 excess after queue (0 needed, 41 available). SURPLUS Anesthetics: 9 excess after queue (0 needed, 9 available). SURPLUS Pain_Killers: 21 excess after queue (0 needed, 21 available). SURPLUS Radio_Contrast: 13 excess after queue (0 needed, 13 available). SURPLUS Oxygen_Tanks: 17 excess after queue (0 needed, 17 available). SURPLUS Surgical_Packs: 9 excess after queue (0 needed, 9 available). SURPLUS PPE_Sets: 45 excess after queue (0 needed, 45 available).\", \"rationale\": \"Following planning protocol to offer surplus resources for transfer reward, as excess >5 units.\"}"
+              ]
+            }
+          }
+        },
+        "round_2": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"SURPLUS IV_Kits: 41 excess after queue (0 needed, 41 available). SURPLUS Anesthetics: 9 excess after queue (0 needed, 9 available). SURPLUS Pain_Killers: 21 excess after queue (0 needed, 21 available). SURPLUS Radio_Contrast: 13 excess after queue (0 needed, 13 available). SURPLUS Oxygen_Tanks: 17 excess after queue (0 needed, 17 available). SURPLUS Surgical_Packs: 9 excess after queue (0 needed, 9 available). SURPLUS PPE_Sets: 45 excess after queue (0 needed, 45 available).\", \"rationale\": \"Following planning protocol to offer surplus resources for transfer reward, as excess >5 units.\"}"
+              ]
+            }
+          }
+        },
+        "round_3": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"SURPLUS IV_Kits: 41 excess after queue (0 needed, 41 available). SURPLUS Anesthetics: 9 excess after queue (0 needed, 9 available). SURPLUS Pain_Killers: 21 excess after queue (0 needed, 21 available). SURPLUS Radio_Contrast: 13 excess after queue (0 needed, 13 available). SURPLUS Oxygen_Tanks: 17 excess after queue (0 needed, 17 available). SURPLUS Surgical_Packs: 9 excess after queue (0 needed, 9 available). SURPLUS PPE_Sets: 45 excess after queue (0 needed, 45 available).\", \"rationale\": \"Following planning protocol to offer surplus resources for transfer reward, as excess >5 units.\"}"
+              ]
+            }
+          }
+        },
+        "round_4": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"SURPLUS IV_Kits: 41 excess after queue (0 needed, 41 available). SURPLUS Anesthetics: 9 excess after queue (0 needed, 9 available). SURPLUS Pain_Killers: 21 excess after queue (0 needed, 21 available). SURPLUS Radio_Contrast: 13 excess after queue (0 needed, 13 available). SURPLUS Oxygen_Tanks: 17 excess after queue (0 needed, 17 available). SURPLUS Surgical_Packs: 9 excess after queue (0 needed, 9 available). SURPLUS PPE_Sets: 45 excess after queue (0 needed, 45 available).\", \"rationale\": \"Following planning protocol to offer surplus resources for transfer reward, as excess >5 units.\"}"
+              ]
+            }
+          }
+        }
+      },
+      "execution": {
+        "round_0": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "No tasks in job queue for General_Hospital_Ward. No actions taken."
+            }
+          }
+        }
+      }
+    }
+  },
+  "St_Marys_Center_Surgery": {
+    "iteration_1": {
+      "planning": {
+        "round_1": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"SURPLUS Anesthetics: 9 excess after queue (0 needed, 9 available). SURPLUS Pain_Killers: 21 excess after queue (0 needed, 21 available). SURPLUS IV_Kits: 41 excess after queue (0 needed, 41 available). SURPLUS Surgical_Packs: 9 excess after queue (0 needed, 9 available). SURPLUS PPE_Sets: 45 excess after queue (0 needed, 45 available).\", \"rationale\": \"Following planning protocol to offer surplus resources for transfer reward, as excess >5 units.\"}"
+              ]
+            }
+          }
+        },
+        "round_2": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "post_message -- {\"message\": \"St_Marys_Center_Surgery: Surplus Anesthetics:9 (excess after 0 needed), Pain_Killers:21, IV_Kits:41, Surgical_Packs:9, PPE_Sets:45. Capacity:1. Queue:0. Ready to handle surgery steps for coalition patients when they reach this stage. No deficits. Coordinating for patient flow. (phase=planning, iter=1)\", \"blackboard_id\": 1}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_3": {
+              "reasoning": "",
+              "tools": [
+                "post_message -- {\"message\": \"St_Marys_Center_Surgery: No patients in job queue for surgery yet. All resources in surplus, no deficits. Will schedule when patients arrive from radiology (step_index for surgery). Ready for coordination. (phase=planning, iter=1)\", \"blackboard_id\": 1}"
+              ]
+            }
+          }
+        },
+        "round_3": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "post_message -- {\"message\": \"St_Marys_Center_Surgery ready: capacity 1, 0 queue, surplus Anesthetics:9, Pain_Killers:21, IV_Kits:41, Surgical_Packs:9, PPE_Sets:45. No deficits. Awaiting surgery patients from Radiology (will schedule step_index after radiology). Ready to coordinate patient flow for coalition's 20 patients.\", \"blackboard_id\": 1}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_3": {
+              "reasoning": "St_Marys_Center_Surgery: No job queue entries for surgery step yet (0 patients, capacity 1 available). All resources in surplus (>5 units each). No deficits/urgent needs. Awaiting triage/radiology to advance coalition patients to surgery step_index. Ready for any transfers or further coordination on bb 1."
+            }
+          }
+        },
+        "round_4": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "post_message -- {\"message\": \"St_Marys_Center_Surgery: Capacity 1, surplus Anesthetics:9, Pain_Killers:21, IV_Kits:41, Surgical_Packs:9, PPE_Sets:45. Job queue empty, no scheduling possible yet. Ready for surgery steps (post-radiology) for the 20 coalition patients when they reach us. No deficits, no transfers needed. Coordinating for flow.\", \"blackboard_id\": 1}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_3": {
+              "reasoning": "",
+              "tools": [
+                "post_message -- {\"message\": \"St_Marys_Center_Surgery: Confirmed, job queue still empty after refresh. No surgery steps to schedule at step_index for now. All resources in surplus (>9 each relevant), capacity 1 ready. Will monitor for patients from radiology. No urgent needs or transfers. Coalition: good to proceed with triage scheduling.\", \"blackboard_id\": 1}"
+              ]
+            }
+          }
+        }
+      },
+      "execution": {
+        "round_0": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "The job queue is empty, so no scheduling is possible or allowed per core rules. No other actions apply for this department at this time."
+            }
+          }
+        }
+      }
+    }
+  },
+  "General_Hospital_Triage": {
+    "iteration_1": {
+      "planning": {
+        "round_1": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"SURPLUS IV_Kits: 21 excess after queue (20 needed, 41 available). SURPLUS PPE_Sets: 25 excess.\", \"rationale\": \"Following planning protocol to offer surplus resources for transfer reward, as excess >5 units.\"}"
+              ]
+            }
+          }
+        },
+        "round_2": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "find_available_slots -- {\"duration\": 1, \"min_start_time\": 0, \"num_slots\": 20}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"SURPLUS IV_Kits: 21 excess after queue (20 needed, 41 available). SURPLUS PPE_Sets: 25 excess.\", \"rationale\": \"Following planning protocol to offer surplus resources for transfer reward, as excess >5 units.\"}"
+              ]
+            }
+          }
+        },
+        "round_3": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"SURPLUS IV_Kits: 21 excess after queue (20 needed, 41 available). SURPLUS PPE_Sets: 25 excess.\", \"rationale\": \"Following planning protocol to offer surplus resources for transfer reward, as excess >5 units.\"}"
+              ]
+            }
+          }
+        },
+        "round_4": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"SURPLUS IV_Kits: 21 excess after queue (20 needed, 41 available). SURPLUS PPE_Sets: 25 excess.\", \"rationale\": \"Following planning protocol to offer surplus resources for transfer reward, as excess >5 units.\"}"
+              ]
+            }
+          }
+        }
+      },
+      "execution": {
+        "round_0": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "schedule_patient -- {\"patient_id\": \"Patient_3\", \"step_index\": 0, \"start_time\": 16, \"rationale\": \"Scheduling triage step 0 at earliest start time from mandatory job queue.\"}",
+                "schedule_patient -- {\"patient_id\": \"Patient_4\", \"step_index\": 0, \"start_time\": 14, \"rationale\": \"Scheduling triage step 0 at earliest start time from mandatory job queue.\"}",
+                "schedule_patient -- {\"patient_id\": \"Patient_5\", \"step_index\": 0, \"start_time\": 20, \"rationale\": \"Scheduling triage step 0 at earliest start time from mandatory job queue.\"}",
+                "schedule_patient -- {\"patient_id\": \"Patient_6\", \"step_index\": 0, \"start_time\": 5, \"rationale\": \"Scheduling triage step 0 at earliest start time from mandatory job queue.\"}",
+                "schedule_patient -- {\"patient_id\": \"Patient_7\", \"step_index\": 0, \"start_time\": 11, \"rationale\": \"Scheduling triage step 0 at earliest start time from mandatory job queue.\"}",
+                "schedule_patient -- {\"patient_id\": \"Patient_8\", \"step_index\": 0, \"start_time\": 7, \"rationale\": \"Scheduling triage step 0 at earliest start time from mandatory job queue.\"}"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "Resource_Provisioner": {
+    "iteration_1": {
+      "planning": {
+        "round_1": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"No critical alerts or urgent deficits detected. Both hospitals have identical moderate inventory levels (all >8 units per resource). Provisioner holds substantial reserves. No transfers needed at this time. Monitoring for incoming requests.\", \"rationale\": \"To inform the network of current stable status and avoid unnecessary actions per economic guidelines.\"}"
+              ]
+            }
+          }
+        },
+        "round_2": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"Inventory levels are balanced across hospitals with no critical shortages or urgent requests. General_Hospital and St_Marys_Center both have adequate stock (>9 units per resource). No transfers needed at this time. Provisioner holding surplus for future needs.\", \"rationale\": \"Updating the network on current logistics status to ensure awareness and prevent unnecessary requests.\"}"
+              ]
+            }
+          }
+        },
+        "round_3": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "No transfers needed at this time. Inventories stable, no alerts/deficits/imbalances detected."
+            }
+          }
+        },
+        "round_4": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"Inventory levels are balanced across hospitals with no critical shortages or imbalances detected. General_Hospital and St_Marys_Center both have identical stock levels above critical thresholds. No transfers needed at this time. Holding steady to avoid waste.\", \"rationale\": \"Status update to network since no urgent requests or alerts in planning phase.\"}"
+              ]
+            }
+          }
+        }
+      },
+      "execution": {
+        "round_0": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"Resource_Provisioner standing by, ready to transfer resources as needed. Monitoring for any logistics requests.\", \"rationale\": \"To inform the network that logistics are available during execution phase.\"}"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

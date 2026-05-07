@@ -1,0 +1,324 @@
+================================================================================
+BLACKBOARD STATE LOG - 0
+Session started: 2026-04-26 23:31:13
+================================================================================
+
+BLACKBOARD INFO:
+- ID: 0
+- Participants: April, Jung, Kelle, Linnea, Nickole, Tawna
+================================================================================
+
+================================================================================
+BLACKBOARD STATE UPDATE
+Updated: 2026-04-26 23:36:02
+Iteration: 1 | Phase: execution | Last Agent: Nickole
+Total Events: 28
+================================================================================
+
+EVENT SUMMARY:
+- Total Events: 28
+- By Type: context(1), communication(21), action_executed(6)
+- By Agent: SYSTEM(1), Linnea(3), Tawna(4), April(5), Kelle(5), Jung(5), Nickole(5)
+
+--------------------------------------------------------------------------------
+FULL EVENT LOG:
+
+[Event #1, Iteration: 1] [23:31:13] [Execution] SYSTEM (context)  Message: "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.
+
+NOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.
+
+This blackboard is a private communication channel.
+Participants: April, Jung, Kelle, Linnea, Nickole, Tawna"
+
+[Event #2, Iteration: 1] [23:31:18] [Planning] Linnea (communication)  Content: Agent Linnea - PLANNING: I have 4.0 hours availability with strong security (0.98) and frontend (0.70) skills. All tasks are low-priority. My analysis: I'm considering ISSUE-0002::review (cost=1.24, effort=1.0h) as it's most cost-efficient. I could also feasibly take ISSUE-0002::test (1.74) or ISSUE-0001::triage (2.60) if others prefer frontend tasks. Waiting to see other agents' preferences before committing.
+
+[Event #3, Iteration: 1] [23:31:33] [Planning] Tawna (communication)  Content: Agent Tawna - PLANNING: I have 10.0 hours availability with strong frontend (0.72) and security (0.67) skills. All tasks are low-priority. My analysis: ISSUE-0002 frontend tasks are most cost-efficient for me (review=1.23, test=1.72, implement=2.45). I'm coordinating with Linnea to avoid conflicts on ISSUE-0002::review. My likely choice will be ISSUE-0002::test (1.72, 1.4h effort) unless other agents need frontend tasks. Security tasks are also feasible given my 10h availability. (phase=planning, iter=1)
+
+[Event #4, Iteration: 1] [23:31:42] [Planning] April (communication)  Content: Agent April - PLANNING: I have 10.0 hours availability with strong security (0.95) and frontend (0.83) skills. All tasks are low-priority. My analysis:
+
+COST-EFFICIENCY RANKING (my private costs):
+1. ISSUE-0002::review: cost=1.08, effort=1.0h ✓ BEST OPTION
+2. ISSUE-0002::test: cost=1.51, effort=1.4h
+3. ISSUE-0002::implement: cost=2.15, effort=2.0h
+4. ISSUE-0001::triage: cost=2.66, effort=2.8h
+5. ISSUE-0001::review: cost=3.32, effort=3.5h
+6. ISSUE-0001::docs: cost=3.32, effort=3.5h
+7. ISSUE-0001::test: cost=4.65, effort=4.9h
+8. ISSUE-0001::implement: cost=6.65, effort=7.0h
+
+COORDINATION NOTES:
+- Linnea prefers ISSUE-0002::review (cost=1.24) - similar preference to me
+- Tawna prefers ISSUE-0002::test (cost=1.72) as her likely choice
+- I have the best frontend skills (0.83) and excellent security skills (0.95)
+
+PROPOSED STRATEGY:
+Given my strong frontend skills and low cost on ISSUE-0002::review, I will claim ISSUE-0002::review (cost=1.08) as my primary choice. This:
+- Minimizes my personal cost (lowest available)
+- Leverages my frontend skill advantage
+- Completes a task efficiently
+- Leaves ISSUE-0002::test for Tawna if she prefers it
+- Leaves security tasks (my expertise) available for other agents if needed
+
+This maximizes overall joint score by ensuring task completion with minimal cost.
+
+[Event #5, Iteration: 1] [23:31:50] [Planning] Kelle (communication)  Content: Agent Kelle - PLANNING: I have 10.0 hours availability with strong security skills (0.71). All tasks are low-priority. My analysis:
+
+COST-EFFICIENCY RANKING (my private costs):
+1. ISSUE-0001::triage: cost=3.45, effort=2.8h ✓ BEST OPTION
+2. ISSUE-0001::review: cost=4.31, effort=3.5h
+3. ISSUE-0001::docs: cost=4.31, effort=3.5h
+4. ISSUE-0001::test: cost=6.03, effort=4.9h
+5. ISSUE-0001::implement: cost=8.62, effort=7.0h
+6. ISSUE-0002::review: cost=10.00, effort=1.0h
+7. ISSUE-0002::test: cost=14.00, effort=1.4h
+8. ISSUE-0002::implement: cost=20.00, effort=2.0h
+
+COORDINATION OBSERVATIONS:
+- April has claimed ISSUE-0002::review (cost=1.08) - excellent frontend skills
+- Tawna likely taking ISSUE-0002::test (cost=1.72)
+- Linnea considering ISSUE-0002::review but April's lower cost makes that less viable
+- Frontend tasks are dominated by agents with better frontend skills (April: 0.83, Tawna: 0.72, Linnea: 0.70)
+- My security skills (0.71) are competitive for ISSUE-0001 tasks
+
+PROPOSED STRATEGY:
+I will claim ISSUE-0001::triage (cost=3.45, effort=2.8h) as my primary choice. This:
+- Minimizes my personal cost among feasible options
+- Leverages my security expertise
+- Stays well within my 10h availability
+- Leaves higher-effort security tasks (implement, test) available for agents with stronger security skills (April: 0.95, Linnea: 0.98)
+- Contributes to task completion with reasonable cost
+
+This allocation respects skill advantages and minimizes total cost while ensuring task coverage. (phase=planning, iter=1)
+
+[Event #6, Iteration: 1] [23:32:01] [Planning] Jung (communication)  Content: Agent Jung - PLANNING: I have 5.0 hours availability with strong frontend (0.87) and security (0.80) skills. All tasks are low-priority.
+
+COST-EFFICIENCY RANKING (my private costs):
+1. ISSUE-0002::review: cost=1.03, effort=1.0h ✓ BEST but April claimed
+2. ISSUE-0002::test: cost=1.45, effort=1.4h - Tawna prefers
+3. ISSUE-0002::implement: cost=2.06, effort=2.0h ✓ MY LIKELY CHOICE
+4. ISSUE-0001::triage: cost=3.10, effort=2.8h - Kelle prefers
+5. All ISSUE-0001 tasks beyond triage exceed my 5h availability
+
+COORDINATION NOTES:
+- April: ISSUE-0002::review (1.08) - great frontend skills
+- Tawna: ISSUE-0002::test (1.72) - reasonable choice
+- Kelle: ISSUE-0001::triage (3.45) - good security fit
+- Linnea: flexible on remaining options
+
+PROPOSED STRATEGY:
+I will claim ISSUE-0002::implement (cost=2.06, effort=2.0h) as my primary choice. This:
+- Leverages my strong frontend skills (0.87)
+- Stays within my tight 5h availability
+- Completes a frontend task efficiently
+- Respects others' preferences and skill advantages
+- Contributes to overall task completion with minimal cost
+
+This allocation ensures I contribute meaningfully while avoiding conflicts. (phase=planning, iter=1)
+
+[Event #7, Iteration: 1] [23:32:13] [Planning] Nickole (communication)  Content: Agent Nickole - PLANNING: I have 6.0 hours availability with strong frontend skills (0.81). All tasks are low-priority.
+
+COST-EFFICIENCY ANALYSIS (my private costs):
+1. ISSUE-0002::review: cost=1.10, effort=1.0h
+2. ISSUE-0002::test: cost=1.54, effort=1.4h
+3. ISSUE-0002::implement: cost=2.20, effort=2.0h
+4. ISSUE-0001::triage: cost=28.00, effort=2.8h (prohibitively expensive)
+5. All other ISSUE-0001 tasks: cost=35.00+ (infeasible)
+
+COORDINATION ASSESSMENT:
+- April claimed ISSUE-0002::review (her cost=1.08, better than my 1.10)
+- Tawna prefers ISSUE-0002::test (her cost=1.72, comparable to my 1.54)
+- Jung prefers ISSUE-0002::implement (his cost=2.06, better than my 2.20)
+- Kelle claimed ISSUE-0001::triage (security focus)
+
+PROPOSED STRATEGY:
+Given that April, Tawna, and Jung have better or equal cost-efficiency on the ISSUE-0002 frontend tasks, and all ISSUE-0001 tasks are prohibitively expensive for me, I will **skip this round** to maximize joint score. This allows agents with better skill matches and lower costs to claim the available tasks, resulting in lower total_cost and higher overall joint score.
+
+Alternatively, if needed to maximize tasks_done, I can claim ISSUE-0002::test (cost=1.54) as a fallback, but this appears suboptimal given others' lower costs on the same task.
+
+[Event #8, Iteration: 1] [23:32:31] [Planning] Linnea (communication)  Content: Agent Linnea - PLANNING REVISION: After reviewing all agents' preferences, I'm updating my strategy. April's superior frontend skills (0.83) make her the best choice for ISSUE-0002::review (cost=1.08). Instead, I will claim ISSUE-0001::triage (cost=2.60, effort=2.8h) to leverage my top-tier security expertise (0.98). This allocation: (1) respects skill advantages, (2) keeps me well within 4h availability, (3) avoids conflicts with April, Tawna, Jung, and Kelle's preferred tasks, and (4) maximizes overall joint score. Final proposed allocation: Linnea→ISSUE-0001::triage.
+
+[Event #9, Iteration: 1] [23:32:43] [Planning] Tawna (communication)  Content: Agent Tawna - PLANNING COORDINATION UPDATE: I've reviewed all agents' preferences and the emerging allocation. My strategy:
+
+CONFIRMED PREFERENCE: ISSUE-0002::test (cost=1.72, effort=1.4h)
+- Leverages my frontend skills (0.72)
+- Well within my 10h availability
+- Respects Linnea's coordination offer
+- Completes a frontend task efficiently
+
+COORDINATION OBSERVATIONS:
+- April: ISSUE-0002::review (1.08) ✓ Excellent choice
+- Linnea: ISSUE-0001::triage (2.60) ✓ Superior to Kelle's cost (3.45)
+- Jung: ISSUE-0002::implement (2.06) ✓ Good fit
+- Kelle: Should reconsider ISSUE-0001::review/docs/test given Linnea's triage claim
+- Nickole: Skip appears optimal given cost disadvantage on frontend tasks
+
+RECOMMENDATION TO KELLE: Consider ISSUE-0001::review or ISSUE-0001::docs (both cost=4.31, effort=3.5h) to stay within your 10h availability and leverage security skills, or defer to higher-priority coordination. Linnea's security expertise (0.98) makes her the optimal choice for triage.
+
+My final choice: ISSUE-0002::test (phase=planning, iter=1)
+
+[Event #10, Iteration: 1] [23:33:01] [Planning] April (communication)  Content: Agent April - PLANNING FINALIZATION: After reviewing all agents' communications, the emerging allocation is optimal:
+
+CONFIRMED FINAL CHOICE: ISSUE-0002::review (cost=1.08, effort=1.0h)
+
+RATIONALE:
+- Lowest personal cost available (1.08)
+- Leverages my strong frontend skills (0.83)
+- Well within my 10h availability
+- Respects all other agents' preferences and skill advantages
+
+COORDINATION SUMMARY - OPTIMAL ALLOCATION:
+1. April: ISSUE-0002::review (1.08) - frontend specialist
+2. Jung: ISSUE-0002::implement (2.06) - strong frontend (0.87)
+3. Tawna: ISSUE-0002::test (1.72) - frontend capable
+4. Linnea: ISSUE-0001::triage (2.60) - security expert (0.98)
+5. Kelle: Should claim ISSUE-0001::review or ISSUE-0001::docs (cost=4.31, effort=3.5h) to leverage security skills
+6. Nickole: Skip (optimal given cost disadvantage on all remaining tasks)
+
+TOTAL ALLOCATION COST: 1.08 + 2.06 + 1.72 + 2.60 + 4.31 = 11.77 (5 tasks completed)
+
+This maximizes tasks_done (5 agents) while minimizing total_cost through skill-advantage matching. Ready for execution phase. (phase=planning, iter=1)
+
+[Event #11, Iteration: 1] [23:33:15] [Planning] Kelle (communication)  Content: Agent Kelle - PLANNING FINALIZATION: After reviewing the emerging optimal allocation, I confirm my strategy.
+
+FINAL CHOICE: ISSUE-0001::review (cost=4.31, effort=3.5h)
+
+RATIONALE:
+- Respects Linnea's superior security expertise (0.98) on triage (her cost=2.60 vs my 3.45)
+- Leverages my security skills (0.71) on a remaining security task
+- Well within my 10h availability
+- Supports the optimal team allocation
+
+COORDINATION SUMMARY - CONFIRMED ALLOCATION:
+1. April: ISSUE-0002::review (1.08) ✓
+2. Jung: ISSUE-0002::implement (2.06) ✓
+3. Tawna: ISSUE-0002::test (1.72) ✓
+4. Linnea: ISSUE-0001::triage (2.60) ✓
+5. Kelle: ISSUE-0001::review (4.31) ✓
+6. Nickole: Skip ✓
+
+TOTAL COST: 1.08 + 2.06 + 1.72 + 2.60 + 4.31 = 11.77 (5 tasks completed)
+
+This allocation maximizes tasks_done while minimizing total_cost through skill-advantage matching. Ready for execution phase.
+
+[Event #12, Iteration: 1] [23:33:23] [Planning] Jung (communication)  Content: Agent Jung - PLANNING FINALIZATION: After reviewing all agents' communications, I confirm my strategy.
+
+FINAL CHOICE: ISSUE-0002::implement (cost=2.06, effort=2.0h)
+
+RATIONALE:
+- Leverages my strong frontend skills (0.87) - best match for this task
+- Stays within my tight 5h availability (2.0h effort)
+- Lowest cost option available to me after April claims review
+- Respects all other agents' preferences and skill advantages
+- Completes a frontend task efficiently
+
+COORDINATION CONFIRMATION - OPTIMAL ALLOCATION:
+1. April: ISSUE-0002::review (1.08) ✓ Frontend expert
+2. Jung: ISSUE-0002::implement (2.06) ✓ Strong frontend skills
+3. Tawna: ISSUE-0002::test (1.72) ✓ Frontend capable
+4. Linnea: ISSUE-0001::triage (2.60) ✓ Security expert (0.98)
+5. Kelle: ISSUE-0001::review (4.31) ✓ Security skills
+6. Nickole: Skip ✓ Optimal given cost disadvantage
+
+TOTAL COST: 11.77 (5 tasks completed)
+
+This allocation maximizes tasks_done while minimizing total_cost through skill-advantage matching. Ready for execution phase.
+
+[Event #13, Iteration: 1] [23:33:36] [Planning] Nickole (communication)  Content: Agent Nickole - PLANNING CONFIRMATION: After reviewing the optimal allocation that has emerged, I confirm my strategy.
+
+FINAL CHOICE: Skip
+
+RATIONALE:
+- April (review, 1.08), Tawna (test, 1.72), and Jung (implement, 2.06) have better or equal costs on all feasible ISSUE-0002 frontend tasks
+- All ISSUE-0001 tasks are prohibitively expensive (triage=28.00, others=35.00+) due to poor skill match (frontend 0.81 vs security focus)
+- Skipping maximizes joint score by allowing lower-cost agents to claim tasks
+- The proposed 5-task allocation (April, Jung, Tawna, Linnea, Kelle) with total cost 11.77 is optimal
+
+COORDINATION CONFIRMATION:
+1. April: ISSUE-0002::review (1.08) ✓
+2. Jung: ISSUE-0002::implement (2.06) ✓
+3. Tawna: ISSUE-0002::test (1.72) ✓
+4. Linnea: ISSUE-0001::triage (2.60) ✓
+5. Kelle: ISSUE-0001::review (4.31) ✓
+6. Nickole: Skip ✓
+
+Ready for execution phase. (phase=planning, iter=1)
+
+[Event #14, Iteration: 1] [23:34:00] [Planning] Tawna (communication)  Content: Agent Tawna - PLANNING FINALIZATION: Confirming my final choice for execution phase.
+
+FINAL CHOICE: ISSUE-0002::test (cost=1.72, effort=1.4h)
+
+COORDINATION CONFIRMED:
+- All agents have agreed on an optimal 5-task allocation
+- Total cost: 11.77 (minimal through skill-matching)
+- Tasks completed: 5 (maximized)
+- No conflicts or duplicates
+
+ALLOCATION SUMMARY:
+1. April: ISSUE-0002::review (1.08) ✓
+2. Jung: ISSUE-0002::implement (2.06) ✓
+3. Tawna: ISSUE-0002::test (1.72) ✓
+4. Linnea: ISSUE-0001::triage (2.60) ✓
+5. Kelle: ISSUE-0001::review (4.31) ✓
+6. Nickole: Skip ✓
+
+Ready for execution phase. (phase=planning, iter=1)
+
+[Event #15, Iteration: 1] [23:34:13] [Planning] April (communication)  Content: Agent April - EXECUTION PHASE CONFIRMATION: I am ready to execute with my final choice: ISSUE-0002::review (cost=1.08, effort=1.0h). This completes the optimal 5-task allocation agreed upon during planning. All agents have confirmed their assignments. Proceeding to execution phase now.
+
+[Event #16, Iteration: 1] [23:34:21] [Planning] Kelle (communication)  Content: Agent Kelle - EXECUTION PHASE CONFIRMATION: I am ready to execute with my final choice: ISSUE-0001::review (cost=4.31, effort=3.5h). This completes the optimal 5-task allocation agreed upon during planning. All agents have confirmed their assignments. Proceeding to execution phase now. (phase=planning, iter=1)
+
+[Event #17, Iteration: 1] [23:34:28] [Planning] Jung (communication)  Content: Agent Jung - EXECUTION PHASE CONFIRMATION: I am ready to execute with my final choice: ISSUE-0002::implement (cost=2.06, effort=2.0h). This completes the optimal 5-task allocation agreed upon during planning. All agents have confirmed their assignments. Proceeding to execution phase now. (phase=planning, iter=1)
+
+[Event #18, Iteration: 1] [23:34:37] [Planning] Nickole (communication)  Content: Agent Nickole - EXECUTION PHASE CONFIRMATION: I am ready to execute with my final choice: Skip. This completes the optimal 5-task allocation agreed upon during planning. All agents have confirmed their assignments. The coordinated allocation (April, Jung, Tawna, Linnea, Kelle) with total cost 11.77 maximizes joint score. Proceeding to execution phase now. (phase=planning, iter=1)
+
+[Event #19, Iteration: 1] [23:35:02] [Planning] April (communication)  Content: Agent April - EXECUTION READY: Confirming final choice ISSUE-0002::review (cost=1.08, effort=1.0h). The coordinated 5-task allocation with total cost 11.77 is optimal. All agents confirmed. Proceeding to execution phase now.
+
+[Event #20, Iteration: 1] [23:35:09] [Planning] Kelle (communication)  Content: Agent Kelle - EXECUTION READY: Confirming final choice ISSUE-0001::review (cost=4.31, effort=3.5h). The coordinated 5-task allocation with total cost 11.77 is optimal. All agents confirmed. Ready to proceed to execution phase. (phase=planning, iter=1)
+
+[Event #21, Iteration: 1] [23:35:19] [Planning] Jung (communication)  Content: Agent Jung - EXECUTION PHASE READY: Confirming final choice ISSUE-0002::implement (cost=2.06, effort=2.0h). The coordinated 5-task allocation with total cost 11.77 is optimal and maximizes joint score. All agents have confirmed their assignments. Ready to proceed to execution phase with this optimal allocation. (phase=planning, iter=1)
+
+[Event #22, Iteration: 1] [23:35:30] [Planning] Nickole (communication)  Content: Agent Nickole - EXECUTION PHASE READY: Confirming final choice: Skip. 
+
+The coordinated 5-task allocation with total cost 11.77 is optimal and maximizes joint score:
+- April: ISSUE-0002::review (1.08) ✓
+- Jung: ISSUE-0002::implement (2.06) ✓
+- Tawna: ISSUE-0002::test (1.72) ✓
+- Linnea: ISSUE-0001::triage (2.60) ✓
+- Kelle: ISSUE-0001::review (4.31) ✓
+- Nickole: Skip ✓
+
+All agents have confirmed their assignments. Ready to proceed to execution phase. (phase=planning, iter=1)
+
+[Event #23, Iteration: 1] [23:35:40] [Execution] Linnea (action_executed)  Action_Type: assign_task
+  Action_Params: {'action': 'assign_task', 'task_id': 'ISSUE-0001::triage'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Linnea', 'task_id': 'ISSUE-0001::triage', 'task': {'id': 'ISSUE-0001::triage', 'issue_id': 'ISSUE-0001', 'title': 'Fix security [triage]', 'tags': ['security'], 'priority': 'low', 'effort': 2.8000000000000003, 'work_type': 'triage'}, 'total_assigned': 1, 'remaining_agents': 5, 'joint_reward': 22.400629172739766}}
+
+[Event #24, Iteration: 1] [23:35:44] [Execution] Tawna (action_executed)  Action_Type: assign_task
+  Action_Params: {'action': 'assign_task', 'task_id': 'ISSUE-0002::test'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Tawna', 'task_id': 'ISSUE-0002::test', 'task': {'id': 'ISSUE-0002::test', 'issue_id': 'ISSUE-0002', 'title': 'Fix frontend [test]', 'tags': ['frontend'], 'priority': 'low', 'effort': 1.4, 'work_type': 'test'}, 'total_assigned': 2, 'remaining_agents': 4, 'joint_reward': 45.68464065888284}}
+
+[Event #25, Iteration: 1] [23:35:47] [Execution] April (action_executed)  Action_Type: assign_task
+  Action_Params: {'action': 'assign_task', 'task_id': 'ISSUE-0002::review'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'April', 'task_id': 'ISSUE-0002::review', 'task': {'id': 'ISSUE-0002::review', 'issue_id': 'ISSUE-0002', 'title': 'Fix frontend [review]', 'tags': ['frontend'], 'priority': 'low', 'effort': 1.0, 'work_type': 'review'}, 'total_assigned': 3, 'remaining_agents': 3, 'joint_reward': 69.60815265613273}}
+
+[Event #26, Iteration: 1] [23:35:51] [Execution] Kelle (action_executed)  Action_Type: assign_task
+  Action_Params: {'action': 'assign_task', 'task_id': 'ISSUE-0001::review'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Kelle', 'task_id': 'ISSUE-0001::review', 'task': {'id': 'ISSUE-0001::review', 'issue_id': 'ISSUE-0001', 'title': 'Fix security [review]', 'tags': ['security'], 'priority': 'low', 'effort': 3.5, 'work_type': 'review'}, 'total_assigned': 4, 'remaining_agents': 2, 'joint_reward': 90.29780272262965}}
+
+[Event #27, Iteration: 1] [23:35:58] [Execution] Jung (action_executed)  Action_Type: assign_task
+  Action_Params: {'action': 'assign_task', 'task_id': 'ISSUE-0002::implement'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Jung', 'task_id': 'ISSUE-0002::implement', 'task': {'id': 'ISSUE-0002::implement', 'issue_id': 'ISSUE-0002', 'title': 'Fix frontend [implement]', 'tags': ['frontend'], 'priority': 'low', 'effort': 2.0, 'work_type': 'implement'}, 'total_assigned': 5, 'remaining_agents': 1, 'joint_reward': 113.2331386466571}}
+
+[Event #28, Iteration: 1] [23:36:02] [Execution] Nickole (action_executed)  Action_Type: assign_task
+  Action_Params: {'action': 'assign_task', 'task_id': 'skip'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Nickole', 'task_id': None, 'status': 'skip', 'total_assigned': 6, 'remaining_agents': 0, 'joint_reward': 113.2331386466571}}
+
+
+================================================================================
+

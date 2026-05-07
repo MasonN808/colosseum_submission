@@ -1,0 +1,324 @@
+================================================================================
+BLACKBOARD STATE LOG - 0
+Session started: 2026-04-23 01:12:54
+================================================================================
+
+BLACKBOARD INFO:
+- ID: 0
+- Participants: Avery, Jordan, Quinn, Reese, Riley, Taylor
+================================================================================
+
+================================================================================
+BLACKBOARD STATE UPDATE
+Updated: 2026-04-23 01:21:18
+Iteration: 1 | Phase: execution | Last Agent: Quinn
+Total Events: 12
+================================================================================
+
+EVENT SUMMARY:
+- Total Events: 12
+- By Type: context(1), communication(7), action_executed(4)
+- By Agent: SYSTEM(1), Avery(6), Taylor(2), Reese(1), Riley(2)
+
+--------------------------------------------------------------------------------
+FULL EVENT LOG:
+
+[Event #1, Iteration: 1] [01:12:54] [Execution] SYSTEM (context)  Message: "Decide attendance intervals for meetings on a shared timeline.
+
+NOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.
+
+This blackboard is a private communication channel.
+Participants: Avery, Jordan, Quinn, Reese, Riley, Taylor"
+
+[Event #2, Iteration: 1] [01:14:43] [Planning] Avery (communication)  Content: Hi everyone! I'm Avery. Here's my preliminary schedule plan:
+
+**STRICT (fixed):**
+- Job interview [0, 1) - must attend full window
+- University class [13, 14) - must attend full window
+
+**SOFT (proposed):**
+- Art workshop [1, 3) - after interview, overlaps with Quinn/Taylor/Reese/Riley/Jordan
+- Swimming [1, 5) OR Volleyball [2, 5) - these conflict, need to pick one
+- Friends' hangout [3, 7) - slots 3-5 or 5-7, depends on earlier choice
+- Study group [6, 10) - can do [6, 7) or [8, 10)
+- Swimming [6, 8) - conflicts with study group above
+- Study group [7, 11) - can do [7, 8) or [10, 11)
+- Gym play [8, 11) - slots 8-10 or 10-11
+- Music jam [9, 13) - can do [11, 13)
+- Friends' hangout [10, 14) - can do [10, 13) before class
+
+**Questions:**
+1. For slots 1-5: Who's planning Swimming vs Volleyball? I need to pick one.
+2. For slots 6-8: Any preferences between Study group vs Swimming session?
+3. For slots 7-11: Which Study group interval works for most people?
+4. For slots 8-11: Who's doing Gym play?
+5. For slots 9-13: Music jam - what intervals work for others?
+
+Let's coordinate to maximize our overlaps!
+
+[Event #3, Iteration: 1] [01:15:34] [Planning] Taylor (communication)  Content: Hi everyone! I'm Taylor. Here's my preliminary schedule:
+
+**STRICT (fixed):**
+- Doctor's appointment [0, 1) - must attend full window
+- University class [13, 14) - must attend full window
+
+**SOFT (proposed):**
+- Collaborative art workshop [0, 3): Can attend [1, 3) after doctor's appointment
+- Swimming [1, 5) OR Volleyball [2, 5): Need to pick one (they overlap at [2, 5))
+- Friends' hangout [4, 7): Could do [4, 5) before swimming/volleyball ends, or [5, 7) after
+- Music jam [5, 8): Could do [5, 7) before study group starts
+- Study group [6, 10): Considering [6, 8) or [8, 10) - need to coordinate
+- Swimming [6, 8): Conflicts with study group [6, 10) - need to pick one
+- Study group [7, 11): Could do [8, 11) after gym, or coordinate with others
+- Gym play [8, 11): Want to overlap with others - considering [8, 10) or [10, 11)
+- Music jam [9, 13): Can do [11, 13) after gym
+- Friends' hangout [10, 14): Can do [10, 13) before class
+- Art workshop [10, 14): Conflicts with Friends' hangout - need to pick one or split
+
+**Key Conflicts I Need Help Resolving:**
+1. Swimming [1, 5) vs Volleyball [2, 5) - which are others choosing?
+2. Study group [6, 10) vs Swimming [6, 8) - preferences?
+3. Friends' hangout [10, 14) vs Art workshop [10, 14) - which has more attendance?
+
+Let's coordinate to maximize overlaps! (phase=planning, iter=1)
+
+[Event #4, Iteration: 1] [01:16:30] [Planning] Avery (communication)  Content: Hi everyone! I'm Avery. Here's my refined schedule analysis:
+
+**STRICT (fixed):**
+- Job interview [0, 1) - must attend full window
+- University class [13, 14) - must attend full window
+
+**SOFT activities with conflicts to resolve:**
+
+**Slots 0-3:**
+- Art workshop: Can only do [1, 3) since job interview occupies slot 0
+
+**Slots 1-5 (MAJOR CONFLICT):**
+- Swimming [1, 5) vs Volleyball [2, 5) - they overlap at [2, 5)
+  - If I choose Swimming: could do [1, 3) or [3, 5)
+  - If I choose Volleyball: could do [2, 4) or [3, 5)
+  - **Question: Which activity are more people committing to, and what intervals?**
+
+**Slots 3-7:**
+- Two Friends' hangouts: [3, 7) and [4, 7) - different participant sets
+  - Could attend one or split between both
+
+**Slots 6-11 (MAJOR CONFLICT):**
+- Study group [6, 10) vs Swimming [6, 8) vs Study group [7, 11) vs Gym [8, 11)
+  - These heavily overlap - need to pick strategically
+  - **Question: What intervals are people planning for Study groups and Gym?**
+
+**Slots 9-13:**
+- Music jam [9, 13) - could do [11, 13) after gym/study
+
+**Slots 10-14:**
+- Friends' hangout [10, 14) - can do [10, 13) before university class
+
+**Key coordination questions:**
+1. Swimming vs Volleyball [1-5]: What's the group preference?
+2. Study group intervals: Who's doing [6, 8), [8, 10), or other slots?
+3. Gym play [8, 11): What intervals work for most people?
+
+Let's align our intervals to maximize overlaps! (phase=planning, iter=1)
+
+[Event #5, Iteration: 1] [01:16:48] [Planning] Reese (communication)  Content: Hi everyone! I'm Reese. Here's my preliminary schedule analysis:
+
+**CRITICAL ISSUE - STRICT MEETINGS CONFLICT:**
+- Doctor's appointment [0, 1) - participants: Riley, Jordan, Taylor, Reese
+- Job interview [0, 1) - participants: Quinn, Reese, Jordan, Avery, Riley
+
+Both are STRICT at the same time slot! I cannot attend both full windows. We need to coordinate:
+- If we all commit to Doctor's appointment: +4 reward (4 participants)
+- If we all commit to Job interview: +5 reward (5 participants)
+
+**PROPOSAL: Prioritize Job Interview [0, 1)** since it has more participants and yields higher joint reward. Riley, Jordan, Quinn, Avery - can we all agree to commit to Job interview for slot 0?
+
+**My SOFT meeting proposals (assuming Job interview at [0,1)):**
+
+**Slots 0-3:**
+- Collaborative art workshop: Can do [1, 3) after interview
+
+**Slots 1-5:**
+- Swimming [1, 5) OR Volleyball [2, 5) - need to pick one
+  - Question: Which has more attendance planned?
+
+**Slots 3-7:**
+- Friends' hangout [3, 7): Could do [3, 5) or [5, 7)
+- Friends' hangout [4, 7): Could do [4, 5) or [5, 7)
+
+**Slots 5-8:**
+- Music jamming [5, 8): Considering [5, 7) or [6, 8)
+
+**Slots 6-11:**
+- Study group [6, 10) vs Study group [7, 11) vs Gym [8, 11) - major overlap!
+  - Question: What intervals are others planning?
+
+**Slots 9-14:**
+- Music jam [9, 13): Could do [11, 13)
+- Friends' hangout [10, 14): Could do [10, 13)
+- Collaborative art workshop [10, 14): Conflicts with Friends' hangout
+
+**Key Questions:**
+1. Can Riley, Jordan, Quinn, Avery commit to Job interview [0, 1)?
+2. Swimming vs Volleyball [1-5]: Which to prioritize?
+3. Study groups [6-11]: What intervals work for most people?
+4. Friends' hangout vs Art workshop [10-14]: Preferences?
+
+Let's coordinate to maximize our overlaps! (phase=planning, iter=1)
+
+[Event #6, Iteration: 1] [01:17:04] [Planning] Riley (communication)  Content: Hi everyone! I'm Riley. Here's my schedule analysis:
+
+**CRITICAL STRICT CONFLICT at [0, 1):**
+- Doctor's appointment (strict): 4 participants (Riley, Jordan, Taylor, Reese)
+- Job interview (strict): 5 participants (Quinn, Reese, Jordan, Avery, Riley)
+
+Both are STRICT at the same time! I cannot attend both full windows.
+
+**PROPOSAL: Commit to Job Interview [0, 1)** since it has more participants (+5 potential reward vs +4). Reese, Jordan, Quinn, Avery - please confirm you'll commit to Job interview so we all get the reward!
+
+**My SOFT meeting proposals (assuming Job interview at [0,1)):**
+
+**Slots 0-3:**
+- Art workshop: Can do [1, 3) after interview
+
+**Slots 1-5 (CONFLICT):**
+- Swimming [1, 5) vs Volleyball [2, 5) - need to pick one
+  - Swimming: 6 participants, Volleyball: 6 participants
+  - **Question: Which activity are more people choosing, and what intervals?**
+
+**Slots 3-7:**
+- Friends' hangout [3, 7): Could do [3, 5) or [5, 7) depending on earlier choice
+
+**Slots 5-8:**
+- Music jamming [5, 8): Considering [5, 7) before study group
+
+**Slots 6-11 (MAJOR CONFLICT):**
+- Study group [6, 10) vs Swimming [6, 8) vs Study group [7, 11) vs Gym [8, 11)
+  - **Question: What intervals are others planning for Study groups and Gym?**
+
+**Slots 9-13:**
+- Music jamming [9, 13): Could do [11, 13) after gym/study
+
+**Slot 13-14:**
+- University class [13, 14): MUST attend full window (strict)
+
+**Key Questions:**
+1. Can everyone confirm Job interview [0, 1) commitment?
+2. Swimming vs Volleyball [1-5]: Group preference?
+3. Study groups [6-11]: What intervals work for most?
+
+Let's coordinate to maximize overlaps! (phase=planning, iter=1)
+
+[Event #7, Iteration: 1] [01:17:22] [Planning] Taylor (communication)  Content: Hi everyone! I'm Taylor with a CLARIFICATION on the strict meeting conflict:
+
+**IMPORTANT: I'm only in Doctor's appointment [0, 1), NOT the Job interview!**
+- Doctor's appointment participants: Riley, Jordan, Taylor, Reese
+- Job interview participants: Quinn, Reese, Jordan, Avery, Riley
+
+So I MUST commit to Doctor's appointment [0, 1) - that's my only strict meeting at slot 0.
+Riley, Jordan, Reese - you're in BOTH strict meetings, so you have a real conflict to resolve.
+
+**My FIXED commitments:**
+- Doctor's appointment [0, 1) - STRICT, must attend full window
+- University class [13, 14) - STRICT, must attend full window
+
+**My SOFT proposals (need coordination):**
+
+**Slots 0-3:**
+- Art workshop [0, 3): Can do [1, 3) after doctor's appointment
+
+**Slots 1-5 (CONFLICT - pick one):**
+- Swimming [1, 5) vs Volleyball [2, 5) - both have 6 participants including me
+- **Question: Which are others choosing and what intervals?**
+
+**Slots 4-7:**
+- Friends' hangout [4, 7): Could do [4, 5) or [5, 7) depending on swimming/volleyball choice
+
+**Slots 5-8:**
+- Music jam [5, 8): Considering [5, 7) before study group
+
+**Slots 6-11 (MAJOR CONFLICT):**
+- Study group [6, 10) vs Swimming [6, 8) vs Study group [7, 11) vs Gym [8, 11)
+- Need to pick strategically to maximize overlaps
+
+**Slots 9-14:**
+- Music jam [9, 13): Could do [11, 13)
+- Friends' hangout [10, 14) vs Art workshop [10, 14) - CONFLICT, need to pick one
+- Then University class [13, 14)
+
+**Key Questions:**
+1. Riley, Jordan, Reese - can you confirm which strict meeting you'll choose? (I need Doctor's appointment to get full reward)
+2. Swimming vs Volleyball [1-5]: Group preference?
+3. Study groups/Gym [6-11]: What intervals maximize overlaps?
+4. Friends' hangout vs Art workshop [10-14]: Which has more attendance?
+
+Let's coordinate! (phase=planning, iter=1)
+
+[Event #8, Iteration: 1] [01:18:48] [Planning] Riley (communication)  Content: Hi everyone! Riley here with my analysis and coordination proposal:
+
+**CRITICAL STRICT CONFLICT RESOLUTION:**
+I'm in BOTH strict meetings at [0, 1):
+- Doctor's appointment: 4 participants (Riley, Jordan, Taylor, Reese)
+- Job interview: 5 participants (Quinn, Reese, Jordan, Avery, Riley)
+
+**MY DECISION: I will commit to Job Interview [0, 1)**
+Reasoning: Job interview has more participants (+5 potential reward vs +4). Since Taylor must do Doctor's appointment anyway, we can maximize total reward by having Quinn, Avery, Reese, Jordan, and Riley all commit to Job interview.
+
+**MY SOFT MEETING PLAN (assuming Job Interview [0,1)):**
+
+**Slot 1-3:**
+- Art workshop [1, 3) - after interview, overlaps with Quinn, Taylor, Reese, Avery, Jordan
+
+**Slots 1-5 (CONFLICT - need to pick ONE):**
+- Swimming [1, 5) OR Volleyball [2, 5)
+- **PROPOSAL: Let's all pick Swimming [1, 4) or [2, 5)** - which do others prefer?
+- This gives us 4 slots to overlap before Friends' hangout
+
+**Slots 3-7:**
+- Friends' hangout [3, 7): Could do [3, 5) if Swimming, or [5, 7) if Volleyball
+
+**Slots 5-8:**
+- Music jamming [5, 8): Proposing [5, 7) before study group
+
+**Slots 6-11 (MAJOR CONFLICT):**
+- Study group [6, 10), Swimming [6, 8), Study group [7, 11), Gym [8, 11)
+- **PROPOSAL: Study group [6, 10) for slots 6-8, then Gym [8, 10)**
+- This avoids overlap penalty and maximizes different meeting overlaps
+
+**Slots 9-13:**
+- Music jamming [9, 13): Proposing [10, 12) or [11, 13) after gym
+
+**Slot 13-14:**
+- University class [13, 14): MUST attend full window
+
+**COORDINATION QUESTIONS:**
+1. Quinn, Avery, Reese, Jordan - confirm Job interview [0, 1)?
+2. Swimming [1, 5) vs Volleyball [2, 5) - which should we all pick?
+3. Study group [6, 10) vs [7, 11) - which interval works for most?
+4. Gym [8, 11) - what intervals are others planning?
+
+Let's align to maximize overlaps! (phase=planning, iter=1)
+
+[Event #9, Iteration: 1] [01:19:58] [Execution] Avery (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm015', 'interval': '0-1'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Avery', 'meeting': {'id': 'm015', 'title': 'Job interview', 'meeting_type': 'strict', 'window': [0, 1], 'participants': ['Quinn', 'Reese', 'Jordan', 'Avery', 'Riley']}, 'interval': '0-1', 'total_assigned': 1, 'remaining_variables': 80, 'state_updates': {'attendance': {'Avery__m015': '0-1'}}, 'joint_reward': 1.0}}
+
+[Event #10, Iteration: 1] [01:19:58] [Execution] Avery (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm010', 'interval': '1-3'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Avery', 'meeting': {'id': 'm010', 'title': 'Collaborative art workshop', 'meeting_type': 'soft', 'window': [0, 3], 'participants': ['Quinn', 'Taylor', 'Reese', 'Riley', 'Avery', 'Jordan']}, 'interval': '1-3', 'total_assigned': 2, 'remaining_variables': 79, 'state_updates': {'attendance': {'Avery__m015': '0-1', 'Avery__m010': '1-3'}}, 'joint_reward': 1.0}}
+
+[Event #11, Iteration: 1] [01:19:58] [Execution] Avery (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm011', 'interval': '1-3'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Avery', 'meeting': {'id': 'm011', 'title': 'Swimming session', 'meeting_type': 'soft', 'window': [1, 5], 'participants': ['Avery', 'Jordan', 'Riley', 'Quinn', 'Taylor', 'Reese']}, 'interval': '1-3', 'total_assigned': 3, 'remaining_variables': 78, 'state_updates': {'attendance': {'Avery__m015': '0-1', 'Avery__m010': '1-3', 'Avery__m011': '1-3'}}, 'joint_reward': -1.0}}
+
+[Event #12, Iteration: 1] [01:19:58] [Execution] Avery (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm001', 'interval': 'skip'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Avery', 'meeting': {'id': 'm001', 'title': 'Volleyball free play', 'meeting_type': 'soft', 'window': [2, 5], 'participants': ['Riley', 'Quinn', 'Avery', 'Taylor', 'Reese', 'Jordan']}, 'interval': 'skip', 'total_assigned': 4, 'remaining_variables': 77, 'state_updates': {'attendance': {'Avery__m015': '0-1', 'Avery__m010': '1-3', 'Avery__m011': '1-3', 'Avery__m001': 'skip'}}, 'joint_reward': -1.0}}
+
+
+================================================================================
+

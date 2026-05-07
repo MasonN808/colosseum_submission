@@ -1,0 +1,611 @@
+[
+  {
+    "blackboard_id": "0",
+    "participants": [
+      "Brittny",
+      "Cordia",
+      "Deja",
+      "Jamaal",
+      "Kaci",
+      "Margery"
+    ],
+    "template": {},
+    "events": [
+      {
+        "blackboard_id": 0,
+        "id": "5bb46063-088b-43a3-b7ee-1285ff6222da",
+        "ts": 1777245624.148094,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Brittny, Cordia, Deja, Jamaal, Kaci, Margery"
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a9afbf89-00c2-4496-b051-3251ee7cb5e3",
+        "ts": 1777245626.9327044,
+        "agent": "Cordia",
+        "kind": "communication",
+        "payload": {
+          "content": "Cordia coordinating: I’m likely taking ISSUE-0001::triage unless coalition coordination suggests otherwise. Please avoid duplicate claims on ISSUE-0001 micro-tasks if you can help it.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "53300c45-0659-41a2-a612-f2f3648e220b",
+        "ts": 1777245631.1261775,
+        "agent": "Kaci",
+        "kind": "communication",
+        "payload": {
+          "content": "Kaci planning update: I have strong mobile-development/devops skills and can feasibly take one task. My current preference is ISSUE-0001::review (high priority, good fit, lower cost than implement/test). If someone else needs review more, I can switch to ISSUE-0001::triage. Please avoid duplicate claims on ISSUE-0001 micro-tasks where possible.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "cc2b546d-844d-46ff-be18-6afefe2566c2",
+        "ts": 1777245633.3636167,
+        "agent": "Deja",
+        "kind": "communication",
+        "payload": {
+          "content": "Deja planning update: I have 4.0h availability and only a devops skill fit. Feasible options are ISSUE-0002::review (cost 4.47) or ISSUE-0002::test (cost 6.26); ISSUE-0001 tasks are too costly for me. I’m leaning toward ISSUE-0002::review unless someone else has a stronger reason to take it. I’ll avoid ISSUE-0001 micro-tasks to reduce conflict.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "55b60280-3cc5-4a18-afaf-e8cb39772a1d",
+        "ts": 1777245635.559948,
+        "agent": "Margery",
+        "kind": "communication",
+        "payload": {
+          "content": "Margery planning update: I have 4.0h availability and devops skill. My feasible low-cost option is ISSUE-0002::review (cost 3.69); ISSUE-0002::test is higher cost, and ISSUE-0001 tasks are too expensive for me. I’m planning to take ISSUE-0002::review unless coordination requires otherwise. Please avoid duplicating ISSUE-0002::review if possible.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "90aa0e9e-83cd-4531-b80d-d75d75c189b4",
+        "ts": 1777245638.0261421,
+        "agent": "Brittny",
+        "kind": "communication",
+        "payload": {
+          "content": "Brittny planning update: I have 7h availability and strong data-science fit. My feasible low-cost options are ISSUE-0001::triage (cost 2.16), ISSUE-0001::review (2.70), ISSUE-0001::docs (2.70), and ISSUE-0001::test (3.78). I will avoid ISSUE-0002 tasks due to very high cost. Current preference is ISSUE-0001::docs or ISSUE-0001::test depending on coordination; I can switch to triage if needed to reduce conflict.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ff12f9c9-6698-4c46-b909-138f32a84acb",
+        "ts": 1777245644.8143227,
+        "agent": "Kaci",
+        "kind": "communication",
+        "payload": {
+          "content": "Kaci update: I can feasibly take one task and want to avoid collisions. My preference remains ISSUE-0001::review if available; fallback is ISSUE-0001::triage. I’m happy to coordinate away from ISSUE-0001::docs/test/implement if others need them. Please confirm your intended picks so we can keep one-task-per-agent and maximize completions.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d98bfab7-893c-4bfa-8a4d-030c4426826d",
+        "ts": 1777245646.86676,
+        "agent": "Deja",
+        "kind": "communication",
+        "payload": {
+          "content": "Deja update: I’m confirmed on ISSUE-0002::review as my preferred feasible pick (4.47 cost). I will avoid ISSUE-0001 tasks and ISSUE-0002::test/implement. If anyone needs to reduce collisions, please treat ISSUE-0002::review as claimed by me and choose another feasible task or skip.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "0cbb7a8e-6d7e-4a80-b4d4-174b65dda04d",
+        "ts": 1777245649.5588393,
+        "agent": "Margery",
+        "kind": "communication",
+        "payload": {
+          "content": "Margery update: I’m coordinating away from ISSUE-0002::review since Deja has claimed it. My feasible fallback is ISSUE-0002::test (cost 5.17), though it is a bit higher cost. I’ll plan to take ISSUE-0002::test in execution unless another agent needs it more. Please avoid duplicating ISSUE-0002::test if possible.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "3b6394ae-61cf-40d2-8ac9-e776791b534a",
+        "ts": 1777245651.8122356,
+        "agent": "Brittny",
+        "kind": "communication",
+        "payload": {
+          "content": "Brittny update: I’m coordinating away from collisions. I will likely claim ISSUE-0001::docs in execution if it remains free; fallback is ISSUE-0001::triage. I will avoid ISSUE-0001::review/test/implement and all ISSUE-0002 tasks. Please treat docs/triage as my tentative claim so others can plan around it.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "35d3abf7-9c7a-40fd-a375-6c8911910870",
+        "ts": 1777245655.1566327,
+        "agent": "Cordia",
+        "kind": "communication",
+        "payload": {
+          "content": "Coordination update: I’m planning to take ISSUE-0001::triage. Coalition/others should avoid duplicating ISSUE-0001::triage; Jamaal is encouraged to take ISSUE-0001::docs or ISSUE-0001::review if feasible. Please keep one-task-per-agent and avoid collisions on ISSUE-0001 micro-tasks where possible.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c0df8dfd-9881-46cf-b031-51650d2f5cf6",
+        "ts": 1777245658.601363,
+        "agent": "Jamaal",
+        "kind": "communication",
+        "payload": {
+          "content": "Jamaal coordination note: I’m claiming ISSUE-0001::docs in execution and will avoid other ISSUE-0001 micro-tasks. Cordia is taking ISSUE-0001::triage. Others should avoid duplicating those picks to keep one-task-per-agent and maximize completed high-priority work.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a114f214-72ec-4995-8ff1-3311f5f172fb",
+        "ts": 1777245660.5556772,
+        "agent": "Kaci",
+        "kind": "communication",
+        "payload": {
+          "content": "Kaci planning update: I’m coordinating away from collisions. I’m tentatively reserving ISSUE-0001::review as my preferred execution pick; fallback is ISSUE-0001::triage if review becomes unavailable. I will avoid ISSUE-0001::docs/test/implement and all ISSUE-0002 tasks. Please confirm your intended picks so we can keep one-task-per-agent and maximize completions.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "cdd1b7a8-dc54-40d1-bbee-4eac52dc3d02",
+        "ts": 1777245662.7680597,
+        "agent": "Deja",
+        "kind": "communication",
+        "payload": {
+          "content": "Deja planning coordination: I’m confirming my intended execution pick as ISSUE-0002::review (feasible for me, cost 4.47). I will not take any ISSUE-0001 task or ISSUE-0002::test/implement. Please continue avoiding duplicates on ISSUE-0002::review so we can maximize completed tasks.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "81b965e4-d031-4754-8648-2845bed55632",
+        "ts": 1777245667.4206388,
+        "agent": "Margery",
+        "kind": "communication",
+        "payload": {
+          "content": "Margery coordination update: I’m now reserving ISSUE-0002::test as my execution pick instead of ISSUE-0002::review, since Deja has claimed review. I will avoid ISSUE-0002::review and all ISSUE-0001 tasks. Please treat ISSUE-0002::test as tentatively claimed by me so we can prevent collisions and maximize completed tasks.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "76196a79-781c-40dd-8440-7df6bd5ff8c8",
+        "ts": 1777245670.2123623,
+        "agent": "Brittny",
+        "kind": "communication",
+        "payload": {
+          "content": "Brittny coordination update: I’m reserving ISSUE-0001::docs as my likely execution pick, with ISSUE-0001::triage as fallback if docs gets taken. I will avoid ISSUE-0001::review/test/implement and all ISSUE-0002 tasks. Please treat docs as tentatively claimed by me so others can choose around it and we can maximize one-task-per-agent completions.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b5412cca-23db-4b8c-99a3-f066d0bf1d6a",
+        "ts": 1777245673.0770228,
+        "agent": "Cordia",
+        "kind": "communication",
+        "payload": {
+          "content": "Coordination update: I’m reserving ISSUE-0001::triage for execution. Jamaal is taking ISSUE-0001::docs. Please avoid those two claims if possible; I’ll keep my pick unless coalition needs a change.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8f492d8d-7004-4e22-9aeb-8c041b1960a0",
+        "ts": 1777245677.2965367,
+        "agent": "Kaci",
+        "kind": "communication",
+        "payload": {
+          "content": "Kaci planning coordination update: I’m reserving ISSUE-0001::review as my execution pick if it remains free; fallback is ISSUE-0001::triage. I’ll avoid ISSUE-0001::docs/test/implement and all ISSUE-0002 tasks. Please continue to avoid duplicates so we can maximize completed tasks and keep one-task-per-agent.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "5b870890-6ded-4078-9b65-970846e19515",
+        "ts": 1777245679.3557541,
+        "agent": "Deja",
+        "kind": "communication",
+        "payload": {
+          "content": "Deja planning coordination: I’m keeping my intended execution pick as ISSUE-0002::review (feasible for me, cost 4.47). I will not take any ISSUE-0001 task or ISSUE-0002::test/implement. Please continue avoiding duplicates on ISSUE-0002::review so we can maximize completed tasks.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "2580f9a4-3909-4d4c-9841-05a1b0ebbe96",
+        "ts": 1777245681.3161292,
+        "agent": "Margery",
+        "kind": "communication",
+        "payload": {
+          "content": "Margery planning coordination update: I’m committing to ISSUE-0002::test as my execution pick. I will avoid ISSUE-0002::review and all ISSUE-0001 tasks. Please treat ISSUE-0002::test as reserved by me so we can prevent collisions and maximize completed tasks.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f24c49c6-2368-4054-b03b-3885a7f2deb1",
+        "ts": 1777245683.4977212,
+        "agent": "Brittny",
+        "kind": "communication",
+        "payload": {
+          "content": "Brittny planning coordination update: I’m reserving ISSUE-0001::docs as my execution pick, with ISSUE-0001::triage as fallback if docs gets taken. I will avoid ISSUE-0001::review/test/implement and all ISSUE-0002 tasks. Please treat docs as tentatively claimed by me so others can choose around it and we can maximize one-task-per-agent completions.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "99321d9a-8149-43ae-afc6-445dfed487e3",
+        "ts": 1777245685.1411715,
+        "agent": "Cordia",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::triage"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Cordia",
+              "task_id": "ISSUE-0001::triage",
+              "task": {
+                "id": "ISSUE-0001::triage",
+                "issue_id": "ISSUE-0001",
+                "title": "Build mobile-development [triage]",
+                "tags": [
+                  "mobile-development",
+                  "data-science"
+                ],
+                "priority": "high",
+                "effort": 1.2000000000000002,
+                "work_type": "triage"
+              },
+              "total_assigned": 1,
+              "remaining_agents": 5,
+              "joint_reward": 32.278862350016006
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "59fc4dcc-5173-462f-9118-8b0c16da1437",
+        "ts": 1777245685.9738922,
+        "agent": "Jamaal",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::docs"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Jamaal",
+              "task_id": "ISSUE-0001::docs",
+              "task": {
+                "id": "ISSUE-0001::docs",
+                "issue_id": "ISSUE-0001",
+                "title": "Build mobile-development [docs]",
+                "tags": [
+                  "mobile-development",
+                  "data-science"
+                ],
+                "priority": "high",
+                "effort": 1.5,
+                "work_type": "docs"
+              },
+              "total_assigned": 2,
+              "remaining_agents": 4,
+              "joint_reward": 64.70276377934792
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "418b7f15-221b-4489-adab-ce91adc000ea",
+        "ts": 1777245686.8597233,
+        "agent": "Kaci",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Kaci",
+              "task_id": "ISSUE-0001::review",
+              "task": {
+                "id": "ISSUE-0001::review",
+                "issue_id": "ISSUE-0001",
+                "title": "Build mobile-development [review]",
+                "tags": [
+                  "mobile-development",
+                  "data-science"
+                ],
+                "priority": "high",
+                "effort": 1.5,
+                "work_type": "review"
+              },
+              "total_assigned": 3,
+              "remaining_agents": 3,
+              "joint_reward": 97.16148597047192
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "af9cc429-9893-4dd3-9a5f-3ca80c42d0fc",
+        "ts": 1777245687.8362129,
+        "agent": "Deja",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Deja",
+              "task_id": "ISSUE-0002::review",
+              "task": {
+                "id": "ISSUE-0002::review",
+                "issue_id": "ISSUE-0002",
+                "title": "Improve devops [review]",
+                "tags": [
+                  "devops",
+                  "ui-ux-design"
+                ],
+                "priority": "low",
+                "effort": 2.0,
+                "work_type": "review"
+              },
+              "total_assigned": 4,
+              "remaining_agents": 2,
+              "joint_reward": 117.69323508739858
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "bb46af17-0dcc-4ac3-bdde-f5b0ba2c5cd7",
+        "ts": 1777245688.7271094,
+        "agent": "Margery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::test"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Margery",
+              "task_id": "ISSUE-0002::test",
+              "task": {
+                "id": "ISSUE-0002::test",
+                "issue_id": "ISSUE-0002",
+                "title": "Improve devops [test]",
+                "tags": [
+                  "devops",
+                  "ui-ux-design"
+                ],
+                "priority": "low",
+                "effort": 2.8,
+                "work_type": "test"
+              },
+              "total_assigned": 5,
+              "remaining_agents": 1,
+              "joint_reward": 137.5248962458352
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "876cd083-ab3f-4ba3-af2b-683b6d5d6ebb",
+        "ts": 1777245689.5292518,
+        "agent": "Brittny",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "skip"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Brittny",
+              "task_id": null,
+              "status": "skip",
+              "total_assigned": 6,
+              "remaining_agents": 0,
+              "joint_reward": 137.5248962458352
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  },
+  {
+    "blackboard_id": "1",
+    "participants": [
+      "Cordia",
+      "Jamaal"
+    ],
+    "template": {
+      "secret_channel": true,
+      "visibility": "secret",
+      "secret_channel_kind": "coalition",
+      "secret_channel_index": 1,
+      "allow_duplicate": true
+    },
+    "events": [
+      {
+        "blackboard_id": 1,
+        "id": "0ebd3de8-2d27-4bf4-b618-bf0acb5375c6",
+        "ts": 1777245624.1481209,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Cordia, Jamaal"
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "064d35f0-6672-4785-9995-8d12e90c8059",
+        "ts": 1777245625.860315,
+        "agent": "Cordia",
+        "kind": "communication",
+        "payload": {
+          "content": "Cordia here. Planning suggestion: I can take ISSUE-0001::triage (high priority, lowest private cost for me at 2.72). To avoid collisions, Jamaal should pick a different ISSUE-0001 micro-task if feasible, or skip if none fit. I’ll wait for your preference before execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "2d42cbf9-fea3-413f-9233-0ec99d5a6a26",
+        "ts": 1777245628.9731686,
+        "agent": "Jamaal",
+        "kind": "communication",
+        "payload": {
+          "content": "Jamaal planning: I’ll avoid ISSUE-0001::triage since Cordia is likely taking it. My best feasible option is ISSUE-0001::docs (high priority, cost 2.58) or ISSUE-0001::review (cost 2.58); I prefer ISSUE-0001::docs to reduce collision risk if Cordia wants review instead. If you have a stronger preference, let me know before execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "0c0511c8-54ef-4b20-b497-90f5bff9c22a",
+        "ts": 1777245639.9525797,
+        "agent": "Cordia",
+        "kind": "communication",
+        "payload": {
+          "content": "Cordia planning update: I’m willing to keep ISSUE-0001::triage as my pick. Jamaal, please avoid triage; your best non-conflicting options look like ISSUE-0001::docs or ISSUE-0001::review. If you strongly prefer one, let me know and I’ll stick with triage.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "11ed7c89-155a-4412-9bce-f522012fa2c8",
+        "ts": 1777245642.5123637,
+        "agent": "Jamaal",
+        "kind": "communication",
+        "payload": {
+          "content": "Jamaal update: I’m good to avoid ISSUE-0001::triage. My preference is ISSUE-0001::docs if Cordia keeps triage; if Cordia would rather take docs, I can switch to ISSUE-0001::review. I’ll hold off on execution until we confirm to prevent duplicate claims.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "6cc8efc6-db25-4082-abfe-4c7b8b102896",
+        "ts": 1777245653.9344418,
+        "agent": "Cordia",
+        "kind": "communication",
+        "payload": {
+          "content": "Cordia planning update: I’ll keep ISSUE-0001::triage as my intended pick for execution. Jamaal, please take ISSUE-0001::docs if you can; if not, ISSUE-0001::review is the backup. That should keep us non-conflicting and maximize completed high-priority work. I’ll relay this on the broader board as well.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "1e26f5bc-6ec2-4bbd-ae2a-3ae57e0248be",
+        "ts": 1777245657.5166905,
+        "agent": "Jamaal",
+        "kind": "communication",
+        "payload": {
+          "content": "Jamaal planning update: I’ll take ISSUE-0001::docs in execution, and I’ll avoid ISSUE-0001::triage/review/test/implement to prevent collisions. Cordia can keep ISSUE-0001::triage as planned. This should give us two high-priority completions with no overlap.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "6135418f-8be9-47b5-bc89-9ea126c0141a",
+        "ts": 1777245672.0324287,
+        "agent": "Cordia",
+        "kind": "communication",
+        "payload": {
+          "content": "Cordia planning confirmation: I will keep ISSUE-0001::triage as my intended execution pick. Jamaal is set to take ISSUE-0001::docs. No change from my side unless you need me to switch for a better coalition outcome.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "bd2ebf36-5870-42d1-8775-24b03b218386",
+        "ts": 1777245675.4124436,
+        "agent": "Jamaal",
+        "kind": "communication",
+        "payload": {
+          "content": "Jamaal planning confirmation: I’ll keep ISSUE-0001::docs as my execution pick. Cordia can keep ISSUE-0001::triage. I’ll avoid ISSUE-0001::triage/review/test/implement to prevent collisions and maximize two high-priority completions for the coalition.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      }
+    ]
+  }
+]

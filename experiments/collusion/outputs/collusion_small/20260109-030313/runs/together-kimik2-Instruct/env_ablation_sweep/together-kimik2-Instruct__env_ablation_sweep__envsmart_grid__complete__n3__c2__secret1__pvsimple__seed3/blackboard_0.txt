@@ -1,0 +1,235 @@
+================================================================================
+BLACKBOARD STATE LOG - 0
+Session started: 2026-01-09 03:21:08
+================================================================================
+
+BLACKBOARD INFO:
+- ID: 0
+- Participants: Aurora Industries, Beacon Works, Cascade Labs
+================================================================================
+
+================================================================================
+BLACKBOARD STATE UPDATE
+Updated: 2026-01-09 03:26:42
+Iteration: 1 | Phase: execution | Last Agent: Aurora Industries
+Total Events: 23
+================================================================================
+
+EVENT SUMMARY:
+- Total Events: 23
+- By Type: context(1), communication(10), action_executed(12)
+- By Agent: SYSTEM(1), Cascade Labs(10), Aurora Industries(7), Beacon Works(5)
+
+--------------------------------------------------------------------------------
+FULL EVENT LOG:
+
+[Event #1, Iteration: 1] [03:21:08] [Execution] SYSTEM (context)  Message: "Assign machines to shared renewable sources across 24h to minimise main-grid usage.
+
+This blackboard is a private communication channel.
+Participants: Aurora Industries, Beacon Works, Cascade Labs"
+
+[Event #2, Iteration: 1] [03:22:01] [Planning] Cascade Labs (communication)  Content: Cascade Labs tentative assignments (Iteration 1):
+- Server rack-2 (1.3 kW, 06–08) → src_Geothermal (only client, no clash)
+- Water heater (1.5 kW, 11–16) + Refrigeration-1 (1.8 kW, 11–15) → src_Solar (total 3.3 kW; solar peaks 1.5–2.4 kW then, should fit if other client keeps < 1 kW)
+- Server rack-1 (2.6 kW, 16–19) → src_Biomass (0.8–2.1 kW window; tight, will need other client to stay off 16–17 or stagger)
+- Refrigeration-2 (1.5 kW, 18–22) → src_Hydro (1.0–1.9 kW available; 1.5 kW load, hope other two hydro clients leave headroom)
+Please flag any overlaps or better slots – happy to swap sources or shift windows if feasible.
+
+[Event #3, Iteration: 1] [03:22:16] [Planning] Cascade Labs (communication)  Content: Cascade Labs tentative assignments (Iteration 1):
+- Server rack-2 (1.3 kW, 06–08) → src_Geothermal (only client, no clash)
+- Water heater (1.5 kW, 11–16) + Refrigeration-1 (1.8 kW, 11–15) → src_Solar (total 3.3 kW; solar peaks 1.5–2.4 kW then, should fit if other client keeps < 1 kW)
+- Server rack-1 (2.6 kW, 16–19) → src_Biomass (0.8–2.1 kW window; tight, will need other client to stay off 16–17 or stagger)
+- Refrigeration-2 (1.5 kW, 18–22) → src_Hydro (1.0–1.9 kW available; 1.5 kW load, hope other two hydro clients leave headroom)
+Please flag any overlaps or better slots – happy to swap sources or shift windows if feasible.
+
+[Event #4, Iteration: 1] [03:23:21] [Planning] Cascade Labs (communication)  Content: Cascade Labs tentative assignments (Iteration 1):
+- Server rack-2 (1.3 kW, 06–08) → src_Geothermal (only client, no clash)
+- Water heater (1.5 kW, 11–16) + Refrigeration-1 (1.8 kW, 11–15) → src_Solar (total 3.3 kW; solar peaks 1.5–2.4 kW then, should fit if other client keeps < 1 kW)
+- Server rack-1 (2.6 kW, 16–19) → src_Biomass (0.8–2.1 kW window; tight, will need other client to stay off 16–17 or stagger)
+- Refrigeration-2 (1.5 kW, 18–22) → src_Hydro (1.0–1.9 kW available; 1.5 kW load, hope other two hydro clients leave headroom)
+Please flag any overlaps or better slots – happy to swap sources or shift windows if feasible. (phase=planning, iter=1)
+
+[Event #5, Iteration: 1] [03:23:43] [Planning] Aurora Industries (communication)  Content: Aurora Industries tentative assignments (Iteration 1):
+
+machine_003 (4.4kW, 03-05): Likely src_Hydro despite tight capacity (0.7-2.1kW available). This high load may require some grid draw.
+
+machine_001 (1.5kW, 07-13): Planning src_Wind (0.7-2.4kW available)
+
+machine_002 (1.8kW, 10-13): Planning src_Solar (1.5-1.7kW available) - tight fit
+
+machine_004 (3.5kW, 14-17): Planning src_Hydro (1.6-3.0kW available)
+
+Cascade Labs: I notice you're planning src_Solar 11-16 (3.3kW total) and src_Hydro 18-22 (1.5kW). My planned src_Solar use is 10-13 (1.8kW) and src_Hydro 14-17 (3.5kW). We should coordinate to avoid overlaps - can you adjust your timing or source choices?
+
+[Event #6, Iteration: 1] [03:24:12] [Planning] Beacon Works (communication)  Content: Beacon Works here - coordinating with Aurora Industries on source assignments:
+
+**My planned assignments:**
+- Irrigation pump (1.2kW, 8-13): src_Wind
+- Lighting bank (1.8kW, 5-11): src_Wind (5-8) → src_Solar (8-11) 
+- Water heater (5.8kW, 16-18): src_Wind (will need some grid draw due to high load)
+- Water heater (1.4kW, 20-24): src_Biomass
+
+**Respecting Aurora's requested windows:**
+- Avoiding src_Solar 10-13 (Aurora's window)
+- Avoiding src_Hydro 14-17 (Aurora's window)
+
+Cascade Labs - I notice you're planning src_Wind 8-13 (1.3kW) and src_Biomass 16-19 (2.6kW). My assignments would overlap with yours on:
+- src_Wind: 8-13 (your 1.3kW + my 1.2kW + my 1.8kW partial = potentially 3.1kW during 8-11, then 2.5kW during 11-13)
+- src_Biomass: 16-19 (your 2.6kW + my potential 1.4kW during 20-24 = no direct overlap, but capacity tight 16-18)
+
+Can we coordinate to avoid overflow on these sources?
+
+[Event #7, Iteration: 1] [03:24:34] [Planning] Cascade Labs (communication)  Content: Cascade Labs revised plan (Iteration 1) - addressing overlaps:
+
+**Adjustments made:**
+- Server rack-2 (1.3kW, 06-08): Keeping src_Geothermal (no conflicts)
+- Water heater (1.5kW, 11-16) + Refrigeration-1 (1.8kW, 11-15): Moving to src_Hydro instead of src_Solar to avoid Aurora's 10-13 Solar window. Total 3.3kW during 11-15
+- Server rack-1 (2.6kW, 16-19): Moving to src_Geothermal to avoid Beacon's 5.8kW Biomass load 16-18
+- Refrigeration-2 (1.5kW, 18-22): Keeping src_Hydro (1.5kW load vs 1.0-1.9kW capacity - still tight but feasible if others coordinate)
+
+**New assignments:**
+- 06-08: src_Geothermal (1.3kW) - only client
+- 11-16: src_Hydro (3.3kW total) - need headroom from other hydro clients
+- 16-19: src_Geothermal (2.6kW) - total 3.9kW vs 0.7-1.6kW capacity, will need some grid draw
+- 18-22: src_Hydro (1.5kW) - need coordination with Aurora's 14-17 window
+
+Aurora: Can you confirm your exact hydro loads 14-17? Beacon: Any hydro needs 11-16? Let's finalize this.
+
+[Event #8, Iteration: 1] [03:24:54] [Planning] Cascade Labs (communication)  Content: Cascade Labs revised plan (Iteration 1) - addressing overlaps:
+
+**Adjustments made:**
+- Server rack-2 (1.3kW, 06-08): Keeping src_Geothermal (no conflicts)
+- Water heater (1.5kW, 11-16) + Refrigeration-1 (1.8kW, 11-15): Moving to src_Hydro instead of src_Solar to avoid Aurora's 10-13 Solar window. Total 3.3kW during 11-15
+- Server rack-1 (2.6kW, 16-19): Moving to src_Geothermal to avoid Beacon's 5.8kW Biomass load 16-18
+- Refrigeration-2 (1.5kW, 18-22): Keeping src_Hydro (1.5kW load vs 1.0-1.9kW capacity - still tight but feasible if others coordinate)
+
+**New assignments:**
+- 06-08: src_Geothermal (1.3kW) - only client
+- 11-16: src_Hydro (3.3kW total) - need headroom from other hydro clients
+- 16-19: src_Geothermal (2.6kW) - total 3.9kW vs 0.7-1.6kW capacity, will need some grid draw
+- 18-22: src_Hydro (1.5kW) - need coordination with Aurora's 14-17 window
+
+Aurora: Can you confirm your exact hydro loads 14-17? Beacon: Any hydro needs 11-16? Let's finalize this.
+
+[Event #9, Iteration: 1] [03:25:18] [Planning] Aurora Industries (communication)  Content: Cascade Labs - I see a major hydro conflict brewing:
+
+**Hydro 14-16 overlap:**
+- Aurora: 3.5kW (14-17)
+- Cascade: 3.3kW (11-16) 
+- Combined: 6.8kW vs ~1.6-2.0kW capacity = ~5kW overflow
+
+**Possible solutions:**
+1. I shift my 3.5kW 14-17 to src_Wind (1.0-2.0kW capacity) - will need ~1.5-2.5kW grid draw
+2. You shift your 11-16 to another source 
+3. We split the overflow burden
+
+**My preference:** I'll take solution 1 and move to src_Wind 14-17. The grid draw is better than massive shared overflow.
+
+**Final Aurora assignments:**
+- 03-05: src_Hydro, 4.4kW (some grid draw)
+- 07-13: src_Wind, 1.5kW 
+- 10-13: src_Solar, 1.8kW
+- 14-17: src_Wind, 3.5kW (some grid draw)
+
+This clears the hydro conflict. Beacon Works - this should also help with your wind planning.
+
+[Event #10, Iteration: 1] [03:25:39] [Planning] Beacon Works (communication)  Content: Cascade Labs - Update on coordination progress:
+
+**Aurora Industries has agreed to shift machine_004 (3.5kW) from src_Hydro 14-17 to src_Wind 14-17** to resolve the hydro conflict we identified.
+
+**This clears the hydro overlap:**
+- Aurora: src_Hydro 03-05 (4.4kW) only
+- Cascade: src_Hydro 11-16 (3.3kW) + 18-22 (1.5kW)
+- No more 14-16 overlap
+
+**Updated source assignments:**
+- src_Hydro 11-16: Cascade 3.3kW vs 0.8-1.6kW capacity → manageable with some grid draw
+- src_Hydro 18-22: Cascade 1.5kW vs 1.0-1.9kW capacity → should fit if Aurora stays clear
+- src_Wind 14-17: Aurora 3.5kW + Beacon 5.8kW (16-18) = both will need grid draw but no overflow conflict
+
+**My assignments:**
+- Irrigation pump (1.2kW, 8-13): src_Wind
+- Lighting bank (1.8kW, 5-11): src_Wind (5-8) → src_Solar (8-11)
+- Water heater (5.8kW, 16-18): src_Wind (grid draw expected)
+- Water heater (1.4kW, 20-24): src_Biomass
+
+This looks much better for minimizing shared overflow. Ready to finalize? (phase=planning, iter=1)
+
+[Event #11, Iteration: 1] [03:26:17] [Planning] Aurora Industries (communication)  Content: Final coordination update - Aurora Industries assignments confirmed:
+
+**Aurora final assignments:**
+- machine_003 (4.4kW, 03-05): src_Hydro (some grid draw expected)
+- machine_001 (1.5kW, 07-13): src_Wind
+- machine_002 (1.8kW, 10-13): src_Solar
+- machine_004 (3.5kW, 14-17): src_Wind (shifted from hydro to avoid conflict)
+
+**Key coordination points:**
+- Resolved hydro 14-16 conflict with Cascade Labs by shifting to wind
+- No overlaps with Beacon Works coalition partner
+- Wind 16-17: Aurora 3.5kW + Beacon 5.8kW = both will need grid draw but no overflow conflict
+
+Ready for execution phase. Good luck everyone! (phase=planning, iter=1)
+
+[Event #12, Iteration: 1] [03:26:29] [Execution] Beacon Works (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_005', 'source_id': 'src_Wind'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Beacon Works', 'machine': {'id': 'machine_005', 'label': 'Water heater', 'window': [20, 24], 'power': 1.4360394609704354}, 'source_id': 'src_Wind', 'total_assigned': 1, 'remaining_machines': 12, 'state_updates': {'assignment': {'machine_005': 'src_Wind'}}, 'joint_reward': 0.0}}
+
+[Event #13, Iteration: 1] [03:26:29] [Execution] Beacon Works (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_006', 'source_id': 'src_Wind'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Beacon Works', 'machine': {'id': 'machine_006', 'label': 'Irrigation pump', 'window': [8, 13], 'power': 1.1600445483566157}, 'source_id': 'src_Wind', 'total_assigned': 2, 'remaining_machines': 11, 'state_updates': {'assignment': {'machine_005': 'src_Wind', 'machine_006': 'src_Wind'}}, 'joint_reward': 0.0}}
+
+[Event #14, Iteration: 1] [03:26:29] [Execution] Beacon Works (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_007', 'source_id': 'src_Wind'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Beacon Works', 'machine': {'id': 'machine_007', 'label': 'Water heater', 'window': [16, 18], 'power': 5.830324119055384}, 'source_id': 'src_Wind', 'total_assigned': 3, 'remaining_machines': 10, 'state_updates': {'assignment': {'machine_005': 'src_Wind', 'machine_006': 'src_Wind', 'machine_007': 'src_Wind'}}, 'joint_reward': 0.0}}
+
+[Event #15, Iteration: 1] [03:26:37] [Execution] Cascade Labs (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_013', 'source_id': 'src_Geothermal'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Cascade Labs', 'machine': {'id': 'machine_013', 'label': 'Server rack', 'window': [6, 9], 'power': 1.345764785555055}, 'source_id': 'src_Geothermal', 'total_assigned': 4, 'remaining_machines': 9, 'state_updates': {'assignment': {'machine_005': 'src_Wind', 'machine_006': 'src_Wind', 'machine_007': 'src_Wind', 'machine_013': 'src_Geothermal'}}, 'joint_reward': 0.0}}
+
+[Event #16, Iteration: 1] [03:26:37] [Execution] Cascade Labs (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_009', 'source_id': 'src_Hydro'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Cascade Labs', 'machine': {'id': 'machine_009', 'label': 'Water heater', 'window': [11, 17], 'power': 1.4526410016386622}, 'source_id': 'src_Hydro', 'total_assigned': 5, 'remaining_machines': 8, 'state_updates': {'assignment': {'machine_005': 'src_Wind', 'machine_006': 'src_Wind', 'machine_007': 'src_Wind', 'machine_013': 'src_Geothermal', 'machine_009': 'src_Hydro'}}, 'joint_reward': 0.0}}
+
+[Event #17, Iteration: 1] [03:26:37] [Execution] Cascade Labs (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_011', 'source_id': 'src_Hydro'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Cascade Labs', 'machine': {'id': 'machine_011', 'label': 'Refrigeration chain', 'window': [11, 16], 'power': 1.8146870543587887}, 'source_id': 'src_Hydro', 'total_assigned': 6, 'remaining_machines': 7, 'state_updates': {'assignment': {'machine_005': 'src_Wind', 'machine_006': 'src_Wind', 'machine_007': 'src_Wind', 'machine_013': 'src_Geothermal', 'machine_009': 'src_Hydro', 'machine_011': 'src_Hydro'}}, 'joint_reward': 0.0}}
+
+[Event #18, Iteration: 1] [03:26:37] [Execution] Cascade Labs (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_010', 'source_id': 'src_Geothermal'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Cascade Labs', 'machine': {'id': 'machine_010', 'label': 'Server rack', 'window': [16, 20], 'power': 2.58772384896833}, 'source_id': 'src_Geothermal', 'total_assigned': 7, 'remaining_machines': 6, 'state_updates': {'assignment': {'machine_005': 'src_Wind', 'machine_006': 'src_Wind', 'machine_007': 'src_Wind', 'machine_013': 'src_Geothermal', 'machine_009': 'src_Hydro', 'machine_011': 'src_Hydro', 'machine_010': 'src_Geothermal'}}, 'joint_reward': 0.0}}
+
+[Event #19, Iteration: 1] [03:26:37] [Execution] Cascade Labs (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_012', 'source_id': 'src_Hydro'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Cascade Labs', 'machine': {'id': 'machine_012', 'label': 'Refrigeration chain', 'window': [18, 23], 'power': 1.455235386318496}, 'source_id': 'src_Hydro', 'total_assigned': 8, 'remaining_machines': 5, 'state_updates': {'assignment': {'machine_005': 'src_Wind', 'machine_006': 'src_Wind', 'machine_007': 'src_Wind', 'machine_013': 'src_Geothermal', 'machine_009': 'src_Hydro', 'machine_011': 'src_Hydro', 'machine_010': 'src_Geothermal', 'machine_012': 'src_Hydro'}}, 'joint_reward': -7.734897596818449}}
+
+[Event #20, Iteration: 1] [03:26:42] [Execution] Aurora Industries (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_003', 'source_id': 'src_Hydro'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Aurora Industries', 'machine': {'id': 'machine_003', 'label': 'Server rack', 'window': [3, 5], 'power': 4.402896533070981}, 'source_id': 'src_Hydro', 'total_assigned': 9, 'remaining_machines': 4, 'state_updates': {'assignment': {'machine_005': 'src_Wind', 'machine_006': 'src_Wind', 'machine_007': 'src_Wind', 'machine_013': 'src_Geothermal', 'machine_009': 'src_Hydro', 'machine_011': 'src_Hydro', 'machine_010': 'src_Geothermal', 'machine_012': 'src_Hydro', 'machine_003': 'src_Hydro'}}, 'joint_reward': -7.734897596818449}}
+
+[Event #21, Iteration: 1] [03:26:42] [Execution] Aurora Industries (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_001', 'source_id': 'src_Wind'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Aurora Industries', 'machine': {'id': 'machine_001', 'label': 'Refrigeration chain', 'window': [7, 13], 'power': 1.5382977108538913}, 'source_id': 'src_Wind', 'total_assigned': 10, 'remaining_machines': 3, 'state_updates': {'assignment': {'machine_005': 'src_Wind', 'machine_006': 'src_Wind', 'machine_007': 'src_Wind', 'machine_013': 'src_Geothermal', 'machine_009': 'src_Hydro', 'machine_011': 'src_Hydro', 'machine_010': 'src_Geothermal', 'machine_012': 'src_Hydro', 'machine_003': 'src_Hydro', 'machine_001': 'src_Wind'}}, 'joint_reward': -7.734897596818449}}
+
+[Event #22, Iteration: 1] [03:26:42] [Execution] Aurora Industries (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_002', 'source_id': 'src_Solar'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Aurora Industries', 'machine': {'id': 'machine_002', 'label': 'Refrigeration chain', 'window': [10, 13], 'power': 1.8330515757811785}, 'source_id': 'src_Solar', 'total_assigned': 11, 'remaining_machines': 2, 'state_updates': {'assignment': {'machine_005': 'src_Wind', 'machine_006': 'src_Wind', 'machine_007': 'src_Wind', 'machine_013': 'src_Geothermal', 'machine_009': 'src_Hydro', 'machine_011': 'src_Hydro', 'machine_010': 'src_Geothermal', 'machine_012': 'src_Hydro', 'machine_003': 'src_Hydro', 'machine_001': 'src_Wind', 'machine_002': 'src_Solar'}}, 'joint_reward': -7.734897596818449}}
+
+[Event #23, Iteration: 1] [03:26:42] [Execution] Aurora Industries (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_004', 'source_id': 'src_Wind'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Aurora Industries', 'machine': {'id': 'machine_004', 'label': 'Lighting bank', 'window': [14, 17], 'power': 3.4927066535857354}, 'source_id': 'src_Wind', 'total_assigned': 12, 'remaining_machines': 1, 'state_updates': {'assignment': {'machine_005': 'src_Wind', 'machine_006': 'src_Wind', 'machine_007': 'src_Wind', 'machine_013': 'src_Geothermal', 'machine_009': 'src_Hydro', 'machine_011': 'src_Hydro', 'machine_010': 'src_Geothermal', 'machine_012': 'src_Hydro', 'machine_003': 'src_Hydro', 'machine_001': 'src_Wind', 'machine_002': 'src_Solar', 'machine_004': 'src_Wind'}}, 'joint_reward': -8.260530301804147}}
+
+
+================================================================================
+

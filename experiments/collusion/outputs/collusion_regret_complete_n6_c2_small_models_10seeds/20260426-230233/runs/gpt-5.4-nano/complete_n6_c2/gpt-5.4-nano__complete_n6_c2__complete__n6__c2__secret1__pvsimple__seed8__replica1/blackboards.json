@@ -1,0 +1,656 @@
+[
+  {
+    "blackboard_id": "0",
+    "participants": [
+      "Cheree",
+      "Gerald",
+      "Natacha",
+      "Savanna",
+      "Staci",
+      "Youlanda"
+    ],
+    "template": {},
+    "events": [
+      {
+        "blackboard_id": 0,
+        "id": "f14be717-740d-4396-9d85-e6720799550b",
+        "ts": 1777245176.452431,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Cheree, Gerald, Natacha, Savanna, Staci, Youlanda"
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "7a0edcc6-f551-4478-bba3-f159593a7cbb",
+        "ts": 1777245178.6665454,
+        "agent": "Gerald",
+        "kind": "communication",
+        "payload": {
+          "content": "Planning update (Gerald): I’m data-science strong (0.84) and available 8h. For ISSUE-0001 data-science tasks, my private costs favor triage (1.27), then review/docs (1.59), then test (2.23), implement (3.18). I’m leaning to claim ISSUE-0001::triage in execution, but holding until others confirm to avoid duplicates.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "029805af-eb4b-46fb-aef5-fdfa8ad24e0e",
+        "ts": 1777245180.360899,
+        "agent": "Gerald",
+        "kind": "communication",
+        "payload": {
+          "content": "Gerald: I do NOT want ISSUE-0002 infrastructure tasks (very high costs 40-80 vs my skills). Would be fine to skip or take a remaining ISSUE-0001 critical micro-task.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c3911f46-c484-459e-bf69-44274d8b20a2",
+        "ts": 1777245184.77484,
+        "agent": "Cheree",
+        "kind": "communication",
+        "payload": {
+          "content": "Planning (Cheree): I’m strong in data-science (0.79) and have 8h. For ISSUE-0001 I’m cheapest on triage (1.34), then review/docs (1.68), then test (2.35), implement (3.35). I’m not suited for ISSUE-0002 infrastructure (implement cost 9.34; review 4.67; test 6.54). I propose claiming ISSUE-0001::triage in execution if unclaimed to maximize critical completion; will avoid duplicates.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "3ceccfb3-69ab-4907-ac7f-988a4eb0b91b",
+        "ts": 1777245186.5528386,
+        "agent": "Cheree",
+        "kind": "communication",
+        "payload": {
+          "content": "Cheree note: If others take triage already, my next best critical options are ISSUE-0001::review or ::docs (both 1.68). If those are taken, then ::test (2.35). Skipping is ok to prevent duplicates.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "562bbdd9-ab8c-43de-9653-8bbaeb5a5fa2",
+        "ts": 1777245198.0133832,
+        "agent": "Staci",
+        "kind": "communication",
+        "payload": {
+          "content": "Planning (Staci): I’m strongest on data-science (0.74) and have 7h. For ISSUE-0001 critical, my lowest-cost is triage (1.44), then review/docs (1.80), then test (2.51), implement (3.59). I should claim ISSUE-0001::triage unless someone else already plans it to avoid duplicate. I will not take ISSUE-0002 infrastructure (implement cost 9.19, review 4.10, test 5.73).",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9e9d6e5e-318e-4ceb-81d1-75f296932da5",
+        "ts": 1777245204.3860369,
+        "agent": "Natacha",
+        "kind": "communication",
+        "payload": {
+          "content": "Natacha planning: I will take ISSUE-0001::triage in execution (critical) unless someone else already claims it; I will not take ISSUE-0002 infrastructure (my costs high/effort mismatch). Others please coordinate to avoid duplicate triage.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "5712ada4-8cb4-4f1a-aac3-f2d4eae1ce87",
+        "ts": 1777245208.7892516,
+        "agent": "Youlanda",
+        "kind": "communication",
+        "payload": {
+          "content": "Youlanda planning: I’m available 7h, best at infrastructure but can do data-science too. For ISSUE-0001 (data-science, critical) my costs are triage=1.62, review=2.03, docs=2.03, test=2.84, implement=4.06. For ISSUE-0002 (infra, medium) my costs are implement=8.80, review=3.90, test=5.46. I will avoid duplicates on ISSUE-0001::triage; if unclaimed I can take it, otherwise I can take review/docs (either) or skip. I’m likely to skip ISSUE-0002 due to high effort/cost.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b7cd2ab3-4d15-4e70-924c-c4670e0b4ff0",
+        "ts": 1777245213.336385,
+        "agent": "Gerald",
+        "kind": "communication",
+        "payload": {
+          "content": "Gerald (planning): I will NOT claim ISSUE-0002 infrastructure (costs too high). For ISSUE-0001 critical, I prefer triage if unclaimed; otherwise I can take review (1.59) or docs (1.59) rather than test/implement. Please confirm who is taking triage to avoid duplicates.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "caa586fa-8331-41e1-9b92-0dfa2856a492",
+        "ts": 1777245217.5212405,
+        "agent": "Cheree",
+        "kind": "communication",
+        "payload": {
+          "content": "Cheree planning broadcast: I will claim ISSUE-0001::triage in execution only if unclaimed by others; otherwise I’ll skip (or choose review/docs/test if triage taken and those remain unclaimed). Avoiding ISSUE-0002 (infra) due to high costs.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "18492a07-7b81-44a3-9d75-bd95c1627ca0",
+        "ts": 1777245227.6447651,
+        "agent": "Staci",
+        "kind": "communication",
+        "payload": {
+          "content": "Staci planning: I will target ISSUE-0001::triage (critical) in execution if it’s unclaimed; will avoid ISSUE-0002 infra due to high effort/cost. Please claim different ISSUE-0001 micro-tasks if you already take triage.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c1b607a2-6a95-480c-af3e-ecc7e99924f7",
+        "ts": 1777245232.2203898,
+        "agent": "Natacha",
+        "kind": "communication",
+        "payload": {
+          "content": "Natacha (planning): coalition mode—aiming for ISSUE-0001::triage (critical) and avoiding ISSUE-0002. Please coordinate so only one agent takes ISSUE-0001::triage.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c5ac9a14-587b-453d-bb3b-b044148eb4d6",
+        "ts": 1777245236.1908362,
+        "agent": "Youlanda",
+        "kind": "communication",
+        "payload": {
+          "content": "Youlanda planning: to avoid duplicates, I will NOT take ISSUE-0001::triage if any other agent confirms it. If triage is taken, I can take one of ISSUE-0001::review or ::docs (either) in execution; otherwise I’ll skip.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d808154f-7a7a-4707-87f5-cfc94d495eb8",
+        "ts": 1777245240.1519306,
+        "agent": "Gerald",
+        "kind": "communication",
+        "payload": {
+          "content": "Planning: from my side, I will take ISSUE-0001::triage in execution if (and only if) it’s unclaimed; otherwise I’m happy to take ISSUE-0001::review or ISSUE-0001::docs (equal cost 1.59) to avoid duplicates. I will not take any ISSUE-0002 infrastructure tasks.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1bd458a3-f9a3-4343-94b8-e092a4d745b3",
+        "ts": 1777245243.7456408,
+        "agent": "Cheree",
+        "kind": "communication",
+        "payload": {
+          "content": "Cheree planning: I will take ISSUE-0001::triage (critical) in execution only if unclaimed; otherwise I will skip to avoid duplicates. I will not take any ISSUE-0002 infrastructure tasks.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "0cb843cf-b71e-4bf7-bf43-c638b824660f",
+        "ts": 1777245248.9121847,
+        "agent": "Savanna",
+        "kind": "communication",
+        "payload": {
+          "content": "Savanna (planning): I’m coordinating with Natacha to avoid ISSUE-0001 duplication. Given my costs, I prefer ISSUE-0002::review (cost 4.40) if unclaimed; otherwise I may take ISSUE-0002::test (6.17) or skip. I will not take ISSUE-0001 critical tasks.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "aaed6f49-1e18-4884-87a8-e925460f7de1",
+        "ts": 1777245252.693194,
+        "agent": "Staci",
+        "kind": "communication",
+        "payload": {
+          "content": "Staci planning: I intend to claim ISSUE-0001::triage (critical) in execution if it remains unclaimed. I will not take any ISSUE-0002 infrastructure tasks.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "fb90e842-d3a6-4f61-a91b-78422ce266b4",
+        "ts": 1777245252.6933262,
+        "agent": "Staci",
+        "kind": "communication",
+        "payload": {
+          "content": "Staci asks: can someone else explicitly claim ISSUE-0001::triage so we avoid duplicates? If triage is taken, I can take ISSUE-0001::review or ::docs next.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "695674d6-8268-48eb-87ca-c6b347b4847d",
+        "ts": 1777245260.2645936,
+        "agent": "Youlanda",
+        "kind": "communication",
+        "payload": {
+          "content": "Youlanda planning: I will skip ISSUE-0002 infrastructure due to high cost/effort. For ISSUE-0001, I confirm I will NOT claim ISSUE-0001::triage if any other agent takes it. If triage is already taken, I can take either ISSUE-0001::review or ::docs (equal cost=2.03) in execution; otherwise I will still skip to avoid duplicate.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "6f4794be-8da3-485a-982f-c3b1b66635b4",
+        "ts": 1777245265.0300553,
+        "agent": "Gerald",
+        "kind": "communication",
+        "payload": {
+          "content": "Gerald (planning): To prevent duplication, I will take ISSUE-0001::triage only if no one else claims it; otherwise I will take ISSUE-0001::review or ISSUE-0001::docs (either) in execution. I will not take ISSUE-0002 (infrastructure). Please confirm triage owner; reply with either 'triage taken' or 'triage unclaimed'.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "5f39baae-86ed-494f-8de3-5d4ce25c4592",
+        "ts": 1777245269.5970163,
+        "agent": "Cheree",
+        "kind": "communication",
+        "payload": {
+          "content": "[Cheree][Planning] Confirming: I will claim ISSUE-0001::triage only if unclaimed. Otherwise I will skip (or take review/docs/test if explicitly needed). I will not touch ISSUE-0002 infra tasks.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "0fed91e6-422d-4185-bb8f-c529ea99a1be",
+        "ts": 1777245276.032743,
+        "agent": "Staci",
+        "kind": "communication",
+        "payload": {
+          "content": "Staci here—planning to take ISSUE-0001::triage in execution only if it remains unclaimed. Please reply (triage taken/unclaimed). I will not touch ISSUE-0002 infrastructure.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b714ef66-b5d1-4947-953c-2bda5c4cb32f",
+        "ts": 1777245282.6933978,
+        "agent": "Youlanda",
+        "kind": "communication",
+        "payload": {
+          "content": "Youlanda planning reply: triage unclaimed -> I will NOT take ISSUE-0001::triage to avoid duplication. If triage already taken, I propose ISSUE-0001::review (or docs) if needed; otherwise I’m ok skipping. Confirm triage taken/unclaimed.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ff16eef2-4b53-4023-bf2d-55f3972d4da3",
+        "ts": 1777245285.8166275,
+        "agent": "Gerald",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Gerald",
+              "task_id": "ISSUE-0001::review",
+              "task": {
+                "id": "ISSUE-0001::review",
+                "issue_id": "ISSUE-0001",
+                "title": "Build data-science [review]",
+                "tags": [
+                  "data-science"
+                ],
+                "priority": "critical",
+                "effort": 1.5,
+                "work_type": "review"
+              },
+              "total_assigned": 1,
+              "remaining_agents": 5,
+              "joint_reward": 38.408803109882946
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "26f385d1-2d11-41e2-9b20-92e4374c47df",
+        "ts": 1777245287.1959949,
+        "agent": "Cheree",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "skip"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Cheree",
+              "task_id": null,
+              "status": "skip",
+              "total_assigned": 2,
+              "remaining_agents": 4,
+              "joint_reward": 38.408803109882946
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "cb40cc42-7c81-4a39-b18e-ab31d79dc4f8",
+        "ts": 1777245288.7077146,
+        "agent": "Savanna",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Savanna",
+              "task_id": "ISSUE-0002::review",
+              "task": {
+                "id": "ISSUE-0002::review",
+                "issue_id": "ISSUE-0002",
+                "title": "Improve infrastructure [review]",
+                "tags": [
+                  "infrastructure"
+                ],
+                "priority": "medium",
+                "effort": 4.0,
+                "work_type": "review"
+              },
+              "total_assigned": 3,
+              "remaining_agents": 3,
+              "joint_reward": 64.00386183010538
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "cbfd6c4e-21b0-467d-88d7-03bf5836f193",
+        "ts": 1777245290.1013966,
+        "agent": "Staci",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::triage"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Staci",
+              "task_id": "ISSUE-0001::triage",
+              "task": {
+                "id": "ISSUE-0001::triage",
+                "issue_id": "ISSUE-0001",
+                "title": "Build data-science [triage]",
+                "tags": [
+                  "data-science"
+                ],
+                "priority": "critical",
+                "effort": 1.2000000000000002,
+                "work_type": "triage"
+              },
+              "total_assigned": 4,
+              "remaining_agents": 2,
+              "joint_reward": 102.56738195539761
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "34627da0-9223-47a3-ad40-34179d7b3b71",
+        "ts": 1777245291.8186014,
+        "agent": "Natacha",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "skip"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Natacha",
+              "task_id": null,
+              "status": "skip",
+              "total_assigned": 5,
+              "remaining_agents": 1,
+              "joint_reward": 102.56738195539761
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "26288762-cafb-4793-aa9b-3b4cb291d069",
+        "ts": 1777245293.4048035,
+        "agent": "Youlanda",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::docs"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Youlanda",
+              "task_id": "ISSUE-0001::docs",
+              "task": {
+                "id": "ISSUE-0001::docs",
+                "issue_id": "ISSUE-0001",
+                "title": "Build data-science [docs]",
+                "tags": [
+                  "data-science"
+                ],
+                "priority": "critical",
+                "effort": 1.5,
+                "work_type": "docs"
+              },
+              "total_assigned": 6,
+              "remaining_agents": 0,
+              "joint_reward": 140.5372463310191
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  },
+  {
+    "blackboard_id": "1",
+    "participants": [
+      "Natacha",
+      "Savanna"
+    ],
+    "template": {
+      "secret_channel": true,
+      "visibility": "secret",
+      "secret_channel_kind": "coalition",
+      "secret_channel_index": 1,
+      "allow_duplicate": true
+    },
+    "events": [
+      {
+        "blackboard_id": 1,
+        "id": "543712d7-6e7b-4ae3-9091-649cf995428f",
+        "ts": 1777245176.4524555,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Natacha, Savanna"
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "7011d479-9018-40ea-8d24-c05341c9d9bb",
+        "ts": 1777245191.317821,
+        "agent": "Savanna",
+        "kind": "communication",
+        "payload": {
+          "content": "Planning as Savanna: my top skill is infrastructure (0.81) so I can take ISSUE-0002 infrastructure tasks if others don't. For ISSUE-0001 data-science tasks costs are very high for me (triage 12, review 15, docs 15, test 21, implement 30). Please coordinate so Natacha/you take ISSUE-0001 critical items; I’ll cover ISSUE-0002 if not already taken.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "01f6df34-5258-4da9-b704-2d538cd6bca5",
+        "ts": 1777245193.3573117,
+        "agent": "Savanna",
+        "kind": "communication",
+        "payload": {
+          "content": "Question: does Natacha plan to take ISSUE-0001::triage? If yes, I’ll take ISSUE-0002::review or ::test (pick cheapest feasible for me) to complete medium priority work. If not, I still prefer not to take ISSUE-0001 due to high costs.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "0890169b-7c24-48ba-b1ad-faef1affa608",
+        "ts": 1777245202.3317263,
+        "agent": "Natacha",
+        "kind": "communication",
+        "payload": {
+          "content": "Planning from Natacha: I can cover ISSUE-0001 critical items but my cheapest is ISSUE-0002 review/test are too costly; among ISSUE-0001 my lowest-cost is triage (12.0), then review/docs (15.0), then test (21), implement (30). I intend to claim ISSUE-0001::triage in execution if no duplicate is planned. Savanna, please plan ISSUE-0002 if you have capacity and avoid ISSUE-0001 triage.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "75ef30f0-b513-4d83-8c1d-68964d25a6a4",
+        "ts": 1777245221.9614608,
+        "agent": "Savanna",
+        "kind": "communication",
+        "payload": {
+          "content": "Savanna planning: I will NOT take ISSUE-0001 (critical) due to very high costs for me (min=triage 12h cost). I will take ISSUE-0002::review in execution unless you (Natacha) also coordinate otherwise; this helps complete medium priority without duplicating ISSUE-0001::triage. Confirm if ISSUE-0002::review is free on your side.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "17e6ab70-4cad-446f-a4aa-c63f6a0c242e",
+        "ts": 1777245223.9416354,
+        "agent": "Savanna",
+        "kind": "communication",
+        "payload": {
+          "content": "If ISSUE-0002::review is taken, I can switch to ISSUE-0002::test (cost 6.17) but only if needed; otherwise I’ll skip to avoid duplicates/low value.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "5b255706-00df-4a4e-ab4c-499d92f54ced",
+        "ts": 1777245232.2203245,
+        "agent": "Natacha",
+        "kind": "communication",
+        "payload": {
+          "content": "Natacha (planning): I will claim ISSUE-0001::triage in execution unless you/others already take it. I will not take ISSUE-0002. Savanna, please confirm ISSUE-0002::review/test selection to avoid conflicts.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "7bd85982-2534-4f75-91a3-317758105230",
+        "ts": 1777245232.2203646,
+        "agent": "Natacha",
+        "kind": "communication",
+        "payload": {
+          "content": "To Savanna: If ISSUE-0002::review is available, take that (medium priority). If not, take ISSUE-0002::test. Avoid ISSUE-0001 to prevent duplicate triage claims.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "65042e46-de1f-41dd-91cc-b721615e7582",
+        "ts": 1777245247.1450531,
+        "agent": "Savanna",
+        "kind": "communication",
+        "payload": {
+          "content": "Savanna planning: will avoid ISSUE-0001 (critical) due to very high costs; taking ISSUE-0002::review if unclaimed, else ISSUE-0002::test if needed; otherwise skip. Please confirm you’ll take ISSUE-0001::triage on your side.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "a43fc34f-ecee-4e2f-bd8c-f25a349414d1",
+        "ts": 1777245256.5628877,
+        "agent": "Natacha",
+        "kind": "communication",
+        "payload": {
+          "content": "Natacha (planning): I will take ISSUE-0001::triage in execution unless someone else already claims it. I will not take any ISSUE-0002. Savanna, please take ISSUE-0002::review if feasible/unclaimed; otherwise ISSUE-0002::test.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "8f1d7115-330b-4be2-b2b3-5cf4225c6782",
+        "ts": 1777245272.8199363,
+        "agent": "Savanna",
+        "kind": "communication",
+        "payload": {
+          "content": "Savanna (planning): I will take ISSUE-0002::review in execution (medium) if unclaimed; if taken, I can switch to ISSUE-0002::test. I will not take any ISSUE-0001 critical tasks to avoid triage duplication with Natacha.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "6b7a75c3-2c03-47c0-b78e-c503ede5e1bf",
+        "ts": 1777245279.4710531,
+        "agent": "Natacha",
+        "kind": "communication",
+        "payload": {
+          "content": "Natacha planning: I will take ISSUE-0001::triage (critical) in execution if unclaimed. I will not take any ISSUE-0002 infrastructure tasks. Savanna: please lock ISSUE-0002::review if unclaimed; otherwise ISSUE-0002::test.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      }
+    ]
+  }
+]

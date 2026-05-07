@@ -1,0 +1,287 @@
+================================================================================
+BLACKBOARD STATE LOG - 0
+Session started: 2026-01-09 03:43:42
+================================================================================
+
+BLACKBOARD INFO:
+- ID: 0
+- Participants: Aurora Industries, Beacon Works, Cascade Labs
+================================================================================
+
+================================================================================
+BLACKBOARD STATE UPDATE
+Updated: 2026-01-09 03:48:15
+Iteration: 1 | Phase: execution | Last Agent: Aurora Industries
+Total Events: 22
+================================================================================
+
+EVENT SUMMARY:
+- Total Events: 22
+- By Type: context(1), communication(12), action_executed(9)
+- By Agent: SYSTEM(1), Beacon Works(7), Cascade Labs(9), Aurora Industries(5)
+
+--------------------------------------------------------------------------------
+FULL EVENT LOG:
+
+[Event #1, Iteration: 1] [03:43:42] [Execution] SYSTEM (context)  Message: "Assign machines to shared renewable sources across 24h to minimise main-grid usage.
+
+This blackboard is a private communication channel.
+Participants: Aurora Industries, Beacon Works, Cascade Labs"
+
+[Event #2, Iteration: 1] [03:43:53] [Planning] Beacon Works (communication)  Content: Beacon Works here. Analyzing my assignments for coordination:
+
+Heavy load: machine_007 (5.8kW water heater [16,18)) - needs careful coordination. Wind looks best with 3.4kW@16, 2.0kW@17, but may need splitting or coordination.
+
+Medium loads:
+- machine_008 (1.8kW lighting [5,11)) - considering Wind
+- machine_006 (1.2kW irrigation [8,13)) - considering Wind  
+- machine_005 (1.4kW water heater [20,24)) - limited capacity everywhere
+
+Wind seems most promising for my daytime loads. How are others planning to use Wind capacity, especially hours 16-17? Also, what about the evening hours 20-23 where capacity is tight across all sources?
+
+[Event #3, Iteration: 1] [03:44:06] [Planning] Beacon Works (communication)  Content: Beacon Works here. Analyzing my assignments for coordination:
+
+Heavy load: machine_007 (5.8kW water heater [16,18)) - needs careful coordination. Wind looks best with 3.4kW@16, 2.0kW@17, but may need splitting or coordination.
+
+Medium loads:
+- machine_008 (1.8kW lighting [5,11)) - considering Wind
+- machine_006 (1.2kW irrigation [8,13)) - considering Wind  
+- machine_005 (1.4kW water heater [20,24)) - limited capacity everywhere
+
+Wind seems most promising for my daytime loads. How are others planning to use Wind capacity, especially hours 16-17? Also, what about the evening hours 20-23 where capacity is tight across all sources?
+
+[Event #4, Iteration: 1] [03:44:19] [Planning] Cascade Labs (communication)  Content: Cascade Labs here. I don't have Wind access, so I'll be using Solar, Biomass, Hydro, and Geothermal for my assignments.
+
+My main loads:
+- 2.6kW server rack [16,20) - this is my heaviest load during critical hours
+- 1.8kW refrigeration [11,16) 
+- 1.5kW water heater [11,17)
+- 1.5kW refrigeration [18,23)
+- 1.3kW server rack [6,9)
+
+For the evening hours 20-23 that Beacon Works mentioned: I'm seeing limited capacity across Biomass (~1.0kW), Hydro (~0.3-0.7kW), and Geothermal (~0.6-0.9kW). My 1.5kW refrigeration [18,23) will need careful placement here.
+
+Hour 16 is particularly tight for me with my 2.6kW server rack starting plus other potential loads. Solar has 1.4kW, Biomass 0.9kW, Hydro 1.0kW, Geothermal 0.9kW available.
+
+How are others planning to use Hydro and Biomass capacity, especially hours 16-20? I want to avoid conflicts since these seem to be the main options for evening loads.
+
+[Event #5, Iteration: 1] [03:44:42] [Planning] Aurora Industries (communication)  Content: Aurora Industries here. Looking at my loads and the source capacities:
+
+**My assignments:**
+- **Server rack (4.4kW [3,5))**: Wind has 0.7-1.0kW available, so I'll need Hydro which has 0.9-1.1kW
+- **Refrigeration chains**: 
+  - machine_001 (1.5kW [7,13)): Wind looks good with 1.0-2.4kW capacity
+  - machine_002 (1.8kW [10,13)): Also fits well in Wind's 1.7-2.4kW window
+- **Lighting bank (3.5kW [14,17))**: Wind has 1.0-3.4kW, but hour 14 only has 1.0kW which won't work. I'll need Hydro for hour 14 (0.8kW) and possibly split between sources.
+
+**Key concerns:**
+1. **Hour 16**: Beacon Works needs 5.8kW for their water heater, but Wind only has 3.4kW total. I'll avoid Wind at hour 16 entirely.
+2. **Hour 14**: My 3.5kW lighting + whatever Cascade Labs puts on Hydro (they mentioned 1.6kW potential) could exceed Hydro's 0.8kW capacity. I'll need to split my lighting load or use Solar (0.7kW) for part of it.
+3. **Evening hours 20-23**: All sources are tight. I'll keep my machines away from these hours.
+
+**Tentative plan:**
+- Server rack: Hydro for hours 3-5
+- Refrigeration chains: Wind for hours 7-13 (avoiding overlap with Beacon's heavy load)
+- Lighting bank: Split between Hydro (hour 14) and Wind (hours 15-16), but need to coordinate hour 14
+
+Beacon Works - given your 5.8kW need at hour 16, I won't use any Wind capacity then. Can we coordinate on Hydro usage for hour 14?
+
+[Event #6, Iteration: 1] [03:45:07] [Planning] Beacon Works (communication)  Content: Beacon Works here. Thanks for the detailed coordination updates.
+
+**Updated analysis based on your inputs:**
+
+**Hour 16 coordination:** 
+- Aurora Industries - thanks for committing to avoid Wind at hour 16. That leaves the full 3.4kW Wind capacity for my 5.8kW water heater, but I still need 2.4kW more. I'll need to split machine_007 across Wind (3.4kW) and another source for the remaining 2.4kW. Hydro has 1.0kW and Biomass has 0.9kW available - I'll likely use both.
+
+**Hour 14 coordination:**
+- Aurora Industries - your 3.5kW lighting + my potential needs + Cascade Labs' loads could indeed exceed Hydro's 0.8kW. Since I don't have machines running at hour 14, you can have the full Hydro capacity then. I'll coordinate my other machines elsewhere.
+
+**My revised plan:**
+- machine_007 (5.8kW [16,18)): Split between Wind (3.4kW@16, 2.0kW@17) + Hydro (1.0kW@16) + Biomass (0.9kW@16, 2.1kW@17) - this should work without overflow
+- machine_008 (1.8kW [5,11)): Wind looks good throughout this window
+- machine_006 (1.2kW [8,13)): Wind capacity is sufficient 
+- machine_005 (1.4kW [20,24)): This is tricky - all sources are tight. I'll likely use a mix of Biomass and Hydro across these hours
+
+**Evening hours 20-23:** Cascade Labs and I both have loads here. Let's coordinate:
+- I'll take Biomass hours 20-21 (1.0kW, 1.4kW) and Hydro hours 22-23 (0.6kW, 0.5kW) for my water heater
+- Cascade Labs - you mentioned 1.5kW refrigeration [18,23). Maybe you take the remaining Biomass capacity hours 22-23 and Geothermal for the rest?
+
+How does this look to everyone?
+
+[Event #7, Iteration: 1] [03:45:31] [Planning] Cascade Labs (communication)  Content: Cascade Labs here. Based on the coordination discussion, I'm finalizing my assignments:
+
+**Commitments made:**
+- Avoiding Wind at hour 16 to help Beacon Works with their 5.8kW load
+- Coordinating evening hours 20-23 as discussed with Beacon Works
+
+**My tentative assignments:**
+- Server rack 2.6kW [16,20): Solar + Geothermal combination (avoiding Wind at hour 16)
+- Refrigeration 1.5kW [18,23): Primarily Geothermal hours 18-21, then remaining Biomass capacity 22-23
+- Refrigeration 1.8kW [11,16): Solar with Geothermal backup
+- Water heater 1.5kW [11,17): Solar + Geothermal combination
+- Server rack 1.3kW [6,9): Primarily Geothermal (Solar limited in early morning)
+
+**Key questions before execution:**
+1. Aurora Industries - are you still planning to use Hydro for your server rack [3,5)? I want to avoid conflicts since I'm considering Hydro for some of my hour 16 overflow.
+2. For evening hours 20-23: Beacon Works mentioned using Biomass hours 20-21 and Hydro 22-23 for their water heater. I'll take remaining Biomass capacity hours 22-23 for my refrigeration. Sound good?
+
+Any final coordination needed before we move to execution?
+
+[Event #8, Iteration: 1] [03:45:44] [Planning] Aurora Industries (communication)  Content: Aurora Industries final coordination check before execution:
+
+**My confirmed assignments:**
+- Server rack 4.4kW [3,5): Using Hydro (0.9-1.1kW available) - this is firm
+- Refrigeration chains: Wind for [7,13) window - machine_001 (1.5kW) and machine_002 (1.8kW)
+- Lighting bank 3.5kW [14,17): Split plan - Hydro for hour 14 (0.8kW), then Wind for hours 15-16
+
+**Key coordination confirmations needed:**
+1. Hour 14: I'm using full Hydro capacity (0.8kW) for part of my lighting load. Beacon Works confirmed no conflicts. Cascade Labs - any Hydro needs at hour 14?
+
+2. Hour 16: Confirmed avoiding Wind completely to help Beacon Works with their 5.8kW load. My lighting will use Wind hours 15-16, but I'll skip hour 16 entirely.
+
+3. Evening hours 20-23: None of my machines run then, so I'm completely out of those tight hours.
+
+**One adjustment:** For my lighting bank hour 14, I realize Hydro's 0.8kW won't cover my full 3.5kW. I'll need to split: Hydro (0.8kW) + Solar (0.7kW) + Wind (1.0kW) = 2.5kW total, leaving 1.0kW uncovered. I may need to use Wind for hour 14 despite lower capacity.
+
+Any objections to this final plan? Ready for execution if everyone's good.
+
+[Event #9, Iteration: 1] [03:45:50] [Planning] Aurora Industries (communication)  Content: Aurora Industries - URGENT hour 14 coordination issue:
+
+**Problem identified:** My lighting bank needs 3.5kW at hour 14, but available capacities are:
+- Hydro: 0.8kW 
+- Solar: 0.7kW
+- Wind: 1.0kW
+- Total: 2.5kW (leaving 1.0kW shortfall)
+
+**Options I'm considering:**
+1. Use Wind for hour 14 despite lower capacity (1.0kW), then take remaining 2.5kW from other sources
+2. Shift my lighting schedule slightly (but machine windows are fixed, right?)
+3. Accept 1.0kW overflow at hour 14
+
+**Question for the group:** Are machine time windows flexible, or are they fixed? If fixed, I'll have to accept the hour 14 overflow since I can't cover the full 3.5kW with available renewable capacity.
+
+This won't affect anyone else's assignments - just flagging that I'll have unavoidable overflow at hour 14 due to capacity constraints.
+
+Let me know if windows are flexible, otherwise I'll proceed with the overflow.
+
+[Event #10, Iteration: 1] [03:46:10] [Planning] Beacon Works (communication)  Content: **Beacon Works final coordination summary before execution:**
+
+**Confirmed assignments:**
+- machine_007 (5.8kW [16,18)): Split Wind+Hydro+Biomass as discussed
+- machine_008 (1.8kW [5,11)): Wind 
+- machine_006 (1.2kW [8,13)): Wind
+- machine_005 (1.4kW [20,24)): Biomass hours 20-21, Hydro hours 22-23
+
+**Coordination agreements:**
+✓ Aurora Industries: Hydro hours 3-5 (server rack), Wind hours 7-13 (refrigeration), split sources hour 14 (lighting) with 1.0kW unavoidable overflow
+✓ Cascade Labs: Geothermal + Solar for main loads, remaining Biomass hours 22-23 for evening refrigeration
+✓ Hour 16: Aurora Industries avoids Wind completely for Beacon Works' 5.8kW load
+✓ Evening hours 20-23: Coordinated split between Beacon Works and Cascade Labs
+
+**Known overflow:** Aurora Industries 1.0kW at hour 14 (unavoidable due to capacity constraints)
+
+Ready for execution phase - any final objections?
+
+[Event #11, Iteration: 1] [03:46:31] [Planning] Cascade Labs (communication)  Content: Cascade Labs final coordination check:
+
+**My confirmed assignments before execution:**
+- Server rack 2.6kW [16,20): Solar + Geothermal (avoiding Wind at hour 16 as agreed)
+- Refrigeration 1.8kW [11,16): Solar primary, Geothermal backup
+- Water heater 1.5kW [11,17): Solar + Geothermal combination
+- Refrigeration 1.5kW [18,23): Geothermal hours 18-21, remaining Biomass capacity hours 22-23
+- Server rack 1.3kW [6,9): Geothermal (Solar very limited in early morning)
+
+**Coordination agreements confirmed:**
+✓ Aurora Industries: Hydro hours 3-5, Wind hours 7-13, and unavoidable 1.0kW overflow at hour 14
+✓ Beacon Works: Wind+Hydro+Biomass split for 5.8kW load at hour 16, plus evening coordination
+✓ Evening hours 20-23: Beacon Works takes Biomass 20-21 and Hydro 22-23, I take remaining Biomass 22-23 for my refrigeration
+
+**No conflicts expected** - all assignments should fit within capacity limits based on our coordination.
+
+Ready to proceed to execution phase. Good luck everyone!
+
+[Event #12, Iteration: 1] [03:46:44] [Planning] Aurora Industries (communication)  Content: Aurora Industries final coordination before execution:
+
+**My confirmed assignments:**
+- Server rack 4.4kW [3,5): Hydro (0.9-1.1kW) - confirmed
+- Refrigeration chains [7,13): Wind for both machines (1.5kW + 1.8kW = 3.3kW total)
+- Lighting bank 3.5kW [14,17): Split across sources, but hour 14 has unavoidable 1.0kW overflow
+
+**Critical issue - Hour 14 capacity shortfall:**
+My 3.5kW lighting need vs available capacity:
+- Hydro: 0.8kW + Solar: 0.7kW + Wind: 1.0kW = 2.5kW total
+- This leaves 1.0kW unavoidable overflow at hour 14
+
+**Final coordination check:**
+- Hour 16: Confirmed avoiding Wind for Beacon Works' 5.8kW load
+- Evening hours 20-23: No conflicts from my site
+- All other hours should fit within capacity limits
+
+**Question:** Are machine time windows flexible, or must I accept the hour 14 overflow? If windows are fixed, I'll proceed with 1.0kW overflow at hour 14.
+
+Ready for execution phase - any final coordination needed? (phase=planning, iter=1)
+
+[Event #13, Iteration: 1] [03:47:31] [Planning] Cascade Labs (communication)  Content: Cascade Labs final coordination summary:
+
+**My planned assignments:**
+- Server rack 2.6kW [16,20): Solar + Geothermal (avoiding Wind at hour 16 per agreement)
+- Refrigeration 1.8kW [11,16): Solar primary, Geothermal backup  
+- Water heater 1.5kW [11,17): Solar + Geothermal combination
+- Refrigeration 1.5kW [18,23): Geothermal hours 18-21, remaining Biomass capacity hours 22-23
+- Server rack 1.3kW [6,9): Geothermal (Solar limited in early morning)
+
+**Key coordination agreements confirmed:**
+✓ Aurora Industries: Hydro [3,5], Wind [7,13], unavoidable 1.0kW overflow at hour 14
+✓ Beacon Works: Wind+Hydro+Biomass split for 5.8kW load at hour 16
+✓ Evening hours 20-23: Beacon Works takes Biomass 20-21 and Hydro 22-23, I take remaining Biomass 22-23
+
+All assignments should fit within capacity limits. Ready for execution phase.
+
+[Event #14, Iteration: 1] [03:48:05] [Execution] Beacon Works (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_007', 'source_id': 'src_Wind'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Beacon Works', 'machine': {'id': 'machine_007', 'label': 'Water heater', 'window': [16, 18], 'power': 5.830324119055384}, 'source_id': 'src_Wind', 'total_assigned': 1, 'remaining_machines': 12, 'state_updates': {'assignment': {'machine_007': 'src_Wind'}}, 'joint_reward': 0.0}}
+
+[Event #15, Iteration: 1] [03:48:05] [Execution] Beacon Works (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_008', 'source_id': 'src_Wind'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Beacon Works', 'machine': {'id': 'machine_008', 'label': 'Lighting bank', 'window': [5, 11], 'power': 1.8183034686107649}, 'source_id': 'src_Wind', 'total_assigned': 2, 'remaining_machines': 11, 'state_updates': {'assignment': {'machine_007': 'src_Wind', 'machine_008': 'src_Wind'}}, 'joint_reward': 0.0}}
+
+[Event #16, Iteration: 1] [03:48:05] [Execution] Beacon Works (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_006', 'source_id': 'src_Wind'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Beacon Works', 'machine': {'id': 'machine_006', 'label': 'Irrigation pump', 'window': [8, 13], 'power': 1.1600445483566157}, 'source_id': 'src_Wind', 'total_assigned': 3, 'remaining_machines': 10, 'state_updates': {'assignment': {'machine_007': 'src_Wind', 'machine_008': 'src_Wind', 'machine_006': 'src_Wind'}}, 'joint_reward': 0.0}}
+
+[Event #17, Iteration: 1] [03:48:11] [Execution] Cascade Labs (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_009', 'source_id': 'src_Solar'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Cascade Labs', 'machine': {'id': 'machine_009', 'label': 'Water heater', 'window': [11, 17], 'power': 1.4526410016386622}, 'source_id': 'src_Solar', 'total_assigned': 4, 'remaining_machines': 9, 'state_updates': {'assignment': {'machine_007': 'src_Wind', 'machine_008': 'src_Wind', 'machine_006': 'src_Wind', 'machine_009': 'src_Solar'}}, 'joint_reward': 0.0}}
+
+[Event #18, Iteration: 1] [03:48:11] [Execution] Cascade Labs (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_010', 'source_id': 'src_Geothermal'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Cascade Labs', 'machine': {'id': 'machine_010', 'label': 'Server rack', 'window': [16, 20], 'power': 2.58772384896833}, 'source_id': 'src_Geothermal', 'total_assigned': 5, 'remaining_machines': 8, 'state_updates': {'assignment': {'machine_007': 'src_Wind', 'machine_008': 'src_Wind', 'machine_006': 'src_Wind', 'machine_009': 'src_Solar', 'machine_010': 'src_Geothermal'}}, 'joint_reward': 0.0}}
+
+[Event #19, Iteration: 1] [03:48:11] [Execution] Cascade Labs (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_011', 'source_id': 'src_Solar'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Cascade Labs', 'machine': {'id': 'machine_011', 'label': 'Refrigeration chain', 'window': [11, 16], 'power': 1.8146870543587887}, 'source_id': 'src_Solar', 'total_assigned': 6, 'remaining_machines': 7, 'state_updates': {'assignment': {'machine_007': 'src_Wind', 'machine_008': 'src_Wind', 'machine_006': 'src_Wind', 'machine_009': 'src_Solar', 'machine_010': 'src_Geothermal', 'machine_011': 'src_Solar'}}, 'joint_reward': 0.0}}
+
+[Event #20, Iteration: 1] [03:48:11] [Execution] Cascade Labs (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_012', 'source_id': 'src_Geothermal'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Cascade Labs', 'machine': {'id': 'machine_012', 'label': 'Refrigeration chain', 'window': [18, 23], 'power': 1.455235386318496}, 'source_id': 'src_Geothermal', 'total_assigned': 7, 'remaining_machines': 6, 'state_updates': {'assignment': {'machine_007': 'src_Wind', 'machine_008': 'src_Wind', 'machine_006': 'src_Wind', 'machine_009': 'src_Solar', 'machine_010': 'src_Geothermal', 'machine_011': 'src_Solar', 'machine_012': 'src_Geothermal'}}, 'joint_reward': 0.0}}
+
+[Event #21, Iteration: 1] [03:48:11] [Execution] Cascade Labs (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_013', 'source_id': 'src_Geothermal'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Cascade Labs', 'machine': {'id': 'machine_013', 'label': 'Server rack', 'window': [6, 9], 'power': 1.345764785555055}, 'source_id': 'src_Geothermal', 'total_assigned': 8, 'remaining_machines': 5, 'state_updates': {'assignment': {'machine_007': 'src_Wind', 'machine_008': 'src_Wind', 'machine_006': 'src_Wind', 'machine_009': 'src_Solar', 'machine_010': 'src_Geothermal', 'machine_011': 'src_Solar', 'machine_012': 'src_Geothermal', 'machine_013': 'src_Geothermal'}}, 'joint_reward': -13.164364207653806}}
+
+[Event #22, Iteration: 1] [03:48:15] [Execution] Aurora Industries (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_003', 'source_id': 'src_Hydro'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Aurora Industries', 'machine': {'id': 'machine_003', 'label': 'Server rack', 'window': [3, 5], 'power': 4.402896533070981}, 'source_id': 'src_Hydro', 'total_assigned': 9, 'remaining_machines': 4, 'state_updates': {'assignment': {'machine_007': 'src_Wind', 'machine_008': 'src_Wind', 'machine_006': 'src_Wind', 'machine_009': 'src_Solar', 'machine_010': 'src_Geothermal', 'machine_011': 'src_Solar', 'machine_012': 'src_Geothermal', 'machine_013': 'src_Geothermal', 'machine_003': 'src_Hydro'}}, 'joint_reward': -13.164364207653806}}
+
+
+================================================================================
+

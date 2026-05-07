@@ -1,0 +1,962 @@
+[
+  {
+    "blackboard_id": "0",
+    "participants": [
+      "Afton",
+      "Clarissa",
+      "Elda",
+      "Jessenia",
+      "Lenna",
+      "Sheri"
+    ],
+    "template": {},
+    "events": [
+      {
+        "blackboard_id": 0,
+        "id": "d2e3bf98-8cd7-46e6-afa2-a2a93d8e046f",
+        "ts": 1777187269.5367868,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Afton, Clarissa, Elda, Jessenia, Lenna, Sheri"
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ffb04fcd-4c0c-44cc-a7bf-074f9abf1fd5",
+        "ts": 1777187273.90933,
+        "agent": "Lenna",
+        "kind": "communication",
+        "payload": {
+          "content": "I have 7h availability, top skill mobile-development. Lowest costs on ISSUE-0001: triage(1.46), review/docs(1.82), test(2.55), implement(3.64). Prefer high priority (ISSUE-0001 medium over ISSUE-0002 low). Suggest I take triage or review/docs for 0001 to minimize cost. What are your availabilities and preferences? Let's assign all 5 medium tasks first.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ba4d7a8e-b43c-47e5-ba9d-82f3e0086040",
+        "ts": 1777187335.8804524,
+        "agent": "Lenna",
+        "kind": "communication",
+        "payload": {
+          "content": "Proposed assignment: Lenna takes ISSUE-0001::triage (cost 1.46, my lowest). Let's assign the other 4 medium tasks to others: implement, review, test, docs. Then one can take a low if possible. Who wants what? Availabilities?",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "554875c0-4602-40b0-a70a-e8f27f24c87a",
+        "ts": 1777187457.3741403,
+        "agent": "Lenna",
+        "kind": "communication",
+        "payload": {
+          "content": "Since no responses, I'll claim ISSUE-0001::triage in execution (medium prio, low cost for me). Suggest others take the rest of ISSUE-0001 tasks. Skip ISSUE-0002 for now as low prio and high costs.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "52a5e5b3-a5e7-4721-8037-677e892c7c43",
+        "ts": 1777187459.9525034,
+        "agent": "Clarissa",
+        "kind": "communication",
+        "payload": {
+          "content": "I have 7h availability, top skill mobile-development:0.84. My costs: triage(1.71), review/docs(2.13), test(2.99), implement(4.26). Since Lenna is taking triage for 0001, I can take review or docs for ISSUE-0001 (medium prio, low cost). Prefer to take ISSUE-0001::review to free up others. Let's cover all 5 medium tasks if possible. What about others?",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "cdee03c9-a341-466f-8972-adf62bc5aa96",
+        "ts": 1777187521.542811,
+        "agent": "Clarissa",
+        "kind": "communication",
+        "payload": {
+          "content": "Proposal for ISSUE-0001 (all medium): Lenna-triage, Clarissa-review, someone-implement, someone-test, someone-docs. My avail 7h covers review(2.13 cost, effort2). This way we get 5 tasks at med prio. Skip 0002 for now as low prio.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "75226143-937b-473c-a315-839c8b1b5609",
+        "ts": 1777187644.6947315,
+        "agent": "Clarissa",
+        "kind": "communication",
+        "payload": {
+          "content": "No responses yet. I'll plan to take ISSUE-0001::review (cost 2.13 for me, effort 2). Lenna triage. Suggest others: one implement (higher effort 4), one test(2.8), one docs(2). All medium, total prio good. Avail 7h ok. Who takes what? Elda, Jessenia, Sheri, Afton?",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a725b80a-1eeb-4e4e-8fc6-1c64d3c43c93",
+        "ts": 1777187649.3495345,
+        "agent": "Jessenia",
+        "kind": "communication",
+        "payload": {
+          "content": "I have 4h availability, top skill mobile-development:0.87. My costs for 0001: triage(1.65), review/docs(2.06), test(2.89), implement(4.13). For 0002 higher. Since Lenna taking triage and Clarissa review, I can take ISSUE-0001::docs (effort 2, cost 2.06) or test(2.8,2.89) or even implement(4.0,4.13). Prefer lower cost so docs. Suggest we cover all 5 medium tasks: Lenna-triage, Clarissa-review, Jessenia-docs, then Elda/Afton/Sheri take implement and test. All medium prio. What are your availabilities and costs? (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "bb41a9c3-08b2-4a53-b387-02c6c4d95078",
+        "ts": 1777187712.3844569,
+        "agent": "Jessenia",
+        "kind": "communication",
+        "payload": {
+          "content": "Proposed full assignment for ISSUE-0001 medium tasks to maximize prio sum: Lenna-triage(1.6eff), Clarissa-review(2), Jessenia-docs(2), then Elda-implement(4), Sheri-test(2.8) or Afton. All within avails (my 4h covers docs). This gives 5 tasks at med prio (priority_sum ~3.75). Skip 0002 low prio. Costs low for us. Agree? (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ce86d2fd-ac33-49e4-bbed-533a812ea208",
+        "ts": 1777187834.5227864,
+        "agent": "Jessenia",
+        "kind": "communication",
+        "payload": {
+          "content": "No responses from Elda, Sheri, Afton yet. To cover all 5 med tasks: I'll take ISSUE-0001::docs (effort=2<=4h, cost=2.06 my low). Lenna triage, Clarissa review, then remaining implement(4h) and test(2.8) for others (Elda/Sheri/Afton). Prefer not implement myself as cost higher and effort maxes my avail. This maximizes prio_sum with all med. Ready for execution. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8d872718-2428-4ee9-bb4f-ce8da86185a9",
+        "ts": 1777187841.1075273,
+        "agent": "Elda",
+        "kind": "communication",
+        "payload": {
+          "content": "I have 8h availability, top skill mobile-development:0.95. Costs for ISSUE-0001: triage(1.53), review/docs(1.91), test(2.67), implement(3.82). Agree with plan: Lenna-triage, Clarissa-review, Jessenia-docs. I'll take ISSUE-0001::implement (effort 4<=8, my cost 3.82). Suggest Sheri or Afton take ISSUE-0001::test (effort 2.8). Covers all 5 medium tasks for high prio sum ~3.75, skip low prio 0002. Ready for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1c221c95-9c2f-4f65-815c-3464ce25aa20",
+        "ts": 1777187904.6949458,
+        "agent": "Elda",
+        "kind": "communication",
+        "payload": {
+          "content": "Sheri, Afton: we have Lenna-triage, Clarissa-review, Jessenia-docs, me-implement for ISSUE-0001 (all med prio). Can one of you take ISSUE-0001::test (effort 2.8, med prio)? Your availabilities? This would cover all 5 med tasks. Then skip 0002. Let's finalize before execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "60ea2bdb-a95b-493a-a8a8-f833bd826082",
+        "ts": 1777188033.9543614,
+        "agent": "Elda",
+        "kind": "communication",
+        "payload": {
+          "content": "To maximize tasks_done (primary objective), with 6 agents we should assign 6 tasks: all 5 medium (prio 0.5 each) from ISSUE-0001 + 1 low (0.25) from ISSUE-0002, for tasks_done=6, priority_sum=2.75. Better than 5 tasks even all med (tasks=5, prio=2.5). Suggest: Lenna-triage(med), Clarissa-review(med), Jessenia-docs(med), Elda-implement(med), Sheri-test(med), Afton-ISSUE-0002::review (low, effort4, check avails). This way max tasks then good prio. Costs: my implement 3.82. What avails for Sheri/Afton? Can they take the low if needed?",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "5810fc79-ec5d-4526-b3fa-b439e738ff72",
+        "ts": 1777188038.5688193,
+        "agent": "Sheri",
+        "kind": "communication",
+        "payload": {
+          "content": "I have 5h availability, top skill mobile-development 0.86. My costs for 0001: triage1.67, review/docs2.09, test2.93, implement4.19. Agree with covering all 5 med tasks +1 low for 6 tasks (better than 5). Lenna-triage, Clarissa-review, Jessenia-docs, Elda-implement, I'll take ISSUE-0001::test (effort2.8<=5h, cost2.93). Then Afton can take e.g. ISSUE-0002::review (effort4, low prio). Suggest that to max tasks_done=6, prio_sum=2.75. Ready for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "6c2368ae-8b1c-4976-8775-bae5a2267215",
+        "ts": 1777188222.1850212,
+        "agent": "Sheri",
+        "kind": "communication",
+        "payload": {
+          "content": "Confirmed plan: I'll assign ISSUE-0001::test in execution. Covers all 5 med +1 low for Afton. Maximizes score. No duplicates.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e17e630a-3ae1-4b60-bb4e-24e96904df7d",
+        "ts": 1777188226.219852,
+        "agent": "Afton",
+        "kind": "communication",
+        "payload": {
+          "content": "Agree with the plan: Lenna-triage0001, Clarissa-review0001, Jessenia-docs0001, Elda-implement0001, Sheri-test0001, I'll take ISSUE-0002::review (effort4<=my4h avail, cost4.88). This gives 6 tasks (5med+1low), prio_sum=2.75, maximizes tasks_done. No duplicates, all feasible. Ready for execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f7b9ad07-cb04-459e-9c86-e7f7b1dfa06f",
+        "ts": 1777188295.4163818,
+        "agent": "Lenna",
+        "kind": "communication",
+        "payload": {
+          "content": "I agree with the finalized plan: Lenna-triage0001 (med, effort1.6<=7h, cost1.46), Clarissa-review0001, Jessenia-docs0001, Elda-implement0001, Sheri-test0001, Afton-review0002 (low). This maximizes tasks_done=6, priority_sum=2.75 (5*0.5 + 0.25). No duplicates, all feasible per avails. Good coordination. Ready to assign in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "dc7a8c9b-d0ab-4f10-9f79-1a9697982e25",
+        "ts": 1777188362.25043,
+        "agent": "Lenna",
+        "kind": "communication",
+        "payload": {
+          "content": "Coordination complete. In execution, I will assign myself to ISSUE-0001::triage to avoid duplicates and follow the agreed plan for max score.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1c224bc4-e490-4058-8d63-3762e3dd53f4",
+        "ts": 1777188489.9956298,
+        "agent": "Lenna",
+        "kind": "communication",
+        "payload": {
+          "content": "All agents have now agreed on the plan for 6 tasks: ISSUE-0001 triage(Lenna), review(Clarissa), docs(Jessenia), implement(Elda), test(Sheri); ISSUE-0002 review(Afton). This is optimal: tasks_done=6, prio_sum=2.75, low total cost. No violations. Will assign ISSUE-0001::triage in execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "dbcc7944-4f53-41d4-9f4e-280502ad3249",
+        "ts": 1777188493.262822,
+        "agent": "Clarissa",
+        "kind": "communication",
+        "payload": {
+          "content": "I agree with the finalized plan: Lenna-triage0001, Clarissa-review0001 (effort2<=7h, cost2.13), Jessenia-docs0001, Elda-implement0001, Sheri-test0001, Afton-review0002. This gives tasks_done=6, prio_sum=2.75 (5*0.5+0.25), good for max score. No duplicates, feasible. I'll assign ISSUE-0001::review in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "646a4780-61ce-48b0-a3b8-1900e725308c",
+        "ts": 1777188559.308522,
+        "agent": "Jessenia",
+        "kind": "communication",
+        "payload": {
+          "content": "I agree with the finalized plan: Lenna-triage0001, Clarissa-review0001, Jessenia-docs0001 (effort2<=4h, cost2.06), Elda-implement0001, Sheri-test0001, Afton-review0002. This gives tasks_done=6, prio_sum=2.75 (5*0.5+0.25), optimal for max score. No duplicates, all feasible. I'll assign ISSUE-0001::docs in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "40942700-b19a-458a-b825-1b3f6bd7f065",
+        "ts": 1777188622.6118283,
+        "agent": "Jessenia",
+        "kind": "communication",
+        "payload": {
+          "content": "Coordination done, all agents agreed on assignments for max score (6 tasks). Ready to proceed to execution phase where I will assign ISSUE-0001::docs.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "505c8519-824a-46c6-96db-76e5cf6932e3",
+        "ts": 1777188750.6528406,
+        "agent": "Elda",
+        "kind": "communication",
+        "payload": {
+          "content": "I confirm the plan: I'll take ISSUE-0001::implement (effort4<=8h, cost3.82, med prio). Assignments: Lenna-triage0001, Clarissa-review0001, Jessenia-docs0001, Elda-implement0001, Sheri-test0001, Afton-review0002. This maximizes tasks_done=6, prio_sum=2.75. Ready for execution, will assign ISSUE-0001::implement there. No changes needed.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ab987cde-e388-4893-bff1-51f0d032336c",
+        "ts": 1777188817.989604,
+        "agent": "Sheri",
+        "kind": "communication",
+        "payload": {
+          "content": "Confirmed plan for max score: Lenna=ISSUE-0001::triage, Clarissa=ISSUE-0001::review, Jessenia=ISSUE-0001::docs, Elda=ISSUE-0001::implement, Sheri=ISSUE-0001::test (effort 2.8<=5h, cost 2.93), Afton=ISSUE-0002::review. This gives tasks_done=6, prio_sum=2.75. All agree, no duplicates. Will assign test in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d4dc797f-0620-45f5-b567-49232d622dbc",
+        "ts": 1777188885.79308,
+        "agent": "Afton",
+        "kind": "communication",
+        "payload": {
+          "content": "Final confirmation: In execution phase, I will assign myself to ISSUE-0002::review (effort 4<=4h avail, cost 4.88). Agreed plan maximizes tasks_done=6 and priority_sum=2.75 with no duplicates or infeasibles. Good job coordinating everyone.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "675087c5-9ebe-4b97-8570-9125a0c1df34",
+        "ts": 1777189077.0000284,
+        "agent": "Lenna",
+        "kind": "communication",
+        "payload": {
+          "content": "Coordination complete with all agents agreeing on plan for max score: 6 tasks (5 med from 0001 + 1 low from 0002). Confirmed assignments: Lenna-triage0001 (my lowest cost 1.46, effort1.6<=7h), Clarissa-review0001, Jessenia-docs0001, Elda-implement0001, Sheri-test0001, Afton-review0002. This gives tasks_done=6, prio_sum=2.75, no violations. Ready for execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "0779ea15-7c37-40c0-acd2-857264900e00",
+        "ts": 1777189140.74655,
+        "agent": "Lenna",
+        "kind": "communication",
+        "payload": {
+          "content": "All set for execution: will assign ISSUE-0001::triage as per agreed plan to achieve optimal joint score with 6 tasks completed.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b61ea8c6-8c0b-48b7-aa15-e6ca559e8ca3",
+        "ts": 1777189265.1088314,
+        "agent": "Lenna",
+        "kind": "communication",
+        "payload": {
+          "content": "All agents coordinated successfully on blackboard 0. Plan locked: I take ISSUE-0001::triage. This optimizes for tasks_done=6 and priority_sum=2.75 with minimal cost and no violations. Entering execution with this claim.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "143cad96-2a29-48bb-84a6-1ae68955c98f",
+        "ts": 1777189268.4681587,
+        "agent": "Clarissa",
+        "kind": "communication",
+        "payload": {
+          "content": "I confirm the plan: I'll take ISSUE-0001::review (effort 2<=7h, cost 2.13). Assignments: Lenna-triage0001, Clarissa-review0001, Jessenia-docs0001, Elda-implement0001, Sheri-test0001, Afton-review0002. This maximizes tasks_done=6, prio_sum=2.75. Ready for execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a5a79956-f2bc-4581-99c5-30a75c6ec35a",
+        "ts": 1777189337.0608034,
+        "agent": "Jessenia",
+        "kind": "communication",
+        "payload": {
+          "content": "I confirm the agreed plan for optimal score: Lenna=ISSUE-0001::triage, Clarissa=ISSUE-0001::review, Jessenia=ISSUE-0001::docs (effort2<=4h, cost2.06), Elda=ISSUE-0001::implement, Sheri=ISSUE-0001::test, Afton=ISSUE-0002::review. This achieves tasks_done=6, priority_sum=2.75 with no duplicates or infeasibles. All coordinated. Ready for execution phase where I'll assign docs.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "fb2f57b3-26eb-4274-8c78-09329fdd9e4f",
+        "ts": 1777189400.7784827,
+        "agent": "Jessenia",
+        "kind": "communication",
+        "payload": {
+          "content": "All agents have confirmed the plan on blackboard 0. No conflicts. In execution, I will claim ISSUE-0001::docs as per agreement to maximize joint score.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "5018e2f5-0e14-4218-8dd2-4d8c29faf3e3",
+        "ts": 1777189523.8593028,
+        "agent": "Jessenia",
+        "kind": "communication",
+        "payload": {
+          "content": "Coordination on blackboard 0 is complete with full agreement on the plan for 6 tasks. This should maximize the joint score. No further issues. Will proceed to assign ISSUE-0001::docs once in execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1257a85a-8443-4209-a7b1-532866407764",
+        "ts": 1777189528.8467438,
+        "agent": "Elda",
+        "kind": "communication",
+        "payload": {
+          "content": "Confirming the coordinated plan for max score: Lenna=ISSUE-0001::triage, Clarissa=ISSUE-0001::review, Jessenia=ISSUE-0001::docs, Elda=ISSUE-0001::implement (effort 4<=8h, cost 3.82, med prio), Sheri=ISSUE-0001::test, Afton=ISSUE-0002::review. Achieves tasks_done=6, priority_sum=2.75 with no duplicates or infeasibles. All avails covered. Ready for execution phase where I'll assign implement. Coordination on blackboard 0 complete.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "30d3f4dd-77f4-4c8e-94b7-00611467a0aa",
+        "ts": 1777189593.1836529,
+        "agent": "Elda",
+        "kind": "communication",
+        "payload": {
+          "content": "Plan locked in: I will claim ISSUE-0001::implement in execution. All 6 tasks assigned uniquely per agreement for optimal joint score. No further changes.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f5fc1ded-ad33-4953-9ba6-27e51e2b9757",
+        "ts": 1777189720.6908307,
+        "agent": "Sheri",
+        "kind": "communication",
+        "payload": {
+          "content": "Final confirmation on blackboard 0: Sticking with the agreed plan for optimal score - Lenna=ISSUE-0001::triage, Clarissa=ISSUE-0001::review, Jessenia=ISSUE-0001::docs, Elda=ISSUE-0001::implement, Sheri=ISSUE-0001::test (effort 2.8<=5h, my cost 2.93), Afton=ISSUE-0002::review. This maximizes tasks_done=6, priority_sum=2.75 with no duplicates or infeasibles. All avails match. Will assign test in execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "56c83bdb-e98b-4eb9-a9b1-c2569b6305ec",
+        "ts": 1777189782.841268,
+        "agent": "Sheri",
+        "kind": "communication",
+        "payload": {
+          "content": "All coordination complete on blackboards. Full agreement on plan for max joint score: 6 tasks assigned without conflicts. In execution phase, I will claim ISSUE-0001::test.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "afd3ac0b-9c62-464f-b44e-efed870f54d3",
+        "ts": 1777189915.097197,
+        "agent": "Afton",
+        "kind": "communication",
+        "payload": {
+          "content": "Final confirmation on plan for optimal score: Lenna=ISSUE-0001::triage, Clarissa=ISSUE-0001::review, Jessenia=ISSUE-0001::docs, Elda=ISSUE-0001::implement, Sheri=ISSUE-0001::test, Afton=ISSUE-0002::review (effort4<=4h, cost4.88). This achieves tasks_done=6, prio_sum=2.75 with no duplicates or infeasibles. All coordinated on bb0 and bb1. Ready for execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c542a206-1944-4ea5-b718-c9c63953ed13",
+        "ts": 1777189985.138018,
+        "agent": "Lenna",
+        "kind": "communication",
+        "payload": {
+          "content": "Final confirmation: Sticking with agreed plan for max joint score (tasks_done=6, prio_sum=2.75): Lenna=ISSUE-0001::triage (effort1.6<=7h, cost1.46), Clarissa=review0001, Jessenia=docs0001, Elda=implement0001, Sheri=test0001, Afton=review0002. No duplicates, all feasible. Will assign triage in execution. Coordination complete on all blackboards.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "5269b5ae-3bac-4b64-94b9-2c66be354d32",
+        "ts": 1777190048.0693483,
+        "agent": "Lenna",
+        "kind": "communication",
+        "payload": {
+          "content": "All coordination complete on blackboard 0. Full agreement on plan: I will take ISSUE-0001::triage in execution for optimal joint score (6 tasks, prio_sum=2.75). No further messages needed. Ready to move to execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ce73b8c8-211c-40e2-8c5c-563d15d9096c",
+        "ts": 1777190171.354283,
+        "agent": "Lenna",
+        "kind": "communication",
+        "payload": {
+          "content": "I am ready for the execution phase. My final task choice will be ISSUE-0001::triage as per our coordinated plan on blackboard 0. This will ensure no duplicates and optimal score.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "251f0061-99b6-4bce-afe0-25da15b076d0",
+        "ts": 1777190175.544163,
+        "agent": "Clarissa",
+        "kind": "communication",
+        "payload": {
+          "content": "Confirming the coordinated plan for optimal joint score (tasks_done=6, prio_sum=2.75): Lenna=ISSUE-0001::triage, Clarissa=ISSUE-0001::review (effort2<=7h, cost2.13), Jessenia=docs0001, Elda=implement0001, Sheri=test0001, Afton=review0002. All feasible, no duplicates. I will assign ISSUE-0001::review in the execution phase. Ready to proceed.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e33f2e85-2033-45fc-b7ae-a6b2f363ffd6",
+        "ts": 1777190368.104184,
+        "agent": "Jessenia",
+        "kind": "communication",
+        "payload": {
+          "content": "Confirming the coordinated plan for optimal joint score (tasks_done=6, prio_sum=2.75): Lenna=ISSUE-0001::triage, Clarissa=ISSUE-0001::review, Jessenia=ISSUE-0001::docs (effort2<=4h, cost2.06), Elda=ISSUE-0001::implement, Sheri=ISSUE-0001::test, Afton=ISSUE-0002::review. All feasible, no duplicates. I will assign ISSUE-0001::docs in the execution phase. Ready to proceed. Also relaying to bb1 if applicable.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d3ef548f-caf3-4bbd-8bf0-793337ebb81c",
+        "ts": 1777190559.7881944,
+        "agent": "Elda",
+        "kind": "communication",
+        "payload": {
+          "content": "Confirming the coordinated plan for optimal joint score (tasks_done=6, prio_sum=2.75): Lenna=ISSUE-0001::triage, Clarissa=ISSUE-0001::review, Jessenia=ISSUE-0001::docs, Elda=ISSUE-0001::implement (effort4<=8h, cost3.82), Sheri=ISSUE-0001::test, Afton=ISSUE-0002::review. All feasible, no duplicates. I will assign ISSUE-0001::implement in the execution phase. Coordination on blackboard 0 complete. Also relaying to other blackboards if applicable.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "40c39bc2-8876-4be3-9f50-d837f41d1c7b",
+        "ts": 1777190749.8167627,
+        "agent": "Elda",
+        "kind": "communication",
+        "payload": {
+          "content": "I am ready for the execution phase. My final task choice will be ISSUE-0001::implement as per our coordinated plan on blackboard 0. This will ensure no duplicates and optimal score.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "622ef2ae-736d-4690-acb0-0856bb5eea6c",
+        "ts": 1777190755.3104284,
+        "agent": "Sheri",
+        "kind": "communication",
+        "payload": {
+          "content": "Confirmed plan for optimal score: Lenna=ISSUE-0001::triage, Clarissa=ISSUE-0001::review, Jessenia=ISSUE-0001::docs, Elda=ISSUE-0001::implement, Sheri=ISSUE-0001::test (effort 2.8<=5h, cost 2.93), Afton=ISSUE-0002::review. This maximizes tasks_done=6, priority_sum=2.75 with no duplicates or infeasibles. All avails match. Ready for execution, will assign ISSUE-0001::test.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "6905dad4-0e71-4309-8c57-e2b8ab39d878",
+        "ts": 1777190822.9600472,
+        "agent": "Sheri",
+        "kind": "communication",
+        "payload": {
+          "content": "All coordination complete. Plan locked in for max joint score with tasks_done=6 and priority_sum=2.75. I will claim ISSUE-0001::test in the upcoming execution phase. No conflicts.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "062c7f4c-b29a-4a7b-bb18-855316d76428",
+        "ts": 1777190946.5332685,
+        "agent": "Sheri",
+        "kind": "communication",
+        "payload": {
+          "content": "Planning complete on all blackboards. All agents have agreed on the optimal assignment plan. Ready to enter execution phase and assign ISSUE-0001::test as coordinated.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "3fc55dc4-4600-45fa-9c27-f5f8696fc178",
+        "ts": 1777190950.257739,
+        "agent": "Afton",
+        "kind": "communication",
+        "payload": {
+          "content": "Confirmed plan on bb0 and bb1: I'll take ISSUE-0002::review (effort 4<=4h avail, cost 4.88) in execution. Assignments: Lenna-triage0001, Clarissa-review0001, Jessenia-docs0001, Elda-implement0001, Sheri-test0001, me-review0002. This maximizes tasks_done=6, prio_sum=2.75 with no duplicates or infeasibles. Ready for execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "639301b1-9129-4507-9eb5-f02af0ae6bef",
+        "ts": 1777191015.4078348,
+        "agent": "Afton",
+        "kind": "communication",
+        "payload": {
+          "content": "All coordination complete on blackboards 0 and 1. Fully agree with the plan for optimal joint score: tasks_done=6, priority_sum=2.75. I will claim ISSUE-0002::review in execution phase. No further changes.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e2fdface-4e85-4a1c-b942-010d39014bf2",
+        "ts": 1777191139.649838,
+        "agent": "Afton",
+        "kind": "communication",
+        "payload": {
+          "content": "Planning phase complete. All agents coordinated and agreed on the optimal assignment plan for joint score maximization (6 tasks, prio_sum=2.75, no violations). My choice for execution: ISSUE-0002::review. Ready to proceed to execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "270e87fa-5ddb-4aa2-8b89-2167074559f8",
+        "ts": 1777191141.2326953,
+        "agent": "Lenna",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::triage"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Lenna",
+              "task_id": "ISSUE-0001::triage",
+              "task": {
+                "id": "ISSUE-0001::triage",
+                "issue_id": "ISSUE-0001",
+                "title": "Improve mobile-development [triage]",
+                "tags": [
+                  "mobile-development"
+                ],
+                "priority": "medium",
+                "effort": 1.6,
+                "work_type": "triage"
+              },
+              "total_assigned": 1,
+              "remaining_agents": 5,
+              "joint_reward": 28.54314733345461
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e95991b9-179c-4990-9eae-825b94a8438b",
+        "ts": 1777191142.7244403,
+        "agent": "Clarissa",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Clarissa",
+              "task_id": "ISSUE-0001::review",
+              "task": {
+                "id": "ISSUE-0001::review",
+                "issue_id": "ISSUE-0001",
+                "title": "Improve mobile-development [review]",
+                "tags": [
+                  "mobile-development"
+                ],
+                "priority": "medium",
+                "effort": 2.0,
+                "work_type": "review"
+              },
+              "total_assigned": 2,
+              "remaining_agents": 4,
+              "joint_reward": 56.410723393651836
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b615f81d-6c63-4843-9507-34fd4248d019",
+        "ts": 1777191146.5570104,
+        "agent": "Elda",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::implement"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Elda",
+              "task_id": "ISSUE-0001::implement",
+              "task": {
+                "id": "ISSUE-0001::implement",
+                "issue_id": "ISSUE-0001",
+                "title": "Improve mobile-development [implement]",
+                "tags": [
+                  "mobile-development"
+                ],
+                "priority": "medium",
+                "effort": 4.0,
+                "work_type": "implement"
+              },
+              "total_assigned": 3,
+              "remaining_agents": 3,
+              "joint_reward": 82.59107979439281
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f5a5ed9a-a6e5-45ef-a787-93f4f88a304a",
+        "ts": 1777191148.991325,
+        "agent": "Sheri",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::test"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Sheri",
+              "task_id": "ISSUE-0001::test",
+              "task": {
+                "id": "ISSUE-0001::test",
+                "issue_id": "ISSUE-0001",
+                "title": "Improve mobile-development [test]",
+                "tags": [
+                  "mobile-development"
+                ],
+                "priority": "medium",
+                "effort": 2.8,
+                "work_type": "test"
+              },
+              "total_assigned": 4,
+              "remaining_agents": 2,
+              "joint_reward": 109.66106709144597
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "fe5ed206-7fc8-4765-aa23-2b9d72d5503e",
+        "ts": 1777191154.50312,
+        "agent": "Afton",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Afton",
+              "task_id": "ISSUE-0002::review",
+              "task": {
+                "id": "ISSUE-0002::review",
+                "issue_id": "ISSUE-0002",
+                "title": "Fix mobile-development [review]",
+                "tags": [
+                  "mobile-development"
+                ],
+                "priority": "low",
+                "effort": 4.0,
+                "work_type": "review"
+              },
+              "total_assigned": 5,
+              "remaining_agents": 1,
+              "joint_reward": 129.7860328882738
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  },
+  {
+    "blackboard_id": "1",
+    "participants": [
+      "Afton",
+      "Sheri"
+    ],
+    "template": {
+      "secret_channel": true,
+      "visibility": "secret",
+      "secret_channel_kind": "coalition",
+      "secret_channel_index": 1,
+      "allow_duplicate": true
+    },
+    "events": [
+      {
+        "blackboard_id": 1,
+        "id": "0108b6ac-bf10-4f3b-aa11-f2d7b55826f4",
+        "ts": 1777187269.536809,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Sheri, Afton"
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "e37e54ca-02e1-47e3-9699-82f34e6fd265",
+        "ts": 1777188100.3739116,
+        "agent": "Sheri",
+        "kind": "communication",
+        "payload": {
+          "content": "Plan for max tasks: Lenna-triage(0001), Clarissa-review(0001), Jessenia-docs(0001), Elda-implement(0001), Sheri-test(0001), Afton-0002::review (low). My costs ok, avail 5h for test effort 2.8. This gets 6 tasks, prio sum 2.75. Agree? Ready to execute this.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "2589a16c-a728-446a-b318-53cb7765f639",
+        "ts": 1777188226.2199001,
+        "agent": "Afton",
+        "kind": "communication",
+        "payload": {
+          "content": "Agree with your plan for me to take 0002::review. My avail 4h exactly matches effort 4. Will claim that in execution to get 6 tasks total. Good coordination.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "a040fde8-64ea-430d-a4bb-06adb4349734",
+        "ts": 1777188817.9897246,
+        "agent": "Sheri",
+        "kind": "communication",
+        "payload": {
+          "content": "Final confirmation on full plan with all agents: I'll take ISSUE-0001::test in execution. Afton on 0002 review. Maximizes objectives.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "382b1f73-6428-4900-9c1f-bf9e3597801f",
+        "ts": 1777188948.862697,
+        "agent": "Afton",
+        "kind": "communication",
+        "payload": {
+          "content": "Confirmed plan: I will take ISSUE-0002::review in execution phase. This allows all 6 tasks assigned for optimal score. Coordination complete.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "00d36e0a-cba0-486a-af26-8742785acd5d",
+        "ts": 1777189720.6908724,
+        "agent": "Sheri",
+        "kind": "communication",
+        "payload": {
+          "content": "Confirmed on bb1: I'll take ISSUE-0001::test in execution as per full plan. Afton on 0002::review. This gets 6 tasks for best score. No issues.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "3a43aac9-8314-4304-ac96-e2405b82eabe",
+        "ts": 1777189915.09724,
+        "agent": "Afton",
+        "kind": "communication",
+        "payload": {
+          "content": "Confirmed on bb1: sticking with ISSUE-0002::review in execution per agreed plan with Sheri. Maximizes joint score with 6 tasks.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "4564a8a4-9242-4ccc-bc0a-6dfeb3b1e975",
+        "ts": 1777190755.3105538,
+        "agent": "Sheri",
+        "kind": "communication",
+        "payload": {
+          "content": "Final confirmation on bb1: I'll take ISSUE-0001::test in execution as per agreed plan with all. Afton on 0002::review. This achieves 6 tasks for best joint score. Coordination complete.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "dc470d62-0c54-4b45-87e6-6d5c0def2be0",
+        "ts": 1777190946.5333161,
+        "agent": "Sheri",
+        "kind": "communication",
+        "payload": {
+          "content": "Planning complete on bb1. Ready for execution to assign ISSUE-0001::test per plan.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "0a8816a3-7fcc-4a11-9a4e-4cb611890114",
+        "ts": 1777190950.2578683,
+        "agent": "Afton",
+        "kind": "communication",
+        "payload": {
+          "content": "Confirmed on bb1: sticking with ISSUE-0002::review in execution per agreed plan. This achieves optimal joint score with 6 tasks. Coordination complete, ready for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "3f124f96-57f5-4180-b102-af3cdd60a8d2",
+        "ts": 1777191015.4078999,
+        "agent": "Afton",
+        "kind": "communication",
+        "payload": {
+          "content": "Planning done on bb1. Confirmed: will assign ISSUE-0002::review in execution for max score.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "ab33625d-d698-42a2-a0da-798bf39622da",
+        "ts": 1777191139.6499946,
+        "agent": "Afton",
+        "kind": "communication",
+        "payload": {
+          "content": "Planning complete on bb1. All set for execution with me on ISSUE-0002::review.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      }
+    ]
+  }
+]

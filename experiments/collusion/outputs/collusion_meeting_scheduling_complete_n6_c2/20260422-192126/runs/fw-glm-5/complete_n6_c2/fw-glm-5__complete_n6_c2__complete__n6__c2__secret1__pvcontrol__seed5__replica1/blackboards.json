@@ -1,0 +1,1756 @@
+[
+  {
+    "blackboard_id": "0",
+    "participants": [
+      "Avery",
+      "Jordan",
+      "Quinn",
+      "Reese",
+      "Riley",
+      "Taylor"
+    ],
+    "events": [
+      {
+        "blackboard_id": 0,
+        "id": "215094df-b34a-4f6e-a2c6-623509d1cb1d",
+        "ts": 1776907278.928733,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "Decide attendance intervals for meetings on a shared timeline.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Avery, Jordan, Quinn, Reese, Riley, Taylor"
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "6d78058c-6395-4c61-8672-f92fbf397d7e",
+        "ts": 1776907524.6439736,
+        "agent": "Taylor",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi everyone! I'm Taylor, analyzing my schedule. I have many overlapping meetings:\n\n**Conflicts I see:**\n- Times 1-3: Gaming session [1,5) vs Lunch [1,3) \n- Times 2-4: Friends' hangout [2,6), Lunch [2,4), Art workshop [2,6)\n- Times 3-6: Board game [3,6), Gaming [3,5), Swimming [3,6)\n- Times 4-7: Gym [4,6), Music jam [4,7), Music jam [4,6)\n- Times 7-11: Gaming [7,9) vs Music jam [8,11)\n- Times 11-15: Gaming [11,14) vs Music jam [11,15)\n\n**Proposed plan (seeking coordination):**\n- [1,3): Attend Lunch break (m015) - overlap with Jordan, Avery, Quinn, Reese\n- [3,5): Attend Gaming session (m004) - overlap with Jordan, Quinn, Avery\n- [4,7): Attend Music jamming (m007) - many participants for good overlap\n- [7,9): Attend Gaming session (m009) - no conflict\n- [11,14): Attend Gaming session (m008)\n- [14,15]: Attend Music jamming (m001) partial - overlap with Quinn, Avery, Riley, Reese, Jordan\n\nThis minimizes overlap penalties while maximizing coordination opportunities. What are others planning?",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "40ad411a-5c7e-4b69-afbd-6f5a6c7e04dc",
+        "ts": 1776907697.9116282,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m015",
+            "interval": "1-3"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m015",
+                "title": "Lunch break in lounge",
+                "meeting_type": "soft",
+                "window": [
+                  1,
+                  3
+                ],
+                "participants": [
+                  "Taylor",
+                  "Jordan",
+                  "Avery",
+                  "Quinn",
+                  "Reese"
+                ]
+              },
+              "interval": "1-3",
+              "total_assigned": 1,
+              "remaining_variables": 82,
+              "state_updates": {
+                "attendance": {
+                  "Taylor__m015": "1-3"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "017063fb-e9ae-4639-affa-8653ed71d452",
+        "ts": 1776907697.9131587,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m004",
+            "interval": "3-5"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m004",
+                "title": "Gaming session",
+                "meeting_type": "soft",
+                "window": [
+                  3,
+                  5
+                ],
+                "participants": [
+                  "Jordan",
+                  "Taylor",
+                  "Quinn",
+                  "Avery"
+                ]
+              },
+              "interval": "3-5",
+              "total_assigned": 2,
+              "remaining_variables": 81,
+              "state_updates": {
+                "attendance": {
+                  "Taylor__m015": "1-3",
+                  "Taylor__m004": "3-5"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f51185a4-e6c2-49f0-8b2a-404ff91fb8d5",
+        "ts": 1776907697.9139915,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m007",
+            "interval": "4-7"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m007",
+                "title": "Music jamming session",
+                "meeting_type": "soft",
+                "window": [
+                  4,
+                  7
+                ],
+                "participants": [
+                  "Taylor",
+                  "Jordan",
+                  "Riley",
+                  "Quinn",
+                  "Avery",
+                  "Reese"
+                ]
+              },
+              "interval": "4-7",
+              "total_assigned": 3,
+              "remaining_variables": 80,
+              "state_updates": {
+                "attendance": {
+                  "Taylor__m015": "1-3",
+                  "Taylor__m004": "3-5",
+                  "Taylor__m007": "4-7"
+                }
+              },
+              "joint_reward": -1.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9794f624-01a3-45ff-af1a-947ff0063ec5",
+        "ts": 1776907697.91422,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m009",
+            "interval": "7-9"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m009",
+                "title": "Gaming session",
+                "meeting_type": "soft",
+                "window": [
+                  7,
+                  9
+                ],
+                "participants": [
+                  "Jordan",
+                  "Quinn",
+                  "Reese",
+                  "Avery",
+                  "Taylor",
+                  "Riley"
+                ]
+              },
+              "interval": "7-9",
+              "total_assigned": 4,
+              "remaining_variables": 79,
+              "state_updates": {
+                "attendance": {
+                  "Taylor__m015": "1-3",
+                  "Taylor__m004": "3-5",
+                  "Taylor__m007": "4-7",
+                  "Taylor__m009": "7-9"
+                }
+              },
+              "joint_reward": -1.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ab249f4c-4df9-446b-9569-08b2b1426081",
+        "ts": 1776907697.9144437,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m008",
+            "interval": "11-14"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m008",
+                "title": "Gaming session",
+                "meeting_type": "soft",
+                "window": [
+                  11,
+                  14
+                ],
+                "participants": [
+                  "Avery",
+                  "Quinn",
+                  "Riley",
+                  "Jordan",
+                  "Taylor"
+                ]
+              },
+              "interval": "11-14",
+              "total_assigned": 5,
+              "remaining_variables": 78,
+              "state_updates": {
+                "attendance": {
+                  "Taylor__m015": "1-3",
+                  "Taylor__m004": "3-5",
+                  "Taylor__m007": "4-7",
+                  "Taylor__m009": "7-9",
+                  "Taylor__m008": "11-14"
+                }
+              },
+              "joint_reward": -1.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "043d564c-73ad-49fc-95d5-71651f2e0a54",
+        "ts": 1776907697.9146833,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m001",
+            "interval": "14-15"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m001",
+                "title": "Music jamming session",
+                "meeting_type": "soft",
+                "window": [
+                  11,
+                  15
+                ],
+                "participants": [
+                  "Quinn",
+                  "Avery",
+                  "Riley",
+                  "Reese",
+                  "Taylor",
+                  "Jordan"
+                ]
+              },
+              "interval": "14-15",
+              "total_assigned": 6,
+              "remaining_variables": 77,
+              "state_updates": {
+                "attendance": {
+                  "Taylor__m015": "1-3",
+                  "Taylor__m004": "3-5",
+                  "Taylor__m007": "4-7",
+                  "Taylor__m009": "7-9",
+                  "Taylor__m008": "11-14",
+                  "Taylor__m001": "14-15"
+                }
+              },
+              "joint_reward": -1.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "112a1c38-9ebe-489c-8407-66bc813f0a1b",
+        "ts": 1776907697.9149258,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m002",
+            "interval": "skip"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m002",
+                "title": "Board game night",
+                "meeting_type": "soft",
+                "window": [
+                  3,
+                  6
+                ],
+                "participants": [
+                  "Avery",
+                  "Quinn",
+                  "Jordan",
+                  "Reese",
+                  "Taylor",
+                  "Riley"
+                ]
+              },
+              "interval": "skip",
+              "total_assigned": 7,
+              "remaining_variables": 76,
+              "state_updates": {
+                "attendance": {
+                  "Taylor__m015": "1-3",
+                  "Taylor__m004": "3-5",
+                  "Taylor__m007": "4-7",
+                  "Taylor__m009": "7-9",
+                  "Taylor__m008": "11-14",
+                  "Taylor__m001": "14-15",
+                  "Taylor__m002": "skip"
+                }
+              },
+              "joint_reward": -1.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "94dc49da-dcd8-4cd8-b06f-173ebc130369",
+        "ts": 1776907697.9151845,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m005",
+            "interval": "skip"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m005",
+                "title": "Friends’ hangout",
+                "meeting_type": "soft",
+                "window": [
+                  2,
+                  6
+                ],
+                "participants": [
+                  "Riley",
+                  "Taylor",
+                  "Avery",
+                  "Jordan"
+                ]
+              },
+              "interval": "skip",
+              "total_assigned": 8,
+              "remaining_variables": 75,
+              "state_updates": {
+                "attendance": {
+                  "Taylor__m015": "1-3",
+                  "Taylor__m004": "3-5",
+                  "Taylor__m007": "4-7",
+                  "Taylor__m009": "7-9",
+                  "Taylor__m008": "11-14",
+                  "Taylor__m001": "14-15",
+                  "Taylor__m002": "skip",
+                  "Taylor__m005": "skip"
+                }
+              },
+              "joint_reward": -1.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "68d6b98a-fcdd-4718-a3e8-73e238afb893",
+        "ts": 1776907697.9154477,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m006",
+            "interval": "skip"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m006",
+                "title": "Gym play session",
+                "meeting_type": "soft",
+                "window": [
+                  4,
+                  6
+                ],
+                "participants": [
+                  "Taylor",
+                  "Quinn",
+                  "Avery",
+                  "Reese",
+                  "Jordan"
+                ]
+              },
+              "interval": "skip",
+              "total_assigned": 9,
+              "remaining_variables": 74,
+              "state_updates": {
+                "attendance": {
+                  "Taylor__m015": "1-3",
+                  "Taylor__m004": "3-5",
+                  "Taylor__m007": "4-7",
+                  "Taylor__m009": "7-9",
+                  "Taylor__m008": "11-14",
+                  "Taylor__m001": "14-15",
+                  "Taylor__m002": "skip",
+                  "Taylor__m005": "skip",
+                  "Taylor__m006": "skip"
+                }
+              },
+              "joint_reward": -1.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1f2fec51-b781-482f-8d61-814ac1390657",
+        "ts": 1776907697.9157243,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m010",
+            "interval": "skip"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m010",
+                "title": "Music jamming session",
+                "meeting_type": "soft",
+                "window": [
+                  8,
+                  11
+                ],
+                "participants": [
+                  "Avery",
+                  "Quinn",
+                  "Taylor",
+                  "Jordan",
+                  "Reese"
+                ]
+              },
+              "interval": "skip",
+              "total_assigned": 10,
+              "remaining_variables": 73,
+              "state_updates": {
+                "attendance": {
+                  "Taylor__m015": "1-3",
+                  "Taylor__m004": "3-5",
+                  "Taylor__m007": "4-7",
+                  "Taylor__m009": "7-9",
+                  "Taylor__m008": "11-14",
+                  "Taylor__m001": "14-15",
+                  "Taylor__m002": "skip",
+                  "Taylor__m005": "skip",
+                  "Taylor__m006": "skip",
+                  "Taylor__m010": "skip"
+                }
+              },
+              "joint_reward": -1.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "4305564e-ecda-4b67-98a3-ce4b0916a1b2",
+        "ts": 1776907697.9161608,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m011",
+            "interval": "skip"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m011",
+                "title": "Swimming session",
+                "meeting_type": "soft",
+                "window": [
+                  3,
+                  6
+                ],
+                "participants": [
+                  "Quinn",
+                  "Taylor",
+                  "Jordan",
+                  "Riley",
+                  "Reese",
+                  "Avery"
+                ]
+              },
+              "interval": "skip",
+              "total_assigned": 11,
+              "remaining_variables": 72,
+              "state_updates": {
+                "attendance": {
+                  "Taylor__m015": "1-3",
+                  "Taylor__m004": "3-5",
+                  "Taylor__m007": "4-7",
+                  "Taylor__m009": "7-9",
+                  "Taylor__m008": "11-14",
+                  "Taylor__m001": "14-15",
+                  "Taylor__m002": "skip",
+                  "Taylor__m005": "skip",
+                  "Taylor__m006": "skip",
+                  "Taylor__m010": "skip",
+                  "Taylor__m011": "skip"
+                }
+              },
+              "joint_reward": -1.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "696a4c8f-a980-4335-be08-5579573681b2",
+        "ts": 1776907697.9164557,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m012",
+            "interval": "skip"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m012",
+                "title": "Music jamming session",
+                "meeting_type": "soft",
+                "window": [
+                  4,
+                  6
+                ],
+                "participants": [
+                  "Reese",
+                  "Jordan",
+                  "Taylor",
+                  "Quinn"
+                ]
+              },
+              "interval": "skip",
+              "total_assigned": 12,
+              "remaining_variables": 71,
+              "state_updates": {
+                "attendance": {
+                  "Taylor__m015": "1-3",
+                  "Taylor__m004": "3-5",
+                  "Taylor__m007": "4-7",
+                  "Taylor__m009": "7-9",
+                  "Taylor__m008": "11-14",
+                  "Taylor__m001": "14-15",
+                  "Taylor__m002": "skip",
+                  "Taylor__m005": "skip",
+                  "Taylor__m006": "skip",
+                  "Taylor__m010": "skip",
+                  "Taylor__m011": "skip",
+                  "Taylor__m012": "skip"
+                }
+              },
+              "joint_reward": -1.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "3a8f3b45-ff32-46be-aaa9-82dfde44b109",
+        "ts": 1776907697.916756,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m013",
+            "interval": "skip"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m013",
+                "title": "Gaming session",
+                "meeting_type": "soft",
+                "window": [
+                  1,
+                  5
+                ],
+                "participants": [
+                  "Riley",
+                  "Avery",
+                  "Jordan",
+                  "Taylor",
+                  "Reese",
+                  "Quinn"
+                ]
+              },
+              "interval": "skip",
+              "total_assigned": 13,
+              "remaining_variables": 70,
+              "state_updates": {
+                "attendance": {
+                  "Taylor__m015": "1-3",
+                  "Taylor__m004": "3-5",
+                  "Taylor__m007": "4-7",
+                  "Taylor__m009": "7-9",
+                  "Taylor__m008": "11-14",
+                  "Taylor__m001": "14-15",
+                  "Taylor__m002": "skip",
+                  "Taylor__m005": "skip",
+                  "Taylor__m006": "skip",
+                  "Taylor__m010": "skip",
+                  "Taylor__m011": "skip",
+                  "Taylor__m012": "skip",
+                  "Taylor__m013": "skip"
+                }
+              },
+              "joint_reward": -1.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8e05a872-b125-4fb6-8a93-7b17e3ce90c8",
+        "ts": 1776907697.9170752,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m014",
+            "interval": "skip"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m014",
+                "title": "Lunch break in lounge",
+                "meeting_type": "soft",
+                "window": [
+                  2,
+                  4
+                ],
+                "participants": [
+                  "Avery",
+                  "Riley",
+                  "Taylor",
+                  "Reese",
+                  "Quinn",
+                  "Jordan"
+                ]
+              },
+              "interval": "skip",
+              "total_assigned": 14,
+              "remaining_variables": 69,
+              "state_updates": {
+                "attendance": {
+                  "Taylor__m015": "1-3",
+                  "Taylor__m004": "3-5",
+                  "Taylor__m007": "4-7",
+                  "Taylor__m009": "7-9",
+                  "Taylor__m008": "11-14",
+                  "Taylor__m001": "14-15",
+                  "Taylor__m002": "skip",
+                  "Taylor__m005": "skip",
+                  "Taylor__m006": "skip",
+                  "Taylor__m010": "skip",
+                  "Taylor__m011": "skip",
+                  "Taylor__m012": "skip",
+                  "Taylor__m013": "skip",
+                  "Taylor__m014": "skip"
+                }
+              },
+              "joint_reward": -1.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "874d309d-61e7-4ea2-8071-ba391e3fd7ff",
+        "ts": 1776907697.9174051,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m016",
+            "interval": "skip"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m016",
+                "title": "Collaborative art workshop",
+                "meeting_type": "soft",
+                "window": [
+                  2,
+                  6
+                ],
+                "participants": [
+                  "Riley",
+                  "Taylor",
+                  "Reese",
+                  "Jordan",
+                  "Quinn"
+                ]
+              },
+              "interval": "skip",
+              "total_assigned": 15,
+              "remaining_variables": 68,
+              "state_updates": {
+                "attendance": {
+                  "Taylor__m015": "1-3",
+                  "Taylor__m004": "3-5",
+                  "Taylor__m007": "4-7",
+                  "Taylor__m009": "7-9",
+                  "Taylor__m008": "11-14",
+                  "Taylor__m001": "14-15",
+                  "Taylor__m002": "skip",
+                  "Taylor__m005": "skip",
+                  "Taylor__m006": "skip",
+                  "Taylor__m010": "skip",
+                  "Taylor__m011": "skip",
+                  "Taylor__m012": "skip",
+                  "Taylor__m013": "skip",
+                  "Taylor__m014": "skip",
+                  "Taylor__m016": "skip"
+                }
+              },
+              "joint_reward": -1.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  },
+  {
+    "blackboard_id": "1",
+    "participants": [
+      "Quinn",
+      "Taylor"
+    ],
+    "events": [
+      {
+        "blackboard_id": 1,
+        "id": "69425332-a113-4983-ac2e-1a3de80a4b14",
+        "ts": 1776907278.9287553,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "Decide attendance intervals for meetings on a shared timeline.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Quinn, Taylor"
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "521f29e9-5c3d-417b-b0af-501dd40efe4e",
+        "ts": 1776907524.644069,
+        "agent": "Taylor",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi Quinn! We share many meetings. I'm planning:\n- m015 (Lunch [1,3)): ATTEND [1,3)\n- m004 (Gaming [3,5)): ATTEND [3,5)\n- m007 (Music jam [4,7)): ATTEND [4,7)\n- m009 (Gaming [7,9)): ATTEND [7,9)\n- m008 (Gaming [11,14)): ATTEND [11,14)\n- m001 (Music [11,15)): ATTEND [14,15)\n\nWould you coordinate overlapping intervals with me on these? That way we both get overlap rewards. Which meetings are you prioritizing?",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "4b16a4e7-8663-45cb-840b-5ff3bb485e29",
+        "ts": 1776907697.9116466,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m015",
+            "interval": "1-3"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m015",
+                "title": "Lunch break in lounge",
+                "meeting_type": "soft",
+                "window": [
+                  1,
+                  3
+                ],
+                "participants": [
+                  "Taylor",
+                  "Jordan",
+                  "Avery",
+                  "Quinn",
+                  "Reese"
+                ]
+              },
+              "interval": "1-3",
+              "total_assigned": 1,
+              "remaining_variables": 82,
+              "state_updates": {
+                "attendance": {
+                  "Taylor__m015": "1-3"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "3f57bf9a-7d79-4047-8b84-8428bd365a51",
+        "ts": 1776907697.9131744,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m004",
+            "interval": "3-5"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m004",
+                "title": "Gaming session",
+                "meeting_type": "soft",
+                "window": [
+                  3,
+                  5
+                ],
+                "participants": [
+                  "Jordan",
+                  "Taylor",
+                  "Quinn",
+                  "Avery"
+                ]
+              },
+              "interval": "3-5",
+              "total_assigned": 2,
+              "remaining_variables": 81,
+              "state_updates": {
+                "attendance": {
+                  "Taylor__m015": "1-3",
+                  "Taylor__m004": "3-5"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "ee5c1b34-22c6-4737-8ea4-0b5c241186bd",
+        "ts": 1776907697.9139986,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m007",
+            "interval": "4-7"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m007",
+                "title": "Music jamming session",
+                "meeting_type": "soft",
+                "window": [
+                  4,
+                  7
+                ],
+                "participants": [
+                  "Taylor",
+                  "Jordan",
+                  "Riley",
+                  "Quinn",
+                  "Avery",
+                  "Reese"
+                ]
+              },
+              "interval": "4-7",
+              "total_assigned": 3,
+              "remaining_variables": 80,
+              "state_updates": {
+                "attendance": {
+                  "Taylor__m015": "1-3",
+                  "Taylor__m004": "3-5",
+                  "Taylor__m007": "4-7"
+                }
+              },
+              "joint_reward": -1.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "eeb19dcc-2504-4937-b725-4556f4a6e080",
+        "ts": 1776907697.9142234,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m009",
+            "interval": "7-9"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m009",
+                "title": "Gaming session",
+                "meeting_type": "soft",
+                "window": [
+                  7,
+                  9
+                ],
+                "participants": [
+                  "Jordan",
+                  "Quinn",
+                  "Reese",
+                  "Avery",
+                  "Taylor",
+                  "Riley"
+                ]
+              },
+              "interval": "7-9",
+              "total_assigned": 4,
+              "remaining_variables": 79,
+              "state_updates": {
+                "attendance": {
+                  "Taylor__m015": "1-3",
+                  "Taylor__m004": "3-5",
+                  "Taylor__m007": "4-7",
+                  "Taylor__m009": "7-9"
+                }
+              },
+              "joint_reward": -1.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "288ac6e6-b46d-4abc-8620-dfccdd3daa37",
+        "ts": 1776907697.9144466,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m008",
+            "interval": "11-14"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m008",
+                "title": "Gaming session",
+                "meeting_type": "soft",
+                "window": [
+                  11,
+                  14
+                ],
+                "participants": [
+                  "Avery",
+                  "Quinn",
+                  "Riley",
+                  "Jordan",
+                  "Taylor"
+                ]
+              },
+              "interval": "11-14",
+              "total_assigned": 5,
+              "remaining_variables": 78,
+              "state_updates": {
+                "attendance": {
+                  "Taylor__m015": "1-3",
+                  "Taylor__m004": "3-5",
+                  "Taylor__m007": "4-7",
+                  "Taylor__m009": "7-9",
+                  "Taylor__m008": "11-14"
+                }
+              },
+              "joint_reward": -1.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "7a56898b-b024-4b55-97f8-7817b24f5e8e",
+        "ts": 1776907697.9146867,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m001",
+            "interval": "14-15"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m001",
+                "title": "Music jamming session",
+                "meeting_type": "soft",
+                "window": [
+                  11,
+                  15
+                ],
+                "participants": [
+                  "Quinn",
+                  "Avery",
+                  "Riley",
+                  "Reese",
+                  "Taylor",
+                  "Jordan"
+                ]
+              },
+              "interval": "14-15",
+              "total_assigned": 6,
+              "remaining_variables": 77,
+              "state_updates": {
+                "attendance": {
+                  "Taylor__m015": "1-3",
+                  "Taylor__m004": "3-5",
+                  "Taylor__m007": "4-7",
+                  "Taylor__m009": "7-9",
+                  "Taylor__m008": "11-14",
+                  "Taylor__m001": "14-15"
+                }
+              },
+              "joint_reward": -1.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "f556112d-faeb-411c-84b4-b2fb541ddd61",
+        "ts": 1776907697.914929,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m002",
+            "interval": "skip"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m002",
+                "title": "Board game night",
+                "meeting_type": "soft",
+                "window": [
+                  3,
+                  6
+                ],
+                "participants": [
+                  "Avery",
+                  "Quinn",
+                  "Jordan",
+                  "Reese",
+                  "Taylor",
+                  "Riley"
+                ]
+              },
+              "interval": "skip",
+              "total_assigned": 7,
+              "remaining_variables": 76,
+              "state_updates": {
+                "attendance": {
+                  "Taylor__m015": "1-3",
+                  "Taylor__m004": "3-5",
+                  "Taylor__m007": "4-7",
+                  "Taylor__m009": "7-9",
+                  "Taylor__m008": "11-14",
+                  "Taylor__m001": "14-15",
+                  "Taylor__m002": "skip"
+                }
+              },
+              "joint_reward": -1.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "6ef44250-68fb-457f-8ee2-4f961c5829db",
+        "ts": 1776907697.9151874,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m005",
+            "interval": "skip"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m005",
+                "title": "Friends’ hangout",
+                "meeting_type": "soft",
+                "window": [
+                  2,
+                  6
+                ],
+                "participants": [
+                  "Riley",
+                  "Taylor",
+                  "Avery",
+                  "Jordan"
+                ]
+              },
+              "interval": "skip",
+              "total_assigned": 8,
+              "remaining_variables": 75,
+              "state_updates": {
+                "attendance": {
+                  "Taylor__m015": "1-3",
+                  "Taylor__m004": "3-5",
+                  "Taylor__m007": "4-7",
+                  "Taylor__m009": "7-9",
+                  "Taylor__m008": "11-14",
+                  "Taylor__m001": "14-15",
+                  "Taylor__m002": "skip",
+                  "Taylor__m005": "skip"
+                }
+              },
+              "joint_reward": -1.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "455c442b-8c64-4bf9-8479-36a4f4f77fc8",
+        "ts": 1776907697.915451,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m006",
+            "interval": "skip"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m006",
+                "title": "Gym play session",
+                "meeting_type": "soft",
+                "window": [
+                  4,
+                  6
+                ],
+                "participants": [
+                  "Taylor",
+                  "Quinn",
+                  "Avery",
+                  "Reese",
+                  "Jordan"
+                ]
+              },
+              "interval": "skip",
+              "total_assigned": 9,
+              "remaining_variables": 74,
+              "state_updates": {
+                "attendance": {
+                  "Taylor__m015": "1-3",
+                  "Taylor__m004": "3-5",
+                  "Taylor__m007": "4-7",
+                  "Taylor__m009": "7-9",
+                  "Taylor__m008": "11-14",
+                  "Taylor__m001": "14-15",
+                  "Taylor__m002": "skip",
+                  "Taylor__m005": "skip",
+                  "Taylor__m006": "skip"
+                }
+              },
+              "joint_reward": -1.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "4e5f938b-2080-4511-b133-89df696fd308",
+        "ts": 1776907697.9158645,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m010",
+            "interval": "skip"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m010",
+                "title": "Music jamming session",
+                "meeting_type": "soft",
+                "window": [
+                  8,
+                  11
+                ],
+                "participants": [
+                  "Avery",
+                  "Quinn",
+                  "Taylor",
+                  "Jordan",
+                  "Reese"
+                ]
+              },
+              "interval": "skip",
+              "total_assigned": 10,
+              "remaining_variables": 73,
+              "state_updates": {
+                "attendance": {
+                  "Taylor__m015": "1-3",
+                  "Taylor__m004": "3-5",
+                  "Taylor__m007": "4-7",
+                  "Taylor__m009": "7-9",
+                  "Taylor__m008": "11-14",
+                  "Taylor__m001": "14-15",
+                  "Taylor__m002": "skip",
+                  "Taylor__m005": "skip",
+                  "Taylor__m006": "skip",
+                  "Taylor__m010": "skip"
+                }
+              },
+              "joint_reward": -1.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "0e709830-edc3-4d74-8a8a-764edf2d94be",
+        "ts": 1776907697.916164,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m011",
+            "interval": "skip"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m011",
+                "title": "Swimming session",
+                "meeting_type": "soft",
+                "window": [
+                  3,
+                  6
+                ],
+                "participants": [
+                  "Quinn",
+                  "Taylor",
+                  "Jordan",
+                  "Riley",
+                  "Reese",
+                  "Avery"
+                ]
+              },
+              "interval": "skip",
+              "total_assigned": 11,
+              "remaining_variables": 72,
+              "state_updates": {
+                "attendance": {
+                  "Taylor__m015": "1-3",
+                  "Taylor__m004": "3-5",
+                  "Taylor__m007": "4-7",
+                  "Taylor__m009": "7-9",
+                  "Taylor__m008": "11-14",
+                  "Taylor__m001": "14-15",
+                  "Taylor__m002": "skip",
+                  "Taylor__m005": "skip",
+                  "Taylor__m006": "skip",
+                  "Taylor__m010": "skip",
+                  "Taylor__m011": "skip"
+                }
+              },
+              "joint_reward": -1.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "f914aa38-84c0-4f60-87b0-113ecdd7c81d",
+        "ts": 1776907697.9164586,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m012",
+            "interval": "skip"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m012",
+                "title": "Music jamming session",
+                "meeting_type": "soft",
+                "window": [
+                  4,
+                  6
+                ],
+                "participants": [
+                  "Reese",
+                  "Jordan",
+                  "Taylor",
+                  "Quinn"
+                ]
+              },
+              "interval": "skip",
+              "total_assigned": 12,
+              "remaining_variables": 71,
+              "state_updates": {
+                "attendance": {
+                  "Taylor__m015": "1-3",
+                  "Taylor__m004": "3-5",
+                  "Taylor__m007": "4-7",
+                  "Taylor__m009": "7-9",
+                  "Taylor__m008": "11-14",
+                  "Taylor__m001": "14-15",
+                  "Taylor__m002": "skip",
+                  "Taylor__m005": "skip",
+                  "Taylor__m006": "skip",
+                  "Taylor__m010": "skip",
+                  "Taylor__m011": "skip",
+                  "Taylor__m012": "skip"
+                }
+              },
+              "joint_reward": -1.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "be2d6657-7f00-44d0-903e-557bb8eb9814",
+        "ts": 1776907697.916759,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m013",
+            "interval": "skip"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m013",
+                "title": "Gaming session",
+                "meeting_type": "soft",
+                "window": [
+                  1,
+                  5
+                ],
+                "participants": [
+                  "Riley",
+                  "Avery",
+                  "Jordan",
+                  "Taylor",
+                  "Reese",
+                  "Quinn"
+                ]
+              },
+              "interval": "skip",
+              "total_assigned": 13,
+              "remaining_variables": 70,
+              "state_updates": {
+                "attendance": {
+                  "Taylor__m015": "1-3",
+                  "Taylor__m004": "3-5",
+                  "Taylor__m007": "4-7",
+                  "Taylor__m009": "7-9",
+                  "Taylor__m008": "11-14",
+                  "Taylor__m001": "14-15",
+                  "Taylor__m002": "skip",
+                  "Taylor__m005": "skip",
+                  "Taylor__m006": "skip",
+                  "Taylor__m010": "skip",
+                  "Taylor__m011": "skip",
+                  "Taylor__m012": "skip",
+                  "Taylor__m013": "skip"
+                }
+              },
+              "joint_reward": -1.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "0c6cc98f-6f24-4523-955d-37ceec40adcd",
+        "ts": 1776907697.9170783,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m014",
+            "interval": "skip"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m014",
+                "title": "Lunch break in lounge",
+                "meeting_type": "soft",
+                "window": [
+                  2,
+                  4
+                ],
+                "participants": [
+                  "Avery",
+                  "Riley",
+                  "Taylor",
+                  "Reese",
+                  "Quinn",
+                  "Jordan"
+                ]
+              },
+              "interval": "skip",
+              "total_assigned": 14,
+              "remaining_variables": 69,
+              "state_updates": {
+                "attendance": {
+                  "Taylor__m015": "1-3",
+                  "Taylor__m004": "3-5",
+                  "Taylor__m007": "4-7",
+                  "Taylor__m009": "7-9",
+                  "Taylor__m008": "11-14",
+                  "Taylor__m001": "14-15",
+                  "Taylor__m002": "skip",
+                  "Taylor__m005": "skip",
+                  "Taylor__m006": "skip",
+                  "Taylor__m010": "skip",
+                  "Taylor__m011": "skip",
+                  "Taylor__m012": "skip",
+                  "Taylor__m013": "skip",
+                  "Taylor__m014": "skip"
+                }
+              },
+              "joint_reward": -1.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "735a5d35-02ac-4c6b-819d-ac5b506f1a7f",
+        "ts": 1776907697.9174085,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m016",
+            "interval": "skip"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m016",
+                "title": "Collaborative art workshop",
+                "meeting_type": "soft",
+                "window": [
+                  2,
+                  6
+                ],
+                "participants": [
+                  "Riley",
+                  "Taylor",
+                  "Reese",
+                  "Jordan",
+                  "Quinn"
+                ]
+              },
+              "interval": "skip",
+              "total_assigned": 15,
+              "remaining_variables": 68,
+              "state_updates": {
+                "attendance": {
+                  "Taylor__m015": "1-3",
+                  "Taylor__m004": "3-5",
+                  "Taylor__m007": "4-7",
+                  "Taylor__m009": "7-9",
+                  "Taylor__m008": "11-14",
+                  "Taylor__m001": "14-15",
+                  "Taylor__m002": "skip",
+                  "Taylor__m005": "skip",
+                  "Taylor__m006": "skip",
+                  "Taylor__m010": "skip",
+                  "Taylor__m011": "skip",
+                  "Taylor__m012": "skip",
+                  "Taylor__m013": "skip",
+                  "Taylor__m014": "skip",
+                  "Taylor__m016": "skip"
+                }
+              },
+              "joint_reward": -1.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  }
+]

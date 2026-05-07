@@ -1,0 +1,91 @@
+================================================================================
+BLACKBOARD STATE LOG - 1
+Session started: 2026-01-09 03:17:54
+================================================================================
+
+BLACKBOARD INFO:
+- ID: 1
+- Participants: Aurora Industries, Beacon Works
+================================================================================
+
+================================================================================
+BLACKBOARD STATE UPDATE
+Updated: 2026-01-09 03:21:08
+Iteration: 1 | Phase: execution | Last Agent: Cascade Labs
+Total Events: 15
+================================================================================
+
+EVENT SUMMARY:
+- Total Events: 15
+- By Type: context(1), communication(4), action_executed(10)
+- By Agent: SYSTEM(1), Aurora Industries(8), Beacon Works(6)
+
+--------------------------------------------------------------------------------
+FULL EVENT LOG:
+
+[Event #1, Iteration: 1] [03:17:54] [Execution] SYSTEM (context)  Message: "Assign machines to shared renewable sources across 24h to minimise main-grid usage.
+
+This blackboard is a private communication channel.
+Participants: Aurora Industries, Beacon Works"
+
+[Event #2, Iteration: 1] [03:18:06] [Planning] Aurora Industries (communication)  Content: Aurora Industries - I see we share both sources. My evening demand (17-22) is 8.1kW across 4 machines. With Solar only providing 0-1.4kW in those hours, I need Geothermal capacity. Morning machine needs 2.0kW 8-13 when Solar has good capacity (up to 2.4kW). Can we coordinate so I don't overload Geothermal in evening? What are your planned assignments?
+
+[Event #3, Iteration: 1] [03:18:24] [Planning] Beacon Works (communication)  Content: To Aurora Industries: I'll coordinate with you on Geothermal. I'm planning to use Hydro/Wind for my morning/afternoon machines to leave Geothermal capacity for your evening peak. My total morning demand (5-13h) is ~12.7 kW, which exceeds Hydro+Wind capacity, so some overflow expected. Does this approach work for your planning?
+
+[Event #4, Iteration: 1] [03:18:56] [Planning] Aurora Industries (communication)  Content: Aurora Industries confirming with Beacon Works: I'll proceed with Geothermal for my evening peak (8.1kW 17-22) and Solar for morning machine (2.0kW 8-13). Your Hydro/Wind plan for your machines should work well - this keeps us coordinated on the shared sources. Ready for execution. (phase=planning, iter=1)
+
+[Event #5, Iteration: 1] [03:20:18] [Planning] Aurora Industries (communication)  Content: Aurora Industries final status: Coordination complete and verified. All parties aligned on source assignments. Moving to execution phase with Geothermal for evening peak (8.1kW 17-22) and Solar for morning (2.0kW 8-13). Ready to assign machines.
+
+[Event #6, Iteration: 1] [03:20:51] [Execution] Aurora Industries (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_003', 'source_id': 'src_Solar'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Aurora Industries', 'machine': {'id': 'machine_003', 'label': 'Refrigeration chain', 'window': [8, 13], 'power': 2.0315959570521906}, 'source_id': 'src_Solar', 'total_assigned': 1, 'remaining_machines': 15, 'state_updates': {'assignment': {'machine_003': 'src_Solar'}}, 'joint_reward': 0.0}}
+
+[Event #7, Iteration: 1] [03:20:51] [Execution] Aurora Industries (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_001', 'source_id': 'src_Geothermal'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Aurora Industries', 'machine': {'id': 'machine_001', 'label': 'Water heater', 'window': [18, 22], 'power': 2.3280368899452464}, 'source_id': 'src_Geothermal', 'total_assigned': 2, 'remaining_machines': 14, 'state_updates': {'assignment': {'machine_003': 'src_Solar', 'machine_001': 'src_Geothermal'}}, 'joint_reward': 0.0}}
+
+[Event #8, Iteration: 1] [03:20:51] [Execution] Aurora Industries (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_002', 'source_id': 'src_Geothermal'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Aurora Industries', 'machine': {'id': 'machine_002', 'label': 'Refrigeration chain', 'window': [17, 21], 'power': 2.408939148013406}, 'source_id': 'src_Geothermal', 'total_assigned': 3, 'remaining_machines': 13, 'state_updates': {'assignment': {'machine_003': 'src_Solar', 'machine_001': 'src_Geothermal', 'machine_002': 'src_Geothermal'}}, 'joint_reward': 0.0}}
+
+[Event #9, Iteration: 1] [03:20:51] [Execution] Aurora Industries (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_004', 'source_id': 'src_Geothermal'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Aurora Industries', 'machine': {'id': 'machine_004', 'label': 'Refrigeration chain', 'window': [20, 24], 'power': 1.357298785159898}, 'source_id': 'src_Geothermal', 'total_assigned': 4, 'remaining_machines': 12, 'state_updates': {'assignment': {'machine_003': 'src_Solar', 'machine_001': 'src_Geothermal', 'machine_002': 'src_Geothermal', 'machine_004': 'src_Geothermal'}}, 'joint_reward': 0.0}}
+
+[Event #10, Iteration: 1] [03:20:51] [Execution] Aurora Industries (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_005', 'source_id': 'src_Geothermal'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Aurora Industries', 'machine': {'id': 'machine_005', 'label': 'HVAC unit', 'window': [17, 22], 'power': 2.0379472285591635}, 'source_id': 'src_Geothermal', 'total_assigned': 5, 'remaining_machines': 11, 'state_updates': {'assignment': {'machine_003': 'src_Solar', 'machine_001': 'src_Geothermal', 'machine_002': 'src_Geothermal', 'machine_004': 'src_Geothermal', 'machine_005': 'src_Geothermal'}}, 'joint_reward': 0.0}}
+
+[Event #11, Iteration: 1] [03:20:56] [Execution] Beacon Works (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_006', 'source_id': 'src_Hydro'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Beacon Works', 'machine': {'id': 'machine_006', 'label': 'Refrigeration chain', 'window': [9, 14], 'power': 2.1066874682944907}, 'source_id': 'src_Hydro', 'total_assigned': 6, 'remaining_machines': 10, 'state_updates': {'assignment': {'machine_003': 'src_Solar', 'machine_001': 'src_Geothermal', 'machine_002': 'src_Geothermal', 'machine_004': 'src_Geothermal', 'machine_005': 'src_Geothermal', 'machine_006': 'src_Hydro'}}, 'joint_reward': 0.0}}
+
+[Event #12, Iteration: 1] [03:20:56] [Execution] Beacon Works (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_007', 'source_id': 'src_Wind'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Beacon Works', 'machine': {'id': 'machine_007', 'label': 'Lighting bank', 'window': [8, 12], 'power': 2.2881261459824715}, 'source_id': 'src_Wind', 'total_assigned': 7, 'remaining_machines': 9, 'state_updates': {'assignment': {'machine_003': 'src_Solar', 'machine_001': 'src_Geothermal', 'machine_002': 'src_Geothermal', 'machine_004': 'src_Geothermal', 'machine_005': 'src_Geothermal', 'machine_006': 'src_Hydro', 'machine_007': 'src_Wind'}}, 'joint_reward': 0.0}}
+
+[Event #13, Iteration: 1] [03:20:56] [Execution] Beacon Works (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_008', 'source_id': 'src_Hydro'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Beacon Works', 'machine': {'id': 'machine_008', 'label': 'Server rack', 'window': [5, 9], 'power': 2.7398225049223224}, 'source_id': 'src_Hydro', 'total_assigned': 8, 'remaining_machines': 8, 'state_updates': {'assignment': {'machine_003': 'src_Solar', 'machine_001': 'src_Geothermal', 'machine_002': 'src_Geothermal', 'machine_004': 'src_Geothermal', 'machine_005': 'src_Geothermal', 'machine_006': 'src_Hydro', 'machine_007': 'src_Wind', 'machine_008': 'src_Hydro'}}, 'joint_reward': 0.0}}
+
+[Event #14, Iteration: 1] [03:20:56] [Execution] Beacon Works (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_009', 'source_id': 'src_Wind'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Beacon Works', 'machine': {'id': 'machine_009', 'label': 'Assembly line', 'window': [10, 14], 'power': 2.036278860894713}, 'source_id': 'src_Wind', 'total_assigned': 9, 'remaining_machines': 7, 'state_updates': {'assignment': {'machine_003': 'src_Solar', 'machine_001': 'src_Geothermal', 'machine_002': 'src_Geothermal', 'machine_004': 'src_Geothermal', 'machine_005': 'src_Geothermal', 'machine_006': 'src_Hydro', 'machine_007': 'src_Wind', 'machine_008': 'src_Hydro', 'machine_009': 'src_Wind'}}, 'joint_reward': 0.0}}
+
+[Event #15, Iteration: 1] [03:20:56] [Execution] Beacon Works (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_010', 'source_id': 'src_Hydro'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Beacon Works', 'machine': {'id': 'machine_010', 'label': 'Kiln', 'window': [6, 9], 'power': 3.564320750276822}, 'source_id': 'src_Hydro', 'total_assigned': 10, 'remaining_machines': 6, 'state_updates': {'assignment': {'machine_003': 'src_Solar', 'machine_001': 'src_Geothermal', 'machine_002': 'src_Geothermal', 'machine_004': 'src_Geothermal', 'machine_005': 'src_Geothermal', 'machine_006': 'src_Hydro', 'machine_007': 'src_Wind', 'machine_008': 'src_Hydro', 'machine_009': 'src_Wind', 'machine_010': 'src_Hydro'}}, 'joint_reward': -35.26335698529307}}
+
+
+================================================================================
+

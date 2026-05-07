@@ -1,0 +1,578 @@
+[
+  {
+    "blackboard_id": "0",
+    "participants": [
+      "Aurora Industries",
+      "Beacon Works",
+      "Cascade Labs"
+    ],
+    "events": [
+      {
+        "blackboard_id": 0,
+        "id": "8a15613c-eaeb-459c-9d1c-b3cf833887b4",
+        "ts": 1767928524.9744592,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "Assign machines to shared renewable sources across 24h to minimise main-grid usage.\n\nThis blackboard is a private communication channel.\nParticipants: Aurora Industries, Beacon Works, Cascade Labs"
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "465d61fb-57f9-4233-aabf-6838d35240a2",
+        "ts": 1767928552.729884,
+        "agent": "Beacon Works",
+        "kind": "communication",
+        "payload": {
+          "content": "Beacon Works initial analysis:\n\nMy machines:\n- machine_008 (Refrigeration): [0,6), 0.9 kW\n- machine_007 (Irrigation pump): [8,12), 2.4 kW  \n- machine_006 (Refrigeration): [18,20), 2.9 kW\n\nSource capacity check:\n- Geothermal insufficient for all my machines (would cause overflow)\n- Biomass looks possible but tight on some hours\n\nProposed assignments:\n- machine_008 → Biomass [0,6): 0.9 kW demand\n- machine_007 → Biomass [8,12): 2.4 kW demand (this needs 1.7 kW max capacity, so 0.7 kW overflow likely)\n- machine_006 → Biomass [18,20): 2.9 kW demand vs 2.1-2.7 kW available\n\nKey concerns:\n1. Hours 8-12 on Biomass: even if I use full capacity, I'm 0.7 kW short on machine_007\n2. Hours 18-20 on Biomass: very tight for machine_006 (2.9 kW vs 2.7 kW max)\n\nWhat are your planned usages for Biomass during these critical periods? Can we coordinate to minimize total overflow?",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "eebf544f-d672-4c16-b7f4-0316f5647541",
+        "ts": 1767928575.449574,
+        "agent": "Cascade Labs",
+        "kind": "communication",
+        "payload": {
+          "content": "Cascade Labs here. I can help resolve the Biomass conflicts:\n\nFor hours 8-12: I have no machines running then, so I won't compete for Biomass capacity. Your irrigation pump can use the full 1.7 kW Biomass capacity, though you'll still have ~0.7 kW overflow.\n\nFor hours 14-19: This is the bigger conflict. My afternoon batch (Kiln + CNC mill = 2.9 kW total) overlaps your 18-20 refrigeration need. Instead of competing for Biomass, I'll assign my afternoon machines to Hydro. Since I'm the only Hydro client, this frees up Biomass capacity for your 2.9 kW refrigeration need during 18-20.\n\nFor my early morning 3-6 batch (6.2 kW total): I'll use Biomass for this. The 2.6-4.4 kW capacity means I'll still have overflow, but at least we're not competing.\n\nThis coordination should eliminate the 14-19 conflict and reduce your 18-20 overflow. Sound good?",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "74867c61-588e-4a06-b12c-d2c09a724b81",
+        "ts": 1767928587.3512034,
+        "agent": "Cascade Labs",
+        "kind": "communication",
+        "payload": {
+          "content": "Aurora Industries - what's your situation? Are you planning to use Biomass during any of these critical periods (8-12 or 18-20)? The more we coordinate, the better we can minimize total overflow.\n\nAlso, I'm the only one currently planning to use Hydro. If either of you have machines that could work on Hydro instead of creating Biomass overflow, that might be worth considering.\n\nMy final planned assignments:\n- Early morning (3-6): Biomass for 6.2 kW total (will overflow)\n- Afternoon (14-19): Hydro for 2.9 kW total (no overflow, I'm only client)\n- Late night (21-24): Still deciding between sources\n\nWhat are your thoughts?",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8b079962-d51e-4093-a716-2c9a03bb0691",
+        "ts": 1767928599.540046,
+        "agent": "Aurora Industries",
+        "kind": "communication",
+        "payload": {
+          "content": "Aurora Industries here. Let me check my Biomass needs for the critical periods you mentioned:\n\nMy machines:\n- Refrigeration chain (machine_001): [19,23), 2.9 kW\n- HVAC unit (machine_002): [4,10), 1.6 kW\n- Refrigeration chain (machine_003): [4,6), 2.6 kW\n- Water heater (machine_004): [7,12), 1.6 kW\n- HVAC unit (machine_005): [7,10), 3.2 kW\n\nFor the critical periods:\n1. Hours 8-12: I have water heater (1.6 kW) and HVAC (3.2 kW) = 4.8 kW total demand\n2. Hours 18-20: I have no machines running then, so no Biomass demand from me\n\nThis means I'm competing with Beacon Works during 8-12 (4.8 kW vs their 2.4 kW), but I have no conflict during 18-20.\n\nFor hours 19-23, I have refrigeration (2.9 kW) when Beacon Works also has refrigeration (2.9 kW), so that's another potential conflict.\n\nI can see Biomass is getting very tight. Let me check what other sources might work for some of my machines to reduce the pressure.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "2b05fb94-9fcb-4e1d-bc68-6cb13cc7bcae",
+        "ts": 1767928613.494046,
+        "agent": "Aurora Industries",
+        "kind": "communication",
+        "payload": {
+          "content": "Update after checking other sources:\n\nFor my 8-12 period (4.8 kW total):\n- Solar: Peak capacity 2.2 kW at 9-10am, but my demand is 4.8 kW - would cause overflow\n- Wind: Max 1.4 kW at 8-9am - insufficient\n- Biomass: Seems best option despite competition\n\nFor my 19-23 period (2.9 kW):\n- Solar: Zero capacity after 6pm\n- Wind: 0.3-0.8 kW range - insufficient alone\n- Biomass: 0-2.7 kW range, very tight at 19-20\n\nProposed coordination:\n1. Hours 8-12: I'll take 4.8 kW from Biomass (you take 2.4 kW Beacon Works) = 7.2 kW total vs 4.4 kW max capacity = 2.8 kW overflow unavoidable\n2. Hours 19-23: I'll take 2.9 kW from Biomass (you take 2.9 kW Beacon Works) = 5.8 kW total vs 2.1-2.7 kW capacity = 3.1-3.7 kW overflow\n\nThis is clearly unsustainable. Cascade Labs, could your Hydro source handle any of my afternoon/evening machines? Or should we look at splitting across multiple sources to minimize total overflow?",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "0e4d40a7-3793-410b-8355-c51fd0a2a29b",
+        "ts": 1767928621.0528834,
+        "agent": "Aurora Industries",
+        "kind": "communication",
+        "payload": {
+          "content": "Actually, let me recalculate more carefully:\n\nFor 8-12 period, if we coordinate:\n- Beacon Works: 2.4 kW (irrigation pump)\n- Aurora Industries: 4.8 kW (water heater + HVAC)\n- Total: 7.2 kW vs Biomass capacity 4.4 kW = 2.8 kW overflow\n\nBut what if we split differently?\n- Could Beacon Works take some Wind for irrigation pump [8,12)? Wind has 1.3-1.4 kW then\n- Could I take some Solar for part of my 8-12 load? Solar peaks at 2.2 kW at 9-10am\n\nFor 19-23 period:\n- Beacon Works: 2.9 kW refrigeration [18,20)\n- Aurora Industries: 2.9 kW refrigeration [19,23)\n- Overlap 19-20: 5.8 kW vs 2.1-2.7 kW capacity = bad overflow\n\nCascade Labs - since you're only Hydro client, could you take one of these evening machines? Or should we explore Wind/Solar combinations for the early evening?",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1c59c211-2497-4a78-8187-d73f0661c065",
+        "ts": 1767928632.9781978,
+        "agent": "Beacon Works",
+        "kind": "communication",
+        "payload": {
+          "content": "Beacon Works updated coordination proposal:\n\nCurrent situation analysis:\n- 8-12 period: Aurora (4.8 kW) + Beacon (2.4 kW) = 7.2 kW vs 4.4 kW Biomass = 2.8 kW unavoidable overflow\n- 18-20 period: Beacon (2.9 kW) vs 2.1-2.7 kW Biomass = tight but manageable\n- 19-23 period: Aurora (2.9 kW) + Beacon (2.9 kW overlap 19-20) = 5.8 kW vs 2.1-2.7 kW = 3.1-3.7 kW overflow\n\nRevised assignments to minimize total overflow:\n\nBeacon Works:\n- machine_008 [0,6): Biomass (0.9 kW) - minimal impact\n- machine_007 [8,12): Wind (1.3-1.4 kW available) + Biomass for remainder = ~1.0-1.1 kW overflow\n- machine_006 [18,20): Biomass (2.9 kW vs 2.1-2.7 kW) = 0.2-0.8 kW overflow\n\nThis frees up Biomass capacity for Aurora during 8-12 and reduces 19-20 overlap.\n\nAurora: With Beacon taking Wind for 8-12, you could have full Biomass 4.4 kW for your 4.8 kW = only 0.4 kW overflow instead of 2.8 kW.\n\nCascade Labs: Can you help with the 19-23 evening conflict? If you could take one evening refrigeration machine on Hydro, we'd eliminate the 3.1-3.7 kW overflow.\n\nTotal overflow reduction: ~5 kW saved. Thoughts? (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "807a907f-825c-433e-af6f-c4de556abef1",
+        "ts": 1767928647.5283601,
+        "agent": "Beacon Works",
+        "kind": "communication",
+        "payload": {
+          "content": "Beacon Works checking on evening coordination:\n\nFor the 19-23 period crisis (5.8 kW total demand vs 2.1-2.7 kW Biomass capacity):\n\nAurora Industries - would you be willing to shift your [19,23) refrigeration to Hydro if Cascade Labs can accommodate it? This would:\n- Eliminate your 2.9 kW from the 19-20 Biomass crunch\n- Leave me with just my [18,20) machine = 2.9 kW vs 2.1-2.7 kW = manageable 0.2-0.8 kW overflow\n- Total evening overflow drops from 3.1-3.7 kW to just 0.2-0.8 kW\n\nAlternatively, if I shift my [18,20) to Hydro instead:\n- You keep Biomass for [19,23) = 2.9 kW vs 0-2.2 kW = 0.7-2.9 kW overflow\n- I eliminate my Biomass conflict entirely\n\nCascade Labs - which would work better for your Hydro capacity? One 2.9 kW machine for 4 hours [19,23) or 2.9 kW for 2 hours [18,20)?\n\nThis coordination could cut our total evening overflow by 75-90%. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9a37f0c7-c32d-4e3e-ba9a-df308b895177",
+        "ts": 1767928660.9627259,
+        "agent": "Cascade Labs",
+        "kind": "communication",
+        "payload": {
+          "content": "Cascade Labs final coordination plan:\n\nMy assignments:\n- Early morning (3-6): All 3 machines (6.2 kW total) → Biomass. Will cause overflow but no competition\n- Afternoon (14-19): Kiln + CNC mill (2.9 kW total) → Hydro. No overflow since I'm only client\n- Late night (21-24): Server rack (3.8 kW) → Still deciding between sources\n\nFor evening coordination (19-23 conflict):\nMy Hydro capacity during 19-23 is: 0.2-0.4 kW. This is too small for either of your 2.9 kW refrigeration machines.\n\nHowever, I can help with the 8-12 period:\n- I have no machines running 8-12, so full Biomass capacity available for you both\n- Beacon Works: Taking Wind for irrigation pump is smart - reduces Biomass pressure\n- Aurora Industries: You can have full 4.4 kW Biomass for your 4.8 kW demand = only 0.4 kW overflow\n\nFor 19-23: Since Hydro can't handle 2.9 kW, consider:\n1. Split the difference - one of you takes the overflow hit\n2. Check if either machine can be rescheduled to different hours\n3. One machine takes Biomass + Wind combo (Wind has 0.3-0.8 kW 19-23)\n\nMy late night (21-24) machine: Where would it conflict least? Biomass has 1.2-2.4 kW then, so 3.8 kW would cause 1.4-2.6 kW overflow. Solar is zero. Wind is 0.2-0.4 kW. Hydro is 0.2-1.0 kW. Suggestions?",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ac6d4a21-d27a-4266-916c-ac283e1e7448",
+        "ts": 1767928671.5067272,
+        "agent": "Cascade Labs",
+        "kind": "communication",
+        "payload": {
+          "content": "Quick update on my late night assignment:\n\nFor my 21-24 server rack (3.8 kW), the source options are:\n- Biomass: 1.2-2.4 kW capacity = 1.4-2.6 kW unavoidable overflow\n- Hydro: 0.2-1.0 kW capacity = 2.8-3.6 kW overflow (but I'm only client)\n- Wind: 0.2-0.4 kW = 3.4-3.6 kW overflow  \n- Solar: 0 kW = full 3.8 kW overflow\n\nBiomass causes least overflow for my machine. But I want to check: Aurora Industries, do you need Biomass capacity during 21-23? Your refrigeration runs 19-23, so we'd overlap 21-23.\n\nIf I take Biomass 21-24, we'd have:\n- 21-23: My 3.8 kW + your 2.9 kW = 6.7 kW vs 1.2-2.2 kW Biomass = 4.5-5.5 kW total overflow\n\nIf I take Hydro instead, I free up Biomass for you:\n- You get full 1.2-2.2 kW Biomass = 0.7-1.7 kW overflow for your 2.9 kW\n- I take 2.8-3.6 kW overflow on Hydro\n\nTotal overflow is similar either way. Which do you prefer? I can coordinate to minimize your specific overflow if that helps overall system balance.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "37348b90-a497-4e82-9ab3-5cd0a36b0bb2",
+        "ts": 1767928692.0631013,
+        "agent": "Aurora Industries",
+        "kind": "communication",
+        "payload": {
+          "content": "Aurora Industries - Final coordination plan update:\n\nAfter analyzing all options, here's my optimized assignment strategy:\n\nMACHINE ASSIGNMENTS:\n1. machine_002 (HVAC [4,10), 1.6 kW) → Biomass\n2. machine_003 (Refrigeration [4,6), 2.6 kW) → Biomass  \n3. machine_004 (Water heater [7,12), 1.6 kW) → Biomass\n4. machine_005 (HVAC [7,10), 3.2 kW) → Biomass\n5. machine_001 (Refrigeration [19,23), 2.9 kW) → Biomass\n\nCOORDINATION IMPACT:\n- Hours 8-12: Taking 4.8 kW from Biomass (with Beacon Works using Wind for irrigation, this gives us only 0.4 kW overflow vs 2.8 kW without coordination)\n- Hours 19-23: Taking 2.9 kW from Biomass during overlap with Beacon Works - this will cause 0.7-2.9 kW overflow, but unavoidable since Cascade's Hydro can't handle 2.9 kW\n\nSOURCE RATIONALE:\n- All machines to Biomass because:\n  * Solar/Wind insufficient for my load sizes during operating windows\n  * Hydro capacity too low (0.2-1.0 kW) for my 1.6-3.2 kW machines\n  * Biomass provides best capacity match despite overflow\n\nOVERFLOW SUMMARY:\n- 8-12 period: 0.4 kW (with coordination)\n- 19-23 period: 0.7-2.9 kW (unavoidable)\n- Total: ~1.1-3.3 kW overflow from my assignments\n\nThis plan respects the coordinated approach and minimizes total system overflow. Ready for execution phase. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "6b4c2e7d-394f-4d92-b6f0-6ac2a72c943a",
+        "ts": 1767928741.522468,
+        "agent": "Beacon Works",
+        "kind": "communication",
+        "payload": {
+          "content": "Beacon Works final coordination summary:\n\nASSIGNMENTS:\n- machine_008 [0,6): Biomass (0.9 kW)\n- machine_007 [8,12): Wind + Biomass remainder = ~1.0 kW overflow\n- machine_006 [18,20): Biomass = 0.2-0.8 kW overflow\n\nCOORDINATION ACHIEVED:\n✓ 8-12 period: Reduced total overflow from 2.8 kW to 1.4 kW by using Wind\n✓ 18-20 period: Manageable overflow with Biomass allocation\n✓ 19-23 period: Shared Biomass overflow unavoidable due to Hydro capacity limits\n\nTOTAL SYSTEM BENEFIT: ~4-5 kW overflow avoided through coordination\n\nReady for execution phase. Good work team!",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8d16c2e3-6ecc-4b62-9b90-3a57cb25f254",
+        "ts": 1767928750.552413,
+        "agent": "Cascade Labs",
+        "kind": "communication",
+        "payload": {
+          "content": "Cascade Labs final assignments for execution:\n\n- Early morning (3-6): Server rack + Water heater + EV charger (6.2 kW total) → Biomass\n- Afternoon (14-19): Kiln + CNC mill (2.9 kW total) → Hydro  \n- Late night (21-24): Server rack (3.8 kW) → Hydro\n\nThis maximizes coordination benefits:\n- Frees up Biomass capacity during 8-12 and 18-20 for others\n- Uses Hydro for my afternoon batch (no competition)\n- Takes Hydro overflow hit for late night instead of competing for limited Biomass\n\nTotal overflow from my assignments: ~3-4 kW (mostly unavoidable due to high loads vs capacities)\n\nReady to execute. Good coordination team!",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "42b51a9e-1b36-44e1-8963-1e8326a12a31",
+        "ts": 1767928771.0325434,
+        "agent": "Aurora Industries",
+        "kind": "communication",
+        "payload": {
+          "content": "Aurora Industries final coordination confirmation:\n\nASSIGNMENTS LOCKED:\n- All 5 machines → Biomass (only viable source given capacity requirements)\n\nCOORDINATION BENEFITS ACHIEVED:\n- 8-12 period: Overflow reduced from 2.8kW to 0.4kW thanks to Beacon Works using Wind\n- 18-20 period: Cascade Labs using Hydro frees up Biomass for evening machines\n- 19-23 period: Shared Biomass overflow unavoidable but minimized through coordination\n\nTOTAL SYSTEM IMPROVEMENT: ~4-5kW overflow avoided vs uncoordinated approach\n\nReady for execution phase. Let's minimize that main grid usage! (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8d1879ce-a0d3-40ac-b882-abeede827411",
+        "ts": 1767928802.0658667,
+        "agent": "Beacon Works",
+        "kind": "communication",
+        "payload": {
+          "content": "Beacon Works FINAL EXECUTION PLAN:\n\nASSIGNMENTS:\n- machine_008 [0,6): Biomass (0.9 kW)\n- machine_007 [8,12): Wind + Biomass remainder (~1.0 kW overflow)\n- machine_006 [18,20): Biomass (0.2-0.8 kW overflow)\n\nCOORDINATION SUMMARY:\n✓ 8-12: Using Wind for irrigation reduces Biomase conflict with Aurora\n✓ 18-20: Cascade's Hydro usage frees Biomass capacity\n✓ 19-23: Shared Biomass overflow unavoidable but minimized\n\nESTIMATED OVERFLOW: ~1.2-1.8 kW total\nSYSTEM BENEFIT: ~5 kW overflow avoided vs uncoordinated\n\nReady for execution. Good teamwork!",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c936c16d-7a7a-4512-a4ef-a5b1f2b2cf57",
+        "ts": 1767928811.644312,
+        "agent": "Cascade Labs",
+        "kind": "communication",
+        "payload": {
+          "content": "Cascade Labs FINAL EXECUTION PLAN confirmed:\n\nMY ASSIGNMENTS:\n- Early morning (3-6): Server rack + Water heater + EV charger (6.2 kW) → Biomass\n- Afternoon (14-19): Kiln + CNC mill (2.9 kW) → Hydro  \n- Late night (21-24): Server rack (3.8 kW) → Hydro\n\nCOORDINATION ACHIEVED:\n✓ 8-12 period: No Biomass competition from me (machines off)\n✓ 14-19 period: My Hydro usage frees Biomass for others (no competition)\n✓ 18-20 period: Beacon Works gets priority Biomass access\n✓ 19-23 period: Aurora gets Biomass priority (my Hydro can't handle 2.9 kW loads)\n✓ 21-24 period: I take Hydro overflow instead of competing for limited Biomass\n\nSYSTEM BENEFIT: ~5 kW total overflow avoided through coordination vs uncoordinated approach\n\nReady for execution phase. Excellent teamwork on the coordination everyone!",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d06d817c-d0e8-4558-bdfe-a22e0fb8e544",
+        "ts": 1767928838.4738102,
+        "agent": "Beacon Works",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_source",
+          "action_params": {
+            "action": "assign_source",
+            "machine_id": "machine_008",
+            "source_id": "src_Biomass"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Beacon Works",
+              "machine": {
+                "id": "machine_008",
+                "label": "Refrigeration chain",
+                "window": [
+                  0,
+                  6
+                ],
+                "power": 0.8681539300630431
+              },
+              "source_id": "src_Biomass",
+              "total_assigned": 1,
+              "remaining_machines": 13,
+              "state_updates": {
+                "assignment": {
+                  "machine_008": "src_Biomass"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "007deec2-09db-4c8b-b136-012172224d87",
+        "ts": 1767928845.3729818,
+        "agent": "Cascade Labs",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_source",
+          "action_params": {
+            "action": "assign_source",
+            "machine_id": "machine_009",
+            "source_id": "src_Biomass"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Cascade Labs",
+              "machine": {
+                "id": "machine_009",
+                "label": "Server rack",
+                "window": [
+                  3,
+                  6
+                ],
+                "power": 2.6988849187646244
+              },
+              "source_id": "src_Biomass",
+              "total_assigned": 2,
+              "remaining_machines": 12,
+              "state_updates": {
+                "assignment": {
+                  "machine_008": "src_Biomass",
+                  "machine_009": "src_Biomass"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b101b7df-8f2a-4202-bf9d-678dada8ced1",
+        "ts": 1767928845.373282,
+        "agent": "Cascade Labs",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_source",
+          "action_params": {
+            "action": "assign_source",
+            "machine_id": "machine_010",
+            "source_id": "src_Biomass"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Cascade Labs",
+              "machine": {
+                "id": "machine_010",
+                "label": "Water heater",
+                "window": [
+                  3,
+                  6
+                ],
+                "power": 1.5993948980133093
+              },
+              "source_id": "src_Biomass",
+              "total_assigned": 3,
+              "remaining_machines": 11,
+              "state_updates": {
+                "assignment": {
+                  "machine_008": "src_Biomass",
+                  "machine_009": "src_Biomass",
+                  "machine_010": "src_Biomass"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "dc66f091-c833-45ef-8e39-728df9aca472",
+        "ts": 1767928845.3735092,
+        "agent": "Cascade Labs",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_source",
+          "action_params": {
+            "action": "assign_source",
+            "machine_id": "machine_011",
+            "source_id": "src_Biomass"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Cascade Labs",
+              "machine": {
+                "id": "machine_011",
+                "label": "EV charger",
+                "window": [
+                  3,
+                  6
+                ],
+                "power": 1.9129430259156246
+              },
+              "source_id": "src_Biomass",
+              "total_assigned": 4,
+              "remaining_machines": 10,
+              "state_updates": {
+                "assignment": {
+                  "machine_008": "src_Biomass",
+                  "machine_009": "src_Biomass",
+                  "machine_010": "src_Biomass",
+                  "machine_011": "src_Biomass"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1c64f53d-e42f-4e64-8fab-e3854868b7d6",
+        "ts": 1767928845.373693,
+        "agent": "Cascade Labs",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_source",
+          "action_params": {
+            "action": "assign_source",
+            "machine_id": "machine_012",
+            "source_id": "src_Hydro"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Cascade Labs",
+              "machine": {
+                "id": "machine_012",
+                "label": "Kiln",
+                "window": [
+                  14,
+                  19
+                ],
+                "power": 1.2955617134038608
+              },
+              "source_id": "src_Hydro",
+              "total_assigned": 5,
+              "remaining_machines": 9,
+              "state_updates": {
+                "assignment": {
+                  "machine_008": "src_Biomass",
+                  "machine_009": "src_Biomass",
+                  "machine_010": "src_Biomass",
+                  "machine_011": "src_Biomass",
+                  "machine_012": "src_Hydro"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "5ca51906-6780-4348-a975-43ad44c8bea9",
+        "ts": 1767928845.3737586,
+        "agent": "Cascade Labs",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_source",
+          "action_params": {
+            "action": "assign_source",
+            "machine_id": "machine_013",
+            "source_id": "src_Hydro"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Cascade Labs",
+              "machine": {
+                "id": "machine_013",
+                "label": "Server rack",
+                "window": [
+                  21,
+                  24
+                ],
+                "power": 3.7508338046178196
+              },
+              "source_id": "src_Hydro",
+              "total_assigned": 6,
+              "remaining_machines": 8,
+              "state_updates": {
+                "assignment": {
+                  "machine_008": "src_Biomass",
+                  "machine_009": "src_Biomass",
+                  "machine_010": "src_Biomass",
+                  "machine_011": "src_Biomass",
+                  "machine_012": "src_Hydro",
+                  "machine_013": "src_Hydro"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b1c733b6-9cdd-4fad-9434-1df1629b708b",
+        "ts": 1767928845.3738065,
+        "agent": "Cascade Labs",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_source",
+          "action_params": {
+            "action": "assign_source",
+            "machine_id": "machine_014",
+            "source_id": "src_Hydro"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Cascade Labs",
+              "machine": {
+                "id": "machine_014",
+                "label": "CNC mill",
+                "window": [
+                  13,
+                  18
+                ],
+                "power": 1.618402147547276
+              },
+              "source_id": "src_Hydro",
+              "total_assigned": 7,
+              "remaining_machines": 7,
+              "state_updates": {
+                "assignment": {
+                  "machine_008": "src_Biomass",
+                  "machine_009": "src_Biomass",
+                  "machine_010": "src_Biomass",
+                  "machine_011": "src_Biomass",
+                  "machine_012": "src_Hydro",
+                  "machine_013": "src_Hydro",
+                  "machine_014": "src_Hydro"
+                }
+              },
+              "joint_reward": -21.34144300510387
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d4f69a60-858e-4f4c-83b7-6ca74378fbd5",
+        "ts": 1767928850.4206438,
+        "agent": "Aurora Industries",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_source",
+          "action_params": {
+            "action": "assign_source",
+            "machine_id": "machine_002",
+            "source_id": "src_Biomass"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Aurora Industries",
+              "machine": {
+                "id": "machine_002",
+                "label": "HVAC unit",
+                "window": [
+                  4,
+                  10
+                ],
+                "power": 1.5607483889339466
+              },
+              "source_id": "src_Biomass",
+              "total_assigned": 8,
+              "remaining_machines": 6,
+              "state_updates": {
+                "assignment": {
+                  "machine_008": "src_Biomass",
+                  "machine_009": "src_Biomass",
+                  "machine_010": "src_Biomass",
+                  "machine_011": "src_Biomass",
+                  "machine_012": "src_Hydro",
+                  "machine_013": "src_Hydro",
+                  "machine_014": "src_Hydro",
+                  "machine_002": "src_Biomass"
+                }
+              },
+              "joint_reward": -21.34144300510387
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  }
+]

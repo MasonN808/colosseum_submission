@@ -1,0 +1,2770 @@
+[
+  {
+    "blackboard_id": "0",
+    "participants": [
+      "Avery",
+      "Jordan",
+      "Quinn",
+      "Reese",
+      "Riley",
+      "Taylor"
+    ],
+    "events": [
+      {
+        "blackboard_id": 0,
+        "id": "6432cc72-fd98-45fe-a0a0-aa031dcaceae",
+        "ts": 1776912481.7143598,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "Decide attendance intervals for meetings on a shared timeline.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Avery, Jordan, Quinn, Reese, Riley, Taylor"
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ec8d4ce1-87dd-4b3f-adae-9b2409a53b76",
+        "ts": 1776912521.6150527,
+        "agent": "Quinn",
+        "kind": "communication",
+        "payload": {
+          "content": "Proposal to maximize reward: Assign unique slots to high-value meetings (prefer 6-participant ones) so we all attend same slot per meeting for full overlaps, no self-overlaps. Attend these with [t,t+1) intervals, skip others: m013:[1,2), m014:[2,3), m016:[3,4), m011:[4,5), m002:[5,6), m007:[6,7), m009:[7,8), m010:[8,9), m008:[11,12), m001:[14,15). This covers 4x6p + 3x6p + 3x5p meetings. Agree? Or suggest changes.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "fa283923-4236-4f9f-9268-5270ac60bc20",
+        "ts": 1776912598.4044805,
+        "agent": "Quinn",
+        "kind": "communication",
+        "payload": {
+          "content": "My planned attendance (1-slot each, distinct times for no penalty): m013:[1,2), m015:[1,2) wait no, adjust: actually to include m015? But stick: m013:[1,2), m003 or m015 skip since small, wait my orig: m013:[1,2) (6p), m014:[2,3)(6p), m016:[3,4)(5p), m004 or m011:[4,5) use m011(6p):[4,5), m002:[5,6)(6p), m006 or m007:[6,7) m007(6p), m009:[7,8)(6p), m010:[8,9)(5p), m012 skip, m008:[11,12)(5p), m001:[12,13) or 14? to avoid if others, but [14,15)(6p). Slots 1,2,3,4,5,6,7,8,11,14. All good? Let's align on these slots for each meeting.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "07389f0a-2637-45d0-a4bc-114cfd7efc96",
+        "ts": 1776912727.4580896,
+        "agent": "Quinn",
+        "kind": "communication",
+        "payload": {
+          "content": "Finalizing my attendance plan to avoid self-overlaps and hit all 6p meetings + some 5p: m013:[1,2), m014:[2,3), m016:[3,4), m011:[4,5), m002:[5,6), m007:[6,7), m009:[7,8), m010:[8,9), m008:[11,12), m001:[14,15). Skips: m003,m004,m006,m012,m015,m006. Suggest you pick same slots in each meeting for max overlap rewards. Ready to commit if agreed.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "69a24826-4d30-4aca-b296-64d840d23d19",
+        "ts": 1776912737.7849112,
+        "agent": "Riley",
+        "kind": "communication",
+        "payload": {
+          "content": "I agree with your plan Quinn. It covers all the high-participant (6p) meetings effectively with single slots at distinct times, maximizing overlaps without self-overlaps. I'll align on the same intervals for my meetings: m013:[1,2), m014:[2,3), m016:[3,4), m011:[4,5), m002:[5,6), m007:[6,7), m009:[7,8), m008:[11,12), m001:[14,15). Skipping smaller ones like m003 and m005. Let's all commit to this for max rewards.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "4bac9f79-3440-45c6-85ba-c2ff5ab71abf",
+        "ts": 1776912814.320422,
+        "agent": "Jordan",
+        "kind": "communication",
+        "payload": {
+          "content": "I agree with the plan from Quinn and Riley. It prioritizes high-participant meetings effectively with single non-overlapping slots. I'll align my attendance to: m013:[1,2), m014:[2,3), m016:[3,4), m011:[4,5), m002:[5,6), m007:[6,7), m009:[7,8), m010:[8,9), m008:[11,12), m001:[14,15). Skipping lower-value ones like m004, m005, m006, m012, m015. Ready to commit once others confirm.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9dc9ead1-8b42-4eb2-a90a-3658d13de834",
+        "ts": 1776912882.7378345,
+        "agent": "Jordan",
+        "kind": "communication",
+        "payload": {
+          "content": "Agreement reached on the plan. All set to commit these intervals in the execution phase: m013:[1,2), m014:[2,3), m016:[3,4), m011:[4,5), m002:[5,6), m007:[6,7), m009:[7,8), m010:[8,9), m008:[11,12), m001:[14,15). This should maximize overlaps for high-participant soft meetings without self-overlap penalties.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "55425ac2-2c3d-4d6a-b79d-3e040ee7b7d0",
+        "ts": 1776913008.0119874,
+        "agent": "Jordan",
+        "kind": "communication",
+        "payload": {
+          "content": "All aligned on the attendance plan. Suggest transitioning to EXECUTION phase to commit these intervals: m001:[14,15), m002:[5,6), m007:[6,7), m008:[11,12), m009:[7,8), m010:[8,9), m011:[4,5), m013:[1,2), m014:[2,3), m016:[3,4). This gives good coverage for 6p meetings.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "750031c1-d535-4c0b-8e8e-fcffdc3cf184",
+        "ts": 1776913021.3575625,
+        "agent": "Avery",
+        "kind": "communication",
+        "payload": {
+          "content": "I agree with the coordinated plan Quinn, Riley, and Jordan. It effectively prioritizes the 6-participant meetings with single non-overlapping slots for max overlaps and no self-penalties. For my meetings, I'll align to: m013:[1,2), m014:[2,3), m011:[4,5), m002:[5,6), m007:[6,7), m009:[7,8), m010:[8,9), m008:[11,12), m001:[14,15). Skipping m003, m004, m005, m006, m015 as lower value. No m016 in my list so ignoring that. Ready to commit in execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "605d8917-0ebf-4c00-8cfb-da1883ca0eb2",
+        "ts": 1776913087.10094,
+        "agent": "Avery",
+        "kind": "communication",
+        "payload": {
+          "content": "All aligned here. Propose we move to EXECUTION phase to commit: for me m001:[14,15), m002:[5,6), m007:[6,7), m008:[11,12), m009:[7,8), m010:[8,9), m011:[4,5), m013:[1,2), m014:[2,3). This matches the group plan for high-value meetings.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "5f0b3b74-da9d-4cb2-9773-8e58fa813626",
+        "ts": 1776913210.878806,
+        "agent": "Avery",
+        "kind": "communication",
+        "payload": {
+          "content": "Coordination complete. All agents aligned on the plan. Ready for EXECUTION phase to commit the agreed intervals for maximum group reward.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "652427c8-202e-45cb-bbe7-2f1d41d9beae",
+        "ts": 1776913223.047763,
+        "agent": "Reese",
+        "kind": "communication",
+        "payload": {
+          "content": "I agree with the coordinated plan from Quinn, Riley, Jordan, and Avery. It prioritizes high-participant (6p) meetings with single non-overlapping slots for max overlaps and no self-penalties. I'll align with: m013:[1,2), m014:[2,3), m016:[3,4), m011:[4,5), m002:[5,6), m007:[6,7), m009:[7,8), m010:[8,9), m001:[14,15). Skipping m003,m006,m012,m015. (m008 not in my meetings). Ready to commit in execution phase. Taylor, please confirm if you align too.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "6bd6417f-036b-426f-b99a-5fa1f830552c",
+        "ts": 1776913286.9813094,
+        "agent": "Reese",
+        "kind": "communication",
+        "payload": {
+          "content": "Taylor, do you agree with the plan? We are all set to commit these: m001:[14,15), m002:[5,6), m007:[6,7), m009:[7,8), m010:[8,9), m011:[4,5), m013:[1,2), m014:[2,3), m016:[3,4). Propose transitioning to EXECUTION to commit if you align.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d1e824c1-3cfe-41ef-bc52-04508c8269d7",
+        "ts": 1776913416.698144,
+        "agent": "Reese",
+        "kind": "communication",
+        "payload": {
+          "content": "Coordination looks complete with agreements from Quinn, Riley, Jordan, Avery, and me (Reese). Awaiting Taylor's confirmation on the plan. If aligned, let's move to EXECUTION phase and commit the intervals for max reward: m001:[14,15), m002:[5,6), m007:[6,7), m009:[7,8), m010:[8,9), m011:[4,5), m013:[1,2), m014:[2,3), m016:[3,4).",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9627ceee-0d2b-411a-8e99-773d81b6fe8f",
+        "ts": 1776913420.9123244,
+        "agent": "Quinn",
+        "kind": "communication",
+        "payload": {
+          "content": "Taylor, please confirm if you agree with the coordinated plan: attending m013:[1,2), m014:[2,3), m016:[3,4), m011:[4,5), m002:[5,6), m007:[6,7), m009:[7,8), m010:[8,9), m008:[11,12), m001:[14,15). This maximizes overlaps on high-participant meetings without self-overlaps. If yes, we can all move to EXECUTION phase to commit. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "bd8cfc56-b939-4df6-abe7-869f2fad636a",
+        "ts": 1776913483.9183612,
+        "agent": "Quinn",
+        "kind": "communication",
+        "payload": {
+          "content": "All (including me Quinn) are aligned on the plan except awaiting Taylor's confirmation: attend m013:[1,2), m014:[2,3), m016:[3,4), m011:[4,5), m002:[5,6), m007:[6,7), m009:[7,8), m010:[8,9), m008:[11,12), m001:[14,15). This prioritizes 6p meetings for max soft overlap rewards, single distinct slots avoid penalties. If Taylor agrees, let's transition to EXECUTION phase and commit. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f4c0c531-50de-43d1-865c-b22277f51df5",
+        "ts": 1776913608.5216463,
+        "agent": "Quinn",
+        "kind": "communication",
+        "payload": {
+          "content": "Since all except Taylor have agreed, and to maximize reward assuming Taylor aligns or random fills ok, I confirm my attendance as: m001:[14,15), m002:[5,6), m007:[6,7), m008:[11,12), m009:[7,8), m010:[8,9), m011:[4,5), m013:[1,2), m014:[2,3), m016:[3,4). Skipping the rest. Ready for EXECUTION phase. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f27cae10-0b1c-4433-9bf0-8a8c7812c322",
+        "ts": 1776913614.8120067,
+        "agent": "Riley",
+        "kind": "communication",
+        "payload": {
+          "content": "I confirm my alignment with the group plan for max rewards: attending m013:[1,2), m014:[2,3), m016:[3,4), m011:[4,5), m002:[5,6), m007:[6,7), m009:[7,8), m008:[11,12), m001:[14,15). Skipping m003 and m005. Since most have agreed and Taylor hasn't responded, ready to move to EXECUTION phase and commit these.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1d0e6220-0591-4baa-9110-88cf17fcf020",
+        "ts": 1776913679.582169,
+        "agent": "Riley",
+        "kind": "communication",
+        "payload": {
+          "content": "Ready for EXECUTION phase. My commitments will be: m001: [14,15), m002: [5,6), m007: [6,7), m008: [11,12), m009: [7,8), m011: [4,5), m013: [1,2), m014: [2,3), m016: [3,4). Skipping m003, m005. This aligns with the group for high overlap rewards.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8d5b82a3-3edd-4343-b808-f3ca2d3df969",
+        "ts": 1776913803.6267865,
+        "agent": "Riley",
+        "kind": "communication",
+        "payload": {
+          "content": "As Riley, I fully agree with the plan proposed by Quinn and confirmed by others. My attendance intervals: m013:[1,2), m014:[2,3), m016:[3,4), m011:[4,5), m002:[5,6), m007:[6,7), m009:[7,8), m008:[11,12), m001:[14,15). Skipping m003, m005, m014 is included but it's lunch with 6p. This should give high reward with overlaps on 6p meetings. Let's all commit in execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "4fb4c1e2-26d5-42c5-8c69-00c9e624540f",
+        "ts": 1776913810.941575,
+        "agent": "Jordan",
+        "kind": "communication",
+        "payload": {
+          "content": "I (Jordan) confirm agreement with the group plan for max rewards. My attendance: m001:[14,15), m002:[5,6), m007:[6,7), m008:[11,12), m009:[7,8), m010:[8,9), m011:[4,5), m013:[1,2), m014:[2,3), m016:[3,4). Skipping others. Taylor, please confirm if you align so we can all transition to EXECUTION phase and commit.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c322e9ea-d03a-4a95-8ee4-465a171dbda5",
+        "ts": 1776913875.5612085,
+        "agent": "Jordan",
+        "kind": "communication",
+        "payload": {
+          "content": "Since Taylor hasn't responded yet, but all others including me (Jordan) are aligned on the plan, let's assume Taylor will align or get random but our coordination is set. Propose we transition to EXECUTION phase now to commit: for me m001:[14,15), m002:[5,6), m007:[6,7), m008:[11,12), m009:[7,8), m010:[8,9), m011:[4,5), m013:[1,2), m014:[2,3), m016:[3,4). This should yield high reward.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8f6e2e55-c62d-40b4-b787-822b09472275",
+        "ts": 1776913999.9880974,
+        "agent": "Jordan",
+        "kind": "communication",
+        "payload": {
+          "content": "Coordination on the attendance plan is complete among all who responded (Quinn, Riley, Avery, Reese, Jordan). The agreed intervals maximize soft meeting overlaps for high-participant groups without self-overlap penalties: m001:[14,15), m002:[5,6), m007:[6,7), m008:[11,12), m009:[7,8), m010:[8,9), m011:[4,5), m013:[1,2), m014:[2,3), m016:[3,4). Ready to switch to EXECUTION phase and commit these. Taylor if you see this, please align.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ac318293-6c95-4543-9d15-cf76bcec7838",
+        "ts": 1776914007.7411404,
+        "agent": "Avery",
+        "kind": "communication",
+        "payload": {
+          "content": "I (Avery) am fully aligned with the group plan. My commitments: m001:[14,15), m002:[5,6), m007:[6,7), m008:[11,12), m009:[7,8), m010:[8,9), m011:[4,5), m013:[1,2), m014:[2,3). This covers all my high-participant meetings with no self-overlaps. Taylor, please confirm if you agree so we can proceed to EXECUTION phase. Ready to commit these.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "608df9c5-03c9-4c9f-bc06-51e6981ffdf9",
+        "ts": 1776914071.0161777,
+        "agent": "Avery",
+        "kind": "communication",
+        "payload": {
+          "content": "Since Taylor has not responded, but all others are aligned, I propose we transition to EXECUTION phase now. My final planned intervals matching the group: m001:[14,15), m002:[5,6), m007:[6,7), m008:[11,12), m009:[7,8), m010:[8,9), m011:[4,5), m013:[1,2), m014:[2,3). This should give high rewards on overlaps for 6p meetings.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "24be0e99-eee8-4d3a-ac98-7bbffe5bbff9",
+        "ts": 1776914197.7806277,
+        "agent": "Avery",
+        "kind": "communication",
+        "payload": {
+          "content": "All set on my side. Aligned with the group plan for high reward. Proposing to move to EXECUTION phase to commit the intervals: m001:[14,15), m002:[5,6), m007:[6,7), m008:[11,12), m009:[7,8), m010:[8,9), m011:[4,5), m013:[1,2), m014:[2,3). Skipping lower value ones like m003,m004,m005,m006,m015. Taylor if you agree, please confirm.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "0e795633-b1b1-4349-8173-bc0cc3c3773d",
+        "ts": 1776914206.0549796,
+        "agent": "Taylor",
+        "kind": "communication",
+        "payload": {
+          "content": "I (Taylor) agree with the coordinated plan from Quinn, Riley, Jordan, Avery, and Reese. It prioritizes high-participant meetings with single non-overlapping slots for max overlaps and no self-penalties. I'll align with: m013:[1,2), m014:[2,3), m016:[3,4), m011:[4,5), m002:[5,6), m007:[6,7), m009:[7,8), m010:[8,9), m008:[11,12), m001:[14,15). Skipping m004, m005, m006, m012, m015. Ready to commit in execution phase. Let's transition to EXECUTION.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "6cee1736-4ecc-4a6e-b8cf-37a4a3cf2a54",
+        "ts": 1776914281.116564,
+        "agent": "Reese",
+        "kind": "communication",
+        "payload": {
+          "content": "I (Reese) fully agree with the coordinated plan and Taylor's confirmation. It maximizes overlaps on high-participant soft meetings with single distinct slots avoiding self-overlaps. My attendance: m001:[14,15), m002:[5,6), m007:[6,7), m009:[7,8), m010:[8,9), m011:[4,5), m013:[1,2), m014:[2,3), m016:[3,4). Skipping m003,m006,m012,m015. All aligned now, let's transition to EXECUTION phase to commit these intervals for max reward.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "17abeb4c-87c4-4f22-937b-54e6c28dc2dd",
+        "ts": 1776914355.5456154,
+        "agent": "Quinn",
+        "kind": "communication",
+        "payload": {
+          "content": "All agents including Taylor have confirmed agreement on the plan. Ready to transition to EXECUTION phase and commit: m001:[14,15), m002:[5,6), m007:[6,7), m008:[11,12), m009:[7,8), m010:[8,9), m011:[4,5), m013:[1,2), m014:[2,3), m016:[3,4). This prioritizes high-participant meetings for optimal overlaps without self-overlaps.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c433e082-f767-429f-b123-7ab66b642d9a",
+        "ts": 1776914426.5675433,
+        "agent": "Riley",
+        "kind": "communication",
+        "payload": {
+          "content": "All agents have now confirmed agreement on the plan including Taylor. Ready to transition to EXECUTION phase and commit: m001:[14,15), m002:[5,6), m007:[6,7), m008:[11,12), m009:[7,8), m011:[4,5), m013:[1,2), m014:[2,3), m016:[3,4). This should maximize overlaps on high-participant soft meetings without self-overlap penalties.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "abff45bc-1623-4e1b-90c3-7b02e6e0de3b",
+        "ts": 1776914493.2805235,
+        "agent": "Riley",
+        "kind": "communication",
+        "payload": {
+          "content": "Coordination complete. All aligned on the plan. As Riley, I will commit in execution: m001:[14,15), m002:[5,6), m007:[6,7), m008:[11,12), m009:[7,8), m011:[4,5), m013:[1,2), m014:[2,3), m016:[3,4). Skipping m003,m005. This maximizes reward. Ready for EXECUTION phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d4929c8b-90d9-4001-8461-db6b8f243542",
+        "ts": 1776914619.0745451,
+        "agent": "Riley",
+        "kind": "communication",
+        "payload": {
+          "content": "Since everyone including Taylor has agreed, let's move to EXECUTION phase. My commitments for Riley: attend m013:[1,2), m014:[2,3), m016:[3,4), m011:[4,5), m002:[5,6), m007:[6,7), m009:[7,8), m008:[11,12), m001:[14,15). Skipping m003 and m005. This aligns perfectly with the group plan for optimal rewards.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d038b4a4-bfd6-482f-86cf-d45e0a40547c",
+        "ts": 1776914630.009025,
+        "agent": "Jordan",
+        "kind": "communication",
+        "payload": {
+          "content": "All agents have agreed on the plan. As Jordan, I confirm my attendance intervals as: m001:[14,15), m002:[5,6), m007:[6,7), m008:[11,12), m009:[7,8), m010:[8,9), m011:[4,5), m013:[1,2), m014:[2,3), m016:[3,4). This maximizes reward. Ready to transition to EXECUTION phase to commit.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f990683e-1db8-4eb6-bcca-113ca1b78b60",
+        "ts": 1776914694.2021148,
+        "agent": "Jordan",
+        "kind": "communication",
+        "payload": {
+          "content": "Coordination complete among all agents on the plan. Proposing to transition to EXECUTION phase now. My final commitments: m001:[14,15), m002:[5,6), m007:[6,7), m008:[11,12), m009:[7,8), m010:[8,9), m011:[4,5), m013:[1,2), m014:[2,3), m016:[3,4). This aligns with everyone for max reward.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "919f3dc4-7552-4d18-bcf7-34ddafb86b7d",
+        "ts": 1776914817.8908606,
+        "agent": "Jordan",
+        "kind": "communication",
+        "payload": {
+          "content": "Since all agents have confirmed the plan including Taylor, I propose we now transition to the EXECUTION phase. My committed intervals will be: m001:[14,15), m002:[5,6), m007:[6,7), m008:[11,12), m009:[7,8), m010:[8,9), m011:[4,5), m013:[1,2), m014:[2,3), m016:[3,4). This should yield the maximum possible reward.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "95d772a9-cfad-4618-a719-70bb677f03ad",
+        "ts": 1776914825.0997615,
+        "agent": "Avery",
+        "kind": "communication",
+        "payload": {
+          "content": "As Avery, I fully confirm alignment with the group plan including Taylor's agreement. All set to transition to EXECUTION phase now. My commitments matching the coordinated slots: m001:[14,15), m002:[5,6), m007:[6,7), m008:[11,12), m009:[7,8), m010:[8,9), m011:[4,5), m013:[1,2), m014:[2,3). This prioritizes all high-participant (6p) meetings in my list with distinct single slots for max overlaps and zero self-overlap penalties. Ready to commit.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ebe9bca9-81b7-40c4-9090-ba1900a801b8",
+        "ts": 1776914889.7403865,
+        "agent": "Avery",
+        "kind": "communication",
+        "payload": {
+          "content": "All agents have confirmed agreement on the plan. Proposing to transition to EXECUTION phase now to commit the agreed intervals for maximum group reward. My planned commitments as Avery: m001:[14,15), m002:[5,6), m007:[6,7), m008:[11,12), m009:[7,8), m010:[8,9), m011:[4,5), m013:[1,2), m014:[2,3).",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "27f5d09f-f097-4e84-adaf-8bd38c9e2df3",
+        "ts": 1776915014.3437247,
+        "agent": "Avery",
+        "kind": "communication",
+        "payload": {
+          "content": "Coordination is complete with full agreement from all agents on the plan. As Avery, confirming my attendance intervals to commit in execution: m001:[14,15), m002:[5,6), m007:[6,7), m008:[11,12), m009:[7,8), m010:[8,9), m011:[4,5), m013:[1,2), m014:[2,3). Skipping m003,m004,m005,m006,m015,m004. This should maximize the overall reward. Let's transition to EXECUTION phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "213f1cd0-55fd-45f7-a709-2211a0095cfe",
+        "ts": 1776915023.1595547,
+        "agent": "Taylor",
+        "kind": "communication",
+        "payload": {
+          "content": "I (Taylor) confirm full agreement with the group plan. My commitments will be: m001:[14,15), m002:[5,6), m007:[6,7), m008:[11,12), m009:[7,8), m010:[8,9), m011:[4,5), m013:[1,2), m014:[2,3), m016:[3,4). This aligns with everyone for maximum overlaps on high-participant meetings without self-overlaps. Ready to transition to EXECUTION phase and commit these intervals.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "6bcb8ef1-54b6-4597-958a-f5db0bca31be",
+        "ts": 1776915088.8916562,
+        "agent": "Taylor",
+        "kind": "communication",
+        "payload": {
+          "content": "Coordination is fully complete with all agents (including Taylor) agreeing on the plan. Proposing to transition to EXECUTION phase now. My final commitments: m001:[14,15), m002:[5,6), m007:[6,7), m008:[11,12), m009:[7,8), m010:[8,9), m011:[4,5), m013:[1,2), m014:[2,3), m016:[3,4). This should maximize the overall reward by prioritizing high-participant soft meetings.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "5dcf046e-333f-4097-95ad-e405f45ff8a5",
+        "ts": 1776915214.6965895,
+        "agent": "Taylor",
+        "kind": "communication",
+        "payload": {
+          "content": "All agents have now confirmed the plan including me (Taylor). Ready to transition to EXECUTION phase. My commitments: m001:[14,15), m002:[5,6), m007:[6,7), m008:[11,12), m009:[7,8), m010:[8,9), m011:[4,5), m013:[1,2), m014:[2,3), m016:[3,4). Skipping m004,m005,m006,m012,m015. This maximizes reward.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "79e55f99-6706-424e-9b46-c74fe7479937",
+        "ts": 1776915219.6849124,
+        "agent": "Reese",
+        "kind": "communication",
+        "payload": {
+          "content": "All agents have confirmed agreement on the plan. As Reese, I confirm my attendance intervals matching the group: m001:[14,15), m002:[5,6), m007:[6,7), m009:[7,8), m010:[8,9), m011:[4,5), m013:[1,2), m014:[2,3), m016:[3,4). This prioritizes high-participant meetings for max overlaps without self-overlaps. Ready to transition to EXECUTION phase and commit these.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f9c97d07-7acd-489a-ac41-9c501bce133f",
+        "ts": 1776915286.298753,
+        "agent": "Reese",
+        "kind": "communication",
+        "payload": {
+          "content": "All set. Coordination complete with full agreement. Proposing transition to EXECUTION phase. My commitments as Reese: m001:[14,15), m002:[5,6), m007:[6,7), m009:[7,8), m010:[8,9), m011:[4,5), m013:[1,2), m014:[2,3), m016:[3,4). This will maximize the joint reward.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ca5fc321-52ac-40c7-99ce-bc531d0b728c",
+        "ts": 1776915410.781558,
+        "agent": "Reese",
+        "kind": "communication",
+        "payload": {
+          "content": "Since all (Quinn, Riley, Jordan, Avery, Taylor, Reese) have now fully agreed on the attendance plan, let's transition to EXECUTION phase. My final commitments: m001:[14,15), m002:[5,6), m007:[6,7), m009:[7,8), m010:[8,9), m011:[4,5), m013:[1,2), m014:[2,3), m016:[3,4). Skipping m003, m006, m012, m015. This should achieve high reward.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "4cbe4e57-4adb-47c4-9f3f-c8096887102f",
+        "ts": 1776915418.1619384,
+        "agent": "Quinn",
+        "kind": "communication",
+        "payload": {
+          "content": "All agents have confirmed the plan. As Quinn, confirming my commitments: m001:[14,15), m002:[5,6), m007:[6,7), m008:[11,12), m009:[7,8), m010:[8,9), m011:[4,5), m013:[1,2), m014:[2,3), m016:[3,4). Skipping others like m003,m004,m006,m012,m015. This maximizes overlaps on 6p meetings with no self-overlaps. Ready to transition to EXECUTION phase and commit.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "08833bdd-54af-40e2-bef1-7168a8e07987",
+        "ts": 1776915486.5299242,
+        "agent": "Quinn",
+        "kind": "communication",
+        "payload": {
+          "content": "All coordinated and agreed. Transitioning to EXECUTION: committing my intervals now.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "fabe3232-8acd-49a4-a06a-eec4fe1b0166",
+        "ts": 1776915486.5300622,
+        "agent": "Quinn",
+        "kind": "communication",
+        "payload": {
+          "content": "Proposing we all commit the agreed plan in execution now.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "3a29a50c-58d8-4e83-887a-3f6f6f0e1201",
+        "ts": 1776915611.6915119,
+        "agent": "Quinn",
+        "kind": "communication",
+        "payload": {
+          "content": "Coordination complete with full agreement from all. Proposing to move to EXECUTION phase. My final commitments: m001:[14,15), m002:[5,6), m007:[6,7), m008:[11,12), m009:[7,8), m010:[8,9), m011:[4,5), m013:[1,2), m014:[2,3), m016:[3,4). This plan should maximize the joint reward.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "de2ffed6-26f7-408b-bd57-7e23b9cd354f",
+        "ts": 1776915617.953716,
+        "agent": "Riley",
+        "kind": "communication",
+        "payload": {
+          "content": "Coordination complete with all agreeing on the plan. As Riley, ready to transition to EXECUTION phase and commit: m001:[14,15), m002:[5,6), m007:[6,7), m008:[11,12), m009:[7,8), m011:[4,5), m013:[1,2), m014:[2,3), m016:[3,4). This maximizes overlaps on high-participant meetings without self-overlaps. Skipping m003,m005.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "faa7d364-7e09-4a18-9de6-3ed28d86a160",
+        "ts": 1776915683.3512335,
+        "agent": "Riley",
+        "kind": "communication",
+        "payload": {
+          "content": "All agents aligned on the plan. Proposing to transition to EXECUTION phase now to commit the agreed intervals for max reward. My commitments as Riley: m001:[14,15), m002:[5,6), m007:[6,7), m008:[11,12), m009:[7,8), m011:[4,5), m013:[1,2), m014:[2,3), m016:[3,4). Skipping m003 and m005.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "66d3e3dc-8eae-4202-a588-37d6c4a605b9",
+        "ts": 1776915807.4794033,
+        "agent": "Riley",
+        "kind": "communication",
+        "payload": {
+          "content": "Agreed, all set. Ready to move to EXECUTION phase and commit my intervals as per the plan: m001:[14,15), m002:[5,6), m007:[6,7), m008:[11,12), m009:[7,8), m011:[4,5), m013:[1,2), m014:[2,3), m016:[3,4). This should give high reward.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b7035ae4-0ede-4c20-8e88-52ae04ddf807",
+        "ts": 1776915821.9064195,
+        "agent": "Avery",
+        "kind": "communication",
+        "payload": {
+          "content": "All agents have confirmed the plan. As Avery, I confirm my commitments: m001:[14,15), m002:[5,6), m007:[6,7), m008:[11,12), m009:[7,8), m010:[8,9), m011:[4,5), m013:[1,2), m014:[2,3). This prioritizes high-participant meetings for max overlaps without self-overlaps. Ready to transition to EXECUTION phase and commit these.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "70471792-eb4d-4b10-9d27-6f9c0902c3ba",
+        "ts": 1776915887.6889238,
+        "agent": "Avery",
+        "kind": "communication",
+        "payload": {
+          "content": "Coordination complete with all agents agreeing. As Avery, ready to transition to EXECUTION phase. My commitments: m001:[14,15), m002:[5,6), m007:[6,7), m008:[11,12), m009:[7,8), m010:[8,9), m011:[4,5), m013:[1,2), m014:[2,3). This maximizes the reward.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ca7fb425-a176-4631-bd26-e5100d8af095",
+        "ts": 1776916013.5652518,
+        "agent": "Avery",
+        "kind": "communication",
+        "payload": {
+          "content": "All set. As Avery, I propose transitioning to EXECUTION phase now to commit the agreed intervals: m001:[14,15), m002:[5,6), m007:[6,7), m008:[11,12), m009:[7,8), m010:[8,9), m011:[4,5), m013:[1,2), m014:[2,3). This plan maximizes the joint reward.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "5425616b-4945-4290-b4f6-73da1ba77df7",
+        "ts": 1776916024.0182147,
+        "agent": "Reese",
+        "kind": "communication",
+        "payload": {
+          "content": "All agents have confirmed agreement on the plan. As Reese, I confirm my attendance intervals: m001:[14,15), m002:[5,6), m007:[6,7), m009:[7,8), m010:[8,9), m011:[4,5), m013:[1,2), m014:[2,3), m016:[3,4). Ready to transition to EXECUTION phase and commit these for maximum reward.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "4f1f3694-689e-41f7-8cdc-0efecaeea665",
+        "ts": 1776916090.6685412,
+        "agent": "Reese",
+        "kind": "communication",
+        "payload": {
+          "content": "All agents including myself have now fully agreed on the attendance plan. Proposing we transition to EXECUTION phase to commit the intervals: for Reese - m001:[14,15), m002:[5,6), m007:[6,7), m009:[7,8), m010:[8,9), m011:[4,5), m013:[1,2), m014:[2,3), m016:[3,4). This will maximize the joint reward with overlaps on high-participant meetings and no self-overlaps.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "fd3c5942-9639-4c1c-8429-553ca2526916",
+        "ts": 1776916218.6785324,
+        "agent": "Reese",
+        "kind": "communication",
+        "payload": {
+          "content": "Coordination is complete with all agents agreeing on the plan. As Reese, ready to move to EXECUTION phase. My commitments: m001:[14,15), m002:[5,6), m007:[6,7), m009:[7,8), m010:[8,9), m011:[4,5), m013:[1,2), m014:[2,3), m016:[3,4). This maximizes the overall reward.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ba836c93-eb0d-49d1-8e5f-99554d15866e",
+        "ts": 1776916252.3939052,
+        "agent": "Avery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m001",
+            "interval": "14-15"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Avery",
+              "meeting": {
+                "id": "m001",
+                "title": "Music jamming session",
+                "meeting_type": "soft",
+                "window": [
+                  11,
+                  15
+                ],
+                "participants": [
+                  "Quinn",
+                  "Avery",
+                  "Riley",
+                  "Reese",
+                  "Taylor",
+                  "Jordan"
+                ]
+              },
+              "interval": "14-15",
+              "total_assigned": 1,
+              "remaining_variables": 82,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m001": "14-15"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "881c0c92-c9c9-4dd8-8898-c68bdad7a699",
+        "ts": 1776916252.3944845,
+        "agent": "Avery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m002",
+            "interval": "5-6"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Avery",
+              "meeting": {
+                "id": "m002",
+                "title": "Board game night",
+                "meeting_type": "soft",
+                "window": [
+                  3,
+                  6
+                ],
+                "participants": [
+                  "Avery",
+                  "Quinn",
+                  "Jordan",
+                  "Reese",
+                  "Taylor",
+                  "Riley"
+                ]
+              },
+              "interval": "5-6",
+              "total_assigned": 2,
+              "remaining_variables": 81,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m001": "14-15",
+                  "Avery__m002": "5-6"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "6bc241eb-bf18-4a07-906a-dd27b92988c7",
+        "ts": 1776916252.3947587,
+        "agent": "Avery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m003",
+            "interval": "skip"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Avery",
+              "meeting": {
+                "id": "m003",
+                "title": "Lunch break in lounge",
+                "meeting_type": "soft",
+                "window": [
+                  2,
+                  4
+                ],
+                "participants": [
+                  "Quinn",
+                  "Reese",
+                  "Riley",
+                  "Avery"
+                ]
+              },
+              "interval": "skip",
+              "total_assigned": 3,
+              "remaining_variables": 80,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m001": "14-15",
+                  "Avery__m002": "5-6",
+                  "Avery__m003": "skip"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "961b59e2-eaa3-46fd-8cc7-b5539eadd9a8",
+        "ts": 1776916252.3950417,
+        "agent": "Avery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m004",
+            "interval": "skip"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Avery",
+              "meeting": {
+                "id": "m004",
+                "title": "Gaming session",
+                "meeting_type": "soft",
+                "window": [
+                  3,
+                  5
+                ],
+                "participants": [
+                  "Jordan",
+                  "Taylor",
+                  "Quinn",
+                  "Avery"
+                ]
+              },
+              "interval": "skip",
+              "total_assigned": 4,
+              "remaining_variables": 79,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m001": "14-15",
+                  "Avery__m002": "5-6",
+                  "Avery__m003": "skip",
+                  "Avery__m004": "skip"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "24c41ce3-292a-40d2-b928-be49f238941c",
+        "ts": 1776916252.3953342,
+        "agent": "Avery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m005",
+            "interval": "skip"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Avery",
+              "meeting": {
+                "id": "m005",
+                "title": "Friends’ hangout",
+                "meeting_type": "soft",
+                "window": [
+                  2,
+                  6
+                ],
+                "participants": [
+                  "Riley",
+                  "Taylor",
+                  "Avery",
+                  "Jordan"
+                ]
+              },
+              "interval": "skip",
+              "total_assigned": 5,
+              "remaining_variables": 78,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m001": "14-15",
+                  "Avery__m002": "5-6",
+                  "Avery__m003": "skip",
+                  "Avery__m004": "skip",
+                  "Avery__m005": "skip"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "06d6ca24-7da1-465e-9f50-d59146cd968d",
+        "ts": 1776916252.3956327,
+        "agent": "Avery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m006",
+            "interval": "skip"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Avery",
+              "meeting": {
+                "id": "m006",
+                "title": "Gym play session",
+                "meeting_type": "soft",
+                "window": [
+                  4,
+                  6
+                ],
+                "participants": [
+                  "Taylor",
+                  "Quinn",
+                  "Avery",
+                  "Reese",
+                  "Jordan"
+                ]
+              },
+              "interval": "skip",
+              "total_assigned": 6,
+              "remaining_variables": 77,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m001": "14-15",
+                  "Avery__m002": "5-6",
+                  "Avery__m003": "skip",
+                  "Avery__m004": "skip",
+                  "Avery__m005": "skip",
+                  "Avery__m006": "skip"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "89089118-04b6-4600-9605-c0739139ea9e",
+        "ts": 1776916252.3959231,
+        "agent": "Avery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m007",
+            "interval": "6-7"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Avery",
+              "meeting": {
+                "id": "m007",
+                "title": "Music jamming session",
+                "meeting_type": "soft",
+                "window": [
+                  4,
+                  7
+                ],
+                "participants": [
+                  "Taylor",
+                  "Jordan",
+                  "Riley",
+                  "Quinn",
+                  "Avery",
+                  "Reese"
+                ]
+              },
+              "interval": "6-7",
+              "total_assigned": 7,
+              "remaining_variables": 76,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m001": "14-15",
+                  "Avery__m002": "5-6",
+                  "Avery__m003": "skip",
+                  "Avery__m004": "skip",
+                  "Avery__m005": "skip",
+                  "Avery__m006": "skip",
+                  "Avery__m007": "6-7"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "93adccce-2946-4cf3-ba28-4f712e900351",
+        "ts": 1776916252.3962393,
+        "agent": "Avery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m008",
+            "interval": "11-12"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Avery",
+              "meeting": {
+                "id": "m008",
+                "title": "Gaming session",
+                "meeting_type": "soft",
+                "window": [
+                  11,
+                  14
+                ],
+                "participants": [
+                  "Avery",
+                  "Quinn",
+                  "Riley",
+                  "Jordan",
+                  "Taylor"
+                ]
+              },
+              "interval": "11-12",
+              "total_assigned": 8,
+              "remaining_variables": 75,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m001": "14-15",
+                  "Avery__m002": "5-6",
+                  "Avery__m003": "skip",
+                  "Avery__m004": "skip",
+                  "Avery__m005": "skip",
+                  "Avery__m006": "skip",
+                  "Avery__m007": "6-7",
+                  "Avery__m008": "11-12"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d65fa2c6-0f62-4722-98c0-ae88a8ace477",
+        "ts": 1776916252.3965611,
+        "agent": "Avery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m009",
+            "interval": "7-8"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Avery",
+              "meeting": {
+                "id": "m009",
+                "title": "Gaming session",
+                "meeting_type": "soft",
+                "window": [
+                  7,
+                  9
+                ],
+                "participants": [
+                  "Jordan",
+                  "Quinn",
+                  "Reese",
+                  "Avery",
+                  "Taylor",
+                  "Riley"
+                ]
+              },
+              "interval": "7-8",
+              "total_assigned": 9,
+              "remaining_variables": 74,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m001": "14-15",
+                  "Avery__m002": "5-6",
+                  "Avery__m003": "skip",
+                  "Avery__m004": "skip",
+                  "Avery__m005": "skip",
+                  "Avery__m006": "skip",
+                  "Avery__m007": "6-7",
+                  "Avery__m008": "11-12",
+                  "Avery__m009": "7-8"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b8ae143a-317a-4089-991d-06ebc50d91c2",
+        "ts": 1776916252.396906,
+        "agent": "Avery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m010",
+            "interval": "8-9"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Avery",
+              "meeting": {
+                "id": "m010",
+                "title": "Music jamming session",
+                "meeting_type": "soft",
+                "window": [
+                  8,
+                  11
+                ],
+                "participants": [
+                  "Avery",
+                  "Quinn",
+                  "Taylor",
+                  "Jordan",
+                  "Reese"
+                ]
+              },
+              "interval": "8-9",
+              "total_assigned": 10,
+              "remaining_variables": 73,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m001": "14-15",
+                  "Avery__m002": "5-6",
+                  "Avery__m003": "skip",
+                  "Avery__m004": "skip",
+                  "Avery__m005": "skip",
+                  "Avery__m006": "skip",
+                  "Avery__m007": "6-7",
+                  "Avery__m008": "11-12",
+                  "Avery__m009": "7-8",
+                  "Avery__m010": "8-9"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9f16cbc5-df67-42c2-8157-a10219de8f8e",
+        "ts": 1776916252.3972733,
+        "agent": "Avery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m011",
+            "interval": "4-5"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Avery",
+              "meeting": {
+                "id": "m011",
+                "title": "Swimming session",
+                "meeting_type": "soft",
+                "window": [
+                  3,
+                  6
+                ],
+                "participants": [
+                  "Quinn",
+                  "Taylor",
+                  "Jordan",
+                  "Riley",
+                  "Reese",
+                  "Avery"
+                ]
+              },
+              "interval": "4-5",
+              "total_assigned": 11,
+              "remaining_variables": 72,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m001": "14-15",
+                  "Avery__m002": "5-6",
+                  "Avery__m003": "skip",
+                  "Avery__m004": "skip",
+                  "Avery__m005": "skip",
+                  "Avery__m006": "skip",
+                  "Avery__m007": "6-7",
+                  "Avery__m008": "11-12",
+                  "Avery__m009": "7-8",
+                  "Avery__m010": "8-9",
+                  "Avery__m011": "4-5"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c1d4e402-f6ea-4428-880d-71877633cd69",
+        "ts": 1776916252.3976502,
+        "agent": "Avery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m013",
+            "interval": "1-2"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Avery",
+              "meeting": {
+                "id": "m013",
+                "title": "Gaming session",
+                "meeting_type": "soft",
+                "window": [
+                  1,
+                  5
+                ],
+                "participants": [
+                  "Riley",
+                  "Avery",
+                  "Jordan",
+                  "Taylor",
+                  "Reese",
+                  "Quinn"
+                ]
+              },
+              "interval": "1-2",
+              "total_assigned": 12,
+              "remaining_variables": 71,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m001": "14-15",
+                  "Avery__m002": "5-6",
+                  "Avery__m003": "skip",
+                  "Avery__m004": "skip",
+                  "Avery__m005": "skip",
+                  "Avery__m006": "skip",
+                  "Avery__m007": "6-7",
+                  "Avery__m008": "11-12",
+                  "Avery__m009": "7-8",
+                  "Avery__m010": "8-9",
+                  "Avery__m011": "4-5",
+                  "Avery__m013": "1-2"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c4444aa1-c260-48dd-8a58-3cd9a757ff13",
+        "ts": 1776916252.3980505,
+        "agent": "Avery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m014",
+            "interval": "2-3"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Avery",
+              "meeting": {
+                "id": "m014",
+                "title": "Lunch break in lounge",
+                "meeting_type": "soft",
+                "window": [
+                  2,
+                  4
+                ],
+                "participants": [
+                  "Avery",
+                  "Riley",
+                  "Taylor",
+                  "Reese",
+                  "Quinn",
+                  "Jordan"
+                ]
+              },
+              "interval": "2-3",
+              "total_assigned": 13,
+              "remaining_variables": 70,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m001": "14-15",
+                  "Avery__m002": "5-6",
+                  "Avery__m003": "skip",
+                  "Avery__m004": "skip",
+                  "Avery__m005": "skip",
+                  "Avery__m006": "skip",
+                  "Avery__m007": "6-7",
+                  "Avery__m008": "11-12",
+                  "Avery__m009": "7-8",
+                  "Avery__m010": "8-9",
+                  "Avery__m011": "4-5",
+                  "Avery__m013": "1-2",
+                  "Avery__m014": "2-3"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ca1e8908-5329-44c4-924a-8f37f2b83ab3",
+        "ts": 1776916252.398476,
+        "agent": "Avery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m015",
+            "interval": "skip"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Avery",
+              "meeting": {
+                "id": "m015",
+                "title": "Lunch break in lounge",
+                "meeting_type": "soft",
+                "window": [
+                  1,
+                  3
+                ],
+                "participants": [
+                  "Taylor",
+                  "Jordan",
+                  "Avery",
+                  "Quinn",
+                  "Reese"
+                ]
+              },
+              "interval": "skip",
+              "total_assigned": 14,
+              "remaining_variables": 69,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m001": "14-15",
+                  "Avery__m002": "5-6",
+                  "Avery__m003": "skip",
+                  "Avery__m004": "skip",
+                  "Avery__m005": "skip",
+                  "Avery__m006": "skip",
+                  "Avery__m007": "6-7",
+                  "Avery__m008": "11-12",
+                  "Avery__m009": "7-8",
+                  "Avery__m010": "8-9",
+                  "Avery__m011": "4-5",
+                  "Avery__m013": "1-2",
+                  "Avery__m014": "2-3",
+                  "Avery__m015": "skip"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1ee30b4a-c5a3-4062-b091-c9721c06f6ae",
+        "ts": 1776916258.6255045,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m001",
+            "interval": "14-15"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m001",
+                "title": "Music jamming session",
+                "meeting_type": "soft",
+                "window": [
+                  11,
+                  15
+                ],
+                "participants": [
+                  "Quinn",
+                  "Avery",
+                  "Riley",
+                  "Reese",
+                  "Taylor",
+                  "Jordan"
+                ]
+              },
+              "interval": "14-15",
+              "total_assigned": 15,
+              "remaining_variables": 68,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m001": "14-15",
+                  "Avery__m002": "5-6",
+                  "Avery__m003": "skip",
+                  "Avery__m004": "skip",
+                  "Avery__m005": "skip",
+                  "Avery__m006": "skip",
+                  "Avery__m007": "6-7",
+                  "Avery__m008": "11-12",
+                  "Avery__m009": "7-8",
+                  "Avery__m010": "8-9",
+                  "Avery__m011": "4-5",
+                  "Avery__m013": "1-2",
+                  "Avery__m014": "2-3",
+                  "Avery__m015": "skip",
+                  "Taylor__m001": "14-15"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f6055047-220b-4978-ad16-4ccdc8bdf387",
+        "ts": 1776916258.6263826,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m002",
+            "interval": "5-6"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m002",
+                "title": "Board game night",
+                "meeting_type": "soft",
+                "window": [
+                  3,
+                  6
+                ],
+                "participants": [
+                  "Avery",
+                  "Quinn",
+                  "Jordan",
+                  "Reese",
+                  "Taylor",
+                  "Riley"
+                ]
+              },
+              "interval": "5-6",
+              "total_assigned": 16,
+              "remaining_variables": 67,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m001": "14-15",
+                  "Avery__m002": "5-6",
+                  "Avery__m003": "skip",
+                  "Avery__m004": "skip",
+                  "Avery__m005": "skip",
+                  "Avery__m006": "skip",
+                  "Avery__m007": "6-7",
+                  "Avery__m008": "11-12",
+                  "Avery__m009": "7-8",
+                  "Avery__m010": "8-9",
+                  "Avery__m011": "4-5",
+                  "Avery__m013": "1-2",
+                  "Avery__m014": "2-3",
+                  "Avery__m015": "skip",
+                  "Taylor__m001": "14-15",
+                  "Taylor__m002": "5-6"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c91fa293-31a3-4d11-8170-1f24b3789047",
+        "ts": 1776916258.6268985,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m004",
+            "interval": "skip"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m004",
+                "title": "Gaming session",
+                "meeting_type": "soft",
+                "window": [
+                  3,
+                  5
+                ],
+                "participants": [
+                  "Jordan",
+                  "Taylor",
+                  "Quinn",
+                  "Avery"
+                ]
+              },
+              "interval": "skip",
+              "total_assigned": 17,
+              "remaining_variables": 66,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m001": "14-15",
+                  "Avery__m002": "5-6",
+                  "Avery__m003": "skip",
+                  "Avery__m004": "skip",
+                  "Avery__m005": "skip",
+                  "Avery__m006": "skip",
+                  "Avery__m007": "6-7",
+                  "Avery__m008": "11-12",
+                  "Avery__m009": "7-8",
+                  "Avery__m010": "8-9",
+                  "Avery__m011": "4-5",
+                  "Avery__m013": "1-2",
+                  "Avery__m014": "2-3",
+                  "Avery__m015": "skip",
+                  "Taylor__m001": "14-15",
+                  "Taylor__m002": "5-6",
+                  "Taylor__m004": "skip"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e7e90f9c-a11b-49d5-9b26-cb7fa8c08917",
+        "ts": 1776916258.627411,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m005",
+            "interval": "skip"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m005",
+                "title": "Friends’ hangout",
+                "meeting_type": "soft",
+                "window": [
+                  2,
+                  6
+                ],
+                "participants": [
+                  "Riley",
+                  "Taylor",
+                  "Avery",
+                  "Jordan"
+                ]
+              },
+              "interval": "skip",
+              "total_assigned": 18,
+              "remaining_variables": 65,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m001": "14-15",
+                  "Avery__m002": "5-6",
+                  "Avery__m003": "skip",
+                  "Avery__m004": "skip",
+                  "Avery__m005": "skip",
+                  "Avery__m006": "skip",
+                  "Avery__m007": "6-7",
+                  "Avery__m008": "11-12",
+                  "Avery__m009": "7-8",
+                  "Avery__m010": "8-9",
+                  "Avery__m011": "4-5",
+                  "Avery__m013": "1-2",
+                  "Avery__m014": "2-3",
+                  "Avery__m015": "skip",
+                  "Taylor__m001": "14-15",
+                  "Taylor__m002": "5-6",
+                  "Taylor__m004": "skip",
+                  "Taylor__m005": "skip"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "218005d6-b24a-4b2f-9a17-0d310c5ab0aa",
+        "ts": 1776916258.6279075,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m006",
+            "interval": "skip"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m006",
+                "title": "Gym play session",
+                "meeting_type": "soft",
+                "window": [
+                  4,
+                  6
+                ],
+                "participants": [
+                  "Taylor",
+                  "Quinn",
+                  "Avery",
+                  "Reese",
+                  "Jordan"
+                ]
+              },
+              "interval": "skip",
+              "total_assigned": 19,
+              "remaining_variables": 64,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m001": "14-15",
+                  "Avery__m002": "5-6",
+                  "Avery__m003": "skip",
+                  "Avery__m004": "skip",
+                  "Avery__m005": "skip",
+                  "Avery__m006": "skip",
+                  "Avery__m007": "6-7",
+                  "Avery__m008": "11-12",
+                  "Avery__m009": "7-8",
+                  "Avery__m010": "8-9",
+                  "Avery__m011": "4-5",
+                  "Avery__m013": "1-2",
+                  "Avery__m014": "2-3",
+                  "Avery__m015": "skip",
+                  "Taylor__m001": "14-15",
+                  "Taylor__m002": "5-6",
+                  "Taylor__m004": "skip",
+                  "Taylor__m005": "skip",
+                  "Taylor__m006": "skip"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "adbc7b19-aef0-432f-8b99-40a241470edf",
+        "ts": 1776916266.9311955,
+        "agent": "Reese",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m001",
+            "interval": "14-15"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Reese",
+              "meeting": {
+                "id": "m001",
+                "title": "Music jamming session",
+                "meeting_type": "soft",
+                "window": [
+                  11,
+                  15
+                ],
+                "participants": [
+                  "Quinn",
+                  "Avery",
+                  "Riley",
+                  "Reese",
+                  "Taylor",
+                  "Jordan"
+                ]
+              },
+              "interval": "14-15",
+              "total_assigned": 20,
+              "remaining_variables": 63,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m001": "14-15",
+                  "Avery__m002": "5-6",
+                  "Avery__m003": "skip",
+                  "Avery__m004": "skip",
+                  "Avery__m005": "skip",
+                  "Avery__m006": "skip",
+                  "Avery__m007": "6-7",
+                  "Avery__m008": "11-12",
+                  "Avery__m009": "7-8",
+                  "Avery__m010": "8-9",
+                  "Avery__m011": "4-5",
+                  "Avery__m013": "1-2",
+                  "Avery__m014": "2-3",
+                  "Avery__m015": "skip",
+                  "Taylor__m001": "14-15",
+                  "Taylor__m002": "5-6",
+                  "Taylor__m004": "skip",
+                  "Taylor__m005": "skip",
+                  "Taylor__m006": "skip",
+                  "Reese__m001": "14-15"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "7feb2740-b7a0-472d-a8d6-b6eca3cf37d6",
+        "ts": 1776916266.9321065,
+        "agent": "Reese",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m002",
+            "interval": "5-6"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Reese",
+              "meeting": {
+                "id": "m002",
+                "title": "Board game night",
+                "meeting_type": "soft",
+                "window": [
+                  3,
+                  6
+                ],
+                "participants": [
+                  "Avery",
+                  "Quinn",
+                  "Jordan",
+                  "Reese",
+                  "Taylor",
+                  "Riley"
+                ]
+              },
+              "interval": "5-6",
+              "total_assigned": 21,
+              "remaining_variables": 62,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m001": "14-15",
+                  "Avery__m002": "5-6",
+                  "Avery__m003": "skip",
+                  "Avery__m004": "skip",
+                  "Avery__m005": "skip",
+                  "Avery__m006": "skip",
+                  "Avery__m007": "6-7",
+                  "Avery__m008": "11-12",
+                  "Avery__m009": "7-8",
+                  "Avery__m010": "8-9",
+                  "Avery__m011": "4-5",
+                  "Avery__m013": "1-2",
+                  "Avery__m014": "2-3",
+                  "Avery__m015": "skip",
+                  "Taylor__m001": "14-15",
+                  "Taylor__m002": "5-6",
+                  "Taylor__m004": "skip",
+                  "Taylor__m005": "skip",
+                  "Taylor__m006": "skip",
+                  "Reese__m001": "14-15",
+                  "Reese__m002": "5-6"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d66f702e-138a-46d8-ad2a-a0029122e2ac",
+        "ts": 1776916266.9326978,
+        "agent": "Reese",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m003",
+            "interval": "skip"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Reese",
+              "meeting": {
+                "id": "m003",
+                "title": "Lunch break in lounge",
+                "meeting_type": "soft",
+                "window": [
+                  2,
+                  4
+                ],
+                "participants": [
+                  "Quinn",
+                  "Reese",
+                  "Riley",
+                  "Avery"
+                ]
+              },
+              "interval": "skip",
+              "total_assigned": 22,
+              "remaining_variables": 61,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m001": "14-15",
+                  "Avery__m002": "5-6",
+                  "Avery__m003": "skip",
+                  "Avery__m004": "skip",
+                  "Avery__m005": "skip",
+                  "Avery__m006": "skip",
+                  "Avery__m007": "6-7",
+                  "Avery__m008": "11-12",
+                  "Avery__m009": "7-8",
+                  "Avery__m010": "8-9",
+                  "Avery__m011": "4-5",
+                  "Avery__m013": "1-2",
+                  "Avery__m014": "2-3",
+                  "Avery__m015": "skip",
+                  "Taylor__m001": "14-15",
+                  "Taylor__m002": "5-6",
+                  "Taylor__m004": "skip",
+                  "Taylor__m005": "skip",
+                  "Taylor__m006": "skip",
+                  "Reese__m001": "14-15",
+                  "Reese__m002": "5-6",
+                  "Reese__m003": "skip"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8f776663-243b-48df-8478-ba4e66fdc288",
+        "ts": 1776916266.9332302,
+        "agent": "Reese",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m006",
+            "interval": "skip"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Reese",
+              "meeting": {
+                "id": "m006",
+                "title": "Gym play session",
+                "meeting_type": "soft",
+                "window": [
+                  4,
+                  6
+                ],
+                "participants": [
+                  "Taylor",
+                  "Quinn",
+                  "Avery",
+                  "Reese",
+                  "Jordan"
+                ]
+              },
+              "interval": "skip",
+              "total_assigned": 23,
+              "remaining_variables": 60,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m001": "14-15",
+                  "Avery__m002": "5-6",
+                  "Avery__m003": "skip",
+                  "Avery__m004": "skip",
+                  "Avery__m005": "skip",
+                  "Avery__m006": "skip",
+                  "Avery__m007": "6-7",
+                  "Avery__m008": "11-12",
+                  "Avery__m009": "7-8",
+                  "Avery__m010": "8-9",
+                  "Avery__m011": "4-5",
+                  "Avery__m013": "1-2",
+                  "Avery__m014": "2-3",
+                  "Avery__m015": "skip",
+                  "Taylor__m001": "14-15",
+                  "Taylor__m002": "5-6",
+                  "Taylor__m004": "skip",
+                  "Taylor__m005": "skip",
+                  "Taylor__m006": "skip",
+                  "Reese__m001": "14-15",
+                  "Reese__m002": "5-6",
+                  "Reese__m003": "skip",
+                  "Reese__m006": "skip"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "972729dc-db90-43db-b5d0-a0bfddc79059",
+        "ts": 1776916266.9337683,
+        "agent": "Reese",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m007",
+            "interval": "6-7"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Reese",
+              "meeting": {
+                "id": "m007",
+                "title": "Music jamming session",
+                "meeting_type": "soft",
+                "window": [
+                  4,
+                  7
+                ],
+                "participants": [
+                  "Taylor",
+                  "Jordan",
+                  "Riley",
+                  "Quinn",
+                  "Avery",
+                  "Reese"
+                ]
+              },
+              "interval": "6-7",
+              "total_assigned": 24,
+              "remaining_variables": 59,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m001": "14-15",
+                  "Avery__m002": "5-6",
+                  "Avery__m003": "skip",
+                  "Avery__m004": "skip",
+                  "Avery__m005": "skip",
+                  "Avery__m006": "skip",
+                  "Avery__m007": "6-7",
+                  "Avery__m008": "11-12",
+                  "Avery__m009": "7-8",
+                  "Avery__m010": "8-9",
+                  "Avery__m011": "4-5",
+                  "Avery__m013": "1-2",
+                  "Avery__m014": "2-3",
+                  "Avery__m015": "skip",
+                  "Taylor__m001": "14-15",
+                  "Taylor__m002": "5-6",
+                  "Taylor__m004": "skip",
+                  "Taylor__m005": "skip",
+                  "Taylor__m006": "skip",
+                  "Reese__m001": "14-15",
+                  "Reese__m002": "5-6",
+                  "Reese__m003": "skip",
+                  "Reese__m006": "skip",
+                  "Reese__m007": "6-7"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f5bdac19-e86e-4704-9088-7c4d6354f342",
+        "ts": 1776916266.9342875,
+        "agent": "Reese",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m009",
+            "interval": "7-8"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Reese",
+              "meeting": {
+                "id": "m009",
+                "title": "Gaming session",
+                "meeting_type": "soft",
+                "window": [
+                  7,
+                  9
+                ],
+                "participants": [
+                  "Jordan",
+                  "Quinn",
+                  "Reese",
+                  "Avery",
+                  "Taylor",
+                  "Riley"
+                ]
+              },
+              "interval": "7-8",
+              "total_assigned": 25,
+              "remaining_variables": 58,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m001": "14-15",
+                  "Avery__m002": "5-6",
+                  "Avery__m003": "skip",
+                  "Avery__m004": "skip",
+                  "Avery__m005": "skip",
+                  "Avery__m006": "skip",
+                  "Avery__m007": "6-7",
+                  "Avery__m008": "11-12",
+                  "Avery__m009": "7-8",
+                  "Avery__m010": "8-9",
+                  "Avery__m011": "4-5",
+                  "Avery__m013": "1-2",
+                  "Avery__m014": "2-3",
+                  "Avery__m015": "skip",
+                  "Taylor__m001": "14-15",
+                  "Taylor__m002": "5-6",
+                  "Taylor__m004": "skip",
+                  "Taylor__m005": "skip",
+                  "Taylor__m006": "skip",
+                  "Reese__m001": "14-15",
+                  "Reese__m002": "5-6",
+                  "Reese__m003": "skip",
+                  "Reese__m006": "skip",
+                  "Reese__m007": "6-7",
+                  "Reese__m009": "7-8"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "16659493-0577-412f-9944-fd426af2ce9e",
+        "ts": 1776916266.9348173,
+        "agent": "Reese",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m010",
+            "interval": "8-9"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Reese",
+              "meeting": {
+                "id": "m010",
+                "title": "Music jamming session",
+                "meeting_type": "soft",
+                "window": [
+                  8,
+                  11
+                ],
+                "participants": [
+                  "Avery",
+                  "Quinn",
+                  "Taylor",
+                  "Jordan",
+                  "Reese"
+                ]
+              },
+              "interval": "8-9",
+              "total_assigned": 26,
+              "remaining_variables": 57,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m001": "14-15",
+                  "Avery__m002": "5-6",
+                  "Avery__m003": "skip",
+                  "Avery__m004": "skip",
+                  "Avery__m005": "skip",
+                  "Avery__m006": "skip",
+                  "Avery__m007": "6-7",
+                  "Avery__m008": "11-12",
+                  "Avery__m009": "7-8",
+                  "Avery__m010": "8-9",
+                  "Avery__m011": "4-5",
+                  "Avery__m013": "1-2",
+                  "Avery__m014": "2-3",
+                  "Avery__m015": "skip",
+                  "Taylor__m001": "14-15",
+                  "Taylor__m002": "5-6",
+                  "Taylor__m004": "skip",
+                  "Taylor__m005": "skip",
+                  "Taylor__m006": "skip",
+                  "Reese__m001": "14-15",
+                  "Reese__m002": "5-6",
+                  "Reese__m003": "skip",
+                  "Reese__m006": "skip",
+                  "Reese__m007": "6-7",
+                  "Reese__m009": "7-8",
+                  "Reese__m010": "8-9"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "3112816a-25ee-42c7-8a72-b662ff412a61",
+        "ts": 1776916266.9353812,
+        "agent": "Reese",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m011",
+            "interval": "4-5"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Reese",
+              "meeting": {
+                "id": "m011",
+                "title": "Swimming session",
+                "meeting_type": "soft",
+                "window": [
+                  3,
+                  6
+                ],
+                "participants": [
+                  "Quinn",
+                  "Taylor",
+                  "Jordan",
+                  "Riley",
+                  "Reese",
+                  "Avery"
+                ]
+              },
+              "interval": "4-5",
+              "total_assigned": 27,
+              "remaining_variables": 56,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m001": "14-15",
+                  "Avery__m002": "5-6",
+                  "Avery__m003": "skip",
+                  "Avery__m004": "skip",
+                  "Avery__m005": "skip",
+                  "Avery__m006": "skip",
+                  "Avery__m007": "6-7",
+                  "Avery__m008": "11-12",
+                  "Avery__m009": "7-8",
+                  "Avery__m010": "8-9",
+                  "Avery__m011": "4-5",
+                  "Avery__m013": "1-2",
+                  "Avery__m014": "2-3",
+                  "Avery__m015": "skip",
+                  "Taylor__m001": "14-15",
+                  "Taylor__m002": "5-6",
+                  "Taylor__m004": "skip",
+                  "Taylor__m005": "skip",
+                  "Taylor__m006": "skip",
+                  "Reese__m001": "14-15",
+                  "Reese__m002": "5-6",
+                  "Reese__m003": "skip",
+                  "Reese__m006": "skip",
+                  "Reese__m007": "6-7",
+                  "Reese__m009": "7-8",
+                  "Reese__m010": "8-9",
+                  "Reese__m011": "4-5"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "cee94d59-271a-4eec-863e-f04c2e26e8e7",
+        "ts": 1776916266.9359293,
+        "agent": "Reese",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m012",
+            "interval": "skip"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Reese",
+              "meeting": {
+                "id": "m012",
+                "title": "Music jamming session",
+                "meeting_type": "soft",
+                "window": [
+                  4,
+                  6
+                ],
+                "participants": [
+                  "Reese",
+                  "Jordan",
+                  "Taylor",
+                  "Quinn"
+                ]
+              },
+              "interval": "skip",
+              "total_assigned": 28,
+              "remaining_variables": 55,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m001": "14-15",
+                  "Avery__m002": "5-6",
+                  "Avery__m003": "skip",
+                  "Avery__m004": "skip",
+                  "Avery__m005": "skip",
+                  "Avery__m006": "skip",
+                  "Avery__m007": "6-7",
+                  "Avery__m008": "11-12",
+                  "Avery__m009": "7-8",
+                  "Avery__m010": "8-9",
+                  "Avery__m011": "4-5",
+                  "Avery__m013": "1-2",
+                  "Avery__m014": "2-3",
+                  "Avery__m015": "skip",
+                  "Taylor__m001": "14-15",
+                  "Taylor__m002": "5-6",
+                  "Taylor__m004": "skip",
+                  "Taylor__m005": "skip",
+                  "Taylor__m006": "skip",
+                  "Reese__m001": "14-15",
+                  "Reese__m002": "5-6",
+                  "Reese__m003": "skip",
+                  "Reese__m006": "skip",
+                  "Reese__m007": "6-7",
+                  "Reese__m009": "7-8",
+                  "Reese__m010": "8-9",
+                  "Reese__m011": "4-5",
+                  "Reese__m012": "skip"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "3c1983a7-d976-49e7-b31a-7abf97f74750",
+        "ts": 1776916266.9364886,
+        "agent": "Reese",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m013",
+            "interval": "1-2"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Reese",
+              "meeting": {
+                "id": "m013",
+                "title": "Gaming session",
+                "meeting_type": "soft",
+                "window": [
+                  1,
+                  5
+                ],
+                "participants": [
+                  "Riley",
+                  "Avery",
+                  "Jordan",
+                  "Taylor",
+                  "Reese",
+                  "Quinn"
+                ]
+              },
+              "interval": "1-2",
+              "total_assigned": 29,
+              "remaining_variables": 54,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m001": "14-15",
+                  "Avery__m002": "5-6",
+                  "Avery__m003": "skip",
+                  "Avery__m004": "skip",
+                  "Avery__m005": "skip",
+                  "Avery__m006": "skip",
+                  "Avery__m007": "6-7",
+                  "Avery__m008": "11-12",
+                  "Avery__m009": "7-8",
+                  "Avery__m010": "8-9",
+                  "Avery__m011": "4-5",
+                  "Avery__m013": "1-2",
+                  "Avery__m014": "2-3",
+                  "Avery__m015": "skip",
+                  "Taylor__m001": "14-15",
+                  "Taylor__m002": "5-6",
+                  "Taylor__m004": "skip",
+                  "Taylor__m005": "skip",
+                  "Taylor__m006": "skip",
+                  "Reese__m001": "14-15",
+                  "Reese__m002": "5-6",
+                  "Reese__m003": "skip",
+                  "Reese__m006": "skip",
+                  "Reese__m007": "6-7",
+                  "Reese__m009": "7-8",
+                  "Reese__m010": "8-9",
+                  "Reese__m011": "4-5",
+                  "Reese__m012": "skip",
+                  "Reese__m013": "1-2"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "24458fc8-9369-49d6-bbff-a2f83379bf86",
+        "ts": 1776916266.937109,
+        "agent": "Reese",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m014",
+            "interval": "2-3"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Reese",
+              "meeting": {
+                "id": "m014",
+                "title": "Lunch break in lounge",
+                "meeting_type": "soft",
+                "window": [
+                  2,
+                  4
+                ],
+                "participants": [
+                  "Avery",
+                  "Riley",
+                  "Taylor",
+                  "Reese",
+                  "Quinn",
+                  "Jordan"
+                ]
+              },
+              "interval": "2-3",
+              "total_assigned": 30,
+              "remaining_variables": 53,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m001": "14-15",
+                  "Avery__m002": "5-6",
+                  "Avery__m003": "skip",
+                  "Avery__m004": "skip",
+                  "Avery__m005": "skip",
+                  "Avery__m006": "skip",
+                  "Avery__m007": "6-7",
+                  "Avery__m008": "11-12",
+                  "Avery__m009": "7-8",
+                  "Avery__m010": "8-9",
+                  "Avery__m011": "4-5",
+                  "Avery__m013": "1-2",
+                  "Avery__m014": "2-3",
+                  "Avery__m015": "skip",
+                  "Taylor__m001": "14-15",
+                  "Taylor__m002": "5-6",
+                  "Taylor__m004": "skip",
+                  "Taylor__m005": "skip",
+                  "Taylor__m006": "skip",
+                  "Reese__m001": "14-15",
+                  "Reese__m002": "5-6",
+                  "Reese__m003": "skip",
+                  "Reese__m006": "skip",
+                  "Reese__m007": "6-7",
+                  "Reese__m009": "7-8",
+                  "Reese__m010": "8-9",
+                  "Reese__m011": "4-5",
+                  "Reese__m012": "skip",
+                  "Reese__m013": "1-2",
+                  "Reese__m014": "2-3"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "66d4e9f3-7d34-465c-9a54-2ce99cba6b53",
+        "ts": 1776916266.9377058,
+        "agent": "Reese",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m015",
+            "interval": "skip"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Reese",
+              "meeting": {
+                "id": "m015",
+                "title": "Lunch break in lounge",
+                "meeting_type": "soft",
+                "window": [
+                  1,
+                  3
+                ],
+                "participants": [
+                  "Taylor",
+                  "Jordan",
+                  "Avery",
+                  "Quinn",
+                  "Reese"
+                ]
+              },
+              "interval": "skip",
+              "total_assigned": 31,
+              "remaining_variables": 52,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m001": "14-15",
+                  "Avery__m002": "5-6",
+                  "Avery__m003": "skip",
+                  "Avery__m004": "skip",
+                  "Avery__m005": "skip",
+                  "Avery__m006": "skip",
+                  "Avery__m007": "6-7",
+                  "Avery__m008": "11-12",
+                  "Avery__m009": "7-8",
+                  "Avery__m010": "8-9",
+                  "Avery__m011": "4-5",
+                  "Avery__m013": "1-2",
+                  "Avery__m014": "2-3",
+                  "Avery__m015": "skip",
+                  "Taylor__m001": "14-15",
+                  "Taylor__m002": "5-6",
+                  "Taylor__m004": "skip",
+                  "Taylor__m005": "skip",
+                  "Taylor__m006": "skip",
+                  "Reese__m001": "14-15",
+                  "Reese__m002": "5-6",
+                  "Reese__m003": "skip",
+                  "Reese__m006": "skip",
+                  "Reese__m007": "6-7",
+                  "Reese__m009": "7-8",
+                  "Reese__m010": "8-9",
+                  "Reese__m011": "4-5",
+                  "Reese__m012": "skip",
+                  "Reese__m013": "1-2",
+                  "Reese__m014": "2-3",
+                  "Reese__m015": "skip"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "19ce95d9-0109-4dcd-bc11-0b42c46bda3b",
+        "ts": 1776916266.9383385,
+        "agent": "Reese",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m016",
+            "interval": "3-4"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Reese",
+              "meeting": {
+                "id": "m016",
+                "title": "Collaborative art workshop",
+                "meeting_type": "soft",
+                "window": [
+                  2,
+                  6
+                ],
+                "participants": [
+                  "Riley",
+                  "Taylor",
+                  "Reese",
+                  "Jordan",
+                  "Quinn"
+                ]
+              },
+              "interval": "3-4",
+              "total_assigned": 32,
+              "remaining_variables": 51,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m001": "14-15",
+                  "Avery__m002": "5-6",
+                  "Avery__m003": "skip",
+                  "Avery__m004": "skip",
+                  "Avery__m005": "skip",
+                  "Avery__m006": "skip",
+                  "Avery__m007": "6-7",
+                  "Avery__m008": "11-12",
+                  "Avery__m009": "7-8",
+                  "Avery__m010": "8-9",
+                  "Avery__m011": "4-5",
+                  "Avery__m013": "1-2",
+                  "Avery__m014": "2-3",
+                  "Avery__m015": "skip",
+                  "Taylor__m001": "14-15",
+                  "Taylor__m002": "5-6",
+                  "Taylor__m004": "skip",
+                  "Taylor__m005": "skip",
+                  "Taylor__m006": "skip",
+                  "Reese__m001": "14-15",
+                  "Reese__m002": "5-6",
+                  "Reese__m003": "skip",
+                  "Reese__m006": "skip",
+                  "Reese__m007": "6-7",
+                  "Reese__m009": "7-8",
+                  "Reese__m010": "8-9",
+                  "Reese__m011": "4-5",
+                  "Reese__m012": "skip",
+                  "Reese__m013": "1-2",
+                  "Reese__m014": "2-3",
+                  "Reese__m015": "skip",
+                  "Reese__m016": "3-4"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  }
+]

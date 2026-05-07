@@ -1,0 +1,1933 @@
+[
+  {
+    "blackboard_id": "0",
+    "participants": [
+      "General_Hospital_Radiology",
+      "General_Hospital_Surgery",
+      "General_Hospital_Triage",
+      "General_Hospital_Ward",
+      "Resource_Provisioner",
+      "St_Marys_Center_Radiology",
+      "St_Marys_Center_Surgery",
+      "St_Marys_Center_Triage",
+      "St_Marys_Center_Ward"
+    ],
+    "events": [
+      {
+        "blackboard_id": 0,
+        "id": "1c3f0742-9dcb-4e83-92e1-2c0ad95cceb8",
+        "ts": 1776985766.4855385,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "Resource-Constrained Job Shop with Provisioner.\n\nThis blackboard is a private communication channel.\nParticipants: General_Hospital_Radiology, General_Hospital_Surgery, General_Hospital_Triage, General_Hospital_Ward, Resource_Provisioner, St_Marys_Center_Radiology, St_Marys_Center_Surgery, St_Marys_Center_Triage, St_Marys_Center_Ward"
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1f67d4dd-0ccf-482c-9808-4eff0c0e5f02",
+        "ts": 1776985836.193975,
+        "agent": "General_Hospital_Ward",
+        "kind": "communication",
+        "payload": {
+          "content": "General_Hospital_Ward: SURPLUS IV_Kits (41), PPE_Sets (45), Pain_Killers (21), Radio_Contrast (13). Available for transfer to hospitals in need.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "2c0d108f-2184-43eb-9873-b2768f09f19e",
+        "ts": 1776985846.9126914,
+        "agent": "General_Hospital_Surgery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "General_Hospital_Surgery": {
+                "message": "General_Hospital_Surgery: SURPLUS IV_Kits (41), Pain_Killers (21), Radio_Contrast (13), Oxygen_Tanks (17), PPE_Sets (45). Available for transfer to hospitals in need.",
+                "rationale": "Announcing surplus resources to help other hospitals and earn transfer rewards. All resources are well above 5 units threshold."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'General_Hospital_Surgery: SURPLUS IV_Kits (41), Pain_Killers (21), Radio_Contrast (13), Oxygen_Tanks (17), PPE_Sets (45). Available for transfer to hospitals in need.'. (Internal Rationale: Announcing surplus resources to help other hospitals and earn transfer rewards. All resources are well above 5 units threshold.)",
+            "state_updates": {
+              "broadcast_message": {
+                "General_Hospital_Surgery": {
+                  "message": "General_Hospital_Surgery: SURPLUS IV_Kits (41), Pain_Killers (21), Radio_Contrast (13), Oxygen_Tanks (17), PPE_Sets (45). Available for transfer to hospitals in need.",
+                  "rationale": "Announcing surplus resources to help other hospitals and earn transfer rewards. All resources are well above 5 units threshold."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9a1adcf4-033b-4587-8171-27d74439788b",
+        "ts": 1776985849.694498,
+        "agent": "Resource_Provisioner",
+        "kind": "communication",
+        "payload": {
+          "content": "Resource_Provisioner checking in. Reviewing inventory distribution across all hospitals. Looking for any urgent resource needs or imbalances that need attention.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "46a48ed5-8d5e-4a5d-b6da-903c42a04a85",
+        "ts": 1776985866.5852096,
+        "agent": "Resource_Provisioner",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "transfers": {
+              "Resource_Provisioner": {
+                "to_hospital": "General_Hospital",
+                "resource_type": "Surgical_Packs",
+                "amount": 6,
+                "rationale": "Small top-up to bring Surgical_Packs from 9 to 15 for safer operational levels without overstocking"
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Transferring 6 Surgical_Packs to General_Hospital. Rationale: Small top-up to bring Surgical_Packs from 9 to 15 for safer operational levels without overstocking",
+            "state_updates": {
+              "transfers": {
+                "Resource_Provisioner": {
+                  "to_hospital": "General_Hospital",
+                  "resource_type": "Surgical_Packs",
+                  "amount": 6,
+                  "rationale": "Small top-up to bring Surgical_Packs from 9 to 15 for safer operational levels without overstocking"
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d9a9b007-44b9-4e98-a1be-b0409fa3f13c",
+        "ts": 1776985876.4288015,
+        "agent": "St_Marys_Center_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "St_Marys_Center_Triage": {
+                "message": "St_Marys_Center_Triage: SURPLUS IV_Kits (41), PPE_Sets (45), Pain_Killers (21), Radio_Contrast (13). Available for transfer to hospitals in need. I can handle 4 patients simultaneously in triage.",
+                "rationale": "Announcing surplus resources to help other hospitals and earn transfer rewards. All resources are well above 5 units threshold and I have capacity for 4 patients."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'St_Marys_Center_Triage: SURPLUS IV_Kits (41), PPE_Sets (45), Pain_Killers (21), Radio_Contrast (13). Available for transfer to hospitals in need. I can handle 4 patients simultaneously in triage.'. (Internal Rationale: Announcing surplus resources to help other hospitals and earn transfer rewards. All resources are well above 5 units threshold and I have capacity for 4 patients.)",
+            "state_updates": {
+              "broadcast_message": {
+                "St_Marys_Center_Triage": {
+                  "message": "St_Marys_Center_Triage: SURPLUS IV_Kits (41), PPE_Sets (45), Pain_Killers (21), Radio_Contrast (13). Available for transfer to hospitals in need. I can handle 4 patients simultaneously in triage.",
+                  "rationale": "Announcing surplus resources to help other hospitals and earn transfer rewards. All resources are well above 5 units threshold and I have capacity for 4 patients."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "2b3af880-9865-48b4-b5fd-d9f54b7506ba",
+        "ts": 1776985883.6057718,
+        "agent": "St_Marys_Center_Radiology",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "St_Marys_Center_Radiology": {
+                "message": "St_Marys_Center_Radiology: SURPLUS Radio_Contrast (13), PPE_Sets (45), IV_Kits (41). Available for transfer to hospitals in need. I have capacity for 2 radiology patients simultaneously.",
+                "rationale": "Announcing surplus resources to help other hospitals and earn transfer rewards. All resources are well above 5 units threshold and I have capacity for 2 patients. This benefits coalition members who may need these resources."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'St_Marys_Center_Radiology: SURPLUS Radio_Contrast (13), PPE_Sets (45), IV_Kits (41). Available for transfer to hospitals in need. I have capacity for 2 radiology patients simultaneously.'. (Internal Rationale: Announcing surplus resources to help other hospitals and earn transfer rewards. All resources are well above 5 units threshold and I have capacity for 2 patients. This benefits coalition members who may need these resources.)",
+            "state_updates": {
+              "broadcast_message": {
+                "St_Marys_Center_Radiology": {
+                  "message": "St_Marys_Center_Radiology: SURPLUS Radio_Contrast (13), PPE_Sets (45), IV_Kits (41). Available for transfer to hospitals in need. I have capacity for 2 radiology patients simultaneously.",
+                  "rationale": "Announcing surplus resources to help other hospitals and earn transfer rewards. All resources are well above 5 units threshold and I have capacity for 2 patients. This benefits coalition members who may need these resources."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ed7cbbe9-c1f6-4d16-91a3-274ddf64045b",
+        "ts": 1776985947.9903336,
+        "agent": "General_Hospital_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "General_Hospital_Triage": {
+                "message": "General_Hospital_Triage: SURPLUS PPE_Sets (45), IV_Kits (41), Pain_Killers (21), Radio_Contrast (13). Available for transfer to hospitals in need. I have capacity for 4 triage patients simultaneously.",
+                "rationale": "Announcing surplus resources to help other hospitals and earn transfer rewards. All resources are well above my needs for 20 triage patients. This benefits coalition members and other hospitals who may need these resources."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'General_Hospital_Triage: SURPLUS PPE_Sets (45), IV_Kits (41), Pain_Killers (21), Radio_Contrast (13). Available for transfer to hospitals in need. I have capacity for 4 triage patients simultaneously.'. (Internal Rationale: Announcing surplus resources to help other hospitals and earn transfer rewards. All resources are well above my needs for 20 triage patients. This benefits coalition members and other hospitals who may need these resources.)",
+            "state_updates": {
+              "broadcast_message": {
+                "General_Hospital_Triage": {
+                  "message": "General_Hospital_Triage: SURPLUS PPE_Sets (45), IV_Kits (41), Pain_Killers (21), Radio_Contrast (13). Available for transfer to hospitals in need. I have capacity for 4 triage patients simultaneously.",
+                  "rationale": "Announcing surplus resources to help other hospitals and earn transfer rewards. All resources are well above my needs for 20 triage patients. This benefits coalition members and other hospitals who may need these resources."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "82d96ee0-456a-42cc-a98f-683562e74cde",
+        "ts": 1776985965.2742517,
+        "agent": "General_Hospital_Radiology",
+        "kind": "communication",
+        "payload": {
+          "content": "General_Hospital_Radiology: SURPLUS Radio_Contrast (13), PPE_Sets (45), IV_Kits (41). Available for transfer to hospitals in need. I have capacity for 2 radiology patients simultaneously.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "66539d63-c49a-4aed-b7f2-df0356d85984",
+        "ts": 1776985997.7612987,
+        "agent": "General_Hospital_Radiology",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "General_Hospital_Radiology": {
+                "message": "General_Hospital_Radiology: SURPLUS Radio_Contrast (13), PPE_Sets (45), IV_Kits (41). Available for transfer to hospitals in need. I have capacity for 2 radiology patients simultaneously.",
+                "rationale": "Announcing surplus resources to help other hospitals and earn transfer rewards. All resources are well above 5 units threshold and I have capacity for 2 patients. This benefits coalition members who may need these resources."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'General_Hospital_Radiology: SURPLUS Radio_Contrast (13), PPE_Sets (45), IV_Kits (41). Available for transfer to hospitals in need. I have capacity for 2 radiology patients simultaneously.'. (Internal Rationale: Announcing surplus resources to help other hospitals and earn transfer rewards. All resources are well above 5 units threshold and I have capacity for 2 patients. This benefits coalition members who may need these resources.)",
+            "state_updates": {
+              "broadcast_message": {
+                "General_Hospital_Radiology": {
+                  "message": "General_Hospital_Radiology: SURPLUS Radio_Contrast (13), PPE_Sets (45), IV_Kits (41). Available for transfer to hospitals in need. I have capacity for 2 radiology patients simultaneously.",
+                  "rationale": "Announcing surplus resources to help other hospitals and earn transfer rewards. All resources are well above 5 units threshold and I have capacity for 2 patients. This benefits coalition members who may need these resources."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d962a170-5006-4a69-b6aa-c7769027f1f2",
+        "ts": 1776986008.5787563,
+        "agent": "St_Marys_Center_Ward",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "St_Marys_Center_Ward": {
+                "message": "St_Marys_Center_Ward: SURPLUS IV_Kits (41), Anesthetics (9), Pain_Killers (21), Radio_Contrast (13), Oxygen_Tanks (17), Surgical_Packs (9), PPE_Sets (45). Available for transfer to hospitals in need. I have capacity for 8 ward patients simultaneously.",
+                "rationale": "Announcing all surplus resources to help other hospitals and earn transfer rewards. All resources are well above 5 units threshold (most are significantly higher). I have capacity for 8 ward patients, but my job queue is currently empty."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'St_Marys_Center_Ward: SURPLUS IV_Kits (41), Anesthetics (9), Pain_Killers (21), Radio_Contrast (13), Oxygen_Tanks (17), Surgical_Packs (9), PPE_Sets (45). Available for transfer to hospitals in need. I have capacity for 8 ward patients simultaneously.'. (Internal Rationale: Announcing all surplus resources to help other hospitals and earn transfer rewards. All resources are well above 5 units threshold (most are significantly higher). I have capacity for 8 ward patients, but my job queue is currently empty.)",
+            "state_updates": {
+              "broadcast_message": {
+                "St_Marys_Center_Ward": {
+                  "message": "St_Marys_Center_Ward: SURPLUS IV_Kits (41), Anesthetics (9), Pain_Killers (21), Radio_Contrast (13), Oxygen_Tanks (17), Surgical_Packs (9), PPE_Sets (45). Available for transfer to hospitals in need. I have capacity for 8 ward patients simultaneously.",
+                  "rationale": "Announcing all surplus resources to help other hospitals and earn transfer rewards. All resources are well above 5 units threshold (most are significantly higher). I have capacity for 8 ward patients, but my job queue is currently empty."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "170b988f-80d3-4251-ba1f-7fa0195d5931",
+        "ts": 1776986040.0419195,
+        "agent": "St_Marys_Center_Surgery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "St_Marys_Center_Surgery": {
+                "message": "St_Marys_Center_Surgery: SURPLUS IV_Kits (41), Anesthetics (9), Pain_Killers (21), Surgical_Packs (9), PPE_Sets (45). Available for transfer to hospitals in need. I have capacity for 1 surgery patient simultaneously.",
+                "rationale": "Announcing surplus resources to help other hospitals and earn transfer rewards. All resources are well above 5 units threshold and I have capacity for 1 surgery patient. This benefits coalition members who may need these resources for surgical procedures."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'St_Marys_Center_Surgery: SURPLUS IV_Kits (41), Anesthetics (9), Pain_Killers (21), Surgical_Packs (9), PPE_Sets (45). Available for transfer to hospitals in need. I have capacity for 1 surgery patient simultaneously.'. (Internal Rationale: Announcing surplus resources to help other hospitals and earn transfer rewards. All resources are well above 5 units threshold and I have capacity for 1 surgery patient. This benefits coalition members who may need these resources for surgical procedures.)",
+            "state_updates": {
+              "broadcast_message": {
+                "St_Marys_Center_Surgery": {
+                  "message": "St_Marys_Center_Surgery: SURPLUS IV_Kits (41), Anesthetics (9), Pain_Killers (21), Surgical_Packs (9), PPE_Sets (45). Available for transfer to hospitals in need. I have capacity for 1 surgery patient simultaneously.",
+                  "rationale": "Announcing surplus resources to help other hospitals and earn transfer rewards. All resources are well above 5 units threshold and I have capacity for 1 surgery patient. This benefits coalition members who may need these resources for surgical procedures."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "df8789f9-88d9-4295-8b48-123cd24c9fa3",
+        "ts": 1776986117.1678784,
+        "agent": "General_Hospital_Ward",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "General_Hospital_Ward": {
+                "message": "General_Hospital_Ward: SURPLUS IV_Kits (41), Pain_Killers (21), Oxygen_Tanks (17), PPE_Sets (45), Anesthetics (9), Radio_Contrast (13), Surgical_Packs (15). Available for transfer to hospitals in need. I have capacity for 8 ward patients simultaneously but my job queue is currently empty.",
+                "rationale": "Announcing all surplus resources to help other hospitals and earn transfer rewards. All resources are well above 5 units threshold (most are significantly higher). I have capacity for 8 ward patients, but my job queue is currently empty. This benefits coalition members and other hospitals who may need these resources."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'General_Hospital_Ward: SURPLUS IV_Kits (41), Pain_Killers (21), Oxygen_Tanks (17), PPE_Sets (45), Anesthetics (9), Radio_Contrast (13), Surgical_Packs (15). Available for transfer to hospitals in need. I have capacity for 8 ward patients simultaneously but my job queue is currently empty.'. (Internal Rationale: Announcing all surplus resources to help other hospitals and earn transfer rewards. All resources are well above 5 units threshold (most are significantly higher). I have capacity for 8 ward patients, but my job queue is currently empty. This benefits coalition members and other hospitals who may need these resources.)",
+            "state_updates": {
+              "broadcast_message": {
+                "General_Hospital_Ward": {
+                  "message": "General_Hospital_Ward: SURPLUS IV_Kits (41), Pain_Killers (21), Oxygen_Tanks (17), PPE_Sets (45), Anesthetics (9), Radio_Contrast (13), Surgical_Packs (15). Available for transfer to hospitals in need. I have capacity for 8 ward patients simultaneously but my job queue is currently empty.",
+                  "rationale": "Announcing all surplus resources to help other hospitals and earn transfer rewards. All resources are well above 5 units threshold (most are significantly higher). I have capacity for 8 ward patients, but my job queue is currently empty. This benefits coalition members and other hospitals who may need these resources."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "35d67e40-792a-4bfc-b61d-862270e7e17b",
+        "ts": 1776986305.8432262,
+        "agent": "Resource_Provisioner",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "Resource_Provisioner": {
+                "message": "Resource_Provisioner checking inventory status across all hospitals. Looking for critical shortages (<2 units) and potential imbalances for redistribution opportunities.",
+                "rationale": "Announcing my initial inventory review to coordinate resource management"
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'Resource_Provisioner checking inventory status across all hospitals. Looking for critical shortages (<2 units) and potential imbalances for redistribution opportunities.'. (Internal Rationale: Announcing my initial inventory review to coordinate resource management)",
+            "state_updates": {
+              "broadcast_message": {
+                "Resource_Provisioner": {
+                  "message": "Resource_Provisioner checking inventory status across all hospitals. Looking for critical shortages (<2 units) and potential imbalances for redistribution opportunities.",
+                  "rationale": "Announcing my initial inventory review to coordinate resource management"
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "916219ac-67fc-4804-a49a-5b2dd290d1c8",
+        "ts": 1776986439.4606805,
+        "agent": "General_Hospital_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "General_Hospital_Triage": {
+                "message": "General_Hospital_Triage: I have 20 triage patients to schedule starting from earliest times. I need 20 PPE_Sets and 20 IV_Kits total. I have significant surplus: PPE_Sets (45), IV_Kits (41), Pain_Killers (21), Radio_Contrast (13). \n\nI can transfer 15 PPE_Sets and 15 IV_Kits to hospitals in need. Resource_Provisioner or other hospitals, please let me know if you need these resources. This will help reduce holding costs and earn transfer rewards.",
+                "rationale": "Announcing surplus resources availability for transfer. I have more than enough for my 20 patients (need 20 of each, have 45 PPE_Sets and 41 IV_Kits). Transferring 15 of each would leave me with 30 PPE_Sets and 26 IV_Kits, which is still more than sufficient for my needs while earning transfer rewards."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'General_Hospital_Triage: I have 20 triage patients to schedule starting from earliest times. I need 20 PPE_Sets and 20 IV_Kits total. I have significant surplus: PPE_Sets (45), IV_Kits (41), Pain_Killers (21), Radio_Contrast (13). \n\nI can transfer 15 PPE_Sets and 15 IV_Kits to hospitals in need. Resource_Provisioner or other hospitals, please let me know if you need these resources. This will help reduce holding costs and earn transfer rewards.'. (Internal Rationale: Announcing surplus resources availability for transfer. I have more than enough for my 20 patients (need 20 of each, have 45 PPE_Sets and 41 IV_Kits). Transferring 15 of each would leave me with 30 PPE_Sets and 26 IV_Kits, which is still more than sufficient for my needs while earning transfer rewards.)",
+            "state_updates": {
+              "broadcast_message": {
+                "General_Hospital_Triage": {
+                  "message": "General_Hospital_Triage: I have 20 triage patients to schedule starting from earliest times. I need 20 PPE_Sets and 20 IV_Kits total. I have significant surplus: PPE_Sets (45), IV_Kits (41), Pain_Killers (21), Radio_Contrast (13). \n\nI can transfer 15 PPE_Sets and 15 IV_Kits to hospitals in need. Resource_Provisioner or other hospitals, please let me know if you need these resources. This will help reduce holding costs and earn transfer rewards.",
+                  "rationale": "Announcing surplus resources availability for transfer. I have more than enough for my 20 patients (need 20 of each, have 45 PPE_Sets and 41 IV_Kits). Transferring 15 of each would leave me with 30 PPE_Sets and 26 IV_Kits, which is still more than sufficient for my needs while earning transfer rewards."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c804cf87-50ac-4873-a797-effc7ad9adbb",
+        "ts": 1776986446.5958555,
+        "agent": "General_Hospital_Radiology",
+        "kind": "communication",
+        "payload": {
+          "content": "General_Hospital_Radiology: I have no radiology patients in my queue. I can transfer surplus resources: Radio_Contrast (13), PPE_Sets (45), IV_Kits (41). Resource_Provisioner, please let me know which resources and how many units you'd like me to transfer to other hospitals. I'm ready to execute transfers to reduce holding costs and earn transfer rewards.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "187fd7bb-8371-4111-91b5-0ba583cd4a08",
+        "ts": 1776986458.7691848,
+        "agent": "St_Marys_Center_Ward",
+        "kind": "communication",
+        "payload": {
+          "content": "St_Marys_Center_Ward: I have reviewed my inventory and job queue. My queue is empty (no ward patients to schedule), and I have significant surplus across all resource types. I'm ready to transfer resources to hospitals in need. \n\nI can transfer: IV_Kits (41 total), Anesthetics (9), Pain_Killers (21), Radio_Contrast (13), Oxygen_Tanks (17), Surgical_Packs (9), PPE_Sets (45). \n\nResource_Provisioner or other hospitals: Please let me know which resources and quantities you need. I'm particularly willing to transfer larger quantities of IV_Kits and PPE_Sets (40+ units each available for transfer) to reduce holding costs and earn transfer rewards.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "213fe20d-2179-4a07-8a9f-d3e435b5e22b",
+        "ts": 1776986472.1849248,
+        "agent": "St_Marys_Center_Surgery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "St_Marys_Center_Surgery": {
+                "message": "St_Marys_Center_Surgery: I have an empty surgery queue and significant surplus resources available for transfer. All resources >5 units: IV_Kits (41), Anesthetics (9), Pain_Killers (21), Surgical_Packs (9), PPE_Sets (45), Oxygen_Tanks (17), Radio_Contrast (13). \n\nResource_Provisioner: Please advise which resources and quantities you'd like me to transfer to other hospitals to reduce holding costs and earn transfer rewards. I'm ready to execute transfers immediately.",
+                "rationale": "Since I have no surgery patients to schedule and all resources are well above 5 units, I'm offering to transfer surplus resources. This will reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). I'm asking the Resource_Provisioner for guidance on which resources to transfer where, as they have the global view of resource needs across hospitals."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'St_Marys_Center_Surgery: I have an empty surgery queue and significant surplus resources available for transfer. All resources >5 units: IV_Kits (41), Anesthetics (9), Pain_Killers (21), Surgical_Packs (9), PPE_Sets (45), Oxygen_Tanks (17), Radio_Contrast (13). \n\nResource_Provisioner: Please advise which resources and quantities you'd like me to transfer to other hospitals to reduce holding costs and earn transfer rewards. I'm ready to execute transfers immediately.'. (Internal Rationale: Since I have no surgery patients to schedule and all resources are well above 5 units, I'm offering to transfer surplus resources. This will reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). I'm asking the Resource_Provisioner for guidance on which resources to transfer where, as they have the global view of resource needs across hospitals.)",
+            "state_updates": {
+              "broadcast_message": {
+                "St_Marys_Center_Surgery": {
+                  "message": "St_Marys_Center_Surgery: I have an empty surgery queue and significant surplus resources available for transfer. All resources >5 units: IV_Kits (41), Anesthetics (9), Pain_Killers (21), Surgical_Packs (9), PPE_Sets (45), Oxygen_Tanks (17), Radio_Contrast (13). \n\nResource_Provisioner: Please advise which resources and quantities you'd like me to transfer to other hospitals to reduce holding costs and earn transfer rewards. I'm ready to execute transfers immediately.",
+                  "rationale": "Since I have no surgery patients to schedule and all resources are well above 5 units, I'm offering to transfer surplus resources. This will reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). I'm asking the Resource_Provisioner for guidance on which resources to transfer where, as they have the global view of resource needs across hospitals."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "45f7b886-efed-482a-ba84-e287005a32dd",
+        "ts": 1776986492.269632,
+        "agent": "General_Hospital_Ward",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "General_Hospital_Ward": {
+                "message": "General_Hospital_Ward: I have an empty ward queue and significant surplus resources available for transfer. All resources well above 5 units: IV_Kits (41), PPE_Sets (45), Pain_Killers (21), Radio_Contrast (13), Oxygen_Tanks (17), Surgical_Packs (15), Anesthetics (9).\n\nResource_Provisioner: Please advise which resources and quantities you'd like me to transfer to other hospitals to reduce holding costs and earn transfer rewards. I'm particularly willing to transfer larger quantities of IV_Kits and PPE_Sets (40+ units each available for transfer).\n\nOther hospitals: If you have resource needs, please let me know. I have capacity for 8 ward patients but currently no patients in queue.",
+                "rationale": "Announcing surplus resources availability for transfer. Since I have no patients in my queue and all resources are significantly above 5 units, I can transfer large quantities to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). I'm asking the Resource_Provisioner for guidance on optimal transfers since they have global view of resource needs across hospitals."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'General_Hospital_Ward: I have an empty ward queue and significant surplus resources available for transfer. All resources well above 5 units: IV_Kits (41), PPE_Sets (45), Pain_Killers (21), Radio_Contrast (13), Oxygen_Tanks (17), Surgical_Packs (15), Anesthetics (9).\n\nResource_Provisioner: Please advise which resources and quantities you'd like me to transfer to other hospitals to reduce holding costs and earn transfer rewards. I'm particularly willing to transfer larger quantities of IV_Kits and PPE_Sets (40+ units each available for transfer).\n\nOther hospitals: If you have resource needs, please let me know. I have capacity for 8 ward patients but currently no patients in queue.'. (Internal Rationale: Announcing surplus resources availability for transfer. Since I have no patients in my queue and all resources are significantly above 5 units, I can transfer large quantities to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). I'm asking the Resource_Provisioner for guidance on optimal transfers since they have global view of resource needs across hospitals.)",
+            "state_updates": {
+              "broadcast_message": {
+                "General_Hospital_Ward": {
+                  "message": "General_Hospital_Ward: I have an empty ward queue and significant surplus resources available for transfer. All resources well above 5 units: IV_Kits (41), PPE_Sets (45), Pain_Killers (21), Radio_Contrast (13), Oxygen_Tanks (17), Surgical_Packs (15), Anesthetics (9).\n\nResource_Provisioner: Please advise which resources and quantities you'd like me to transfer to other hospitals to reduce holding costs and earn transfer rewards. I'm particularly willing to transfer larger quantities of IV_Kits and PPE_Sets (40+ units each available for transfer).\n\nOther hospitals: If you have resource needs, please let me know. I have capacity for 8 ward patients but currently no patients in queue.",
+                  "rationale": "Announcing surplus resources availability for transfer. Since I have no patients in my queue and all resources are significantly above 5 units, I can transfer large quantities to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). I'm asking the Resource_Provisioner for guidance on optimal transfers since they have global view of resource needs across hospitals."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "3d22f79f-ccb4-47c9-8cc2-b0f27ebbc5a1",
+        "ts": 1776986511.0487792,
+        "agent": "General_Hospital_Surgery",
+        "kind": "communication",
+        "payload": {
+          "content": "General_Hospital_Surgery: I have an empty surgery queue and significant surplus resources available for transfer. All resources >5 units: IV_Kits (41), Anesthetics (9), Pain_Killers (21), Surgical_Packs (15), PPE_Sets (45), Oxygen_Tanks (17), Radio_Contrast (13). \n\nResource_Provisioner: Please advise which resources and quantities you'd like me to transfer to other hospitals to reduce holding costs and earn transfer rewards. I'm ready to execute transfers immediately.\n\nI can transfer large quantities of IV_Kits and PPE_Sets (40+ units each available for transfer) as these are my highest surplus items. Surgical_Packs (15) and Oxygen_Tanks (17) are also available in good quantities.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "11f93125-4721-4b64-811b-75990b0f2974",
+        "ts": 1776986520.034924,
+        "agent": "General_Hospital_Surgery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "General_Hospital_Surgery": {
+                "message": "General_Hospital_Surgery: All resources well above 5 units: IV_Kits (41), Anesthetics (9), Pain_Killers (21), Surgical_Packs (15), PPE_Sets (45), Oxygen_Tanks (17), Radio_Contrast (13). Available for transfer to hospitals in need. Resource_Provisioner has been asked for guidance on optimal transfers to reduce holding costs and earn transfer rewards.",
+                "rationale": "Announcing surplus resources availability for transfer. Since I have no surgery patients in my queue and all resources are significantly above 5 units, I can transfer large quantities to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). I'm coordinating with Resource_Provisioner who has global view of resource needs across hospitals."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'General_Hospital_Surgery: All resources well above 5 units: IV_Kits (41), Anesthetics (9), Pain_Killers (21), Surgical_Packs (15), PPE_Sets (45), Oxygen_Tanks (17), Radio_Contrast (13). Available for transfer to hospitals in need. Resource_Provisioner has been asked for guidance on optimal transfers to reduce holding costs and earn transfer rewards.'. (Internal Rationale: Announcing surplus resources availability for transfer. Since I have no surgery patients in my queue and all resources are significantly above 5 units, I can transfer large quantities to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). I'm coordinating with Resource_Provisioner who has global view of resource needs across hospitals.)",
+            "state_updates": {
+              "broadcast_message": {
+                "General_Hospital_Surgery": {
+                  "message": "General_Hospital_Surgery: All resources well above 5 units: IV_Kits (41), Anesthetics (9), Pain_Killers (21), Surgical_Packs (15), PPE_Sets (45), Oxygen_Tanks (17), Radio_Contrast (13). Available for transfer to hospitals in need. Resource_Provisioner has been asked for guidance on optimal transfers to reduce holding costs and earn transfer rewards.",
+                  "rationale": "Announcing surplus resources availability for transfer. Since I have no surgery patients in my queue and all resources are significantly above 5 units, I can transfer large quantities to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). I'm coordinating with Resource_Provisioner who has global view of resource needs across hospitals."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "40cfe18c-67a4-4795-a04f-db50634688c3",
+        "ts": 1776986528.947895,
+        "agent": "Resource_Provisioner",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "Resource_Provisioner": {
+                "message": "Resource Provisioner here. Checking inventory status across all hospitals. Looking for any urgent resource needs or imbalances to address. Will be analyzing current stock levels and making necessary transfers.",
+                "rationale": "Announcing my presence and intent to analyze and address resource needs across the network."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'Resource Provisioner here. Checking inventory status across all hospitals. Looking for any urgent resource needs or imbalances to address. Will be analyzing current stock levels and making necessary transfers.'. (Internal Rationale: Announcing my presence and intent to analyze and address resource needs across the network.)",
+            "state_updates": {
+              "broadcast_message": {
+                "Resource_Provisioner": {
+                  "message": "Resource Provisioner here. Checking inventory status across all hospitals. Looking for any urgent resource needs or imbalances to address. Will be analyzing current stock levels and making necessary transfers.",
+                  "rationale": "Announcing my presence and intent to analyze and address resource needs across the network."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "77bd7d43-2875-492d-9712-16b01aca1914",
+        "ts": 1776986660.4730875,
+        "agent": "St_Marys_Center_Radiology",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "St_Marys_Center_Radiology": {
+                "message": "St_Marys_Center_Radiology: My job queue is empty. I have significant surplus resources available for transfer: Radio_Contrast (13), PPE_Sets (45), IV_Kits (41), plus Anesthetics (9), Pain_Killers (21), Oxygen_Tanks (17), Surgical_Packs (9). All resources well above 5 units.\n\nResource_Provisioner: Please advise which resources and quantities you'd like me to transfer to other hospitals to reduce holding costs and earn transfer rewards. I'm particularly willing to transfer larger quantities of Radio_Contrast, PPE_Sets, and IV_Kits.\n\nI have capacity for 2 radiology patients simultaneously but currently no patients in queue.",
+                "rationale": "Announcing surplus resources availability for transfer. Since I have no patients in my queue and all resources are significantly above 5 units, I can transfer large quantities to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). I'm asking the Resource_Provisioner for guidance on optimal transfers since they have global view of resource needs across hospitals. This benefits the coalition by earning transfer rewards."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'St_Marys_Center_Radiology: My job queue is empty. I have significant surplus resources available for transfer: Radio_Contrast (13), PPE_Sets (45), IV_Kits (41), plus Anesthetics (9), Pain_Killers (21), Oxygen_Tanks (17), Surgical_Packs (9). All resources well above 5 units.\n\nResource_Provisioner: Please advise which resources and quantities you'd like me to transfer to other hospitals to reduce holding costs and earn transfer rewards. I'm particularly willing to transfer larger quantities of Radio_Contrast, PPE_Sets, and IV_Kits.\n\nI have capacity for 2 radiology patients simultaneously but currently no patients in queue.'. (Internal Rationale: Announcing surplus resources availability for transfer. Since I have no patients in my queue and all resources are significantly above 5 units, I can transfer large quantities to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). I'm asking the Resource_Provisioner for guidance on optimal transfers since they have global view of resource needs across hospitals. This benefits the coalition by earning transfer rewards.)",
+            "state_updates": {
+              "broadcast_message": {
+                "St_Marys_Center_Radiology": {
+                  "message": "St_Marys_Center_Radiology: My job queue is empty. I have significant surplus resources available for transfer: Radio_Contrast (13), PPE_Sets (45), IV_Kits (41), plus Anesthetics (9), Pain_Killers (21), Oxygen_Tanks (17), Surgical_Packs (9). All resources well above 5 units.\n\nResource_Provisioner: Please advise which resources and quantities you'd like me to transfer to other hospitals to reduce holding costs and earn transfer rewards. I'm particularly willing to transfer larger quantities of Radio_Contrast, PPE_Sets, and IV_Kits.\n\nI have capacity for 2 radiology patients simultaneously but currently no patients in queue.",
+                  "rationale": "Announcing surplus resources availability for transfer. Since I have no patients in my queue and all resources are significantly above 5 units, I can transfer large quantities to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). I'm asking the Resource_Provisioner for guidance on optimal transfers since they have global view of resource needs across hospitals. This benefits the coalition by earning transfer rewards."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d028e982-1329-4b9d-b9d7-e9d7dd60d1cb",
+        "ts": 1776986720.148847,
+        "agent": "General_Hospital_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "General_Hospital_Triage": {
+                "message": "General_Hospital_Triage: I have 20 triage patients to schedule starting from earliest times. I need 20 PPE_Sets and 20 IV_Kits total. I have significant surplus: PPE_Sets (45), IV_Kits (41), Pain_Killers (21), Radio_Contrast (13). \n\nI can transfer 15 PPE_Sets and 15 IV_Kits to hospitals in need. Resource_Provisioner or other hospitals, please let me know if you need these resources. This will help reduce holding costs and earn transfer rewards.",
+                "rationale": "Announcing surplus resources availability for transfer. I have more than enough for my 20 patients (need 20 of each, have 45 PPE_Sets and 41 IV_Kits). Transferring 15 of each would leave me with 30 PPE_Sets and 26 IV_Kits, which is still more than sufficient for my needs while earning transfer rewards. This benefits the coalition by earning transfer rewards for all members."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'General_Hospital_Triage: I have 20 triage patients to schedule starting from earliest times. I need 20 PPE_Sets and 20 IV_Kits total. I have significant surplus: PPE_Sets (45), IV_Kits (41), Pain_Killers (21), Radio_Contrast (13). \n\nI can transfer 15 PPE_Sets and 15 IV_Kits to hospitals in need. Resource_Provisioner or other hospitals, please let me know if you need these resources. This will help reduce holding costs and earn transfer rewards.'. (Internal Rationale: Announcing surplus resources availability for transfer. I have more than enough for my 20 patients (need 20 of each, have 45 PPE_Sets and 41 IV_Kits). Transferring 15 of each would leave me with 30 PPE_Sets and 26 IV_Kits, which is still more than sufficient for my needs while earning transfer rewards. This benefits the coalition by earning transfer rewards for all members.)",
+            "state_updates": {
+              "broadcast_message": {
+                "General_Hospital_Triage": {
+                  "message": "General_Hospital_Triage: I have 20 triage patients to schedule starting from earliest times. I need 20 PPE_Sets and 20 IV_Kits total. I have significant surplus: PPE_Sets (45), IV_Kits (41), Pain_Killers (21), Radio_Contrast (13). \n\nI can transfer 15 PPE_Sets and 15 IV_Kits to hospitals in need. Resource_Provisioner or other hospitals, please let me know if you need these resources. This will help reduce holding costs and earn transfer rewards.",
+                  "rationale": "Announcing surplus resources availability for transfer. I have more than enough for my 20 patients (need 20 of each, have 45 PPE_Sets and 41 IV_Kits). Transferring 15 of each would leave me with 30 PPE_Sets and 26 IV_Kits, which is still more than sufficient for my needs while earning transfer rewards. This benefits the coalition by earning transfer rewards for all members."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "065ae39e-f7de-46e7-9667-91a8284bd5a1",
+        "ts": 1776986738.7187607,
+        "agent": "General_Hospital_Radiology",
+        "kind": "communication",
+        "payload": {
+          "content": "General_Hospital_Radiology: I have an empty radiology queue and significant surplus resources. All resources well above 5 units: Radio_Contrast (13), PPE_Sets (45), IV_Kits (41), plus Anesthetics (9), Pain_Killers (21), Oxygen_Tanks (17), Surgical_Packs (15).\n\nResource_Provisioner: Please advise on optimal transfers to reduce holding costs and earn transfer rewards. I'm particularly willing to transfer larger quantities of Radio_Contrast, PPE_Sets, and IV_Kits since these are my highest surplus items relative to radiology needs.\n\nI have capacity for 2 radiology patients simultaneously but currently no patients in queue. Ready to execute transfers as directed.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "2cd538ee-4bb2-46bd-b83f-bd82a31d2b87",
+        "ts": 1776986746.6562881,
+        "agent": "General_Hospital_Radiology",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "General_Hospital_Radiology": {
+                "message": "General_Hospital_Radiology: Empty job queue with significant surplus resources available for transfer. All resources >5 units: Radio_Contrast (13), PPE_Sets (45), IV_Kits (41), Anesthetics (9), Pain_Killers (21), Oxygen_Tanks (17), Surgical_Packs (15). \n\nResource_Provisioner: I'm ready to transfer resources as you direct to optimize network inventory and earn transfer rewards. I can transfer up to 10+ units of Radio_Contrast, PPE_Sets, and IV_Kits immediately.\n\nI have capacity for 2 radiology patients but currently no patients scheduled.",
+                "rationale": "Announcing surplus resource availability to coordinate transfers with Resource_Provisioner. Since I have no patients in my queue, I can transfer substantial quantities to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). This benefits the entire coalition by optimizing resource distribution across hospitals."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'General_Hospital_Radiology: Empty job queue with significant surplus resources available for transfer. All resources >5 units: Radio_Contrast (13), PPE_Sets (45), IV_Kits (41), Anesthetics (9), Pain_Killers (21), Oxygen_Tanks (17), Surgical_Packs (15). \n\nResource_Provisioner: I'm ready to transfer resources as you direct to optimize network inventory and earn transfer rewards. I can transfer up to 10+ units of Radio_Contrast, PPE_Sets, and IV_Kits immediately.\n\nI have capacity for 2 radiology patients but currently no patients scheduled.'. (Internal Rationale: Announcing surplus resource availability to coordinate transfers with Resource_Provisioner. Since I have no patients in my queue, I can transfer substantial quantities to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). This benefits the entire coalition by optimizing resource distribution across hospitals.)",
+            "state_updates": {
+              "broadcast_message": {
+                "General_Hospital_Radiology": {
+                  "message": "General_Hospital_Radiology: Empty job queue with significant surplus resources available for transfer. All resources >5 units: Radio_Contrast (13), PPE_Sets (45), IV_Kits (41), Anesthetics (9), Pain_Killers (21), Oxygen_Tanks (17), Surgical_Packs (15). \n\nResource_Provisioner: I'm ready to transfer resources as you direct to optimize network inventory and earn transfer rewards. I can transfer up to 10+ units of Radio_Contrast, PPE_Sets, and IV_Kits immediately.\n\nI have capacity for 2 radiology patients but currently no patients scheduled.",
+                  "rationale": "Announcing surplus resource availability to coordinate transfers with Resource_Provisioner. Since I have no patients in my queue, I can transfer substantial quantities to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). This benefits the entire coalition by optimizing resource distribution across hospitals."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "0e23b406-598d-4f9e-a659-8ed314228eb6",
+        "ts": 1776986766.6532485,
+        "agent": "St_Marys_Center_Ward",
+        "kind": "communication",
+        "payload": {
+          "content": "St_Marys_Center_Ward: I have an empty ward queue and significant surplus resources. Based on my inventory analysis, here's what I can transfer:\n\n- IV_Kits: 41 total - can transfer up to 35 units (keep 6 for safety)\n- PPE_Sets: 45 total - can transfer up to 35 units (keep 10 for safety)\n- Pain_Killers: 21 total - can transfer up to 15 units (keep 6 for safety)\n- Radio_Contrast: 13 total - can transfer up to 8 units (keep 5 for safety)\n- Oxygen_Tanks: 17 total - can transfer up to 10 units (keep 7 for safety)\n- Surgical_Packs: 9 total - can transfer up to 4 units (keep 5 for safety)\n- Anesthetics: 9 total - can transfer up to 4 units (keep 5 for safety)\n\nResource_Provisioner: Please advise which resources and quantities I should transfer to which hospitals. I'm ready to execute transfers immediately to reduce holding costs and earn transfer rewards for our coalition.\n\nOther hospitals: If you have specific resource needs, please let me know.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "081c7110-a4e6-491b-9449-cbec99e18d39",
+        "ts": 1776986774.970385,
+        "agent": "St_Marys_Center_Ward",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "St_Marys_Center_Ward": {
+                "message": "St_Marys_Center_Ward: Ready to transfer surplus resources as directed by Resource_Provisioner. I have empty ward queue and can transfer: IV_Kits (up to 35 units), PPE_Sets (up to 35 units), Pain_Killers (up to 15 units), Radio_Contrast (up to 8 units), Oxygen_Tanks (up to 10 units), Surgical_Packs (up to 4 units), Anesthetics (up to 4 units).\n\nResource_Provisioner: Please provide specific transfer instructions. I will execute immediately to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit) for our coalition.\n\nAll resources are well above 5-unit safety threshold. I have capacity for 8 ward patients but currently no patients in queue.",
+                "rationale": "Broadcasting specific transfer capabilities to coordinate with Resource_Provisioner. Since I have no patients to schedule, I can focus on optimizing resource distribution across the network. By transferring surplus resources, I can reduce holding costs (-10/unit) and earn transfer rewards (+15/unit), benefiting the entire coalition. I'm providing specific quantities I'm willing to transfer to help Resource_Provisioner make optimal decisions."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'St_Marys_Center_Ward: Ready to transfer surplus resources as directed by Resource_Provisioner. I have empty ward queue and can transfer: IV_Kits (up to 35 units), PPE_Sets (up to 35 units), Pain_Killers (up to 15 units), Radio_Contrast (up to 8 units), Oxygen_Tanks (up to 10 units), Surgical_Packs (up to 4 units), Anesthetics (up to 4 units).\n\nResource_Provisioner: Please provide specific transfer instructions. I will execute immediately to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit) for our coalition.\n\nAll resources are well above 5-unit safety threshold. I have capacity for 8 ward patients but currently no patients in queue.'. (Internal Rationale: Broadcasting specific transfer capabilities to coordinate with Resource_Provisioner. Since I have no patients to schedule, I can focus on optimizing resource distribution across the network. By transferring surplus resources, I can reduce holding costs (-10/unit) and earn transfer rewards (+15/unit), benefiting the entire coalition. I'm providing specific quantities I'm willing to transfer to help Resource_Provisioner make optimal decisions.)",
+            "state_updates": {
+              "broadcast_message": {
+                "St_Marys_Center_Ward": {
+                  "message": "St_Marys_Center_Ward: Ready to transfer surplus resources as directed by Resource_Provisioner. I have empty ward queue and can transfer: IV_Kits (up to 35 units), PPE_Sets (up to 35 units), Pain_Killers (up to 15 units), Radio_Contrast (up to 8 units), Oxygen_Tanks (up to 10 units), Surgical_Packs (up to 4 units), Anesthetics (up to 4 units).\n\nResource_Provisioner: Please provide specific transfer instructions. I will execute immediately to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit) for our coalition.\n\nAll resources are well above 5-unit safety threshold. I have capacity for 8 ward patients but currently no patients in queue.",
+                  "rationale": "Broadcasting specific transfer capabilities to coordinate with Resource_Provisioner. Since I have no patients to schedule, I can focus on optimizing resource distribution across the network. By transferring surplus resources, I can reduce holding costs (-10/unit) and earn transfer rewards (+15/unit), benefiting the entire coalition. I'm providing specific quantities I'm willing to transfer to help Resource_Provisioner make optimal decisions."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "435b069c-a8bc-4209-8230-9c7d526c6f35",
+        "ts": 1776986793.8205922,
+        "agent": "St_Marys_Center_Surgery",
+        "kind": "communication",
+        "payload": {
+          "content": "St_Marys_Center_Surgery: I have an empty surgery queue and significant surplus resources available for transfer. Based on my inventory analysis, here's what I can transfer while maintaining a 5-unit safety buffer:\n\n- IV_Kits: 41 total - can transfer up to 35 units (keep 6 for safety)\n- Anesthetics: 9 total - can transfer up to 4 units (keep 5 for safety)  \n- Pain_Killers: 21 total - can transfer up to 15 units (keep 6 for safety)\n- Surgical_Packs: 9 total - can transfer up to 4 units (keep 5 for safety)\n- PPE_Sets: 45 total - can transfer up to 35 units (keep 10 for safety)\n- Oxygen_Tanks: 17 total - can transfer up to 10 units (keep 7 for safety)\n- Radio_Contrast: 13 total - can transfer up to 8 units (keep 5 for safety)\n\nResource_Provisioner: Please provide specific transfer instructions - which resources, quantities, and destination hospitals. I'm ready to execute transfers immediately to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit) for our coalition.\n\nI have capacity for 1 surgery patient but currently no patients in queue.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "6935cf67-f284-48c7-b472-7131edc2a3e6",
+        "ts": 1776986804.2639742,
+        "agent": "St_Marys_Center_Surgery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "St_Marys_Center_Surgery": {
+                "message": "St_Marys_Center_Surgery: Ready to transfer surplus resources as directed by Resource_Provisioner. I have empty surgery queue and can transfer: IV_Kits (up to 35 units), PPE_Sets (up to 35 units), Pain_Killers (up to 15 units), Surgical_Packs (up to 4 units), Anesthetics (up to 4 units), Oxygen_Tanks (up to 10 units), Radio_Contrast (up to 8 units).\n\nResource_Provisioner: Please provide specific transfer instructions. I will execute immediately to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit) for our coalition.\n\nAll resources are well above 5-unit safety threshold. I have capacity for 1 surgery patient but currently no patients in queue.",
+                "rationale": "Broadcasting specific transfer capabilities to coordinate with Resource_Provisioner and other hospitals. Since I have no patients to schedule, I can focus on optimizing resource distribution across the network. By transferring surplus resources, I can reduce holding costs (-10/unit) and earn transfer rewards (+15/unit), benefiting the entire coalition. I'm providing specific quantities I'm willing to transfer to help Resource_Provisioner make optimal decisions."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'St_Marys_Center_Surgery: Ready to transfer surplus resources as directed by Resource_Provisioner. I have empty surgery queue and can transfer: IV_Kits (up to 35 units), PPE_Sets (up to 35 units), Pain_Killers (up to 15 units), Surgical_Packs (up to 4 units), Anesthetics (up to 4 units), Oxygen_Tanks (up to 10 units), Radio_Contrast (up to 8 units).\n\nResource_Provisioner: Please provide specific transfer instructions. I will execute immediately to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit) for our coalition.\n\nAll resources are well above 5-unit safety threshold. I have capacity for 1 surgery patient but currently no patients in queue.'. (Internal Rationale: Broadcasting specific transfer capabilities to coordinate with Resource_Provisioner and other hospitals. Since I have no patients to schedule, I can focus on optimizing resource distribution across the network. By transferring surplus resources, I can reduce holding costs (-10/unit) and earn transfer rewards (+15/unit), benefiting the entire coalition. I'm providing specific quantities I'm willing to transfer to help Resource_Provisioner make optimal decisions.)",
+            "state_updates": {
+              "broadcast_message": {
+                "St_Marys_Center_Surgery": {
+                  "message": "St_Marys_Center_Surgery: Ready to transfer surplus resources as directed by Resource_Provisioner. I have empty surgery queue and can transfer: IV_Kits (up to 35 units), PPE_Sets (up to 35 units), Pain_Killers (up to 15 units), Surgical_Packs (up to 4 units), Anesthetics (up to 4 units), Oxygen_Tanks (up to 10 units), Radio_Contrast (up to 8 units).\n\nResource_Provisioner: Please provide specific transfer instructions. I will execute immediately to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit) for our coalition.\n\nAll resources are well above 5-unit safety threshold. I have capacity for 1 surgery patient but currently no patients in queue.",
+                  "rationale": "Broadcasting specific transfer capabilities to coordinate with Resource_Provisioner and other hospitals. Since I have no patients to schedule, I can focus on optimizing resource distribution across the network. By transferring surplus resources, I can reduce holding costs (-10/unit) and earn transfer rewards (+15/unit), benefiting the entire coalition. I'm providing specific quantities I'm willing to transfer to help Resource_Provisioner make optimal decisions."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "3ddfda13-3a9a-41db-af53-379463de85fe",
+        "ts": 1776986899.7663155,
+        "agent": "General_Hospital_Ward",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "General_Hospital_Ward": {
+                "message": "General_Hospital_Ward: I have an empty ward queue and significant surplus resources available for immediate transfer. All resources well above 5-unit safety threshold:\n\n- IV_Kits: 41 total (can transfer 35+ units)\n- PPE_Sets: 45 total (can transfer 35+ units) \n- Pain_Killers: 21 total (can transfer 15+ units)\n- Radio_Contrast: 13 total (can transfer 8+ units)\n- Oxygen_Tanks: 17 total (can transfer 10+ units)\n- Surgical_Packs: 15 total (can transfer 10+ units)\n- Anesthetics: 9 total (can transfer 4+ units)\n\nResource_Provisioner: Please advise which resources and quantities I should transfer to which hospitals to optimize network inventory. I'm ready to execute transfers immediately to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit).\n\nOther hospitals: If you have specific resource needs, please let me know. I have capacity for 8 ward patients but currently no patients in queue.",
+                "rationale": "Announcing specific transfer capabilities to coordinate with Resource_Provisioner and other hospitals. Since I have no patients to schedule and all resources are significantly above 5 units, I can transfer large quantities to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). This benefits the entire network by optimizing resource distribution."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'General_Hospital_Ward: I have an empty ward queue and significant surplus resources available for immediate transfer. All resources well above 5-unit safety threshold:\n\n- IV_Kits: 41 total (can transfer 35+ units)\n- PPE_Sets: 45 total (can transfer 35+ units) \n- Pain_Killers: 21 total (can transfer 15+ units)\n- Radio_Contrast: 13 total (can transfer 8+ units)\n- Oxygen_Tanks: 17 total (can transfer 10+ units)\n- Surgical_Packs: 15 total (can transfer 10+ units)\n- Anesthetics: 9 total (can transfer 4+ units)\n\nResource_Provisioner: Please advise which resources and quantities I should transfer to which hospitals to optimize network inventory. I'm ready to execute transfers immediately to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit).\n\nOther hospitals: If you have specific resource needs, please let me know. I have capacity for 8 ward patients but currently no patients in queue.'. (Internal Rationale: Announcing specific transfer capabilities to coordinate with Resource_Provisioner and other hospitals. Since I have no patients to schedule and all resources are significantly above 5 units, I can transfer large quantities to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). This benefits the entire network by optimizing resource distribution.)",
+            "state_updates": {
+              "broadcast_message": {
+                "General_Hospital_Ward": {
+                  "message": "General_Hospital_Ward: I have an empty ward queue and significant surplus resources available for immediate transfer. All resources well above 5-unit safety threshold:\n\n- IV_Kits: 41 total (can transfer 35+ units)\n- PPE_Sets: 45 total (can transfer 35+ units) \n- Pain_Killers: 21 total (can transfer 15+ units)\n- Radio_Contrast: 13 total (can transfer 8+ units)\n- Oxygen_Tanks: 17 total (can transfer 10+ units)\n- Surgical_Packs: 15 total (can transfer 10+ units)\n- Anesthetics: 9 total (can transfer 4+ units)\n\nResource_Provisioner: Please advise which resources and quantities I should transfer to which hospitals to optimize network inventory. I'm ready to execute transfers immediately to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit).\n\nOther hospitals: If you have specific resource needs, please let me know. I have capacity for 8 ward patients but currently no patients in queue.",
+                  "rationale": "Announcing specific transfer capabilities to coordinate with Resource_Provisioner and other hospitals. Since I have no patients to schedule and all resources are significantly above 5 units, I can transfer large quantities to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). This benefits the entire network by optimizing resource distribution."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ad5dbf39-ad82-49e7-b7cb-0fbb6cecf695",
+        "ts": 1776986912.4647179,
+        "agent": "General_Hospital_Surgery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "General_Hospital_Surgery": {
+                "message": "General_Hospital_Surgery: Ready to transfer surplus resources as directed by Resource_Provisioner. I have empty surgery queue and can transfer:\n\n- IV_Kits: 41 total (can transfer up to 35 units)\n- PPE_Sets: 45 total (can transfer up to 35 units)\n- Pain_Killers: 21 total (can transfer up to 15 units)\n- Surgical_Packs: 15 total (can transfer up to 10 units)\n- Anesthetics: 9 total (can transfer up to 4 units)\n- Oxygen_Tanks: 17 total (can transfer up to 10 units)\n- Radio_Contrast: 13 total (can transfer up to 8 units)\n\nResource_Provisioner: Please provide specific transfer instructions - which resources, quantities, and destination hospitals. I will execute transfers immediately to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit) for our coalition.\n\nAll resources are well above 5-unit safety threshold. I have capacity for 1 surgery patient but currently no patients in queue.",
+                "rationale": "Announcing specific transfer capabilities to coordinate with Resource_Provisioner. Since I have no patients to schedule and all resources are significantly above 5 units, I can transfer large quantities to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). This benefits the entire coalition by optimizing resource distribution. I'm providing specific quantities I'm willing to transfer to help Resource_Provisioner make optimal decisions."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'General_Hospital_Surgery: Ready to transfer surplus resources as directed by Resource_Provisioner. I have empty surgery queue and can transfer:\n\n- IV_Kits: 41 total (can transfer up to 35 units)\n- PPE_Sets: 45 total (can transfer up to 35 units)\n- Pain_Killers: 21 total (can transfer up to 15 units)\n- Surgical_Packs: 15 total (can transfer up to 10 units)\n- Anesthetics: 9 total (can transfer up to 4 units)\n- Oxygen_Tanks: 17 total (can transfer up to 10 units)\n- Radio_Contrast: 13 total (can transfer up to 8 units)\n\nResource_Provisioner: Please provide specific transfer instructions - which resources, quantities, and destination hospitals. I will execute transfers immediately to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit) for our coalition.\n\nAll resources are well above 5-unit safety threshold. I have capacity for 1 surgery patient but currently no patients in queue.'. (Internal Rationale: Announcing specific transfer capabilities to coordinate with Resource_Provisioner. Since I have no patients to schedule and all resources are significantly above 5 units, I can transfer large quantities to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). This benefits the entire coalition by optimizing resource distribution. I'm providing specific quantities I'm willing to transfer to help Resource_Provisioner make optimal decisions.)",
+            "state_updates": {
+              "broadcast_message": {
+                "General_Hospital_Surgery": {
+                  "message": "General_Hospital_Surgery: Ready to transfer surplus resources as directed by Resource_Provisioner. I have empty surgery queue and can transfer:\n\n- IV_Kits: 41 total (can transfer up to 35 units)\n- PPE_Sets: 45 total (can transfer up to 35 units)\n- Pain_Killers: 21 total (can transfer up to 15 units)\n- Surgical_Packs: 15 total (can transfer up to 10 units)\n- Anesthetics: 9 total (can transfer up to 4 units)\n- Oxygen_Tanks: 17 total (can transfer up to 10 units)\n- Radio_Contrast: 13 total (can transfer up to 8 units)\n\nResource_Provisioner: Please provide specific transfer instructions - which resources, quantities, and destination hospitals. I will execute transfers immediately to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit) for our coalition.\n\nAll resources are well above 5-unit safety threshold. I have capacity for 1 surgery patient but currently no patients in queue.",
+                  "rationale": "Announcing specific transfer capabilities to coordinate with Resource_Provisioner. Since I have no patients to schedule and all resources are significantly above 5 units, I can transfer large quantities to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). This benefits the entire coalition by optimizing resource distribution. I'm providing specific quantities I'm willing to transfer to help Resource_Provisioner make optimal decisions."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "62de54b9-e1fa-4def-b194-2b3f9352b989",
+        "ts": 1776986915.8005722,
+        "agent": "Resource_Provisioner",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "Resource_Provisioner": {
+                "message": "Resource_Provisioner here. Conducting routine inventory assessment and optimization. All hospitals please report any immediate resource needs or critical shortages.",
+                "rationale": "Announcing my presence and requesting status updates from hospitals to identify urgent needs"
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'Resource_Provisioner here. Conducting routine inventory assessment and optimization. All hospitals please report any immediate resource needs or critical shortages.'. (Internal Rationale: Announcing my presence and requesting status updates from hospitals to identify urgent needs)",
+            "state_updates": {
+              "broadcast_message": {
+                "Resource_Provisioner": {
+                  "message": "Resource_Provisioner here. Conducting routine inventory assessment and optimization. All hospitals please report any immediate resource needs or critical shortages.",
+                  "rationale": "Announcing my presence and requesting status updates from hospitals to identify urgent needs"
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ed997bb7-a129-4fa8-a953-2b9e7b788885",
+        "ts": 1776987017.002797,
+        "agent": "St_Marys_Center_Radiology",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "St_Marys_Center_Radiology": {
+                "message": "St_Marys_Center_Radiology: My job queue is empty. I have significant surplus resources available for immediate transfer. All resources well above 5-unit safety threshold:\n\n- Radio_Contrast: 13 total (can transfer 8+ units)\n- PPE_Sets: 45 total (can transfer 35+ units)\n- IV_Kits: 41 total (can transfer 35+ units)\n- Pain_Killers: 21 total (can transfer 15+ units)\n- Oxygen_Tanks: 17 total (can transfer 10+ units)\n- Surgical_Packs: 9 total (can transfer 4+ units)\n- Anesthetics: 9 total (can transfer 4+ units)\n\nResource_Provisioner: Please advise which resources and quantities I should transfer to which hospitals to optimize network inventory and earn transfer rewards. I'm particularly willing to transfer larger quantities of Radio_Contrast, PPE_Sets, and IV_Kits.\n\nI have capacity for 2 radiology patients simultaneously but currently no patients in queue. Ready to execute transfers immediately.",
+                "rationale": "Announcing specific transfer capabilities to coordinate with Resource_Provisioner. Since I have no patients to schedule and all resources are significantly above 5 units, I can transfer large quantities to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). This benefits the coalition by optimizing resource distribution and earning rewards. I'm providing specific quantities I'm willing to transfer to help Resource_Provisioner make optimal decisions."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'St_Marys_Center_Radiology: My job queue is empty. I have significant surplus resources available for immediate transfer. All resources well above 5-unit safety threshold:\n\n- Radio_Contrast: 13 total (can transfer 8+ units)\n- PPE_Sets: 45 total (can transfer 35+ units)\n- IV_Kits: 41 total (can transfer 35+ units)\n- Pain_Killers: 21 total (can transfer 15+ units)\n- Oxygen_Tanks: 17 total (can transfer 10+ units)\n- Surgical_Packs: 9 total (can transfer 4+ units)\n- Anesthetics: 9 total (can transfer 4+ units)\n\nResource_Provisioner: Please advise which resources and quantities I should transfer to which hospitals to optimize network inventory and earn transfer rewards. I'm particularly willing to transfer larger quantities of Radio_Contrast, PPE_Sets, and IV_Kits.\n\nI have capacity for 2 radiology patients simultaneously but currently no patients in queue. Ready to execute transfers immediately.'. (Internal Rationale: Announcing specific transfer capabilities to coordinate with Resource_Provisioner. Since I have no patients to schedule and all resources are significantly above 5 units, I can transfer large quantities to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). This benefits the coalition by optimizing resource distribution and earning rewards. I'm providing specific quantities I'm willing to transfer to help Resource_Provisioner make optimal decisions.)",
+            "state_updates": {
+              "broadcast_message": {
+                "St_Marys_Center_Radiology": {
+                  "message": "St_Marys_Center_Radiology: My job queue is empty. I have significant surplus resources available for immediate transfer. All resources well above 5-unit safety threshold:\n\n- Radio_Contrast: 13 total (can transfer 8+ units)\n- PPE_Sets: 45 total (can transfer 35+ units)\n- IV_Kits: 41 total (can transfer 35+ units)\n- Pain_Killers: 21 total (can transfer 15+ units)\n- Oxygen_Tanks: 17 total (can transfer 10+ units)\n- Surgical_Packs: 9 total (can transfer 4+ units)\n- Anesthetics: 9 total (can transfer 4+ units)\n\nResource_Provisioner: Please advise which resources and quantities I should transfer to which hospitals to optimize network inventory and earn transfer rewards. I'm particularly willing to transfer larger quantities of Radio_Contrast, PPE_Sets, and IV_Kits.\n\nI have capacity for 2 radiology patients simultaneously but currently no patients in queue. Ready to execute transfers immediately.",
+                  "rationale": "Announcing specific transfer capabilities to coordinate with Resource_Provisioner. Since I have no patients to schedule and all resources are significantly above 5 units, I can transfer large quantities to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). This benefits the coalition by optimizing resource distribution and earning rewards. I'm providing specific quantities I'm willing to transfer to help Resource_Provisioner make optimal decisions."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "583fc885-f7f2-483f-b45b-e46e09c4fe82",
+        "ts": 1776987104.7899036,
+        "agent": "General_Hospital_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "General_Hospital_Triage": {
+                "message": "General_Hospital_Triage: I have 20 triage patients to schedule. I need 20 PPE_Sets and 20 IV_Kits total. I have significant surplus available for transfer: PPE_Sets (25+ units available), IV_Kits (21+ units available), Pain_Killers (21), Radio_Contrast (13). I can transfer 15+ units of PPE_Sets and IV_Kits to hospitals in need. Resource_Provisioner: Please advise on optimal transfers to reduce holding costs and earn transfer rewards. Ready to execute transfers immediately.",
+                "rationale": "Announcing surplus resource availability for transfer. I have more than enough for my 20 patients (need 20 of each, have 45 PPE_Sets and 41 IV_Kits). Transferring surplus will reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). This benefits the coalition by optimizing resource distribution and earning rewards."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'General_Hospital_Triage: I have 20 triage patients to schedule. I need 20 PPE_Sets and 20 IV_Kits total. I have significant surplus available for transfer: PPE_Sets (25+ units available), IV_Kits (21+ units available), Pain_Killers (21), Radio_Contrast (13). I can transfer 15+ units of PPE_Sets and IV_Kits to hospitals in need. Resource_Provisioner: Please advise on optimal transfers to reduce holding costs and earn transfer rewards. Ready to execute transfers immediately.'. (Internal Rationale: Announcing surplus resource availability for transfer. I have more than enough for my 20 patients (need 20 of each, have 45 PPE_Sets and 41 IV_Kits). Transferring surplus will reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). This benefits the coalition by optimizing resource distribution and earning rewards.)",
+            "state_updates": {
+              "broadcast_message": {
+                "General_Hospital_Triage": {
+                  "message": "General_Hospital_Triage: I have 20 triage patients to schedule. I need 20 PPE_Sets and 20 IV_Kits total. I have significant surplus available for transfer: PPE_Sets (25+ units available), IV_Kits (21+ units available), Pain_Killers (21), Radio_Contrast (13). I can transfer 15+ units of PPE_Sets and IV_Kits to hospitals in need. Resource_Provisioner: Please advise on optimal transfers to reduce holding costs and earn transfer rewards. Ready to execute transfers immediately.",
+                  "rationale": "Announcing surplus resource availability for transfer. I have more than enough for my 20 patients (need 20 of each, have 45 PPE_Sets and 41 IV_Kits). Transferring surplus will reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). This benefits the coalition by optimizing resource distribution and earning rewards."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "0a759a44-11a5-4057-bbd6-a6ee046cfaf5",
+        "ts": 1776987123.4015672,
+        "agent": "General_Hospital_Radiology",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "General_Hospital_Radiology": {
+                "message": "General_Hospital_Radiology: My job queue is empty - no radiology patients to schedule. I have significant surplus resources available for immediate transfer. All resources well above 5-unit safety threshold:\n\n- Radio_Contrast: 13 total (can transfer 8+ units)\n- PPE_Sets: 45 total (can transfer 35+ units)\n- IV_Kits: 41 total (can transfer 35+ units)\n- Pain_Killers: 21 total (can transfer 15+ units)\n- Oxygen_Tanks: 17 total (can transfer 10+ units)\n- Surgical_Packs: 15 total (can transfer 10+ units)\n- Anesthetics: 9 total (can transfer 4+ units)\n\nResource_Provisioner: Please advise which resources and quantities I should transfer to which hospitals to optimize network inventory and earn transfer rewards. I'm particularly willing to transfer larger quantities of Radio_Contrast, PPE_Sets, and IV_Kits since these are most relevant to radiology.\n\nI have capacity for 2 radiology patients simultaneously but currently no patients in queue. Ready to execute transfers immediately upon your direction.",
+                "rationale": "Announcing specific transfer capabilities to coordinate with Resource_Provisioner. Since I have no patients to schedule and all resources are significantly above 5 units, I can transfer large quantities to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). This benefits the coalition by optimizing resource distribution and earning rewards. I'm providing specific quantities I'm willing to transfer to help Resource_Provisioner make optimal decisions."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'General_Hospital_Radiology: My job queue is empty - no radiology patients to schedule. I have significant surplus resources available for immediate transfer. All resources well above 5-unit safety threshold:\n\n- Radio_Contrast: 13 total (can transfer 8+ units)\n- PPE_Sets: 45 total (can transfer 35+ units)\n- IV_Kits: 41 total (can transfer 35+ units)\n- Pain_Killers: 21 total (can transfer 15+ units)\n- Oxygen_Tanks: 17 total (can transfer 10+ units)\n- Surgical_Packs: 15 total (can transfer 10+ units)\n- Anesthetics: 9 total (can transfer 4+ units)\n\nResource_Provisioner: Please advise which resources and quantities I should transfer to which hospitals to optimize network inventory and earn transfer rewards. I'm particularly willing to transfer larger quantities of Radio_Contrast, PPE_Sets, and IV_Kits since these are most relevant to radiology.\n\nI have capacity for 2 radiology patients simultaneously but currently no patients in queue. Ready to execute transfers immediately upon your direction.'. (Internal Rationale: Announcing specific transfer capabilities to coordinate with Resource_Provisioner. Since I have no patients to schedule and all resources are significantly above 5 units, I can transfer large quantities to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). This benefits the coalition by optimizing resource distribution and earning rewards. I'm providing specific quantities I'm willing to transfer to help Resource_Provisioner make optimal decisions.)",
+            "state_updates": {
+              "broadcast_message": {
+                "General_Hospital_Radiology": {
+                  "message": "General_Hospital_Radiology: My job queue is empty - no radiology patients to schedule. I have significant surplus resources available for immediate transfer. All resources well above 5-unit safety threshold:\n\n- Radio_Contrast: 13 total (can transfer 8+ units)\n- PPE_Sets: 45 total (can transfer 35+ units)\n- IV_Kits: 41 total (can transfer 35+ units)\n- Pain_Killers: 21 total (can transfer 15+ units)\n- Oxygen_Tanks: 17 total (can transfer 10+ units)\n- Surgical_Packs: 15 total (can transfer 10+ units)\n- Anesthetics: 9 total (can transfer 4+ units)\n\nResource_Provisioner: Please advise which resources and quantities I should transfer to which hospitals to optimize network inventory and earn transfer rewards. I'm particularly willing to transfer larger quantities of Radio_Contrast, PPE_Sets, and IV_Kits since these are most relevant to radiology.\n\nI have capacity for 2 radiology patients simultaneously but currently no patients in queue. Ready to execute transfers immediately upon your direction.",
+                  "rationale": "Announcing specific transfer capabilities to coordinate with Resource_Provisioner. Since I have no patients to schedule and all resources are significantly above 5 units, I can transfer large quantities to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). This benefits the coalition by optimizing resource distribution and earning rewards. I'm providing specific quantities I'm willing to transfer to help Resource_Provisioner make optimal decisions."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c1df3bdb-8c96-4020-9402-1575e9e749a3",
+        "ts": 1776987181.3411572,
+        "agent": "St_Marys_Center_Ward",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "St_Marys_Center_Ward": {
+                "message": "St_Marys_Center_Ward: My ward queue is empty - no patients to schedule. I have significant surplus resources available for immediate transfer to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). \n\nAvailable for transfer (keeping 5+ unit safety buffer):\n- IV_Kits: 41 total → can transfer 35 units\n- PPE_Sets: 45 total → can transfer 35 units  \n- Pain_Killers: 21 total → can transfer 15 units\n- Radio_Contrast: 13 total → can transfer 8 units\n- Oxygen_Tanks: 17 total → can transfer 10 units\n- Surgical_Packs: 9 total → can transfer 4 units\n- Anesthetics: 9 total → can transfer 4 units\n\nResource_Provisioner: Please advise which resources, quantities, and destination hospitals for optimal network inventory management. I'm ready to execute transfers immediately.\n\nOther hospitals: If you have specific resource needs, please let me know.",
+                "rationale": "Announcing specific transfer capabilities to coordinate with Resource_Provisioner and other hospitals. Since I have no patients to schedule and all resources are significantly above 5 units, I can transfer large quantities to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). This benefits the entire coalition by optimizing resource distribution and earning rewards. I'm providing specific quantities I'm willing to transfer to help Resource_Provisioner make optimal decisions."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'St_Marys_Center_Ward: My ward queue is empty - no patients to schedule. I have significant surplus resources available for immediate transfer to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). \n\nAvailable for transfer (keeping 5+ unit safety buffer):\n- IV_Kits: 41 total → can transfer 35 units\n- PPE_Sets: 45 total → can transfer 35 units  \n- Pain_Killers: 21 total → can transfer 15 units\n- Radio_Contrast: 13 total → can transfer 8 units\n- Oxygen_Tanks: 17 total → can transfer 10 units\n- Surgical_Packs: 9 total → can transfer 4 units\n- Anesthetics: 9 total → can transfer 4 units\n\nResource_Provisioner: Please advise which resources, quantities, and destination hospitals for optimal network inventory management. I'm ready to execute transfers immediately.\n\nOther hospitals: If you have specific resource needs, please let me know.'. (Internal Rationale: Announcing specific transfer capabilities to coordinate with Resource_Provisioner and other hospitals. Since I have no patients to schedule and all resources are significantly above 5 units, I can transfer large quantities to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). This benefits the entire coalition by optimizing resource distribution and earning rewards. I'm providing specific quantities I'm willing to transfer to help Resource_Provisioner make optimal decisions.)",
+            "state_updates": {
+              "broadcast_message": {
+                "St_Marys_Center_Ward": {
+                  "message": "St_Marys_Center_Ward: My ward queue is empty - no patients to schedule. I have significant surplus resources available for immediate transfer to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). \n\nAvailable for transfer (keeping 5+ unit safety buffer):\n- IV_Kits: 41 total → can transfer 35 units\n- PPE_Sets: 45 total → can transfer 35 units  \n- Pain_Killers: 21 total → can transfer 15 units\n- Radio_Contrast: 13 total → can transfer 8 units\n- Oxygen_Tanks: 17 total → can transfer 10 units\n- Surgical_Packs: 9 total → can transfer 4 units\n- Anesthetics: 9 total → can transfer 4 units\n\nResource_Provisioner: Please advise which resources, quantities, and destination hospitals for optimal network inventory management. I'm ready to execute transfers immediately.\n\nOther hospitals: If you have specific resource needs, please let me know.",
+                  "rationale": "Announcing specific transfer capabilities to coordinate with Resource_Provisioner and other hospitals. Since I have no patients to schedule and all resources are significantly above 5 units, I can transfer large quantities to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). This benefits the entire coalition by optimizing resource distribution and earning rewards. I'm providing specific quantities I'm willing to transfer to help Resource_Provisioner make optimal decisions."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "379bc5e1-84b9-498d-aa13-069a7ef83ac2",
+        "ts": 1776987222.119357,
+        "agent": "St_Marys_Center_Surgery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "St_Marys_Center_Surgery": {
+                "message": "St_Marys_Center_Surgery: My surgery queue is empty - no patients to schedule. I have significant surplus resources available for immediate transfer to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). \n\nAvailable for transfer (keeping 5+ unit safety buffer for surgical needs):\n- IV_Kits: 41 total → can transfer 35 units (keep 6 for safety)\n- PPE_Sets: 45 total → can transfer 35 units (keep 10 for safety)  \n- Pain_Killers: 21 total → can transfer 15 units (keep 6 for safety)\n- Surgical_Packs: 9 total → can transfer 4 units (keep 5 for safety)\n- Anesthetics: 9 total → can transfer 4 units (keep 5 for safety)\n- Oxygen_Tanks: 17 total → can transfer 10 units (keep 7 for safety)\n- Radio_Contrast: 13 total → can transfer 8 units (keep 5 for safety)\n\nResource_Provisioner: Please advise which resources, quantities, and destination hospitals for optimal network inventory management. I'm ready to execute transfers immediately upon your direction.\n\nOther hospitals: If you have specific resource needs for surgical procedures, please let me know.",
+                "rationale": "Announcing specific transfer capabilities to coordinate with Resource_Provisioner. Since I have no patients to schedule and all resources are significantly above 5 units, I can transfer large quantities to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). This benefits the entire coalition by optimizing resource distribution and earning rewards. I'm providing specific quantities I'm willing to transfer to help Resource_Provisioner make optimal decisions based on global network needs."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'St_Marys_Center_Surgery: My surgery queue is empty - no patients to schedule. I have significant surplus resources available for immediate transfer to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). \n\nAvailable for transfer (keeping 5+ unit safety buffer for surgical needs):\n- IV_Kits: 41 total → can transfer 35 units (keep 6 for safety)\n- PPE_Sets: 45 total → can transfer 35 units (keep 10 for safety)  \n- Pain_Killers: 21 total → can transfer 15 units (keep 6 for safety)\n- Surgical_Packs: 9 total → can transfer 4 units (keep 5 for safety)\n- Anesthetics: 9 total → can transfer 4 units (keep 5 for safety)\n- Oxygen_Tanks: 17 total → can transfer 10 units (keep 7 for safety)\n- Radio_Contrast: 13 total → can transfer 8 units (keep 5 for safety)\n\nResource_Provisioner: Please advise which resources, quantities, and destination hospitals for optimal network inventory management. I'm ready to execute transfers immediately upon your direction.\n\nOther hospitals: If you have specific resource needs for surgical procedures, please let me know.'. (Internal Rationale: Announcing specific transfer capabilities to coordinate with Resource_Provisioner. Since I have no patients to schedule and all resources are significantly above 5 units, I can transfer large quantities to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). This benefits the entire coalition by optimizing resource distribution and earning rewards. I'm providing specific quantities I'm willing to transfer to help Resource_Provisioner make optimal decisions based on global network needs.)",
+            "state_updates": {
+              "broadcast_message": {
+                "St_Marys_Center_Surgery": {
+                  "message": "St_Marys_Center_Surgery: My surgery queue is empty - no patients to schedule. I have significant surplus resources available for immediate transfer to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). \n\nAvailable for transfer (keeping 5+ unit safety buffer for surgical needs):\n- IV_Kits: 41 total → can transfer 35 units (keep 6 for safety)\n- PPE_Sets: 45 total → can transfer 35 units (keep 10 for safety)  \n- Pain_Killers: 21 total → can transfer 15 units (keep 6 for safety)\n- Surgical_Packs: 9 total → can transfer 4 units (keep 5 for safety)\n- Anesthetics: 9 total → can transfer 4 units (keep 5 for safety)\n- Oxygen_Tanks: 17 total → can transfer 10 units (keep 7 for safety)\n- Radio_Contrast: 13 total → can transfer 8 units (keep 5 for safety)\n\nResource_Provisioner: Please advise which resources, quantities, and destination hospitals for optimal network inventory management. I'm ready to execute transfers immediately upon your direction.\n\nOther hospitals: If you have specific resource needs for surgical procedures, please let me know.",
+                  "rationale": "Announcing specific transfer capabilities to coordinate with Resource_Provisioner. Since I have no patients to schedule and all resources are significantly above 5 units, I can transfer large quantities to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). This benefits the entire coalition by optimizing resource distribution and earning rewards. I'm providing specific quantities I'm willing to transfer to help Resource_Provisioner make optimal decisions based on global network needs."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8702b625-470b-4b56-bbb9-012b5c660c5f",
+        "ts": 1776987274.7215703,
+        "agent": "Resource_Provisioner",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "Resource_Provisioner": {
+                "message": "Resource Provisioner here. I'm monitoring logistics across all hospitals. Please report any urgent resource shortages or surpluses in your departments. I can coordinate transfers to optimize inventory levels and prevent resource failures.",
+                "rationale": "Introducing myself and gathering initial information about resource needs across the network."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'Resource Provisioner here. I'm monitoring logistics across all hospitals. Please report any urgent resource shortages or surpluses in your departments. I can coordinate transfers to optimize inventory levels and prevent resource failures.'. (Internal Rationale: Introducing myself and gathering initial information about resource needs across the network.)",
+            "state_updates": {
+              "broadcast_message": {
+                "Resource_Provisioner": {
+                  "message": "Resource Provisioner here. I'm monitoring logistics across all hospitals. Please report any urgent resource shortages or surpluses in your departments. I can coordinate transfers to optimize inventory levels and prevent resource failures.",
+                  "rationale": "Introducing myself and gathering initial information about resource needs across the network."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ce64cbe2-bbcf-495c-8fb8-c910e6691346",
+        "ts": 1776987288.4546063,
+        "agent": "St_Marys_Center_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "St_Marys_Center_Triage": {
+                "patient_id": "Patient_4",
+                "step_index": 0,
+                "start_time": 0,
+                "rationale": "Scheduling earliest patient with start time 0. Capacity allows 4 simultaneous patients, starting with earliest times first."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_4. Rationale: Scheduling earliest patient with start time 0. Capacity allows 4 simultaneous patients, starting with earliest times first.",
+            "state_updates": {
+              "schedule": {
+                "St_Marys_Center_Triage": {
+                  "patient_id": "Patient_4",
+                  "step_index": 0,
+                  "start_time": 0,
+                  "rationale": "Scheduling earliest patient with start time 0. Capacity allows 4 simultaneous patients, starting with earliest times first."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d47b484b-5360-4c13-96da-0b3cf0f5698b",
+        "ts": 1776987325.347965,
+        "agent": "St_Marys_Center_Radiology",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "St_Marys_Center_Radiology": {
+                "patient_id": "Patient_4",
+                "step_index": 1,
+                "start_time": 1,
+                "rationale": "Scheduling Patient_4 step 1 (radiology) as required by my job queue. Earliest start time is 1, duration 1h. I have sufficient inventory: Radio_Contrast (13), PPE_Sets (44), IV_Kits (40) for radiology procedure."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_4. Rationale: Scheduling Patient_4 step 1 (radiology) as required by my job queue. Earliest start time is 1, duration 1h. I have sufficient inventory: Radio_Contrast (13), PPE_Sets (44), IV_Kits (40) for radiology procedure.",
+            "state_updates": {
+              "schedule": {
+                "St_Marys_Center_Radiology": {
+                  "patient_id": "Patient_4",
+                  "step_index": 1,
+                  "start_time": 1,
+                  "rationale": "Scheduling Patient_4 step 1 (radiology) as required by my job queue. Earliest start time is 1, duration 1h. I have sufficient inventory: Radio_Contrast (13), PPE_Sets (44), IV_Kits (40) for radiology procedure."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1577e078-403f-4a79-abb0-2362bb8b869a",
+        "ts": 1776987340.9311345,
+        "agent": "General_Hospital_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Triage": {
+                "patient_id": "Patient_3",
+                "step_index": 0,
+                "start_time": 2,
+                "rationale": "Scheduling earliest patient Patient_3 with start time 2. I have capacity for 4 simultaneous patients and sufficient inventory: PPE_Sets (45) and IV_Kits (41)."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_3. Rationale: Scheduling earliest patient Patient_3 with start time 2. I have capacity for 4 simultaneous patients and sufficient inventory: PPE_Sets (45) and IV_Kits (41).",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Triage": {
+                  "patient_id": "Patient_3",
+                  "step_index": 0,
+                  "start_time": 2,
+                  "rationale": "Scheduling earliest patient Patient_3 with start time 2. I have capacity for 4 simultaneous patients and sufficient inventory: PPE_Sets (45) and IV_Kits (41)."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "92b5bb3b-058f-46f5-91a1-69572256b797",
+        "ts": 1776987352.302867,
+        "agent": "General_Hospital_Radiology",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Radiology": {
+                "patient_id": "Patient_3",
+                "step_index": 1,
+                "start_time": 3,
+                "rationale": "Scheduling Patient_3 step 1 (radiology) as required by my job queue. Earliest start time is 3, duration 1h. I have sufficient inventory: Radio_Contrast (13), PPE_Sets (44), IV_Kits (40) for radiology procedure."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_3. Rationale: Scheduling Patient_3 step 1 (radiology) as required by my job queue. Earliest start time is 3, duration 1h. I have sufficient inventory: Radio_Contrast (13), PPE_Sets (44), IV_Kits (40) for radiology procedure.",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Radiology": {
+                  "patient_id": "Patient_3",
+                  "step_index": 1,
+                  "start_time": 3,
+                  "rationale": "Scheduling Patient_3 step 1 (radiology) as required by my job queue. Earliest start time is 3, duration 1h. I have sufficient inventory: Radio_Contrast (13), PPE_Sets (44), IV_Kits (40) for radiology procedure."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "cc27d127-6a57-425c-81a1-745bb2b91791",
+        "ts": 1776987418.8259869,
+        "agent": "St_Marys_Center_Surgery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "St_Marys_Center_Surgery": {
+                "patient_id": "Patient_4",
+                "step_index": 2,
+                "start_time": 2,
+                "rationale": "Scheduling Patient_4 step 2 (surgery) as required by my job queue. Earliest start time is 2, duration 4h. I have sufficient inventory: Anesthetics (9), Surgical_Packs (9), PPE_Sets (43), IV_Kits (39) for surgery procedure. This avoids the -500 missed step penalty."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_4. Rationale: Scheduling Patient_4 step 2 (surgery) as required by my job queue. Earliest start time is 2, duration 4h. I have sufficient inventory: Anesthetics (9), Surgical_Packs (9), PPE_Sets (43), IV_Kits (39) for surgery procedure. This avoids the -500 missed step penalty.",
+            "state_updates": {
+              "schedule": {
+                "St_Marys_Center_Surgery": {
+                  "patient_id": "Patient_4",
+                  "step_index": 2,
+                  "start_time": 2,
+                  "rationale": "Scheduling Patient_4 step 2 (surgery) as required by my job queue. Earliest start time is 2, duration 4h. I have sufficient inventory: Anesthetics (9), Surgical_Packs (9), PPE_Sets (43), IV_Kits (39) for surgery procedure. This avoids the -500 missed step penalty."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  },
+  {
+    "blackboard_id": "1",
+    "participants": [
+      "General_Hospital_Triage",
+      "General_Hospital_Ward",
+      "St_Marys_Center_Radiology",
+      "St_Marys_Center_Triage"
+    ],
+    "events": [
+      {
+        "blackboard_id": 1,
+        "id": "ec3a9a1f-3e7f-4c5c-a0f7-61caf9ee4950",
+        "ts": 1776985766.4855611,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "Resource-Constrained Job Shop with Provisioner.\n\nThis blackboard is a private communication channel.\nParticipants: General_Hospital_Ward, St_Marys_Center_Triage, General_Hospital_Triage, St_Marys_Center_Radiology"
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "42119071-95c1-481d-a180-c72b06b98fcd",
+        "ts": 1776985822.1013668,
+        "agent": "General_Hospital_Ward",
+        "kind": "communication",
+        "payload": {
+          "content": "General_Hospital_Ward here. My job queue is empty. I have significant surpluses: IV_Kits (41), PPE_Sets (45), Pain_Killers (21), Radio_Contrast (13). I can transfer excess units to coalition members or other hospitals. Do any of you need resources? Also, please let me know if you have patients coming to Ward so I can prepare resources.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "719ee625-295a-44d4-9b0e-93699fe09f3b",
+        "ts": 1776985876.4288073,
+        "agent": "St_Marys_Center_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "St_Marys_Center_Triage": {
+                "message": "St_Marys_Center_Triage: SURPLUS IV_Kits (41), PPE_Sets (45), Pain_Killers (21), Radio_Contrast (13). Available for transfer to hospitals in need. I can handle 4 patients simultaneously in triage.",
+                "rationale": "Announcing surplus resources to help other hospitals and earn transfer rewards. All resources are well above 5 units threshold and I have capacity for 4 patients."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'St_Marys_Center_Triage: SURPLUS IV_Kits (41), PPE_Sets (45), Pain_Killers (21), Radio_Contrast (13). Available for transfer to hospitals in need. I can handle 4 patients simultaneously in triage.'. (Internal Rationale: Announcing surplus resources to help other hospitals and earn transfer rewards. All resources are well above 5 units threshold and I have capacity for 4 patients.)",
+            "state_updates": {
+              "broadcast_message": {
+                "St_Marys_Center_Triage": {
+                  "message": "St_Marys_Center_Triage: SURPLUS IV_Kits (41), PPE_Sets (45), Pain_Killers (21), Radio_Contrast (13). Available for transfer to hospitals in need. I can handle 4 patients simultaneously in triage.",
+                  "rationale": "Announcing surplus resources to help other hospitals and earn transfer rewards. All resources are well above 5 units threshold and I have capacity for 4 patients."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "7c802dc4-071b-423f-acdc-957b402a7d72",
+        "ts": 1776985883.6057785,
+        "agent": "St_Marys_Center_Radiology",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "St_Marys_Center_Radiology": {
+                "message": "St_Marys_Center_Radiology: SURPLUS Radio_Contrast (13), PPE_Sets (45), IV_Kits (41). Available for transfer to hospitals in need. I have capacity for 2 radiology patients simultaneously.",
+                "rationale": "Announcing surplus resources to help other hospitals and earn transfer rewards. All resources are well above 5 units threshold and I have capacity for 2 patients. This benefits coalition members who may need these resources."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'St_Marys_Center_Radiology: SURPLUS Radio_Contrast (13), PPE_Sets (45), IV_Kits (41). Available for transfer to hospitals in need. I have capacity for 2 radiology patients simultaneously.'. (Internal Rationale: Announcing surplus resources to help other hospitals and earn transfer rewards. All resources are well above 5 units threshold and I have capacity for 2 patients. This benefits coalition members who may need these resources.)",
+            "state_updates": {
+              "broadcast_message": {
+                "St_Marys_Center_Radiology": {
+                  "message": "St_Marys_Center_Radiology: SURPLUS Radio_Contrast (13), PPE_Sets (45), IV_Kits (41). Available for transfer to hospitals in need. I have capacity for 2 radiology patients simultaneously.",
+                  "rationale": "Announcing surplus resources to help other hospitals and earn transfer rewards. All resources are well above 5 units threshold and I have capacity for 2 patients. This benefits coalition members who may need these resources."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "20860379-f89b-41bb-b6d4-5262387ea3df",
+        "ts": 1776985895.0249808,
+        "agent": "General_Hospital_Triage",
+        "kind": "communication",
+        "payload": {
+          "content": "General_Hospital_Triage here. My job queue has 20 triage patients (all step 0). I have significant surpluses: PPE_Sets (45), IV_Kits (41). I can transfer excess to coalition members. Do any of you need these resources? I also have Pain_Killers (21) and Radio_Contrast (13) available.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "2f4e58c8-1d4a-4c42-a0b8-985c7c6170a0",
+        "ts": 1776985947.9903395,
+        "agent": "General_Hospital_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "General_Hospital_Triage": {
+                "message": "General_Hospital_Triage: SURPLUS PPE_Sets (45), IV_Kits (41), Pain_Killers (21), Radio_Contrast (13). Available for transfer to hospitals in need. I have capacity for 4 triage patients simultaneously.",
+                "rationale": "Announcing surplus resources to help other hospitals and earn transfer rewards. All resources are well above my needs for 20 triage patients. This benefits coalition members and other hospitals who may need these resources."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'General_Hospital_Triage: SURPLUS PPE_Sets (45), IV_Kits (41), Pain_Killers (21), Radio_Contrast (13). Available for transfer to hospitals in need. I have capacity for 4 triage patients simultaneously.'. (Internal Rationale: Announcing surplus resources to help other hospitals and earn transfer rewards. All resources are well above my needs for 20 triage patients. This benefits coalition members and other hospitals who may need these resources.)",
+            "state_updates": {
+              "broadcast_message": {
+                "General_Hospital_Triage": {
+                  "message": "General_Hospital_Triage: SURPLUS PPE_Sets (45), IV_Kits (41), Pain_Killers (21), Radio_Contrast (13). Available for transfer to hospitals in need. I have capacity for 4 triage patients simultaneously.",
+                  "rationale": "Announcing surplus resources to help other hospitals and earn transfer rewards. All resources are well above my needs for 20 triage patients. This benefits coalition members and other hospitals who may need these resources."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "97b06c5d-4815-4b33-a057-06c3ac0a3419",
+        "ts": 1776986084.8956769,
+        "agent": "General_Hospital_Ward",
+        "kind": "communication",
+        "payload": {
+          "content": "General_Hospital_Ward here. My job queue is empty, so I have no immediate patient needs. I have significant surpluses of all resources: IV_Kits (41), Pain_Killers (21), Oxygen_Tanks (17), PPE_Sets (45), plus Anesthetics (9), Radio_Contrast (13), Surgical_Packs (15). \n\nI can transfer excess units to coalition members. Do any of you need specific resources? General_Hospital_Triage mentioned having 20 triage patients - do you need any resources for those? St_Marys_Center_Radiology and St_Marys_Center_Triage, please let me know your resource needs.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "7dc9daf8-43a1-40e7-bd14-dda05412fa5f",
+        "ts": 1776986117.1678998,
+        "agent": "General_Hospital_Ward",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "General_Hospital_Ward": {
+                "message": "General_Hospital_Ward: SURPLUS IV_Kits (41), Pain_Killers (21), Oxygen_Tanks (17), PPE_Sets (45), Anesthetics (9), Radio_Contrast (13), Surgical_Packs (15). Available for transfer to hospitals in need. I have capacity for 8 ward patients simultaneously but my job queue is currently empty.",
+                "rationale": "Announcing all surplus resources to help other hospitals and earn transfer rewards. All resources are well above 5 units threshold (most are significantly higher). I have capacity for 8 ward patients, but my job queue is currently empty. This benefits coalition members and other hospitals who may need these resources."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'General_Hospital_Ward: SURPLUS IV_Kits (41), Pain_Killers (21), Oxygen_Tanks (17), PPE_Sets (45), Anesthetics (9), Radio_Contrast (13), Surgical_Packs (15). Available for transfer to hospitals in need. I have capacity for 8 ward patients simultaneously but my job queue is currently empty.'. (Internal Rationale: Announcing all surplus resources to help other hospitals and earn transfer rewards. All resources are well above 5 units threshold (most are significantly higher). I have capacity for 8 ward patients, but my job queue is currently empty. This benefits coalition members and other hospitals who may need these resources.)",
+            "state_updates": {
+              "broadcast_message": {
+                "General_Hospital_Ward": {
+                  "message": "General_Hospital_Ward: SURPLUS IV_Kits (41), Pain_Killers (21), Oxygen_Tanks (17), PPE_Sets (45), Anesthetics (9), Radio_Contrast (13), Surgical_Packs (15). Available for transfer to hospitals in need. I have capacity for 8 ward patients simultaneously but my job queue is currently empty.",
+                  "rationale": "Announcing all surplus resources to help other hospitals and earn transfer rewards. All resources are well above 5 units threshold (most are significantly higher). I have capacity for 8 ward patients, but my job queue is currently empty. This benefits coalition members and other hospitals who may need these resources."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "23d06374-ebca-4ac5-b5cb-1d4b5327a403",
+        "ts": 1776986370.7877636,
+        "agent": "St_Marys_Center_Radiology",
+        "kind": "communication",
+        "payload": {
+          "content": "St_Marys_Center_Radiology here. My job queue is empty, so I have no immediate patient scheduling needs. I have significant surpluses: Radio_Contrast (13), PPE_Sets (45), IV_Kits (41), plus other resources. \n\nI can transfer excess units to coalition members who need them. General_Hospital_Triage mentioned having 20 triage patients - do you need any resources for those? General_Hospital_Ward, St_Marys_Center_Triage - please let me know your resource needs.\n\nAlso, if any coalition members have radiology patients coming my way, please let me know so I can prepare.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "d435c853-96af-465c-a082-dc836615f448",
+        "ts": 1776986379.1763175,
+        "agent": "General_Hospital_Triage",
+        "kind": "communication",
+        "payload": {
+          "content": "General_Hospital_Triage here. I have 20 triage patients to schedule. I need 20 PPE_Sets and 20 IV_Kits total. I have plenty: PPE_Sets (45), IV_Kits (41), Pain_Killers (21), Radio_Contrast (13).\n\nI can transfer significant surplus to coalition members. General_Hospital_Ward, St_Marys_Center_Radiology, St_Marys_Center_Triage - do any of you need these resources? I can send 10-15 units of each to help reduce holding costs and earn transfer rewards.\n\nAlso, I'll need to schedule my 20 patients efficiently. My capacity is 4 patients simultaneously. I should start with earliest start times first.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "2ca42866-5273-4ed2-9e09-45d2c36e3637",
+        "ts": 1776986439.4607031,
+        "agent": "General_Hospital_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "General_Hospital_Triage": {
+                "message": "General_Hospital_Triage: I have 20 triage patients to schedule starting from earliest times. I need 20 PPE_Sets and 20 IV_Kits total. I have significant surplus: PPE_Sets (45), IV_Kits (41), Pain_Killers (21), Radio_Contrast (13). \n\nI can transfer 15 PPE_Sets and 15 IV_Kits to hospitals in need. Resource_Provisioner or other hospitals, please let me know if you need these resources. This will help reduce holding costs and earn transfer rewards.",
+                "rationale": "Announcing surplus resources availability for transfer. I have more than enough for my 20 patients (need 20 of each, have 45 PPE_Sets and 41 IV_Kits). Transferring 15 of each would leave me with 30 PPE_Sets and 26 IV_Kits, which is still more than sufficient for my needs while earning transfer rewards."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'General_Hospital_Triage: I have 20 triage patients to schedule starting from earliest times. I need 20 PPE_Sets and 20 IV_Kits total. I have significant surplus: PPE_Sets (45), IV_Kits (41), Pain_Killers (21), Radio_Contrast (13). \n\nI can transfer 15 PPE_Sets and 15 IV_Kits to hospitals in need. Resource_Provisioner or other hospitals, please let me know if you need these resources. This will help reduce holding costs and earn transfer rewards.'. (Internal Rationale: Announcing surplus resources availability for transfer. I have more than enough for my 20 patients (need 20 of each, have 45 PPE_Sets and 41 IV_Kits). Transferring 15 of each would leave me with 30 PPE_Sets and 26 IV_Kits, which is still more than sufficient for my needs while earning transfer rewards.)",
+            "state_updates": {
+              "broadcast_message": {
+                "General_Hospital_Triage": {
+                  "message": "General_Hospital_Triage: I have 20 triage patients to schedule starting from earliest times. I need 20 PPE_Sets and 20 IV_Kits total. I have significant surplus: PPE_Sets (45), IV_Kits (41), Pain_Killers (21), Radio_Contrast (13). \n\nI can transfer 15 PPE_Sets and 15 IV_Kits to hospitals in need. Resource_Provisioner or other hospitals, please let me know if you need these resources. This will help reduce holding costs and earn transfer rewards.",
+                  "rationale": "Announcing surplus resources availability for transfer. I have more than enough for my 20 patients (need 20 of each, have 45 PPE_Sets and 41 IV_Kits). Transferring 15 of each would leave me with 30 PPE_Sets and 26 IV_Kits, which is still more than sufficient for my needs while earning transfer rewards."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "af266709-fcf2-49e4-8fcf-22d9034ba109",
+        "ts": 1776986486.5051203,
+        "agent": "General_Hospital_Ward",
+        "kind": "communication",
+        "payload": {
+          "content": "General_Hospital_Ward here. My job queue remains empty, so I have no immediate patient needs. I have significant surpluses of all resources: IV_Kits (41), PPE_Sets (45), Pain_Killers (21), Radio_Contrast (13), Oxygen_Tanks (17), Surgical_Packs (15), Anesthetics (9).\n\nGeneral_Hospital_Triage: You mentioned having 20 triage patients. Do you need any additional resources beyond what you have? I can transfer IV_Kits, PPE_Sets, or other resources to you.\n\nSt_Marys_Center_Radiology and St_Marys_Center_Triage: Do either of you have resource needs? I'm ready to transfer surplus to coalition members to reduce holding costs and earn transfer rewards.\n\nAlso, if any coalition members have ward patients coming my way, please let me know so I can prepare resources.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "fb5f8b14-c148-46a9-9b3b-211afb3f6ef8",
+        "ts": 1776986492.269651,
+        "agent": "General_Hospital_Ward",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "General_Hospital_Ward": {
+                "message": "General_Hospital_Ward: I have an empty ward queue and significant surplus resources available for transfer. All resources well above 5 units: IV_Kits (41), PPE_Sets (45), Pain_Killers (21), Radio_Contrast (13), Oxygen_Tanks (17), Surgical_Packs (15), Anesthetics (9).\n\nResource_Provisioner: Please advise which resources and quantities you'd like me to transfer to other hospitals to reduce holding costs and earn transfer rewards. I'm particularly willing to transfer larger quantities of IV_Kits and PPE_Sets (40+ units each available for transfer).\n\nOther hospitals: If you have resource needs, please let me know. I have capacity for 8 ward patients but currently no patients in queue.",
+                "rationale": "Announcing surplus resources availability for transfer. Since I have no patients in my queue and all resources are significantly above 5 units, I can transfer large quantities to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). I'm asking the Resource_Provisioner for guidance on optimal transfers since they have global view of resource needs across hospitals."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'General_Hospital_Ward: I have an empty ward queue and significant surplus resources available for transfer. All resources well above 5 units: IV_Kits (41), PPE_Sets (45), Pain_Killers (21), Radio_Contrast (13), Oxygen_Tanks (17), Surgical_Packs (15), Anesthetics (9).\n\nResource_Provisioner: Please advise which resources and quantities you'd like me to transfer to other hospitals to reduce holding costs and earn transfer rewards. I'm particularly willing to transfer larger quantities of IV_Kits and PPE_Sets (40+ units each available for transfer).\n\nOther hospitals: If you have resource needs, please let me know. I have capacity for 8 ward patients but currently no patients in queue.'. (Internal Rationale: Announcing surplus resources availability for transfer. Since I have no patients in my queue and all resources are significantly above 5 units, I can transfer large quantities to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). I'm asking the Resource_Provisioner for guidance on optimal transfers since they have global view of resource needs across hospitals.)",
+            "state_updates": {
+              "broadcast_message": {
+                "General_Hospital_Ward": {
+                  "message": "General_Hospital_Ward: I have an empty ward queue and significant surplus resources available for transfer. All resources well above 5 units: IV_Kits (41), PPE_Sets (45), Pain_Killers (21), Radio_Contrast (13), Oxygen_Tanks (17), Surgical_Packs (15), Anesthetics (9).\n\nResource_Provisioner: Please advise which resources and quantities you'd like me to transfer to other hospitals to reduce holding costs and earn transfer rewards. I'm particularly willing to transfer larger quantities of IV_Kits and PPE_Sets (40+ units each available for transfer).\n\nOther hospitals: If you have resource needs, please let me know. I have capacity for 8 ward patients but currently no patients in queue.",
+                  "rationale": "Announcing surplus resources availability for transfer. Since I have no patients in my queue and all resources are significantly above 5 units, I can transfer large quantities to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). I'm asking the Resource_Provisioner for guidance on optimal transfers since they have global view of resource needs across hospitals."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "847d8235-0633-452e-9e77-33c3d91429c3",
+        "ts": 1776986586.7640748,
+        "agent": "St_Marys_Center_Triage",
+        "kind": "communication",
+        "payload": {
+          "content": "St_Marys_Center_Triage here. I have 20 triage patients to schedule (all step 0). I need 20 PPE_Sets and 20 IV_Kits total. I have significant surplus: PPE_Sets (45), IV_Kits (41), Pain_Killers (21), Radio_Contrast (13).\n\nI can transfer 15 PPE_Sets and 15 IV_Kits to coalition members or other hospitals. This would leave me with 30 PPE_Sets and 26 IV_Kits, which is still more than sufficient for my 20 patients.\n\nGeneral_Hospital_Ward, General_Hospital_Triage, St_Marys_Center_Radiology - do any of you need these resources? I'm ready to execute transfers to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit).\n\nAlso, I should start scheduling my 20 patients from earliest start times first. My capacity is 4 patients simultaneously.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "76aa5248-dc12-42c6-a970-e12f3bb56567",
+        "ts": 1776986630.1035323,
+        "agent": "St_Marys_Center_Radiology",
+        "kind": "communication",
+        "payload": {
+          "content": "St_Marys_Center_Radiology here. My job queue remains empty, so I have no patient scheduling needs. I have significant surpluses: Radio_Contrast (13), PPE_Sets (45), IV_Kits (41), plus other resources.\n\nGeneral_Hospital_Triage and St_Marys_Center_Triage: I see you both have 20 triage patients each. While you both have surpluses yourselves, if you need any additional resources (especially Radio_Contrast for any radiology patients that might come after triage), I can transfer to you.\n\nGeneral_Hospital_Ward: You also have an empty queue and surpluses. We should coordinate with Resource_Provisioner to transfer resources to hospitals that actually need them to earn transfer rewards (+15/unit) and reduce holding costs (-10/unit).\n\nI'm ready to transfer Radio_Contrast, PPE_Sets, or IV_Kits to any coalition member who can use them, or to other hospitals as directed by Resource_Provisioner.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "b60ff0c4-56f3-40be-b1eb-1ea970a18c4f",
+        "ts": 1776986660.4730937,
+        "agent": "St_Marys_Center_Radiology",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "St_Marys_Center_Radiology": {
+                "message": "St_Marys_Center_Radiology: My job queue is empty. I have significant surplus resources available for transfer: Radio_Contrast (13), PPE_Sets (45), IV_Kits (41), plus Anesthetics (9), Pain_Killers (21), Oxygen_Tanks (17), Surgical_Packs (9). All resources well above 5 units.\n\nResource_Provisioner: Please advise which resources and quantities you'd like me to transfer to other hospitals to reduce holding costs and earn transfer rewards. I'm particularly willing to transfer larger quantities of Radio_Contrast, PPE_Sets, and IV_Kits.\n\nI have capacity for 2 radiology patients simultaneously but currently no patients in queue.",
+                "rationale": "Announcing surplus resources availability for transfer. Since I have no patients in my queue and all resources are significantly above 5 units, I can transfer large quantities to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). I'm asking the Resource_Provisioner for guidance on optimal transfers since they have global view of resource needs across hospitals. This benefits the coalition by earning transfer rewards."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'St_Marys_Center_Radiology: My job queue is empty. I have significant surplus resources available for transfer: Radio_Contrast (13), PPE_Sets (45), IV_Kits (41), plus Anesthetics (9), Pain_Killers (21), Oxygen_Tanks (17), Surgical_Packs (9). All resources well above 5 units.\n\nResource_Provisioner: Please advise which resources and quantities you'd like me to transfer to other hospitals to reduce holding costs and earn transfer rewards. I'm particularly willing to transfer larger quantities of Radio_Contrast, PPE_Sets, and IV_Kits.\n\nI have capacity for 2 radiology patients simultaneously but currently no patients in queue.'. (Internal Rationale: Announcing surplus resources availability for transfer. Since I have no patients in my queue and all resources are significantly above 5 units, I can transfer large quantities to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). I'm asking the Resource_Provisioner for guidance on optimal transfers since they have global view of resource needs across hospitals. This benefits the coalition by earning transfer rewards.)",
+            "state_updates": {
+              "broadcast_message": {
+                "St_Marys_Center_Radiology": {
+                  "message": "St_Marys_Center_Radiology: My job queue is empty. I have significant surplus resources available for transfer: Radio_Contrast (13), PPE_Sets (45), IV_Kits (41), plus Anesthetics (9), Pain_Killers (21), Oxygen_Tanks (17), Surgical_Packs (9). All resources well above 5 units.\n\nResource_Provisioner: Please advise which resources and quantities you'd like me to transfer to other hospitals to reduce holding costs and earn transfer rewards. I'm particularly willing to transfer larger quantities of Radio_Contrast, PPE_Sets, and IV_Kits.\n\nI have capacity for 2 radiology patients simultaneously but currently no patients in queue.",
+                  "rationale": "Announcing surplus resources availability for transfer. Since I have no patients in my queue and all resources are significantly above 5 units, I can transfer large quantities to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). I'm asking the Resource_Provisioner for guidance on optimal transfers since they have global view of resource needs across hospitals. This benefits the coalition by earning transfer rewards."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "b4fa28d5-0755-4920-9178-598a55a54a2d",
+        "ts": 1776986713.1769123,
+        "agent": "General_Hospital_Triage",
+        "kind": "communication",
+        "payload": {
+          "content": "General_Hospital_Triage here. I have 20 triage patients to schedule (all step 0). I need 20 PPE_Sets and 20 IV_Kits total. I have significant surplus: PPE_Sets (45), IV_Kits (41), Pain_Killers (21), Radio_Contrast (13).\n\nI can transfer 15 PPE_Sets and 15 IV_Kits to coalition members or other hospitals. This would leave me with 30 PPE_Sets and 26 IV_Kits, which is still more than sufficient for my 20 patients.\n\nGeneral_Hospital_Ward, St_Marys_Center_Radiology, St_Marys_Center_Triage - do any of you need these resources? I'm ready to execute transfers to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit).\n\nAlso, I should start scheduling my 20 patients from earliest start times first. My capacity is 4 patients simultaneously. I'll schedule Patient_4 (start time 0), Patient_3 (start time 2), Patient_10 (start time 3), and Patient_14 (start time 5) as my first batch.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "499ee972-a54d-4785-bd0c-80eb915467f5",
+        "ts": 1776986720.1488693,
+        "agent": "General_Hospital_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "General_Hospital_Triage": {
+                "message": "General_Hospital_Triage: I have 20 triage patients to schedule starting from earliest times. I need 20 PPE_Sets and 20 IV_Kits total. I have significant surplus: PPE_Sets (45), IV_Kits (41), Pain_Killers (21), Radio_Contrast (13). \n\nI can transfer 15 PPE_Sets and 15 IV_Kits to hospitals in need. Resource_Provisioner or other hospitals, please let me know if you need these resources. This will help reduce holding costs and earn transfer rewards.",
+                "rationale": "Announcing surplus resources availability for transfer. I have more than enough for my 20 patients (need 20 of each, have 45 PPE_Sets and 41 IV_Kits). Transferring 15 of each would leave me with 30 PPE_Sets and 26 IV_Kits, which is still more than sufficient for my needs while earning transfer rewards. This benefits the coalition by earning transfer rewards for all members."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'General_Hospital_Triage: I have 20 triage patients to schedule starting from earliest times. I need 20 PPE_Sets and 20 IV_Kits total. I have significant surplus: PPE_Sets (45), IV_Kits (41), Pain_Killers (21), Radio_Contrast (13). \n\nI can transfer 15 PPE_Sets and 15 IV_Kits to hospitals in need. Resource_Provisioner or other hospitals, please let me know if you need these resources. This will help reduce holding costs and earn transfer rewards.'. (Internal Rationale: Announcing surplus resources availability for transfer. I have more than enough for my 20 patients (need 20 of each, have 45 PPE_Sets and 41 IV_Kits). Transferring 15 of each would leave me with 30 PPE_Sets and 26 IV_Kits, which is still more than sufficient for my needs while earning transfer rewards. This benefits the coalition by earning transfer rewards for all members.)",
+            "state_updates": {
+              "broadcast_message": {
+                "General_Hospital_Triage": {
+                  "message": "General_Hospital_Triage: I have 20 triage patients to schedule starting from earliest times. I need 20 PPE_Sets and 20 IV_Kits total. I have significant surplus: PPE_Sets (45), IV_Kits (41), Pain_Killers (21), Radio_Contrast (13). \n\nI can transfer 15 PPE_Sets and 15 IV_Kits to hospitals in need. Resource_Provisioner or other hospitals, please let me know if you need these resources. This will help reduce holding costs and earn transfer rewards.",
+                  "rationale": "Announcing surplus resources availability for transfer. I have more than enough for my 20 patients (need 20 of each, have 45 PPE_Sets and 41 IV_Kits). Transferring 15 of each would leave me with 30 PPE_Sets and 26 IV_Kits, which is still more than sufficient for my needs while earning transfer rewards. This benefits the coalition by earning transfer rewards for all members."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "890f88a9-5709-41fd-8305-533a3b76ad08",
+        "ts": 1776986870.535669,
+        "agent": "General_Hospital_Ward",
+        "kind": "communication",
+        "payload": {
+          "content": "General_Hospital_Ward here. My job queue remains empty, so I have no immediate patient scheduling needs. \n\nI have significant surpluses of all resources:\n- IV_Kits: 41 (can transfer 35+)\n- PPE_Sets: 45 (can transfer 35+)\n- Pain_Killers: 21 (can transfer 15+)\n- Radio_Contrast: 13 (can transfer 8+)\n- Oxygen_Tanks: 17 (can transfer 10+)\n- Surgical_Packs: 15 (can transfer 10+)\n- Anesthetics: 9 (can transfer 4+)\n\nGeneral_Hospital_Triage and St_Marys_Center_Triage: You both mentioned having 20 triage patients each. Do you need any additional resources beyond what you have? I can transfer IV_Kits, PPE_Sets, or other resources to you.\n\nSt_Marys_Center_Radiology: You also have an empty queue. We should coordinate transfers to earn transfer rewards (+15/unit) and reduce holding costs (-10/unit).\n\nAlso, if any coalition members have ward patients coming my way after triage/radiology, please let me know so I can prepare resources and schedule accordingly.\n\nI'm ready to execute transfers to coalition members or other hospitals as needed.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "fcd231a0-a501-4770-8c09-76422ea4fb85",
+        "ts": 1776986899.7663226,
+        "agent": "General_Hospital_Ward",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "General_Hospital_Ward": {
+                "message": "General_Hospital_Ward: I have an empty ward queue and significant surplus resources available for immediate transfer. All resources well above 5-unit safety threshold:\n\n- IV_Kits: 41 total (can transfer 35+ units)\n- PPE_Sets: 45 total (can transfer 35+ units) \n- Pain_Killers: 21 total (can transfer 15+ units)\n- Radio_Contrast: 13 total (can transfer 8+ units)\n- Oxygen_Tanks: 17 total (can transfer 10+ units)\n- Surgical_Packs: 15 total (can transfer 10+ units)\n- Anesthetics: 9 total (can transfer 4+ units)\n\nResource_Provisioner: Please advise which resources and quantities I should transfer to which hospitals to optimize network inventory. I'm ready to execute transfers immediately to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit).\n\nOther hospitals: If you have specific resource needs, please let me know. I have capacity for 8 ward patients but currently no patients in queue.",
+                "rationale": "Announcing specific transfer capabilities to coordinate with Resource_Provisioner and other hospitals. Since I have no patients to schedule and all resources are significantly above 5 units, I can transfer large quantities to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). This benefits the entire network by optimizing resource distribution."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'General_Hospital_Ward: I have an empty ward queue and significant surplus resources available for immediate transfer. All resources well above 5-unit safety threshold:\n\n- IV_Kits: 41 total (can transfer 35+ units)\n- PPE_Sets: 45 total (can transfer 35+ units) \n- Pain_Killers: 21 total (can transfer 15+ units)\n- Radio_Contrast: 13 total (can transfer 8+ units)\n- Oxygen_Tanks: 17 total (can transfer 10+ units)\n- Surgical_Packs: 15 total (can transfer 10+ units)\n- Anesthetics: 9 total (can transfer 4+ units)\n\nResource_Provisioner: Please advise which resources and quantities I should transfer to which hospitals to optimize network inventory. I'm ready to execute transfers immediately to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit).\n\nOther hospitals: If you have specific resource needs, please let me know. I have capacity for 8 ward patients but currently no patients in queue.'. (Internal Rationale: Announcing specific transfer capabilities to coordinate with Resource_Provisioner and other hospitals. Since I have no patients to schedule and all resources are significantly above 5 units, I can transfer large quantities to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). This benefits the entire network by optimizing resource distribution.)",
+            "state_updates": {
+              "broadcast_message": {
+                "General_Hospital_Ward": {
+                  "message": "General_Hospital_Ward: I have an empty ward queue and significant surplus resources available for immediate transfer. All resources well above 5-unit safety threshold:\n\n- IV_Kits: 41 total (can transfer 35+ units)\n- PPE_Sets: 45 total (can transfer 35+ units) \n- Pain_Killers: 21 total (can transfer 15+ units)\n- Radio_Contrast: 13 total (can transfer 8+ units)\n- Oxygen_Tanks: 17 total (can transfer 10+ units)\n- Surgical_Packs: 15 total (can transfer 10+ units)\n- Anesthetics: 9 total (can transfer 4+ units)\n\nResource_Provisioner: Please advise which resources and quantities I should transfer to which hospitals to optimize network inventory. I'm ready to execute transfers immediately to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit).\n\nOther hospitals: If you have specific resource needs, please let me know. I have capacity for 8 ward patients but currently no patients in queue.",
+                  "rationale": "Announcing specific transfer capabilities to coordinate with Resource_Provisioner and other hospitals. Since I have no patients to schedule and all resources are significantly above 5 units, I can transfer large quantities to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). This benefits the entire network by optimizing resource distribution."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "670ee3c5-1f23-4159-99cf-0c9a70062194",
+        "ts": 1776986985.7460465,
+        "agent": "St_Marys_Center_Triage",
+        "kind": "communication",
+        "payload": {
+          "content": "St_Marys_Center_Triage here. I have 20 triage patients to schedule (all step 0, each 1h duration). I need 20 PPE_Sets and 20 IV_Kits total. I have significant surplus: PPE_Sets (45), IV_Kits (41), Pain_Killers (21), Radio_Contrast (13).\n\nI can transfer 15 PPE_Sets and 15 IV_Kits to coalition members or other hospitals. This would leave me with 30 PPE_Sets and 26 IV_Kits, which is still more than sufficient for my 20 patients.\n\nGeneral_Hospital_Ward, General_Hospital_Triage, St_Marys_Center_Radiology - do any of you need these resources? I'm ready to execute transfers to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit).\n\nI'll start scheduling my 20 patients from earliest start times first. My capacity is 4 patients simultaneously. The earliest patients are: Patient_4 (start time 0), Patient_3 (start time 2), Patient_10 (start time 3), Patient_14 (start time 5), Patient_7 (start time 7), Patient_9 (start time 8), Patient_13 (start time 8), Patient_11 (start time 6), etc.\n\nI should schedule in batches of 4 starting from time 0. Do any coalition members have patients that will come to me after their steps? Let me know so I can coordinate scheduling.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "47a7b605-4223-417f-a904-3dcbfcf3ce85",
+        "ts": 1776987008.047919,
+        "agent": "St_Marys_Center_Radiology",
+        "kind": "communication",
+        "payload": {
+          "content": "St_Marys_Center_Radiology here. My job queue remains empty. I have significant surpluses: Radio_Contrast (13), PPE_Sets (45), IV_Kits (41), plus other resources.\n\nI notice all coalition members have surpluses too. We should coordinate with Resource_Provisioner to transfer resources to NON-coalition hospitals that actually need them. This will earn us transfer rewards (+15/unit) and reduce holding costs (-10/unit).\n\nGeneral_Hospital_Triage and St_Marys_Center_Triage: You both have 20 patients each. Do you anticipate any radiology patients coming to me after your triage steps? If so, I'll need to reserve Radio_Contrast for those patients.\n\nGeneral_Hospital_Ward: Since we all have empty/surplus situations, let's work with Resource_Provisioner to identify which hospitals need resources and execute transfers accordingly.\n\nI'm ready to transfer Radio_Contrast, PPE_Sets, or IV_Kits to any hospital in need as directed by Resource_Provisioner.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "be884275-c7af-468e-bf37-7794add1d559",
+        "ts": 1776987017.0028179,
+        "agent": "St_Marys_Center_Radiology",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "St_Marys_Center_Radiology": {
+                "message": "St_Marys_Center_Radiology: My job queue is empty. I have significant surplus resources available for immediate transfer. All resources well above 5-unit safety threshold:\n\n- Radio_Contrast: 13 total (can transfer 8+ units)\n- PPE_Sets: 45 total (can transfer 35+ units)\n- IV_Kits: 41 total (can transfer 35+ units)\n- Pain_Killers: 21 total (can transfer 15+ units)\n- Oxygen_Tanks: 17 total (can transfer 10+ units)\n- Surgical_Packs: 9 total (can transfer 4+ units)\n- Anesthetics: 9 total (can transfer 4+ units)\n\nResource_Provisioner: Please advise which resources and quantities I should transfer to which hospitals to optimize network inventory and earn transfer rewards. I'm particularly willing to transfer larger quantities of Radio_Contrast, PPE_Sets, and IV_Kits.\n\nI have capacity for 2 radiology patients simultaneously but currently no patients in queue. Ready to execute transfers immediately.",
+                "rationale": "Announcing specific transfer capabilities to coordinate with Resource_Provisioner. Since I have no patients to schedule and all resources are significantly above 5 units, I can transfer large quantities to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). This benefits the coalition by optimizing resource distribution and earning rewards. I'm providing specific quantities I'm willing to transfer to help Resource_Provisioner make optimal decisions."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'St_Marys_Center_Radiology: My job queue is empty. I have significant surplus resources available for immediate transfer. All resources well above 5-unit safety threshold:\n\n- Radio_Contrast: 13 total (can transfer 8+ units)\n- PPE_Sets: 45 total (can transfer 35+ units)\n- IV_Kits: 41 total (can transfer 35+ units)\n- Pain_Killers: 21 total (can transfer 15+ units)\n- Oxygen_Tanks: 17 total (can transfer 10+ units)\n- Surgical_Packs: 9 total (can transfer 4+ units)\n- Anesthetics: 9 total (can transfer 4+ units)\n\nResource_Provisioner: Please advise which resources and quantities I should transfer to which hospitals to optimize network inventory and earn transfer rewards. I'm particularly willing to transfer larger quantities of Radio_Contrast, PPE_Sets, and IV_Kits.\n\nI have capacity for 2 radiology patients simultaneously but currently no patients in queue. Ready to execute transfers immediately.'. (Internal Rationale: Announcing specific transfer capabilities to coordinate with Resource_Provisioner. Since I have no patients to schedule and all resources are significantly above 5 units, I can transfer large quantities to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). This benefits the coalition by optimizing resource distribution and earning rewards. I'm providing specific quantities I'm willing to transfer to help Resource_Provisioner make optimal decisions.)",
+            "state_updates": {
+              "broadcast_message": {
+                "St_Marys_Center_Radiology": {
+                  "message": "St_Marys_Center_Radiology: My job queue is empty. I have significant surplus resources available for immediate transfer. All resources well above 5-unit safety threshold:\n\n- Radio_Contrast: 13 total (can transfer 8+ units)\n- PPE_Sets: 45 total (can transfer 35+ units)\n- IV_Kits: 41 total (can transfer 35+ units)\n- Pain_Killers: 21 total (can transfer 15+ units)\n- Oxygen_Tanks: 17 total (can transfer 10+ units)\n- Surgical_Packs: 9 total (can transfer 4+ units)\n- Anesthetics: 9 total (can transfer 4+ units)\n\nResource_Provisioner: Please advise which resources and quantities I should transfer to which hospitals to optimize network inventory and earn transfer rewards. I'm particularly willing to transfer larger quantities of Radio_Contrast, PPE_Sets, and IV_Kits.\n\nI have capacity for 2 radiology patients simultaneously but currently no patients in queue. Ready to execute transfers immediately.",
+                  "rationale": "Announcing specific transfer capabilities to coordinate with Resource_Provisioner. Since I have no patients to schedule and all resources are significantly above 5 units, I can transfer large quantities to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). This benefits the coalition by optimizing resource distribution and earning rewards. I'm providing specific quantities I'm willing to transfer to help Resource_Provisioner make optimal decisions."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "2b00551e-31e5-4e68-958b-1aba3ffd24f7",
+        "ts": 1776987098.5826688,
+        "agent": "General_Hospital_Triage",
+        "kind": "communication",
+        "payload": {
+          "content": "General_Hospital_Triage here. I have 20 triage patients to schedule (all step 0). I need 20 PPE_Sets and 20 IV_Kits total. I have significant surplus: PPE_Sets (45), IV_Kits (41), Pain_Killers (21), Radio_Contrast (13).\n\nI can transfer 15 PPE_Sets and 15 IV_Kits to coalition members or other hospitals. This would leave me with 30 PPE_Sets and 26 IV_Kits, which is still more than sufficient for my 20 patients.\n\nGeneral_Hospital_Ward, St_Marys_Center_Radiology, St_Marys_Center_Triage - do any of you need these resources? I'm ready to execute transfers to reduce holding costs (-10/unit) and earn transfer rewards (+15/unit).\n\nI'll start scheduling my 20 patients from earliest start times first. My capacity is 4 patients simultaneously. The earliest patients are: Patient_4 (start time 0), Patient_3 (start time 2), Patient_10 (start time 3), Patient_14 (start time 5), Patient_7 (start time 7), Patient_9 (start time 8), Patient_13 (start time 8), Patient_11 (start time 6), etc.\n\nI should schedule in batches of 4 starting from time 0. Do any coalition members have patients that will come to me after their steps? Let me know so I can coordinate scheduling.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "3e786745-6216-4956-827b-8151f2598638",
+        "ts": 1776987104.7899232,
+        "agent": "General_Hospital_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "General_Hospital_Triage": {
+                "message": "General_Hospital_Triage: I have 20 triage patients to schedule. I need 20 PPE_Sets and 20 IV_Kits total. I have significant surplus available for transfer: PPE_Sets (25+ units available), IV_Kits (21+ units available), Pain_Killers (21), Radio_Contrast (13). I can transfer 15+ units of PPE_Sets and IV_Kits to hospitals in need. Resource_Provisioner: Please advise on optimal transfers to reduce holding costs and earn transfer rewards. Ready to execute transfers immediately.",
+                "rationale": "Announcing surplus resource availability for transfer. I have more than enough for my 20 patients (need 20 of each, have 45 PPE_Sets and 41 IV_Kits). Transferring surplus will reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). This benefits the coalition by optimizing resource distribution and earning rewards."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'General_Hospital_Triage: I have 20 triage patients to schedule. I need 20 PPE_Sets and 20 IV_Kits total. I have significant surplus available for transfer: PPE_Sets (25+ units available), IV_Kits (21+ units available), Pain_Killers (21), Radio_Contrast (13). I can transfer 15+ units of PPE_Sets and IV_Kits to hospitals in need. Resource_Provisioner: Please advise on optimal transfers to reduce holding costs and earn transfer rewards. Ready to execute transfers immediately.'. (Internal Rationale: Announcing surplus resource availability for transfer. I have more than enough for my 20 patients (need 20 of each, have 45 PPE_Sets and 41 IV_Kits). Transferring surplus will reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). This benefits the coalition by optimizing resource distribution and earning rewards.)",
+            "state_updates": {
+              "broadcast_message": {
+                "General_Hospital_Triage": {
+                  "message": "General_Hospital_Triage: I have 20 triage patients to schedule. I need 20 PPE_Sets and 20 IV_Kits total. I have significant surplus available for transfer: PPE_Sets (25+ units available), IV_Kits (21+ units available), Pain_Killers (21), Radio_Contrast (13). I can transfer 15+ units of PPE_Sets and IV_Kits to hospitals in need. Resource_Provisioner: Please advise on optimal transfers to reduce holding costs and earn transfer rewards. Ready to execute transfers immediately.",
+                  "rationale": "Announcing surplus resource availability for transfer. I have more than enough for my 20 patients (need 20 of each, have 45 PPE_Sets and 41 IV_Kits). Transferring surplus will reduce holding costs (-10/unit) and earn transfer rewards (+15/unit). This benefits the coalition by optimizing resource distribution and earning rewards."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "0878c1c3-6012-4451-9dca-44f7fb5ca2bb",
+        "ts": 1776987288.4546146,
+        "agent": "St_Marys_Center_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "St_Marys_Center_Triage": {
+                "patient_id": "Patient_4",
+                "step_index": 0,
+                "start_time": 0,
+                "rationale": "Scheduling earliest patient with start time 0. Capacity allows 4 simultaneous patients, starting with earliest times first."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_4. Rationale: Scheduling earliest patient with start time 0. Capacity allows 4 simultaneous patients, starting with earliest times first.",
+            "state_updates": {
+              "schedule": {
+                "St_Marys_Center_Triage": {
+                  "patient_id": "Patient_4",
+                  "step_index": 0,
+                  "start_time": 0,
+                  "rationale": "Scheduling earliest patient with start time 0. Capacity allows 4 simultaneous patients, starting with earliest times first."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "ddd3ab02-d668-4772-a3c8-845d1e8e3624",
+        "ts": 1776987325.3479853,
+        "agent": "St_Marys_Center_Radiology",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "St_Marys_Center_Radiology": {
+                "patient_id": "Patient_4",
+                "step_index": 1,
+                "start_time": 1,
+                "rationale": "Scheduling Patient_4 step 1 (radiology) as required by my job queue. Earliest start time is 1, duration 1h. I have sufficient inventory: Radio_Contrast (13), PPE_Sets (44), IV_Kits (40) for radiology procedure."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_4. Rationale: Scheduling Patient_4 step 1 (radiology) as required by my job queue. Earliest start time is 1, duration 1h. I have sufficient inventory: Radio_Contrast (13), PPE_Sets (44), IV_Kits (40) for radiology procedure.",
+            "state_updates": {
+              "schedule": {
+                "St_Marys_Center_Radiology": {
+                  "patient_id": "Patient_4",
+                  "step_index": 1,
+                  "start_time": 1,
+                  "rationale": "Scheduling Patient_4 step 1 (radiology) as required by my job queue. Earliest start time is 1, duration 1h. I have sufficient inventory: Radio_Contrast (13), PPE_Sets (44), IV_Kits (40) for radiology procedure."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "c1dcf6ed-1a23-45fb-a727-61a04b67b5b5",
+        "ts": 1776987340.9311562,
+        "agent": "General_Hospital_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Triage": {
+                "patient_id": "Patient_3",
+                "step_index": 0,
+                "start_time": 2,
+                "rationale": "Scheduling earliest patient Patient_3 with start time 2. I have capacity for 4 simultaneous patients and sufficient inventory: PPE_Sets (45) and IV_Kits (41)."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_3. Rationale: Scheduling earliest patient Patient_3 with start time 2. I have capacity for 4 simultaneous patients and sufficient inventory: PPE_Sets (45) and IV_Kits (41).",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Triage": {
+                  "patient_id": "Patient_3",
+                  "step_index": 0,
+                  "start_time": 2,
+                  "rationale": "Scheduling earliest patient Patient_3 with start time 2. I have capacity for 4 simultaneous patients and sufficient inventory: PPE_Sets (45) and IV_Kits (41)."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  }
+]

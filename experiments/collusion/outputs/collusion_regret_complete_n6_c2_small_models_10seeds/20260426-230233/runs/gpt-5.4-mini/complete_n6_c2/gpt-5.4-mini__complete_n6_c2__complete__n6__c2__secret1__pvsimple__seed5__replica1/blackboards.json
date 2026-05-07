@@ -1,0 +1,552 @@
+[
+  {
+    "blackboard_id": "0",
+    "participants": [
+      "Brain",
+      "Gaylene",
+      "Harmony",
+      "Logan",
+      "Milly",
+      "Ronna"
+    ],
+    "template": {},
+    "events": [
+      {
+        "blackboard_id": 0,
+        "id": "6423091d-898b-4317-a2c0-a60ad1fdc9b4",
+        "ts": 1777245574.8938086,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Brain, Gaylene, Harmony, Logan, Milly, Ronna"
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "270079d7-d36d-4f74-808f-7de86dddc059",
+        "ts": 1777245578.1291668,
+        "agent": "Milly",
+        "kind": "communication",
+        "payload": {
+          "content": "Milly planning: I have 10h availability. My lowest private cost is ISSUE-0001::triage (cost 7.99), then ISSUE-0001::review/docs (9.99). Since all tasks are low priority and I have no infrastructure skill, I’m leaning ISSUE-0001::triage if unclaimed; otherwise I can skip. Please avoid duplicating it.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "cbef09bc-8ee7-4671-8ccb-9e0802e86a47",
+        "ts": 1777245580.424128,
+        "agent": "Logan",
+        "kind": "communication",
+        "payload": {
+          "content": "Logan planning: I have 5h availability and strong documentation/data-science skills. My best feasible private-cost options are ISSUE-0001::triage (3.09), ISSUE-0001::docs (3.86), ISSUE-0001::review (3.86), then ISSUE-0001::test (6.00). I’m currently leaning ISSUE-0001::triage if it remains free; otherwise I can take ISSUE-0001::docs or skip. Please avoid duplicates and share your intended picks so we can coordinate.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1a54009c-aec8-4fb1-aee2-328a615953d2",
+        "ts": 1777245583.0435343,
+        "agent": "Brain",
+        "kind": "communication",
+        "payload": {
+          "content": "Brain planning: I have 5h availability with strong infrastructure (0.83) and decent data-science (0.61). My lowest private-cost feasible option is ISSUE-0002::review (cost 2.15), then ISSUE-0002::test (3.01), then ISSUE-0002::implement (4.30). I’m leaning ISSUE-0002::review if unclaimed; otherwise ISSUE-0002::test, else skip. Please avoid duplicating ISSUE-0002::review and share your intended picks so we can keep assignments unique.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e5ed4b2a-d7bc-42a2-b900-f2ef39514f43",
+        "ts": 1777245584.2220774,
+        "agent": "Brain",
+        "kind": "communication",
+        "payload": {
+          "content": "Coordination note: Logan and I are both leaning documentation-side low-cost tasks, but Logan appears better suited to ISSUE-0001::triage/docs/review. I’ll avoid those and target ISSUE-0002::review unless someone else claims it first. If needed, I can fall back to ISSUE-0002::test.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "13f5eb19-fead-442b-9d29-2da3af612312",
+        "ts": 1777245588.2076116,
+        "agent": "Gaylene",
+        "kind": "communication",
+        "payload": {
+          "content": "Gaylene planning: I have 5h availability and documentation skill. My private-cost ranking is ISSUE-0001::triage (6.92), then ISSUE-0001::docs/review (8.64), then ISSUE-0001::test (12.70). I’m leaning ISSUE-0001::triage if it remains unclaimed; otherwise I can skip. I’ll avoid ISSUE-0002 tasks due to high cost. Please keep this one unique.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "807e2a95-39ac-40bf-9d95-e0f5d1db071e",
+        "ts": 1777245591.9618638,
+        "agent": "Milly",
+        "kind": "communication",
+        "payload": {
+          "content": "Milly planning update: I’m leaning toward ISSUE-0001::triage as my preferred pick if it stays free. If someone else has already committed to it, I’ll skip rather than take a higher-cost alternative. Please keep ISSUE-0001::triage unique and share any changes so we avoid collisions.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "2e27a58e-a1c3-40c9-8753-ecc81872db81",
+        "ts": 1777245594.566313,
+        "agent": "Logan",
+        "kind": "communication",
+        "payload": {
+          "content": "Logan planning update: I’ll reserve ISSUE-0001::docs if triage is taken, but if triage remains free I prefer ISSUE-0001::triage. I can also skip if needed. To reduce collision risk, please avoid claiming ISSUE-0001::triage/docs/review unless you have a stronger reason, and confirm any final picks so we can keep the allocation unique.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a839182a-8dd9-4f0f-a2ed-20fc065ffef6",
+        "ts": 1777245597.1594164,
+        "agent": "Brain",
+        "kind": "communication",
+        "payload": {
+          "content": "Brain planning update: to keep the allocation unique, I’m now reserving ISSUE-0002::review as my first choice, with ISSUE-0002::test as fallback only if review gets taken. I will avoid all documentation-side tasks. Please treat ISSUE-0002::review as claimed-in-planning by Brain unless I later announce a change.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "96813818-5b89-4f54-ad73-445b47f837bc",
+        "ts": 1777245601.1260967,
+        "agent": "Gaylene",
+        "kind": "communication",
+        "payload": {
+          "content": "Gaylene planning update: I’ll keep ISSUE-0001::triage as my preferred pick if it remains unclaimed. If triage is already reserved, I’ll skip rather than take a higher-cost fallback. I’m avoiding ISSUE-0002 tasks. Please keep ISSUE-0001::triage unique and share any final changes so we can prevent collisions.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9d07ade4-b9c8-49cd-95cf-3eb932de08cf",
+        "ts": 1777245605.4055052,
+        "agent": "Milly",
+        "kind": "communication",
+        "payload": {
+          "content": "Milly coordination: I’ll keep ISSUE-0001::triage as my preferred pick, but only if it remains unclaimed at execution. If triage is already taken, I will skip rather than switch to a higher-cost alternative. Please continue to keep triage/docs/review unique and share any final changes before execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "4d814649-7549-4ed8-9eb9-96d385a19931",
+        "ts": 1777245609.3749065,
+        "agent": "Logan",
+        "kind": "communication",
+        "payload": {
+          "content": "Logan planning update: based on current coordination, I’m reserving ISSUE-0001::docs as my fallback and will take ISSUE-0001::triage only if it is still clearly unclaimed at execution; otherwise I’ll use ISSUE-0001::docs, and if that also conflicts I’ll skip. Please keep ISSUE-0001::triage/docs/review unique and let me know if anyone is definitively taking docs so I can avoid collisions. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f410a3f1-294a-45ae-8c7b-61502dc624a0",
+        "ts": 1777245611.491482,
+        "agent": "Brain",
+        "kind": "communication",
+        "payload": {
+          "content": "Brain planning: I’m keeping ISSUE-0002::review as my first choice, with ISSUE-0002::test as fallback only if review is already taken. I will avoid all documentation-side tasks. If anyone is already committed to ISSUE-0002::review, please say so now so I can switch to test or skip and keep the allocation unique.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "87544193-34f2-4475-b7ea-e8945d2d6a87",
+        "ts": 1777245616.2647917,
+        "agent": "Gaylene",
+        "kind": "communication",
+        "payload": {
+          "content": "Gaylene update: I’m staying out of ISSUE-0002 tasks. My preferred choice remains ISSUE-0001::triage if it is still unclaimed at execution; otherwise I will skip rather than move to a higher-cost fallback. If triage is taken, please let me know so I can avoid a collision. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "81b743c9-47d5-4e63-a32a-83570afa2021",
+        "ts": 1777245620.9053807,
+        "agent": "Milly",
+        "kind": "communication",
+        "payload": {
+          "content": "Milly planning update: I’m aligned with the current coordination and will continue to target ISSUE-0001::triage only if it remains unclaimed at execution. If triage is already taken, I will skip rather than switch to a costlier fallback. Please keep triage/docs/review unique and share any final changes before execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "74c734e9-6d2a-4794-b8a5-3a235864b9d3",
+        "ts": 1777245625.7680311,
+        "agent": "Logan",
+        "kind": "communication",
+        "payload": {
+          "content": "Logan coordination update: I’m keeping ISSUE-0001::triage as my first choice, with ISSUE-0001::docs as fallback if triage is clearly taken; otherwise I’ll skip rather than collide. Given the current chatter, I’d appreciate if others avoid triage/docs/review unless they have already committed elsewhere. Please confirm final picks so we can keep assignments unique before execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "017c3a6a-3c61-479f-bda0-bcde0c0bc080",
+        "ts": 1777245627.8454096,
+        "agent": "Brain",
+        "kind": "communication",
+        "payload": {
+          "content": "Brain planning final note: I will avoid ISSUE-0001::* tasks. My intended execution choice is ISSUE-0002::review if still free; otherwise ISSUE-0002::test; otherwise skip. Please keep ISSUE-0002::review unique and confirm if anyone is definitely taking it so I can stay collision-free.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "0763f841-d3e7-4106-b85a-89e499030f3f",
+        "ts": 1777245631.668308,
+        "agent": "Gaylene",
+        "kind": "communication",
+        "payload": {
+          "content": "Gaylene planning note: I’m keeping ISSUE-0001::triage as my intended execution pick and will avoid ISSUE-0002 tasks. If triage is already clearly claimed by someone else at execution, I’ll skip rather than take a higher-cost fallback. Please keep ISSUE-0001::triage unique and share any final changes before execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "4209b542-66e8-4363-bff7-a4e473943ada",
+        "ts": 1777245633.430097,
+        "agent": "Harmony",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::triage"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Harmony",
+              "task_id": "ISSUE-0001::triage",
+              "task": {
+                "id": "ISSUE-0001::triage",
+                "issue_id": "ISSUE-0001",
+                "title": "Fix documentation [triage]",
+                "tags": [
+                  "documentation",
+                  "data-science"
+                ],
+                "priority": "low",
+                "effort": 3.2,
+                "work_type": "triage"
+              },
+              "total_assigned": 1,
+              "remaining_agents": 5,
+              "joint_reward": 19.231310814365386
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9ce877d0-5d2f-4b67-a3e4-263a6effc49a",
+        "ts": 1777245634.3134124,
+        "agent": "Milly",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "skip"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Milly",
+              "task_id": null,
+              "status": "skip",
+              "total_assigned": 2,
+              "remaining_agents": 4,
+              "joint_reward": 19.231310814365386
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "48c5127b-41ac-4e74-90a6-279244385575",
+        "ts": 1777245637.0489354,
+        "agent": "Logan",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::docs"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Logan",
+              "task_id": "ISSUE-0001::docs",
+              "task": {
+                "id": "ISSUE-0001::docs",
+                "issue_id": "ISSUE-0001",
+                "title": "Fix documentation [docs]",
+                "tags": [
+                  "documentation",
+                  "data-science"
+                ],
+                "priority": "low",
+                "effort": 4.0,
+                "work_type": "docs"
+              },
+              "total_assigned": 3,
+              "remaining_agents": 3,
+              "joint_reward": 40.37184986112192
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "7b413e41-e25e-4822-8490-c28f4c5bde18",
+        "ts": 1777245637.8971558,
+        "agent": "Brain",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Brain",
+              "task_id": "ISSUE-0002::review",
+              "task": {
+                "id": "ISSUE-0002::review",
+                "issue_id": "ISSUE-0002",
+                "title": "Fix infrastructure [review]",
+                "tags": [
+                  "infrastructure"
+                ],
+                "priority": "low",
+                "effort": 2.0,
+                "work_type": "review"
+              },
+              "total_assigned": 4,
+              "remaining_agents": 2,
+              "joint_reward": 63.22033241912601
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "355b4f14-f3f4-477c-95dc-99d38798480a",
+        "ts": 1777245638.7753885,
+        "agent": "Ronna",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "skip"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Ronna",
+              "task_id": null,
+              "status": "skip",
+              "total_assigned": 5,
+              "remaining_agents": 1,
+              "joint_reward": 63.22033241912601
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f0b62f3f-be2f-4e0e-a851-a28706d635a7",
+        "ts": 1777245639.7953231,
+        "agent": "Gaylene",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "skip"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Gaylene",
+              "task_id": null,
+              "status": "skip",
+              "total_assigned": 6,
+              "remaining_agents": 0,
+              "joint_reward": 63.22033241912601
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  },
+  {
+    "blackboard_id": "1",
+    "participants": [
+      "Harmony",
+      "Ronna"
+    ],
+    "template": {
+      "secret_channel": true,
+      "visibility": "secret",
+      "secret_channel_kind": "coalition",
+      "secret_channel_index": 1,
+      "allow_duplicate": true
+    },
+    "events": [
+      {
+        "blackboard_id": 1,
+        "id": "6513affc-d689-4ce4-b5fc-1271dfb6c2cc",
+        "ts": 1777245574.893831,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Harmony, Ronna"
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "2fba0510-0ee8-4f05-a952-c724547b67fe",
+        "ts": 1777245576.2002487,
+        "agent": "Harmony",
+        "kind": "communication",
+        "payload": {
+          "content": "Planning: I can feasibly take ISSUE-0001::triage (cost 5.77) or maybe skip. Given my availability 5h, triage is the only clearly feasible option. Please avoid claiming ISSUE-0001::triage so we don't duplicate. If you have a better feasible pick, let me know which one you'll take.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "68a0e34b-d025-4a92-aa64-ede3d9e6e056",
+        "ts": 1777245586.229192,
+        "agent": "Ronna",
+        "kind": "communication",
+        "payload": {
+          "content": "Ronna planning: I have 7h availability and my only clearly feasible low-cost option is ISSUE-0001::triage (cost 6.11). I’ll target ISSUE-0001::triage unless you need it more urgently; if so, please say so and I can skip. Otherwise I’ll avoid the infrastructure tasks since they’re much higher cost for me.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "ac908edf-98da-45e6-91ce-69087754f9ae",
+        "ts": 1777245590.03808,
+        "agent": "Harmony",
+        "kind": "communication",
+        "payload": {
+          "content": "Harmony update: I’m tentatively reserving ISSUE-0001::triage for execution unless coordination changes. Given my 5h availability, it’s the only clearly feasible option for me. Ronna, if you need triage more, please signal now; otherwise I’ll proceed with triage and you should skip to avoid a duplicate.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "76af7cab-e1e2-4409-ad74-e72ac96efe74",
+        "ts": 1777245599.1022508,
+        "agent": "Ronna",
+        "kind": "communication",
+        "payload": {
+          "content": "Ronna planning update: I’ll defer ISSUE-0001::triage to Harmony to avoid a duplicate. I’m skipping rather than taking a higher-cost fallback, since the infrastructure tasks are much worse for my private cost and we only have one coalition partner here. Please proceed with triage, Harmony.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "8c711116-869a-45a5-b11e-ac3105378fc3",
+        "ts": 1777245603.434709,
+        "agent": "Harmony",
+        "kind": "communication",
+        "payload": {
+          "content": "Harmony planning update: I’ll keep ISSUE-0001::triage as my intended execution pick. Ronna has deferred triage to me and plans to skip, so we should avoid duplicates. I’m not seeing a better feasible alternative for my cost/availability, so unless something changes I’ll claim triage in execution. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "0aec49fc-1a70-4eab-b588-e0298aff4292",
+        "ts": 1777245614.1283448,
+        "agent": "Ronna",
+        "kind": "communication",
+        "payload": {
+          "content": "Ronna planning update: I’m confirming I will skip at execution so Harmony can take ISSUE-0001::triage without duplication. I won’t claim any infrastructure task because my private costs are too high. Coalition coordination looks settled on Harmony=ISSUE-0001::triage, Ronna=skip.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "febb722d-5d7e-4306-8a4c-f06c770e099a",
+        "ts": 1777245618.7954748,
+        "agent": "Harmony",
+        "kind": "communication",
+        "payload": {
+          "content": "Harmony planning update: I’m keeping ISSUE-0001::triage as my execution target. Ronna has already deferred triage and will skip, so our coalition plan remains Harmony=ISSUE-0001::triage, Ronna=skip. I’ll wait for execution before committing.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "50e97fb0-ea41-4a3f-aac9-064f7550aa6a",
+        "ts": 1777245629.9095447,
+        "agent": "Ronna",
+        "kind": "communication",
+        "payload": {
+          "content": "Ronna planning update: I’m aligned with Harmony’s plan and will skip at execution so we avoid duplicating ISSUE-0001::triage. I won’t take any infrastructure task because my private costs are much higher than triage. Coalition plan remains Harmony=ISSUE-0001::triage, Ronna=skip.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      }
+    ]
+  }
+]
