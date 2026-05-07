@@ -1,0 +1,1298 @@
+[
+  {
+    "blackboard_id": "0",
+    "participants": [
+      "Aurora Industries",
+      "Beacon Works",
+      "Cascade Labs"
+    ],
+    "events": [
+      {
+        "blackboard_id": 0,
+        "id": "0e4b5150-f950-41a0-9db3-cd8ba8282a53",
+        "ts": 1767928882.8039684,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "Assign machines to shared renewable sources across 24h to minimise main-grid usage.\n\nThis blackboard is a private communication channel.\nParticipants: Aurora Industries, Beacon Works, Cascade Labs"
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ae7109d0-9e41-4390-a2c4-ab78bfa5bbc3",
+        "ts": 1767928899.4338663,
+        "agent": "Aurora Industries",
+        "kind": "communication",
+        "payload": {
+          "content": "Aurora Industries plan: 08–13 2 kW → Solar; 17–24 4–6 kW evening block → Geothermal. Cascade Labs, please share your peak windows so we can stagger loads and avoid overflow.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b1630898-adcc-4ed1-b5a2-c29750a2e859",
+        "ts": 1767928935.1712592,
+        "agent": "Cascade Labs",
+        "kind": "communication",
+        "payload": {
+          "content": "Cascade Labs here. My six machines run in these windows (all loads flat):\n\n- machine_011 (Refrig.): 21–23  4.9 kW\n- machine_012 (EV): 18–24  1.4 kW\n- machine_013 (Server): 19–23  2.1 kW\n- machine_014 (Refrig.): 06–08  2.6 kW\n- machine_015 (Assembly): 05–11  1.0 kW\n- machine_016 (EV): 15–17  5.9 kW\n\nProvisional plan (open to adjustment):\n\n1. 05–08 block (Assembly 1 kW + early-morning Refrigeration 2.6 kW)\n   – Geothermal has 2.2–5.6 kW free then; I'll aim here.\n\n2. 15–17 block (EV charger 5.9 kW)\n   – Solar gives 0–1.4 kW, too small.\n   – Geothermal still carries 2.3–2.4 kW; I'll request 5.9 kW from Geothermal and ask others to leave head-room.\n\n3. 18–24 block (EV 1.4 kW + Server 2.1 kW + late Refrigeration 4.9 kW)\n   – Solar at 18 h is only 0.1 kW, but 19–21 h offers 0.7–1.4 kW.\n   – Geothermal rises to 4.6–6.3 kW 19–21 h and 6.0–8.2 kW 21–23 h.\n   – I can place the 1.4 kW EV on Solar 18–24 and the 2.1 kW Server on Solar 19–21 (fits), while the 4.9 kW Refrigeration goes to Geothermal 21–23.\n\nAurora, you asked for my peaks: the two big ones are 15–17 (5.9 kW) and 21–23 (4.9 kW). If you can keep your 17–24 \"evening block\" on Geothermal under ~3 kW in hours 21–23, we should stay within the 6–8 kW Geothermal capacity and avoid overflow. Let me know if this split works or if we should reshuffle.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "cd480ed4-2657-4e60-a9e9-2664d133c1f9",
+        "ts": 1767928957.5038044,
+        "agent": "Aurora Industries",
+        "kind": "communication",
+        "payload": {
+          "content": "Cascade Labs, thanks for the detailed breakdown. Your plan looks solid - using Geothermal for your 15-17 block (5.9 kW) and 21-23 block (4.9 kW) makes sense given Solar's limited capacity then.\n\nLooking at the evening overlap: I'll have 6.7 kW on Geothermal 18-20 (refrig+HVAC+water heater), then 4.4 kW 20-22 (refrig+HVAC), then 1.4 kW 22-24 (late refrig). With your 4.9 kW 21-23, we'd peak at ~6.3 kW 21-22 and ~6.3 kW 22-23 against Geothermal's 6.0-8.2 kW capacity - should be tight but workable.\n\nTo give more headroom, I could shift my 1.4 kW late refrigeration to run 20-24 on Solar instead (Solar has 0.7-1.4 kW 19-21, then 0.1-0.2 kW 22-24). This would reduce our Geothermal overlap. Thoughts?",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "4500da3e-683b-40f5-89ac-ccb7446f00b5",
+        "ts": 1767929175.6455393,
+        "agent": "Beacon Works",
+        "kind": "communication",
+        "payload": {
+          "content": "Beacon Works update for coordination:\n\nMy morning loads:\n- 05–09: Server rack 2.7 kW + Kiln 3.6 kW = 6.3 kW total\n- 08–12: Lighting bank 2.3 kW  \n- 09–14: Refrigeration chain 2.1 kW + Assembly line 2.0 kW = 4.1 kW total\n\nProposed assignments:\n- 05–09: My 6.3 kW → Geothermal (will slightly overflow 06–08 unless Cascade can shift their 2.6 kW refrigeration to Solar 06–08)\n- 08–12: My 2.3 kW lighting → Geothermal to avoid Solar conflict with Aurora's 2 kW block\n- 09–14: Split my 4.1 kW - 2.1 kW refrigeration → Solar, 2.0 kW assembly → Geothermal\n\nEvening: My machines finish by 14, so no evening conflicts. Aurora and Cascade - your current 21–23 Geothermal total (6.3 + 4.9 = 11.2 kW) exceeds 8.2 kW capacity. Need to shift some evening load to Solar or other hours.\n\nCascade - can you move your 06–08 refrigeration to Solar? Aurora - can you shift some evening load to reduce 21–23 overlap?",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "eaf51e6f-706c-4db6-8251-4b44e5064d53",
+        "ts": 1767929184.4478416,
+        "agent": "Cascade Labs",
+        "kind": "communication",
+        "payload": {
+          "content": "Beacon Works - thanks for flagging the 21-23 overflow. You're absolutely right: Aurora's 6.3 kW + my 4.9 kW = 11.2 kW vs 8.2 kW capacity is a problem.\n\nRe: your morning request: Unfortunately I can't move my 06-08 refrigeration (2.6 kW) to Solar - Solar only offers 0.0-0.3 kW then, nowhere near enough. My 06-08 block must stay on Geothermal.\n\nFor the 21-23 evening crisis, here's my revised proposal:\n- I'll shift my 4.9 kW late refrigeration to run 20-24 on Solar instead\n- Solar has 0.7-1.4 kW 19-21, then drops to 0.1-0.2 kW 22-24\n- This means partial coverage: I can get ~1.4 kW from Solar 21-22, but still need 3.5 kW from Geothermal 21-22, and full 4.9 kW from Geothermal 22-23\n\nThis reduces but doesn't eliminate the overflow. Aurora - can you shift any of your evening load? Your 1.4 kW late refrigeration could potentially move to Solar 20-24 as you suggested, but we'd still need more reduction.\n\nAlternative: could we stagger our high-draw evening machines to run at different times?",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "59ceb442-ee3d-49b6-83a2-a847f692ac4d",
+        "ts": 1767929194.147197,
+        "agent": "Cascade Labs",
+        "kind": "communication",
+        "payload": {
+          "content": "Cascade Labs here with a coordination update on our evening overflow issue:\n\nBeacon Works correctly identified that Aurora Industries (6.3 kW) + Cascade Labs (4.9 kW) = 11.2 kW vs 8.2 kW Geothermal capacity in 21-23 hours.\n\nMy proposed solution:\n1. I'll shift my 4.9 kW late refrigeration to Solar 20-24 (can get ~1.4 kW coverage 21-22, rest from Geothermal)\n2. This reduces but doesn't eliminate overflow\n3. Aurora - can you shift more of your evening block? Your 1.4 kW late refrigeration could move to Solar as you suggested\n\nStill need more reduction though. Open to other suggestions - could we stagger timing or find other source options?\n\nMorning update: My 06-08 refrigeration (2.6 kW) must stay on Geothermal - Solar has insufficient capacity then.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1bcfc191-20ca-4f27-81b8-de131f568cd8",
+        "ts": 1767929202.3748229,
+        "agent": "Aurora Industries",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_source",
+          "action_params": {
+            "action": "assign_source",
+            "machine_id": "machine_003",
+            "source_id": "src_Solar"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Aurora Industries",
+              "machine": {
+                "id": "machine_003",
+                "label": "Refrigeration chain",
+                "window": [
+                  8,
+                  13
+                ],
+                "power": 2.0315959570521906
+              },
+              "source_id": "src_Solar",
+              "total_assigned": 1,
+              "remaining_machines": 15,
+              "state_updates": {
+                "assignment": {
+                  "machine_003": "src_Solar"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a3f715ef-5b40-4c0a-b051-141e378af793",
+        "ts": 1767929202.3750048,
+        "agent": "Aurora Industries",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_source",
+          "action_params": {
+            "action": "assign_source",
+            "machine_id": "machine_002",
+            "source_id": "src_Geothermal"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Aurora Industries",
+              "machine": {
+                "id": "machine_002",
+                "label": "Refrigeration chain",
+                "window": [
+                  17,
+                  21
+                ],
+                "power": 2.408939148013406
+              },
+              "source_id": "src_Geothermal",
+              "total_assigned": 2,
+              "remaining_machines": 14,
+              "state_updates": {
+                "assignment": {
+                  "machine_003": "src_Solar",
+                  "machine_002": "src_Geothermal"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "72ca8338-0297-4050-8918-537e595f8f56",
+        "ts": 1767929202.3751411,
+        "agent": "Aurora Industries",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_source",
+          "action_params": {
+            "action": "assign_source",
+            "machine_id": "machine_005",
+            "source_id": "src_Geothermal"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Aurora Industries",
+              "machine": {
+                "id": "machine_005",
+                "label": "HVAC unit",
+                "window": [
+                  17,
+                  22
+                ],
+                "power": 2.0379472285591635
+              },
+              "source_id": "src_Geothermal",
+              "total_assigned": 3,
+              "remaining_machines": 13,
+              "state_updates": {
+                "assignment": {
+                  "machine_003": "src_Solar",
+                  "machine_002": "src_Geothermal",
+                  "machine_005": "src_Geothermal"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ad6451c5-43da-45fd-84be-2f0882f2a690",
+        "ts": 1767929202.3752737,
+        "agent": "Aurora Industries",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_source",
+          "action_params": {
+            "action": "assign_source",
+            "machine_id": "machine_001",
+            "source_id": "src_Geothermal"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Aurora Industries",
+              "machine": {
+                "id": "machine_001",
+                "label": "Water heater",
+                "window": [
+                  18,
+                  22
+                ],
+                "power": 2.3280368899452464
+              },
+              "source_id": "src_Geothermal",
+              "total_assigned": 4,
+              "remaining_machines": 12,
+              "state_updates": {
+                "assignment": {
+                  "machine_003": "src_Solar",
+                  "machine_002": "src_Geothermal",
+                  "machine_005": "src_Geothermal",
+                  "machine_001": "src_Geothermal"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "90868da4-0791-4fcd-b08e-24f9e32fe796",
+        "ts": 1767929202.37541,
+        "agent": "Aurora Industries",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_source",
+          "action_params": {
+            "action": "assign_source",
+            "machine_id": "machine_004",
+            "source_id": "src_Solar"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Aurora Industries",
+              "machine": {
+                "id": "machine_004",
+                "label": "Refrigeration chain",
+                "window": [
+                  20,
+                  24
+                ],
+                "power": 1.357298785159898
+              },
+              "source_id": "src_Solar",
+              "total_assigned": 5,
+              "remaining_machines": 11,
+              "state_updates": {
+                "assignment": {
+                  "machine_003": "src_Solar",
+                  "machine_002": "src_Geothermal",
+                  "machine_005": "src_Geothermal",
+                  "machine_001": "src_Geothermal",
+                  "machine_004": "src_Solar"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "7fb22ed5-d282-4a8d-8090-da094cf4ff94",
+        "ts": 1767929216.6568844,
+        "agent": "Beacon Works",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_source",
+          "action_params": {
+            "action": "assign_source",
+            "machine_id": "machine_008",
+            "source_id": "src_Geothermal"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Beacon Works",
+              "machine": {
+                "id": "machine_008",
+                "label": "Server rack",
+                "window": [
+                  5,
+                  9
+                ],
+                "power": 2.7398225049223224
+              },
+              "source_id": "src_Geothermal",
+              "total_assigned": 6,
+              "remaining_machines": 10,
+              "state_updates": {
+                "assignment": {
+                  "machine_003": "src_Solar",
+                  "machine_002": "src_Geothermal",
+                  "machine_005": "src_Geothermal",
+                  "machine_001": "src_Geothermal",
+                  "machine_004": "src_Solar",
+                  "machine_008": "src_Geothermal"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "21cc9b83-5411-47d5-bcb0-10ae0d133f73",
+        "ts": 1767929216.6570299,
+        "agent": "Beacon Works",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_source",
+          "action_params": {
+            "action": "assign_source",
+            "machine_id": "machine_010",
+            "source_id": "src_Geothermal"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Beacon Works",
+              "machine": {
+                "id": "machine_010",
+                "label": "Kiln",
+                "window": [
+                  6,
+                  9
+                ],
+                "power": 3.564320750276822
+              },
+              "source_id": "src_Geothermal",
+              "total_assigned": 7,
+              "remaining_machines": 9,
+              "state_updates": {
+                "assignment": {
+                  "machine_003": "src_Solar",
+                  "machine_002": "src_Geothermal",
+                  "machine_005": "src_Geothermal",
+                  "machine_001": "src_Geothermal",
+                  "machine_004": "src_Solar",
+                  "machine_008": "src_Geothermal",
+                  "machine_010": "src_Geothermal"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "cd86d9bd-fcbf-4d4a-9857-27e86a55f714",
+        "ts": 1767929216.6571162,
+        "agent": "Beacon Works",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_source",
+          "action_params": {
+            "action": "assign_source",
+            "machine_id": "machine_007",
+            "source_id": "src_Geothermal"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Beacon Works",
+              "machine": {
+                "id": "machine_007",
+                "label": "Lighting bank",
+                "window": [
+                  8,
+                  12
+                ],
+                "power": 2.2881261459824715
+              },
+              "source_id": "src_Geothermal",
+              "total_assigned": 8,
+              "remaining_machines": 8,
+              "state_updates": {
+                "assignment": {
+                  "machine_003": "src_Solar",
+                  "machine_002": "src_Geothermal",
+                  "machine_005": "src_Geothermal",
+                  "machine_001": "src_Geothermal",
+                  "machine_004": "src_Solar",
+                  "machine_008": "src_Geothermal",
+                  "machine_010": "src_Geothermal",
+                  "machine_007": "src_Geothermal"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "72aaa9ef-0796-4681-9367-7689b7c0f215",
+        "ts": 1767929216.657241,
+        "agent": "Beacon Works",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_source",
+          "action_params": {
+            "action": "assign_source",
+            "machine_id": "machine_009",
+            "source_id": "src_Geothermal"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Beacon Works",
+              "machine": {
+                "id": "machine_009",
+                "label": "Assembly line",
+                "window": [
+                  10,
+                  14
+                ],
+                "power": 2.036278860894713
+              },
+              "source_id": "src_Geothermal",
+              "total_assigned": 9,
+              "remaining_machines": 7,
+              "state_updates": {
+                "assignment": {
+                  "machine_003": "src_Solar",
+                  "machine_002": "src_Geothermal",
+                  "machine_005": "src_Geothermal",
+                  "machine_001": "src_Geothermal",
+                  "machine_004": "src_Solar",
+                  "machine_008": "src_Geothermal",
+                  "machine_010": "src_Geothermal",
+                  "machine_007": "src_Geothermal",
+                  "machine_009": "src_Geothermal"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "565e83df-baf9-485c-ac96-e806536edf66",
+        "ts": 1767929221.0184345,
+        "agent": "Cascade Labs",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_source",
+          "action_params": {
+            "action": "assign_source",
+            "machine_id": "machine_014",
+            "source_id": "src_Geothermal"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Cascade Labs",
+              "machine": {
+                "id": "machine_014",
+                "label": "Refrigeration chain",
+                "window": [
+                  6,
+                  8
+                ],
+                "power": 2.640092271162516
+              },
+              "source_id": "src_Geothermal",
+              "total_assigned": 10,
+              "remaining_machines": 6,
+              "state_updates": {
+                "assignment": {
+                  "machine_003": "src_Solar",
+                  "machine_002": "src_Geothermal",
+                  "machine_005": "src_Geothermal",
+                  "machine_001": "src_Geothermal",
+                  "machine_004": "src_Solar",
+                  "machine_008": "src_Geothermal",
+                  "machine_010": "src_Geothermal",
+                  "machine_007": "src_Geothermal",
+                  "machine_009": "src_Geothermal",
+                  "machine_014": "src_Geothermal"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "aa08b96c-fa67-4939-a101-9e4da4050e62",
+        "ts": 1767929221.0187156,
+        "agent": "Cascade Labs",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_source",
+          "action_params": {
+            "action": "assign_source",
+            "machine_id": "machine_015",
+            "source_id": "src_Geothermal"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Cascade Labs",
+              "machine": {
+                "id": "machine_015",
+                "label": "Assembly line",
+                "window": [
+                  5,
+                  11
+                ],
+                "power": 0.9587175524135146
+              },
+              "source_id": "src_Geothermal",
+              "total_assigned": 11,
+              "remaining_machines": 5,
+              "state_updates": {
+                "assignment": {
+                  "machine_003": "src_Solar",
+                  "machine_002": "src_Geothermal",
+                  "machine_005": "src_Geothermal",
+                  "machine_001": "src_Geothermal",
+                  "machine_004": "src_Solar",
+                  "machine_008": "src_Geothermal",
+                  "machine_010": "src_Geothermal",
+                  "machine_007": "src_Geothermal",
+                  "machine_009": "src_Geothermal",
+                  "machine_014": "src_Geothermal",
+                  "machine_015": "src_Geothermal"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "981f96c7-7c05-4e51-bcdb-4470ea9c81f7",
+        "ts": 1767929221.0189042,
+        "agent": "Cascade Labs",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_source",
+          "action_params": {
+            "action": "assign_source",
+            "machine_id": "machine_016",
+            "source_id": "src_Geothermal"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Cascade Labs",
+              "machine": {
+                "id": "machine_016",
+                "label": "EV charger",
+                "window": [
+                  15,
+                  17
+                ],
+                "power": 5.919039822406846
+              },
+              "source_id": "src_Geothermal",
+              "total_assigned": 12,
+              "remaining_machines": 4,
+              "state_updates": {
+                "assignment": {
+                  "machine_003": "src_Solar",
+                  "machine_002": "src_Geothermal",
+                  "machine_005": "src_Geothermal",
+                  "machine_001": "src_Geothermal",
+                  "machine_004": "src_Solar",
+                  "machine_008": "src_Geothermal",
+                  "machine_010": "src_Geothermal",
+                  "machine_007": "src_Geothermal",
+                  "machine_009": "src_Geothermal",
+                  "machine_014": "src_Geothermal",
+                  "machine_015": "src_Geothermal",
+                  "machine_016": "src_Geothermal"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "828cfd49-3f33-4c3a-926f-4f0e032ea6a3",
+        "ts": 1767929221.019087,
+        "agent": "Cascade Labs",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_source",
+          "action_params": {
+            "action": "assign_source",
+            "machine_id": "machine_012",
+            "source_id": "src_Solar"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Cascade Labs",
+              "machine": {
+                "id": "machine_012",
+                "label": "EV charger",
+                "window": [
+                  18,
+                  24
+                ],
+                "power": 1.35527358120239
+              },
+              "source_id": "src_Solar",
+              "total_assigned": 13,
+              "remaining_machines": 3,
+              "state_updates": {
+                "assignment": {
+                  "machine_003": "src_Solar",
+                  "machine_002": "src_Geothermal",
+                  "machine_005": "src_Geothermal",
+                  "machine_001": "src_Geothermal",
+                  "machine_004": "src_Solar",
+                  "machine_008": "src_Geothermal",
+                  "machine_010": "src_Geothermal",
+                  "machine_007": "src_Geothermal",
+                  "machine_009": "src_Geothermal",
+                  "machine_014": "src_Geothermal",
+                  "machine_015": "src_Geothermal",
+                  "machine_016": "src_Geothermal",
+                  "machine_012": "src_Solar"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8427e41a-33ca-4103-b09d-504daebd8ee7",
+        "ts": 1767929221.019272,
+        "agent": "Cascade Labs",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_source",
+          "action_params": {
+            "action": "assign_source",
+            "machine_id": "machine_013",
+            "source_id": "src_Geothermal"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Cascade Labs",
+              "machine": {
+                "id": "machine_013",
+                "label": "Server rack",
+                "window": [
+                  19,
+                  23
+                ],
+                "power": 2.1064156409309023
+              },
+              "source_id": "src_Geothermal",
+              "total_assigned": 14,
+              "remaining_machines": 2,
+              "state_updates": {
+                "assignment": {
+                  "machine_003": "src_Solar",
+                  "machine_002": "src_Geothermal",
+                  "machine_005": "src_Geothermal",
+                  "machine_001": "src_Geothermal",
+                  "machine_004": "src_Solar",
+                  "machine_008": "src_Geothermal",
+                  "machine_010": "src_Geothermal",
+                  "machine_007": "src_Geothermal",
+                  "machine_009": "src_Geothermal",
+                  "machine_014": "src_Geothermal",
+                  "machine_015": "src_Geothermal",
+                  "machine_016": "src_Geothermal",
+                  "machine_012": "src_Solar",
+                  "machine_013": "src_Geothermal"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "de1e6086-04c4-4fe3-90c9-e63c1a76d806",
+        "ts": 1767929221.0193853,
+        "agent": "Cascade Labs",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_source",
+          "action_params": {
+            "action": "assign_source",
+            "machine_id": "machine_011",
+            "source_id": "src_Geothermal"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Cascade Labs",
+              "machine": {
+                "id": "machine_011",
+                "label": "Refrigeration chain",
+                "window": [
+                  21,
+                  23
+                ],
+                "power": 4.921413702268403
+              },
+              "source_id": "src_Geothermal",
+              "total_assigned": 15,
+              "remaining_machines": 1,
+              "state_updates": {
+                "assignment": {
+                  "machine_003": "src_Solar",
+                  "machine_002": "src_Geothermal",
+                  "machine_005": "src_Geothermal",
+                  "machine_001": "src_Geothermal",
+                  "machine_004": "src_Solar",
+                  "machine_008": "src_Geothermal",
+                  "machine_010": "src_Geothermal",
+                  "machine_007": "src_Geothermal",
+                  "machine_009": "src_Geothermal",
+                  "machine_014": "src_Geothermal",
+                  "machine_015": "src_Geothermal",
+                  "machine_016": "src_Geothermal",
+                  "machine_012": "src_Solar",
+                  "machine_013": "src_Geothermal",
+                  "machine_011": "src_Geothermal"
+                }
+              },
+              "joint_reward": -14.401109608302782
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  },
+  {
+    "blackboard_id": "1",
+    "participants": [
+      "Aurora Industries",
+      "Beacon Works"
+    ],
+    "events": [
+      {
+        "blackboard_id": 1,
+        "id": "d0018161-2c71-4f02-be43-069bb7714702",
+        "ts": 1767928882.8039892,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "Assign machines to shared renewable sources across 24h to minimise main-grid usage.\n\nThis blackboard is a private communication channel.\nParticipants: Aurora Industries, Beacon Works"
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "fb20e828-7fe7-46a7-883c-cba1fa977f2e",
+        "ts": 1767928892.6429029,
+        "agent": "Aurora Industries",
+        "kind": "communication",
+        "payload": {
+          "content": "Beacon Works, here’s my tentative plan so we can mesh loads:\n\nMorning (08–13): my 2 kW refrig chain → Solar (2.4 kW available).  \nEvening (17–22): my 4.4 kW (refrig+HVAC) + 2.3 kW water-heater → Geothermal (capacity rises to 8.2 kW at 21).  \nLate night (20–24): my 1.4 kW refrig chain → Geothermal.\n\nSolar 11–13 leaves 0.4 kW headroom for you; Geothermal 17–23 has ~3–4 kW spare.  \nPlease share your windows/loads so we can confirm no overlap overflows.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "6cb15497-268b-48c6-b3d4-fd4f2d3f76fe",
+        "ts": 1767928949.804231,
+        "agent": "Aurora Industries",
+        "kind": "communication",
+        "payload": {
+          "content": "Beacon Works, update after Cascade Labs response: They've confirmed big evening peaks - 5.9 kW (15-17) and 4.9 kW (21-23). They're using Geothermal for their 15-17 block and requesting we keep our 17-24 evening loads under ~3 kW during 21-23 hours to stay within Geothermal's 6-8 kW capacity. \n\nMy current plan: 2 kW morning refrig → Solar (08-13), 4.4 kW evening refrig+HVAC → Geothermal (17-22), 2.3 kW water heater → Geothermal (18-22), 1.4 kW late refrig → Geothermal (20-24). This puts me at 4.4 kW 17-18, 6.7 kW 18-20, 4.4 kW 20-22, and 1.4 kW 22-24 on Geothermal.\n\nWith Cascade's 4.9 kW 21-23, we'd hit ~6.3 kW total at 21-22 and ~6.3 kW at 22-23, leaving minimal headroom. Should I shift some of my evening load to Solar or adjust timing? What's your evening load looking like?",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "45b2ee8b-a2f8-412e-8e72-26e69fec6d6e",
+        "ts": 1767929164.3185298,
+        "agent": "Beacon Works",
+        "kind": "communication",
+        "payload": {
+          "content": "Beacon Works here. Let me add my loads to the mix so we can coordinate properly.\n\nMy machines:\n- Server rack (machine_008): 2.7 kW, window [5, 9)\n- Kiln (machine_010): 3.6 kW, window [6, 9)  \n- Lighting bank (machine_007): 2.3 kW, window [8, 12)\n- Refrigeration chain (machine_006): 2.1 kW, window [9, 14)\n- Assembly line (machine_009): 2.0 kW, window [10, 14)\n\nKey overlaps with existing plans:\n- 05–09: My server (2.7 kW) + kiln (3.6 kW) = 6.3 kW total. Geothermal has 0–5.6 kW free then.\n- 08–12: My lighting (2.3 kW) overlaps Aurora’s 2 kW Solar block. Solar capacity 08–12 is only 2.4 kW, so we’d need to stagger.\n- 09–14: My refrigeration (2.1 kW) + assembly (2.0 kW) = 4.1 kW. Solar 09–13 has 2.8–3.3 kW, so partial fit.\n\nProposed coalition-friendly plan:\n1. 05–09 block: Put my 6.3 kW (server + kiln) on Geothermal. Geothermal capacity 05–09 is 0–5.6 kW, so this will slightly overflow 06–08 unless Cascade shifts their 2.6 kW refrigeration elsewhere. Cascade, can you move your 06–08 refrigeration to Solar instead? Solar has 0.4–2.4 kW 06–08, which fits your 2.6 kW if you split or shift timing.\n\n2. 08–12 block: Aurora, if you keep your 2 kW on Solar 08–13, I’ll move my 2.3 kW lighting to Geothermal 08–12 (capacity 2.9–5.6 kW) to avoid Solar overflow.\n\n3. 09–14 block: My 4.1 kW (refrig + assembly) can go to Solar 09–13 (capacity 2.8–3.3 kW) with 1 kW overflow, or split: 2.1 kW refrigeration → Solar, 2.0 kW assembly → Geothermal. Preference?\n\n4. Evening: My machines finish by 14, so no conflict with your 15–24 blocks. Aurora, your 6.3 kW 21–22 + Cascade’s 4.9 kW = 11.2 kW vs Geothermal’s 6–8 kW capacity is impossible without overflow. You must shift some evening load to Solar or later hours.\n\nAurora, suggest you move your 1.4 kW late refrigeration to Solar 20–24 (0.1–1.4 kW capacity) and shift your 2.3 kV water heater earlier or later to reduce 21–23 overlap. Cascade’s 4.9 kW 21–23 is immovable, so we need to keep Geothermal 21–23 total under 8.2 kW.\n\nThoughts?",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "e4a68ec9-7a6a-4289-9559-3fc971e6e26e",
+        "ts": 1767929202.3748348,
+        "agent": "Aurora Industries",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_source",
+          "action_params": {
+            "action": "assign_source",
+            "machine_id": "machine_003",
+            "source_id": "src_Solar"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Aurora Industries",
+              "machine": {
+                "id": "machine_003",
+                "label": "Refrigeration chain",
+                "window": [
+                  8,
+                  13
+                ],
+                "power": 2.0315959570521906
+              },
+              "source_id": "src_Solar",
+              "total_assigned": 1,
+              "remaining_machines": 15,
+              "state_updates": {
+                "assignment": {
+                  "machine_003": "src_Solar"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "ba8f6b68-3cc9-4dc6-92cb-b45ef56e1edc",
+        "ts": 1767929202.3750134,
+        "agent": "Aurora Industries",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_source",
+          "action_params": {
+            "action": "assign_source",
+            "machine_id": "machine_002",
+            "source_id": "src_Geothermal"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Aurora Industries",
+              "machine": {
+                "id": "machine_002",
+                "label": "Refrigeration chain",
+                "window": [
+                  17,
+                  21
+                ],
+                "power": 2.408939148013406
+              },
+              "source_id": "src_Geothermal",
+              "total_assigned": 2,
+              "remaining_machines": 14,
+              "state_updates": {
+                "assignment": {
+                  "machine_003": "src_Solar",
+                  "machine_002": "src_Geothermal"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "ef3c1190-db6e-4dc9-bdfc-b2f1e991e22e",
+        "ts": 1767929202.3751493,
+        "agent": "Aurora Industries",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_source",
+          "action_params": {
+            "action": "assign_source",
+            "machine_id": "machine_005",
+            "source_id": "src_Geothermal"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Aurora Industries",
+              "machine": {
+                "id": "machine_005",
+                "label": "HVAC unit",
+                "window": [
+                  17,
+                  22
+                ],
+                "power": 2.0379472285591635
+              },
+              "source_id": "src_Geothermal",
+              "total_assigned": 3,
+              "remaining_machines": 13,
+              "state_updates": {
+                "assignment": {
+                  "machine_003": "src_Solar",
+                  "machine_002": "src_Geothermal",
+                  "machine_005": "src_Geothermal"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "037f99fe-0c54-4607-9b92-4198f1d6a064",
+        "ts": 1767929202.3752825,
+        "agent": "Aurora Industries",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_source",
+          "action_params": {
+            "action": "assign_source",
+            "machine_id": "machine_001",
+            "source_id": "src_Geothermal"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Aurora Industries",
+              "machine": {
+                "id": "machine_001",
+                "label": "Water heater",
+                "window": [
+                  18,
+                  22
+                ],
+                "power": 2.3280368899452464
+              },
+              "source_id": "src_Geothermal",
+              "total_assigned": 4,
+              "remaining_machines": 12,
+              "state_updates": {
+                "assignment": {
+                  "machine_003": "src_Solar",
+                  "machine_002": "src_Geothermal",
+                  "machine_005": "src_Geothermal",
+                  "machine_001": "src_Geothermal"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "a43bbf52-9ca7-4b89-a2f3-0b0aca8a794c",
+        "ts": 1767929202.3754246,
+        "agent": "Aurora Industries",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_source",
+          "action_params": {
+            "action": "assign_source",
+            "machine_id": "machine_004",
+            "source_id": "src_Solar"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Aurora Industries",
+              "machine": {
+                "id": "machine_004",
+                "label": "Refrigeration chain",
+                "window": [
+                  20,
+                  24
+                ],
+                "power": 1.357298785159898
+              },
+              "source_id": "src_Solar",
+              "total_assigned": 5,
+              "remaining_machines": 11,
+              "state_updates": {
+                "assignment": {
+                  "machine_003": "src_Solar",
+                  "machine_002": "src_Geothermal",
+                  "machine_005": "src_Geothermal",
+                  "machine_001": "src_Geothermal",
+                  "machine_004": "src_Solar"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "689c7cdc-50fa-4b75-83db-67c854412c74",
+        "ts": 1767929216.6568916,
+        "agent": "Beacon Works",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_source",
+          "action_params": {
+            "action": "assign_source",
+            "machine_id": "machine_008",
+            "source_id": "src_Geothermal"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Beacon Works",
+              "machine": {
+                "id": "machine_008",
+                "label": "Server rack",
+                "window": [
+                  5,
+                  9
+                ],
+                "power": 2.7398225049223224
+              },
+              "source_id": "src_Geothermal",
+              "total_assigned": 6,
+              "remaining_machines": 10,
+              "state_updates": {
+                "assignment": {
+                  "machine_003": "src_Solar",
+                  "machine_002": "src_Geothermal",
+                  "machine_005": "src_Geothermal",
+                  "machine_001": "src_Geothermal",
+                  "machine_004": "src_Solar",
+                  "machine_008": "src_Geothermal"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "8de01e9c-fd3f-414c-a7ec-befc3f16c4c7",
+        "ts": 1767929216.6570346,
+        "agent": "Beacon Works",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_source",
+          "action_params": {
+            "action": "assign_source",
+            "machine_id": "machine_010",
+            "source_id": "src_Geothermal"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Beacon Works",
+              "machine": {
+                "id": "machine_010",
+                "label": "Kiln",
+                "window": [
+                  6,
+                  9
+                ],
+                "power": 3.564320750276822
+              },
+              "source_id": "src_Geothermal",
+              "total_assigned": 7,
+              "remaining_machines": 9,
+              "state_updates": {
+                "assignment": {
+                  "machine_003": "src_Solar",
+                  "machine_002": "src_Geothermal",
+                  "machine_005": "src_Geothermal",
+                  "machine_001": "src_Geothermal",
+                  "machine_004": "src_Solar",
+                  "machine_008": "src_Geothermal",
+                  "machine_010": "src_Geothermal"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "9eb2c342-1ec0-44ee-9336-a1d0d59adf01",
+        "ts": 1767929216.6571207,
+        "agent": "Beacon Works",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_source",
+          "action_params": {
+            "action": "assign_source",
+            "machine_id": "machine_007",
+            "source_id": "src_Geothermal"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Beacon Works",
+              "machine": {
+                "id": "machine_007",
+                "label": "Lighting bank",
+                "window": [
+                  8,
+                  12
+                ],
+                "power": 2.2881261459824715
+              },
+              "source_id": "src_Geothermal",
+              "total_assigned": 8,
+              "remaining_machines": 8,
+              "state_updates": {
+                "assignment": {
+                  "machine_003": "src_Solar",
+                  "machine_002": "src_Geothermal",
+                  "machine_005": "src_Geothermal",
+                  "machine_001": "src_Geothermal",
+                  "machine_004": "src_Solar",
+                  "machine_008": "src_Geothermal",
+                  "machine_010": "src_Geothermal",
+                  "machine_007": "src_Geothermal"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "f853f6db-6c74-472e-a0e6-0b0f8e940c93",
+        "ts": 1767929216.6572456,
+        "agent": "Beacon Works",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_source",
+          "action_params": {
+            "action": "assign_source",
+            "machine_id": "machine_009",
+            "source_id": "src_Geothermal"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Beacon Works",
+              "machine": {
+                "id": "machine_009",
+                "label": "Assembly line",
+                "window": [
+                  10,
+                  14
+                ],
+                "power": 2.036278860894713
+              },
+              "source_id": "src_Geothermal",
+              "total_assigned": 9,
+              "remaining_machines": 7,
+              "state_updates": {
+                "assignment": {
+                  "machine_003": "src_Solar",
+                  "machine_002": "src_Geothermal",
+                  "machine_005": "src_Geothermal",
+                  "machine_001": "src_Geothermal",
+                  "machine_004": "src_Solar",
+                  "machine_008": "src_Geothermal",
+                  "machine_010": "src_Geothermal",
+                  "machine_007": "src_Geothermal",
+                  "machine_009": "src_Geothermal"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  }
+]

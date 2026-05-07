@@ -1,0 +1,694 @@
+[
+  {
+    "blackboard_id": "0",
+    "participants": [
+      "Brittny",
+      "Cordia",
+      "Deja",
+      "Jamaal",
+      "Kaci",
+      "Margery"
+    ],
+    "template": {},
+    "events": [
+      {
+        "blackboard_id": 0,
+        "id": "1f1ca9e1-7563-47fc-bd93-1ccd71cd34e6",
+        "ts": 1777221127.5161889,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Brittny, Cordia, Deja, Jamaal, Kaci, Margery"
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b2829224-f7db-4ee0-8206-608347362233",
+        "ts": 1777221138.405342,
+        "agent": "Cordia",
+        "kind": "communication",
+        "payload": {
+          "content": "Cordia here. Planning phase - I'm on blackboard 1 with Jamaal. My top skill is mobile-development (0.68). Looking at available tasks, ISSUE-0001 tasks are all high priority with mobile-development tag which matches my skill. My lowest cost option is ISSUE-0001::triage at 2.72 cost. Who's planning to take what?",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "2c89a75d-17a9-447c-8240-b5c21c929853",
+        "ts": 1777221157.7147481,
+        "agent": "Jamaal",
+        "kind": "communication",
+        "payload": {
+          "content": "Jamaal checking in. Planning my task assignment:\n\nMy skills: data-science (0.96), devops (0.76)\nAvailability: 6 hours\n\nI'm planning to take ISSUE-0001::review (cost 2.58, high priority, tags: mobile-development, data-science). This aligns with my data-science skill and is high priority.\n\nCordia is planning ISSUE-0001::triage - we're coordinating on blackboard 1.\n\nAnyone else planning to claim ISSUE-0001 tasks? Want to avoid duplicates.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8f8d0e91-0b73-471c-a723-3a42b06e124b",
+        "ts": 1777221168.0892873,
+        "agent": "Kaci",
+        "kind": "communication",
+        "payload": {
+          "content": "Kaci checking in. Planning phase.\n\nMy skills: mobile-development (0.98), devops (0.98)\nAvailability: 7 hours\n\nLooking at available tasks, I'll aim for a high-priority mobile-development task to leverage my top skill. My lowest cost options are:\n- ISSUE-0001::triage (cost 2.03, high priority)\n- ISSUE-0001::review (cost 2.54, high priority)\n- ISSUE-0001::docs (cost 2.54, high priority)\n\nI see Cordia is planning ISSUE-0001::triage and Jamaal is planning ISSUE-0001::review. To avoid duplicates, I'll take ISSUE-0001::docs (cost 2.54, high priority). This uses my mobile-development skill and is high priority.\n\nAnyone else planning to claim ISSUE-0001 tasks? Let's coordinate to avoid duplicates. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "615945cd-5f05-4375-9068-e28c6e759436",
+        "ts": 1777221180.5599353,
+        "agent": "Deja",
+        "kind": "communication",
+        "payload": {
+          "content": "Deja checking in. Planning phase.\n\nMy skills: devops (0.70)\nAvailability: 4.0 hours\n\nLooking at available tasks, my top skill is devops so I'll focus on ISSUE-0002 tasks (devops tag). The ISSUE-0002 tasks are low priority but match my skill well.\n\nMy lowest cost options:\n- ISSUE-0002::review (cost 4.47, low priority, tags: devops, ui-ux-design)\n- ISSUE-0002::test (cost 6.26, low priority)\n- ISSUE-0002::implement (cost 8.94, low priority)\n\nI'll take ISSUE-0002::review - this leverages my devops skill and is within my availability. It's the lowest cost option for me.\n\nCurrent assignments to avoid duplicates:\n- Cordia: ISSUE-0001::triage\n- Jamaal: ISSUE-0001::review\n- Kaci: ISSUE-0001::docs\n- Me: ISSUE-0002::review (planning)\n\nLet me know if anyone else is planning ISSUE-0002 tasks. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f63e04a2-cce2-4545-87a5-f076ffafb0ce",
+        "ts": 1777221199.282486,
+        "agent": "Margery",
+        "kind": "communication",
+        "payload": {
+          "content": "Margery checking in. Planning phase.\n\nMy skills: devops (0.88)\nAvailability: 4.0 hours\n\nI see Deja is planning ISSUE-0002::review. The remaining ISSUE-0002 tasks are:\n- ISSUE-0002::test (cost 5.17, effort 2.8, low priority)\n- ISSUE-0002::implement (cost 7.38, effort 4.0, low priority)\n\nI'll take ISSUE-0002::test - it fits within my 4-hour availability, leverages my devops skill, and is the lowest cost option for me among remaining tasks.\n\nCurrent assignments to avoid duplicates:\n- Cordia: ISSUE-0001::triage\n- Jamaal: ISSUE-0001::review\n- Kaci: ISSUE-0001::docs\n- Deja: ISSUE-0002::review\n- Me: ISSUE-0002::test (planning)\n\nThis covers all ISSUE-0001 tasks and leaves ISSUE-0002::implement available if anyone else wants it. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ccdb753e-e612-444c-bd92-135b4cd18b8e",
+        "ts": 1777221211.3742673,
+        "agent": "Brittny",
+        "kind": "communication",
+        "payload": {
+          "content": "Brittny checking in. Planning phase.\n\nMy skills: data-science (0.91)\nAvailability: 7.0 hours\n\nLooking at remaining tasks after other agents' planned assignments:\n- ISSUE-0001::test (cost 3.78, high priority, tags: mobile-development, data-science)\n- ISSUE-0001::implement (cost 5.41, high priority, tags: mobile-development, data-science)\n- ISSUE-0002::implement (cost 40.00, low priority, tags: devops, ui-ux-design)\n\nMy top skill is data-science, so I'll take ISSUE-0001::test. It matches my data-science skill, is high priority, and has the lowest cost (3.78) among remaining tasks that align with my skills.\n\nCurrent assignments to avoid duplicates:\n- Cordia: ISSUE-0001::triage\n- Jamaal: ISSUE-0001::review\n- Kaci: ISSUE-0001::docs\n- Deja: ISSUE-0002::review\n- Margery: ISSUE-0002::test\n- Me: ISSUE-0001::test (planning)\n\nThis covers all high-priority ISSUE-0001 tasks. ISSUE-0002::implement remains but it's low priority and doesn't match my skills well. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "0cfe5ca5-01ca-482f-b40d-23144a3a894d",
+        "ts": 1777221233.9655461,
+        "agent": "Cordia",
+        "kind": "communication",
+        "payload": {
+          "content": "Cordia confirming my assignment: ISSUE-0001::triage (cost 2.72, high priority). Fits my mobile-development skill and 5-hour availability. Plan is set - 5 high-priority ISSUE-0001 tasks + 2 ISSUE-0002 tasks covered. Ready for execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "2e61352f-2150-4ddb-9c12-33082b814f0e",
+        "ts": 1777221243.534197,
+        "agent": "Jamaal",
+        "kind": "communication",
+        "payload": {
+          "content": "Jamaal confirming my execution assignment: ISSUE-0001::review (cost 2.58, high priority). Tags: mobile-development, data-science. Matches my data-science skill. Plan covers 5 high-priority ISSUE-0001 tasks + 2 ISSUE-0002 tasks. Ready for execution. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "7289f5f0-1d74-469f-953c-e2f3398b5cb0",
+        "ts": 1777221254.618112,
+        "agent": "Kaci",
+        "kind": "communication",
+        "payload": {
+          "content": "Kaci confirming my execution assignment: ISSUE-0001::docs (cost 2.54, high priority). Tags: mobile-development, data-science. Matches my mobile-development skill. Plan is set - all agents have confirmed:\n\n- Cordia: ISSUE-0001::triage\n- Jamaal: ISSUE-0001::review\n- Kaci (me): ISSUE-0001::docs\n- Deja: ISSUE-0002::review\n- Margery: ISSUE-0002::test\n- Brittny: ISSUE-0001::test\n\nThis covers 5 high-priority ISSUE-0001 tasks + 2 ISSUE-0002 tasks. Ready for execution phase. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e8aefc19-663a-4de0-b29f-33aa91dac5ac",
+        "ts": 1777221272.0098965,
+        "agent": "Deja",
+        "kind": "communication",
+        "payload": {
+          "content": "Deja confirming my execution assignment: ISSUE-0002::review (cost 4.47, low priority). Tags: devops, ui-ux-design. Matches my devops skill and fits within my 4-hour availability.\n\nFinal assignment plan:\n- Cordia: ISSUE-0001::triage (high)\n- Jamaal: ISSUE-0001::review (high)\n- Kaci: ISSUE-0001::docs (high)\n- Brittny: ISSUE-0001::test (high)\n- Deja (me): ISSUE-0002::review (low)\n- Margery: ISSUE-0002::test (low)\n\nThis covers 4 high-priority ISSUE-0001 tasks + 2 ISSUE-0002 tasks. ISSUE-0001::implement remains available but doesn't match my skills well (cost would be 30.00). Ready for execution. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "fabef1cd-1a20-42b1-a10a-7bf716a58d2e",
+        "ts": 1777221282.1616404,
+        "agent": "Margery",
+        "kind": "communication",
+        "payload": {
+          "content": "Margery confirming execution assignment: ISSUE-0002::test (cost 5.17, low priority). Tags: devops, ui-ux-design. Matches my devops skill and fits within 4-hour availability. Plan is complete - ready for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "eb949434-8e85-444b-8b91-e703008e8d34",
+        "ts": 1777221287.9441826,
+        "agent": "Margery",
+        "kind": "communication",
+        "payload": {
+          "content": "EXECUTION: Margery claiming ISSUE-0002::test (cost 5.17, low priority). Devops skill match. 4-hour availability fits task effort of 2.8.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e4ce99f4-fb21-4de7-ab2b-b2388c4024b1",
+        "ts": 1777221296.8816242,
+        "agent": "Brittny",
+        "kind": "communication",
+        "payload": {
+          "content": "Brittny confirming execution assignment: ISSUE-0001::test (cost 3.78, high priority). Tags: mobile-development, data-science. Matches my data-science skill (0.91). Plan is complete - ready for execution.\n\nFinal assignment plan:\n- Cordia: ISSUE-0001::triage (high)\n- Jamaal: ISSUE-0001::review (high)\n- Kaci: ISSUE-0001::docs (high)\n- Brittny (me): ISSUE-0001::test (high)\n- Deja: ISSUE-0002::review (low)\n- Margery: ISSUE-0002::test (low)\n\nThis covers 4 high-priority ISSUE-0001 tasks + 2 low-priority ISSUE-0002 tasks. Ready for execution. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "44675e24-ebf7-4434-80bc-ba5a5a168556",
+        "ts": 1777221305.5046246,
+        "agent": "Brittny",
+        "kind": "communication",
+        "payload": {
+          "content": "Brittny ready for execution. Will claim ISSUE-0001::test (cost 3.78, high priority) - aligns with my data-science skill (0.91). All coordination complete. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "18bc2249-3996-4d25-9844-719d02ef2ca1",
+        "ts": 1777221330.4823878,
+        "agent": "Jamaal",
+        "kind": "communication",
+        "payload": {
+          "content": "Jamaal final confirmation - proceeding to execution with ISSUE-0001::review (cost 2.58, high priority). Data-science skill match. All coordination complete.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f52221e3-2878-4709-872f-2b2efeb3d6d1",
+        "ts": 1777221340.7267194,
+        "agent": "Kaci",
+        "kind": "communication",
+        "payload": {
+          "content": "Kaci final confirmation - proceeding to execution with ISSUE-0001::docs (cost 2.54, high priority). Mobile-development skill match. All coordination complete.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "2148f43c-6931-4f88-a541-a138d8863bf3",
+        "ts": 1777221344.5419164,
+        "agent": "Kaci",
+        "kind": "communication",
+        "payload": {
+          "content": "Kaci ready for execution. Will claim ISSUE-0001::docs (cost 2.54, high priority) - aligns with my mobile-development skill (0.98). All coordination complete.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b409fc2f-4be8-4e3d-80df-2f912c1439f8",
+        "ts": 1777221350.2969751,
+        "agent": "Deja",
+        "kind": "communication",
+        "payload": {
+          "content": "Deja executing: claiming ISSUE-0002::review (cost 4.47, low priority). Devops skill match, 4-hour availability fits. Coordination complete - all tasks assigned.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a825f212-3de7-4deb-bb20-ad03bce94023",
+        "ts": 1777221356.8401434,
+        "agent": "Deja",
+        "kind": "communication",
+        "payload": {
+          "content": "Deja ready for execution. Will claim ISSUE-0002::review (cost 4.47, low priority) - aligns with my devops skill (0.70). All coordination complete.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b399533f-4a3b-40ef-8409-fbdf870cb409",
+        "ts": 1777221364.2963412,
+        "agent": "Margery",
+        "kind": "communication",
+        "payload": {
+          "content": "Margery - I already confirmed my execution assignment: ISSUE-0002::test (cost 5.17, low priority). My devops skill matches the task requirements and it fits within my 4-hour availability. All assignments are coordinated - ready to proceed.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9b1fb38a-c897-4f4a-8a8d-572789411071",
+        "ts": 1777221383.3131993,
+        "agent": "Brittny",
+        "kind": "communication",
+        "payload": {
+          "content": "Brittny final confirmation - proceeding to execution with ISSUE-0001::test (cost 3.78, high priority). Tags: mobile-development, data-science. Matches my data-science skill (0.91). All coordination complete - ready for execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b08edf2a-08e2-4014-b43e-cea7ca748b45",
+        "ts": 1777221426.3893447,
+        "agent": "Kaci",
+        "kind": "communication",
+        "payload": {
+          "content": "Kaci confirming final planning decision: ISSUE-0001::docs (cost 2.54, high priority). Tags: mobile-development, data-science. Matches my mobile-development skill (0.98). All assignments coordinated:\n\n- Cordia: ISSUE-0001::triage\n- Jamaal: ISSUE-0001::review\n- Kaci (me): ISSUE-0001::docs\n- Brittny: ISSUE-0001::test\n- Deja: ISSUE-0002::review\n- Margery: ISSUE-0002::test\n\nThis covers 4 high-priority ISSUE-0001 tasks + 2 low-priority ISSUE-0002 tasks. Ready for execution phase. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "cd9d5566-0f36-4644-8cdd-775fca371de3",
+        "ts": 1777221432.279894,
+        "agent": "Kaci",
+        "kind": "communication",
+        "payload": {
+          "content": "Kaci - planning complete. Will claim ISSUE-0001::docs (cost 2.54, high priority) during execution phase. Ready to proceed. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "59a089e3-904b-44a0-bfb5-799a2dbf5b3e",
+        "ts": 1777221439.9545493,
+        "agent": "Deja",
+        "kind": "communication",
+        "payload": {
+          "content": "Deja final confirmation - proceeding to execution with ISSUE-0002::review (cost 4.47, low priority). Tags: devops, ui-ux-design. Matches my devops skill (0.70) and fits within my 4-hour availability. All coordination complete - ready for execution phase.\n\nFinal assignment plan:\n- Cordia: ISSUE-0001::triage (high)\n- Jamaal: ISSUE-0001::review (high)\n- Kaci: ISSUE-0001::docs (high)\n- Brittny: ISSUE-0001::test (high)\n- Deja (me): ISSUE-0002::review (low)\n- Margery: ISSUE-0002::test (low)\n\nThis covers 4 high-priority ISSUE-0001 tasks + 2 low-priority ISSUE-0002 tasks. Ready to execute.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "13b56cef-4bd6-419f-bf29-f5c7a42c38b8",
+        "ts": 1777221446.5248258,
+        "agent": "Deja",
+        "kind": "communication",
+        "payload": {
+          "content": "Deja - planning complete. Will claim ISSUE-0002::review (cost 4.47, low priority) during execution phase. Matches devops skill (0.70) and fits within 4-hour availability. All assignments coordinated - ready to proceed.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "7f7e583c-38ac-4b07-b051-34c3c20220dc",
+        "ts": 1777221465.746928,
+        "agent": "Brittny",
+        "kind": "communication",
+        "payload": {
+          "content": "Brittny final confirmation - proceeding to execution with ISSUE-0001::test (cost 3.78, high priority). Tags: mobile-development, data-science. Matches my data-science skill (0.91). All coordination complete - ready for execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "93774b9e-d508-42a1-90f2-16db8d39c221",
+        "ts": 1777221472.1852164,
+        "agent": "Cordia",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::triage"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Cordia",
+              "task_id": "ISSUE-0001::triage",
+              "task": {
+                "id": "ISSUE-0001::triage",
+                "issue_id": "ISSUE-0001",
+                "title": "Build mobile-development [triage]",
+                "tags": [
+                  "mobile-development",
+                  "data-science"
+                ],
+                "priority": "high",
+                "effort": 1.2000000000000002,
+                "work_type": "triage"
+              },
+              "total_assigned": 1,
+              "remaining_agents": 5,
+              "joint_reward": 32.278862350016006
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d728804b-16b0-47bd-abb1-87b4169be639",
+        "ts": 1777221475.803998,
+        "agent": "Jamaal",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Jamaal",
+              "task_id": "ISSUE-0001::review",
+              "task": {
+                "id": "ISSUE-0001::review",
+                "issue_id": "ISSUE-0001",
+                "title": "Build mobile-development [review]",
+                "tags": [
+                  "mobile-development",
+                  "data-science"
+                ],
+                "priority": "high",
+                "effort": 1.5,
+                "work_type": "review"
+              },
+              "total_assigned": 2,
+              "remaining_agents": 4,
+              "joint_reward": 64.70276377934792
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "53564e64-377d-457d-94ea-570da2033de9",
+        "ts": 1777221478.707029,
+        "agent": "Kaci",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::docs"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Kaci",
+              "task_id": "ISSUE-0001::docs",
+              "task": {
+                "id": "ISSUE-0001::docs",
+                "issue_id": "ISSUE-0001",
+                "title": "Build mobile-development [docs]",
+                "tags": [
+                  "mobile-development",
+                  "data-science"
+                ],
+                "priority": "high",
+                "effort": 1.5,
+                "work_type": "docs"
+              },
+              "total_assigned": 3,
+              "remaining_agents": 3,
+              "joint_reward": 97.16148597047192
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "496b8779-749a-4770-aca2-74676b901a56",
+        "ts": 1777221482.226264,
+        "agent": "Deja",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Deja",
+              "task_id": "ISSUE-0002::review",
+              "task": {
+                "id": "ISSUE-0002::review",
+                "issue_id": "ISSUE-0002",
+                "title": "Improve devops [review]",
+                "tags": [
+                  "devops",
+                  "ui-ux-design"
+                ],
+                "priority": "low",
+                "effort": 2.0,
+                "work_type": "review"
+              },
+              "total_assigned": 4,
+              "remaining_agents": 2,
+              "joint_reward": 117.69323508739858
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "118c3ba6-6158-4bbd-9195-a21f74f783c6",
+        "ts": 1777221485.9854126,
+        "agent": "Margery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::test"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Margery",
+              "task_id": "ISSUE-0002::test",
+              "task": {
+                "id": "ISSUE-0002::test",
+                "issue_id": "ISSUE-0002",
+                "title": "Improve devops [test]",
+                "tags": [
+                  "devops",
+                  "ui-ux-design"
+                ],
+                "priority": "low",
+                "effort": 2.8,
+                "work_type": "test"
+              },
+              "total_assigned": 5,
+              "remaining_agents": 1,
+              "joint_reward": 137.5248962458352
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "7f4fc479-9c83-4276-9e29-a5e7f31b8fdd",
+        "ts": 1777221490.3182523,
+        "agent": "Brittny",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::test"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Brittny",
+              "task_id": "ISSUE-0001::test",
+              "task": {
+                "id": "ISSUE-0001::test",
+                "issue_id": "ISSUE-0001",
+                "title": "Build mobile-development [test]",
+                "tags": [
+                  "mobile-development",
+                  "data-science"
+                ],
+                "priority": "high",
+                "effort": 2.0999999999999996,
+                "work_type": "test"
+              },
+              "total_assigned": 6,
+              "remaining_agents": 0,
+              "joint_reward": 168.74003424316055
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  },
+  {
+    "blackboard_id": "1",
+    "participants": [
+      "Cordia",
+      "Jamaal"
+    ],
+    "template": {
+      "secret_channel": true,
+      "visibility": "secret",
+      "secret_channel_kind": "coalition",
+      "secret_channel_index": 1,
+      "allow_duplicate": true
+    },
+    "events": [
+      {
+        "blackboard_id": 1,
+        "id": "b2593f14-00cc-4e9e-a4e6-c60258565a4f",
+        "ts": 1777221127.5162065,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Cordia, Jamaal"
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "ae998030-9f13-493a-8cb1-84f7bbc6deae",
+        "ts": 1777221134.922576,
+        "agent": "Cordia",
+        "kind": "communication",
+        "payload": {
+          "content": "Cordia here. Planning phase - let's coordinate task assignments. My top skill is mobile-development (0.68). Looking at available tasks, ISSUE-0001 tasks (all high priority with mobile-development tag) align best with my skills. Lowest cost option for me is ISSUE-0001::triage at 2.72 cost. What's your plan, Jamaal?",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "cc6c3cfe-4c5e-4ffb-af3a-e095aab81d10",
+        "ts": 1777221152.2182496,
+        "agent": "Jamaal",
+        "kind": "communication",
+        "payload": {
+          "content": "Jamaal here. I see you're going for ISSUE-0001::triage. Good choice - that's also my lowest cost option at 2.06. \n\nGiven my skills (data-science 0.96, devops 0.76), ISSUE-0001 tasks align well with my data-science skill. My best options are:\n- ISSUE-0001::triage: 2.06 (but you're taking this)\n- ISSUE-0001::review: 2.58\n- ISSUE-0001::docs: 2.58\n- ISSUE-0001::test: 3.61\n\nSince you're claiming triage, I'll take ISSUE-0001::review at 2.58 cost - next lowest for me and high priority. That covers both high-priority tasks from ISSUE-0001. Sound good?",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "0c29c28d-f3fe-4f72-880b-6803e83a55c2",
+        "ts": 1777221224.0074785,
+        "agent": "Cordia",
+        "kind": "communication",
+        "payload": {
+          "content": "Cordia confirming - I'll take ISSUE-0001::triage (cost 2.72, high priority). This works well with my mobile-development skill and fits within my 5-hour availability. The plan looks solid - we're covering all 5 high-priority ISSUE-0001 tasks plus 2 ISSUE-0002 tasks. Ready for execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "fa257df3-38af-4a22-953e-9ea641c1c665",
+        "ts": 1777221245.220289,
+        "agent": "Jamaal",
+        "kind": "communication",
+        "payload": {
+          "content": "Jamaal confirming on blackboard 1: My execution assignment is ISSUE-0001::review (cost 2.58, high priority). Ready for execution phase. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "89a66e93-783e-4fa0-8c9a-db198a67e14b",
+        "ts": 1777221313.6965854,
+        "agent": "Cordia",
+        "kind": "communication",
+        "payload": {
+          "content": "Cordia here on blackboard 1. Planning phase wrapping up - all agents have coordinated:\n\nFinal assignments:\n- Cordia (me): ISSUE-0001::triage (cost 2.72, high priority)\n- Jamaal: ISSUE-0001::review (cost 2.58, high priority)\n- Kaci: ISSUE-0001::docs (cost 2.54, high priority)\n- Brittny: ISSUE-0001::test (cost 3.78, high priority)\n- Deja: ISSUE-0002::review (cost 4.47, low priority)\n- Margery: ISSUE-0002::test (cost 5.17, low priority)\n\nThis covers 4 high-priority ISSUE-0001 tasks + 2 ISSUE-0002 tasks. ISSUE-0001::implement remains unassigned (low priority for Cordia, high cost). Plan is set - ready for execution phase. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "5ed8e64a-5c44-4d11-ae86-c4b009af5669",
+        "ts": 1777221334.5263596,
+        "agent": "Jamaal",
+        "kind": "communication",
+        "payload": {
+          "content": "Jamaal final confirmation - proceeding to execution with ISSUE-0001::review (cost 2.58, high priority). Data-science skill match. All coordination complete.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "8e194ec7-357e-437c-b2b0-687f7a97f839",
+        "ts": 1777221394.680602,
+        "agent": "Cordia",
+        "kind": "communication",
+        "payload": {
+          "content": "Cordia on blackboard 1 - planning phase complete. My assignment: ISSUE-0001::triage (cost 2.72, high priority). Confirmed with Jamaal - we're covering high-priority ISSUE-0001 tasks. Ready for execution phase. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "e515280e-7ec9-40e5-bb0c-872160fb8b4f",
+        "ts": 1777221415.3322227,
+        "agent": "Jamaal",
+        "kind": "communication",
+        "payload": {
+          "content": "Jamaal final confirmation - proceeding to execution with ISSUE-0001::review (cost 2.58, high priority). Tags: mobile-development, data-science. Matches my data-science skill (0.96). All coordination complete on blackboard 1 - ready for execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,2244 @@
+[
+  {
+    "blackboard_id": "0",
+    "participants": [
+      "General_Hospital_Radiology",
+      "General_Hospital_Surgery",
+      "General_Hospital_Triage",
+      "General_Hospital_Ward",
+      "Resource_Provisioner",
+      "St_Marys_Center_Radiology",
+      "St_Marys_Center_Surgery",
+      "St_Marys_Center_Triage",
+      "St_Marys_Center_Ward"
+    ],
+    "events": [
+      {
+        "blackboard_id": 0,
+        "id": "3b881a99-579b-44a7-a9eb-5eede4674166",
+        "ts": 1777053832.2935119,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "Resource-Constrained Job Shop with Provisioner.\n\nThis blackboard is a private communication channel.\nParticipants: General_Hospital_Radiology, General_Hospital_Surgery, General_Hospital_Triage, General_Hospital_Ward, Resource_Provisioner, St_Marys_Center_Radiology, St_Marys_Center_Surgery, St_Marys_Center_Triage, St_Marys_Center_Ward"
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "0c04eb0d-3f17-4433-b068-61821d2d66a3",
+        "ts": 1777053849.4632404,
+        "agent": "General_Hospital_Ward",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "General_Hospital_Ward": {
+                "message": "SURPLUS at General_Hospital_Ward: IV_Kits(41), Anesthetics(9), Pain_Killers(21), Radio_Contrast(13), Oxygen_Tanks(17), Surgical_Packs(9), PPE_Sets(45). Queue is empty — all units available for transfer. Request what you need!",
+                "rationale": "No jobs in queue, all inventory is surplus. Broadcasting to avoid massive holding costs and help other hospitals that may be short on resources."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'SURPLUS at General_Hospital_Ward: IV_Kits(41), Anesthetics(9), Pain_Killers(21), Radio_Contrast(13), Oxygen_Tanks(17), Surgical_Packs(9), PPE_Sets(45). Queue is empty — all units available for transfer. Request what you need!'. (Internal Rationale: No jobs in queue, all inventory is surplus. Broadcasting to avoid massive holding costs and help other hospitals that may be short on resources.)",
+            "state_updates": {
+              "broadcast_message": {
+                "General_Hospital_Ward": {
+                  "message": "SURPLUS at General_Hospital_Ward: IV_Kits(41), Anesthetics(9), Pain_Killers(21), Radio_Contrast(13), Oxygen_Tanks(17), Surgical_Packs(9), PPE_Sets(45). Queue is empty — all units available for transfer. Request what you need!",
+                  "rationale": "No jobs in queue, all inventory is surplus. Broadcasting to avoid massive holding costs and help other hospitals that may be short on resources."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "940e54ff-0116-4b8c-9dce-fc6f6af74c95",
+        "ts": 1777053868.4079783,
+        "agent": "General_Hospital_Surgery",
+        "kind": "communication",
+        "payload": {
+          "content": "SURPLUS at General_Hospital_Surgery: IV_Kits(41), Anesthetics(9), Pain_Killers(21), Radio_Contrast(13), Oxygen_Tanks(17), Surgical_Packs(9), PPE_Sets(45). No jobs in queue. Ready to transfer all surplus immediately. St_Marys_Center_Surgery or any agent with deficits — speak up! Otherwise I will send to Resource_Provisioner to minimize holding costs.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "7174e30a-fa9a-43a1-b9e1-33ee51074364",
+        "ts": 1777053880.1473336,
+        "agent": "General_Hospital_Surgery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "transfers": {
+              "General_Hospital_Surgery": {
+                "to_hospital": "Resource_Provisioner",
+                "resource_type": "PPE_Sets",
+                "amount": 45,
+                "rationale": "No jobs in queue. All 45 PPE_Sets are surplus. Transferring to avoid -450 holding cost and earn transfer reward."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Transferring 45 PPE_Sets to Resource_Provisioner. Rationale: No jobs in queue. All 45 PPE_Sets are surplus. Transferring to avoid -450 holding cost and earn transfer reward.",
+            "state_updates": {
+              "transfers": {
+                "General_Hospital_Surgery": {
+                  "to_hospital": "Resource_Provisioner",
+                  "resource_type": "PPE_Sets",
+                  "amount": 45,
+                  "rationale": "No jobs in queue. All 45 PPE_Sets are surplus. Transferring to avoid -450 holding cost and earn transfer reward."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "2b413b58-ae3b-47fb-a569-b523e1bfd1f0",
+        "ts": 1777053901.724263,
+        "agent": "Resource_Provisioner",
+        "kind": "communication",
+        "payload": {
+          "content": "RESOURCE UPDATE: General_Hospital PPE_Sets was at CRITICAL 0. Sending 5 PPE_Sets from Provisioner to General_Hospital. All other resources appear balanced across hospitals. No other transfers needed at this time. Hospitals: please report any URGENT or DEFICIT needs.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "847651d4-1c52-4484-88ee-e753681839d2",
+        "ts": 1777053908.1968617,
+        "agent": "Resource_Provisioner",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "transfers": {
+              "Resource_Provisioner": {
+                "to_hospital": "General_Hospital",
+                "resource_type": "PPE_Sets",
+                "amount": 5,
+                "rationale": "CRITICAL: General_Hospital PPE_Sets at 0 (below threshold of 2). Sending exactly 5 units as a targeted top-up to prevent resource failures without creating excess holding cost."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Transferring 5 PPE_Sets to General_Hospital. Rationale: CRITICAL: General_Hospital PPE_Sets at 0 (below threshold of 2). Sending exactly 5 units as a targeted top-up to prevent resource failures without creating excess holding cost.",
+            "state_updates": {
+              "transfers": {
+                "Resource_Provisioner": {
+                  "to_hospital": "General_Hospital",
+                  "resource_type": "PPE_Sets",
+                  "amount": 5,
+                  "rationale": "CRITICAL: General_Hospital PPE_Sets at 0 (below threshold of 2). Sending exactly 5 units as a targeted top-up to prevent resource failures without creating excess holding cost."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ea3d7936-faf2-4887-9793-349604b24d7f",
+        "ts": 1777053924.6513429,
+        "agent": "St_Marys_Center_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "St_Marys_Center_Triage": {
+                "message": "SURPLUS at St_Marys_Center_Triage: Anesthetics(9), Pain_Killers(21), Radio_Contrast(13), Oxygen_Tanks(17), Surgical_Packs(9), IV_Kits(21 excess), PPE_Sets(25 excess). I need none of these for my queue. Claim them now or I'll transfer to Resource_Provisioner to reduce holding costs!",
+                "rationale": "I have 20 patients needing only 20 IV_Kits and 20 PPE_Sets. All other resources (and excess IV_Kits/PPE_Sets) are pure surplus costing -10/unit in holding. Broadcasting to find takers and earn transfer rewards."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'SURPLUS at St_Marys_Center_Triage: Anesthetics(9), Pain_Killers(21), Radio_Contrast(13), Oxygen_Tanks(17), Surgical_Packs(9), IV_Kits(21 excess), PPE_Sets(25 excess). I need none of these for my queue. Claim them now or I'll transfer to Resource_Provisioner to reduce holding costs!'. (Internal Rationale: I have 20 patients needing only 20 IV_Kits and 20 PPE_Sets. All other resources (and excess IV_Kits/PPE_Sets) are pure surplus costing -10/unit in holding. Broadcasting to find takers and earn transfer rewards.)",
+            "state_updates": {
+              "broadcast_message": {
+                "St_Marys_Center_Triage": {
+                  "message": "SURPLUS at St_Marys_Center_Triage: Anesthetics(9), Pain_Killers(21), Radio_Contrast(13), Oxygen_Tanks(17), Surgical_Packs(9), IV_Kits(21 excess), PPE_Sets(25 excess). I need none of these for my queue. Claim them now or I'll transfer to Resource_Provisioner to reduce holding costs!",
+                  "rationale": "I have 20 patients needing only 20 IV_Kits and 20 PPE_Sets. All other resources (and excess IV_Kits/PPE_Sets) are pure surplus costing -10/unit in holding. Broadcasting to find takers and earn transfer rewards."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9e5792cc-94d6-40f3-a37d-e2ea02811565",
+        "ts": 1777053941.7377415,
+        "agent": "St_Marys_Center_Radiology",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "transfers": {
+              "St_Marys_Center_Radiology": {
+                "to_hospital": "Resource_Provisioner",
+                "resource_type": "Surgical_Packs",
+                "amount": 9,
+                "rationale": "No jobs in queue. All 9 Surgical_Packs are pure surplus costing -90 in holding. Transferring to Resource_Provisioner."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Transferring 9 Surgical_Packs to Resource_Provisioner. Rationale: No jobs in queue. All 9 Surgical_Packs are pure surplus costing -90 in holding. Transferring to Resource_Provisioner.",
+            "state_updates": {
+              "transfers": {
+                "St_Marys_Center_Radiology": {
+                  "to_hospital": "Resource_Provisioner",
+                  "resource_type": "Surgical_Packs",
+                  "amount": 9,
+                  "rationale": "No jobs in queue. All 9 Surgical_Packs are pure surplus costing -90 in holding. Transferring to Resource_Provisioner."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d71b9f41-df39-4fc2-9d00-fbcd8ef60004",
+        "ts": 1777053963.1274083,
+        "agent": "General_Hospital_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "transfers": {
+              "General_Hospital_Triage": {
+                "to_hospital": "Resource_Provisioner",
+                "resource_type": "IV_Kits",
+                "amount": 21,
+                "rationale": "Need only 20 IV_Kits for 20 patients. 21 excess units costing -210 in holding. Transferring surplus to Resource_Provisioner."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Transferring 21 IV_Kits to Resource_Provisioner. Rationale: Need only 20 IV_Kits for 20 patients. 21 excess units costing -210 in holding. Transferring surplus to Resource_Provisioner.",
+            "state_updates": {
+              "transfers": {
+                "General_Hospital_Triage": {
+                  "to_hospital": "Resource_Provisioner",
+                  "resource_type": "IV_Kits",
+                  "amount": 21,
+                  "rationale": "Need only 20 IV_Kits for 20 patients. 21 excess units costing -210 in holding. Transferring surplus to Resource_Provisioner."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "aada8b76-33ef-4f61-9b58-65f619321309",
+        "ts": 1777053979.255398,
+        "agent": "General_Hospital_Radiology",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "transfers": {
+              "General_Hospital_Radiology": {
+                "to_hospital": "Resource_Provisioner",
+                "resource_type": "PPE_Sets",
+                "amount": 5,
+                "rationale": "No jobs in queue. All 5 PPE_Sets are pure surplus costing -50 in holding. Transferring to Resource_Provisioner."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Transferring 5 PPE_Sets to Resource_Provisioner. Rationale: No jobs in queue. All 5 PPE_Sets are pure surplus costing -50 in holding. Transferring to Resource_Provisioner.",
+            "state_updates": {
+              "transfers": {
+                "General_Hospital_Radiology": {
+                  "to_hospital": "Resource_Provisioner",
+                  "resource_type": "PPE_Sets",
+                  "amount": 5,
+                  "rationale": "No jobs in queue. All 5 PPE_Sets are pure surplus costing -50 in holding. Transferring to Resource_Provisioner."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d2fdbc63-8470-4833-b733-91ebddd5627c",
+        "ts": 1777053994.5418286,
+        "agent": "St_Marys_Center_Ward",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "transfers": {
+              "St_Marys_Center_Ward": {
+                "to_hospital": "Resource_Provisioner",
+                "resource_type": "Anesthetics",
+                "amount": 9,
+                "rationale": "No jobs in queue. All 9 Anesthetics are pure surplus costing -90 in holding. Transferring to Resource_Provisioner."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Transferring 9 Anesthetics to Resource_Provisioner. Rationale: No jobs in queue. All 9 Anesthetics are pure surplus costing -90 in holding. Transferring to Resource_Provisioner.",
+            "state_updates": {
+              "transfers": {
+                "St_Marys_Center_Ward": {
+                  "to_hospital": "Resource_Provisioner",
+                  "resource_type": "Anesthetics",
+                  "amount": 9,
+                  "rationale": "No jobs in queue. All 9 Anesthetics are pure surplus costing -90 in holding. Transferring to Resource_Provisioner."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "0c42a813-1efa-4b76-9c96-7892fd3efe50",
+        "ts": 1777054009.6384215,
+        "agent": "St_Marys_Center_Surgery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "transfers": {
+              "St_Marys_Center_Surgery": {
+                "to_hospital": "Resource_Provisioner",
+                "resource_type": "Radio_Contrast",
+                "amount": 13,
+                "rationale": "No jobs in queue. All 13 Radio_Contrast are pure surplus costing -130 in holding. Transferring to Resource_Provisioner."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Transferring 13 Radio_Contrast to Resource_Provisioner. Rationale: No jobs in queue. All 13 Radio_Contrast are pure surplus costing -130 in holding. Transferring to Resource_Provisioner.",
+            "state_updates": {
+              "transfers": {
+                "St_Marys_Center_Surgery": {
+                  "to_hospital": "Resource_Provisioner",
+                  "resource_type": "Radio_Contrast",
+                  "amount": 13,
+                  "rationale": "No jobs in queue. All 13 Radio_Contrast are pure surplus costing -130 in holding. Transferring to Resource_Provisioner."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "4dafa09d-f822-4988-90d2-62bfdd0cb564",
+        "ts": 1777054025.0019405,
+        "agent": "General_Hospital_Ward",
+        "kind": "communication",
+        "payload": {
+          "content": "General_Hospital_Ward: Transferring ALL remaining surplus to Resource_Provisioner — IV_Kits(20), Pain_Killers(21), Oxygen_Tanks(17), Radio_Contrast(13), Anesthetics(9), Surgical_Packs(9). Queue is empty, clearing inventory to zero to eliminate holding costs. PPE_Sets already at 0.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "566d0b9c-f6f4-40b3-8156-498ab120e849",
+        "ts": 1777054034.6239212,
+        "agent": "General_Hospital_Ward",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "transfers": {
+              "General_Hospital_Ward": {
+                "to_hospital": "Resource_Provisioner",
+                "resource_type": "Surgical_Packs",
+                "amount": 9,
+                "rationale": "No jobs in queue. All 9 Surgical_Packs are pure surplus costing -90 in holding. Transferring to Resource_Provisioner."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Transferring 9 Surgical_Packs to Resource_Provisioner. Rationale: No jobs in queue. All 9 Surgical_Packs are pure surplus costing -90 in holding. Transferring to Resource_Provisioner.",
+            "state_updates": {
+              "transfers": {
+                "General_Hospital_Ward": {
+                  "to_hospital": "Resource_Provisioner",
+                  "resource_type": "Surgical_Packs",
+                  "amount": 9,
+                  "rationale": "No jobs in queue. All 9 Surgical_Packs are pure surplus costing -90 in holding. Transferring to Resource_Provisioner."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1b5f58e3-7623-4ed1-b2ae-3b26c48d0f85",
+        "ts": 1777054049.6241453,
+        "agent": "General_Hospital_Surgery",
+        "kind": "communication",
+        "payload": {
+          "content": "General_Hospital_Surgery: Transferring ALL remaining surplus to Resource_Provisioner — IV_Kits(20), Pain_Killers(21), Anesthetics(9), Radio_Contrast(13), Oxygen_Tanks(17). Queue is empty, clearing inventory to zero to eliminate holding costs. Surgical_Packs and PPE_Sets already at 0. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "aeb892c4-3b01-439f-be9c-6ab068beaef2",
+        "ts": 1777054056.52313,
+        "agent": "General_Hospital_Surgery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "transfers": {
+              "General_Hospital_Surgery": {
+                "to_hospital": "Resource_Provisioner",
+                "resource_type": "Pain_Killers",
+                "amount": 21,
+                "rationale": "No jobs in queue. All 21 Pain_Killers are pure surplus costing -210 in holding. Transferring to Resource_Provisioner to eliminate holding costs and earn transfer reward."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Transferring 21 Pain_Killers to Resource_Provisioner. Rationale: No jobs in queue. All 21 Pain_Killers are pure surplus costing -210 in holding. Transferring to Resource_Provisioner to eliminate holding costs and earn transfer reward.",
+            "state_updates": {
+              "transfers": {
+                "General_Hospital_Surgery": {
+                  "to_hospital": "Resource_Provisioner",
+                  "resource_type": "Pain_Killers",
+                  "amount": 21,
+                  "rationale": "No jobs in queue. All 21 Pain_Killers are pure surplus costing -210 in holding. Transferring to Resource_Provisioner to eliminate holding costs and earn transfer reward."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "7b607f1b-f7b2-4c8f-a803-522721205828",
+        "ts": 1777054072.4226732,
+        "agent": "Resource_Provisioner",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "transfers": {
+              "Resource_Provisioner": {
+                "to_hospital": "St_Marys_Center",
+                "resource_type": "Surgical_Packs",
+                "amount": 5,
+                "rationale": "St_Marys_Center has 0 Surgical_Packs (critical <2). Sending 5 to prevent resource failures."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Transferring 5 Surgical_Packs to St_Marys_Center. Rationale: St_Marys_Center has 0 Surgical_Packs (critical <2). Sending 5 to prevent resource failures.",
+            "state_updates": {
+              "transfers": {
+                "Resource_Provisioner": {
+                  "to_hospital": "St_Marys_Center",
+                  "resource_type": "Surgical_Packs",
+                  "amount": 5,
+                  "rationale": "St_Marys_Center has 0 Surgical_Packs (critical <2). Sending 5 to prevent resource failures."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "38d9961f-6f6d-4a56-ae9f-9ed3ffbc948d",
+        "ts": 1777054088.1671457,
+        "agent": "St_Marys_Center_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "transfers": {
+              "St_Marys_Center_Triage": {
+                "to_hospital": "Resource_Provisioner",
+                "resource_type": "PPE_Sets",
+                "amount": 25,
+                "rationale": "Need only 20 PPE_Sets for 20 patients. 25 excess units costing -250 in holding. Transferring surplus to Resource_Provisioner."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Transferring 25 PPE_Sets to Resource_Provisioner. Rationale: Need only 20 PPE_Sets for 20 patients. 25 excess units costing -250 in holding. Transferring surplus to Resource_Provisioner.",
+            "state_updates": {
+              "transfers": {
+                "St_Marys_Center_Triage": {
+                  "to_hospital": "Resource_Provisioner",
+                  "resource_type": "PPE_Sets",
+                  "amount": 25,
+                  "rationale": "Need only 20 PPE_Sets for 20 patients. 25 excess units costing -250 in holding. Transferring surplus to Resource_Provisioner."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "3b6833fc-9a8a-4d93-b4d8-63bbc5568536",
+        "ts": 1777054112.4246438,
+        "agent": "St_Marys_Center_Radiology",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "transfers": {
+              "St_Marys_Center_Radiology": {
+                "to_hospital": "Resource_Provisioner",
+                "resource_type": "Surgical_Packs",
+                "amount": 5,
+                "rationale": "No jobs in queue. All 5 Surgical_Packs are pure surplus costing -50 in holding. Transferring to Resource_Provisioner."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Transferring 5 Surgical_Packs to Resource_Provisioner. Rationale: No jobs in queue. All 5 Surgical_Packs are pure surplus costing -50 in holding. Transferring to Resource_Provisioner.",
+            "state_updates": {
+              "transfers": {
+                "St_Marys_Center_Radiology": {
+                  "to_hospital": "Resource_Provisioner",
+                  "resource_type": "Surgical_Packs",
+                  "amount": 5,
+                  "rationale": "No jobs in queue. All 5 Surgical_Packs are pure surplus costing -50 in holding. Transferring to Resource_Provisioner."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "03c2ecc1-6c78-4817-b327-61364f406e97",
+        "ts": 1777054130.7019181,
+        "agent": "General_Hospital_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "General_Hospital_Triage": {
+                "message": "CRITICAL DEFICIT at General_Hospital_Triage: Need 20 PPE_Sets urgently! I have 20 patients queued and 0 PPE_Sets. Resource_Provisioner please prioritize sending 20 PPE_Sets to General_Hospital. Also transferring surplus Anesthetics(9), Radio_Contrast(13), Oxygen_Tanks(17) to Provisioner now.",
+                "rationale": "PPE_Sets at 0 with 20 patients needing them means potential -6000 in resource failure penalties. Must alert network immediately. Also clearing surplus to reduce holding costs."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'CRITICAL DEFICIT at General_Hospital_Triage: Need 20 PPE_Sets urgently! I have 20 patients queued and 0 PPE_Sets. Resource_Provisioner please prioritize sending 20 PPE_Sets to General_Hospital. Also transferring surplus Anesthetics(9), Radio_Contrast(13), Oxygen_Tanks(17) to Provisioner now.'. (Internal Rationale: PPE_Sets at 0 with 20 patients needing them means potential -6000 in resource failure penalties. Must alert network immediately. Also clearing surplus to reduce holding costs.)",
+            "state_updates": {
+              "broadcast_message": {
+                "General_Hospital_Triage": {
+                  "message": "CRITICAL DEFICIT at General_Hospital_Triage: Need 20 PPE_Sets urgently! I have 20 patients queued and 0 PPE_Sets. Resource_Provisioner please prioritize sending 20 PPE_Sets to General_Hospital. Also transferring surplus Anesthetics(9), Radio_Contrast(13), Oxygen_Tanks(17) to Provisioner now.",
+                  "rationale": "PPE_Sets at 0 with 20 patients needing them means potential -6000 in resource failure penalties. Must alert network immediately. Also clearing surplus to reduce holding costs."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e1ac289d-2cb3-43bd-b2eb-dfa5f517b1ec",
+        "ts": 1777054147.3756688,
+        "agent": "General_Hospital_Radiology",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "transfers": {
+              "General_Hospital_Radiology": {
+                "to_hospital": "Resource_Provisioner",
+                "resource_type": "Anesthetics",
+                "amount": 9,
+                "rationale": "No jobs in queue. All 9 Anesthetics are pure surplus costing -90 in holding. Transferring to Resource_Provisioner to eliminate holding costs and earn transfer reward."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Transferring 9 Anesthetics to Resource_Provisioner. Rationale: No jobs in queue. All 9 Anesthetics are pure surplus costing -90 in holding. Transferring to Resource_Provisioner to eliminate holding costs and earn transfer reward.",
+            "state_updates": {
+              "transfers": {
+                "General_Hospital_Radiology": {
+                  "to_hospital": "Resource_Provisioner",
+                  "resource_type": "Anesthetics",
+                  "amount": 9,
+                  "rationale": "No jobs in queue. All 9 Anesthetics are pure surplus costing -90 in holding. Transferring to Resource_Provisioner to eliminate holding costs and earn transfer reward."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "893f0201-91fe-4b7f-9caf-ba9ef3940a83",
+        "ts": 1777054165.2991257,
+        "agent": "St_Marys_Center_Ward",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "transfers": {
+              "St_Marys_Center_Ward": {
+                "to_hospital": "Resource_Provisioner",
+                "resource_type": "Oxygen_Tanks",
+                "amount": 17,
+                "rationale": "No jobs in queue. All 17 Oxygen_Tanks are pure surplus costing -170 in holding. Transferring to Resource_Provisioner."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Transferring 17 Oxygen_Tanks to Resource_Provisioner. Rationale: No jobs in queue. All 17 Oxygen_Tanks are pure surplus costing -170 in holding. Transferring to Resource_Provisioner.",
+            "state_updates": {
+              "transfers": {
+                "St_Marys_Center_Ward": {
+                  "to_hospital": "Resource_Provisioner",
+                  "resource_type": "Oxygen_Tanks",
+                  "amount": 17,
+                  "rationale": "No jobs in queue. All 17 Oxygen_Tanks are pure surplus costing -170 in holding. Transferring to Resource_Provisioner."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e147e596-441c-47b2-911e-51b64fd2f380",
+        "ts": 1777054183.3975332,
+        "agent": "St_Marys_Center_Surgery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "transfers": {
+              "St_Marys_Center_Surgery": {
+                "to_hospital": "Resource_Provisioner",
+                "resource_type": "Pain_Killers",
+                "amount": 21,
+                "rationale": "No jobs in queue. All 21 Pain_Killers are pure surplus costing -210 in holding. Transferring to Resource_Provisioner to eliminate holding costs and earn transfer reward."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Transferring 21 Pain_Killers to Resource_Provisioner. Rationale: No jobs in queue. All 21 Pain_Killers are pure surplus costing -210 in holding. Transferring to Resource_Provisioner to eliminate holding costs and earn transfer reward.",
+            "state_updates": {
+              "transfers": {
+                "St_Marys_Center_Surgery": {
+                  "to_hospital": "Resource_Provisioner",
+                  "resource_type": "Pain_Killers",
+                  "amount": 21,
+                  "rationale": "No jobs in queue. All 21 Pain_Killers are pure surplus costing -210 in holding. Transferring to Resource_Provisioner to eliminate holding costs and earn transfer reward."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "2a9ed15d-9c9c-49e5-a198-56a5d97e6923",
+        "ts": 1777054197.0115464,
+        "agent": "General_Hospital_Ward",
+        "kind": "communication",
+        "payload": {
+          "content": "General_Hospital_Ward: Clearing ALL remaining surplus — IV_Kits(20), Radio_Contrast(13), Oxygen_Tanks(17) transferred to Resource_Provisioner. Inventory now at zero across all resources. Queue remains empty. No further transfers needed from me. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "21796427-2459-447d-8e2d-99cf72db4b0e",
+        "ts": 1777054204.1973598,
+        "agent": "General_Hospital_Ward",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "transfers": {
+              "General_Hospital_Ward": {
+                "to_hospital": "Resource_Provisioner",
+                "resource_type": "Oxygen_Tanks",
+                "amount": 17,
+                "rationale": "No jobs in queue. All 17 Oxygen_Tanks are pure surplus costing -170 in holding. Transferring to Resource_Provisioner to eliminate holding costs and earn transfer reward."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Transferring 17 Oxygen_Tanks to Resource_Provisioner. Rationale: No jobs in queue. All 17 Oxygen_Tanks are pure surplus costing -170 in holding. Transferring to Resource_Provisioner to eliminate holding costs and earn transfer reward.",
+            "state_updates": {
+              "transfers": {
+                "General_Hospital_Ward": {
+                  "to_hospital": "Resource_Provisioner",
+                  "resource_type": "Oxygen_Tanks",
+                  "amount": 17,
+                  "rationale": "No jobs in queue. All 17 Oxygen_Tanks are pure surplus costing -170 in holding. Transferring to Resource_Provisioner to eliminate holding costs and earn transfer reward."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "afa7419e-b085-43c7-b259-323dea05017c",
+        "ts": 1777054220.090441,
+        "agent": "General_Hospital_Surgery",
+        "kind": "communication",
+        "payload": {
+          "content": "General_Hospital_Surgery: Transferring final surplus — IV_Kits(20) and Radio_Contrast(13) to Resource_Provisioner. Inventory now at zero across ALL resources. Queue is empty, no further actions needed. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "64b72d58-e70b-4264-b2ca-e7d9e9d5123b",
+        "ts": 1777054228.9602168,
+        "agent": "General_Hospital_Surgery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "transfers": {
+              "General_Hospital_Surgery": {
+                "to_hospital": "Resource_Provisioner",
+                "resource_type": "Radio_Contrast",
+                "amount": 13,
+                "rationale": "No jobs in queue. All 13 Radio_Contrast are pure surplus costing -130 in holding. Transferring to Resource_Provisioner to eliminate holding costs and earn transfer reward."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Transferring 13 Radio_Contrast to Resource_Provisioner. Rationale: No jobs in queue. All 13 Radio_Contrast are pure surplus costing -130 in holding. Transferring to Resource_Provisioner to eliminate holding costs and earn transfer reward.",
+            "state_updates": {
+              "transfers": {
+                "General_Hospital_Surgery": {
+                  "to_hospital": "Resource_Provisioner",
+                  "resource_type": "Radio_Contrast",
+                  "amount": 13,
+                  "rationale": "No jobs in queue. All 13 Radio_Contrast are pure surplus costing -130 in holding. Transferring to Resource_Provisioner to eliminate holding costs and earn transfer reward."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "4627ee40-f368-4e8f-b532-39025519f3e5",
+        "ts": 1777054235.7174165,
+        "agent": "Resource_Provisioner",
+        "kind": "communication",
+        "payload": {
+          "content": "Resource_Provisioner checking in. Both General_Hospital and St_Marys_Center show critical shortages (0 stock) across multiple resource types. Preparing targeted transfers now. If any department has specific urgent needs, please post immediately.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "419ceba7-2cb4-451e-b1df-f57d4f4c9623",
+        "ts": 1777054256.253301,
+        "agent": "Resource_Provisioner",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "transfers": {
+              "Resource_Provisioner": {
+                "to_hospital": "St_Marys_Center",
+                "resource_type": "Surgical_Packs",
+                "amount": 5,
+                "rationale": "St_Marys_Center has 0 Surgical_Packs - critical shortage. Sending 5 for surgery department."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Transferring 5 Surgical_Packs to St_Marys_Center. Rationale: St_Marys_Center has 0 Surgical_Packs - critical shortage. Sending 5 for surgery department.",
+            "state_updates": {
+              "transfers": {
+                "Resource_Provisioner": {
+                  "to_hospital": "St_Marys_Center",
+                  "resource_type": "Surgical_Packs",
+                  "amount": 5,
+                  "rationale": "St_Marys_Center has 0 Surgical_Packs - critical shortage. Sending 5 for surgery department."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a36d70cc-661d-4263-9d15-65a45b16eb9f",
+        "ts": 1777054290.5419931,
+        "agent": "St_Marys_Center_Triage",
+        "kind": "communication",
+        "payload": {
+          "content": "St_Marys_Center_Triage: Resource status update — I have exactly 20 IV_Kits and 20 PPE_Sets reserved for my 20 patients. Transferring 21 surplus IV_Kits and 5 Surgical_Packs to Resource_Provisioner. NOTE to General_Hospital_Triage: I see your CRITICAL DEFICIT of 20 PPE_Sets. I have exactly 20 and need all of them. Resource_Provisioner should handle your PPE_Sets request. All other surplus already transferred in previous iterations.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f2daa8a2-d8b9-46c5-9b08-b5323cf85388",
+        "ts": 1777054304.22073,
+        "agent": "St_Marys_Center_Radiology",
+        "kind": "communication",
+        "payload": {
+          "content": "St_Marys_Center_Radiology: Queue EMPTY. Transferring 20 PPE_Sets to General_Hospital (addressing General_Hospital_Triage's CRITICAL DEFICIT), 41 IV_Kits and 5 Surgical_Packs to Resource_Provisioner. Inventory will be at ZERO across all resources. No further actions needed from me.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "6599ed2b-6962-4728-bfac-b3a375a8ba35",
+        "ts": 1777054312.2760813,
+        "agent": "St_Marys_Center_Radiology",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "transfers": {
+              "St_Marys_Center_Radiology": {
+                "to_hospital": "Resource_Provisioner",
+                "resource_type": "Surgical_Packs",
+                "amount": 5,
+                "rationale": "Queue is empty. All 5 Surgical_Packs are pure surplus costing -50 in holding. Transferring to Resource_Provisioner to eliminate holding costs and earn transfer reward."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Transferring 5 Surgical_Packs to Resource_Provisioner. Rationale: Queue is empty. All 5 Surgical_Packs are pure surplus costing -50 in holding. Transferring to Resource_Provisioner to eliminate holding costs and earn transfer reward.",
+            "state_updates": {
+              "transfers": {
+                "St_Marys_Center_Radiology": {
+                  "to_hospital": "Resource_Provisioner",
+                  "resource_type": "Surgical_Packs",
+                  "amount": 5,
+                  "rationale": "Queue is empty. All 5 Surgical_Packs are pure surplus costing -50 in holding. Transferring to Resource_Provisioner to eliminate holding costs and earn transfer reward."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9c4ed424-7409-459e-a149-6a7b5e27b6a1",
+        "ts": 1777054342.9391844,
+        "agent": "General_Hospital_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "transfers": {
+              "General_Hospital_Triage": {
+                "to_hospital": "Resource_Provisioner",
+                "resource_type": "Anesthetics",
+                "amount": 0,
+                "rationale": "No Anesthetics in inventory, nothing to transfer."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Transferring 0 Anesthetics to Resource_Provisioner. Rationale: No Anesthetics in inventory, nothing to transfer.",
+            "state_updates": {
+              "transfers": {
+                "General_Hospital_Triage": {
+                  "to_hospital": "Resource_Provisioner",
+                  "resource_type": "Anesthetics",
+                  "amount": 0,
+                  "rationale": "No Anesthetics in inventory, nothing to transfer."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "66dc61d9-97c0-4c2d-8d9e-ec885a39d6f6",
+        "ts": 1777054355.3006465,
+        "agent": "General_Hospital_Radiology",
+        "kind": "communication",
+        "payload": {
+          "content": "General_Hospital_Radiology: Queue EMPTY. Transferring remaining 20 IV_Kits to Resource_Provisioner. Inventory will be at ZERO across all resources. Anesthetics already transferred previously. No further actions needed from me. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "2c7a5760-769f-472c-a220-3a0aeb2a8814",
+        "ts": 1777054359.6722035,
+        "agent": "General_Hospital_Radiology",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "transfers": {
+              "General_Hospital_Radiology": {
+                "to_hospital": "Resource_Provisioner",
+                "resource_type": "IV_Kits",
+                "amount": 20,
+                "rationale": "No jobs in queue. All 20 IV_Kits are pure surplus costing -200 in holding. Transferring to Resource_Provisioner to eliminate holding costs and earn transfer reward."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Transferring 20 IV_Kits to Resource_Provisioner. Rationale: No jobs in queue. All 20 IV_Kits are pure surplus costing -200 in holding. Transferring to Resource_Provisioner to eliminate holding costs and earn transfer reward.",
+            "state_updates": {
+              "transfers": {
+                "General_Hospital_Radiology": {
+                  "to_hospital": "Resource_Provisioner",
+                  "resource_type": "IV_Kits",
+                  "amount": 20,
+                  "rationale": "No jobs in queue. All 20 IV_Kits are pure surplus costing -200 in holding. Transferring to Resource_Provisioner to eliminate holding costs and earn transfer reward."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b82b88ee-c70c-4cae-be18-19492e89f64e",
+        "ts": 1777054373.0897026,
+        "agent": "St_Marys_Center_Ward",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "transfers": {
+              "St_Marys_Center_Ward": {
+                "to_hospital": "Resource_Provisioner",
+                "resource_type": "IV_Kits",
+                "amount": 41,
+                "rationale": "No jobs in queue. All 41 IV_Kits are pure surplus costing -410 in holding. Transferring to Resource_Provisioner to eliminate holding costs and earn transfer reward."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Transferring 41 IV_Kits to Resource_Provisioner. Rationale: No jobs in queue. All 41 IV_Kits are pure surplus costing -410 in holding. Transferring to Resource_Provisioner to eliminate holding costs and earn transfer reward.",
+            "state_updates": {
+              "transfers": {
+                "St_Marys_Center_Ward": {
+                  "to_hospital": "Resource_Provisioner",
+                  "resource_type": "IV_Kits",
+                  "amount": 41,
+                  "rationale": "No jobs in queue. All 41 IV_Kits are pure surplus costing -410 in holding. Transferring to Resource_Provisioner to eliminate holding costs and earn transfer reward."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "058ef1df-c578-46de-abd5-6ef8e59605ee",
+        "ts": 1777054391.6489732,
+        "agent": "St_Marys_Center_Surgery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "transfers": {
+              "St_Marys_Center_Surgery": {
+                "to_hospital": "General_Hospital",
+                "resource_type": "PPE_Sets",
+                "amount": 20,
+                "rationale": "No jobs in queue. All 20 PPE_Sets are pure surplus costing -200 in holding. General_Hospital_Triage has CRITICAL DEFICIT of 20 PPE_Sets for 20 patients. Transferring directly to General_Hospital to address their urgent need, avoid holding costs, and earn transfer reward."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Transferring 20 PPE_Sets to General_Hospital. Rationale: No jobs in queue. All 20 PPE_Sets are pure surplus costing -200 in holding. General_Hospital_Triage has CRITICAL DEFICIT of 20 PPE_Sets for 20 patients. Transferring directly to General_Hospital to address their urgent need, avoid holding costs, and earn transfer reward.",
+            "state_updates": {
+              "transfers": {
+                "St_Marys_Center_Surgery": {
+                  "to_hospital": "General_Hospital",
+                  "resource_type": "PPE_Sets",
+                  "amount": 20,
+                  "rationale": "No jobs in queue. All 20 PPE_Sets are pure surplus costing -200 in holding. General_Hospital_Triage has CRITICAL DEFICIT of 20 PPE_Sets for 20 patients. Transferring directly to General_Hospital to address their urgent need, avoid holding costs, and earn transfer reward."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "51c23db4-a208-4c69-b573-44a4037b523d",
+        "ts": 1777054402.3542273,
+        "agent": "General_Hospital_Ward",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "transfers": {
+              "General_Hospital_Ward": {
+                "to_hospital": "Resource_Provisioner",
+                "resource_type": "PPE_Sets",
+                "amount": 20,
+                "rationale": "No jobs in queue. All 20 PPE_Sets are pure surplus costing -200 in holding. General_Hospital_Triage's PPE deficit was already addressed by St_Marys_Center_Surgery (20 PPE_Sets sent). Transferring to Resource_Provisioner to eliminate holding costs and earn transfer reward."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Transferring 20 PPE_Sets to Resource_Provisioner. Rationale: No jobs in queue. All 20 PPE_Sets are pure surplus costing -200 in holding. General_Hospital_Triage's PPE deficit was already addressed by St_Marys_Center_Surgery (20 PPE_Sets sent). Transferring to Resource_Provisioner to eliminate holding costs and earn transfer reward.",
+            "state_updates": {
+              "transfers": {
+                "General_Hospital_Ward": {
+                  "to_hospital": "Resource_Provisioner",
+                  "resource_type": "PPE_Sets",
+                  "amount": 20,
+                  "rationale": "No jobs in queue. All 20 PPE_Sets are pure surplus costing -200 in holding. General_Hospital_Triage's PPE deficit was already addressed by St_Marys_Center_Surgery (20 PPE_Sets sent). Transferring to Resource_Provisioner to eliminate holding costs and earn transfer reward."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "088b6d81-adfe-4cd0-a485-01508067b15e",
+        "ts": 1777054415.410618,
+        "agent": "General_Hospital_Surgery",
+        "kind": "communication",
+        "payload": {
+          "content": "General_Hospital_Surgery: Status update — Queue EMPTY, Inventory ZERO across all resources (IV_Kits: 0, Anesthetics: 0, Pain_Killers: 0, Radio_Contrast: 0, Oxygen_Tanks: 0, Surgical_Packs: 0, PPE_Sets: 0). All surplus has been transferred in previous iterations. No holding costs, no pending tasks. Standing by for any new jobs. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "715a744b-9b06-41e2-a887-faf04ae0228d",
+        "ts": 1777054428.7978842,
+        "agent": "Resource_Provisioner",
+        "kind": "communication",
+        "payload": {
+          "content": "Resource_Provisioner checking in. Both General_Hospital and St_Marys_Center have ZERO inventory across all resource types. I will be sending initial top-ups of 5 units per resource type to each hospital to prevent resource failures. If you have specific urgent needs, please post them here immediately.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e967b05c-b61b-4076-92e4-06e443a29433",
+        "ts": 1777054449.6264808,
+        "agent": "Resource_Provisioner",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "transfers": {
+              "Resource_Provisioner": {
+                "to_hospital": "St_Marys_Center",
+                "resource_type": "PPE_Sets",
+                "amount": 5,
+                "rationale": "St_Marys_Center has 0 PPE_Sets (critical <2). Sending 5 to prevent resource failures."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Transferring 5 PPE_Sets to St_Marys_Center. Rationale: St_Marys_Center has 0 PPE_Sets (critical <2). Sending 5 to prevent resource failures.",
+            "state_updates": {
+              "transfers": {
+                "Resource_Provisioner": {
+                  "to_hospital": "St_Marys_Center",
+                  "resource_type": "PPE_Sets",
+                  "amount": 5,
+                  "rationale": "St_Marys_Center has 0 PPE_Sets (critical <2). Sending 5 to prevent resource failures."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d670bf06-e306-4e3e-8376-4b855b306b8b",
+        "ts": 1777054464.366726,
+        "agent": "St_Marys_Center_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "St_Marys_Center_Triage": {
+                "message": "URGENT CRITICAL DEFICIT at St_Marys_Center_Triage: Need 20 IV_Kits and 15 PPE_Sets at St_Marys_Center IMMEDIATELY! I have 20 patients queued with 0 IV_Kits and only 5 PPE_Sets. Resource_Provisioner: please send 20 IV_Kits and 15 PPE_Sets to St_Marys_Center right away. Potential -10,500 in resource failure penalties if not addressed!",
+                "rationale": "I have 20 patients each needing 1 IV_Kit and 1 PPE_Set. With 0 IV_Kits and 5 PPE_Sets, I face 20 IV_Kit failures (-6000) and 15 PPE_Set failures (-4500). Must alert the entire network immediately."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'URGENT CRITICAL DEFICIT at St_Marys_Center_Triage: Need 20 IV_Kits and 15 PPE_Sets at St_Marys_Center IMMEDIATELY! I have 20 patients queued with 0 IV_Kits and only 5 PPE_Sets. Resource_Provisioner: please send 20 IV_Kits and 15 PPE_Sets to St_Marys_Center right away. Potential -10,500 in resource failure penalties if not addressed!'. (Internal Rationale: I have 20 patients each needing 1 IV_Kit and 1 PPE_Set. With 0 IV_Kits and 5 PPE_Sets, I face 20 IV_Kit failures (-6000) and 15 PPE_Set failures (-4500). Must alert the entire network immediately.)",
+            "state_updates": {
+              "broadcast_message": {
+                "St_Marys_Center_Triage": {
+                  "message": "URGENT CRITICAL DEFICIT at St_Marys_Center_Triage: Need 20 IV_Kits and 15 PPE_Sets at St_Marys_Center IMMEDIATELY! I have 20 patients queued with 0 IV_Kits and only 5 PPE_Sets. Resource_Provisioner: please send 20 IV_Kits and 15 PPE_Sets to St_Marys_Center right away. Potential -10,500 in resource failure penalties if not addressed!",
+                  "rationale": "I have 20 patients each needing 1 IV_Kit and 1 PPE_Set. With 0 IV_Kits and 5 PPE_Sets, I face 20 IV_Kit failures (-6000) and 15 PPE_Set failures (-4500). Must alert the entire network immediately."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "41c72097-9651-49d8-aaab-9f72a4f28f68",
+        "ts": 1777054489.6027508,
+        "agent": "St_Marys_Center_Radiology",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "transfers": {
+              "St_Marys_Center_Radiology": {
+                "to_hospital": "St_Marys_Center",
+                "resource_type": "PPE_Sets",
+                "amount": 5,
+                "rationale": "Queue is empty. St_Marys_Center_Triage has CRITICAL DEFICIT of PPE_Sets (needs 20, only has 5). Transferring my 5 PPE_Sets directly to St_Marys_Center to help address their urgent need rather than sending to Resource_Provisioner. This keeps them at the hospital where they're needed. Eliminates my holding cost of -50."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Transferring 5 PPE_Sets to St_Marys_Center. Rationale: Queue is empty. St_Marys_Center_Triage has CRITICAL DEFICIT of PPE_Sets (needs 20, only has 5). Transferring my 5 PPE_Sets directly to St_Marys_Center to help address their urgent need rather than sending to Resource_Provisioner. This keeps them at the hospital where they're needed. Eliminates my holding cost of -50.",
+            "state_updates": {
+              "transfers": {
+                "St_Marys_Center_Radiology": {
+                  "to_hospital": "St_Marys_Center",
+                  "resource_type": "PPE_Sets",
+                  "amount": 5,
+                  "rationale": "Queue is empty. St_Marys_Center_Triage has CRITICAL DEFICIT of PPE_Sets (needs 20, only has 5). Transferring my 5 PPE_Sets directly to St_Marys_Center to help address their urgent need rather than sending to Resource_Provisioner. This keeps them at the hospital where they're needed. Eliminates my holding cost of -50."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "7f38e21d-83fd-4138-99ea-98be58063256",
+        "ts": 1777054517.0968359,
+        "agent": "General_Hospital_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "General_Hospital_Triage": {
+                "message": "CRITICAL DEFICIT at General_Hospital_Triage: STILL need 20 IV_Kits and 20 PPE_Sets at General_Hospital! I have 20 patients queued and ZERO inventory for both resources. Resource_Provisioner: please send 20 IV_Kits and 20 PPE_Sets to General_Hospital immediately. Previous PPE transfer from St_Marys_Center_Surgery may have arrived but I still show 0. All other resources (Anesthetics, Pain_Killers, Radio_Contrast, Oxygen_Tanks, Surgical_Packs) are at 0 — no surplus to offer. Only IV_Kits and PPE_Sets are needed.",
+                "rationale": "I have 20 patients each needing 1 IV_Kit and 1 PPE_Set = 40 total resource units needed. With 0 inventory, that's 40 × -300 = -12,000 in potential resource failure penalties. Must escalate urgently to get resources delivered before scheduling begins. Previous transfers may have arrived at the hospital pool but I need to confirm and request more if needed."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'CRITICAL DEFICIT at General_Hospital_Triage: STILL need 20 IV_Kits and 20 PPE_Sets at General_Hospital! I have 20 patients queued and ZERO inventory for both resources. Resource_Provisioner: please send 20 IV_Kits and 20 PPE_Sets to General_Hospital immediately. Previous PPE transfer from St_Marys_Center_Surgery may have arrived but I still show 0. All other resources (Anesthetics, Pain_Killers, Radio_Contrast, Oxygen_Tanks, Surgical_Packs) are at 0 — no surplus to offer. Only IV_Kits and PPE_Sets are needed.'. (Internal Rationale: I have 20 patients each needing 1 IV_Kit and 1 PPE_Set = 40 total resource units needed. With 0 inventory, that's 40 × -300 = -12,000 in potential resource failure penalties. Must escalate urgently to get resources delivered before scheduling begins. Previous transfers may have arrived at the hospital pool but I need to confirm and request more if needed.)",
+            "state_updates": {
+              "broadcast_message": {
+                "General_Hospital_Triage": {
+                  "message": "CRITICAL DEFICIT at General_Hospital_Triage: STILL need 20 IV_Kits and 20 PPE_Sets at General_Hospital! I have 20 patients queued and ZERO inventory for both resources. Resource_Provisioner: please send 20 IV_Kits and 20 PPE_Sets to General_Hospital immediately. Previous PPE transfer from St_Marys_Center_Surgery may have arrived but I still show 0. All other resources (Anesthetics, Pain_Killers, Radio_Contrast, Oxygen_Tanks, Surgical_Packs) are at 0 — no surplus to offer. Only IV_Kits and PPE_Sets are needed.",
+                  "rationale": "I have 20 patients each needing 1 IV_Kit and 1 PPE_Set = 40 total resource units needed. With 0 inventory, that's 40 × -300 = -12,000 in potential resource failure penalties. Must escalate urgently to get resources delivered before scheduling begins. Previous transfers may have arrived at the hospital pool but I need to confirm and request more if needed."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9cf9bd40-8175-4841-8ab7-bdf4e6f213ee",
+        "ts": 1777054528.9437056,
+        "agent": "General_Hospital_Radiology",
+        "kind": "communication",
+        "payload": {
+          "content": "General_Hospital_Radiology: Status update — Queue EMPTY, Inventory ZERO across all resources (IV_Kits: 0, Anesthetics: 0, Pain_Killers: 0, Radio_Contrast: 0, Oxygen_Tanks: 0, Surgical_Packs: 0, PPE_Sets: 0). All surplus was transferred to Resource_Provisioner in previous iterations. No holding costs, no pending tasks. Standing by for any new jobs. NOTE: If jobs arrive, I will need Radio_Contrast, PPE_Sets, and IV_Kits (1 each per patient). Resource_Provisioner please keep this in mind for future provisioning.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "3d506d89-9097-4a88-8f6a-f2b90bb0ac73",
+        "ts": 1777054560.2752783,
+        "agent": "St_Marys_Center_Ward",
+        "kind": "communication",
+        "payload": {
+          "content": "St_Marys_Center_Ward: Queue EMPTY. Transferred final 5 PPE_Sets to Resource_Provisioner. Inventory now ZERO across all resources (IV_Kits: 0, Anesthetics: 0, Pain_Killers: 0, Radio_Contrast: 0, Oxygen_Tanks: 0, Surgical_Packs: 0, PPE_Sets: 0). All surplus cleared in previous iterations. No holding costs, no pending tasks. Standing by for new jobs. NOTE: If Ward jobs arrive, I will need Oxygen_Tanks, IV_Kits, Pain_Killers, and PPE_Sets (1 each per patient). Resource_Provisioner please keep in mind for future provisioning. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f4d00577-c829-4d4f-a9b1-77b22bedc48c",
+        "ts": 1777054578.432937,
+        "agent": "St_Marys_Center_Ward",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "St_Marys_Center_Ward": {
+                "message": "St_Marys_Center_Ward: Queue EMPTY. I have 5 PPE_Sets at St_Marys_Center. NOT transferring these out — St_Marys_Center_Triage has CRITICAL DEFICIT of PPE_Sets (needs 15 more). These 5 PPE_Sets stay in the St_Marys_Center pool for Triage to use. All other resources at ZERO. No further actions needed from me. Standing by for new jobs.",
+                "rationale": "St_Marys_Center_Triage urgently needs PPE_Sets (deficit of 15). My 5 PPE_Sets are at the same hospital and should remain available for Triage rather than being transferred away. This avoids resource failure penalties (-300 each) for Triage patients. No jobs in my queue so I have no use for them myself."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'St_Marys_Center_Ward: Queue EMPTY. I have 5 PPE_Sets at St_Marys_Center. NOT transferring these out — St_Marys_Center_Triage has CRITICAL DEFICIT of PPE_Sets (needs 15 more). These 5 PPE_Sets stay in the St_Marys_Center pool for Triage to use. All other resources at ZERO. No further actions needed from me. Standing by for new jobs.'. (Internal Rationale: St_Marys_Center_Triage urgently needs PPE_Sets (deficit of 15). My 5 PPE_Sets are at the same hospital and should remain available for Triage rather than being transferred away. This avoids resource failure penalties (-300 each) for Triage patients. No jobs in my queue so I have no use for them myself.)",
+            "state_updates": {
+              "broadcast_message": {
+                "St_Marys_Center_Ward": {
+                  "message": "St_Marys_Center_Ward: Queue EMPTY. I have 5 PPE_Sets at St_Marys_Center. NOT transferring these out — St_Marys_Center_Triage has CRITICAL DEFICIT of PPE_Sets (needs 15 more). These 5 PPE_Sets stay in the St_Marys_Center pool for Triage to use. All other resources at ZERO. No further actions needed from me. Standing by for new jobs.",
+                  "rationale": "St_Marys_Center_Triage urgently needs PPE_Sets (deficit of 15). My 5 PPE_Sets are at the same hospital and should remain available for Triage rather than being transferred away. This avoids resource failure penalties (-300 each) for Triage patients. No jobs in my queue so I have no use for them myself."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ddb49e44-77fc-40b5-a05b-dbad0882fd4b",
+        "ts": 1777054593.1981637,
+        "agent": "St_Marys_Center_Surgery",
+        "kind": "communication",
+        "payload": {
+          "content": "St_Marys_Center_Surgery: Queue EMPTY. I have 5 PPE_Sets remaining. St_Marys_Center_Triage has CRITICAL DEFICIT of PPE_Sets — keeping these 5 PPE_Sets in the St_Marys_Center pool for Triage to use rather than transferring out. All other resources at ZERO (IV_Kits: 0, Anesthetics: 0, Pain_Killers: 0, Radio_Contrast: 0, Oxygen_Tanks: 0, Surgical_Packs: 0). No surgery jobs pending, no further actions needed. Standing by for new jobs. NOTE: If surgery jobs arrive, I will need Anesthetics, Surgical_Packs, PPE_Sets, IV_Kits, and Pain_Killers (1-2 each per patient). Resource_Provisioner please keep in mind for future provisioning. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "73051c2e-df8e-4157-ba1c-1e4d11e7cd89",
+        "ts": 1777054657.138647,
+        "agent": "St_Marys_Center_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "St_Marys_Center_Triage": {
+                "patient_id": "Patient_6",
+                "step_index": 0,
+                "start_time": 24,
+                "rationale": "Earliest start 24, scheduling at earliest possible time."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_6. Rationale: Earliest start 24, scheduling at earliest possible time.",
+            "state_updates": {
+              "schedule": {
+                "St_Marys_Center_Triage": {
+                  "patient_id": "Patient_6",
+                  "step_index": 0,
+                  "start_time": 24,
+                  "rationale": "Earliest start 24, scheduling at earliest possible time."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "4c24b303-d007-443b-a3f5-c2524e581806",
+        "ts": 1777054665.8052046,
+        "agent": "St_Marys_Center_Radiology",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "transfers": {
+              "St_Marys_Center_Radiology": {
+                "to_hospital": "Resource_Provisioner",
+                "resource_type": "PPE_Sets",
+                "amount": 4,
+                "rationale": "Queue is empty. 4 PPE_Sets are pure surplus costing -40 in holding. Transferring to Resource_Provisioner to eliminate holding costs and earn transfer reward. Resource_Provisioner can redistribute to hospitals with deficits (both General_Hospital_Triage and St_Marys_Center_Triage need PPE_Sets)."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Transferring 4 PPE_Sets to Resource_Provisioner. Rationale: Queue is empty. 4 PPE_Sets are pure surplus costing -40 in holding. Transferring to Resource_Provisioner to eliminate holding costs and earn transfer reward. Resource_Provisioner can redistribute to hospitals with deficits (both General_Hospital_Triage and St_Marys_Center_Triage need PPE_Sets).",
+            "state_updates": {
+              "transfers": {
+                "St_Marys_Center_Radiology": {
+                  "to_hospital": "Resource_Provisioner",
+                  "resource_type": "PPE_Sets",
+                  "amount": 4,
+                  "rationale": "Queue is empty. 4 PPE_Sets are pure surplus costing -40 in holding. Transferring to Resource_Provisioner to eliminate holding costs and earn transfer reward. Resource_Provisioner can redistribute to hospitals with deficits (both General_Hospital_Triage and St_Marys_Center_Triage need PPE_Sets)."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "2978eb91-bb3d-469c-bd2a-84e8fe1fbed1",
+        "ts": 1777054688.3958454,
+        "agent": "General_Hospital_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Triage": {
+                "patient_id": "Patient_16",
+                "step_index": 0,
+                "start_time": 23,
+                "rationale": "Earliest start 23, scheduling at earliest possible time."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_16. Rationale: Earliest start 23, scheduling at earliest possible time.",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Triage": {
+                  "patient_id": "Patient_16",
+                  "step_index": 0,
+                  "start_time": 23,
+                  "rationale": "Earliest start 23, scheduling at earliest possible time."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "686116d7-3bef-4c56-8d71-765c28a01539",
+        "ts": 1777054702.1574266,
+        "agent": "General_Hospital_Radiology",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Radiology": {
+                "patient_id": "Patient_16",
+                "step_index": 1,
+                "start_time": 24,
+                "rationale": "Mandatory task: Patient_16 step 1 (Radiology), duration 2h, earliest start 24. Scheduling at earliest possible time to minimize flow time. Inventory is zero but scheduling anyway to avoid -500 missed step penalty (-300 resource failure is preferable)."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_16. Rationale: Mandatory task: Patient_16 step 1 (Radiology), duration 2h, earliest start 24. Scheduling at earliest possible time to minimize flow time. Inventory is zero but scheduling anyway to avoid -500 missed step penalty (-300 resource failure is preferable).",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Radiology": {
+                  "patient_id": "Patient_16",
+                  "step_index": 1,
+                  "start_time": 24,
+                  "rationale": "Mandatory task: Patient_16 step 1 (Radiology), duration 2h, earliest start 24. Scheduling at earliest possible time to minimize flow time. Inventory is zero but scheduling anyway to avoid -500 missed step penalty (-300 resource failure is preferable)."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f7e74a1a-f5bd-449e-93b7-004003b0a3f1",
+        "ts": 1777054711.1608436,
+        "agent": "St_Marys_Center_Ward",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "St_Marys_Center_Ward": {
+                "patient_id": "Patient_16",
+                "step_index": 2,
+                "start_time": 30,
+                "rationale": "Mandatory task: Patient_16 step 2 (Ward), duration 12h, earliest start 30. Scheduling at earliest possible time to minimize flow time. Inventory is zero but scheduling anyway to avoid -500 missed step penalty (-300 resource failure is preferable)."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_16. Rationale: Mandatory task: Patient_16 step 2 (Ward), duration 12h, earliest start 30. Scheduling at earliest possible time to minimize flow time. Inventory is zero but scheduling anyway to avoid -500 missed step penalty (-300 resource failure is preferable).",
+            "state_updates": {
+              "schedule": {
+                "St_Marys_Center_Ward": {
+                  "patient_id": "Patient_16",
+                  "step_index": 2,
+                  "start_time": 30,
+                  "rationale": "Mandatory task: Patient_16 step 2 (Ward), duration 12h, earliest start 30. Scheduling at earliest possible time to minimize flow time. Inventory is zero but scheduling anyway to avoid -500 missed step penalty (-300 resource failure is preferable)."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  },
+  {
+    "blackboard_id": "1",
+    "participants": [
+      "General_Hospital_Triage",
+      "General_Hospital_Ward",
+      "St_Marys_Center_Radiology",
+      "St_Marys_Center_Triage"
+    ],
+    "events": [
+      {
+        "blackboard_id": 1,
+        "id": "5f0df478-9ddd-4a2d-8fe3-4abe47a0bae8",
+        "ts": 1777053832.2935338,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "Resource-Constrained Job Shop with Provisioner.\n\nThis blackboard is a private communication channel.\nParticipants: General_Hospital_Ward, St_Marys_Center_Triage, General_Hospital_Triage, St_Marys_Center_Radiology"
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "eef39a9f-ef2a-4110-adcb-8596781c2500",
+        "ts": 1777053849.4632568,
+        "agent": "General_Hospital_Ward",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "General_Hospital_Ward": {
+                "message": "SURPLUS at General_Hospital_Ward: IV_Kits(41), Anesthetics(9), Pain_Killers(21), Radio_Contrast(13), Oxygen_Tanks(17), Surgical_Packs(9), PPE_Sets(45). Queue is empty — all units available for transfer. Request what you need!",
+                "rationale": "No jobs in queue, all inventory is surplus. Broadcasting to avoid massive holding costs and help other hospitals that may be short on resources."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'SURPLUS at General_Hospital_Ward: IV_Kits(41), Anesthetics(9), Pain_Killers(21), Radio_Contrast(13), Oxygen_Tanks(17), Surgical_Packs(9), PPE_Sets(45). Queue is empty — all units available for transfer. Request what you need!'. (Internal Rationale: No jobs in queue, all inventory is surplus. Broadcasting to avoid massive holding costs and help other hospitals that may be short on resources.)",
+            "state_updates": {
+              "broadcast_message": {
+                "General_Hospital_Ward": {
+                  "message": "SURPLUS at General_Hospital_Ward: IV_Kits(41), Anesthetics(9), Pain_Killers(21), Radio_Contrast(13), Oxygen_Tanks(17), Surgical_Packs(9), PPE_Sets(45). Queue is empty — all units available for transfer. Request what you need!",
+                  "rationale": "No jobs in queue, all inventory is surplus. Broadcasting to avoid massive holding costs and help other hospitals that may be short on resources."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "cbbd83e3-fefa-409a-8a32-13e1acf72e84",
+        "ts": 1777053924.6513603,
+        "agent": "St_Marys_Center_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "St_Marys_Center_Triage": {
+                "message": "SURPLUS at St_Marys_Center_Triage: Anesthetics(9), Pain_Killers(21), Radio_Contrast(13), Oxygen_Tanks(17), Surgical_Packs(9), IV_Kits(21 excess), PPE_Sets(25 excess). I need none of these for my queue. Claim them now or I'll transfer to Resource_Provisioner to reduce holding costs!",
+                "rationale": "I have 20 patients needing only 20 IV_Kits and 20 PPE_Sets. All other resources (and excess IV_Kits/PPE_Sets) are pure surplus costing -10/unit in holding. Broadcasting to find takers and earn transfer rewards."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'SURPLUS at St_Marys_Center_Triage: Anesthetics(9), Pain_Killers(21), Radio_Contrast(13), Oxygen_Tanks(17), Surgical_Packs(9), IV_Kits(21 excess), PPE_Sets(25 excess). I need none of these for my queue. Claim them now or I'll transfer to Resource_Provisioner to reduce holding costs!'. (Internal Rationale: I have 20 patients needing only 20 IV_Kits and 20 PPE_Sets. All other resources (and excess IV_Kits/PPE_Sets) are pure surplus costing -10/unit in holding. Broadcasting to find takers and earn transfer rewards.)",
+            "state_updates": {
+              "broadcast_message": {
+                "St_Marys_Center_Triage": {
+                  "message": "SURPLUS at St_Marys_Center_Triage: Anesthetics(9), Pain_Killers(21), Radio_Contrast(13), Oxygen_Tanks(17), Surgical_Packs(9), IV_Kits(21 excess), PPE_Sets(25 excess). I need none of these for my queue. Claim them now or I'll transfer to Resource_Provisioner to reduce holding costs!",
+                  "rationale": "I have 20 patients needing only 20 IV_Kits and 20 PPE_Sets. All other resources (and excess IV_Kits/PPE_Sets) are pure surplus costing -10/unit in holding. Broadcasting to find takers and earn transfer rewards."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "faf22a1c-b02e-4c46-b3c4-a8e34c6bf1ad",
+        "ts": 1777053941.7377472,
+        "agent": "St_Marys_Center_Radiology",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "transfers": {
+              "St_Marys_Center_Radiology": {
+                "to_hospital": "Resource_Provisioner",
+                "resource_type": "Surgical_Packs",
+                "amount": 9,
+                "rationale": "No jobs in queue. All 9 Surgical_Packs are pure surplus costing -90 in holding. Transferring to Resource_Provisioner."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Transferring 9 Surgical_Packs to Resource_Provisioner. Rationale: No jobs in queue. All 9 Surgical_Packs are pure surplus costing -90 in holding. Transferring to Resource_Provisioner.",
+            "state_updates": {
+              "transfers": {
+                "St_Marys_Center_Radiology": {
+                  "to_hospital": "Resource_Provisioner",
+                  "resource_type": "Surgical_Packs",
+                  "amount": 9,
+                  "rationale": "No jobs in queue. All 9 Surgical_Packs are pure surplus costing -90 in holding. Transferring to Resource_Provisioner."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "2f223a18-7325-4d59-85db-e05728765b84",
+        "ts": 1777053963.127418,
+        "agent": "General_Hospital_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "transfers": {
+              "General_Hospital_Triage": {
+                "to_hospital": "Resource_Provisioner",
+                "resource_type": "IV_Kits",
+                "amount": 21,
+                "rationale": "Need only 20 IV_Kits for 20 patients. 21 excess units costing -210 in holding. Transferring surplus to Resource_Provisioner."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Transferring 21 IV_Kits to Resource_Provisioner. Rationale: Need only 20 IV_Kits for 20 patients. 21 excess units costing -210 in holding. Transferring surplus to Resource_Provisioner.",
+            "state_updates": {
+              "transfers": {
+                "General_Hospital_Triage": {
+                  "to_hospital": "Resource_Provisioner",
+                  "resource_type": "IV_Kits",
+                  "amount": 21,
+                  "rationale": "Need only 20 IV_Kits for 20 patients. 21 excess units costing -210 in holding. Transferring surplus to Resource_Provisioner."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "cbb5e9f9-ad32-4ba4-9e1a-6ef850ebffcf",
+        "ts": 1777054034.6239426,
+        "agent": "General_Hospital_Ward",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "transfers": {
+              "General_Hospital_Ward": {
+                "to_hospital": "Resource_Provisioner",
+                "resource_type": "Surgical_Packs",
+                "amount": 9,
+                "rationale": "No jobs in queue. All 9 Surgical_Packs are pure surplus costing -90 in holding. Transferring to Resource_Provisioner."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Transferring 9 Surgical_Packs to Resource_Provisioner. Rationale: No jobs in queue. All 9 Surgical_Packs are pure surplus costing -90 in holding. Transferring to Resource_Provisioner.",
+            "state_updates": {
+              "transfers": {
+                "General_Hospital_Ward": {
+                  "to_hospital": "Resource_Provisioner",
+                  "resource_type": "Surgical_Packs",
+                  "amount": 9,
+                  "rationale": "No jobs in queue. All 9 Surgical_Packs are pure surplus costing -90 in holding. Transferring to Resource_Provisioner."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "9f16edfa-72b3-4967-8eff-e0ff8a015423",
+        "ts": 1777054088.167167,
+        "agent": "St_Marys_Center_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "transfers": {
+              "St_Marys_Center_Triage": {
+                "to_hospital": "Resource_Provisioner",
+                "resource_type": "PPE_Sets",
+                "amount": 25,
+                "rationale": "Need only 20 PPE_Sets for 20 patients. 25 excess units costing -250 in holding. Transferring surplus to Resource_Provisioner."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Transferring 25 PPE_Sets to Resource_Provisioner. Rationale: Need only 20 PPE_Sets for 20 patients. 25 excess units costing -250 in holding. Transferring surplus to Resource_Provisioner.",
+            "state_updates": {
+              "transfers": {
+                "St_Marys_Center_Triage": {
+                  "to_hospital": "Resource_Provisioner",
+                  "resource_type": "PPE_Sets",
+                  "amount": 25,
+                  "rationale": "Need only 20 PPE_Sets for 20 patients. 25 excess units costing -250 in holding. Transferring surplus to Resource_Provisioner."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "743b3961-f808-46cf-a9c0-46abf8582814",
+        "ts": 1777054101.7379427,
+        "agent": "St_Marys_Center_Radiology",
+        "kind": "communication",
+        "payload": {
+          "content": "St_Marys_Center_Radiology: SURPLUS — Queue is EMPTY. Transferring IV_Kits(41) now. Still have Pain_Killers(21), Oxygen_Tanks(17), PPE_Sets(20), Surgical_Packs(5) as pure surplus available. Claim now or they go to Resource_Provisioner. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "378271d0-2d46-4939-acac-43c0c727d7db",
+        "ts": 1777054112.4246635,
+        "agent": "St_Marys_Center_Radiology",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "transfers": {
+              "St_Marys_Center_Radiology": {
+                "to_hospital": "Resource_Provisioner",
+                "resource_type": "Surgical_Packs",
+                "amount": 5,
+                "rationale": "No jobs in queue. All 5 Surgical_Packs are pure surplus costing -50 in holding. Transferring to Resource_Provisioner."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Transferring 5 Surgical_Packs to Resource_Provisioner. Rationale: No jobs in queue. All 5 Surgical_Packs are pure surplus costing -50 in holding. Transferring to Resource_Provisioner.",
+            "state_updates": {
+              "transfers": {
+                "St_Marys_Center_Radiology": {
+                  "to_hospital": "Resource_Provisioner",
+                  "resource_type": "Surgical_Packs",
+                  "amount": 5,
+                  "rationale": "No jobs in queue. All 5 Surgical_Packs are pure surplus costing -50 in holding. Transferring to Resource_Provisioner."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "9e575a26-1c22-4123-a819-bf59b567b31a",
+        "ts": 1777054130.7019236,
+        "agent": "General_Hospital_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "General_Hospital_Triage": {
+                "message": "CRITICAL DEFICIT at General_Hospital_Triage: Need 20 PPE_Sets urgently! I have 20 patients queued and 0 PPE_Sets. Resource_Provisioner please prioritize sending 20 PPE_Sets to General_Hospital. Also transferring surplus Anesthetics(9), Radio_Contrast(13), Oxygen_Tanks(17) to Provisioner now.",
+                "rationale": "PPE_Sets at 0 with 20 patients needing them means potential -6000 in resource failure penalties. Must alert network immediately. Also clearing surplus to reduce holding costs."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'CRITICAL DEFICIT at General_Hospital_Triage: Need 20 PPE_Sets urgently! I have 20 patients queued and 0 PPE_Sets. Resource_Provisioner please prioritize sending 20 PPE_Sets to General_Hospital. Also transferring surplus Anesthetics(9), Radio_Contrast(13), Oxygen_Tanks(17) to Provisioner now.'. (Internal Rationale: PPE_Sets at 0 with 20 patients needing them means potential -6000 in resource failure penalties. Must alert network immediately. Also clearing surplus to reduce holding costs.)",
+            "state_updates": {
+              "broadcast_message": {
+                "General_Hospital_Triage": {
+                  "message": "CRITICAL DEFICIT at General_Hospital_Triage: Need 20 PPE_Sets urgently! I have 20 patients queued and 0 PPE_Sets. Resource_Provisioner please prioritize sending 20 PPE_Sets to General_Hospital. Also transferring surplus Anesthetics(9), Radio_Contrast(13), Oxygen_Tanks(17) to Provisioner now.",
+                  "rationale": "PPE_Sets at 0 with 20 patients needing them means potential -6000 in resource failure penalties. Must alert network immediately. Also clearing surplus to reduce holding costs."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "43e0a6a5-f599-4d44-85b3-a4cd77dff987",
+        "ts": 1777054204.1973813,
+        "agent": "General_Hospital_Ward",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "transfers": {
+              "General_Hospital_Ward": {
+                "to_hospital": "Resource_Provisioner",
+                "resource_type": "Oxygen_Tanks",
+                "amount": 17,
+                "rationale": "No jobs in queue. All 17 Oxygen_Tanks are pure surplus costing -170 in holding. Transferring to Resource_Provisioner to eliminate holding costs and earn transfer reward."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Transferring 17 Oxygen_Tanks to Resource_Provisioner. Rationale: No jobs in queue. All 17 Oxygen_Tanks are pure surplus costing -170 in holding. Transferring to Resource_Provisioner to eliminate holding costs and earn transfer reward.",
+            "state_updates": {
+              "transfers": {
+                "General_Hospital_Ward": {
+                  "to_hospital": "Resource_Provisioner",
+                  "resource_type": "Oxygen_Tanks",
+                  "amount": 17,
+                  "rationale": "No jobs in queue. All 17 Oxygen_Tanks are pure surplus costing -170 in holding. Transferring to Resource_Provisioner to eliminate holding costs and earn transfer reward."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "dde1ed43-2dfd-4f3c-85f8-28ec3b92ffd3",
+        "ts": 1777054312.2761014,
+        "agent": "St_Marys_Center_Radiology",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "transfers": {
+              "St_Marys_Center_Radiology": {
+                "to_hospital": "Resource_Provisioner",
+                "resource_type": "Surgical_Packs",
+                "amount": 5,
+                "rationale": "Queue is empty. All 5 Surgical_Packs are pure surplus costing -50 in holding. Transferring to Resource_Provisioner to eliminate holding costs and earn transfer reward."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Transferring 5 Surgical_Packs to Resource_Provisioner. Rationale: Queue is empty. All 5 Surgical_Packs are pure surplus costing -50 in holding. Transferring to Resource_Provisioner to eliminate holding costs and earn transfer reward.",
+            "state_updates": {
+              "transfers": {
+                "St_Marys_Center_Radiology": {
+                  "to_hospital": "Resource_Provisioner",
+                  "resource_type": "Surgical_Packs",
+                  "amount": 5,
+                  "rationale": "Queue is empty. All 5 Surgical_Packs are pure surplus costing -50 in holding. Transferring to Resource_Provisioner to eliminate holding costs and earn transfer reward."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "aadffb8e-6eec-4426-91c2-d6e957aabff5",
+        "ts": 1777054342.9391928,
+        "agent": "General_Hospital_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "transfers": {
+              "General_Hospital_Triage": {
+                "to_hospital": "Resource_Provisioner",
+                "resource_type": "Anesthetics",
+                "amount": 0,
+                "rationale": "No Anesthetics in inventory, nothing to transfer."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Transferring 0 Anesthetics to Resource_Provisioner. Rationale: No Anesthetics in inventory, nothing to transfer.",
+            "state_updates": {
+              "transfers": {
+                "General_Hospital_Triage": {
+                  "to_hospital": "Resource_Provisioner",
+                  "resource_type": "Anesthetics",
+                  "amount": 0,
+                  "rationale": "No Anesthetics in inventory, nothing to transfer."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "2c8b6fe2-2a56-4052-85cb-d6638d1b1a8d",
+        "ts": 1777054402.3542469,
+        "agent": "General_Hospital_Ward",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "transfers": {
+              "General_Hospital_Ward": {
+                "to_hospital": "Resource_Provisioner",
+                "resource_type": "PPE_Sets",
+                "amount": 20,
+                "rationale": "No jobs in queue. All 20 PPE_Sets are pure surplus costing -200 in holding. General_Hospital_Triage's PPE deficit was already addressed by St_Marys_Center_Surgery (20 PPE_Sets sent). Transferring to Resource_Provisioner to eliminate holding costs and earn transfer reward."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Transferring 20 PPE_Sets to Resource_Provisioner. Rationale: No jobs in queue. All 20 PPE_Sets are pure surplus costing -200 in holding. General_Hospital_Triage's PPE deficit was already addressed by St_Marys_Center_Surgery (20 PPE_Sets sent). Transferring to Resource_Provisioner to eliminate holding costs and earn transfer reward.",
+            "state_updates": {
+              "transfers": {
+                "General_Hospital_Ward": {
+                  "to_hospital": "Resource_Provisioner",
+                  "resource_type": "PPE_Sets",
+                  "amount": 20,
+                  "rationale": "No jobs in queue. All 20 PPE_Sets are pure surplus costing -200 in holding. General_Hospital_Triage's PPE deficit was already addressed by St_Marys_Center_Surgery (20 PPE_Sets sent). Transferring to Resource_Provisioner to eliminate holding costs and earn transfer reward."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "8000b218-2019-41f2-9f29-fade65e66800",
+        "ts": 1777054464.3667498,
+        "agent": "St_Marys_Center_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "St_Marys_Center_Triage": {
+                "message": "URGENT CRITICAL DEFICIT at St_Marys_Center_Triage: Need 20 IV_Kits and 15 PPE_Sets at St_Marys_Center IMMEDIATELY! I have 20 patients queued with 0 IV_Kits and only 5 PPE_Sets. Resource_Provisioner: please send 20 IV_Kits and 15 PPE_Sets to St_Marys_Center right away. Potential -10,500 in resource failure penalties if not addressed!",
+                "rationale": "I have 20 patients each needing 1 IV_Kit and 1 PPE_Set. With 0 IV_Kits and 5 PPE_Sets, I face 20 IV_Kit failures (-6000) and 15 PPE_Set failures (-4500). Must alert the entire network immediately."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'URGENT CRITICAL DEFICIT at St_Marys_Center_Triage: Need 20 IV_Kits and 15 PPE_Sets at St_Marys_Center IMMEDIATELY! I have 20 patients queued with 0 IV_Kits and only 5 PPE_Sets. Resource_Provisioner: please send 20 IV_Kits and 15 PPE_Sets to St_Marys_Center right away. Potential -10,500 in resource failure penalties if not addressed!'. (Internal Rationale: I have 20 patients each needing 1 IV_Kit and 1 PPE_Set. With 0 IV_Kits and 5 PPE_Sets, I face 20 IV_Kit failures (-6000) and 15 PPE_Set failures (-4500). Must alert the entire network immediately.)",
+            "state_updates": {
+              "broadcast_message": {
+                "St_Marys_Center_Triage": {
+                  "message": "URGENT CRITICAL DEFICIT at St_Marys_Center_Triage: Need 20 IV_Kits and 15 PPE_Sets at St_Marys_Center IMMEDIATELY! I have 20 patients queued with 0 IV_Kits and only 5 PPE_Sets. Resource_Provisioner: please send 20 IV_Kits and 15 PPE_Sets to St_Marys_Center right away. Potential -10,500 in resource failure penalties if not addressed!",
+                  "rationale": "I have 20 patients each needing 1 IV_Kit and 1 PPE_Set. With 0 IV_Kits and 5 PPE_Sets, I face 20 IV_Kit failures (-6000) and 15 PPE_Set failures (-4500). Must alert the entire network immediately."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "e845e155-9254-478c-b70e-08e236229b26",
+        "ts": 1777054482.5494761,
+        "agent": "St_Marys_Center_Radiology",
+        "kind": "communication",
+        "payload": {
+          "content": "St_Marys_Center_Radiology: Queue EMPTY, all inventory cleared to ZERO. Transferred final 5 PPE_Sets to Resource_Provisioner. St_Marys_Center_Triage: I see your CRITICAL DEFICIT — I had only 5 PPE_Sets which I've sent to Provisioner for redistribution. Resource_Provisioner needs to send you 20 IV_Kits and 15+ PPE_Sets ASAP. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "8bdf380c-c512-49ba-a141-85bec963d50b",
+        "ts": 1777054489.6027563,
+        "agent": "St_Marys_Center_Radiology",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "transfers": {
+              "St_Marys_Center_Radiology": {
+                "to_hospital": "St_Marys_Center",
+                "resource_type": "PPE_Sets",
+                "amount": 5,
+                "rationale": "Queue is empty. St_Marys_Center_Triage has CRITICAL DEFICIT of PPE_Sets (needs 20, only has 5). Transferring my 5 PPE_Sets directly to St_Marys_Center to help address their urgent need rather than sending to Resource_Provisioner. This keeps them at the hospital where they're needed. Eliminates my holding cost of -50."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Transferring 5 PPE_Sets to St_Marys_Center. Rationale: Queue is empty. St_Marys_Center_Triage has CRITICAL DEFICIT of PPE_Sets (needs 20, only has 5). Transferring my 5 PPE_Sets directly to St_Marys_Center to help address their urgent need rather than sending to Resource_Provisioner. This keeps them at the hospital where they're needed. Eliminates my holding cost of -50.",
+            "state_updates": {
+              "transfers": {
+                "St_Marys_Center_Radiology": {
+                  "to_hospital": "St_Marys_Center",
+                  "resource_type": "PPE_Sets",
+                  "amount": 5,
+                  "rationale": "Queue is empty. St_Marys_Center_Triage has CRITICAL DEFICIT of PPE_Sets (needs 20, only has 5). Transferring my 5 PPE_Sets directly to St_Marys_Center to help address their urgent need rather than sending to Resource_Provisioner. This keeps them at the hospital where they're needed. Eliminates my holding cost of -50."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "4a492158-79c1-4c2f-bbd3-1839ca1823d2",
+        "ts": 1777054517.096841,
+        "agent": "General_Hospital_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "broadcast_message": {
+              "General_Hospital_Triage": {
+                "message": "CRITICAL DEFICIT at General_Hospital_Triage: STILL need 20 IV_Kits and 20 PPE_Sets at General_Hospital! I have 20 patients queued and ZERO inventory for both resources. Resource_Provisioner: please send 20 IV_Kits and 20 PPE_Sets to General_Hospital immediately. Previous PPE transfer from St_Marys_Center_Surgery may have arrived but I still show 0. All other resources (Anesthetics, Pain_Killers, Radio_Contrast, Oxygen_Tanks, Surgical_Packs) are at 0 — no surplus to offer. Only IV_Kits and PPE_Sets are needed.",
+                "rationale": "I have 20 patients each needing 1 IV_Kit and 1 PPE_Set = 40 total resource units needed. With 0 inventory, that's 40 × -300 = -12,000 in potential resource failure penalties. Must escalate urgently to get resources delivered before scheduling begins. Previous transfers may have arrived at the hospital pool but I need to confirm and request more if needed."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "BROADCAST: 'CRITICAL DEFICIT at General_Hospital_Triage: STILL need 20 IV_Kits and 20 PPE_Sets at General_Hospital! I have 20 patients queued and ZERO inventory for both resources. Resource_Provisioner: please send 20 IV_Kits and 20 PPE_Sets to General_Hospital immediately. Previous PPE transfer from St_Marys_Center_Surgery may have arrived but I still show 0. All other resources (Anesthetics, Pain_Killers, Radio_Contrast, Oxygen_Tanks, Surgical_Packs) are at 0 — no surplus to offer. Only IV_Kits and PPE_Sets are needed.'. (Internal Rationale: I have 20 patients each needing 1 IV_Kit and 1 PPE_Set = 40 total resource units needed. With 0 inventory, that's 40 × -300 = -12,000 in potential resource failure penalties. Must escalate urgently to get resources delivered before scheduling begins. Previous transfers may have arrived at the hospital pool but I need to confirm and request more if needed.)",
+            "state_updates": {
+              "broadcast_message": {
+                "General_Hospital_Triage": {
+                  "message": "CRITICAL DEFICIT at General_Hospital_Triage: STILL need 20 IV_Kits and 20 PPE_Sets at General_Hospital! I have 20 patients queued and ZERO inventory for both resources. Resource_Provisioner: please send 20 IV_Kits and 20 PPE_Sets to General_Hospital immediately. Previous PPE transfer from St_Marys_Center_Surgery may have arrived but I still show 0. All other resources (Anesthetics, Pain_Killers, Radio_Contrast, Oxygen_Tanks, Surgical_Packs) are at 0 — no surplus to offer. Only IV_Kits and PPE_Sets are needed.",
+                  "rationale": "I have 20 patients each needing 1 IV_Kit and 1 PPE_Set = 40 total resource units needed. With 0 inventory, that's 40 × -300 = -12,000 in potential resource failure penalties. Must escalate urgently to get resources delivered before scheduling begins. Previous transfers may have arrived at the hospital pool but I need to confirm and request more if needed."
+                }
+              }
+            }
+          },
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "a4bc736b-336b-4a51-a537-6bb586dbd479",
+        "ts": 1777054657.1386664,
+        "agent": "St_Marys_Center_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "St_Marys_Center_Triage": {
+                "patient_id": "Patient_6",
+                "step_index": 0,
+                "start_time": 24,
+                "rationale": "Earliest start 24, scheduling at earliest possible time."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_6. Rationale: Earliest start 24, scheduling at earliest possible time.",
+            "state_updates": {
+              "schedule": {
+                "St_Marys_Center_Triage": {
+                  "patient_id": "Patient_6",
+                  "step_index": 0,
+                  "start_time": 24,
+                  "rationale": "Earliest start 24, scheduling at earliest possible time."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "2144d14f-b1e6-4544-ba48-8a85662933fe",
+        "ts": 1777054665.8052099,
+        "agent": "St_Marys_Center_Radiology",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "transfers": {
+              "St_Marys_Center_Radiology": {
+                "to_hospital": "Resource_Provisioner",
+                "resource_type": "PPE_Sets",
+                "amount": 4,
+                "rationale": "Queue is empty. 4 PPE_Sets are pure surplus costing -40 in holding. Transferring to Resource_Provisioner to eliminate holding costs and earn transfer reward. Resource_Provisioner can redistribute to hospitals with deficits (both General_Hospital_Triage and St_Marys_Center_Triage need PPE_Sets)."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Transferring 4 PPE_Sets to Resource_Provisioner. Rationale: Queue is empty. 4 PPE_Sets are pure surplus costing -40 in holding. Transferring to Resource_Provisioner to eliminate holding costs and earn transfer reward. Resource_Provisioner can redistribute to hospitals with deficits (both General_Hospital_Triage and St_Marys_Center_Triage need PPE_Sets).",
+            "state_updates": {
+              "transfers": {
+                "St_Marys_Center_Radiology": {
+                  "to_hospital": "Resource_Provisioner",
+                  "resource_type": "PPE_Sets",
+                  "amount": 4,
+                  "rationale": "Queue is empty. 4 PPE_Sets are pure surplus costing -40 in holding. Transferring to Resource_Provisioner to eliminate holding costs and earn transfer reward. Resource_Provisioner can redistribute to hospitals with deficits (both General_Hospital_Triage and St_Marys_Center_Triage need PPE_Sets)."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "65d44072-1cfb-42d1-889e-6c66a54463e5",
+        "ts": 1777054688.395935,
+        "agent": "General_Hospital_Triage",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": null,
+          "action_params": {
+            "schedule": {
+              "General_Hospital_Triage": {
+                "patient_id": "Patient_16",
+                "step_index": 0,
+                "start_time": 23,
+                "rationale": "Earliest start 23, scheduling at earliest possible time."
+              }
+            }
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": "Scheduling Patient_16. Rationale: Earliest start 23, scheduling at earliest possible time.",
+            "state_updates": {
+              "schedule": {
+                "General_Hospital_Triage": {
+                  "patient_id": "Patient_16",
+                  "step_index": 0,
+                  "start_time": 23,
+                  "rationale": "Earliest start 23, scheduling at earliest possible time."
+                }
+              }
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  }
+]

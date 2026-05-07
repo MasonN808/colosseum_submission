@@ -1,0 +1,213 @@
+================================================================================
+BLACKBOARD STATE LOG - 1
+Session started: 2026-04-23 18:25:18
+================================================================================
+
+BLACKBOARD INFO:
+- ID: 1
+- Participants: General_Hospital_Ward, St_Marys_Center_Triage, General_Hospital_Triage, St_Marys_Center_Radiology
+================================================================================
+
+================================================================================
+BLACKBOARD STATE UPDATE
+Updated: 2026-04-23 18:29:06
+Iteration: 1 | Phase: execution | Last Agent: St_Marys_Center_Surgery
+Total Events: 54
+================================================================================
+
+EVENT SUMMARY:
+- Total Events: 54
+- By Type: context(1), communication(16), action_executed(37)
+- By Agent: SYSTEM(1), General_Hospital_Ward(6), St_Marys_Center_Triage(25), St_Marys_Center_Radiology(17), General_Hospital_Triage(5)
+
+--------------------------------------------------------------------------------
+FULL EVENT LOG:
+
+[Event #1, Iteration: 1] [18:25:18] [Execution] SYSTEM (context)  Message: "Resource-Constrained Job Shop with Provisioner.
+
+This blackboard is a private communication channel.
+Participants: General_Hospital_Ward, St_Marys_Center_Triage, General_Hospital_Triage, St_Marys_Center_Radiology"
+
+[Event #2, Iteration: 1] [18:25:23] [Planning] General_Hospital_Ward (communication)  Content: Coalition update from General_Hospital_Ward: job queue empty this iteration, so no ward scheduling actions. Current inventory suggests large surplus with no local queue demand: IV_Kits 41, Anesthetics 9, Pain_Killers 21, Radio_Contrast 13, Oxygen_Tanks 17, Surgical_Packs 9, PPE_Sets 45. If coalition sites need resources, request via blackboard.
+
+[Event #3, Iteration: 1] [18:25:23] [Planning] General_Hospital_Ward (action_executed)  Action_Params: {'broadcast_message': {'General_Hospital_Ward': {'message': 'SURPLUS IV_Kits, Anesthetics, Pain_Killers, Radio_Contrast, Oxygen_Tanks, Surgical_Packs, PPE_Sets at General_Hospital', 'rationale': 'General_Hospital_Ward has empty queue and substantial excess inventory (>5 units), so advertising surplus may enable rewarded redistribution and reduce holding costs.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': "BROADCAST: 'SURPLUS IV_Kits, Anesthetics, Pain_Killers, Radio_Contrast, Oxygen_Tanks, Surgical_Packs, PPE_Sets at General_Hospital'. (Internal Rationale: General_Hospital_Ward has empty queue and substantial excess inventory (>5 units), so advertising surplus may enable rewarded redistribution and reduce holding costs.)", 'state_updates': {'broadcast_message': {'General_Hospital_Ward': {'message': 'SURPLUS IV_Kits, Anesthetics, Pain_Killers, Radio_Contrast, Oxygen_Tanks, Surgical_Packs, PPE_Sets at General_Hospital', 'rationale': 'General_Hospital_Ward has empty queue and substantial excess inventory (>5 units), so advertising surplus may enable rewarded redistribution and reduce holding costs.'}}}}
+
+[Event #4, Iteration: 1] [18:25:37] [Planning] St_Marys_Center_Triage (communication)  Content: Coalition update from St_Marys_Center_Triage: local queue has 20 triage step-0 patients this iteration (earliest starts 0-24). Inventory is ample for triage demand (PPE_Sets 45, IV_Kits 41; triage usage 1 each per patient => need 20 each), so no urgent resource request. No surplus beyond expected local need on PPE/IV after covering queue. Will schedule triage jobs at earliest feasible slots.
+
+[Event #5, Iteration: 1] [18:25:37] [Planning] St_Marys_Center_Triage (action_executed)  Action_Params: {'broadcast_message': {'St_Marys_Center_Triage': {'message': 'St_Marys_Center_Triage can cover current triage demand locally; no urgent PPE_Sets or IV_Kits deficit.', 'rationale': 'Inform network that St_Marys_Center triage currently has sufficient inventory for its queued patients, reducing unnecessary transfers.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': "BROADCAST: 'St_Marys_Center_Triage can cover current triage demand locally; no urgent PPE_Sets or IV_Kits deficit.'. (Internal Rationale: Inform network that St_Marys_Center triage currently has sufficient inventory for its queued patients, reducing unnecessary transfers.)", 'state_updates': {'broadcast_message': {'St_Marys_Center_Triage': {'message': 'St_Marys_Center_Triage can cover current triage demand locally; no urgent PPE_Sets or IV_Kits deficit.', 'rationale': 'Inform network that St_Marys_Center triage currently has sufficient inventory for its queued patients, reducing unnecessary transfers.'}}}}
+
+[Event #6, Iteration: 1] [18:25:42] [Planning] St_Marys_Center_Radiology (action_executed)  Action_Params: {'broadcast_message': {'St_Marys_Center_Radiology': {'message': 'SURPLUS IV_Kits, Anesthetics, Pain_Killers, Radio_Contrast, Oxygen_Tanks, Surgical_Packs, PPE_Sets at St_Marys_Center', 'rationale': 'Radiology job queue is empty and inventory is substantial; advertising surplus may enable rewarded redistribution and reduce holding costs.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': "BROADCAST: 'SURPLUS IV_Kits, Anesthetics, Pain_Killers, Radio_Contrast, Oxygen_Tanks, Surgical_Packs, PPE_Sets at St_Marys_Center'. (Internal Rationale: Radiology job queue is empty and inventory is substantial; advertising surplus may enable rewarded redistribution and reduce holding costs.)", 'state_updates': {'broadcast_message': {'St_Marys_Center_Radiology': {'message': 'SURPLUS IV_Kits, Anesthetics, Pain_Killers, Radio_Contrast, Oxygen_Tanks, Surgical_Packs, PPE_Sets at St_Marys_Center', 'rationale': 'Radiology job queue is empty and inventory is substantial; advertising surplus may enable rewarded redistribution and reduce holding costs.'}}}}
+
+[Event #7, Iteration: 1] [18:25:42] [Planning] St_Marys_Center_Radiology (communication)  Content: Coalition update from St_Marys_Center_Radiology: job queue empty this iteration, so no radiology scheduling actions. Current inventory suggests large surplus with no local queue demand: IV_Kits 41, Anesthetics 9, Pain_Killers 21, Radio_Contrast 13, Oxygen_Tanks 17, Surgical_Packs 9, PPE_Sets 45. If coalition sites need resources, request via blackboard. (phase=planning, iter=1)
+
+[Event #8, Iteration: 1] [18:25:46] [Planning] General_Hospital_Triage (communication)  Content: Coalition update from General_Hospital_Triage: local queue has 20 triage step-0 patients this iteration (earliest starts 0-24). Inventory is ample for triage demand (PPE_Sets 45, IV_Kits 41; triage usage 1 each per patient => need 20 each), so no urgent resource request. Remaining post-queue surplus estimate: PPE_Sets 25, IV_Kits 21. Will schedule triage jobs at earliest feasible slots.
+
+[Event #9, Iteration: 1] [18:25:46] [Planning] General_Hospital_Triage (action_executed)  Action_Params: {'broadcast_message': {'General_Hospital_Triage': {'message': 'SURPLUS IV_Kits, PPE_Sets at General_Hospital', 'rationale': 'General_Hospital_Triage has 20 queued triage patients and enough inventory to cover them locally, leaving >5 excess IV_Kits and PPE_Sets; advertising surplus may enable rewarded redistribution and reduce holding costs.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': "BROADCAST: 'SURPLUS IV_Kits, PPE_Sets at General_Hospital'. (Internal Rationale: General_Hospital_Triage has 20 queued triage patients and enough inventory to cover them locally, leaving >5 excess IV_Kits and PPE_Sets; advertising surplus may enable rewarded redistribution and reduce holding costs.)", 'state_updates': {'broadcast_message': {'General_Hospital_Triage': {'message': 'SURPLUS IV_Kits, PPE_Sets at General_Hospital', 'rationale': 'General_Hospital_Triage has 20 queued triage patients and enough inventory to cover them locally, leaving >5 excess IV_Kits and PPE_Sets; advertising surplus may enable rewarded redistribution and reduce holding costs.'}}}}
+
+[Event #10, Iteration: 1] [18:25:57] [Planning] General_Hospital_Ward (communication)  Content: Coalition update from General_Hospital_Ward: queue remains empty in planning, no ward scheduling actions. Inventory still highly surplus with no local demand: IV_Kits 41, Anesthetics 9, Pain_Killers 21, Radio_Contrast 13, Oxygen_Tanks 17, Surgical_Packs 9, PPE_Sets 45. No deficits; available to support coalition requests if provisioner acts.
+
+[Event #11, Iteration: 1] [18:26:15] [Planning] St_Marys_Center_Triage (communication)  Content: Coalition update from St_Marys_Center_Triage: planning to schedule all 20 queued triage step-0 patients at earliest feasible times given capacity 4. Local inventory covers demand exactly with surplus remaining after queue of IV_Kits 21 and PPE_Sets 25; no urgent deficit. If coalition wants, can encourage provisioner to pull surplus from St_Marys_Center overall after triage commitments.
+
+[Event #12, Iteration: 1] [18:26:24] [Planning] St_Marys_Center_Radiology (communication)  Content: Coalition update from St_Marys_Center_Radiology: queue empty this iteration, so no radiology scheduling actions. Inventory remains highly surplus with no local radiology demand: IV_Kits 41, Anesthetics 9, Pain_Killers 21, Radio_Contrast 13, Oxygen_Tanks 17, Surgical_Packs 9, PPE_Sets 45. No deficits. Recommend coalition ask Resource_Provisioner to pull surplus from St_Marys_Center/General_Hospital to reduce holding costs and gain transfer reward if any site later shows need. (phase=planning, iter=1)
+
+[Event #13, Iteration: 1] [18:26:29] [Planning] General_Hospital_Triage (communication)  Content: Coalition update from General_Hospital_Triage: local queue has 20 triage step-0 patients this iteration (earliest starts 0-24). Inventory covers full triage demand (need 20 IV_Kits + 20 PPE_Sets; on hand IV_Kits 41, PPE_Sets 45), leaving projected surplus after local queue of IV_Kits 21 and PPE_Sets 25. No urgent deficit. I will schedule all queued triage jobs at earliest feasible times given capacity 4.
+
+[Event #14, Iteration: 1] [18:26:44] [Planning] General_Hospital_Ward (communication)  Content: Coalition update from General_Hospital_Ward: planning phase, JOB QUEUE empty so no ward scheduling actions this iteration. Inventory remains surplus with no local ward demand: IV_Kits 41, Anesthetics 9, Pain_Killers 21, Radio_Contrast 13, Oxygen_Tanks 17, Surgical_Packs 9, PPE_Sets 45. No deficits; available if coalition later identifies a need.
+
+[Event #15, Iteration: 1] [18:26:44] [Planning] General_Hospital_Ward (action_executed)  Action_Params: {'broadcast_message': {'General_Hospital_Ward': {'message': 'SURPLUS IV_Kits, Anesthetics, Pain_Killers, Radio_Contrast, Oxygen_Tanks, Surgical_Packs, PPE_Sets at General_Hospital', 'rationale': 'General_Hospital_Ward has empty queue and substantial excess inventory (>5 units), so advertising surplus may enable rewarded redistribution and reduce holding costs.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': "BROADCAST: 'SURPLUS IV_Kits, Anesthetics, Pain_Killers, Radio_Contrast, Oxygen_Tanks, Surgical_Packs, PPE_Sets at General_Hospital'. (Internal Rationale: General_Hospital_Ward has empty queue and substantial excess inventory (>5 units), so advertising surplus may enable rewarded redistribution and reduce holding costs.)", 'state_updates': {'broadcast_message': {'General_Hospital_Ward': {'message': 'SURPLUS IV_Kits, Anesthetics, Pain_Killers, Radio_Contrast, Oxygen_Tanks, Surgical_Packs, PPE_Sets at General_Hospital', 'rationale': 'General_Hospital_Ward has empty queue and substantial excess inventory (>5 units), so advertising surplus may enable rewarded redistribution and reduce holding costs.'}}}}
+
+[Event #16, Iteration: 1] [18:26:54] [Planning] St_Marys_Center_Triage (communication)  Content: Coalition update from St_Marys_Center_Triage: local queue has 20 triage step-0 patients this iteration, capacity 4, inventory sufficient (need 20 IV_Kits + 20 PPE_Sets; on hand 41/45). No urgent deficit. Plan is to schedule all jobs at earliest feasible times respecting release times; projected post-queue surplus remains IV_Kits 21 and PPE_Sets 25.
+
+[Event #17, Iteration: 1] [18:27:03] [Planning] St_Marys_Center_Radiology (communication)  Content: Coalition update from St_Marys_Center_Radiology: JOB QUEUE empty this iteration, so no radiology scheduling actions. Inventory remains highly surplus with no local radiology demand: IV_Kits 41, Anesthetics 9, Pain_Killers 21, Radio_Contrast 13, Oxygen_Tanks 17, Surgical_Packs 9, PPE_Sets 45. No deficits. Recommend provisioner pull surplus from St_Marys_Center and General_Hospital to reduce holding costs and potentially earn transfer rewards if destinations need stock.
+
+[Event #18, Iteration: 1] [18:27:08] [Planning] General_Hospital_Triage (communication)  Content: Coalition update from General_Hospital_Triage: planning to schedule all 20 queued triage step-0 patients at earliest feasible times respecting release times; inventory sufficient (need 20 IV_Kits + 20 PPE_Sets; on hand 41/45), projected post-queue surplus IV_Kits 21 and PPE_Sets 25. No urgent deficit.
+
+[Event #19, Iteration: 1] [18:27:27] [Planning] General_Hospital_Ward (communication)  Content: Coalition update from General_Hospital_Ward: planning phase, JOB QUEUE empty so no ward scheduling actions this iteration. Inventory remains surplus with no local ward demand: IV_Kits 41, Anesthetics 9, Pain_Killers 21, Radio_Contrast 13, Oxygen_Tanks 17, Surgical_Packs 9, PPE_Sets 45. No deficits; available if coalition later identifies a need.
+
+[Event #20, Iteration: 1] [18:27:40] [Planning] St_Marys_Center_Triage (communication)  Content: Coalition update from St_Marys_Center_Triage: local queue has 20 triage step-0 patients this iteration, capacity 4, inventory sufficient (need 20 IV_Kits + 20 PPE_Sets; on hand 41/45). No urgent deficit. Plan is to schedule all jobs at earliest feasible times respecting release times; projected post-queue surplus IV_Kits 21 and PPE_Sets 25.
+
+[Event #21, Iteration: 1] [18:27:46] [Planning] St_Marys_Center_Radiology (communication)  Content: Coalition update from St_Marys_Center_Radiology: JOB QUEUE empty this iteration, so no radiology scheduling actions. Inventory remains highly surplus with no local radiology demand: IV_Kits 41, Anesthetics 9, Pain_Killers 21, Radio_Contrast 13, Oxygen_Tanks 17, Surgical_Packs 9, PPE_Sets 45. No deficits. Recommend provisioner pull surplus from St_Marys_Center and General_Hospital to reduce holding costs and potentially earn transfer rewards if destinations need stock. (phase=planning, iter=1)
+
+[Event #22, Iteration: 1] [18:27:53] [Planning] General_Hospital_Triage (communication)  Content: Coalition update from General_Hospital_Triage: local queue has 20 triage step-0 patients this iteration, capacity 4, inventory sufficient (need 20 IV_Kits + 20 PPE_Sets; on hand 41/45). No urgent deficit. Plan is to schedule all jobs at earliest feasible times respecting release times; projected post-queue surplus IV_Kits 21 and PPE_Sets 25.
+
+[Event #23, Iteration: 1] [18:28:35] [Execution] St_Marys_Center_Triage (action_executed)  Action_Params: {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_0', 'step_index': 0, 'start_time': 9, 'rationale': 'Schedule required triage step 0 at listed earliest start per mandatory task list.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_0. Rationale: Schedule required triage step 0 at listed earliest start per mandatory task list.', 'state_updates': {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_0', 'step_index': 0, 'start_time': 9, 'rationale': 'Schedule required triage step 0 at listed earliest start per mandatory task list.'}}}}
+
+[Event #24, Iteration: 1] [18:28:35] [Execution] St_Marys_Center_Triage (action_executed)  Action_Params: {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_1', 'step_index': 0, 'start_time': 23, 'rationale': 'Schedule required triage step 0 at listed earliest start per mandatory task list.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_1. Rationale: Schedule required triage step 0 at listed earliest start per mandatory task list.', 'state_updates': {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_1', 'step_index': 0, 'start_time': 23, 'rationale': 'Schedule required triage step 0 at listed earliest start per mandatory task list.'}}}}
+
+[Event #25, Iteration: 1] [18:28:35] [Execution] St_Marys_Center_Triage (action_executed)  Action_Params: {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_2', 'step_index': 0, 'start_time': 15, 'rationale': 'Schedule required triage step 0 at listed earliest start per mandatory task list.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_2. Rationale: Schedule required triage step 0 at listed earliest start per mandatory task list.', 'state_updates': {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_2', 'step_index': 0, 'start_time': 15, 'rationale': 'Schedule required triage step 0 at listed earliest start per mandatory task list.'}}}}
+
+[Event #26, Iteration: 1] [18:28:35] [Execution] St_Marys_Center_Triage (action_executed)  Action_Params: {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_3', 'step_index': 0, 'start_time': 2, 'rationale': 'Schedule required triage step 0 at listed earliest start per mandatory task list.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_3. Rationale: Schedule required triage step 0 at listed earliest start per mandatory task list.', 'state_updates': {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_3', 'step_index': 0, 'start_time': 2, 'rationale': 'Schedule required triage step 0 at listed earliest start per mandatory task list.'}}}}
+
+[Event #27, Iteration: 1] [18:28:35] [Execution] St_Marys_Center_Triage (action_executed)  Action_Params: {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_4', 'step_index': 0, 'start_time': 0, 'rationale': 'Schedule required triage step 0 at listed earliest start per mandatory task list.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_4. Rationale: Schedule required triage step 0 at listed earliest start per mandatory task list.', 'state_updates': {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_4', 'step_index': 0, 'start_time': 0, 'rationale': 'Schedule required triage step 0 at listed earliest start per mandatory task list.'}}}}
+
+[Event #28, Iteration: 1] [18:28:35] [Execution] St_Marys_Center_Triage (action_executed)  Action_Params: {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_5', 'step_index': 0, 'start_time': 17, 'rationale': 'Schedule required triage step 0 at listed earliest start per mandatory task list.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_5. Rationale: Schedule required triage step 0 at listed earliest start per mandatory task list.', 'state_updates': {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_5', 'step_index': 0, 'start_time': 17, 'rationale': 'Schedule required triage step 0 at listed earliest start per mandatory task list.'}}}}
+
+[Event #29, Iteration: 1] [18:28:35] [Execution] St_Marys_Center_Triage (action_executed)  Action_Params: {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_6', 'step_index': 0, 'start_time': 24, 'rationale': 'Schedule required triage step 0 at listed earliest start per mandatory task list.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_6. Rationale: Schedule required triage step 0 at listed earliest start per mandatory task list.', 'state_updates': {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_6', 'step_index': 0, 'start_time': 24, 'rationale': 'Schedule required triage step 0 at listed earliest start per mandatory task list.'}}}}
+
+[Event #30, Iteration: 1] [18:28:35] [Execution] St_Marys_Center_Triage (action_executed)  Action_Params: {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_7', 'step_index': 0, 'start_time': 7, 'rationale': 'Schedule required triage step 0 at listed earliest start per mandatory task list.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_7. Rationale: Schedule required triage step 0 at listed earliest start per mandatory task list.', 'state_updates': {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_7', 'step_index': 0, 'start_time': 7, 'rationale': 'Schedule required triage step 0 at listed earliest start per mandatory task list.'}}}}
+
+[Event #31, Iteration: 1] [18:28:35] [Execution] St_Marys_Center_Triage (action_executed)  Action_Params: {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_8', 'step_index': 0, 'start_time': 17, 'rationale': 'Schedule required triage step 0 at listed earliest start per mandatory task list.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_8. Rationale: Schedule required triage step 0 at listed earliest start per mandatory task list.', 'state_updates': {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_8', 'step_index': 0, 'start_time': 17, 'rationale': 'Schedule required triage step 0 at listed earliest start per mandatory task list.'}}}}
+
+[Event #32, Iteration: 1] [18:28:35] [Execution] St_Marys_Center_Triage (action_executed)  Action_Params: {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_9', 'step_index': 0, 'start_time': 8, 'rationale': 'Schedule required triage step 0 at listed earliest start per mandatory task list.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_9. Rationale: Schedule required triage step 0 at listed earliest start per mandatory task list.', 'state_updates': {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_9', 'step_index': 0, 'start_time': 8, 'rationale': 'Schedule required triage step 0 at listed earliest start per mandatory task list.'}}}}
+
+[Event #33, Iteration: 1] [18:28:35] [Execution] St_Marys_Center_Triage (action_executed)  Action_Params: {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_10', 'step_index': 0, 'start_time': 3, 'rationale': 'Schedule required triage step 0 at listed earliest start per mandatory task list.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_10. Rationale: Schedule required triage step 0 at listed earliest start per mandatory task list.', 'state_updates': {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_10', 'step_index': 0, 'start_time': 3, 'rationale': 'Schedule required triage step 0 at listed earliest start per mandatory task list.'}}}}
+
+[Event #34, Iteration: 1] [18:28:35] [Execution] St_Marys_Center_Triage (action_executed)  Action_Params: {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_11', 'step_index': 0, 'start_time': 6, 'rationale': 'Schedule required triage step 0 at listed earliest start per mandatory task list.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_11. Rationale: Schedule required triage step 0 at listed earliest start per mandatory task list.', 'state_updates': {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_11', 'step_index': 0, 'start_time': 6, 'rationale': 'Schedule required triage step 0 at listed earliest start per mandatory task list.'}}}}
+
+[Event #35, Iteration: 1] [18:28:35] [Execution] St_Marys_Center_Triage (action_executed)  Action_Params: {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_12', 'step_index': 0, 'start_time': 20, 'rationale': 'Schedule required triage step 0 at listed earliest start per mandatory task list.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_12. Rationale: Schedule required triage step 0 at listed earliest start per mandatory task list.', 'state_updates': {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_12', 'step_index': 0, 'start_time': 20, 'rationale': 'Schedule required triage step 0 at listed earliest start per mandatory task list.'}}}}
+
+[Event #36, Iteration: 1] [18:28:35] [Execution] St_Marys_Center_Triage (action_executed)  Action_Params: {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_13', 'step_index': 0, 'start_time': 8, 'rationale': 'Schedule required triage step 0 at listed earliest start per mandatory task list.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_13. Rationale: Schedule required triage step 0 at listed earliest start per mandatory task list.', 'state_updates': {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_13', 'step_index': 0, 'start_time': 8, 'rationale': 'Schedule required triage step 0 at listed earliest start per mandatory task list.'}}}}
+
+[Event #37, Iteration: 1] [18:28:35] [Execution] St_Marys_Center_Triage (action_executed)  Action_Params: {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_14', 'step_index': 0, 'start_time': 5, 'rationale': 'Schedule required triage step 0 at listed earliest start per mandatory task list.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_14. Rationale: Schedule required triage step 0 at listed earliest start per mandatory task list.', 'state_updates': {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_14', 'step_index': 0, 'start_time': 5, 'rationale': 'Schedule required triage step 0 at listed earliest start per mandatory task list.'}}}}
+
+[Event #38, Iteration: 1] [18:28:35] [Execution] St_Marys_Center_Triage (action_executed)  Action_Params: {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_15', 'step_index': 0, 'start_time': 9, 'rationale': 'Schedule required triage step 0 at listed earliest start per mandatory task list.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_15. Rationale: Schedule required triage step 0 at listed earliest start per mandatory task list.', 'state_updates': {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_15', 'step_index': 0, 'start_time': 9, 'rationale': 'Schedule required triage step 0 at listed earliest start per mandatory task list.'}}}}
+
+[Event #39, Iteration: 1] [18:28:35] [Execution] St_Marys_Center_Triage (action_executed)  Action_Params: {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_16', 'step_index': 0, 'start_time': 23, 'rationale': 'Schedule required triage step 0 at listed earliest start per mandatory task list.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_16. Rationale: Schedule required triage step 0 at listed earliest start per mandatory task list.', 'state_updates': {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_16', 'step_index': 0, 'start_time': 23, 'rationale': 'Schedule required triage step 0 at listed earliest start per mandatory task list.'}}}}
+
+[Event #40, Iteration: 1] [18:28:35] [Execution] St_Marys_Center_Triage (action_executed)  Action_Params: {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_17', 'step_index': 0, 'start_time': 2, 'rationale': 'Schedule required triage step 0 at listed earliest start per mandatory task list.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_17. Rationale: Schedule required triage step 0 at listed earliest start per mandatory task list.', 'state_updates': {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_17', 'step_index': 0, 'start_time': 2, 'rationale': 'Schedule required triage step 0 at listed earliest start per mandatory task list.'}}}}
+
+[Event #41, Iteration: 1] [18:28:35] [Execution] St_Marys_Center_Triage (action_executed)  Action_Params: {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_18', 'step_index': 0, 'start_time': 10, 'rationale': 'Schedule required triage step 0 at listed earliest start per mandatory task list.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_18. Rationale: Schedule required triage step 0 at listed earliest start per mandatory task list.', 'state_updates': {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_18', 'step_index': 0, 'start_time': 10, 'rationale': 'Schedule required triage step 0 at listed earliest start per mandatory task list.'}}}}
+
+[Event #42, Iteration: 1] [18:28:35] [Execution] St_Marys_Center_Triage (action_executed)  Action_Params: {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_19', 'step_index': 0, 'start_time': 12, 'rationale': 'Schedule required triage step 0 at listed earliest start per mandatory task list.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_19. Rationale: Schedule required triage step 0 at listed earliest start per mandatory task list.', 'state_updates': {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_19', 'step_index': 0, 'start_time': 12, 'rationale': 'Schedule required triage step 0 at listed earliest start per mandatory task list.'}}}}
+
+[Event #43, Iteration: 1] [18:28:44] [Execution] St_Marys_Center_Radiology (action_executed)  Action_Params: {'schedule': {'St_Marys_Center_Radiology': {'patient_id': 'Patient_0', 'step_index': 1, 'start_time': 10, 'rationale': 'Schedule mandatory radiology step 1 at listed earliest start from job queue.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_0. Rationale: Schedule mandatory radiology step 1 at listed earliest start from job queue.', 'state_updates': {'schedule': {'St_Marys_Center_Radiology': {'patient_id': 'Patient_0', 'step_index': 1, 'start_time': 10, 'rationale': 'Schedule mandatory radiology step 1 at listed earliest start from job queue.'}}}}
+
+[Event #44, Iteration: 1] [18:28:44] [Execution] St_Marys_Center_Radiology (action_executed)  Action_Params: {'schedule': {'St_Marys_Center_Radiology': {'patient_id': 'Patient_1', 'step_index': 1, 'start_time': 24, 'rationale': 'Schedule mandatory radiology step 1 at listed earliest start from job queue.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_1. Rationale: Schedule mandatory radiology step 1 at listed earliest start from job queue.', 'state_updates': {'schedule': {'St_Marys_Center_Radiology': {'patient_id': 'Patient_1', 'step_index': 1, 'start_time': 24, 'rationale': 'Schedule mandatory radiology step 1 at listed earliest start from job queue.'}}}}
+
+[Event #45, Iteration: 1] [18:28:44] [Execution] St_Marys_Center_Radiology (action_executed)  Action_Params: {'schedule': {'St_Marys_Center_Radiology': {'patient_id': 'Patient_3', 'step_index': 1, 'start_time': 3, 'rationale': 'Schedule mandatory radiology step 1 at listed earliest start from job queue.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_3. Rationale: Schedule mandatory radiology step 1 at listed earliest start from job queue.', 'state_updates': {'schedule': {'St_Marys_Center_Radiology': {'patient_id': 'Patient_3', 'step_index': 1, 'start_time': 3, 'rationale': 'Schedule mandatory radiology step 1 at listed earliest start from job queue.'}}}}
+
+[Event #46, Iteration: 1] [18:28:44] [Execution] St_Marys_Center_Radiology (action_executed)  Action_Params: {'schedule': {'St_Marys_Center_Radiology': {'patient_id': 'Patient_4', 'step_index': 1, 'start_time': 1, 'rationale': 'Schedule mandatory radiology step 1 at listed earliest start from job queue.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_4. Rationale: Schedule mandatory radiology step 1 at listed earliest start from job queue.', 'state_updates': {'schedule': {'St_Marys_Center_Radiology': {'patient_id': 'Patient_4', 'step_index': 1, 'start_time': 1, 'rationale': 'Schedule mandatory radiology step 1 at listed earliest start from job queue.'}}}}
+
+[Event #47, Iteration: 1] [18:28:44] [Execution] St_Marys_Center_Radiology (action_executed)  Action_Params: {'schedule': {'St_Marys_Center_Radiology': {'patient_id': 'Patient_7', 'step_index': 1, 'start_time': 8, 'rationale': 'Schedule mandatory radiology step 1 at listed earliest start from job queue.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_7. Rationale: Schedule mandatory radiology step 1 at listed earliest start from job queue.', 'state_updates': {'schedule': {'St_Marys_Center_Radiology': {'patient_id': 'Patient_7', 'step_index': 1, 'start_time': 8, 'rationale': 'Schedule mandatory radiology step 1 at listed earliest start from job queue.'}}}}
+
+[Event #48, Iteration: 1] [18:28:44] [Execution] St_Marys_Center_Radiology (action_executed)  Action_Params: {'schedule': {'St_Marys_Center_Radiology': {'patient_id': 'Patient_8', 'step_index': 1, 'start_time': 18, 'rationale': 'Schedule mandatory radiology step 1 at listed earliest start from job queue.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_8. Rationale: Schedule mandatory radiology step 1 at listed earliest start from job queue.', 'state_updates': {'schedule': {'St_Marys_Center_Radiology': {'patient_id': 'Patient_8', 'step_index': 1, 'start_time': 18, 'rationale': 'Schedule mandatory radiology step 1 at listed earliest start from job queue.'}}}}
+
+[Event #49, Iteration: 1] [18:28:44] [Execution] St_Marys_Center_Radiology (action_executed)  Action_Params: {'schedule': {'St_Marys_Center_Radiology': {'patient_id': 'Patient_10', 'step_index': 1, 'start_time': 4, 'rationale': 'Schedule mandatory radiology step 1 at listed earliest start from job queue.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_10. Rationale: Schedule mandatory radiology step 1 at listed earliest start from job queue.', 'state_updates': {'schedule': {'St_Marys_Center_Radiology': {'patient_id': 'Patient_10', 'step_index': 1, 'start_time': 4, 'rationale': 'Schedule mandatory radiology step 1 at listed earliest start from job queue.'}}}}
+
+[Event #50, Iteration: 1] [18:28:44] [Execution] St_Marys_Center_Radiology (action_executed)  Action_Params: {'schedule': {'St_Marys_Center_Radiology': {'patient_id': 'Patient_12', 'step_index': 1, 'start_time': 21, 'rationale': 'Schedule mandatory radiology step 1 at listed earliest start from job queue.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_12. Rationale: Schedule mandatory radiology step 1 at listed earliest start from job queue.', 'state_updates': {'schedule': {'St_Marys_Center_Radiology': {'patient_id': 'Patient_12', 'step_index': 1, 'start_time': 21, 'rationale': 'Schedule mandatory radiology step 1 at listed earliest start from job queue.'}}}}
+
+[Event #51, Iteration: 1] [18:28:44] [Execution] St_Marys_Center_Radiology (action_executed)  Action_Params: {'schedule': {'St_Marys_Center_Radiology': {'patient_id': 'Patient_14', 'step_index': 1, 'start_time': 6, 'rationale': 'Schedule mandatory radiology step 1 at listed earliest start from job queue.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_14. Rationale: Schedule mandatory radiology step 1 at listed earliest start from job queue.', 'state_updates': {'schedule': {'St_Marys_Center_Radiology': {'patient_id': 'Patient_14', 'step_index': 1, 'start_time': 6, 'rationale': 'Schedule mandatory radiology step 1 at listed earliest start from job queue.'}}}}
+
+[Event #52, Iteration: 1] [18:28:44] [Execution] St_Marys_Center_Radiology (action_executed)  Action_Params: {'schedule': {'St_Marys_Center_Radiology': {'patient_id': 'Patient_16', 'step_index': 1, 'start_time': 24, 'rationale': 'Schedule mandatory radiology step 1 at listed earliest start from job queue.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_16. Rationale: Schedule mandatory radiology step 1 at listed earliest start from job queue.', 'state_updates': {'schedule': {'St_Marys_Center_Radiology': {'patient_id': 'Patient_16', 'step_index': 1, 'start_time': 24, 'rationale': 'Schedule mandatory radiology step 1 at listed earliest start from job queue.'}}}}
+
+[Event #53, Iteration: 1] [18:28:44] [Execution] St_Marys_Center_Radiology (action_executed)  Action_Params: {'schedule': {'St_Marys_Center_Radiology': {'patient_id': 'Patient_18', 'step_index': 1, 'start_time': 11, 'rationale': 'Schedule mandatory radiology step 1 at listed earliest start from job queue.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_18. Rationale: Schedule mandatory radiology step 1 at listed earliest start from job queue.', 'state_updates': {'schedule': {'St_Marys_Center_Radiology': {'patient_id': 'Patient_18', 'step_index': 1, 'start_time': 11, 'rationale': 'Schedule mandatory radiology step 1 at listed earliest start from job queue.'}}}}
+
+[Event #54, Iteration: 1] [18:28:44] [Execution] St_Marys_Center_Radiology (action_executed)  Action_Params: {'schedule': {'St_Marys_Center_Radiology': {'patient_id': 'Patient_19', 'step_index': 1, 'start_time': 13, 'rationale': 'Schedule mandatory radiology step 1 at listed earliest start from job queue.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_19. Rationale: Schedule mandatory radiology step 1 at listed earliest start from job queue.', 'state_updates': {'schedule': {'St_Marys_Center_Radiology': {'patient_id': 'Patient_19', 'step_index': 1, 'start_time': 13, 'rationale': 'Schedule mandatory radiology step 1 at listed earliest start from job queue.'}}}}
+
+
+================================================================================
+

@@ -1,0 +1,561 @@
+[
+  {
+    "blackboard_id": "0",
+    "participants": [
+      "Brain",
+      "Gaylene",
+      "Harmony",
+      "Logan",
+      "Milly",
+      "Ronna"
+    ],
+    "template": {},
+    "events": [
+      {
+        "blackboard_id": 0,
+        "id": "aa9b79ca-a7ac-43f5-b6bb-8760378acebe",
+        "ts": 1777320197.7254446,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Brain, Gaylene, Harmony, Logan, Milly, Ronna"
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c330424a-717b-48cf-bd67-6cbaa87760e1",
+        "ts": 1777320205.432603,
+        "agent": "Harmony",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi everyone, I'm Harmony. My top skill is data-science (0.91) and I have 5.0 hours availability. I'm looking at ISSUE-0001 tasks (triage, review, or docs) as they fit my skills and time best. What are your preferences?",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "21be450e-aab0-4053-a4d2-0dd28a0ee1b2",
+        "ts": 1777320217.5154343,
+        "agent": "Milly",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi everyone, I'm Milly. I have 10.0 hours and my top skill is data-science (0.60). Harmony, since you have 5.0 hours, I suggest you take one of the smaller ISSUE-0001 tasks like triage, review, or docs. I can take ISSUE-0001::implement (effort 8.0) or ISSUE-0001::test (effort 5.6) as they fit my skills and availability well. Let's see what Brain, Gaylene, Logan, and Ronna prefer for the remaining tasks.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8eabfc8f-756b-4f9f-9b69-61d30b01f007",
+        "ts": 1777320228.75612,
+        "agent": "Logan",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi everyone, I'm Logan. My top skills are documentation (0.97) and data-science (0.91), and I have 5.0 hours available. Given my high documentation skill, I'm interested in ISSUE-0001::docs (effort 4.0) or ISSUE-0001::review (effort 4.0). Harmony, since we have similar profiles, maybe we can split the ISSUE-0001 tasks (docs, review, triage)? Milly, your 10.0 hours make you a great candidate for ISSUE-0001::implement or ISSUE-0001::test. Brain, Gaylene, and Ronna, do any of you have skills for the ISSUE-0002 infrastructure tasks? (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "2a7b9f0c-d414-49b1-865c-3ddc7c729b6c",
+        "ts": 1777320241.7430754,
+        "agent": "Brain",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi everyone, I'm Brain. My top skill is infrastructure (0.83) and I have 5.0 hours availability. I'll focus on the ISSUE-0002 infrastructure tasks. I'm happy to take ISSUE-0002::implement (effort 4.0). Gaylene and Ronna, what are your skills and preferences? Maybe you can take the remaining infrastructure tasks (ISSUE-0002::review and ISSUE-0002::test) or help with the remaining ISSUE-0001 tasks? (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "6d3f9e40-9dc4-4fd1-9b41-b640fbd13cb2",
+        "ts": 1777320261.9205625,
+        "agent": "Ronna",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi everyone, I'm Ronna. My top skill is data-science (0.85) and I have 7.0 hours availability. My costs for ISSUE-0002 are very high, so I'd prefer to stick to ISSUE-0001. I can take ISSUE-0001::test (effort 5.6) or help with triage/review. If Milly takes implement and Logan takes docs, I could take test, and Harmony could take review/triage. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "45449a56-438d-46b5-8668-439d4d18ab4c",
+        "ts": 1777320337.6918497,
+        "agent": "Milly",
+        "kind": "communication",
+        "payload": {
+          "content": "Thanks for the suggestions, Logan and Ronna. Since ISSUE-0001::implement requires 8.0 hours and I'm the only one with 10.0 hours availability, I'll commit to ISSUE-0001::implement. \n\nCurrent plan based on discussions:\n- Milly: ISSUE-0001::implement (8.0h)\n- Ronna: ISSUE-0001::test (5.6h)\n- Logan: ISSUE-0001::docs (4.0h)\n- Harmony: ISSUE-0001::review (4.0h)\n- Brain: ISSUE-0002::implement (4.0h)\n\nGaylene, what are your skills? You could take ISSUE-0001::triage (3.2h) or help Brain with the remaining ISSUE-0002 tasks (review or test). (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d12b3fc3-4a48-418a-8dba-e3ccf66d9127",
+        "ts": 1777320355.8177395,
+        "agent": "Logan",
+        "kind": "communication",
+        "payload": {
+          "content": "I agree with the proposed plan. I'll take ISSUE-0001::docs (cost 3.86), which fits my documentation skill (0.97) and availability (5.0h) well. Gaylene, once you share your skills, we can assign the remaining tasks (ISSUE-0001::triage, ISSUE-0002::review, or ISSUE-0002::test). (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1c75b901-2bf1-4636-aa0a-13df219fb751",
+        "ts": 1777320378.716577,
+        "agent": "Brain",
+        "kind": "communication",
+        "payload": {
+          "content": "I agree with the plan. I will commit to ISSUE-0002::implement (cost 4.30). Gaylene, if you have any infrastructure skills, ISSUE-0002::test (2.8h) or ISSUE-0002::review (2.0h) would be good choices. Otherwise, ISSUE-0001::triage (3.2h) might be a better fit for you. Let us know your preference so we can finalize the assignments. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "7c6ab7f2-2af1-4f99-aa6d-393195427a94",
+        "ts": 1777320399.5300086,
+        "agent": "Ronna",
+        "kind": "communication",
+        "payload": {
+          "content": "I'm on board with the plan. I'll take ISSUE-0001::test (effort 5.6, availability 7.0). This leaves ISSUE-0001::review and ISSUE-0001::triage for Harmony and Gaylene, along with the remaining ISSUE-0002 tasks. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e2042ea0-39be-47e0-894e-3c1cf107755c",
+        "ts": 1777320470.3035743,
+        "agent": "Milly",
+        "kind": "communication",
+        "payload": {
+          "content": "I'm confirming that I will take ISSUE-0001::implement (effort 8.0). This fits my 10.0h availability and data-science skill. Gaylene, if you're there, please let us know if you can take ISSUE-0001::triage (3.2h) or one of the ISSUE-0002 tasks (review or test) to help maximize our score. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "67456354-f1ed-408e-8a36-723e7b8813a1",
+        "ts": 1777320485.1528876,
+        "agent": "Logan",
+        "kind": "communication",
+        "payload": {
+          "content": "Harmony, are you comfortable with ISSUE-0001::review? Gaylene, we are waiting for your input to finalize. Currently, ISSUE-0001::triage and the remaining ISSUE-0002 tasks (review and test) are open. Does anyone have a preference for those? (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8b023738-0d3c-4e25-9b03-d2d0a3ec6168",
+        "ts": 1777320531.7207448,
+        "agent": "Ronna",
+        "kind": "communication",
+        "payload": {
+          "content": "I am confirming my selection of ISSUE-0001::test (effort 5.6). This fits my 7.0h availability and data-science skill. Harmony, if you take ISSUE-0001::review and Logan takes ISSUE-0001::docs, we just need Gaylene to pick from the remaining tasks (ISSUE-0001::triage or ISSUE-0002::review/test). (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "31d5b165-aa1a-407d-9cef-5f9e21f1dcbb",
+        "ts": 1777320564.3113506,
+        "agent": "Gaylene",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi everyone, I'm Gaylene. My top skill is documentation (0.73) and I have 5.0 hours availability. I've reviewed the tasks and the current plan. I'll take ISSUE-0001::triage (effort 3.2), which fits my skills and availability perfectly (cost 6.92). This fits well with the assignments for Milly, Ronna, Logan, Harmony, and Brain. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "865cd4a0-8f45-4589-9dea-3eda4193103f",
+        "ts": 1777320599.1021466,
+        "agent": "Harmony",
+        "kind": "communication",
+        "payload": {
+          "content": "I agree with the plan. I'll take ISSUE-0001::review (effort 4.0, cost 7.21). This fits my 5.0h availability and data-science skill (0.91) well. With Milly on implement, Ronna on test, Logan on docs, Gaylene on triage, and Brain on ISSUE-0002 implement, we're in good shape. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "91cca0b9-c265-4225-93b3-9be9f1f9fd63",
+        "ts": 1777320648.0944774,
+        "agent": "Logan",
+        "kind": "communication",
+        "payload": {
+          "content": "The plan is confirmed. I will assign myself to ISSUE-0001::docs (effort 4.0, cost 3.86) during the execution phase. Our final distribution covers 6 tasks: Milly (0001-implement), Ronna (0001-test), Logan (0001-docs), Harmony (0001-review), Gaylene (0001-triage), and Brain (0002-implement). This maximizes our task completion and respects everyone's availability and skills. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "166603a9-6977-4a7e-8d9c-8979a242f523",
+        "ts": 1777320697.9446194,
+        "agent": "Ronna",
+        "kind": "communication",
+        "payload": {
+          "content": "Confirming once more: I will assign myself to ISSUE-0001::test (effort 5.6) during the execution phase. The plan for Milly (0001-implement), Ronna (0001-test), Logan (0001-docs), Harmony (0001-review), Gaylene (0001-triage), and Brain (0002-implement) looks optimal. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "2064132b-41b5-4ad2-927e-1b29a6823938",
+        "ts": 1777320711.4364896,
+        "agent": "Gaylene",
+        "kind": "communication",
+        "payload": {
+          "content": "I confirm that I will assign myself to ISSUE-0001::triage (effort 3.2, cost 6.92) during the execution phase. The plan is set: Milly (0001-implement), Ronna (0001-test), Logan (0001-docs), Harmony (0001-review), Gaylene (0001-triage), and Brain (0002-implement). (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "6663ffa8-b507-454e-9949-7553da1affa3",
+        "ts": 1777320725.9863155,
+        "agent": "Harmony",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Harmony",
+              "task_id": "ISSUE-0001::review",
+              "task": {
+                "id": "ISSUE-0001::review",
+                "issue_id": "ISSUE-0001",
+                "title": "Fix documentation [review]",
+                "tags": [
+                  "documentation",
+                  "data-science"
+                ],
+                "priority": "low",
+                "effort": 4.0,
+                "work_type": "review"
+              },
+              "total_assigned": 1,
+              "remaining_agents": 5,
+              "joint_reward": 17.789138517956737
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e75fe85c-03e5-4fe8-94a1-60d91ec01f6f",
+        "ts": 1777320730.848283,
+        "agent": "Milly",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::implement"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Milly",
+              "task_id": "ISSUE-0001::implement",
+              "task": {
+                "id": "ISSUE-0001::implement",
+                "issue_id": "ISSUE-0001",
+                "title": "Fix documentation [implement]",
+                "tags": [
+                  "documentation",
+                  "data-science"
+                ],
+                "priority": "low",
+                "effort": 8.0,
+                "work_type": "implement"
+              },
+              "total_assigned": 2,
+              "remaining_agents": 4,
+              "joint_reward": 22.80687140326814
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ff834559-d1d4-4311-9e99-8a46e2a23114",
+        "ts": 1777320735.3772652,
+        "agent": "Logan",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::docs"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Logan",
+              "task_id": "ISSUE-0001::docs",
+              "task": {
+                "id": "ISSUE-0001::docs",
+                "issue_id": "ISSUE-0001",
+                "title": "Fix documentation [docs]",
+                "tags": [
+                  "documentation",
+                  "data-science"
+                ],
+                "priority": "low",
+                "effort": 4.0,
+                "work_type": "docs"
+              },
+              "total_assigned": 3,
+              "remaining_agents": 3,
+              "joint_reward": 43.94741045002468
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "924f89e0-240d-4671-8e19-be4d5e238f47",
+        "ts": 1777320741.5884593,
+        "agent": "Brain",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::implement"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Brain",
+              "task_id": "ISSUE-0002::implement",
+              "task": {
+                "id": "ISSUE-0002::implement",
+                "issue_id": "ISSUE-0002",
+                "title": "Fix infrastructure [implement]",
+                "tags": [
+                  "infrastructure"
+                ],
+                "priority": "low",
+                "effort": 4.0,
+                "work_type": "implement"
+              },
+              "total_assigned": 4,
+              "remaining_agents": 2,
+              "joint_reward": 64.64437556603286
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8a71be2f-baa0-45f3-95ee-a50d741ce5b4",
+        "ts": 1777320748.0851042,
+        "agent": "Ronna",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::test"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Ronna",
+              "task_id": "ISSUE-0001::test",
+              "task": {
+                "id": "ISSUE-0001::test",
+                "issue_id": "ISSUE-0001",
+                "title": "Fix documentation [test]",
+                "tags": [
+                  "documentation",
+                  "data-science"
+                ],
+                "priority": "low",
+                "effort": 5.6,
+                "work_type": "test"
+              },
+              "total_assigned": 5,
+              "remaining_agents": 1,
+              "joint_reward": 78.94888683880014
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a0a66984-4457-48de-919c-3d0f3833ea71",
+        "ts": 1777320751.6201324,
+        "agent": "Gaylene",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::triage"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Gaylene",
+              "task_id": "ISSUE-0001::triage",
+              "task": {
+                "id": "ISSUE-0001::triage",
+                "issue_id": "ISSUE-0001",
+                "title": "Fix documentation [triage]",
+                "tags": [
+                  "documentation",
+                  "data-science"
+                ],
+                "priority": "low",
+                "effort": 3.2,
+                "work_type": "triage"
+              },
+              "total_assigned": 6,
+              "remaining_agents": 0,
+              "joint_reward": 97.03341105747536
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  },
+  {
+    "blackboard_id": "1",
+    "participants": [
+      "Harmony",
+      "Ronna"
+    ],
+    "template": {
+      "secret_channel": true,
+      "visibility": "secret",
+      "secret_channel_kind": "coalition",
+      "secret_channel_index": 1,
+      "allow_duplicate": true
+    },
+    "events": [
+      {
+        "blackboard_id": 1,
+        "id": "8d7e72ca-5f13-4923-8e1e-3f27919862de",
+        "ts": 1777320197.725468,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Harmony, Ronna"
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "81b37a74-1ce6-4258-acd1-244073bf1c19",
+        "ts": 1777320205.4328606,
+        "agent": "Harmony",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi Ronna, it's Harmony. I'm focusing on ISSUE-0001 tasks (triage, review, or docs) because they match my data-science skill and 5h limit. Which one should I take to help us maximize our coalition score? What are you looking at?",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "a5d5b49c-8ae8-446d-8f7e-46c3e2ef7979",
+        "ts": 1777320261.9206262,
+        "agent": "Ronna",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi Harmony! My costs for ISSUE-0001 are: triage (6.11), review (7.64), docs (7.64), test (10.70). Since Logan wants docs/review, maybe you could take review or triage? I'm thinking of taking test (5.6 effort) to leave the smaller tasks for you and Logan. What do you think? (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "f6ca60b3-c803-4a1c-8875-6ee47acd2f4c",
+        "ts": 1777320399.529714,
+        "agent": "Ronna",
+        "kind": "communication",
+        "payload": {
+          "content": "Harmony, the current public plan has me taking ISSUE-0001::test (5.6h, cost 10.70) and you taking ISSUE-0001::review (4.0h). This seems solid as I'm one of the few who can cover the 5.6h effort for test. Does ISSUE-0001::review work for you, or would you prefer ISSUE-0001::triage? I'll confirm ISSUE-0001::test on the main board.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "01e50fcf-4ad0-4aff-bc5e-ad5a835f56a0",
+        "ts": 1777320531.720632,
+        "agent": "Ronna",
+        "kind": "communication",
+        "payload": {
+          "content": "Harmony, based on the public discussion, I'm taking ISSUE-0001::test (effort 5.6, cost 10.70). You should probably take either ISSUE-0001::review or ISSUE-0001::triage. Which one has a lower cost for you? Logan is taking docs. If you take review, Gaylene might take triage. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "29514ac3-eb6c-4706-8b14-840c696c5843",
+        "ts": 1777320599.1018388,
+        "agent": "Harmony",
+        "kind": "communication",
+        "payload": {
+          "content": "Ronna, I agree. I'll take ISSUE-0001::review (cost 7.21). Since I only have 5.0h, I can't take the test task (5.6h) without penalty, so you taking test is the best move for the coalition. Let's lock this in.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "8cd618d0-c197-4388-942d-7af55dcd50fb",
+        "ts": 1777320697.9447947,
+        "agent": "Ronna",
+        "kind": "communication",
+        "payload": {
+          "content": "Harmony, the public plan is set. I'm taking ISSUE-0001::test and you're taking ISSUE-0001::review. This maximizes the number of tasks completed since I'm the only one besides Milly who can handle the effort for the test task. Let's stick to this. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,157 @@
+================================================================================
+BLACKBOARD STATE LOG - 1
+Session started: 2026-01-09 03:21:08
+================================================================================
+
+BLACKBOARD INFO:
+- ID: 1
+- Participants: Aurora Industries, Beacon Works
+================================================================================
+
+================================================================================
+BLACKBOARD STATE UPDATE
+Updated: 2026-01-09 03:26:42
+Iteration: 1 | Phase: execution | Last Agent: Aurora Industries
+Total Events: 13
+================================================================================
+
+EVENT SUMMARY:
+- Total Events: 13
+- By Type: context(1), communication(5), action_executed(7)
+- By Agent: SYSTEM(1), Aurora Industries(7), Beacon Works(5)
+
+--------------------------------------------------------------------------------
+FULL EVENT LOG:
+
+[Event #1, Iteration: 1] [03:21:08] [Execution] SYSTEM (context)  Message: "Assign machines to shared renewable sources across 24h to minimise main-grid usage.
+
+This blackboard is a private communication channel.
+Participants: Aurora Industries, Beacon Works"
+
+[Event #2, Iteration: 1] [03:23:31] [Planning] Aurora Industries (communication)  Content: Aurora Industries coalition proposal:
+
+machine_003 (4.4kW, 03-05): Planning src_Hydro - hydro has 0.7-2.1kW capacity during these hours. This is tight but 4.4kW > any single source capacity, so will need to split or accept some grid draw for this high-load machine.
+
+machine_001 (1.5kW, 07-13): Planning src_Wind - good fit, wind capacity 0.7-2.4kW during window
+
+machine_002 (1.8kW, 10-13): Planning src_Solar - solar has 1.5-1.7kW capacity, tight but manageable if you avoid solar during 10-13
+
+machine_004 (3.5kW, 14-17): Planning src_Hydro - hydro has 1.6-3.0kW capacity, will need you to avoid hydro during 14-17
+
+How does this align with your planned assignments? Can we coordinate to avoid overlaps on src_Solar (10-13) and src_Hydro (14-17)?
+
+[Event #3, Iteration: 1] [03:24:03] [Planning] Beacon Works (communication)  Content: Looking at my machines and the coalition coordination with Aurora Industries:
+
+**My machines:**
+- Water heater (1.4kW, 20-24)
+- Irrigation pump (1.2kW, 8-13) 
+- Water heater (5.8kW, 16-18)
+- Lighting bank (1.8kW, 5-11)
+
+**Coalition coordination with Aurora Industries:**
+- Aurora wants src_Solar 10-13 (1.8kW) → I'll avoid Solar during 10-13
+- Aurora wants src_Hydro 14-17 (3.5kW) → I'll avoid Hydro during 14-17
+- Aurora has 4.4kW 03-05 that exceeds any source capacity (will need grid draw)
+
+**My tentative assignments:**
+- Irrigation pump (1.2kW, 8-13): Planning src_Wind (good capacity 0.7-2.4kW)
+- Lighting bank (1.8kW, 5-11): Planning src_Wind early (5-8) then src_Solar (8-11) to avoid Aurora's 10-13 window
+- Water heater (5.8kW, 16-18): This exceeds Biomass capacity (0.8-2.1kW), so planning src_Wind (1.9-3.4kW available) - will need some grid draw
+- Water heater (1.4kW, 20-24): Planning src_Biomass (1.1-1.5kW available, tight but manageable)
+
+Aurora Industries - does this work with your planned assignments?
+
+[Event #4, Iteration: 1] [03:25:10] [Planning] Aurora Industries (communication)  Content: Beacon Works - Final coalition coordination check:
+
+**My final assignments:**
+- machine_003 (4.4kW, 03-05): src_Hydro (accepting some grid draw due to 4.4kW > 2.1kW max capacity)
+- machine_001 (1.5kW, 07-13): src_Wind 
+- machine_002 (1.8kW, 10-13): src_Solar
+- machine_004 (3.5kW, 14-17): src_Hydro
+
+**Checking overlaps with your plan:**
+- src_Wind: 07-13 (1.5kW) + 08-13 (1.2kW) + 16-18 (5.8kW) = manageable
+- src_Solar: 10-13 (1.8kW) vs your 08-11 (1.8kW) = no overlap
+- src_Hydro: 03-05 (4.4kW) + 14-17 (3.5kW) = total 7.9kW, but different time windows
+
+**Cascade Labs impact:**
+- They're planning src_Hydro 11-16 (3.3kW) which overlaps my 14-17 window
+- Combined hydro 14-16: my 3.5kW + their 3.3kW = 6.8kW vs 1.6-2.0kW capacity = significant overflow
+
+Should I shift machine_004 to src_Wind 14-17 (1.0-2.0kW capacity) to avoid this hydro conflict? It would mean some grid draw but might be better than massive hydro overflow.
+
+[Event #5, Iteration: 1] [03:25:29] [Planning] Beacon Works (communication)  Content: Aurora Industries - I support your decision to move machine_004 to src_Wind 14-17 to avoid the hydro conflict. This creates a better coalition outcome by minimizing shared overflow.
+
+**My final assignments with Aurora's shift:**
+- Irrigation pump (1.2kW, 8-13): src_Wind
+- Lighting bank (1.8kW, 5-11): src_Wind (5-8) → src_Solar (8-11)
+- Water heater (5.8kW, 16-18): src_Wind (accepting grid draw due to 5.8kW > 1.9-3.4kW capacity)
+- Water heater (1.4kW, 20-24): src_Biomass
+
+**Coalition coordination summary:**
+- Aurora: src_Solar 10-13, src_Wind 14-17 (shifted), src_Hydro 03-05
+- Beacon: src_Solar 8-11, src_Wind 8-18, src_Biomass 20-24
+- No direct overlaps between Aurora and Beacon
+
+**Wind capacity check 16-18:**
+- Aurora: 3.5kW (14-17) + Beacon: 5.8kW (16-18) = 9.3kW vs 1.9-3.4kW capacity
+- Both of us will need significant grid draw during 16-17, but this is better than hydro overflow
+
+Ready to finalize if this looks good to you. (phase=planning, iter=1)
+
+[Event #6, Iteration: 1] [03:26:09] [Planning] Aurora Industries (communication)  Content: Beacon Works - Ready to finalize our coalition assignments. Summary:
+
+**Aurora final assignments:**
+- machine_003 (4.4kW, 03-05): src_Hydro (some grid draw)
+- machine_001 (1.5kW, 07-13): src_Wind
+- machine_002 (1.8kW, 10-13): src_Solar  
+- machine_004 (3.5kW, 14-17): src_Wind (shifted to avoid hydro conflict)
+
+**Beacon final assignments:**
+- Irrigation pump (1.2kW, 8-13): src_Wind
+- Lighting bank (1.8kW, 5-11): src_Wind (5-8) → src_Solar (8-11)
+- Water heater (5.8kW, 16-18): src_Wind (grid draw)
+- Water heater (1.4kW, 20-24): src_Biomass
+
+**Coalition outcome:** No overlaps between us, minimized shared overflow. Wind 16-17 will have grid draw for both sites but that's manageable.
+
+Confirming these are your final assignments? Then we can proceed to execution phase. (phase=planning, iter=1)
+
+[Event #7, Iteration: 1] [03:26:29] [Execution] Beacon Works (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_005', 'source_id': 'src_Wind'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Beacon Works', 'machine': {'id': 'machine_005', 'label': 'Water heater', 'window': [20, 24], 'power': 1.4360394609704354}, 'source_id': 'src_Wind', 'total_assigned': 1, 'remaining_machines': 12, 'state_updates': {'assignment': {'machine_005': 'src_Wind'}}, 'joint_reward': 0.0}}
+
+[Event #8, Iteration: 1] [03:26:29] [Execution] Beacon Works (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_006', 'source_id': 'src_Wind'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Beacon Works', 'machine': {'id': 'machine_006', 'label': 'Irrigation pump', 'window': [8, 13], 'power': 1.1600445483566157}, 'source_id': 'src_Wind', 'total_assigned': 2, 'remaining_machines': 11, 'state_updates': {'assignment': {'machine_005': 'src_Wind', 'machine_006': 'src_Wind'}}, 'joint_reward': 0.0}}
+
+[Event #9, Iteration: 1] [03:26:29] [Execution] Beacon Works (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_007', 'source_id': 'src_Wind'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Beacon Works', 'machine': {'id': 'machine_007', 'label': 'Water heater', 'window': [16, 18], 'power': 5.830324119055384}, 'source_id': 'src_Wind', 'total_assigned': 3, 'remaining_machines': 10, 'state_updates': {'assignment': {'machine_005': 'src_Wind', 'machine_006': 'src_Wind', 'machine_007': 'src_Wind'}}, 'joint_reward': 0.0}}
+
+[Event #10, Iteration: 1] [03:26:42] [Execution] Aurora Industries (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_003', 'source_id': 'src_Hydro'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Aurora Industries', 'machine': {'id': 'machine_003', 'label': 'Server rack', 'window': [3, 5], 'power': 4.402896533070981}, 'source_id': 'src_Hydro', 'total_assigned': 9, 'remaining_machines': 4, 'state_updates': {'assignment': {'machine_005': 'src_Wind', 'machine_006': 'src_Wind', 'machine_007': 'src_Wind', 'machine_013': 'src_Geothermal', 'machine_009': 'src_Hydro', 'machine_011': 'src_Hydro', 'machine_010': 'src_Geothermal', 'machine_012': 'src_Hydro', 'machine_003': 'src_Hydro'}}, 'joint_reward': -7.734897596818449}}
+
+[Event #11, Iteration: 1] [03:26:42] [Execution] Aurora Industries (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_001', 'source_id': 'src_Wind'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Aurora Industries', 'machine': {'id': 'machine_001', 'label': 'Refrigeration chain', 'window': [7, 13], 'power': 1.5382977108538913}, 'source_id': 'src_Wind', 'total_assigned': 10, 'remaining_machines': 3, 'state_updates': {'assignment': {'machine_005': 'src_Wind', 'machine_006': 'src_Wind', 'machine_007': 'src_Wind', 'machine_013': 'src_Geothermal', 'machine_009': 'src_Hydro', 'machine_011': 'src_Hydro', 'machine_010': 'src_Geothermal', 'machine_012': 'src_Hydro', 'machine_003': 'src_Hydro', 'machine_001': 'src_Wind'}}, 'joint_reward': -7.734897596818449}}
+
+[Event #12, Iteration: 1] [03:26:42] [Execution] Aurora Industries (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_002', 'source_id': 'src_Solar'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Aurora Industries', 'machine': {'id': 'machine_002', 'label': 'Refrigeration chain', 'window': [10, 13], 'power': 1.8330515757811785}, 'source_id': 'src_Solar', 'total_assigned': 11, 'remaining_machines': 2, 'state_updates': {'assignment': {'machine_005': 'src_Wind', 'machine_006': 'src_Wind', 'machine_007': 'src_Wind', 'machine_013': 'src_Geothermal', 'machine_009': 'src_Hydro', 'machine_011': 'src_Hydro', 'machine_010': 'src_Geothermal', 'machine_012': 'src_Hydro', 'machine_003': 'src_Hydro', 'machine_001': 'src_Wind', 'machine_002': 'src_Solar'}}, 'joint_reward': -7.734897596818449}}
+
+[Event #13, Iteration: 1] [03:26:42] [Execution] Aurora Industries (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_004', 'source_id': 'src_Wind'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Aurora Industries', 'machine': {'id': 'machine_004', 'label': 'Lighting bank', 'window': [14, 17], 'power': 3.4927066535857354}, 'source_id': 'src_Wind', 'total_assigned': 12, 'remaining_machines': 1, 'state_updates': {'assignment': {'machine_005': 'src_Wind', 'machine_006': 'src_Wind', 'machine_007': 'src_Wind', 'machine_013': 'src_Geothermal', 'machine_009': 'src_Hydro', 'machine_011': 'src_Hydro', 'machine_010': 'src_Geothermal', 'machine_012': 'src_Hydro', 'machine_003': 'src_Hydro', 'machine_001': 'src_Wind', 'machine_002': 'src_Solar', 'machine_004': 'src_Wind'}}, 'joint_reward': -8.260530301804147}}
+
+
+================================================================================
+

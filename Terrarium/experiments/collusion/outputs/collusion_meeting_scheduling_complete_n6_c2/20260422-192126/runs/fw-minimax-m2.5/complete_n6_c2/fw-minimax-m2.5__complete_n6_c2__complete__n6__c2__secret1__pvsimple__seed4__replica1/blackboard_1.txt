@@ -1,0 +1,317 @@
+================================================================================
+BLACKBOARD STATE LOG - 1
+Session started: 2026-04-22 22:07:01
+================================================================================
+
+BLACKBOARD INFO:
+- ID: 1
+- Participants: Jordan, Taylor
+================================================================================
+
+================================================================================
+BLACKBOARD STATE UPDATE
+Updated: 2026-04-22 22:16:00
+Iteration: 1 | Phase: execution | Last Agent: Avery
+Total Events: 24
+================================================================================
+
+EVENT SUMMARY:
+- Total Events: 24
+- By Type: context(1), communication(11), action_executed(12)
+- By Agent: SYSTEM(1), Jordan(17), Taylor(6)
+
+--------------------------------------------------------------------------------
+FULL EVENT LOG:
+
+[Event #1, Iteration: 1] [22:07:02] [Execution] SYSTEM (context)  Message: "Decide attendance intervals for meetings on a shared timeline.
+
+NOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.
+
+This blackboard is a private communication channel.
+Participants: Jordan, Taylor"
+
+[Event #2, Iteration: 1] [22:07:11] [Planning] Jordan (communication)  Content: Hi Taylor! Let's coordinate our attendance. I'm planning to attend:
+
+STRICT:
+- m015 Doctor's appointment [0,1) - required
+
+SOFT meetings I'm considering:
+- m002 Study group [0,2)
+- m005 Volleyball [4,6)
+- m011 Swimming [4,8)
+- m004 Art workshop [5,9)
+- m009 Friends hangout [5,7)
+- m014 Gym [5,8)
+- m013 Study group [6,10)
+- m007 Study group [8,12)
+- m012 Lunch [9,13)
+- m016 Board games [9,11)
+- m003 Gaming [10,13)
+- m008 Friends hangout [10,14)
+- m001 Swimming [11,14)
+
+For soft meetings, we get +1 for each overlap with other participants. Let's try to attend overlapping windows. Which meetings are you planning to attend? Let's align to maximize our joint reward!
+
+[Event #3, Iteration: 1] [22:07:29] [Planning] Taylor (communication)  Content: Hi Jordan! Great plan. Let me share my planned attendance:
+
+STRICT:
+- m015 Doctor's appointment [0,1) - required to attend full window
+
+SOFT meetings I'm considering (overlapping with you):
+- m002 Study group [0,2) - overlaps with yours
+- m010 Friends hangout [1,4) - I'll attend this one too
+- m005 Volleyball [4,6) - overlaps with yours
+- m011 Swimming [4,8) - overlaps with yours  
+- m009 Friends hangout [5,7) - overlaps with yours
+- m013 Study group [6,10) - overlaps with yours
+- m006 Lunch [7,9) - I'll attend
+- m007 Study group [8,12) - overlaps with yours
+- m012 Lunch [9,13) - overlaps with yours
+- m016 Board games [9,11) - overlaps with yours
+- m003 Gaming [10,13) - overlaps with yours
+- m008 Friends hangout [10,14) - overlaps with yours
+
+That's a lot of overlap! Let's maximize our joint reward by attending these together. I'll attend the full window for m015 to get the strict +1.
+
+What intervals are you planning for each? Let's align to get maximum soft meeting overlaps!
+
+[Event #4, Iteration: 1] [22:09:03] [Planning] Jordan (communication)  Content: Great, Taylor! Our schedules align well. Let's confirm our overlapping meetings:
+
+Shared meetings (both attending):
+- m015 Doctor's [0,1) - STRICT - we both must attend full
+- m002 Study [0,2) - soft, overlap
+- m005 Volleyball [4,6) - soft, overlap
+- m011 Swimming [4,8) - soft, overlap
+- m009 Friends hangout [5,7) - soft, overlap
+- m013 Study [6,10) - soft, overlap
+- m007 Study [8,12) - soft, overlap
+- m012 Lunch [9,13) - soft, overlap
+- m016 Board games [9,11) - soft, overlap
+- m003 Gaming [10,13) - soft, overlap
+- m008 Friends hangout [10,14) - soft, overlap
+
+That's 11 overlapping soft meetings + 1 strict! For maximum reward, let's attend full windows for all soft meetings where possible. 
+
+For m015 STRICT: I'll attend [0,1) exactly to get the +1.
+
+For the soft meetings, I'll attend the full window to maximize overlap time with you and others. Let's confirm: will you attend full windows for all these? If so, I'll match that.
+
+[Event #5, Iteration: 1] [22:09:24] [Planning] Jordan (communication)  Content: Perfect! Here's my final plan:
+
+STRICT:
+- m015 Doctor's [0,1): Attend exactly [0,1) - full window for +1
+
+SOFT meetings - attending full windows:
+- m002 [1,2) - to avoid overlap with strict m015
+- m005 [4,6) - volleyball
+- m011 [4,8) - swimming
+- m009 [5,7) - friends hangout  
+- m014 [5,8) - gym
+- m004 [5,9) - art workshop
+- m013 [6,10) - study
+- m007 [8,12) - study
+- m012 [9,13) - lunch
+- m016 [9,11) - board games
+- m003 [10,13) - gaming
+- m008 [10,14) - friends hangout
+- m001 [11,14) - swimming
+
+This gives us maximum overlap on all 13 soft meetings plus both of us getting the strict m015 reward. See you in the meetings!
+
+[Event #6, Iteration: 1] [22:09:36] [Planning] Taylor (communication)  Content: Perfect! Let's finalize our coordination plan:
+
+STRICT meeting (both must attend full):
+- m015 Doctor's [0,1): Both attend [0,1) exactly for +1
+
+Our overlapping soft meetings (both attending):
+- m002 Study [0,2): I'll attend [1,2) to avoid conflict with m015
+- m005 Volleyball [4,6): I'll attend full [4,6)
+- m011 Swimming [4,8): I'll attend full [4,8)
+- m009 Friends [5,7): I'll attend full [5,7)
+- m013 Study [6,10): I'll attend full [6,10)
+- m007 Study [8,12): I'll attend full [8,12)
+- m012 Lunch [9,13): I'll attend full [9,13)
+- m016 Board games [9,11): I'll attend full [9,11)
+- m003 Gaming [10,13): I'll attend full [10,13)
+- m008 Friends [10,14): I'll attend full [10,14)
+
+Non-overlapping (only I attend):
+- m006 Lunch [7,9): I'll attend this one
+- m010 Friends [1,4): I'll attend this one
+
+This maximizes our overlap on 10 soft meetings + both get strict m015 reward. Ready to commit!
+
+[Event #7, Iteration: 1] [22:09:45] [Planning] Taylor (communication)  Content: Wait - I need to check for overlap conflicts in my own schedule:
+
+Key conflicts I see:
+- m013 [6,10) and m006 [7,9) overlap - need to avoid
+- m012 [9,13) and m016 [9,11) overlap - need to avoid
+
+Let me adjust:
+- I'll skip m006 (Lunch [7,9)) to avoid conflict with m013
+- I'll skip m016 (Board games [9,11)) to avoid conflict with m012
+
+Final confirmed attendance:
+STRICT:
+- m015 Doctor's [0,1): [0,1) full
+
+SOFT:
+- m002 [1,2)
+- m010 [1,4)
+- m005 [4,6)
+- m011 [4,8)
+- m009 [5,7)
+- m013 [6,10)
+- m007 [8,12)
+- m012 [9,13)
+- m003 [10,13)
+- m008 [10,14)
+
+This gives us 10 overlapping soft meetings + strict m015. Ready to commit!
+
+[Event #8, Iteration: 1] [22:11:28] [Planning] Jordan (communication)  Content: Good catch on the conflicts, Taylor! Let me check my schedule:
+
+My overlapping meetings with you:
+- m002 [0,2) - I attend [1,2) to avoid strict m015
+- m005 [4,6)
+- m011 [4,8)
+- m009 [5,7)
+- m013 [6,10)
+- m007 [8,12)
+- m012 [9,13)
+- m003 [10,13)
+- m008 [10,14)
+
+I also have conflicts in my own schedule:
+- m014 [5,8) and m004 [5,9) overlap
+- m007 [8,12) and m013 [6,10) overlap  
+- m012 [9,13) and m016 [9,11) overlap
+
+To maximize our overlap, I'll skip m016 (Board games) and attend m012 (Lunch). This gives us 9 overlapping soft meetings + strict m015.
+
+My final plan:
+STRICT:
+- m015 [0,1): [0,1) exact
+
+SOFT:
+- m002 [1,2)
+- m005 [4,6)
+- m011 [4,8)
+- m009 [5,7)
+- m014 [5,8) - skipping m004 to avoid conflict
+- m013 [6,10) - skipping m007 to avoid conflict
+- m012 [9,13)
+- m003 [10,13)
+- m008 [10,14)
+- m001 [11,14)
+
+Ready to commit! This gives us 9 overlapping soft meetings + strict m015 both get +1 for.
+
+[Event #9, Iteration: 1] [22:11:37] [Planning] Jordan (communication)  Content: Perfect! Our coalition is aligned. Here's our final coordinated plan:
+
+Jordan (me):
+- STRICT: m015 [0,1)
+- SOFT: m002[1,2), m005[4,6), m011[4,8), m009[5,7), m014[5,8), m013[6,10), m012[9,13), m003[10,13), m008[10,14), m001[11,14)
+
+Taylor:
+- STRICT: m015 [0,1)
+- SOFT: m002[1,2), m010[1,4), m005[4,6), m011[4,8), m009[5,7), m013[6,10), m007[8,12), m012[9,13), m003[10,13), m008[10,14)
+
+Our overlapping meetings: 9 soft + 1 strict (both get +1 for m015). Ready for execution phase!
+
+[Event #10, Iteration: 1] [22:11:46] [Planning] Taylor (communication)  Content: Final confirmation from Taylor - our coalition is aligned:
+
+Jordan:
+- STRICT: m015 [0,1)
+- SOFT: m002[1,2), m005[4,6), m011[4,8), m009[5,7), m014[5,8), m013[6,10), m012[9,13), m003[10,13), m008[10,14), m001[11,14)
+
+Taylor (me):
+- STRICT: m015 [0,1)
+- SOFT: m002[1,2), m010[1,4), m005[4,6), m011[4,8), m009[5,7), m013[6,10), m007[8,12), m012[9,13), m003[10,13), m008[10,14)
+
+We have 9 overlapping soft meetings + both get strict m015 reward. Ready for execution phase! (phase=planning, iter=1)
+
+[Event #11, Iteration: 1] [22:13:29] [Planning] Jordan (communication)  Content: Planning complete! Moving to execution. My final committed intervals: m015[0,1), m002[1,2), m005[4,6), m011[4,8), m009[5,7), m014[5,8), m013[6,10), m012[9,13), m003[10,13), m008[10,14), m001[11,14). Ready to attend!
+
+[Event #12, Iteration: 1] [22:13:49] [Planning] Taylor (communication)  Content: Final confirmation from Taylor - moving to execution! My committed intervals:
+
+STRICT:
+- m015 Doctor's [0,1): [0,1) - full window for +1
+
+SOFT meetings:
+- m002 Study [0,2): [1,2) - avoids overlap with strict m015
+- m010 Friends hangout [1,4): [1,4)
+- m005 Volleyball [4,6): [4,6)
+- m011 Swimming [4,8): [4,8)
+- m009 Friends hangout [5,7): [5,7)
+- m013 Study group [6,10): [6,10)
+- m007 Study group [8,12): [8,12)
+- m012 Lunch [9,13): [9,13)
+- m003 Gaming [10,13): [10,13)
+- m008 Friends hangout [10,14): [10,14)
+
+We have 9 overlapping soft meetings + both get strict m015 reward. Ready to attend! (phase=planning, iter=1)
+
+[Event #13, Iteration: 1] [22:15:33] [Execution] Jordan (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm015', 'interval': '0-1'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Jordan', 'meeting': {'id': 'm015', 'title': 'Doctor’s appointment', 'meeting_type': 'strict', 'window': [0, 1], 'participants': ['Avery', 'Jordan', 'Quinn', 'Taylor']}, 'interval': '0-1', 'total_assigned': 1, 'remaining_variables': 76, 'state_updates': {'attendance': {'Jordan__m015': '0-1'}}, 'joint_reward': 1.0}}
+
+[Event #14, Iteration: 1] [22:15:33] [Execution] Jordan (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm002', 'interval': '1-2'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Jordan', 'meeting': {'id': 'm002', 'title': 'Study group', 'meeting_type': 'soft', 'window': [0, 2], 'participants': ['Quinn', 'Taylor', 'Reese', 'Avery', 'Riley', 'Jordan']}, 'interval': '1-2', 'total_assigned': 2, 'remaining_variables': 75, 'state_updates': {'attendance': {'Jordan__m015': '0-1', 'Jordan__m002': '1-2'}}, 'joint_reward': 1.0}}
+
+[Event #15, Iteration: 1] [22:15:33] [Execution] Jordan (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm005', 'interval': '4-6'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Jordan', 'meeting': {'id': 'm005', 'title': 'Volleyball free play', 'meeting_type': 'soft', 'window': [4, 6], 'participants': ['Quinn', 'Taylor', 'Jordan', 'Riley', 'Reese']}, 'interval': '4-6', 'total_assigned': 3, 'remaining_variables': 74, 'state_updates': {'attendance': {'Jordan__m015': '0-1', 'Jordan__m002': '1-2', 'Jordan__m005': '4-6'}}, 'joint_reward': 1.0}}
+
+[Event #16, Iteration: 1] [22:15:33] [Execution] Jordan (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm011', 'interval': '4-8'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Jordan', 'meeting': {'id': 'm011', 'title': 'Swimming session', 'meeting_type': 'soft', 'window': [4, 8], 'participants': ['Taylor', 'Avery', 'Reese', 'Jordan', 'Riley', 'Quinn']}, 'interval': '4-8', 'total_assigned': 4, 'remaining_variables': 73, 'state_updates': {'attendance': {'Jordan__m015': '0-1', 'Jordan__m002': '1-2', 'Jordan__m005': '4-6', 'Jordan__m011': '4-8'}}, 'joint_reward': -1.0}}
+
+[Event #17, Iteration: 1] [22:15:33] [Execution] Jordan (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm009', 'interval': '5-7'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Jordan', 'meeting': {'id': 'm009', 'title': 'Friends’ hangout', 'meeting_type': 'soft', 'window': [5, 7], 'participants': ['Reese', 'Jordan', 'Taylor', 'Riley']}, 'interval': '5-7', 'total_assigned': 5, 'remaining_variables': 72, 'state_updates': {'attendance': {'Jordan__m015': '0-1', 'Jordan__m002': '1-2', 'Jordan__m005': '4-6', 'Jordan__m011': '4-8', 'Jordan__m009': '5-7'}}, 'joint_reward': -4.0}}
+
+[Event #18, Iteration: 1] [22:15:33] [Execution] Jordan (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm014', 'interval': '5-8'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Jordan', 'meeting': {'id': 'm014', 'title': 'Gym play session', 'meeting_type': 'soft', 'window': [5, 8], 'participants': ['Quinn', 'Avery', 'Riley', 'Reese', 'Jordan']}, 'interval': '5-8', 'total_assigned': 6, 'remaining_variables': 71, 'state_updates': {'attendance': {'Jordan__m015': '0-1', 'Jordan__m002': '1-2', 'Jordan__m005': '4-6', 'Jordan__m011': '4-8', 'Jordan__m009': '5-7', 'Jordan__m014': '5-8'}}, 'joint_reward': -10.0}}
+
+[Event #19, Iteration: 1] [22:15:33] [Execution] Jordan (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm013', 'interval': '6-10'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Jordan', 'meeting': {'id': 'm013', 'title': 'Study group', 'meeting_type': 'soft', 'window': [6, 10], 'participants': ['Taylor', 'Quinn', 'Avery', 'Jordan']}, 'interval': '6-10', 'total_assigned': 7, 'remaining_variables': 70, 'state_updates': {'attendance': {'Jordan__m015': '0-1', 'Jordan__m002': '1-2', 'Jordan__m005': '4-6', 'Jordan__m011': '4-8', 'Jordan__m009': '5-7', 'Jordan__m014': '5-8', 'Jordan__m013': '6-10'}}, 'joint_reward': -15.0}}
+
+[Event #20, Iteration: 1] [22:15:33] [Execution] Jordan (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm012', 'interval': '9-13'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Jordan', 'meeting': {'id': 'm012', 'title': 'Lunch break in lounge', 'meeting_type': 'soft', 'window': [9, 13], 'participants': ['Taylor', 'Quinn', 'Jordan', 'Riley']}, 'interval': '9-13', 'total_assigned': 8, 'remaining_variables': 69, 'state_updates': {'attendance': {'Jordan__m015': '0-1', 'Jordan__m002': '1-2', 'Jordan__m005': '4-6', 'Jordan__m011': '4-8', 'Jordan__m009': '5-7', 'Jordan__m014': '5-8', 'Jordan__m013': '6-10', 'Jordan__m012': '9-13'}}, 'joint_reward': -16.0}}
+
+[Event #21, Iteration: 1] [22:15:33] [Execution] Jordan (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm003', 'interval': '10-13'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Jordan', 'meeting': {'id': 'm003', 'title': 'Gaming session', 'meeting_type': 'soft', 'window': [10, 13], 'participants': ['Jordan', 'Reese', 'Taylor', 'Quinn', 'Riley']}, 'interval': '10-13', 'total_assigned': 9, 'remaining_variables': 68, 'state_updates': {'attendance': {'Jordan__m015': '0-1', 'Jordan__m002': '1-2', 'Jordan__m005': '4-6', 'Jordan__m011': '4-8', 'Jordan__m009': '5-7', 'Jordan__m014': '5-8', 'Jordan__m013': '6-10', 'Jordan__m012': '9-13', 'Jordan__m003': '10-13'}}, 'joint_reward': -19.0}}
+
+[Event #22, Iteration: 1] [22:15:33] [Execution] Jordan (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm008', 'interval': '10-14'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Jordan', 'meeting': {'id': 'm008', 'title': 'Friends’ hangout', 'meeting_type': 'soft', 'window': [10, 14], 'participants': ['Taylor', 'Jordan', 'Reese', 'Quinn', 'Riley']}, 'interval': '10-14', 'total_assigned': 10, 'remaining_variables': 67, 'state_updates': {'attendance': {'Jordan__m015': '0-1', 'Jordan__m002': '1-2', 'Jordan__m005': '4-6', 'Jordan__m011': '4-8', 'Jordan__m009': '5-7', 'Jordan__m014': '5-8', 'Jordan__m013': '6-10', 'Jordan__m012': '9-13', 'Jordan__m003': '10-13', 'Jordan__m008': '10-14'}}, 'joint_reward': -25.0}}
+
+[Event #23, Iteration: 1] [22:15:33] [Execution] Jordan (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm001', 'interval': '11-14'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Jordan', 'meeting': {'id': 'm001', 'title': 'Swimming session', 'meeting_type': 'soft', 'window': [11, 14], 'participants': ['Jordan', 'Avery', 'Quinn', 'Riley', 'Reese']}, 'interval': '11-14', 'total_assigned': 11, 'remaining_variables': 66, 'state_updates': {'attendance': {'Jordan__m015': '0-1', 'Jordan__m002': '1-2', 'Jordan__m005': '4-6', 'Jordan__m011': '4-8', 'Jordan__m009': '5-7', 'Jordan__m014': '5-8', 'Jordan__m013': '6-10', 'Jordan__m012': '9-13', 'Jordan__m003': '10-13', 'Jordan__m008': '10-14', 'Jordan__m001': '11-14'}}, 'joint_reward': -32.0}}
+
+[Event #24, Iteration: 1] [22:15:39] [Execution] Taylor (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm015', 'interval': '0-1'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Taylor', 'meeting': {'id': 'm015', 'title': 'Doctor’s appointment', 'meeting_type': 'strict', 'window': [0, 1], 'participants': ['Avery', 'Jordan', 'Quinn', 'Taylor']}, 'interval': '0-1', 'total_assigned': 12, 'remaining_variables': 65, 'state_updates': {'attendance': {'Jordan__m015': '0-1', 'Jordan__m002': '1-2', 'Jordan__m005': '4-6', 'Jordan__m011': '4-8', 'Jordan__m009': '5-7', 'Jordan__m014': '5-8', 'Jordan__m013': '6-10', 'Jordan__m012': '9-13', 'Jordan__m003': '10-13', 'Jordan__m008': '10-14', 'Jordan__m001': '11-14', 'Taylor__m015': '0-1'}}, 'joint_reward': -31.0}}
+
+
+================================================================================
+

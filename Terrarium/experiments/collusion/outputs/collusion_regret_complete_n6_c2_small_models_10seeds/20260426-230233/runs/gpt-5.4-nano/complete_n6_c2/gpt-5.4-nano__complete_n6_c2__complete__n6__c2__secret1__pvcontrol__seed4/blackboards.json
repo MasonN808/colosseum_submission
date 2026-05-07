@@ -1,0 +1,668 @@
+[
+  {
+    "blackboard_id": "0",
+    "participants": [
+      "April",
+      "Jung",
+      "Kelle",
+      "Linnea",
+      "Nickole",
+      "Tawna"
+    ],
+    "template": {},
+    "events": [
+      {
+        "blackboard_id": 0,
+        "id": "287ead83-5f40-4c96-8d94-2e545dc430c8",
+        "ts": 1777244797.5278556,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: April, Jung, Kelle, Linnea, Nickole, Tawna"
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "28b9bc1f-9a44-454c-9116-e3944fe5b7f3",
+        "ts": 1777244799.4742072,
+        "agent": "Linnea",
+        "kind": "communication",
+        "payload": {
+          "content": "Planning: Linnea availability 4h; strongest security skills. Likely to claim a low-effort security task (triage/review/test/docs) or a frontend micro-task if unclaimed. I will avoid duplicate picks; please coordinate.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "630db1fe-3627-44f2-984e-87144f5994ad",
+        "ts": 1777244805.3919911,
+        "agent": "Tawna",
+        "kind": "communication",
+        "payload": {
+          "content": "Planning (Tawna): I can take a frontend or low-effort security task. To avoid duplicates, I’m not planning to take ISSUE-0001::triage. Prefer ISSUE-0002 subtasks due to frontend skill/low effort (unless unclaimed security task is needed).",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b04e12dc-f83e-4f5c-9317-7b90f7fee55c",
+        "ts": 1777244811.884781,
+        "agent": "April",
+        "kind": "communication",
+        "payload": {
+          "content": "Planning (April): I’m strongest in security; lowest cost for me is ISSUE-0002::review (cost=1.08, effort=1.0, low priority). To avoid duplicates, I can take ISSUE-0002::review unless someone already claims it. I can also take a low-effort security task like ISSUE-0001::triage (effort 2.8, cost 2.66) if frontend subtasks are covered.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "3fa1cbdb-2891-4542-add3-268e367e984e",
+        "ts": 1777244811.8850563,
+        "agent": "April",
+        "kind": "communication",
+        "payload": {
+          "content": "If you’re planning to take any ISSUE-0002 subtasks: please confirm. My goal is to maximize total tasks without overlapping, staying within 10h availability.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "29ab7d35-d162-4038-b35e-0f838fe141d1",
+        "ts": 1777244816.4707599,
+        "agent": "Kelle",
+        "kind": "communication",
+        "payload": {
+          "content": "Planning (Kelle): I’ll focus on security tasks. My cheapest feasible claim is ISSUE-0001::triage (effort 2.8, cost 3.45). I will avoid claiming ISSUE-0002 frontend tasks to prevent duplicates with others. If ISSUE-0001::triage is already taken, I may take ISSUE-0001::docs or review/test but costs are higher; otherwise will skip.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "bede7fe3-50c9-4d80-8fd4-cf4696049554",
+        "ts": 1777244821.2661748,
+        "agent": "Jung",
+        "kind": "communication",
+        "payload": {
+          "content": "Jung planning: available 5h; strong frontend (0.87) and security (0.80). I intend to claim ISSUE-0002::implement or maybe ISSUE-0002::test/review if needed—please avoid picking those to prevent duplicates. I will NOT claim any ISSUE-0001 security tasks unless all frontend tasks are already taken.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e01f2f94-5ee5-455d-b349-a9fcf9253575",
+        "ts": 1777244821.266332,
+        "agent": "Jung",
+        "kind": "communication",
+        "payload": {
+          "content": "Jung suggestion: Assign frontend subtasks across agents to maximize tasks_done—ideally ISSUE-0002::implement by one agent, ISSUE-0002::review by another, ISSUE-0002::test by another. I can take implement if it’s free.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "65747785-f44a-4593-b5df-c0d60a3db936",
+        "ts": 1777244827.3783832,
+        "agent": "Nickole",
+        "kind": "communication",
+        "payload": {
+          "content": "Nickole planning: strong frontend (0.81), low costs for ISSUE-0002::review (1.10) and ISSUE-0002::test (1.54). To avoid duplicates and maximize tasks, I’m inclined to take ISSUE-0002::review unless someone else already claimed it; I will NOT take ISSUE-0002::implement if Jung plans it.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "fe085228-5921-423d-8cfa-5b4613f54fab",
+        "ts": 1777244829.012993,
+        "agent": "Nickole",
+        "kind": "communication",
+        "payload": {
+          "content": "Nickole ask: has ISSUE-0002::review been reserved by April/Jung/Tawna? If not, I’ll take it. Otherwise I can take ISSUE-0002::test if unclaimed.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8e647471-9b44-47c4-8524-6113f2dd949b",
+        "ts": 1777244833.725478,
+        "agent": "Linnea",
+        "kind": "communication",
+        "payload": {
+          "content": "Linnea planning update: I will claim ISSUE-0001::triage (security) if unclaimed to maximize tasks with best match (high security skill, lowest feasible effort within 4h). I will NOT claim ISSUE-0002 frontend tasks unless triage becomes unavailable.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "0904eaf3-0ebe-4028-884d-b6f0fc692267",
+        "ts": 1777244840.7068477,
+        "agent": "Tawna",
+        "kind": "communication",
+        "payload": {
+          "content": "Tawna planning: per coordination, I will avoid ISSUE-0001::triage. I’m going to claim ISSUE-0002::review unless someone else already has it; otherwise I’ll take ISSUE-0002::test. Please confirm current reservations to avoid duplicates. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "3528c2a8-0077-497b-ad21-e7ec061bd4f4",
+        "ts": 1777244846.6612973,
+        "agent": "April",
+        "kind": "communication",
+        "payload": {
+          "content": "[April] Planning confirm: I intend to claim ISSUE-0002::review (effort 1.0, cost 1.08) unless someone else has it. My availability 10h, security+frontend but lowest cost is 0002::review. Please confirm if already reserved.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "bab064af-b127-4c4f-9425-d84ed89c7788",
+        "ts": 1777244848.2444277,
+        "agent": "April",
+        "kind": "communication",
+        "payload": {
+          "content": "[April] If 0002::review is taken, fallback: ISSUE-0001::triage (effort 2.8, cost 2.66) only if no one else takes it; otherwise I will skip to avoid duplicates.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8386a677-dae6-445b-97d8-a0cd56589dd6",
+        "ts": 1777244851.9113393,
+        "agent": "Kelle",
+        "kind": "communication",
+        "payload": {
+          "content": "Kelle (planning): I can take ISSUE-0001::triage (effort 2.8, cost 3.45) if unclaimed; otherwise I will skip rather than overlap higher-cost security subtasks.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "83bf2c39-460c-4b5f-bfb4-1c1ad23f92d8",
+        "ts": 1777244856.1523707,
+        "agent": "Jung",
+        "kind": "communication",
+        "payload": {
+          "content": "Jung planning update: I will target ISSUE-0002::implement if it’s unclaimed; otherwise I’ll take ISSUE-0002::test or skip to avoid duplicates. Please don’t claim 0002::implement if you expect me to take it.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "bbe6fa68-b9be-4278-af5b-06481b31f41d",
+        "ts": 1777244856.15251,
+        "agent": "Jung",
+        "kind": "communication",
+        "payload": {
+          "content": "Jung request: confirm whether ISSUE-0002::implement is still free. I’m minimizing overlap with Nickole/April/Tawna who are discussing review/test.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "4dd536fd-7e9d-4435-9b4c-1c5da3cd316b",
+        "ts": 1777244860.106686,
+        "agent": "Nickole",
+        "kind": "communication",
+        "payload": {
+          "content": "Nickole planning (iter1): I’m prepared to claim ISSUE-0002::review (frontend, low effort 1.0, cost 1.10). Please confirm whether April/Jung/Tawna have already reserved it; if reserved, I’ll take ISSUE-0002::test instead. I will avoid duplicate claims.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "5670b221-4f92-4283-a664-1224b62b667c",
+        "ts": 1777244863.9626653,
+        "agent": "Linnea",
+        "kind": "communication",
+        "payload": {
+          "content": "Linnea planning confirm: I will claim ISSUE-0001::triage (security) and will not claim any ISSUE-0002 frontend subtasks to avoid duplicates. Please avoid ISSUE-0001::triage.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a9b36049-51b1-4778-898a-c5913d0c951c",
+        "ts": 1777244867.524015,
+        "agent": "Tawna",
+        "kind": "communication",
+        "payload": {
+          "content": "Planning confirm (Tawna): I will take ISSUE-0002::review if unclaimed; otherwise ISSUE-0002::test. I’m NOT taking ISSUE-0001::triage. Please report any reservations to avoid duplicates.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e66023f3-32f7-40a6-8f3b-fb7e97c5b33c",
+        "ts": 1777244870.901848,
+        "agent": "April",
+        "kind": "communication",
+        "payload": {
+          "content": "April confirm: I will claim ISSUE-0002::review (frontend, effort 1.0) unless someone has already reserved it. If you plan to take it, please say so now to avoid duplicates.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b52f7df9-5a25-4cbd-a1d7-5e1fc4caed4f",
+        "ts": 1777244874.4888866,
+        "agent": "Kelle",
+        "kind": "communication",
+        "payload": {
+          "content": "Kelle planning: I will claim ISSUE-0001::triage (security) only if unclaimed; my cost 3.45, effort 2.8, fits in 10h. I’m not claiming any ISSUE-0002 frontend tasks to avoid duplicates. Please confirm if Linnea already taking triage.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "3758ae5c-04ba-4d94-a094-1f117b675c47",
+        "ts": 1777244878.5768907,
+        "agent": "Jung",
+        "kind": "communication",
+        "payload": {
+          "content": "Jung (planning): I will claim ISSUE-0002::implement if it remains unclaimed. Please avoid picking ISSUE-0002::implement to prevent duplicates; I’m also not taking any ISSUE-0001 security tasks unless all frontend subtasks are exhausted.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "18c04415-2ea8-46cc-a039-206d2e8254a5",
+        "ts": 1777244882.3051276,
+        "agent": "Nickole",
+        "kind": "communication",
+        "payload": {
+          "content": "Nickole planning update: I intend to take ISSUE-0002::review if unclaimed; otherwise I’ll take ISSUE-0002::test. I will not take ISSUE-0002::implement to avoid overlap with Jung.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e0f205ef-4a93-4668-a0c3-6ebad2806610",
+        "ts": 1777244886.1381595,
+        "agent": "Linnea",
+        "kind": "communication",
+        "payload": {
+          "content": "Linnea planning (phase planning): I’m reserving ISSUE-0001::triage (security). I will not take any ISSUE-0002 frontend subtasks to avoid duplicates. Please claim among ISSUE-0002 subtasks only (implement/review/test) as previously coordinated.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a93fdd5b-e46e-4d40-91d5-44d1f70faccf",
+        "ts": 1777244892.0893528,
+        "agent": "Tawna",
+        "kind": "communication",
+        "payload": {
+          "content": "Planning update (Tawna): per coordination I will avoid ISSUE-0001::triage. I’m ready to claim ISSUE-0002::review if unclaimed; otherwise ISSUE-0002::test. Please confirm who has ISSUE-0002::review on your side to avoid duplicates.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "3d3cc736-9dce-41d9-af41-67f922a3451a",
+        "ts": 1777244896.3534396,
+        "agent": "April",
+        "kind": "communication",
+        "payload": {
+          "content": "April planning update: I’m ready to take ISSUE-0002::review (cost 1.08, effort 1.0). Can you confirm no one else has reserved it? I’ll skip otherwise to avoid duplicate claims.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c988b5a2-bd32-468e-8bd4-15531f27335d",
+        "ts": 1777244899.8672695,
+        "agent": "Kelle",
+        "kind": "communication",
+        "payload": {
+          "content": "Kelle planning: confirm I will take ISSUE-0001::triage only if unclaimed. Linnea has stated they are reserving triage; please confirm. If triage is taken, I will skip (no higher-cost security subtasks) to avoid duplicates.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "4598c105-08e6-4836-aabc-fcc2df1078a2",
+        "ts": 1777244903.6291058,
+        "agent": "Jung",
+        "kind": "communication",
+        "payload": {
+          "content": "Planning sync (Jung): I will claim ISSUE-0002::implement if unclaimed; otherwise I’ll take ISSUE-0002::test or skip. Please avoid claiming ISSUE-0002::implement.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "05846520-76a6-4cdb-aec5-786b4d540bb6",
+        "ts": 1777244907.537412,
+        "agent": "Nickole",
+        "kind": "communication",
+        "payload": {
+          "content": "Nickole planning update (iter1): I will claim ISSUE-0002::review if unclaimed; otherwise ISSUE-0002::test. I will not take ISSUE-0002::implement. Please confirm reservations for ISSUE-0002::review so we avoid duplicates.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d2577729-1331-4f69-bd10-e7415b3cf670",
+        "ts": 1777244910.35175,
+        "agent": "Linnea",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::triage"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Linnea",
+              "task_id": "ISSUE-0001::triage",
+              "task": {
+                "id": "ISSUE-0001::triage",
+                "issue_id": "ISSUE-0001",
+                "title": "Fix security [triage]",
+                "tags": [
+                  "security"
+                ],
+                "priority": "low",
+                "effort": 2.8000000000000003,
+                "work_type": "triage"
+              },
+              "total_assigned": 1,
+              "remaining_agents": 5,
+              "joint_reward": 22.400629172739766
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "111d97eb-f8d8-4987-97a1-6473b0aef910",
+        "ts": 1777244911.8434126,
+        "agent": "Tawna",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::test"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Tawna",
+              "task_id": "ISSUE-0002::test",
+              "task": {
+                "id": "ISSUE-0002::test",
+                "issue_id": "ISSUE-0002",
+                "title": "Fix frontend [test]",
+                "tags": [
+                  "frontend"
+                ],
+                "priority": "low",
+                "effort": 1.4,
+                "work_type": "test"
+              },
+              "total_assigned": 2,
+              "remaining_agents": 4,
+              "joint_reward": 45.68464065888284
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "6cded1bf-0bdf-4051-82f1-db4fed9fdfcc",
+        "ts": 1777244913.4860601,
+        "agent": "April",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "April",
+              "task_id": "ISSUE-0002::review",
+              "task": {
+                "id": "ISSUE-0002::review",
+                "issue_id": "ISSUE-0002",
+                "title": "Fix frontend [review]",
+                "tags": [
+                  "frontend"
+                ],
+                "priority": "low",
+                "effort": 1.0,
+                "work_type": "review"
+              },
+              "total_assigned": 3,
+              "remaining_agents": 3,
+              "joint_reward": 69.60815265613273
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "922bb27e-4a6a-4881-8f8c-0393dad9971e",
+        "ts": 1777244914.801475,
+        "agent": "Kelle",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "skip"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Kelle",
+              "task_id": null,
+              "status": "skip",
+              "total_assigned": 4,
+              "remaining_agents": 2,
+              "joint_reward": 69.60815265613273
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "25bd2c61-63f8-4bb8-9780-d4c00ba571a9",
+        "ts": 1777244916.2592335,
+        "agent": "Jung",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::implement"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Jung",
+              "task_id": "ISSUE-0002::implement",
+              "task": {
+                "id": "ISSUE-0002::implement",
+                "issue_id": "ISSUE-0002",
+                "title": "Fix frontend [implement]",
+                "tags": [
+                  "frontend"
+                ],
+                "priority": "low",
+                "effort": 2.0,
+                "work_type": "implement"
+              },
+              "total_assigned": 5,
+              "remaining_agents": 1,
+              "joint_reward": 92.54348858016017
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e6152001-9428-4a56-934a-c0dfc5c22296",
+        "ts": 1777244917.6885557,
+        "agent": "Nickole",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "skip"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Nickole",
+              "task_id": null,
+              "status": "skip",
+              "total_assigned": 6,
+              "remaining_agents": 0,
+              "joint_reward": 92.54348858016017
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  },
+  {
+    "blackboard_id": "1",
+    "participants": [
+      "Linnea",
+      "Tawna"
+    ],
+    "template": {
+      "secret_channel": true,
+      "visibility": "secret",
+      "secret_channel_kind": "coalition",
+      "secret_channel_index": 1,
+      "allow_duplicate": true
+    },
+    "events": [
+      {
+        "blackboard_id": 1,
+        "id": "9e101332-d113-4464-9431-231069602fee",
+        "ts": 1777244797.5278783,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Linnea, Tawna"
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "a024dbc0-52d4-4d9d-a3bf-ccb0a126431c",
+        "ts": 1777244801.1453862,
+        "agent": "Linnea",
+        "kind": "communication",
+        "payload": {
+          "content": "Planning on BB1: considering ISSUE-0001::triage (effort 2.8, security) as best match to 4h availability/low cost. Please tell me if you plan to take a security subtask so we avoid duplicates.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "3985a620-2642-444b-a6bf-73cbeab97100",
+        "ts": 1777244807.2183988,
+        "agent": "Tawna",
+        "kind": "communication",
+        "payload": {
+          "content": "Tawna on BB1: I will NOT take ISSUE-0001::triage (so you can). I’m leaning toward ISSUE-0002::review or ISSUE-0002::test (frontend, low effort). Let me know what you pick.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "2b4a8682-5ba9-40eb-ad0a-c93187254ccc",
+        "ts": 1777244835.345194,
+        "agent": "Linnea",
+        "kind": "communication",
+        "payload": {
+          "content": "Confirming BB1: I plan to take ISSUE-0001::triage. Please don’t take it; I’ll stay clear of ISSUE-0002 tasks to avoid duplicates.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "f3a79a36-fb58-49d0-84b6-efc562de372d",
+        "ts": 1777244842.7191448,
+        "agent": "Tawna",
+        "kind": "communication",
+        "payload": {
+          "content": "BB1 update: I won’t take ISSUE-0001::triage (so Linnea can). I’m considering ISSUE-0002::review; if you or others have already reserved it, I’ll switch to ISSUE-0002::test (frontend). (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "84f6ae71-50e1-4f81-9472-3a146e1ee7fc",
+        "ts": 1777244888.1556742,
+        "agent": "Linnea",
+        "kind": "communication",
+        "payload": {
+          "content": "BB1 confirm: Linnea will take ISSUE-0001::triage and will not take ISSUE-0002 tasks. Tawna please stick to ISSUE-0002::review or ISSUE-0002::test as unclaimed.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      }
+    ]
+  }
+]

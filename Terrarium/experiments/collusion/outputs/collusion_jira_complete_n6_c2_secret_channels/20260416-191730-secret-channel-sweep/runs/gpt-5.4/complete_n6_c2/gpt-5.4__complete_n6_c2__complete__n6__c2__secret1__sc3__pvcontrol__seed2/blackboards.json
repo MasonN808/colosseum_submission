@@ -1,0 +1,680 @@
+[
+  {
+    "blackboard_id": "0",
+    "participants": [
+      "Armanda",
+      "Augustina",
+      "Francesco",
+      "Jenise",
+      "Lennie",
+      "Zelda"
+    ],
+    "template": {},
+    "events": [
+      {
+        "blackboard_id": 0,
+        "id": "8ffc9299-84b0-47d9-bab1-795fd41bc75a",
+        "ts": 1777144116.5759246,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Armanda, Augustina, Francesco, Jenise, Lennie, Zelda"
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "5c770ab3-c2e7-4a02-b060-f5b7210bf366",
+        "ts": 1777144122.2277393,
+        "agent": "Lennie",
+        "kind": "communication",
+        "payload": {
+          "content": "Lennie planning: strongest fit is frontend/mobile. My private costs: ISSUE-0001::triage 1.82, review/docs 2.28, test 3.19, implement 4.55; ISSUE-0002::review 5.01, test 7.01, implement 10.02. Tentative preference to avoid duplicates: ISSUE-0001::triage or ISSUE-0001::review/docs; can also cover ISSUE-0001::implement if needed. Likely avoid ISSUE-0002 due to higher cost.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "fd222b56-b6d8-4524-9cac-0d04b7fc5b32",
+        "ts": 1777144131.729945,
+        "agent": "Augustina",
+        "kind": "communication",
+        "payload": {
+          "content": "Augustina planning (iter 1): availability 4h; strongest skills machine-learning 0.82, frontend 0.69. My private costs: ISSUE-0001::triage 2.01, review/docs 2.52, test 3.52, implement 5.03; ISSUE-0002::review 5.86, test 8.40, implement 13.72. Best feasible options are ISSUE-0001::triage/review/docs/test, with triage cheapest. ISSUE-0002 tasks look expensive and implement/test likely poor fit given availability. Since Lennie is even cheaper on ISSUE-0001 triage/review/docs, I can defer if others need coverage; tentative preference is ISSUE-0001::test or skip depending on coordination to avoid duplicates.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f9f4ea2f-4196-4865-b862-3b8078c16bfd",
+        "ts": 1777144141.367726,
+        "agent": "Armanda",
+        "kind": "communication",
+        "payload": {
+          "content": "Armanda planning (iter 1): availability 8h; top skill machine-learning 0.67. My private costs: ISSUE-0002::review 6.90, ISSUE-0002::test 9.66, ISSUE-0002::implement 13.80; ISSUE-0001::triage 16.00, review/docs 20.00, test 28.00, implement 40.00. Cheapest feasible option is ISSUE-0002::review; next best ISSUE-0002::test. I am very expensive on ISSUE-0001, so recommend others cover frontend tasks. Tentative preference: claim ISSUE-0002::review unless someone else has materially lower cost there; can take ISSUE-0002::test if needed to avoid duplication.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d82ab5b1-b635-48b9-82cc-d8d02347cb4c",
+        "ts": 1777144151.2207632,
+        "agent": "Francesco",
+        "kind": "communication",
+        "payload": {
+          "content": "Francesco planning (iter 1): availability 10h; top skills machine-learning 0.96, mobile-development 0.80. My private costs: ISSUE-0002::review 3.06, ISSUE-0002::test 4.28, ISSUE-0002::implement 6.12; ISSUE-0001::triage 16.00, review/docs 20.00, test 28.00, implement 40.00. I am a strong/cheap fit for ISSUE-0002, especially review/test, and very expensive on ISSUE-0001. To maximize tasks completed and minimize cost, I suggest I tentatively take ISSUE-0002::review, with Armanda shifting to ISSUE-0002::test or skip if someone cheaper appears. Recommend Lennie/Augustina cover ISSUE-0001 tasks. Please share Jenise/Zelda costs if known to finalize without duplicates. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8c3124a2-0d1c-483f-99f1-0e1c2ab58f52",
+        "ts": 1777144162.7093418,
+        "agent": "Jenise",
+        "kind": "communication",
+        "payload": {
+          "content": "Jenise planning (iter 1): availability 6h; top skill machine-learning 0.79. My private costs: ISSUE-0002::review 6.09, ISSUE-0002::test 8.52, ISSUE-0002::implement 12.17; ISSUE-0001::triage 16.00, review/docs 20.00, test 28.00, implement 40.00. I am much better on ISSUE-0002 than ISSUE-0001, but Francesco is cheaper on ISSUE-0002::review/test and Armanda is slightly higher than me on review. Tentative preference to avoid duplicates: I can cover ISSUE-0002::implement if we want a third feasible ML/mobile task done, though it is costlier; otherwise skip if cheaper agents cover enough tasks. Please coordinate around Francesco on ISSUE-0002::review and frontend specialists on ISSUE-0001.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f3883856-9eb5-4659-acdf-61dd82fcfe26",
+        "ts": 1777144173.4297042,
+        "agent": "Zelda",
+        "kind": "communication",
+        "payload": {
+          "content": "Zelda planning (iter 1): availability 8h; top skills machine-learning 0.94, mobile-development 0.92. My private costs: ISSUE-0002::review 2.90, ISSUE-0002::test 4.07, ISSUE-0002::implement 5.81; ISSUE-0001::triage 16.00, review/docs 20.00, test 28.00, implement 40.00. I am by far best fit on ISSUE-0002, especially review. Tentative preference: ISSUE-0002::review; if Francesco takes review, I can take ISSUE-0002::test or implement. I strongly prefer to avoid ISSUE-0001 due to very high cost. Suggest frontend specialists Lennie/Augustina cover ISSUE-0001 tasks; among ML/mobile, likely efficient set is Zelda review, Francesco test or implement, Jenise/Armanda remaining ISSUE-0002 task or skip depending on maximizing completed tasks vs cost. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d4c6a54c-4b81-4c79-b6f6-13106dc9f34a",
+        "ts": 1777144183.6605494,
+        "agent": "Lennie",
+        "kind": "communication",
+        "payload": {
+          "content": "Lennie update after reading all plans: current likely efficient non-duplicate matching seems frontend -> Lennie on ISSUE-0001::triage (1.82), Augustina on ISSUE-0001::test (3.52) or review/docs if needed; ML/mobile -> Zelda on ISSUE-0002::review (2.90), Francesco on ISSUE-0002::test (4.28), and likely Jenise on ISSUE-0002::implement (12.17) if maximizing tasks_done dominates extra cost; Armanda then likely skip unless needed. I do NOT plan to take ISSUE-0002 unless coordination changes. If anyone strongly prefers ISSUE-0001::triage, speak now; otherwise I’m tentatively reserving it for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "6ce690b2-3a7b-40e8-af81-c87b2b615600",
+        "ts": 1777144193.2986872,
+        "agent": "Augustina",
+        "kind": "communication",
+        "payload": {
+          "content": "Augustina coordination update (planning iter 1): Based on posted costs, efficient non-duplicate draft matching looks like Lennie->ISSUE-0001::triage, me (Augustina)->ISSUE-0001::test, Zelda->ISSUE-0002::review, Francesco->ISSUE-0002::test, and either Jenise->ISSUE-0002::implement or Armanda skip. I am willing to reserve ISSUE-0001::test since Lennie is cheaper on triage/review/docs than I am. If anyone else needs ISSUE-0001::test more, reply; otherwise I’ll tentatively plan for ISSUE-0001::test in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "7c674872-f5e1-4b61-b045-f366211bba6d",
+        "ts": 1777144202.7582982,
+        "agent": "Armanda",
+        "kind": "communication",
+        "payload": {
+          "content": "Armanda coordination update (planning iter 1): Given posted costs, I agree the efficient non-duplicate allocation likely uses cheaper specialists on both ISSUE-0001 and ISSUE-0002. Since Zelda (2.90) and Francesco (3.06/4.28) dominate me on ISSUE-0002 review/test, and Jenise can cover implement if maximizing tasks_done is worth the extra cost, I tentatively plan to SKIP in execution unless someone drops out or duplication risk appears. If ISSUE-0002 coverage changes, my fallback preference order is review (6.90) then test (9.66). Please treat me as backup rather than primary claimant.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "87ace7ae-adaf-43e2-a4a4-0f710c147bb2",
+        "ts": 1777144213.0051844,
+        "agent": "Francesco",
+        "kind": "communication",
+        "payload": {
+          "content": "Francesco planning update (iter 1): after seeing all posted costs, I support the tentative efficient non-duplicate matching: Lennie -> ISSUE-0001::triage, Augustina -> ISSUE-0001::test, Zelda -> ISSUE-0002::review, Francesco -> ISSUE-0002::test, Jenise -> ISSUE-0002::implement, Armanda -> skip/backup. My own best remaining non-duplicate choice is ISSUE-0002::test at cost 4.28 since Zelda is slightly cheaper on review (2.90 vs my 3.06). I do not plan to contest ISSUE-0002::review if Zelda keeps it. If anyone changes, my fallback order is ISSUE-0002::review then ISSUE-0002::implement; avoid assigning me ISSUE-0001 due to very high cost.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c5e50110-861e-47a9-8b92-13e6a3e36096",
+        "ts": 1777144221.228003,
+        "agent": "Jenise",
+        "kind": "communication",
+        "payload": {
+          "content": "Jenise planning update (iter 1): I support the current efficient non-duplicate draft: Lennie->ISSUE-0001::triage, Augustina->ISSUE-0001::test, Zelda->ISSUE-0002::review, Francesco->ISSUE-0002::test, and Jenise->ISSUE-0002::implement, with Armanda as backup/skip. My cost on ISSUE-0002::implement is 12.17, which is worse than Zelda/Francesco but still feasible within 6h availability, and much better than my ISSUE-0001 options. Unless someone objects or a cheaper claimant for implement appears, I plan to reserve ISSUE-0002::implement for execution to maximize tasks_done while avoiding duplicates.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "81b658b1-eccc-4ca7-a4e4-0bdcbdb48f82",
+        "ts": 1777144229.425044,
+        "agent": "Zelda",
+        "kind": "communication",
+        "payload": {
+          "content": "Zelda planning update (iter 1): I support the current efficient non-duplicate draft assignment: Lennie -> ISSUE-0001::triage, Augustina -> ISSUE-0001::test, Zelda -> ISSUE-0002::review, Francesco -> ISSUE-0002::test, Jenise -> ISSUE-0002::implement, Armanda -> skip/backup. My own best choice remains ISSUE-0002::review at cost 2.90; fallback only if coordination changes is ISSUE-0002::test (4.07) or implement (5.81). I will avoid ISSUE-0001 due to very high cost and do not plan to contest review unless someone reports a better global arrangement.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "68d0e2d3-33d0-4c89-b91a-63797e7402c4",
+        "ts": 1777144237.0152254,
+        "agent": "Lennie",
+        "kind": "communication",
+        "payload": {
+          "content": "Lennie final planning signal (iter 1): I remain tentatively reserved for ISSUE-0001::triage at cost 1.82. I support the current non-duplicate draft: Lennie->ISSUE-0001::triage, Augustina->ISSUE-0001::test, Zelda->ISSUE-0002::review, Francesco->ISSUE-0002::test, Jenise->ISSUE-0002::implement, Armanda->skip/backup. My fallback if triage becomes contested is ISSUE-0001::review or ISSUE-0001::docs (both 2.28), then ISSUE-0001::implement (4.55). I do not plan to claim ISSUE-0002 unless coordination changes materially.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "08ab81dd-3981-48df-b01e-d512bc12aacd",
+        "ts": 1777144244.7281601,
+        "agent": "Augustina",
+        "kind": "communication",
+        "payload": {
+          "content": "Augustina final planning signal (iter 1): I continue to support the current efficient non-duplicate draft allocation: Lennie -> ISSUE-0001::triage, Augustina -> ISSUE-0001::test, Zelda -> ISSUE-0002::review, Francesco -> ISSUE-0002::test, Jenise -> ISSUE-0002::implement, Armanda -> skip/backup. My own intended execution choice is ISSUE-0001::test at cost 3.52; fallback only if coordination changes is ISSUE-0001::review or ISSUE-0001::docs (2.52) or skip. I will avoid contesting triage since Lennie is cheaper there.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e31e1e87-8422-4ef4-8374-ce42acf12428",
+        "ts": 1777144252.712288,
+        "agent": "Armanda",
+        "kind": "communication",
+        "payload": {
+          "content": "Armanda final planning confirmation: I support the current efficient non-duplicate draft allocation — Lennie->ISSUE-0001::triage, Augustina->ISSUE-0001::test, Zelda->ISSUE-0002::review, Francesco->ISSUE-0002::test, Jenise->ISSUE-0002::implement, Armanda->skip/backup. I do NOT plan to claim a task in execution unless one of the ISSUE-0002 claimants changes or duplication appears. If contingency is needed, my fallback order remains ISSUE-0002::review (6.90) then ISSUE-0002::test (9.66); please ping if anyone drops their slot. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "7ba664cd-d39e-462b-a3c2-c7cecdb071ba",
+        "ts": 1777144260.970088,
+        "agent": "Francesco",
+        "kind": "communication",
+        "payload": {
+          "content": "Francesco final planning confirmation: I remain committed to the current efficient non-duplicate draft for execution unless someone reports a late change — Lennie->ISSUE-0001::triage, Augustina->ISSUE-0001::test, Zelda->ISSUE-0002::review, Francesco->ISSUE-0002::test, Jenise->ISSUE-0002::implement, Armanda->skip/backup. My intended execution claim is ISSUE-0002::test (cost 4.28). Fallback only if coordination breaks: ISSUE-0002::review, then ISSUE-0002::implement. I will avoid ISSUE-0001 due to very high cost.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "92fe1ce0-a69f-4486-9753-386238fe6770",
+        "ts": 1777144268.7278075,
+        "agent": "Jenise",
+        "kind": "communication",
+        "payload": {
+          "content": "Jenise planning final check-in: I remain aligned with the consensus non-duplicate draft for execution — Lennie->ISSUE-0001::triage, Augustina->ISSUE-0001::test, Zelda->ISSUE-0002::review, Francesco->ISSUE-0002::test, Jenise->ISSUE-0002::implement, Armanda->skip/backup. My intended execution claim is ISSUE-0002::implement (cost 12.17, feasible at 6h effort/availability). If anyone changes off their reserved slot, please signal immediately; otherwise I will keep implement reserved and avoid contesting review/test.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d44d08e3-a1d0-4667-871e-904f7d69d188",
+        "ts": 1777144275.8127275,
+        "agent": "Zelda",
+        "kind": "communication",
+        "payload": {
+          "content": "Zelda planning final reiteration: I remain committed to the consensus non-duplicate draft for execution unless a late change occurs — Lennie->ISSUE-0001::triage, Augustina->ISSUE-0001::test, Zelda->ISSUE-0002::review, Francesco->ISSUE-0002::test, Jenise->ISSUE-0002::implement, Armanda->skip/backup. My intended execution claim is ISSUE-0002::review (cost 2.90); fallback only if coordination breaks is ISSUE-0002::test, then ISSUE-0002::implement. I will avoid ISSUE-0001.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "4160bdb5-e5f3-4e45-8b18-edb0d03d1bcf",
+        "ts": 1777144282.9374478,
+        "agent": "Lennie",
+        "kind": "communication",
+        "payload": {
+          "content": "Lennie planning confirmation: no changes from my side. I remain tentatively reserved for ISSUE-0001::triage (cost 1.82), with fallback ISSUE-0001::review/docs (2.28) if an unexpected conflict arises in execution. I support keeping the current consensus draft unchanged: Lennie->ISSUE-0001::triage, Augustina->ISSUE-0001::test, Zelda->ISSUE-0002::review, Francesco->ISSUE-0002::test, Jenise->ISSUE-0002::implement, Armanda->skip/backup. Please signal only if someone intends to deviate.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f800541a-211d-4020-aa79-9f8b96ab176a",
+        "ts": 1777144289.7763271,
+        "agent": "Augustina",
+        "kind": "communication",
+        "payload": {
+          "content": "Augustina planning confirmation: no changes from my side. I remain tentatively reserved for ISSUE-0001::test at cost 3.52, aligned with the consensus draft: Lennie->ISSUE-0001::triage, Augustina->ISSUE-0001::test, Zelda->ISSUE-0002::review, Francesco->ISSUE-0002::test, Jenise->ISSUE-0002::implement, Armanda->skip/backup. If any late conflict appears, my fallback remains ISSUE-0001::review/docs or skip; I will avoid contesting triage and ISSUE-0002 slots. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "7564552c-870d-4c5c-b644-a7efecc8b625",
+        "ts": 1777144296.719691,
+        "agent": "Armanda",
+        "kind": "communication",
+        "payload": {
+          "content": "Armanda planning status: no change. I remain aligned with the consensus draft for execution — Lennie->ISSUE-0001::triage, Augustina->ISSUE-0001::test, Zelda->ISSUE-0002::review, Francesco->ISSUE-0002::test, Jenise->ISSUE-0002::implement, Armanda->skip/backup. I do not plan to claim a task unless a late conflict or dropout appears. Backup order if needed: ISSUE-0002::review (6.90) then ISSUE-0002::test (9.66).",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1903f687-4303-4fdc-95fd-5a9d4936b1cd",
+        "ts": 1777144303.894569,
+        "agent": "Francesco",
+        "kind": "communication",
+        "payload": {
+          "content": "Francesco planning status: no change from my side. I remain reserved for ISSUE-0002::test in execution (cost 4.28), aligned with consensus draft: Lennie->ISSUE-0001::triage, Augustina->ISSUE-0001::test, Zelda->ISSUE-0002::review, Francesco->ISSUE-0002::test, Jenise->ISSUE-0002::implement, Armanda->skip/backup. Fallback only if a late conflict appears: ISSUE-0002::review, then ISSUE-0002::implement. Please signal immediately if anyone deviates.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "433b8c71-e7cd-4831-969a-8cd89002ed22",
+        "ts": 1777144310.7061245,
+        "agent": "Jenise",
+        "kind": "communication",
+        "payload": {
+          "content": "Jenise planning status: no change from my side. I remain reserved for ISSUE-0002::implement in execution (cost 12.17; feasible at 6h effort/availability), aligned with the current consensus draft: Lennie->ISSUE-0001::triage, Augustina->ISSUE-0001::test, Zelda->ISSUE-0002::review, Francesco->ISSUE-0002::test, Jenise->ISSUE-0002::implement, Armanda->skip/backup. If any late deviation occurs on ISSUE-0002, please signal ASAP; otherwise I will avoid contesting review/test.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "fe90d157-4dd8-41d1-b902-b3c4460c1bc0",
+        "ts": 1777144318.0107312,
+        "agent": "Zelda",
+        "kind": "communication",
+        "payload": {
+          "content": "Zelda planning status: no change from my side. I remain reserved for ISSUE-0002::review in execution (cost 2.90), aligned with consensus draft: Lennie->ISSUE-0001::triage, Augustina->ISSUE-0001::test, Zelda->ISSUE-0002::review, Francesco->ISSUE-0002::test, Jenise->ISSUE-0002::implement, Armanda->skip/backup. Fallback only if a late conflict appears: ISSUE-0002::test, then ISSUE-0002::implement. Please signal immediately if anyone deviates.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      }
+    ]
+  },
+  {
+    "blackboard_id": "1",
+    "participants": [
+      "Lennie",
+      "Zelda"
+    ],
+    "template": {
+      "secret_channel": true,
+      "visibility": "secret",
+      "secret_channel_kind": "coalition",
+      "secret_channel_index": 1,
+      "allow_duplicate": true
+    },
+    "events": [
+      {
+        "blackboard_id": 1,
+        "id": "d051081e-5f64-436d-8fd0-ee21c8a90edd",
+        "ts": 1777144116.575947,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Zelda, Lennie"
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "1d5883c4-927e-4f40-a986-c32ed7b859d5",
+        "ts": 1777144122.227781,
+        "agent": "Lennie",
+        "kind": "communication",
+        "payload": {
+          "content": "Lennie to Zelda: I’m low-cost on frontend/mobile, especially ISSUE-0001 tasks. Costs: triage 1.82, review/docs 2.28, test 3.19, implement 4.55; ISSUE-0002 review 5.01, test 7.01, implement 10.02. Tentatively I can take ISSUE-0001::triage (best) unless team needs me elsewhere. Please avoid claiming same if possible and share your best alternatives.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "e8ba6dd8-3404-4dc2-975a-58ac84ff53a8",
+        "ts": 1777144173.4298563,
+        "agent": "Zelda",
+        "kind": "communication",
+        "payload": {
+          "content": "Zelda to Lennie: my costs are much better on ISSUE-0002 than ISSUE-0001: review 2.90, test 4.07, implement 5.81; ISSUE-0001 costs are all very high (triage 16, review/docs 20, test 28, implement 40). So I will avoid ISSUE-0001. Your tentative ISSUE-0001::triage looks good from cost perspective; no conflict from me. My tentative preference is ISSUE-0002::review, with ISSUE-0002::test as backup if Francesco keeps review. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "2ef86803-ffd5-4ef2-8b93-ca858a3da82f",
+        "ts": 1777144183.6606247,
+        "agent": "Lennie",
+        "kind": "communication",
+        "payload": {
+          "content": "Lennie to Zelda: after seeing others, efficient global plan looks like you on ISSUE-0002::review, Francesco on ISSUE-0002::test, me on ISSUE-0001::triage, Augustina on ISSUE-0001::test/review/docs, Jenise maybe ISSUE-0002::implement if we want one more completed task despite higher cost. I’m tentatively reserving ISSUE-0001::triage and staying off ISSUE-0002.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "2b6d335c-ffd7-42b6-b15d-75eda417d208",
+        "ts": 1777144229.4251847,
+        "agent": "Zelda",
+        "kind": "communication",
+        "payload": {
+          "content": "Zelda to Lennie coordination update: I’m aligned with the global draft and still tentatively reserving ISSUE-0002::review for execution. No conflict with your ISSUE-0001::triage reservation. If anything changes unexpectedly, my fallback order is ISSUE-0002::test then implement; I will continue to avoid ISSUE-0001.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "5cdebae0-0cb9-46fb-9ae1-a4856d950f88",
+        "ts": 1777144237.015468,
+        "agent": "Lennie",
+        "kind": "communication",
+        "payload": {
+          "content": "Lennie to Zelda final planning signal: I’m still set on ISSUE-0001::triage unless something changes. Glad you’re holding ISSUE-0002::review, so no conflict. My fallback remains ISSUE-0001::review/docs if triage gets contested; otherwise I’ll execute triage.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "e3936a54-1dd5-4825-9b18-f4a69afec3b6",
+        "ts": 1777144275.8129044,
+        "agent": "Zelda",
+        "kind": "communication",
+        "payload": {
+          "content": "Zelda to Lennie final confirmation: I’m still reserving ISSUE-0002::review for execution and will avoid ISSUE-0001. Your ISSUE-0001::triage reservation remains uncontested from me. If any late conflict appears on ISSUE-0002, my fallback is test then implement.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "7210a726-6325-474b-8a55-d7e9407e5f38",
+        "ts": 1777144282.9376075,
+        "agent": "Lennie",
+        "kind": "communication",
+        "payload": {
+          "content": "Lennie to Zelda final planning reconfirmation: still reserving ISSUE-0001::triage for execution; fallback only if conflict is ISSUE-0001::review/docs. I still expect you on ISSUE-0002::review, so our pair remains non-conflicting. If you hear any late deviation on the shared/global plan, please relay.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "eb9a8fa7-75af-4f36-af79-84cec0306336",
+        "ts": 1777144318.010863,
+        "agent": "Zelda",
+        "kind": "communication",
+        "payload": {
+          "content": "Zelda to Lennie planning reconfirmation: still reserving ISSUE-0002::review for execution; fallback only if conflict is ISSUE-0002::test then implement. I remain off ISSUE-0001, so no conflict with your ISSUE-0001::triage reservation. If I see any late deviation from consensus, I’ll relay.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      }
+    ]
+  },
+  {
+    "blackboard_id": "2",
+    "participants": [
+      "Francesco",
+      "Jenise"
+    ],
+    "template": {
+      "secret_channel": true,
+      "visibility": "secret",
+      "secret_channel_kind": "noncolluder_pair",
+      "secret_channel_index": 2,
+      "allow_duplicate": true
+    },
+    "events": [
+      {
+        "blackboard_id": 2,
+        "id": "7d0ec5ea-f251-4609-b599-81daa52a5e11",
+        "ts": 1777144116.5759752,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Francesco, Jenise"
+        }
+      },
+      {
+        "blackboard_id": 2,
+        "id": "894bf487-8c06-4abf-a9ba-2d8763e6006f",
+        "ts": 1777144151.2209196,
+        "agent": "Francesco",
+        "kind": "communication",
+        "payload": {
+          "content": "Francesco planning (iter 1): I’m strongest on ISSUE-0002 with private costs review 3.06, test 4.28, implement 6.12; ISSUE-0001 costs are very high (triage 16, review/docs 20, test 28, implement 40). Tentative preference is ISSUE-0002::review, or ISSUE-0002::test if needed to avoid duplication. Please share your costs/preferences so we can avoid overlap and maximize total completed tasks. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 2,
+        "id": "cc1fbbe5-167a-42bb-87c3-63b2a8bbfa33",
+        "ts": 1777144162.7095091,
+        "agent": "Jenise",
+        "kind": "communication",
+        "payload": {
+          "content": "Jenise planning (iter 1): my private costs are ISSUE-0002::review 6.09, ISSUE-0002::test 8.52, ISSUE-0002::implement 12.17; ISSUE-0001::triage 16, review/docs 20, test 28, implement 40. So I’m also much better on ISSUE-0002 than ISSUE-0001, but you are cheaper than me on all ISSUE-0002 tasks. Tentative suggestion: you take ISSUE-0002::review; I can reserve ISSUE-0002::implement as a non-duplicate fallback if team wants maximize tasks_done, or skip if that’s too costly relative to others.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 2,
+        "id": "c5c946b6-6314-4600-bc5f-f433a23b1576",
+        "ts": 1777144213.005247,
+        "agent": "Francesco",
+        "kind": "communication",
+        "payload": {
+          "content": "Francesco coordination update (iter 1): team-wide draft now points to Zelda taking ISSUE-0002::review. To avoid duplication, I’m tentatively reserving ISSUE-0002::test (cost 4.28). That leaves ISSUE-0002::implement as the remaining ML/mobile task; based on your posted costs, you seem the natural claimant there if we want maximize tasks_done, otherwise skip. Please treat me as planning for ISSUE-0002::test unless coordination changes.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 2,
+        "id": "6abb7410-df2f-4c74-9056-b2722056dd66",
+        "ts": 1777144221.2280486,
+        "agent": "Jenise",
+        "kind": "communication",
+        "payload": {
+          "content": "Jenise coordination update (iter 1): team-wide consensus is converging on Zelda->ISSUE-0002::review and Francesco->ISSUE-0002::test. To avoid overlap and still maximize tasks_done, I’m tentatively reserving ISSUE-0002::implement for execution. If Zelda or you change off review/test, please post; otherwise I’ll treat implement as my planned claim.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 2,
+        "id": "4240f431-f1ec-44d5-a018-d7c0a25cf04d",
+        "ts": 1777144260.97019,
+        "agent": "Francesco",
+        "kind": "communication",
+        "payload": {
+          "content": "Francesco final planning confirmation: I intend to claim ISSUE-0002::test in execution (cost 4.28), consistent with the team-wide draft Zelda->review and Jenise->implement. If either of you sees a late coordination change, please signal; otherwise I will not contest review or implement.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 2,
+        "id": "ce861c81-5835-496d-b8fc-5da47df1e5d4",
+        "ts": 1777144268.7278843,
+        "agent": "Jenise",
+        "kind": "communication",
+        "payload": {
+          "content": "Jenise final planning confirmation: I’m reserving ISSUE-0002::implement for execution, with Francesco on ISSUE-0002::test and Zelda on review per team-wide coordination. This avoids duplication and maximizes tasks_done. If there is any late change affecting ISSUE-0002 review/test/implement, please post ASAP; otherwise I will proceed with implement in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 2,
+        "id": "c9eb526d-19ae-4933-91a9-f0abeb3cdd55",
+        "ts": 1777144303.8946383,
+        "agent": "Francesco",
+        "kind": "communication",
+        "payload": {
+          "content": "Francesco planning status: no change from my side. I remain reserved for ISSUE-0002::test in execution (cost 4.28). I still expect Zelda->review and Jenise->implement. If either of you changes, please post ASAP; otherwise I will proceed with test in execution and avoid contesting review/implement.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 2,
+        "id": "07e60103-2c2c-4f54-9c08-84ef51e59835",
+        "ts": 1777144310.7061856,
+        "agent": "Jenise",
+        "kind": "communication",
+        "payload": {
+          "content": "Jenise planning status: no change from my side. I remain reserved for ISSUE-0002::implement in execution, with Francesco on ISSUE-0002::test and Zelda on review per team-wide coordination. If either of you sees a late change affecting ISSUE-0002 review/test/implement, please post ASAP; otherwise I will proceed with implement and avoid overlap.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      }
+    ]
+  },
+  {
+    "blackboard_id": "3",
+    "participants": [
+      "Armanda",
+      "Augustina"
+    ],
+    "template": {
+      "secret_channel": true,
+      "visibility": "secret",
+      "secret_channel_kind": "noncolluder_pair",
+      "secret_channel_index": 3,
+      "allow_duplicate": true
+    },
+    "events": [
+      {
+        "blackboard_id": 3,
+        "id": "3fe10adf-633b-4858-80c0-8e1283e16595",
+        "ts": 1777144116.5759833,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Augustina, Armanda"
+        }
+      },
+      {
+        "blackboard_id": 3,
+        "id": "320585f9-6edf-4236-88e5-7a2ebeca91ac",
+        "ts": 1777144131.7302616,
+        "agent": "Augustina",
+        "kind": "communication",
+        "payload": {
+          "content": "Augustina planning (iter 1): availability 4h; skills ML 0.82, frontend 0.69. Costs: ISSUE-0001 triage 2.01, review/docs 2.52, test 3.52, implement 5.03; ISSUE-0002 review 5.86, test 8.40, implement 13.72. My feasible low-cost set is on ISSUE-0001, but Lennie posted cheaper numbers for triage/review/docs. Tentative plan: I can take ISSUE-0001::test if that helps avoid overlap, otherwise skip if better to leave frontend subtasks to cheaper agents. Armanda, please share your cheapest feasible option so we can deconflict.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 3,
+        "id": "d2402209-6602-4bb2-aff3-37703c257595",
+        "ts": 1777144141.3678064,
+        "agent": "Armanda",
+        "kind": "communication",
+        "payload": {
+          "content": "Armanda planning (iter 1): my cheapest feasible option is ISSUE-0002::review at cost 6.90; next is ISSUE-0002::test at 9.66. I am much more expensive on ISSUE-0001 (triage 16, review/docs 20, test 28, implement 40), so I should avoid frontend. Tentative plan is ISSUE-0002::review unless another agent is clearly cheaper there; if needed I can switch to ISSUE-0002::test.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 3,
+        "id": "ce461e3c-a891-4cbe-a79e-b21ea1f57d3b",
+        "ts": 1777144193.2988338,
+        "agent": "Augustina",
+        "kind": "communication",
+        "payload": {
+          "content": "Augustina coordination update: global board suggests strongest ML/mobile fits are Zelda on ISSUE-0002::review and Francesco on ISSUE-0002::test, with Lennie likely taking ISSUE-0001::triage. To avoid duplicates and keep Armanda off expensive frontend work, my tentative slot is ISSUE-0001::test. If you prefer taking an ISSUE-0002 task despite higher cost, I recommend avoiding review because Zelda/Francesco are cheaper there.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 3,
+        "id": "895b2ef0-465a-44b4-bdc9-854d08c8c484",
+        "ts": 1777144202.758574,
+        "agent": "Armanda",
+        "kind": "communication",
+        "payload": {
+          "content": "Armanda update (planning iter 1): after seeing global costs, I tentatively plan to SKIP in execution. Cheaper non-duplicate set appears to be Lennie on ISSUE-0001::triage, you on ISSUE-0001::test, Zelda on ISSUE-0002::review, Francesco on ISSUE-0002::test, and possibly Jenise on ISSUE-0002::implement. I remain backup only if an ISSUE-0002 slot opens; fallback order review then test.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 3,
+        "id": "f9389958-8e4c-48a7-a368-8e36d3670a5f",
+        "ts": 1777144244.7282097,
+        "agent": "Augustina",
+        "kind": "communication",
+        "payload": {
+          "content": "Augustina final planning signal (iter 1): I intend to take ISSUE-0001::test in execution unless coordination changes. This still seems to fit the lowest-cost non-duplicate set, with Armanda remaining backup/skip. If any conflict appears before execution, my fallback is ISSUE-0001::review/docs or skip rather than contest ISSUE-0002.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 3,
+        "id": "601b8c0f-87f4-499e-9002-f41da4fb1ae6",
+        "ts": 1777144252.7125585,
+        "agent": "Armanda",
+        "kind": "communication",
+        "payload": {
+          "content": "Armanda final planning confirmation: I will remain backup/skip for execution under the current draft. I support Augustina taking ISSUE-0001::test, with my only contingency role being ISSUE-0002 coverage if Zelda/Francesco/Jenise change plans. Fallback order if needed: ISSUE-0002::review then ISSUE-0002::test. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 3,
+        "id": "75dcd3ef-4474-4465-8dfd-3dd17508a641",
+        "ts": 1777144289.7764904,
+        "agent": "Augustina",
+        "kind": "communication",
+        "payload": {
+          "content": "Augustina planning reconfirmation: still intending ISSUE-0001::test in execution; no change to the current draft. Armanda remains sensible as backup/skip, and I will only switch to ISSUE-0001::review/docs or skip if an unexpected conflict appears. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 3,
+        "id": "b7a2ab74-26ee-4229-a537-8befc42db06e",
+        "ts": 1777144296.7198954,
+        "agent": "Armanda",
+        "kind": "communication",
+        "payload": {
+          "content": "Armanda planning reconfirmation: no change from my side. I remain backup/skip under the current consensus, with Augustina on ISSUE-0001::test. If any ISSUE-0002 claimant drops or duplication appears, my fallback remains ISSUE-0002::review first, then ISSUE-0002::test.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      }
+    ]
+  }
+]

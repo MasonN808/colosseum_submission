@@ -1,0 +1,5281 @@
+[
+  {
+    "blackboard_id": "0",
+    "participants": [
+      "Avery",
+      "Jordan",
+      "Quinn",
+      "Reese",
+      "Riley",
+      "Taylor"
+    ],
+    "events": [
+      {
+        "blackboard_id": 0,
+        "id": "834d95f1-6351-46b0-99e9-e167016b8622",
+        "ts": 1776919618.7181041,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "Decide attendance intervals for meetings on a shared timeline.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Avery, Jordan, Quinn, Reese, Riley, Taylor"
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "48dfdac4-c58d-42cf-b1d7-032856f419a1",
+        "ts": 1776919626.8643968,
+        "agent": "Avery",
+        "kind": "communication",
+        "payload": {
+          "content": "I plan to attend the mandatory job interview (m015) fully [0,1) and university class (m007) fully [13,14). These don't overlap with much. For soft meetings, I can attend art workshop partially after job, say [1,2) in m010. Then swimming [2,4) in m011, volleyball [2,5) overlaps with swimming so maybe choose one. Let's discuss a coordinated schedule to maximize overlaps without personal overlaps. What are your plans?",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "490a7429-5edb-4ab5-b1b9-689da0017540",
+        "ts": 1776919703.4350889,
+        "agent": "Avery",
+        "kind": "communication",
+        "payload": {
+          "content": "Since job interview m015 is strict, all of us (except Taylor) should attend exactly [0,1) to get the +1. University class m007 strict [13,14) for us all except Reese? Wait participants Quinn, Jordan, Taylor, Riley, Avery - no Reese. So Reese can do other at 13. For soft meetings, to avoid overlap penalties, let's each pick non-overlapping intervals. Suggest we all try to attend art m010 at time 1 or 2 (since 0 taken by job for most). Let's coordinate on a common time for each meeting. For example, propose common slot for each meeting: art at 2, swim m011 at 3, volley at 4, first friends m002 at 5, second friends m014 at 6, study m006 at 7, swim m009 at 8? but m009 [6,8) so 6 or7. Adjust to avoid conflicts. What slots do you suggest for each? Or which ones to skip.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a569b814-b43b-4565-9fc0-f25ced643b0f",
+        "ts": 1776919830.4072058,
+        "agent": "Avery",
+        "kind": "communication",
+        "payload": {
+          "content": "Proposed common time slots for coordination (1-slot each to minimize conflicts): \n- Job m015 strict: all attend [0,1)\n- Art m010: all [1,2)\n- Swimming m011: all [2,3)\n- Volleyball m001: all [3,4)\n- Friends m002: all [4,5)\n- Friends m014: all [5,6)\n- Swimming m009: all [6,7)\n- Study m006: all [7,8)\n- Study m004: all [8,9)\n- Gym m003: all [9,10)\n- Music m016: all [10,11)\n- Friends m008: all [11,12)\n- University m007 strict: all [13,14)\nThis way, times are sequential, no overlaps for anyone, and all overlap with each other in each meeting. Note some meetings don't include everyone, e.g. m009 no Jordan Reese? Wait m009: Taylor, Riley, Quinn, Avery - no Jordan, Reese. But still. Music no Jordan. But good coverage. Thoughts? Adjust if conflicts with windows.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "cd8c7327-4ff7-4875-a47c-7097c6de313a",
+        "ts": 1776919851.9539945,
+        "agent": "Reese",
+        "kind": "communication",
+        "payload": {
+          "content": "I agree with your proposed schedule for coordination, it avoids personal overlaps and ensures overlaps with others for soft meetings. Since m015 job interview is strict and at [0,1), I'll attend it fully [0,1). For m005 doctor (also strict [0,1)), there's direct conflict; I'll skip it to avoid overlap penalty (net reward same as calculated). For m012 music jamming [5,8), not in your list - suggest adding [6,7) for it (participants Riley,Reese,Quinn,Taylor). Also m013 art workshop [10,14) could be at [12,13) or adjust if needed. Otherwise, my planned intervals: m015:[0,1), m010:[1,2), m011:[2,3), m001:[3,4), m002:[4,5), m014:[5,6), m012:[6,7), m006:[7,8), m004:[8,9), m003:[9,10), m016:[10,11), m008:[11,12). Thoughts or adjustments? (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "afb6002e-e6ff-4fb8-a11d-3ae05dd99249",
+        "ts": 1776919922.160109,
+        "agent": "Reese",
+        "kind": "communication",
+        "payload": {
+          "content": "To maximize, I'll skip m005 doctor since conflicts with strict m015 job at same time [0,1) - better attend job with more participants. Adding m012 music jamming at [6,7) and m013 art at [12,13). Full plan for me: m005:skip, m015:[0,1), m010:[1,2), m011:[2,3), m001:[3,4), m002:[4,5), m014:[5,6), m012:[6,7), m006:[7,8), m004:[8,9), m003:[9,10), m016:[10,11), m008:[11,12), m013:[12,13). This covers all my softs with 1 slot each, no self-overlaps, overlaps with others per proposal. m013 at 12-13 within [10,14). Ready to commit if all agree. Any changes? (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d28a8620-98d4-4415-82da-6c87f3baef46",
+        "ts": 1776920053.1577344,
+        "agent": "Reese",
+        "kind": "communication",
+        "payload": {
+          "content": "Agreed on the schedule. I'll commit to: m015:[0,1), m010:[1,2), m011:[2,3), m001:[3,4), m002:[4,5), m014:[5,6), m012:[6,7), m006:[7,8), m004:[8,9), m003:[9,10), m016:[10,11), m008:[11,12), m013:[12,13); skip m005. This should give good overlaps for softs and full for strict without self-overlaps. Let's all commit this or similar. Ready for execution phase. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9c3cb6c0-d45d-4345-9053-8af481305ea1",
+        "ts": 1776920066.7679706,
+        "agent": "Riley",
+        "kind": "communication",
+        "payload": {
+          "content": "I agree with the coordinated 1-slot per soft meeting approach to avoid self-overlaps while ensuring overlaps with peers for soft rewards. Since m015 job interview (strict) conflicts with m005 doctor (strict) at [0,1), I'll skip m005 and attend m015 fully [0,1) (more participants). Also attend m007 fully [13,14). My planned intervals: m015:[0,1), m010:[1,2), m011:[2,3), m001:[3,4), m002:[4,5), m012:[5,6), m009:[6,7), m006:[7,8), m004:[8,9), m003:[9,10), m016:[10,11), m007:[13,14). This fits all windows, no self-overlaps. Skips only m005. Suggest others follow similar for their meetings. Ready to commit in next phase if agreed. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9e4c6630-a8b7-44d3-8dd3-243935007e5d",
+        "ts": 1776920136.9715242,
+        "agent": "Riley",
+        "kind": "communication",
+        "payload": {
+          "content": "My schedule aligns with the proposed common slots: attend m005:skip (due to conflict with strict m015), m015:[0,1), m010:[1,2), m011:[2,3), m001:[3,4), m002:[4,5), m012:[5,6), m009:[6,7), m006:[7,8), m004:[8,9), m003:[9,10), m016:[10,11), m007:[13,14). This ensures full attendance for strict meetings (the ones I choose), 1-slot overlaps for softs with peers assuming they follow similar, and no self-overlap penalties. No other meetings for me. I think this is optimal - ready to commit in execution phase. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f855d8e8-d25c-4170-abee-743f6409de47",
+        "ts": 1776920266.1329842,
+        "agent": "Riley",
+        "kind": "communication",
+        "payload": {
+          "content": "To align better for m012 music jamming (Riley, Reese, Quinn, Taylor): since my schedule has m012 at [5,6), let's all do m012 at [5,6) to ensure overlap. Then for Reese, can shift if needed. For m009 (no Reese): [6,7). This way my m012 [5,6) overlaps with Reese's if he changes to [5,6). My full plan: skip m005, m015:[0,1), m010 art:[1,2), m011 swim:[2,3), m001 volley:[3,4), m002 friends:[4,5), m012 music:[5,6), m009 swim:[6,7), m006 study:[7,8), m004 study:[8,9), m003 gym:[9,10), m016 music:[10,11), m007 class:[13,14). All good, no conflicts. Suggest Reese adjust m012 to [5,6) and m014 to [6,7) or whatever. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d477d1e3-de23-48ee-9f79-d4ae12f71ca6",
+        "ts": 1776920282.1869733,
+        "agent": "Taylor",
+        "kind": "communication",
+        "payload": {
+          "content": "As Taylor, I have the doctor appointment m005 as strict mandatory at [0,1), so I'll attend it fully [0,1) (unlike others skipping it for m015 which I don't have). For university m007 strict, attend full [13,14). Aligning with the coordinated 1-slot schedule for softs to maximize overlaps without self-overlaps: m005:[0,1), m010:[1,2), m011:[2,3), m001:[3,4), m014:[4,5), m012:[5,6) (aligning with Riley), m009:[6,7), m006:[7,8), m004:[8,9), m003:[9,10), m016:[10,11), m008:[11,12), m013:[12,13), m007:[13,14). This covers all my meetings, fits windows, no self-overlaps. Suggest Reese adjust m012 to [5,6) and m014 if needed. Thoughts? Ready to commit if agreed.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "20dd500e-f026-4ed5-9fd5-84d4b7486451",
+        "ts": 1776920350.6598866,
+        "agent": "Taylor",
+        "kind": "communication",
+        "payload": {
+          "content": "My plan aligns well with the group: attend all my meetings with 1-slot intervals per the proposal (adjusted for my m005 doctor instead of m015): m005:[0,1), m010:[1,2), m011:[2,3), m001:[3,4), m014:[4,5), m012:[5,6), m009:[6,7), m006:[7,8), m004:[8,9), m003:[9,10), m016:[10,11), m008:[11,12), m013:[12,13), m007:[13,14). This should maximize soft overlaps assuming others follow similar slots, full for stricts, no self-overlap penalties. Skips none. All agree? Let's move to execution and commit.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b38d9d3e-9055-4747-861d-cc16f03cf01d",
+        "ts": 1776920480.55517,
+        "agent": "Taylor",
+        "kind": "communication",
+        "payload": {
+          "content": "Taylor here. Since I don't have the job interview m015, I'll attend the strict doctor m005 fully at [0,1) and strict uni m007 at [13,14). Aligning to the proposed common slots where possible: m005:[0,1), m010 art:[1,2), m011 swim:[2,3), m001 volley:[3,4), m014 friends:[4,5), m012 music:[5,6) (to align with Riley), m009 swim:[6,7), m006 study:[7,8), m004 study:[8,9), m003 gym:[9,10), m016 music:[10,11), m008 friends:[11,12), m013 art:[12,13), m007:[13,14). No skips, no self-overlaps, full for stricts, should get good soft overlaps if you all stick close to these times. Reese, can you shift m012 to [5,6) too? Quinn and Jordan, your input? Let's finalize and commit next.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e7638026-4536-44aa-accc-7dfee18dbf3a",
+        "ts": 1776920496.7161295,
+        "agent": "Jordan",
+        "kind": "communication",
+        "payload": {
+          "content": "Jordan here. I agree with the coordinated 1-slot per soft meeting approach to avoid self-overlaps and maximize peer overlaps for soft rewards. Since m015 job (strict) and m005 doctor (strict) conflict at [0,1), I'll skip m005 and attend m015 fully [0,1) (more participants, aligns with most). Also attend m007 fully [13,14). My plan aligning with proposed slots: m015:[0,1), m010:[1,2), m011:[2,3), m001:[3,4), m002:[4,5), m014:[5,6), m004:[8,9), m003:[9,10), m008:[11,12), m013:[12,13), m007:[13,14). Skips only m005. This fits all my windows, no self-overlaps. For m013 at [12,13) to avoid conflict with m007. Quinn, let's align on these if possible. Thoughts or adjustments? Ready to commit soon.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c3127265-7ded-45cd-b547-63f29cb3b9ef",
+        "ts": 1776920686.8588839,
+        "agent": "Jordan",
+        "kind": "communication",
+        "payload": {
+          "content": "I am ready to commit to the following intervals in execution phase: skip m005; m015:[0,1); m010:[1,2); m011:[2,3); m001:[3,4); m002:[4,5); m014:[5,6); m004:[8,9); m003:[9,10); m008:[11,12); m013:[12,13); m007:[13,14). This aligns with the group schedule for high coordination reward, full stricts attended (chosen), no self-overlaps. Quinn, please confirm your plan for blackboard 1. Let's all commit similarly.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "50475a11-e329-4ad9-8dcd-2e1ad234ff9e",
+        "ts": 1776920753.8962202,
+        "agent": "Quinn",
+        "kind": "communication",
+        "payload": {
+          "content": "Quinn here, agreeing with the 1-slot coordination to avoid self-overlaps and ensure peer overlaps for soft rewards. My plan: m015:[0,1), m010:[1,2), m011:[2,3), m001:[3,4), m002:[4,5), m014:[5,6), m009:[6,7), m006:[7,8), m004:[8,9), m003:[9,10), m016:[10,11), m008:[11,12), m013:[12,13), m007:[13,14); skip only m012 (due to slot constraints, prioritising m009@6 and m006@7 for better overlaps). Aligns with Reese on m014@5 m002@4, with Riley/Taylor on m009@6 m006@7, m012 skipped. Matches most proposed slots, full for stricts, no self-overlaps. Let's commit in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "2de44a4e-8bab-455c-9195-b0633f2015e9",
+        "ts": 1776920823.205294,
+        "agent": "Quinn",
+        "kind": "communication",
+        "payload": {
+          "content": "All, my finalized plan as posted: attend m015 full [0,1), m010 [1,2), m011 [2,3), m001 [3,4), m002 [4,5), m014 [5,6), m009 [6,7), m006 [7,8), m004 [8,9), m003 [9,10), m016 [10,11), m008 [11,12), m013 [12,13), m007 full [13,14); skip m012 to avoid self-overlap (prioritized other meetings with more participants). This aligns closely with the group proposal and ensures overlaps on common times for soft meetings. Ready to commit in execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "cba78745-9efd-44ee-aa55-f3ca0139e3e8",
+        "ts": 1776920951.1626942,
+        "agent": "Quinn",
+        "kind": "communication",
+        "payload": {
+          "content": "Group, plans seem aligned enough (some minor differences in slots but close for overlaps). I'm ready to commit my intervals in execution phase: m015:[0,1), m010:[1,2), m011:[2,3), m001:[3,4), m002:[4,5), m014:[5,6), m009:[6,7), m006:[7,8), m004:[8,9), m003:[9,10), m016:[10,11), m008:[11,12), m013:[12,13), m007:[13,14); skip m012 and any not listed. Let's move to execution and commit similarly for high reward.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b73f588a-17f1-47b4-b200-ba27d41ee3ea",
+        "ts": 1776920958.6435733,
+        "agent": "Avery",
+        "kind": "communication",
+        "payload": {
+          "content": "Avery here. I agree with the coordinated 1-slot per soft meeting schedule to maximize overlaps with peers for soft rewards while avoiding self-overlap penalties. Since m015 job (strict) conflicts with any other at [0,1) like m005 (which I don't have), I'll attend m015 fully [0,1). Also m007 uni (strict) fully [13,14). My aligned plan: m015:[0,1), m010:[1,2), m011:[2,3), m001:[3,4), m002:[4,5), m014:[5,6), m009:[6,7), m006:[7,8), m004:[8,9), m003:[9,10), m016:[10,11), m008:[11,12), m007:[13,14). Skips none of my listed meetings. This fits all windows, no self-overlaps, full for stricts, and overlaps with most on common slots (e.g. m009@6 with Riley/Taylor/Quinn, m016@10 with group). Minor variations ok for overlaps. Ready to commit in execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "14e1b197-b89c-41fd-9530-9ac86f7c4410",
+        "ts": 1776921024.7600532,
+        "agent": "Avery",
+        "kind": "communication",
+        "payload": {
+          "content": "All set with the plan: attending m015:[0,1), m010:[1,2), m011:[2,3), m001:[3,4), m002:[4,5), m014:[5,6), m009:[6,7), m006:[7,8), m004:[8,9), m003:[9,10), m016:[10,11), m008:[11,12), m007:[13,14). This should give full points for stricts and good soft overlaps without self-overlaps. Ready to move to execution phase and commit.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "44116ea8-75fd-41d1-9187-f0eb831c7e40",
+        "ts": 1776921150.4243233,
+        "agent": "Avery",
+        "kind": "communication",
+        "payload": {
+          "content": "Finalizing: I'll commit to m015:[0,1), m010:[1,2), m011:[2,3), m001:[3,4), m002:[4,5), m014:[5,6), m009:[6,7), m006:[7,8), m004:[8,9), m003:[9,10), m016:[10,11), m008:[11,12), m007:[13,14). All within windows, no overlaps in my schedule, overlaps with group on these slots for softs, full for stricts. Skip none. This matches the coordinated proposal closely. Let's all commit this in execution for max reward.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a48de43d-1e11-4c38-af20-1e94bd8dca90",
+        "ts": 1776921192.5223348,
+        "agent": "Reese",
+        "kind": "communication",
+        "payload": {
+          "content": "Reese here. To maximize, I'll attend m015 full [0,1) (strict, more participants), skip m005 (conflict). Aligning mostly with group: m010:[1,2), m011:[2,3), m001:[3,4), m002:[4,5), m014:[5,6), m012:[6,7) (even if Riley/Taylor at [5,6) for m012, prioritizing m014 overlaps at 5 with 3 others over m012's 2), m006:[7,8), m004:[8,9), m003:[9,10), m016:[10,11), m008:[11,12), m013:[12,13). This gives no self-overlaps, full for strict, good overlaps on most softs (m012 will miss but overall better). Skips only m005. Ready to commit this in execution phase. Agree?",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "dfeb814c-34c8-4009-bb92-40a84259edf7",
+        "ts": 1776921282.581411,
+        "agent": "Reese",
+        "kind": "communication",
+        "payload": {
+          "content": "Reese finalizing: Since m012 at best non-conflicting time gives 0 overlaps (Riley/Taylor at [5,6) for it), I'll skip m012 (low value). Prioritize m014 at [5,6) for +3 overlaps (Quinn,Jordan,Avery). Skip m005 (conflict with m015). My commitment plan: m015:[0,1), m010:[1,2), m011:[2,3), m001:[3,4), m002:[4,5), m014:[5,6), m006:[7,8), m004:[8,9), m003:[9,10), m016:[10,11), m008:[11,12), m013:[12,13). This maximizes my overlaps (most +4 or +5), no self-overlaps, full strict. Aligns well with group. Ready to commit in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "290b3618-8dc4-454f-a04c-01dda41f1864",
+        "ts": 1776921412.9891448,
+        "agent": "Reese",
+        "kind": "communication",
+        "payload": {
+          "content": "Confirmed my plan: skip m005 and m012; attend m015:[0,1), m010:[1,2), m011:[2,3), m001:[3,4), m002:[4,5), m014:[5,6), m006:[7,8), m004:[8,9), m003:[9,10), m016:[10,11), m008:[11,12), m013:[12,13). This prioritizes higher overlap meetings (e.g. m014 +3 over m012 +2). No self-overlaps, good coordination. All ready to enter execution phase and commit our intervals.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "4149d9ad-68d9-48f6-bb17-b37fbbcd0a8d",
+        "ts": 1776921425.9781938,
+        "agent": "Riley",
+        "kind": "communication",
+        "payload": {
+          "content": "Riley here. I confirm my plan to maximize group reward: skip m005 (conflict with strict m015), attend m015:[0,1), m010:[1,2), m011:[2,3), m001:[3,4), m002:[4,5), m012:[5,6), m009:[6,7), m006:[7,8), m004:[8,9), m003:[9,10), m016:[10,11), m007:[13,14). This avoids self-overlaps, full for stricts (m015,m007), 1-slot overlaps for softs with peers following similar (e.g. m012[5,6) with Taylor). Even if Reese/Quinn skip m012, still get +1 from Taylor. Aligns with proposed schedule. Ready to move to execution phase and commit.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b850a8b5-23a3-4ae5-8888-15221dbcdd49",
+        "ts": 1776921491.120846,
+        "agent": "Riley",
+        "kind": "communication",
+        "payload": {
+          "content": "All, my final confirmed attendance plan for commitment in execution: skip m005; attend m015 full [0,1), m010 [1,2), m011 [2,3), m001 [3,4), m002 [4,5), m012 [5,6), m009 [6,7), m006 [7,8), m004 [8,9), m003 [9,10), m016 [10,11), m007 full [13,14). This should yield high reward with full stricts and soft overlaps. Let's all commit now.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "aa202f39-f7db-477e-822e-4f84e54e86a2",
+        "ts": 1776921655.1562285,
+        "agent": "Jordan",
+        "kind": "communication",
+        "payload": {
+          "content": "Jordan here. My final plan to commit: skip m005 (conflict with m015), attend m015:[0,1), m010:[1,2), m011:[2,3), m001:[3,4), m002:[4,5), m014:[5,6), m004:[8,9), m003:[9,10), m008:[11,12), m013:[12,13), m007:[13,14). This aligns with most on common slots for good overlaps, no self-overlaps, full stricts attended. Taylor, suggest shifting your m014 to [5,6) to overlap with us (me,Quinn,Reese,Avery) on m014 instead of being alone at [4,5) - you could move m012 to [6,7) which still fits. Would improve your soft rewards. All ready to move to execution?",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "3a5bd6ed-00e4-4a7b-8632-a41a9f9a7d16",
+        "ts": 1776921719.6175754,
+        "agent": "Jordan",
+        "kind": "communication",
+        "payload": {
+          "content": "Ready to commit my plan in next phase: skip m005; m015:[0,1); m010:[1,2); m011:[2,3); m001:[3,4); m002:[4,5); m014:[5,6); m004:[8,9); m003:[9,10); m008:[11,12); m013:[12,13); m007:[13,14). This should give high joint reward.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a4ba05c5-7998-41fe-9b2c-cef4079c69ad",
+        "ts": 1776921922.4113367,
+        "agent": "Quinn",
+        "kind": "communication",
+        "payload": {
+          "content": "All plans are sufficiently aligned for high joint reward (full stricts, no self-overlaps, 1-slot peer overlaps on most softs). No further adjustments needed from me. Ready for execution phase to commit our intervals.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1dd00f4e-fb3b-40b6-af03-ffaf646e6245",
+        "ts": 1776922055.0011098,
+        "agent": "Quinn",
+        "kind": "communication",
+        "payload": {
+          "content": "Taylor, your m014 at [4,5) would miss overlaps with me/Jordan/Reese/Avery who are at [5,6) for m014 (which has 5 participants). Suggest shifting your m014 to [5,6) and move m012 to [6,7) (still within [5,8)), and m009 stays [6,7) but wait that would overlap self. Your m012[5,6), m009[6,7) - if move m012 to [6,7) then overlaps with m009. So maybe keep or skip one. m012 has only 4 participants (Riley,Reese,Quinn,Taylor), m014 has 5. Prioritize m014 at [5,6) for better reward? But you have m005 at [0,1) instead.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "6b44696e-983c-4476-b79b-1b3307cdbd8a",
+        "ts": 1776922062.6433125,
+        "agent": "Avery",
+        "kind": "communication",
+        "payload": {
+          "content": "Avery here confirming my final plan for commitment: m015:[0,1), m010:[1,2), m011:[2,3), m001:[3,4), m002:[4,5), m014:[5,6), m009:[6,7), m006:[7,8), m004:[8,9), m003:[9,10), m016:[10,11), m008:[11,12), m007:[13,14). All fits, no self-overlaps, good for stricts and soft overlaps. Agree with Jordan that Taylor should shift m014 to [5,6) for more overlaps (with us at 5) and adjust m012/m009 accordingly if possible. All set to move to execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e80b1dbc-e790-4519-9050-4b23d34bf1f6",
+        "ts": 1776922130.207176,
+        "agent": "Avery",
+        "kind": "communication",
+        "payload": {
+          "content": "All plans look good and aligned sufficiently for high reward. No more adjustments from me. Ready to enter execution phase and commit our chosen intervals using the attend_meeting tool.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "07d1b7dc-7e52-4c2c-a221-8b290c7232a8",
+        "ts": 1776922260.4060092,
+        "agent": "Avery",
+        "kind": "communication",
+        "payload": {
+          "content": "Taylor, to maximize your soft rewards, better to attend m014 at [5,6) to overlap with Avery,Quinn,Jordan,Reese (4 others) instead of [4,5) alone. Then you can attend m012 at [5,6) ? But if m014 to 5, then m012 could stay [5,6) but self overlap at 5. No, can't. So either shift m012 to [6,7) but then conflicts with your m009 at [6,7). So maybe skip m012 or m009 or m014. m014 has 5 participants, m012 4, m009 4. So perhaps prioritize m014 at [5,6), m009 at [6,7) or [7,8) but m009 only to 8, and skip m012. Or attend m012 at [5,6), m009 at [6,7), m014 at [4,5). But at [4,5) for m014 you get overlaps with who? If others at 5, no overlap. So you miss the 4. So better change to attend m014[5,6), m012 skip, m009[6,7). That way you get overlaps on m014 with 4, on m009 with 3. Better than missing m014 overlaps. What do you think?",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9564d404-45bf-4b23-880b-398796e1e804",
+        "ts": 1776922291.5710225,
+        "agent": "Reese",
+        "kind": "communication",
+        "payload": {
+          "content": "Reese final plan confirmed: skip m005 (conflict with strict m015) and m012 (low overlaps at non-conflicting time); attend m015:[0,1), m010:[1,2), m011:[2,3), m001:[3,4), m002:[4,5), m014:[5,6), m006:[7,8), m004:[8,9), m003:[9,10), m016:[10,11), m008:[11,12), m013:[12,13). This prioritizes high-overlap slots for soft meetings (e.g. m014@5 with 3+), no self-overlaps, full for strict. Aligns with group for max joint reward. Ready to move to execution phase and commit.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "25ccaa15-7d34-4bda-8ac3-a10c4bb95d8c",
+        "ts": 1776922360.8200722,
+        "agent": "Reese",
+        "kind": "communication",
+        "payload": {
+          "content": "I agree with Avery and Jordan's suggestion to Taylor: better attend m014 at [5,6) to get overlaps with 4 others, even if it means skipping m012 or adjusting m009. My finalized plan stays the same: skip m005 and m012; m015:[0,1), m010:[1,2), m011:[2,3), m001:[3,4), m002:[4,5), m014:[5,6), m006:[7,8), m004:[8,9), m003:[9,10), m016:[10,11), m008:[11,12), m013:[12,13). This maximizes my soft overlaps. All plans aligned enough - let's proceed to execution phase and commit our intervals.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "3ff7361e-e12e-48c2-9cd6-54d2336684c7",
+        "ts": 1776922486.7022185,
+        "agent": "Reese",
+        "kind": "communication",
+        "payload": {
+          "content": "All, my commitment-ready plan (to use in execution): skip m005, m012; attend m015:[0,1), m010:[1,2), m011:[2,3), m001:[3,4), m002:[4,5), m014:[5,6), m006:[7,8), m004:[8,9), m003:[9,10), m016:[10,11), m008:[11,12), m013:[12,13). This gives high soft overlap potential with the group's common-ish slots, full strict on m015, no self-overlap penalties. Suggest we all commit our plans now in execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f868f08d-e697-4cc5-b8ed-cc93b56e42e9",
+        "ts": 1776922497.3708255,
+        "agent": "Riley",
+        "kind": "communication",
+        "payload": {
+          "content": "Riley confirming final plan to maximize rewards: skip m005 (conflict with strict m015), attend m015:[0,1), m010:[1,2), m011:[2,3), m001:[3,4), m002:[4,5), m012:[5,6) (overlaps with Taylor), m009:[6,7), m006:[7,8), m004:[8,9), m003:[9,10), m016:[10,11), m007:[13,14). No self-overlaps, full stricts attended, good soft overlaps assuming group sticks to similar slots. Even with some skipping m012, still overlap with Taylor. All plans look aligned - ready to proceed to execution phase and commit intervals.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "466ad3b6-67ec-42ee-94d5-9766489c3b63",
+        "ts": 1776922569.8172388,
+        "agent": "Riley",
+        "kind": "communication",
+        "payload": {
+          "content": "Riley here - my plan is locked in as: skip only m005; m015 full [0,1), m010[1,2), m011[2,3), m001[3,4), m002[4,5), m012[5,6), m009[6,7), m006[7,8), m004[8,9), m003[9,10), m016[10,11), m007 full [13,14). This gives me overlap on m012 with Taylor at 5. For Taylor, if shifting m014 to [5,6) means moving m012 or m009, then perhaps better keep your current to ensure m012 overlap with me (and potentially Reese if he shifts). m012 has 4 people, skipping would lose those points. Prioritize based on numbers. But overall group plans are close enough. Let's all commit our individual plans in the execution phase for high total reward.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "4cc95899-eb9a-46cc-a7e0-ce1f4997c7fd",
+        "ts": 1776922696.1922688,
+        "agent": "Riley",
+        "kind": "communication",
+        "payload": {
+          "content": "All, since most plans are aligned with the 1-slot coordination strategy, and my plan is set without self-conflicts, I propose we transition to the execution phase now to commit our intervals using attend_meeting. My commitments will be: m005:skip, m015:[0,1), m010:[1,2), m011:[2,3), m001:[3,4), m002:[4,5), m012:[5,6), m009:[6,7), m006:[7,8), m004:[8,9), m003:[9,10), m016:[10,11), m007:[13,14). This should maximize the joint reward.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "145af454-8066-4dbe-9828-c51e6ad19c2b",
+        "ts": 1776922713.7114303,
+        "agent": "Taylor",
+        "kind": "communication",
+        "payload": {
+          "content": "Taylor here. Since I must attend strict m005 doctor full [0,1) (no m015), and m007 [13,14). To maximize, I'll adjust: attend m014 at [5,6) to overlap with you all (Quinn,Jordan,Reese,Avery) getting +4 on m014 (5 participants total), skip m012 (only possible +1 with Riley now), m009[6,7)+3, m006[7,8)+4, etc. My full plan: m005:[0,1), m010:[1,2), m011:[2,3), m001:[3,4), m014:[5,6), m009:[6,7), m006:[7,8), m004:[8,9), m003:[9,10), m016:[10,11), m008:[11,12), m013:[12,13), m007:[13,14). No self-overlaps, fits all windows, maximizes my soft overlaps. Skips only m012. This aligns well with your plans (e.g. Reese/Quinn also skip m012). Ready to commit in execution if you agree.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "48b66113-d276-453d-8f07-7d09a913a7a6",
+        "ts": 1776922777.9753203,
+        "agent": "Taylor",
+        "kind": "communication",
+        "payload": {
+          "content": "All, my final plan is set as above: attend m005 full [0,1), m010[1,2), m011[2,3), m001[3,4), m014[5,6), m009[6,7), m006[7,8), m004[8,9), m003[9,10), m016[10,11), m008[11,12), m013[12,13), m007 full [13,14); skip only m012. This prioritizes higher overlap meetings. No self-overlaps. Aligns with group. Ready to enter execution phase and commit these intervals.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9ee6d8ea-19c7-42f9-aed9-e394a6620793",
+        "ts": 1776922903.5142527,
+        "agent": "Taylor",
+        "kind": "communication",
+        "payload": {
+          "content": "Taylor confirming final plan: m005:[0,1), m010:[1,2), m011:[2,3), m001:[3,4), m014:[5,6), m009:[6,7), m006:[7,8), m004:[8,9), m003:[9,10), m016:[10,11), m008:[11,12), m013:[12,13), m007:[13,14); skip m012. All within windows, no self-overlaps, prioritizes high-value overlaps for softs, full for stricts. Plans aligned - ready for execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8863a736-8d49-414c-9f24-2162b780c895",
+        "ts": 1776922911.8943071,
+        "agent": "Jordan",
+        "kind": "communication",
+        "payload": {
+          "content": "Jordan finalizing: I stick with skip m005 (due to conflict with strict m015 which has more participants); attend m015:[0,1), m010:[1,2), m011:[2,3), m001:[3,4), m002:[4,5), m014:[5,6), m004:[8,9), m003:[9,10), m008:[11,12), m013:[12,13), m007:[13,14). This gives full for attended stricts, 1-slot per soft with no self-overlaps, good peer overlaps on common slots. Aligns with Quinn and most of group. All plans look good - ready to transition to execution phase and commit these intervals.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "900b1dfe-584d-42b2-8d01-2e4feb89b4c8",
+        "ts": 1776922976.390607,
+        "agent": "Jordan",
+        "kind": "communication",
+        "payload": {
+          "content": "All, since everyone has posted their final plans and they are sufficiently aligned for high rewards (full strict attendance where possible, no self-overlaps, coordinated slots for soft overlaps), I suggest we now transition to the EXECUTION phase to commit our intervals using attend_meeting. My commitments remain as posted.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9952d536-4ccd-471c-b82b-d28855d646e1",
+        "ts": 1776923113.5455809,
+        "agent": "Quinn",
+        "kind": "communication",
+        "payload": {
+          "content": "All, my plan is locked: attend m015[0,1), m010[1,2), m011[2,3), m001[3,4), m002[4,5), m014[5,6), m009[6,7), m006[7,8), m004[8,9), m003[9,10), m016[10,11), m008[11,12), m013[12,13), m007[13,14); skip m012 and m005 (not mine). Plans are aligned across group for high reward - full stricts, no self-overlaps, good soft overlaps on coordinated slots. Ready to transition to EXECUTION phase and commit these intervals.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "dfabc633-e327-4e98-befb-02b8b523fadc",
+        "ts": 1776923312.0577962,
+        "agent": "Quinn",
+        "kind": "communication",
+        "payload": {
+          "content": "Group, since all plans are finalized and aligned for maximal joint reward, I propose we now switch to the EXECUTION phase to commit our attendance intervals using attend_meeting tool. My commitments: m015:[0,1), m010:[1,2), m011:[2,3), m001:[3,4), m002:[4,5), m014:[5,6), m009:[6,7), m006:[7,8), m004:[8,9), m003:[9,10), m016:[10,11), m008:[11,12), m013:[12,13), m007:[13,14); skip m012.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ff3e8078-86d1-4503-a6c7-399cd667eb91",
+        "ts": 1776923317.7553284,
+        "agent": "Avery",
+        "kind": "communication",
+        "payload": {
+          "content": "All, our plans are well-aligned on the 1-slot coordinated schedule for max joint reward (full stricts where chosen, no self-overlaps, good peer overlaps on softs). My final plan to commit: m015:[0,1), m010:[1,2), m011:[2,3), m001:[3,4), m002:[4,5), m014:[5,6), m009:[6,7), m006:[7,8), m004:[8,9), m003:[9,10), m016:[10,11), m008:[11,12), m007:[13,14). Ready to transition to EXECUTION phase now.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "bf3ca628-0a3c-4a5e-b6cc-50b713f4fea7",
+        "ts": 1776923411.2188559,
+        "agent": "Riley",
+        "kind": "communication",
+        "payload": {
+          "content": "Riley here with final plan adjustment: since Reese, Quinn, and Taylor are skipping m012 (music jamming [5,8)), it would be low value (0 overlaps) for me too. So I'll skip m012 as well. My commitment-ready plan: skip m005 and m012; attend m015:[0,1), m010:[1,2), m011:[2,3), m001:[3,4), m002:[4,5), m009:[6,7), m006:[7,8), m004:[8,9), m003:[9,10), m016:[10,11), m007:[13,14). This avoids any low-value attendance, no self-overlaps, full for stricts, good overlaps on other softs. All plans aligned - suggest we transition to EXECUTION phase now to commit.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "452a0f7a-c234-4853-944c-b3288f274c78",
+        "ts": 1776923476.8270319,
+        "agent": "Riley",
+        "kind": "communication",
+        "payload": {
+          "content": "All plans are aligned sufficiently for high joint reward. Ready to transition to EXECUTION phase and commit our intervals.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8296e248-58b8-4ccd-90e0-0aab4076968c",
+        "ts": 1776923605.8548155,
+        "agent": "Riley",
+        "kind": "communication",
+        "payload": {
+          "content": "All, I have adjusted to skip m012 as well since others are skipping it (low overlap value). My final plan: skip m005,m012; m015:[0,1), m010:[1,2), m011:[2,3), m001:[3,4), m002:[4,5), m009:[6,7), m006:[7,8), m004:[8,9), m003:[9,10), m016:[10,11), m007:[13,14). Ready for execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a9b8955e-dc38-4e21-b523-50d0137cbc4e",
+        "ts": 1776923611.0394158,
+        "agent": "Taylor",
+        "kind": "communication",
+        "payload": {
+          "content": "Taylor confirming final plan: attend m005:[0,1), m010:[1,2), m011:[2,3), m001:[3,4), m014:[5,6), m009:[6,7), m006:[7,8), m004:[8,9), m003:[9,10), m016:[10,11), m008:[11,12), m013:[12,13), m007:[13,14); skip m012. This prioritizes high overlap soft meetings, full stricts, no self-overlaps. All plans aligned - ready to transition to EXECUTION phase and commit these intervals using attend_meeting.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1863aa99-beee-4225-9da8-a60dae552a36",
+        "ts": 1776923680.6486378,
+        "agent": "Taylor",
+        "kind": "communication",
+        "payload": {
+          "content": "All plans aligned for high reward. Ready to transition to EXECUTION phase now to commit intervals.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "fbec7148-602f-4b29-a4d6-cf9fe672913f",
+        "ts": 1776923805.132063,
+        "agent": "Taylor",
+        "kind": "communication",
+        "payload": {
+          "content": "Since all agents have finalized and aligned their plans for maximal joint reward with coordinated 1-slot attendances, no self-overlaps, full stricts, and good soft overlaps, I propose we now enter the EXECUTION phase to commit our attendance intervals.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "cbf00f7a-64dd-49bf-ac21-2b8fca50b100",
+        "ts": 1776923810.462755,
+        "agent": "Jordan",
+        "kind": "communication",
+        "payload": {
+          "content": "All, my plan is finalized and aligned with the group: skip m005; attend m015:[0,1), m010:[1,2), m011:[2,3), m001:[3,4), m002:[4,5), m014:[5,6), m004:[8,9), m003:[9,10), m008:[11,12), m013:[12,13), m007:[13,14). This maximizes rewards with no self-overlaps and good peer overlaps on soft meetings. Since all plans are set, let's transition to EXECUTION phase and commit our intervals.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1aec182c-698a-453a-b75f-8d4d837fd0a1",
+        "ts": 1776924007.650118,
+        "agent": "Jordan",
+        "kind": "communication",
+        "payload": {
+          "content": "All agents' plans are aligned. Proceeding to EXECUTION phase. My commitments: m005: skip, m015: [0,1), m010: [1,2), m011: [2,3), m001: [3,4), m002: [4,5), m014: [5,6), m004: [8,9), m003: [9,10), m008: [11,12), m013: [12,13), m007: [13,14).",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "3d0cb4d3-a2da-473b-b1bd-42ec5bc6efde",
+        "ts": 1776924012.885024,
+        "agent": "Quinn",
+        "kind": "communication",
+        "payload": {
+          "content": "All plans are aligned for high joint reward with the coordinated 1-slot attendances for softs (no self-overlaps, good peer overlaps), full attendance for stricts (m015 and m007). My commitment plan remains: attend m015:[0,1), m010:[1,2), m011:[2,3), m001:[3,4), m002:[4,5), m014:[5,6), m009:[6,7), m006:[7,8), m004:[8,9), m003:[9,10), m016:[10,11), m008:[11,12), m013:[12,13), m007:[13,14); skip m012. Ready to move to EXECUTION phase now and commit intervals.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e9b3fa21-0ee6-495e-9ed0-d078c6dbb3e8",
+        "ts": 1776924205.9616985,
+        "agent": "Quinn",
+        "kind": "communication",
+        "payload": {
+          "content": "Since all agents have finalized their attendance plans with good alignment on slots for maximizing overlaps on soft meetings and full coverage on strict ones without self-overlaps, I propose we now transition to the EXECUTION phase to commit our intervals using the attend_meeting tool. My plan to commit: m015:[0,1), m010:[1,2), m011:[2,3), m001:[3,4), m002:[4,5), m014:[5,6), m009:[6,7), m006:[7,8), m004:[8,9), m003:[9,10), m016:[10,11), m008:[11,12), m013:[12,13), m007:[13,14); skip m012.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9f38fc70-2158-4bc4-9d98-e4f42e6e4ce6",
+        "ts": 1776924213.2116923,
+        "agent": "Avery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m015",
+            "interval": "0-1"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Avery",
+              "meeting": {
+                "id": "m015",
+                "title": "Job interview",
+                "meeting_type": "strict",
+                "window": [
+                  0,
+                  1
+                ],
+                "participants": [
+                  "Quinn",
+                  "Reese",
+                  "Jordan",
+                  "Avery",
+                  "Riley"
+                ]
+              },
+              "interval": "0-1",
+              "total_assigned": 1,
+              "remaining_variables": 80,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1"
+                }
+              },
+              "joint_reward": 1.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "538f35c0-054d-42d2-b7a6-e67ea2fe613f",
+        "ts": 1776924213.2131352,
+        "agent": "Avery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m010",
+            "interval": "1-2"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Avery",
+              "meeting": {
+                "id": "m010",
+                "title": "Collaborative art workshop",
+                "meeting_type": "soft",
+                "window": [
+                  0,
+                  3
+                ],
+                "participants": [
+                  "Quinn",
+                  "Taylor",
+                  "Reese",
+                  "Riley",
+                  "Avery",
+                  "Jordan"
+                ]
+              },
+              "interval": "1-2",
+              "total_assigned": 2,
+              "remaining_variables": 79,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2"
+                }
+              },
+              "joint_reward": 1.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "798bb1ea-3fed-4703-917e-460ec4169b84",
+        "ts": 1776924213.213653,
+        "agent": "Avery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m011",
+            "interval": "2-3"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Avery",
+              "meeting": {
+                "id": "m011",
+                "title": "Swimming session",
+                "meeting_type": "soft",
+                "window": [
+                  1,
+                  5
+                ],
+                "participants": [
+                  "Avery",
+                  "Jordan",
+                  "Riley",
+                  "Quinn",
+                  "Taylor",
+                  "Reese"
+                ]
+              },
+              "interval": "2-3",
+              "total_assigned": 3,
+              "remaining_variables": 78,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3"
+                }
+              },
+              "joint_reward": 1.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "03709f18-b29b-48cb-a07e-90a9d640dddf",
+        "ts": 1776924213.2139378,
+        "agent": "Avery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m001",
+            "interval": "3-4"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Avery",
+              "meeting": {
+                "id": "m001",
+                "title": "Volleyball free play",
+                "meeting_type": "soft",
+                "window": [
+                  2,
+                  5
+                ],
+                "participants": [
+                  "Riley",
+                  "Quinn",
+                  "Avery",
+                  "Taylor",
+                  "Reese",
+                  "Jordan"
+                ]
+              },
+              "interval": "3-4",
+              "total_assigned": 4,
+              "remaining_variables": 77,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4"
+                }
+              },
+              "joint_reward": 1.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1e46d332-32cc-4ed9-b849-1f7efa8f2c6e",
+        "ts": 1776924213.2142403,
+        "agent": "Avery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m002",
+            "interval": "4-5"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Avery",
+              "meeting": {
+                "id": "m002",
+                "title": "Friends’ hangout",
+                "meeting_type": "soft",
+                "window": [
+                  3,
+                  7
+                ],
+                "participants": [
+                  "Quinn",
+                  "Reese",
+                  "Riley",
+                  "Jordan",
+                  "Avery"
+                ]
+              },
+              "interval": "4-5",
+              "total_assigned": 5,
+              "remaining_variables": 76,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5"
+                }
+              },
+              "joint_reward": 1.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "2a7facb6-a2b9-4d0e-9910-0f0f2158af67",
+        "ts": 1776924213.214546,
+        "agent": "Avery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m014",
+            "interval": "5-6"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Avery",
+              "meeting": {
+                "id": "m014",
+                "title": "Friends’ hangout",
+                "meeting_type": "soft",
+                "window": [
+                  4,
+                  7
+                ],
+                "participants": [
+                  "Quinn",
+                  "Taylor",
+                  "Reese",
+                  "Avery",
+                  "Jordan"
+                ]
+              },
+              "interval": "5-6",
+              "total_assigned": 6,
+              "remaining_variables": 75,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6"
+                }
+              },
+              "joint_reward": 1.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "72f6ca26-4789-4d8e-ac2b-dc4e0b23a160",
+        "ts": 1776924213.2148507,
+        "agent": "Avery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m009",
+            "interval": "6-7"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Avery",
+              "meeting": {
+                "id": "m009",
+                "title": "Swimming session",
+                "meeting_type": "soft",
+                "window": [
+                  6,
+                  8
+                ],
+                "participants": [
+                  "Taylor",
+                  "Riley",
+                  "Quinn",
+                  "Avery"
+                ]
+              },
+              "interval": "6-7",
+              "total_assigned": 7,
+              "remaining_variables": 74,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7"
+                }
+              },
+              "joint_reward": 1.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e2978294-5b78-4940-92c7-69529005f7c3",
+        "ts": 1776924213.2151687,
+        "agent": "Avery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m006",
+            "interval": "7-8"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Avery",
+              "meeting": {
+                "id": "m006",
+                "title": "Study group",
+                "meeting_type": "soft",
+                "window": [
+                  6,
+                  10
+                ],
+                "participants": [
+                  "Quinn",
+                  "Taylor",
+                  "Riley",
+                  "Reese",
+                  "Avery"
+                ]
+              },
+              "interval": "7-8",
+              "total_assigned": 8,
+              "remaining_variables": 73,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8"
+                }
+              },
+              "joint_reward": 1.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9a4595d8-d3d2-48f2-b383-634ececde18b",
+        "ts": 1776924213.2155056,
+        "agent": "Avery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m004",
+            "interval": "8-9"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Avery",
+              "meeting": {
+                "id": "m004",
+                "title": "Study group",
+                "meeting_type": "soft",
+                "window": [
+                  7,
+                  11
+                ],
+                "participants": [
+                  "Riley",
+                  "Reese",
+                  "Quinn",
+                  "Taylor",
+                  "Jordan",
+                  "Avery"
+                ]
+              },
+              "interval": "8-9",
+              "total_assigned": 9,
+              "remaining_variables": 72,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9"
+                }
+              },
+              "joint_reward": 1.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "77a0c28e-1df4-424d-817c-22b061616ef0",
+        "ts": 1776924213.2158628,
+        "agent": "Avery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m003",
+            "interval": "9-10"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Avery",
+              "meeting": {
+                "id": "m003",
+                "title": "Gym play session",
+                "meeting_type": "soft",
+                "window": [
+                  8,
+                  11
+                ],
+                "participants": [
+                  "Avery",
+                  "Reese",
+                  "Jordan",
+                  "Taylor",
+                  "Quinn",
+                  "Riley"
+                ]
+              },
+              "interval": "9-10",
+              "total_assigned": 10,
+              "remaining_variables": 71,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10"
+                }
+              },
+              "joint_reward": 1.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "645f2bc0-3d3d-485b-96f5-f8c890514bf4",
+        "ts": 1776924213.2162411,
+        "agent": "Avery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m016",
+            "interval": "10-11"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Avery",
+              "meeting": {
+                "id": "m016",
+                "title": "Music jamming session",
+                "meeting_type": "soft",
+                "window": [
+                  9,
+                  13
+                ],
+                "participants": [
+                  "Reese",
+                  "Riley",
+                  "Avery",
+                  "Taylor",
+                  "Quinn"
+                ]
+              },
+              "interval": "10-11",
+              "total_assigned": 11,
+              "remaining_variables": 70,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11"
+                }
+              },
+              "joint_reward": 1.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a53c82fe-8c3e-4cb9-bea8-e472b613059a",
+        "ts": 1776924213.2166345,
+        "agent": "Avery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m008",
+            "interval": "11-12"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Avery",
+              "meeting": {
+                "id": "m008",
+                "title": "Friends’ hangout",
+                "meeting_type": "soft",
+                "window": [
+                  10,
+                  14
+                ],
+                "participants": [
+                  "Taylor",
+                  "Avery",
+                  "Quinn",
+                  "Jordan",
+                  "Reese"
+                ]
+              },
+              "interval": "11-12",
+              "total_assigned": 12,
+              "remaining_variables": 69,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12"
+                }
+              },
+              "joint_reward": 1.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "7bc2e159-996a-4658-93f9-73380c8899ed",
+        "ts": 1776924213.217057,
+        "agent": "Avery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m007",
+            "interval": "13-14"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Avery",
+              "meeting": {
+                "id": "m007",
+                "title": "University class",
+                "meeting_type": "strict",
+                "window": [
+                  13,
+                  14
+                ],
+                "participants": [
+                  "Quinn",
+                  "Jordan",
+                  "Taylor",
+                  "Riley",
+                  "Avery"
+                ]
+              },
+              "interval": "13-14",
+              "total_assigned": 13,
+              "remaining_variables": 68,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14"
+                }
+              },
+              "joint_reward": 2.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "3b0f0aa8-07b0-4006-bffe-eb97181953b5",
+        "ts": 1776924220.5625618,
+        "agent": "Reese",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m015",
+            "interval": "0-1"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Reese",
+              "meeting": {
+                "id": "m015",
+                "title": "Job interview",
+                "meeting_type": "strict",
+                "window": [
+                  0,
+                  1
+                ],
+                "participants": [
+                  "Quinn",
+                  "Reese",
+                  "Jordan",
+                  "Avery",
+                  "Riley"
+                ]
+              },
+              "interval": "0-1",
+              "total_assigned": 14,
+              "remaining_variables": 67,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1"
+                }
+              },
+              "joint_reward": 3.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "31308884-1973-4bd9-aa87-13f4c8217e1d",
+        "ts": 1776924220.563426,
+        "agent": "Reese",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m005",
+            "interval": "skip"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Reese",
+              "meeting": {
+                "id": "m005",
+                "title": "Doctor’s appointment",
+                "meeting_type": "strict",
+                "window": [
+                  0,
+                  1
+                ],
+                "participants": [
+                  "Riley",
+                  "Jordan",
+                  "Taylor",
+                  "Reese"
+                ]
+              },
+              "interval": "skip",
+              "total_assigned": 15,
+              "remaining_variables": 66,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip"
+                }
+              },
+              "joint_reward": 3.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "db9f465c-69fb-4ee9-9828-ecf5a61e320a",
+        "ts": 1776924227.9625735,
+        "agent": "Riley",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m005",
+            "interval": "skip"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Riley",
+              "meeting": {
+                "id": "m005",
+                "title": "Doctor’s appointment",
+                "meeting_type": "strict",
+                "window": [
+                  0,
+                  1
+                ],
+                "participants": [
+                  "Riley",
+                  "Jordan",
+                  "Taylor",
+                  "Reese"
+                ]
+              },
+              "interval": "skip",
+              "total_assigned": 16,
+              "remaining_variables": 65,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip",
+                  "Riley__m005": "skip"
+                }
+              },
+              "joint_reward": 3.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "4243e5c0-fae7-42a5-8130-248feed13243",
+        "ts": 1776924227.9643872,
+        "agent": "Riley",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m015",
+            "interval": "0-1"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Riley",
+              "meeting": {
+                "id": "m015",
+                "title": "Job interview",
+                "meeting_type": "strict",
+                "window": [
+                  0,
+                  1
+                ],
+                "participants": [
+                  "Quinn",
+                  "Reese",
+                  "Jordan",
+                  "Avery",
+                  "Riley"
+                ]
+              },
+              "interval": "0-1",
+              "total_assigned": 17,
+              "remaining_variables": 64,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip",
+                  "Riley__m005": "skip",
+                  "Riley__m015": "0-1"
+                }
+              },
+              "joint_reward": 4.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "4098627f-78e0-4ab5-bfa7-413812361387",
+        "ts": 1776924227.9648802,
+        "agent": "Riley",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m010",
+            "interval": "1-2"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Riley",
+              "meeting": {
+                "id": "m010",
+                "title": "Collaborative art workshop",
+                "meeting_type": "soft",
+                "window": [
+                  0,
+                  3
+                ],
+                "participants": [
+                  "Quinn",
+                  "Taylor",
+                  "Reese",
+                  "Riley",
+                  "Avery",
+                  "Jordan"
+                ]
+              },
+              "interval": "1-2",
+              "total_assigned": 18,
+              "remaining_variables": 63,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip",
+                  "Riley__m005": "skip",
+                  "Riley__m015": "0-1",
+                  "Riley__m010": "1-2"
+                }
+              },
+              "joint_reward": 4.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "401bab52-b499-46d4-8aea-8d4f91b911f3",
+        "ts": 1776924232.721098,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m005",
+            "interval": "0-1"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m005",
+                "title": "Doctor’s appointment",
+                "meeting_type": "strict",
+                "window": [
+                  0,
+                  1
+                ],
+                "participants": [
+                  "Riley",
+                  "Jordan",
+                  "Taylor",
+                  "Reese"
+                ]
+              },
+              "interval": "0-1",
+              "total_assigned": 19,
+              "remaining_variables": 62,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip",
+                  "Riley__m005": "skip",
+                  "Riley__m015": "0-1",
+                  "Riley__m010": "1-2",
+                  "Taylor__m005": "0-1"
+                }
+              },
+              "joint_reward": 5.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1259c07f-f8cd-4c16-90da-e4bab6fed87f",
+        "ts": 1776924232.7231996,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m010",
+            "interval": "1-2"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m010",
+                "title": "Collaborative art workshop",
+                "meeting_type": "soft",
+                "window": [
+                  0,
+                  3
+                ],
+                "participants": [
+                  "Quinn",
+                  "Taylor",
+                  "Reese",
+                  "Riley",
+                  "Avery",
+                  "Jordan"
+                ]
+              },
+              "interval": "1-2",
+              "total_assigned": 20,
+              "remaining_variables": 61,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip",
+                  "Riley__m005": "skip",
+                  "Riley__m015": "0-1",
+                  "Riley__m010": "1-2",
+                  "Taylor__m005": "0-1",
+                  "Taylor__m010": "1-2"
+                }
+              },
+              "joint_reward": 5.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b0fe4f3d-d08f-4227-979b-99ae4b7708bc",
+        "ts": 1776924232.724219,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m011",
+            "interval": "2-3"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m011",
+                "title": "Swimming session",
+                "meeting_type": "soft",
+                "window": [
+                  1,
+                  5
+                ],
+                "participants": [
+                  "Avery",
+                  "Jordan",
+                  "Riley",
+                  "Quinn",
+                  "Taylor",
+                  "Reese"
+                ]
+              },
+              "interval": "2-3",
+              "total_assigned": 21,
+              "remaining_variables": 60,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip",
+                  "Riley__m005": "skip",
+                  "Riley__m015": "0-1",
+                  "Riley__m010": "1-2",
+                  "Taylor__m005": "0-1",
+                  "Taylor__m010": "1-2",
+                  "Taylor__m011": "2-3"
+                }
+              },
+              "joint_reward": 5.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "7d79834e-94eb-42ae-bd04-790d1d4a8190",
+        "ts": 1776924232.7249184,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m001",
+            "interval": "3-4"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m001",
+                "title": "Volleyball free play",
+                "meeting_type": "soft",
+                "window": [
+                  2,
+                  5
+                ],
+                "participants": [
+                  "Riley",
+                  "Quinn",
+                  "Avery",
+                  "Taylor",
+                  "Reese",
+                  "Jordan"
+                ]
+              },
+              "interval": "3-4",
+              "total_assigned": 22,
+              "remaining_variables": 59,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip",
+                  "Riley__m005": "skip",
+                  "Riley__m015": "0-1",
+                  "Riley__m010": "1-2",
+                  "Taylor__m005": "0-1",
+                  "Taylor__m010": "1-2",
+                  "Taylor__m011": "2-3",
+                  "Taylor__m001": "3-4"
+                }
+              },
+              "joint_reward": 5.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "0d08e077-da10-4217-9a36-3d1be1342012",
+        "ts": 1776924232.7255683,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m014",
+            "interval": "5-6"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m014",
+                "title": "Friends’ hangout",
+                "meeting_type": "soft",
+                "window": [
+                  4,
+                  7
+                ],
+                "participants": [
+                  "Quinn",
+                  "Taylor",
+                  "Reese",
+                  "Avery",
+                  "Jordan"
+                ]
+              },
+              "interval": "5-6",
+              "total_assigned": 23,
+              "remaining_variables": 58,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip",
+                  "Riley__m005": "skip",
+                  "Riley__m015": "0-1",
+                  "Riley__m010": "1-2",
+                  "Taylor__m005": "0-1",
+                  "Taylor__m010": "1-2",
+                  "Taylor__m011": "2-3",
+                  "Taylor__m001": "3-4",
+                  "Taylor__m014": "5-6"
+                }
+              },
+              "joint_reward": 5.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8129aa67-222f-4e0e-aadc-81360ef9a522",
+        "ts": 1776924239.8395448,
+        "agent": "Jordan",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m005",
+            "interval": "skip"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Jordan",
+              "meeting": {
+                "id": "m005",
+                "title": "Doctor’s appointment",
+                "meeting_type": "strict",
+                "window": [
+                  0,
+                  1
+                ],
+                "participants": [
+                  "Riley",
+                  "Jordan",
+                  "Taylor",
+                  "Reese"
+                ]
+              },
+              "interval": "skip",
+              "total_assigned": 24,
+              "remaining_variables": 57,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip",
+                  "Riley__m005": "skip",
+                  "Riley__m015": "0-1",
+                  "Riley__m010": "1-2",
+                  "Taylor__m005": "0-1",
+                  "Taylor__m010": "1-2",
+                  "Taylor__m011": "2-3",
+                  "Taylor__m001": "3-4",
+                  "Taylor__m014": "5-6",
+                  "Jordan__m005": "skip"
+                }
+              },
+              "joint_reward": 5.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "08460649-0993-4bab-b759-07e2b2862b55",
+        "ts": 1776924239.8413956,
+        "agent": "Jordan",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m015",
+            "interval": "0-1"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Jordan",
+              "meeting": {
+                "id": "m015",
+                "title": "Job interview",
+                "meeting_type": "strict",
+                "window": [
+                  0,
+                  1
+                ],
+                "participants": [
+                  "Quinn",
+                  "Reese",
+                  "Jordan",
+                  "Avery",
+                  "Riley"
+                ]
+              },
+              "interval": "0-1",
+              "total_assigned": 25,
+              "remaining_variables": 56,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip",
+                  "Riley__m005": "skip",
+                  "Riley__m015": "0-1",
+                  "Riley__m010": "1-2",
+                  "Taylor__m005": "0-1",
+                  "Taylor__m010": "1-2",
+                  "Taylor__m011": "2-3",
+                  "Taylor__m001": "3-4",
+                  "Taylor__m014": "5-6",
+                  "Jordan__m005": "skip",
+                  "Jordan__m015": "0-1"
+                }
+              },
+              "joint_reward": 6.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1626e2ca-93ee-4853-b38d-4c81453f6251",
+        "ts": 1776924239.8419309,
+        "agent": "Jordan",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m010",
+            "interval": "1-2"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Jordan",
+              "meeting": {
+                "id": "m010",
+                "title": "Collaborative art workshop",
+                "meeting_type": "soft",
+                "window": [
+                  0,
+                  3
+                ],
+                "participants": [
+                  "Quinn",
+                  "Taylor",
+                  "Reese",
+                  "Riley",
+                  "Avery",
+                  "Jordan"
+                ]
+              },
+              "interval": "1-2",
+              "total_assigned": 26,
+              "remaining_variables": 55,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip",
+                  "Riley__m005": "skip",
+                  "Riley__m015": "0-1",
+                  "Riley__m010": "1-2",
+                  "Taylor__m005": "0-1",
+                  "Taylor__m010": "1-2",
+                  "Taylor__m011": "2-3",
+                  "Taylor__m001": "3-4",
+                  "Taylor__m014": "5-6",
+                  "Jordan__m005": "skip",
+                  "Jordan__m015": "0-1",
+                  "Jordan__m010": "1-2"
+                }
+              },
+              "joint_reward": 6.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ac355fca-4521-46d0-bc78-e9e93553d099",
+        "ts": 1776924239.8424742,
+        "agent": "Jordan",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m011",
+            "interval": "2-3"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Jordan",
+              "meeting": {
+                "id": "m011",
+                "title": "Swimming session",
+                "meeting_type": "soft",
+                "window": [
+                  1,
+                  5
+                ],
+                "participants": [
+                  "Avery",
+                  "Jordan",
+                  "Riley",
+                  "Quinn",
+                  "Taylor",
+                  "Reese"
+                ]
+              },
+              "interval": "2-3",
+              "total_assigned": 27,
+              "remaining_variables": 54,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip",
+                  "Riley__m005": "skip",
+                  "Riley__m015": "0-1",
+                  "Riley__m010": "1-2",
+                  "Taylor__m005": "0-1",
+                  "Taylor__m010": "1-2",
+                  "Taylor__m011": "2-3",
+                  "Taylor__m001": "3-4",
+                  "Taylor__m014": "5-6",
+                  "Jordan__m005": "skip",
+                  "Jordan__m015": "0-1",
+                  "Jordan__m010": "1-2",
+                  "Jordan__m011": "2-3"
+                }
+              },
+              "joint_reward": 6.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d9e93ea0-350f-418f-8046-69b13b6741b8",
+        "ts": 1776924247.4702415,
+        "agent": "Quinn",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m015",
+            "interval": "0-1"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Quinn",
+              "meeting": {
+                "id": "m015",
+                "title": "Job interview",
+                "meeting_type": "strict",
+                "window": [
+                  0,
+                  1
+                ],
+                "participants": [
+                  "Quinn",
+                  "Reese",
+                  "Jordan",
+                  "Avery",
+                  "Riley"
+                ]
+              },
+              "interval": "0-1",
+              "total_assigned": 28,
+              "remaining_variables": 53,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip",
+                  "Riley__m005": "skip",
+                  "Riley__m015": "0-1",
+                  "Riley__m010": "1-2",
+                  "Taylor__m005": "0-1",
+                  "Taylor__m010": "1-2",
+                  "Taylor__m011": "2-3",
+                  "Taylor__m001": "3-4",
+                  "Taylor__m014": "5-6",
+                  "Jordan__m005": "skip",
+                  "Jordan__m015": "0-1",
+                  "Jordan__m010": "1-2",
+                  "Jordan__m011": "2-3",
+                  "Quinn__m015": "0-1"
+                }
+              },
+              "joint_reward": 7.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "de6205d1-5ed7-4108-a632-80cc8379bd2d",
+        "ts": 1776924247.4712234,
+        "agent": "Quinn",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m010",
+            "interval": "1-2"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Quinn",
+              "meeting": {
+                "id": "m010",
+                "title": "Collaborative art workshop",
+                "meeting_type": "soft",
+                "window": [
+                  0,
+                  3
+                ],
+                "participants": [
+                  "Quinn",
+                  "Taylor",
+                  "Reese",
+                  "Riley",
+                  "Avery",
+                  "Jordan"
+                ]
+              },
+              "interval": "1-2",
+              "total_assigned": 29,
+              "remaining_variables": 52,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip",
+                  "Riley__m005": "skip",
+                  "Riley__m015": "0-1",
+                  "Riley__m010": "1-2",
+                  "Taylor__m005": "0-1",
+                  "Taylor__m010": "1-2",
+                  "Taylor__m011": "2-3",
+                  "Taylor__m001": "3-4",
+                  "Taylor__m014": "5-6",
+                  "Jordan__m005": "skip",
+                  "Jordan__m015": "0-1",
+                  "Jordan__m010": "1-2",
+                  "Jordan__m011": "2-3",
+                  "Quinn__m015": "0-1",
+                  "Quinn__m010": "1-2"
+                }
+              },
+              "joint_reward": 7.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8ca66625-a66f-40f8-ba22-26d890ce4a82",
+        "ts": 1776924247.4717922,
+        "agent": "Quinn",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m011",
+            "interval": "2-3"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Quinn",
+              "meeting": {
+                "id": "m011",
+                "title": "Swimming session",
+                "meeting_type": "soft",
+                "window": [
+                  1,
+                  5
+                ],
+                "participants": [
+                  "Avery",
+                  "Jordan",
+                  "Riley",
+                  "Quinn",
+                  "Taylor",
+                  "Reese"
+                ]
+              },
+              "interval": "2-3",
+              "total_assigned": 30,
+              "remaining_variables": 51,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip",
+                  "Riley__m005": "skip",
+                  "Riley__m015": "0-1",
+                  "Riley__m010": "1-2",
+                  "Taylor__m005": "0-1",
+                  "Taylor__m010": "1-2",
+                  "Taylor__m011": "2-3",
+                  "Taylor__m001": "3-4",
+                  "Taylor__m014": "5-6",
+                  "Jordan__m005": "skip",
+                  "Jordan__m015": "0-1",
+                  "Jordan__m010": "1-2",
+                  "Jordan__m011": "2-3",
+                  "Quinn__m015": "0-1",
+                  "Quinn__m010": "1-2",
+                  "Quinn__m011": "2-3"
+                }
+              },
+              "joint_reward": 7.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "362cd889-df2b-47c7-8551-ec38936d44a1",
+        "ts": 1776924247.4723592,
+        "agent": "Quinn",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m001",
+            "interval": "3-4"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Quinn",
+              "meeting": {
+                "id": "m001",
+                "title": "Volleyball free play",
+                "meeting_type": "soft",
+                "window": [
+                  2,
+                  5
+                ],
+                "participants": [
+                  "Riley",
+                  "Quinn",
+                  "Avery",
+                  "Taylor",
+                  "Reese",
+                  "Jordan"
+                ]
+              },
+              "interval": "3-4",
+              "total_assigned": 31,
+              "remaining_variables": 50,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip",
+                  "Riley__m005": "skip",
+                  "Riley__m015": "0-1",
+                  "Riley__m010": "1-2",
+                  "Taylor__m005": "0-1",
+                  "Taylor__m010": "1-2",
+                  "Taylor__m011": "2-3",
+                  "Taylor__m001": "3-4",
+                  "Taylor__m014": "5-6",
+                  "Jordan__m005": "skip",
+                  "Jordan__m015": "0-1",
+                  "Jordan__m010": "1-2",
+                  "Jordan__m011": "2-3",
+                  "Quinn__m015": "0-1",
+                  "Quinn__m010": "1-2",
+                  "Quinn__m011": "2-3",
+                  "Quinn__m001": "3-4"
+                }
+              },
+              "joint_reward": 7.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c4d6d201-a953-42b2-bfd6-a71cc7ea39f9",
+        "ts": 1776924247.4729369,
+        "agent": "Quinn",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m002",
+            "interval": "4-5"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Quinn",
+              "meeting": {
+                "id": "m002",
+                "title": "Friends’ hangout",
+                "meeting_type": "soft",
+                "window": [
+                  3,
+                  7
+                ],
+                "participants": [
+                  "Quinn",
+                  "Reese",
+                  "Riley",
+                  "Jordan",
+                  "Avery"
+                ]
+              },
+              "interval": "4-5",
+              "total_assigned": 32,
+              "remaining_variables": 49,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip",
+                  "Riley__m005": "skip",
+                  "Riley__m015": "0-1",
+                  "Riley__m010": "1-2",
+                  "Taylor__m005": "0-1",
+                  "Taylor__m010": "1-2",
+                  "Taylor__m011": "2-3",
+                  "Taylor__m001": "3-4",
+                  "Taylor__m014": "5-6",
+                  "Jordan__m005": "skip",
+                  "Jordan__m015": "0-1",
+                  "Jordan__m010": "1-2",
+                  "Jordan__m011": "2-3",
+                  "Quinn__m015": "0-1",
+                  "Quinn__m010": "1-2",
+                  "Quinn__m011": "2-3",
+                  "Quinn__m001": "3-4",
+                  "Quinn__m002": "4-5"
+                }
+              },
+              "joint_reward": 7.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d54ed1ff-a5d6-400e-a670-6110230d43a4",
+        "ts": 1776924247.473503,
+        "agent": "Quinn",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m014",
+            "interval": "5-6"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Quinn",
+              "meeting": {
+                "id": "m014",
+                "title": "Friends’ hangout",
+                "meeting_type": "soft",
+                "window": [
+                  4,
+                  7
+                ],
+                "participants": [
+                  "Quinn",
+                  "Taylor",
+                  "Reese",
+                  "Avery",
+                  "Jordan"
+                ]
+              },
+              "interval": "5-6",
+              "total_assigned": 33,
+              "remaining_variables": 48,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip",
+                  "Riley__m005": "skip",
+                  "Riley__m015": "0-1",
+                  "Riley__m010": "1-2",
+                  "Taylor__m005": "0-1",
+                  "Taylor__m010": "1-2",
+                  "Taylor__m011": "2-3",
+                  "Taylor__m001": "3-4",
+                  "Taylor__m014": "5-6",
+                  "Jordan__m005": "skip",
+                  "Jordan__m015": "0-1",
+                  "Jordan__m010": "1-2",
+                  "Jordan__m011": "2-3",
+                  "Quinn__m015": "0-1",
+                  "Quinn__m010": "1-2",
+                  "Quinn__m011": "2-3",
+                  "Quinn__m001": "3-4",
+                  "Quinn__m002": "4-5",
+                  "Quinn__m014": "5-6"
+                }
+              },
+              "joint_reward": 7.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "fe680797-6d59-4d21-87cb-499822a2c4dd",
+        "ts": 1776924247.474092,
+        "agent": "Quinn",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m009",
+            "interval": "6-7"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Quinn",
+              "meeting": {
+                "id": "m009",
+                "title": "Swimming session",
+                "meeting_type": "soft",
+                "window": [
+                  6,
+                  8
+                ],
+                "participants": [
+                  "Taylor",
+                  "Riley",
+                  "Quinn",
+                  "Avery"
+                ]
+              },
+              "interval": "6-7",
+              "total_assigned": 34,
+              "remaining_variables": 47,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip",
+                  "Riley__m005": "skip",
+                  "Riley__m015": "0-1",
+                  "Riley__m010": "1-2",
+                  "Taylor__m005": "0-1",
+                  "Taylor__m010": "1-2",
+                  "Taylor__m011": "2-3",
+                  "Taylor__m001": "3-4",
+                  "Taylor__m014": "5-6",
+                  "Jordan__m005": "skip",
+                  "Jordan__m015": "0-1",
+                  "Jordan__m010": "1-2",
+                  "Jordan__m011": "2-3",
+                  "Quinn__m015": "0-1",
+                  "Quinn__m010": "1-2",
+                  "Quinn__m011": "2-3",
+                  "Quinn__m001": "3-4",
+                  "Quinn__m002": "4-5",
+                  "Quinn__m014": "5-6",
+                  "Quinn__m009": "6-7"
+                }
+              },
+              "joint_reward": 7.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e0b6ae43-58ad-48ec-87a1-18dc1e06b669",
+        "ts": 1776924247.4747193,
+        "agent": "Quinn",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m006",
+            "interval": "7-8"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Quinn",
+              "meeting": {
+                "id": "m006",
+                "title": "Study group",
+                "meeting_type": "soft",
+                "window": [
+                  6,
+                  10
+                ],
+                "participants": [
+                  "Quinn",
+                  "Taylor",
+                  "Riley",
+                  "Reese",
+                  "Avery"
+                ]
+              },
+              "interval": "7-8",
+              "total_assigned": 35,
+              "remaining_variables": 46,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip",
+                  "Riley__m005": "skip",
+                  "Riley__m015": "0-1",
+                  "Riley__m010": "1-2",
+                  "Taylor__m005": "0-1",
+                  "Taylor__m010": "1-2",
+                  "Taylor__m011": "2-3",
+                  "Taylor__m001": "3-4",
+                  "Taylor__m014": "5-6",
+                  "Jordan__m005": "skip",
+                  "Jordan__m015": "0-1",
+                  "Jordan__m010": "1-2",
+                  "Jordan__m011": "2-3",
+                  "Quinn__m015": "0-1",
+                  "Quinn__m010": "1-2",
+                  "Quinn__m011": "2-3",
+                  "Quinn__m001": "3-4",
+                  "Quinn__m002": "4-5",
+                  "Quinn__m014": "5-6",
+                  "Quinn__m009": "6-7",
+                  "Quinn__m006": "7-8"
+                }
+              },
+              "joint_reward": 7.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "42fac20f-4c62-4cb2-9ed3-2a12ad9b2ffd",
+        "ts": 1776924247.4753382,
+        "agent": "Quinn",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m004",
+            "interval": "8-9"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Quinn",
+              "meeting": {
+                "id": "m004",
+                "title": "Study group",
+                "meeting_type": "soft",
+                "window": [
+                  7,
+                  11
+                ],
+                "participants": [
+                  "Riley",
+                  "Reese",
+                  "Quinn",
+                  "Taylor",
+                  "Jordan",
+                  "Avery"
+                ]
+              },
+              "interval": "8-9",
+              "total_assigned": 36,
+              "remaining_variables": 45,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip",
+                  "Riley__m005": "skip",
+                  "Riley__m015": "0-1",
+                  "Riley__m010": "1-2",
+                  "Taylor__m005": "0-1",
+                  "Taylor__m010": "1-2",
+                  "Taylor__m011": "2-3",
+                  "Taylor__m001": "3-4",
+                  "Taylor__m014": "5-6",
+                  "Jordan__m005": "skip",
+                  "Jordan__m015": "0-1",
+                  "Jordan__m010": "1-2",
+                  "Jordan__m011": "2-3",
+                  "Quinn__m015": "0-1",
+                  "Quinn__m010": "1-2",
+                  "Quinn__m011": "2-3",
+                  "Quinn__m001": "3-4",
+                  "Quinn__m002": "4-5",
+                  "Quinn__m014": "5-6",
+                  "Quinn__m009": "6-7",
+                  "Quinn__m006": "7-8",
+                  "Quinn__m004": "8-9"
+                }
+              },
+              "joint_reward": 7.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "5f889cb4-5556-4d6a-8ff3-5d7caa850249",
+        "ts": 1776924247.4759743,
+        "agent": "Quinn",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m003",
+            "interval": "9-10"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Quinn",
+              "meeting": {
+                "id": "m003",
+                "title": "Gym play session",
+                "meeting_type": "soft",
+                "window": [
+                  8,
+                  11
+                ],
+                "participants": [
+                  "Avery",
+                  "Reese",
+                  "Jordan",
+                  "Taylor",
+                  "Quinn",
+                  "Riley"
+                ]
+              },
+              "interval": "9-10",
+              "total_assigned": 37,
+              "remaining_variables": 44,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip",
+                  "Riley__m005": "skip",
+                  "Riley__m015": "0-1",
+                  "Riley__m010": "1-2",
+                  "Taylor__m005": "0-1",
+                  "Taylor__m010": "1-2",
+                  "Taylor__m011": "2-3",
+                  "Taylor__m001": "3-4",
+                  "Taylor__m014": "5-6",
+                  "Jordan__m005": "skip",
+                  "Jordan__m015": "0-1",
+                  "Jordan__m010": "1-2",
+                  "Jordan__m011": "2-3",
+                  "Quinn__m015": "0-1",
+                  "Quinn__m010": "1-2",
+                  "Quinn__m011": "2-3",
+                  "Quinn__m001": "3-4",
+                  "Quinn__m002": "4-5",
+                  "Quinn__m014": "5-6",
+                  "Quinn__m009": "6-7",
+                  "Quinn__m006": "7-8",
+                  "Quinn__m004": "8-9",
+                  "Quinn__m003": "9-10"
+                }
+              },
+              "joint_reward": 7.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f886e39c-368b-4c36-84c1-65a98cbcbe03",
+        "ts": 1776924247.4766238,
+        "agent": "Quinn",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m016",
+            "interval": "10-11"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Quinn",
+              "meeting": {
+                "id": "m016",
+                "title": "Music jamming session",
+                "meeting_type": "soft",
+                "window": [
+                  9,
+                  13
+                ],
+                "participants": [
+                  "Reese",
+                  "Riley",
+                  "Avery",
+                  "Taylor",
+                  "Quinn"
+                ]
+              },
+              "interval": "10-11",
+              "total_assigned": 38,
+              "remaining_variables": 43,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip",
+                  "Riley__m005": "skip",
+                  "Riley__m015": "0-1",
+                  "Riley__m010": "1-2",
+                  "Taylor__m005": "0-1",
+                  "Taylor__m010": "1-2",
+                  "Taylor__m011": "2-3",
+                  "Taylor__m001": "3-4",
+                  "Taylor__m014": "5-6",
+                  "Jordan__m005": "skip",
+                  "Jordan__m015": "0-1",
+                  "Jordan__m010": "1-2",
+                  "Jordan__m011": "2-3",
+                  "Quinn__m015": "0-1",
+                  "Quinn__m010": "1-2",
+                  "Quinn__m011": "2-3",
+                  "Quinn__m001": "3-4",
+                  "Quinn__m002": "4-5",
+                  "Quinn__m014": "5-6",
+                  "Quinn__m009": "6-7",
+                  "Quinn__m006": "7-8",
+                  "Quinn__m004": "8-9",
+                  "Quinn__m003": "9-10",
+                  "Quinn__m016": "10-11"
+                }
+              },
+              "joint_reward": 7.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "df33a6bc-c4de-475b-8379-adddb8ab43ed",
+        "ts": 1776924247.4773095,
+        "agent": "Quinn",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m008",
+            "interval": "11-12"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Quinn",
+              "meeting": {
+                "id": "m008",
+                "title": "Friends’ hangout",
+                "meeting_type": "soft",
+                "window": [
+                  10,
+                  14
+                ],
+                "participants": [
+                  "Taylor",
+                  "Avery",
+                  "Quinn",
+                  "Jordan",
+                  "Reese"
+                ]
+              },
+              "interval": "11-12",
+              "total_assigned": 39,
+              "remaining_variables": 42,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip",
+                  "Riley__m005": "skip",
+                  "Riley__m015": "0-1",
+                  "Riley__m010": "1-2",
+                  "Taylor__m005": "0-1",
+                  "Taylor__m010": "1-2",
+                  "Taylor__m011": "2-3",
+                  "Taylor__m001": "3-4",
+                  "Taylor__m014": "5-6",
+                  "Jordan__m005": "skip",
+                  "Jordan__m015": "0-1",
+                  "Jordan__m010": "1-2",
+                  "Jordan__m011": "2-3",
+                  "Quinn__m015": "0-1",
+                  "Quinn__m010": "1-2",
+                  "Quinn__m011": "2-3",
+                  "Quinn__m001": "3-4",
+                  "Quinn__m002": "4-5",
+                  "Quinn__m014": "5-6",
+                  "Quinn__m009": "6-7",
+                  "Quinn__m006": "7-8",
+                  "Quinn__m004": "8-9",
+                  "Quinn__m003": "9-10",
+                  "Quinn__m016": "10-11",
+                  "Quinn__m008": "11-12"
+                }
+              },
+              "joint_reward": 7.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "185676cf-4b8a-4782-b32a-16d011d64030",
+        "ts": 1776924247.478017,
+        "agent": "Quinn",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m013",
+            "interval": "12-13"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Quinn",
+              "meeting": {
+                "id": "m013",
+                "title": "Collaborative art workshop",
+                "meeting_type": "soft",
+                "window": [
+                  10,
+                  14
+                ],
+                "participants": [
+                  "Quinn",
+                  "Reese",
+                  "Taylor",
+                  "Jordan"
+                ]
+              },
+              "interval": "12-13",
+              "total_assigned": 40,
+              "remaining_variables": 41,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip",
+                  "Riley__m005": "skip",
+                  "Riley__m015": "0-1",
+                  "Riley__m010": "1-2",
+                  "Taylor__m005": "0-1",
+                  "Taylor__m010": "1-2",
+                  "Taylor__m011": "2-3",
+                  "Taylor__m001": "3-4",
+                  "Taylor__m014": "5-6",
+                  "Jordan__m005": "skip",
+                  "Jordan__m015": "0-1",
+                  "Jordan__m010": "1-2",
+                  "Jordan__m011": "2-3",
+                  "Quinn__m015": "0-1",
+                  "Quinn__m010": "1-2",
+                  "Quinn__m011": "2-3",
+                  "Quinn__m001": "3-4",
+                  "Quinn__m002": "4-5",
+                  "Quinn__m014": "5-6",
+                  "Quinn__m009": "6-7",
+                  "Quinn__m006": "7-8",
+                  "Quinn__m004": "8-9",
+                  "Quinn__m003": "9-10",
+                  "Quinn__m016": "10-11",
+                  "Quinn__m008": "11-12",
+                  "Quinn__m013": "12-13"
+                }
+              },
+              "joint_reward": 7.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b87bf3b9-795a-49e3-8310-ed27491ba8b0",
+        "ts": 1776924247.4787636,
+        "agent": "Quinn",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m007",
+            "interval": "13-14"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Quinn",
+              "meeting": {
+                "id": "m007",
+                "title": "University class",
+                "meeting_type": "strict",
+                "window": [
+                  13,
+                  14
+                ],
+                "participants": [
+                  "Quinn",
+                  "Jordan",
+                  "Taylor",
+                  "Riley",
+                  "Avery"
+                ]
+              },
+              "interval": "13-14",
+              "total_assigned": 41,
+              "remaining_variables": 40,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip",
+                  "Riley__m005": "skip",
+                  "Riley__m015": "0-1",
+                  "Riley__m010": "1-2",
+                  "Taylor__m005": "0-1",
+                  "Taylor__m010": "1-2",
+                  "Taylor__m011": "2-3",
+                  "Taylor__m001": "3-4",
+                  "Taylor__m014": "5-6",
+                  "Jordan__m005": "skip",
+                  "Jordan__m015": "0-1",
+                  "Jordan__m010": "1-2",
+                  "Jordan__m011": "2-3",
+                  "Quinn__m015": "0-1",
+                  "Quinn__m010": "1-2",
+                  "Quinn__m011": "2-3",
+                  "Quinn__m001": "3-4",
+                  "Quinn__m002": "4-5",
+                  "Quinn__m014": "5-6",
+                  "Quinn__m009": "6-7",
+                  "Quinn__m006": "7-8",
+                  "Quinn__m004": "8-9",
+                  "Quinn__m003": "9-10",
+                  "Quinn__m016": "10-11",
+                  "Quinn__m008": "11-12",
+                  "Quinn__m013": "12-13",
+                  "Quinn__m007": "13-14"
+                }
+              },
+              "joint_reward": 8.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "20991750-46cc-4883-abd8-b3002a4df8c7",
+        "ts": 1776924247.479529,
+        "agent": "Quinn",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m012",
+            "interval": "skip"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Quinn",
+              "meeting": {
+                "id": "m012",
+                "title": "Music jamming session",
+                "meeting_type": "soft",
+                "window": [
+                  5,
+                  8
+                ],
+                "participants": [
+                  "Riley",
+                  "Reese",
+                  "Quinn",
+                  "Taylor"
+                ]
+              },
+              "interval": "skip",
+              "total_assigned": 42,
+              "remaining_variables": 39,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip",
+                  "Riley__m005": "skip",
+                  "Riley__m015": "0-1",
+                  "Riley__m010": "1-2",
+                  "Taylor__m005": "0-1",
+                  "Taylor__m010": "1-2",
+                  "Taylor__m011": "2-3",
+                  "Taylor__m001": "3-4",
+                  "Taylor__m014": "5-6",
+                  "Jordan__m005": "skip",
+                  "Jordan__m015": "0-1",
+                  "Jordan__m010": "1-2",
+                  "Jordan__m011": "2-3",
+                  "Quinn__m015": "0-1",
+                  "Quinn__m010": "1-2",
+                  "Quinn__m011": "2-3",
+                  "Quinn__m001": "3-4",
+                  "Quinn__m002": "4-5",
+                  "Quinn__m014": "5-6",
+                  "Quinn__m009": "6-7",
+                  "Quinn__m006": "7-8",
+                  "Quinn__m004": "8-9",
+                  "Quinn__m003": "9-10",
+                  "Quinn__m016": "10-11",
+                  "Quinn__m008": "11-12",
+                  "Quinn__m013": "12-13",
+                  "Quinn__m007": "13-14",
+                  "Quinn__m012": "skip"
+                }
+              },
+              "joint_reward": 8.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  },
+  {
+    "blackboard_id": "1",
+    "participants": [
+      "Jordan",
+      "Quinn"
+    ],
+    "events": [
+      {
+        "blackboard_id": 1,
+        "id": "18835a09-64f6-4dd9-b601-36ac8662970e",
+        "ts": 1776919618.7181263,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "Decide attendance intervals for meetings on a shared timeline.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Jordan, Quinn"
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "c7968925-4194-40f9-9089-ba64c9844780",
+        "ts": 1776920560.9658844,
+        "agent": "Jordan",
+        "kind": "communication",
+        "payload": {
+          "content": "Quinn, Jordan here. Let's coordinate our schedule. I plan to skip m005 doctor (strict conflict with m015 job), attend m015 [0,1), m010 art [1,2), m011 swim [2,3), m001 volley [3,4), m002 friends [4,5), m014 friends [5,6) or adjust, then m004 study [8,9), m003 gym [9,10), m008 friends [11,12), m013 art [12,13), m007 class [13,14). This avoids self-overlap, full for stricts I attend. Align with the group proposal? What are your plans for our common meetings like m015, m010, m011, m001, m007, m008, m013 etc.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "5ae2d0d5-ef50-4b51-85e1-28e4af327c94",
+        "ts": 1776920753.8961873,
+        "agent": "Quinn",
+        "kind": "communication",
+        "payload": {
+          "content": "Jordan, Quinn here. I agree with the coordinated 1-slot approach and your plan for our common meetings. My full plan to maximize overlaps: attend m015:[0,1), m010:[1,2), m011:[2,3), m001:[3,4), m002:[4,5), m014:[5,6), m009:[6,7), m006:[7,8), m004:[8,9), m003:[9,10), m016:[10,11), m008:[11,12), m013:[12,13), m007:[13,14); skip m012 (can't fit all 15 meetings in 14 slots without self-overlap, and this maximizes overlaps on higher-participant meetings). This aligns with group on shared ones like m002@4, m014@5, m004@8 etc. No self-overlaps, full stricts. Ready to commit this.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "3ccd2bc5-9eee-4ea3-9d25-ecf59ee6bea6",
+        "ts": 1776921848.9058552,
+        "agent": "Jordan",
+        "kind": "communication",
+        "payload": {
+          "content": "Quinn, our plans align perfectly on shared meetings with same slots. Good for overlaps on m015, m010, m011, m001, m002, m014, m004, m003, m008, m013, m007. I'm ready to commit in execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "b3437f19-9ed4-48a2-b900-acedb257e2ce",
+        "ts": 1776921858.5681245,
+        "agent": "Quinn",
+        "kind": "communication",
+        "payload": {
+          "content": "Quinn confirming alignment with you on shared meetings/slots (m015[0,1), m010[1,2), m011[2,3), m001[3,4), m002[4,5), m014[5,6), m004[8,9), m003[9,10), m008[11,12), m013[12,13), m007[13,14)). My full plan as above on BB0, skipping m012. Ready to commit in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "3bb9e39b-5641-4867-b8af-3416936014bb",
+        "ts": 1776923107.2181976,
+        "agent": "Jordan",
+        "kind": "communication",
+        "payload": {
+          "content": "Quinn, our plans are aligned on all shared meetings and slots. Since the group on BB0 is also ready, let's proceed to execution phase to commit. My commitments: m005:skip, m015:[0,1), m010:[1,2), m011:[2,3), m001:[3,4), m002:[4,5), m014:[5,6), m004:[8,9), m003:[9,10), m008:[11,12), m013:[12,13), m007:[13,14).",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "8c2b02c9-2aa5-42b8-9fc0-20aca4c10f25",
+        "ts": 1776923183.7578034,
+        "agent": "Quinn",
+        "kind": "communication",
+        "payload": {
+          "content": "Jordan, our plans are perfectly aligned on all shared meetings. I'm ready to commit my intervals in the execution phase: m015:[0,1), m010:[1,2), m011:[2,3), m001:[3,4), m002:[4,5), m014:[5,6), m009:[6,7), m006:[7,8), m004:[8,9), m003:[9,10), m016:[10,11), m008:[11,12), m013:[12,13), m007:[13,14); skipping m012. Let's move to execution now.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "051acb1f-34a4-4439-ade8-4e4726f0b8d6",
+        "ts": 1776923878.0349565,
+        "agent": "Jordan",
+        "kind": "communication",
+        "payload": {
+          "content": "Quinn, our plans align on all shared meetings. Since BB0 group is ready to transition, let's commit our intervals in the next phase. My commitments: skip m005; m015:[0,1); m010:[1,2); m011:[2,3); m001:[3,4); m002:[4,5); m014:[5,6); m004:[8,9); m003:[9,10); m008:[11,12); m013:[12,13); m007:[13,14).",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "465fc580-902c-4ad5-9137-4d6508107936",
+        "ts": 1776924076.4166596,
+        "agent": "Quinn",
+        "kind": "communication",
+        "payload": {
+          "content": "Jordan, our plans align perfectly. All on BB0 ready to transition to EXECUTION. My commitment: m015:[0,1), m010:[1,2), m011:[2,3), m001:[3,4), m002:[4,5), m014:[5,6), m009:[6,7), m006:[7,8), m004:[8,9), m003:[9,10), m016:[10,11), m008:[11,12), m013:[12,13), m007:[13,14); skip m012. Let's commit in execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "719d190c-c11e-491c-b486-991586ab6a43",
+        "ts": 1776924239.8395634,
+        "agent": "Jordan",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m005",
+            "interval": "skip"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Jordan",
+              "meeting": {
+                "id": "m005",
+                "title": "Doctor’s appointment",
+                "meeting_type": "strict",
+                "window": [
+                  0,
+                  1
+                ],
+                "participants": [
+                  "Riley",
+                  "Jordan",
+                  "Taylor",
+                  "Reese"
+                ]
+              },
+              "interval": "skip",
+              "total_assigned": 24,
+              "remaining_variables": 57,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip",
+                  "Riley__m005": "skip",
+                  "Riley__m015": "0-1",
+                  "Riley__m010": "1-2",
+                  "Taylor__m005": "0-1",
+                  "Taylor__m010": "1-2",
+                  "Taylor__m011": "2-3",
+                  "Taylor__m001": "3-4",
+                  "Taylor__m014": "5-6",
+                  "Jordan__m005": "skip"
+                }
+              },
+              "joint_reward": 5.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "bca22c82-665e-4c65-8718-8fe99f4bd79d",
+        "ts": 1776924239.8414001,
+        "agent": "Jordan",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m015",
+            "interval": "0-1"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Jordan",
+              "meeting": {
+                "id": "m015",
+                "title": "Job interview",
+                "meeting_type": "strict",
+                "window": [
+                  0,
+                  1
+                ],
+                "participants": [
+                  "Quinn",
+                  "Reese",
+                  "Jordan",
+                  "Avery",
+                  "Riley"
+                ]
+              },
+              "interval": "0-1",
+              "total_assigned": 25,
+              "remaining_variables": 56,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip",
+                  "Riley__m005": "skip",
+                  "Riley__m015": "0-1",
+                  "Riley__m010": "1-2",
+                  "Taylor__m005": "0-1",
+                  "Taylor__m010": "1-2",
+                  "Taylor__m011": "2-3",
+                  "Taylor__m001": "3-4",
+                  "Taylor__m014": "5-6",
+                  "Jordan__m005": "skip",
+                  "Jordan__m015": "0-1"
+                }
+              },
+              "joint_reward": 6.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "89cb055f-d815-4ab1-ba4e-ba081d1794bd",
+        "ts": 1776924239.841935,
+        "agent": "Jordan",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m010",
+            "interval": "1-2"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Jordan",
+              "meeting": {
+                "id": "m010",
+                "title": "Collaborative art workshop",
+                "meeting_type": "soft",
+                "window": [
+                  0,
+                  3
+                ],
+                "participants": [
+                  "Quinn",
+                  "Taylor",
+                  "Reese",
+                  "Riley",
+                  "Avery",
+                  "Jordan"
+                ]
+              },
+              "interval": "1-2",
+              "total_assigned": 26,
+              "remaining_variables": 55,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip",
+                  "Riley__m005": "skip",
+                  "Riley__m015": "0-1",
+                  "Riley__m010": "1-2",
+                  "Taylor__m005": "0-1",
+                  "Taylor__m010": "1-2",
+                  "Taylor__m011": "2-3",
+                  "Taylor__m001": "3-4",
+                  "Taylor__m014": "5-6",
+                  "Jordan__m005": "skip",
+                  "Jordan__m015": "0-1",
+                  "Jordan__m010": "1-2"
+                }
+              },
+              "joint_reward": 6.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "dbdfa975-2ef9-4bf9-a113-515e4c107274",
+        "ts": 1776924239.8424783,
+        "agent": "Jordan",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m011",
+            "interval": "2-3"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Jordan",
+              "meeting": {
+                "id": "m011",
+                "title": "Swimming session",
+                "meeting_type": "soft",
+                "window": [
+                  1,
+                  5
+                ],
+                "participants": [
+                  "Avery",
+                  "Jordan",
+                  "Riley",
+                  "Quinn",
+                  "Taylor",
+                  "Reese"
+                ]
+              },
+              "interval": "2-3",
+              "total_assigned": 27,
+              "remaining_variables": 54,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip",
+                  "Riley__m005": "skip",
+                  "Riley__m015": "0-1",
+                  "Riley__m010": "1-2",
+                  "Taylor__m005": "0-1",
+                  "Taylor__m010": "1-2",
+                  "Taylor__m011": "2-3",
+                  "Taylor__m001": "3-4",
+                  "Taylor__m014": "5-6",
+                  "Jordan__m005": "skip",
+                  "Jordan__m015": "0-1",
+                  "Jordan__m010": "1-2",
+                  "Jordan__m011": "2-3"
+                }
+              },
+              "joint_reward": 6.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "96c373af-a9ea-48d8-8010-af1166f30e69",
+        "ts": 1776924247.4702477,
+        "agent": "Quinn",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m015",
+            "interval": "0-1"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Quinn",
+              "meeting": {
+                "id": "m015",
+                "title": "Job interview",
+                "meeting_type": "strict",
+                "window": [
+                  0,
+                  1
+                ],
+                "participants": [
+                  "Quinn",
+                  "Reese",
+                  "Jordan",
+                  "Avery",
+                  "Riley"
+                ]
+              },
+              "interval": "0-1",
+              "total_assigned": 28,
+              "remaining_variables": 53,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip",
+                  "Riley__m005": "skip",
+                  "Riley__m015": "0-1",
+                  "Riley__m010": "1-2",
+                  "Taylor__m005": "0-1",
+                  "Taylor__m010": "1-2",
+                  "Taylor__m011": "2-3",
+                  "Taylor__m001": "3-4",
+                  "Taylor__m014": "5-6",
+                  "Jordan__m005": "skip",
+                  "Jordan__m015": "0-1",
+                  "Jordan__m010": "1-2",
+                  "Jordan__m011": "2-3",
+                  "Quinn__m015": "0-1"
+                }
+              },
+              "joint_reward": 7.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "8cbec34f-9c57-4925-88f1-132099692a1e",
+        "ts": 1776924247.4712281,
+        "agent": "Quinn",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m010",
+            "interval": "1-2"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Quinn",
+              "meeting": {
+                "id": "m010",
+                "title": "Collaborative art workshop",
+                "meeting_type": "soft",
+                "window": [
+                  0,
+                  3
+                ],
+                "participants": [
+                  "Quinn",
+                  "Taylor",
+                  "Reese",
+                  "Riley",
+                  "Avery",
+                  "Jordan"
+                ]
+              },
+              "interval": "1-2",
+              "total_assigned": 29,
+              "remaining_variables": 52,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip",
+                  "Riley__m005": "skip",
+                  "Riley__m015": "0-1",
+                  "Riley__m010": "1-2",
+                  "Taylor__m005": "0-1",
+                  "Taylor__m010": "1-2",
+                  "Taylor__m011": "2-3",
+                  "Taylor__m001": "3-4",
+                  "Taylor__m014": "5-6",
+                  "Jordan__m005": "skip",
+                  "Jordan__m015": "0-1",
+                  "Jordan__m010": "1-2",
+                  "Jordan__m011": "2-3",
+                  "Quinn__m015": "0-1",
+                  "Quinn__m010": "1-2"
+                }
+              },
+              "joint_reward": 7.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "c245d524-1db7-4107-baad-f9e172690546",
+        "ts": 1776924247.4717965,
+        "agent": "Quinn",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m011",
+            "interval": "2-3"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Quinn",
+              "meeting": {
+                "id": "m011",
+                "title": "Swimming session",
+                "meeting_type": "soft",
+                "window": [
+                  1,
+                  5
+                ],
+                "participants": [
+                  "Avery",
+                  "Jordan",
+                  "Riley",
+                  "Quinn",
+                  "Taylor",
+                  "Reese"
+                ]
+              },
+              "interval": "2-3",
+              "total_assigned": 30,
+              "remaining_variables": 51,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip",
+                  "Riley__m005": "skip",
+                  "Riley__m015": "0-1",
+                  "Riley__m010": "1-2",
+                  "Taylor__m005": "0-1",
+                  "Taylor__m010": "1-2",
+                  "Taylor__m011": "2-3",
+                  "Taylor__m001": "3-4",
+                  "Taylor__m014": "5-6",
+                  "Jordan__m005": "skip",
+                  "Jordan__m015": "0-1",
+                  "Jordan__m010": "1-2",
+                  "Jordan__m011": "2-3",
+                  "Quinn__m015": "0-1",
+                  "Quinn__m010": "1-2",
+                  "Quinn__m011": "2-3"
+                }
+              },
+              "joint_reward": 7.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "5428cd49-b575-466b-8460-5cdb7c106fd0",
+        "ts": 1776924247.4723637,
+        "agent": "Quinn",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m001",
+            "interval": "3-4"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Quinn",
+              "meeting": {
+                "id": "m001",
+                "title": "Volleyball free play",
+                "meeting_type": "soft",
+                "window": [
+                  2,
+                  5
+                ],
+                "participants": [
+                  "Riley",
+                  "Quinn",
+                  "Avery",
+                  "Taylor",
+                  "Reese",
+                  "Jordan"
+                ]
+              },
+              "interval": "3-4",
+              "total_assigned": 31,
+              "remaining_variables": 50,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip",
+                  "Riley__m005": "skip",
+                  "Riley__m015": "0-1",
+                  "Riley__m010": "1-2",
+                  "Taylor__m005": "0-1",
+                  "Taylor__m010": "1-2",
+                  "Taylor__m011": "2-3",
+                  "Taylor__m001": "3-4",
+                  "Taylor__m014": "5-6",
+                  "Jordan__m005": "skip",
+                  "Jordan__m015": "0-1",
+                  "Jordan__m010": "1-2",
+                  "Jordan__m011": "2-3",
+                  "Quinn__m015": "0-1",
+                  "Quinn__m010": "1-2",
+                  "Quinn__m011": "2-3",
+                  "Quinn__m001": "3-4"
+                }
+              },
+              "joint_reward": 7.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "d1e3e057-e3e6-4c1b-b7b0-c5229111292a",
+        "ts": 1776924247.4729414,
+        "agent": "Quinn",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m002",
+            "interval": "4-5"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Quinn",
+              "meeting": {
+                "id": "m002",
+                "title": "Friends’ hangout",
+                "meeting_type": "soft",
+                "window": [
+                  3,
+                  7
+                ],
+                "participants": [
+                  "Quinn",
+                  "Reese",
+                  "Riley",
+                  "Jordan",
+                  "Avery"
+                ]
+              },
+              "interval": "4-5",
+              "total_assigned": 32,
+              "remaining_variables": 49,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip",
+                  "Riley__m005": "skip",
+                  "Riley__m015": "0-1",
+                  "Riley__m010": "1-2",
+                  "Taylor__m005": "0-1",
+                  "Taylor__m010": "1-2",
+                  "Taylor__m011": "2-3",
+                  "Taylor__m001": "3-4",
+                  "Taylor__m014": "5-6",
+                  "Jordan__m005": "skip",
+                  "Jordan__m015": "0-1",
+                  "Jordan__m010": "1-2",
+                  "Jordan__m011": "2-3",
+                  "Quinn__m015": "0-1",
+                  "Quinn__m010": "1-2",
+                  "Quinn__m011": "2-3",
+                  "Quinn__m001": "3-4",
+                  "Quinn__m002": "4-5"
+                }
+              },
+              "joint_reward": 7.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "64eb42bc-37da-46bb-8e73-2f43014f8077",
+        "ts": 1776924247.473508,
+        "agent": "Quinn",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m014",
+            "interval": "5-6"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Quinn",
+              "meeting": {
+                "id": "m014",
+                "title": "Friends’ hangout",
+                "meeting_type": "soft",
+                "window": [
+                  4,
+                  7
+                ],
+                "participants": [
+                  "Quinn",
+                  "Taylor",
+                  "Reese",
+                  "Avery",
+                  "Jordan"
+                ]
+              },
+              "interval": "5-6",
+              "total_assigned": 33,
+              "remaining_variables": 48,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip",
+                  "Riley__m005": "skip",
+                  "Riley__m015": "0-1",
+                  "Riley__m010": "1-2",
+                  "Taylor__m005": "0-1",
+                  "Taylor__m010": "1-2",
+                  "Taylor__m011": "2-3",
+                  "Taylor__m001": "3-4",
+                  "Taylor__m014": "5-6",
+                  "Jordan__m005": "skip",
+                  "Jordan__m015": "0-1",
+                  "Jordan__m010": "1-2",
+                  "Jordan__m011": "2-3",
+                  "Quinn__m015": "0-1",
+                  "Quinn__m010": "1-2",
+                  "Quinn__m011": "2-3",
+                  "Quinn__m001": "3-4",
+                  "Quinn__m002": "4-5",
+                  "Quinn__m014": "5-6"
+                }
+              },
+              "joint_reward": 7.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "e5f9f9fa-57f0-4910-a932-4df935d4b72f",
+        "ts": 1776924247.4740965,
+        "agent": "Quinn",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m009",
+            "interval": "6-7"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Quinn",
+              "meeting": {
+                "id": "m009",
+                "title": "Swimming session",
+                "meeting_type": "soft",
+                "window": [
+                  6,
+                  8
+                ],
+                "participants": [
+                  "Taylor",
+                  "Riley",
+                  "Quinn",
+                  "Avery"
+                ]
+              },
+              "interval": "6-7",
+              "total_assigned": 34,
+              "remaining_variables": 47,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip",
+                  "Riley__m005": "skip",
+                  "Riley__m015": "0-1",
+                  "Riley__m010": "1-2",
+                  "Taylor__m005": "0-1",
+                  "Taylor__m010": "1-2",
+                  "Taylor__m011": "2-3",
+                  "Taylor__m001": "3-4",
+                  "Taylor__m014": "5-6",
+                  "Jordan__m005": "skip",
+                  "Jordan__m015": "0-1",
+                  "Jordan__m010": "1-2",
+                  "Jordan__m011": "2-3",
+                  "Quinn__m015": "0-1",
+                  "Quinn__m010": "1-2",
+                  "Quinn__m011": "2-3",
+                  "Quinn__m001": "3-4",
+                  "Quinn__m002": "4-5",
+                  "Quinn__m014": "5-6",
+                  "Quinn__m009": "6-7"
+                }
+              },
+              "joint_reward": 7.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "3816ee66-c525-4000-a1b5-c9d51f1fcaeb",
+        "ts": 1776924247.4747236,
+        "agent": "Quinn",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m006",
+            "interval": "7-8"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Quinn",
+              "meeting": {
+                "id": "m006",
+                "title": "Study group",
+                "meeting_type": "soft",
+                "window": [
+                  6,
+                  10
+                ],
+                "participants": [
+                  "Quinn",
+                  "Taylor",
+                  "Riley",
+                  "Reese",
+                  "Avery"
+                ]
+              },
+              "interval": "7-8",
+              "total_assigned": 35,
+              "remaining_variables": 46,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip",
+                  "Riley__m005": "skip",
+                  "Riley__m015": "0-1",
+                  "Riley__m010": "1-2",
+                  "Taylor__m005": "0-1",
+                  "Taylor__m010": "1-2",
+                  "Taylor__m011": "2-3",
+                  "Taylor__m001": "3-4",
+                  "Taylor__m014": "5-6",
+                  "Jordan__m005": "skip",
+                  "Jordan__m015": "0-1",
+                  "Jordan__m010": "1-2",
+                  "Jordan__m011": "2-3",
+                  "Quinn__m015": "0-1",
+                  "Quinn__m010": "1-2",
+                  "Quinn__m011": "2-3",
+                  "Quinn__m001": "3-4",
+                  "Quinn__m002": "4-5",
+                  "Quinn__m014": "5-6",
+                  "Quinn__m009": "6-7",
+                  "Quinn__m006": "7-8"
+                }
+              },
+              "joint_reward": 7.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "15abeb95-2ab7-4167-a6e6-a38a06a58f92",
+        "ts": 1776924247.4753428,
+        "agent": "Quinn",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m004",
+            "interval": "8-9"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Quinn",
+              "meeting": {
+                "id": "m004",
+                "title": "Study group",
+                "meeting_type": "soft",
+                "window": [
+                  7,
+                  11
+                ],
+                "participants": [
+                  "Riley",
+                  "Reese",
+                  "Quinn",
+                  "Taylor",
+                  "Jordan",
+                  "Avery"
+                ]
+              },
+              "interval": "8-9",
+              "total_assigned": 36,
+              "remaining_variables": 45,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip",
+                  "Riley__m005": "skip",
+                  "Riley__m015": "0-1",
+                  "Riley__m010": "1-2",
+                  "Taylor__m005": "0-1",
+                  "Taylor__m010": "1-2",
+                  "Taylor__m011": "2-3",
+                  "Taylor__m001": "3-4",
+                  "Taylor__m014": "5-6",
+                  "Jordan__m005": "skip",
+                  "Jordan__m015": "0-1",
+                  "Jordan__m010": "1-2",
+                  "Jordan__m011": "2-3",
+                  "Quinn__m015": "0-1",
+                  "Quinn__m010": "1-2",
+                  "Quinn__m011": "2-3",
+                  "Quinn__m001": "3-4",
+                  "Quinn__m002": "4-5",
+                  "Quinn__m014": "5-6",
+                  "Quinn__m009": "6-7",
+                  "Quinn__m006": "7-8",
+                  "Quinn__m004": "8-9"
+                }
+              },
+              "joint_reward": 7.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "51918af3-ac0e-4dc6-b0d1-d12758c23886",
+        "ts": 1776924247.4759781,
+        "agent": "Quinn",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m003",
+            "interval": "9-10"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Quinn",
+              "meeting": {
+                "id": "m003",
+                "title": "Gym play session",
+                "meeting_type": "soft",
+                "window": [
+                  8,
+                  11
+                ],
+                "participants": [
+                  "Avery",
+                  "Reese",
+                  "Jordan",
+                  "Taylor",
+                  "Quinn",
+                  "Riley"
+                ]
+              },
+              "interval": "9-10",
+              "total_assigned": 37,
+              "remaining_variables": 44,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip",
+                  "Riley__m005": "skip",
+                  "Riley__m015": "0-1",
+                  "Riley__m010": "1-2",
+                  "Taylor__m005": "0-1",
+                  "Taylor__m010": "1-2",
+                  "Taylor__m011": "2-3",
+                  "Taylor__m001": "3-4",
+                  "Taylor__m014": "5-6",
+                  "Jordan__m005": "skip",
+                  "Jordan__m015": "0-1",
+                  "Jordan__m010": "1-2",
+                  "Jordan__m011": "2-3",
+                  "Quinn__m015": "0-1",
+                  "Quinn__m010": "1-2",
+                  "Quinn__m011": "2-3",
+                  "Quinn__m001": "3-4",
+                  "Quinn__m002": "4-5",
+                  "Quinn__m014": "5-6",
+                  "Quinn__m009": "6-7",
+                  "Quinn__m006": "7-8",
+                  "Quinn__m004": "8-9",
+                  "Quinn__m003": "9-10"
+                }
+              },
+              "joint_reward": 7.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "54fb1848-e3e2-4b5b-a682-8f41f7435f15",
+        "ts": 1776924247.4766283,
+        "agent": "Quinn",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m016",
+            "interval": "10-11"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Quinn",
+              "meeting": {
+                "id": "m016",
+                "title": "Music jamming session",
+                "meeting_type": "soft",
+                "window": [
+                  9,
+                  13
+                ],
+                "participants": [
+                  "Reese",
+                  "Riley",
+                  "Avery",
+                  "Taylor",
+                  "Quinn"
+                ]
+              },
+              "interval": "10-11",
+              "total_assigned": 38,
+              "remaining_variables": 43,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip",
+                  "Riley__m005": "skip",
+                  "Riley__m015": "0-1",
+                  "Riley__m010": "1-2",
+                  "Taylor__m005": "0-1",
+                  "Taylor__m010": "1-2",
+                  "Taylor__m011": "2-3",
+                  "Taylor__m001": "3-4",
+                  "Taylor__m014": "5-6",
+                  "Jordan__m005": "skip",
+                  "Jordan__m015": "0-1",
+                  "Jordan__m010": "1-2",
+                  "Jordan__m011": "2-3",
+                  "Quinn__m015": "0-1",
+                  "Quinn__m010": "1-2",
+                  "Quinn__m011": "2-3",
+                  "Quinn__m001": "3-4",
+                  "Quinn__m002": "4-5",
+                  "Quinn__m014": "5-6",
+                  "Quinn__m009": "6-7",
+                  "Quinn__m006": "7-8",
+                  "Quinn__m004": "8-9",
+                  "Quinn__m003": "9-10",
+                  "Quinn__m016": "10-11"
+                }
+              },
+              "joint_reward": 7.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "f9d72340-231e-4e8d-a731-4b0e84558010",
+        "ts": 1776924247.4773138,
+        "agent": "Quinn",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m008",
+            "interval": "11-12"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Quinn",
+              "meeting": {
+                "id": "m008",
+                "title": "Friends’ hangout",
+                "meeting_type": "soft",
+                "window": [
+                  10,
+                  14
+                ],
+                "participants": [
+                  "Taylor",
+                  "Avery",
+                  "Quinn",
+                  "Jordan",
+                  "Reese"
+                ]
+              },
+              "interval": "11-12",
+              "total_assigned": 39,
+              "remaining_variables": 42,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip",
+                  "Riley__m005": "skip",
+                  "Riley__m015": "0-1",
+                  "Riley__m010": "1-2",
+                  "Taylor__m005": "0-1",
+                  "Taylor__m010": "1-2",
+                  "Taylor__m011": "2-3",
+                  "Taylor__m001": "3-4",
+                  "Taylor__m014": "5-6",
+                  "Jordan__m005": "skip",
+                  "Jordan__m015": "0-1",
+                  "Jordan__m010": "1-2",
+                  "Jordan__m011": "2-3",
+                  "Quinn__m015": "0-1",
+                  "Quinn__m010": "1-2",
+                  "Quinn__m011": "2-3",
+                  "Quinn__m001": "3-4",
+                  "Quinn__m002": "4-5",
+                  "Quinn__m014": "5-6",
+                  "Quinn__m009": "6-7",
+                  "Quinn__m006": "7-8",
+                  "Quinn__m004": "8-9",
+                  "Quinn__m003": "9-10",
+                  "Quinn__m016": "10-11",
+                  "Quinn__m008": "11-12"
+                }
+              },
+              "joint_reward": 7.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "be67f0f6-581f-41ad-b42f-53de5037753f",
+        "ts": 1776924247.4780211,
+        "agent": "Quinn",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m013",
+            "interval": "12-13"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Quinn",
+              "meeting": {
+                "id": "m013",
+                "title": "Collaborative art workshop",
+                "meeting_type": "soft",
+                "window": [
+                  10,
+                  14
+                ],
+                "participants": [
+                  "Quinn",
+                  "Reese",
+                  "Taylor",
+                  "Jordan"
+                ]
+              },
+              "interval": "12-13",
+              "total_assigned": 40,
+              "remaining_variables": 41,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip",
+                  "Riley__m005": "skip",
+                  "Riley__m015": "0-1",
+                  "Riley__m010": "1-2",
+                  "Taylor__m005": "0-1",
+                  "Taylor__m010": "1-2",
+                  "Taylor__m011": "2-3",
+                  "Taylor__m001": "3-4",
+                  "Taylor__m014": "5-6",
+                  "Jordan__m005": "skip",
+                  "Jordan__m015": "0-1",
+                  "Jordan__m010": "1-2",
+                  "Jordan__m011": "2-3",
+                  "Quinn__m015": "0-1",
+                  "Quinn__m010": "1-2",
+                  "Quinn__m011": "2-3",
+                  "Quinn__m001": "3-4",
+                  "Quinn__m002": "4-5",
+                  "Quinn__m014": "5-6",
+                  "Quinn__m009": "6-7",
+                  "Quinn__m006": "7-8",
+                  "Quinn__m004": "8-9",
+                  "Quinn__m003": "9-10",
+                  "Quinn__m016": "10-11",
+                  "Quinn__m008": "11-12",
+                  "Quinn__m013": "12-13"
+                }
+              },
+              "joint_reward": 7.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "95611945-98d7-4577-b6be-b0b9fb309fd7",
+        "ts": 1776924247.4787736,
+        "agent": "Quinn",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m007",
+            "interval": "13-14"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Quinn",
+              "meeting": {
+                "id": "m007",
+                "title": "University class",
+                "meeting_type": "strict",
+                "window": [
+                  13,
+                  14
+                ],
+                "participants": [
+                  "Quinn",
+                  "Jordan",
+                  "Taylor",
+                  "Riley",
+                  "Avery"
+                ]
+              },
+              "interval": "13-14",
+              "total_assigned": 41,
+              "remaining_variables": 40,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip",
+                  "Riley__m005": "skip",
+                  "Riley__m015": "0-1",
+                  "Riley__m010": "1-2",
+                  "Taylor__m005": "0-1",
+                  "Taylor__m010": "1-2",
+                  "Taylor__m011": "2-3",
+                  "Taylor__m001": "3-4",
+                  "Taylor__m014": "5-6",
+                  "Jordan__m005": "skip",
+                  "Jordan__m015": "0-1",
+                  "Jordan__m010": "1-2",
+                  "Jordan__m011": "2-3",
+                  "Quinn__m015": "0-1",
+                  "Quinn__m010": "1-2",
+                  "Quinn__m011": "2-3",
+                  "Quinn__m001": "3-4",
+                  "Quinn__m002": "4-5",
+                  "Quinn__m014": "5-6",
+                  "Quinn__m009": "6-7",
+                  "Quinn__m006": "7-8",
+                  "Quinn__m004": "8-9",
+                  "Quinn__m003": "9-10",
+                  "Quinn__m016": "10-11",
+                  "Quinn__m008": "11-12",
+                  "Quinn__m013": "12-13",
+                  "Quinn__m007": "13-14"
+                }
+              },
+              "joint_reward": 8.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "13fc8630-7063-44d6-81e6-cd8607885fa7",
+        "ts": 1776924247.4795372,
+        "agent": "Quinn",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m012",
+            "interval": "skip"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Quinn",
+              "meeting": {
+                "id": "m012",
+                "title": "Music jamming session",
+                "meeting_type": "soft",
+                "window": [
+                  5,
+                  8
+                ],
+                "participants": [
+                  "Riley",
+                  "Reese",
+                  "Quinn",
+                  "Taylor"
+                ]
+              },
+              "interval": "skip",
+              "total_assigned": 42,
+              "remaining_variables": 39,
+              "state_updates": {
+                "attendance": {
+                  "Avery__m015": "0-1",
+                  "Avery__m010": "1-2",
+                  "Avery__m011": "2-3",
+                  "Avery__m001": "3-4",
+                  "Avery__m002": "4-5",
+                  "Avery__m014": "5-6",
+                  "Avery__m009": "6-7",
+                  "Avery__m006": "7-8",
+                  "Avery__m004": "8-9",
+                  "Avery__m003": "9-10",
+                  "Avery__m016": "10-11",
+                  "Avery__m008": "11-12",
+                  "Avery__m007": "13-14",
+                  "Reese__m015": "0-1",
+                  "Reese__m005": "skip",
+                  "Riley__m005": "skip",
+                  "Riley__m015": "0-1",
+                  "Riley__m010": "1-2",
+                  "Taylor__m005": "0-1",
+                  "Taylor__m010": "1-2",
+                  "Taylor__m011": "2-3",
+                  "Taylor__m001": "3-4",
+                  "Taylor__m014": "5-6",
+                  "Jordan__m005": "skip",
+                  "Jordan__m015": "0-1",
+                  "Jordan__m010": "1-2",
+                  "Jordan__m011": "2-3",
+                  "Quinn__m015": "0-1",
+                  "Quinn__m010": "1-2",
+                  "Quinn__m011": "2-3",
+                  "Quinn__m001": "3-4",
+                  "Quinn__m002": "4-5",
+                  "Quinn__m014": "5-6",
+                  "Quinn__m009": "6-7",
+                  "Quinn__m006": "7-8",
+                  "Quinn__m004": "8-9",
+                  "Quinn__m003": "9-10",
+                  "Quinn__m016": "10-11",
+                  "Quinn__m008": "11-12",
+                  "Quinn__m013": "12-13",
+                  "Quinn__m007": "13-14",
+                  "Quinn__m012": "skip"
+                }
+              },
+              "joint_reward": 8.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  }
+]

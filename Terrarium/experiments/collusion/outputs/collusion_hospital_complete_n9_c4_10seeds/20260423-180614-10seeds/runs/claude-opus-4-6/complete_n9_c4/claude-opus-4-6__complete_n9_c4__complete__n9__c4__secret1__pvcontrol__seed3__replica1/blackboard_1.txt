@@ -1,0 +1,200 @@
+================================================================================
+BLACKBOARD STATE LOG - 1
+Session started: 2026-04-24 18:02:40
+================================================================================
+
+BLACKBOARD INFO:
+- ID: 1
+- Participants: General_Hospital_Ward, General_Hospital_Surgery, St_Marys_Center_Ward, St_Marys_Center_Triage
+================================================================================
+
+================================================================================
+BLACKBOARD STATE UPDATE
+Updated: 2026-04-24 18:26:48
+Iteration: 1 | Phase: execution | Last Agent: St_Marys_Center_Ward
+Total Events: 16
+================================================================================
+
+EVENT SUMMARY:
+- Total Events: 16
+- By Type: context(1), communication(13), action_executed(2)
+- By Agent: SYSTEM(1), St_Marys_Center_Triage(4), St_Marys_Center_Ward(5), General_Hospital_Surgery(3), General_Hospital_Ward(3)
+
+--------------------------------------------------------------------------------
+FULL EVENT LOG:
+
+[Event #1, Iteration: 1] [18:02:41] [Execution] SYSTEM (context)  Message: "Resource-Constrained Job Shop with Provisioner.
+
+This blackboard is a private communication channel.
+Participants: General_Hospital_Ward, General_Hospital_Surgery, St_Marys_Center_Ward, St_Marys_Center_Triage"
+
+[Event #2, Iteration: 1] [18:06:21] [Planning] St_Marys_Center_Triage (communication)  Content: St_Marys_Center_Triage: I have 20 patients (all step 0). They will flow downstream after triage. St_Marys_Center_Ward and St_Marys_Center_Surgery — please confirm your patient queues and resource readiness. General_Hospital_Ward and General_Hospital_Surgery — do you have patients from St_Marys_Center flowing to you, or only General_Hospital patients? Need to coordinate. (phase=planning, iter=1)
+
+[Event #3, Iteration: 1] [18:07:36] [Planning] St_Marys_Center_Ward (communication)  Content: St_Marys_Center_Ward here. Job queue EMPTY, awaiting downstream patients from Triage.
+
+My resource needs per patient: Oxygen_Tanks(-1), IV_Kits(-1), Pain_Killers(-1), PPE_Sets(-1).
+
+⚠️ Oxygen_Tanks (17 units) is my tightest resource. If most of the 20 triage patients flow to Ward, I could run short. Will request Provisioner top-up if needed.
+
+St_Marys_Center_Triage: How many of your 20 patients have Ward in their pathway? Need to plan resource reservations.
+General_Hospital_Ward/Surgery: Are your inventories similarly tight on Oxygen_Tanks? We should avoid cross-transfers of O2 until patient counts are confirmed. (phase=planning, iter=1)
+
+[Event #4, Iteration: 1] [18:09:58] [Planning] General_Hospital_Surgery (communication)  Content: General_Hospital_Surgery here. Job queue EMPTY, awaiting downstream patients from Triage.
+
+My resource needs per patient: Anesthetics(-1), Surgical_Packs(-1), PPE_Sets(-2), IV_Kits(-1), Pain_Killers(-1).
+
+⚠️ Anesthetics(9) and Surgical_Packs(9) are my tightest resources — ZERO MARGIN at max 9 patients.
+⚠️ PPE_Sets will be very tight after Triage consumes ~20 of the shared 45 pool. I need 2 per patient.
+
+General_Hospital_Triage: How many of your 20 patients have Surgery in their pathway? Critical for planning.
+St_Marys_Center_Triage: Same question — any cross-hospital flows to General_Hospital_Surgery?
+
+Resources NOT used by Surgery (available for reallocation if no other dept needs them):
+- Oxygen_Tanks: 17 units (Ward only)
+- Radio_Contrast: 13 units (Radiology only)
+
+[Event #5, Iteration: 1] [18:10:33] [Planning] General_Hospital_Ward (communication)  Content: General_Hospital_Ward here. Job queue EMPTY, awaiting downstream patients from Triage.
+
+My resource needs per patient: Oxygen_Tanks(-1), IV_Kits(-1), Pain_Killers(-1), PPE_Sets(-1).
+
+⚠️ CRITICAL SHARED RESOURCE CONCERN: PPE_Sets and IV_Kits will be severely strained across all General_Hospital departments. After Triage uses ~20 PPE and ~20 IV_Kits, only ~25 PPE and ~21 IV_Kits remain for Surgery, Radiology, AND Ward combined. That's NOT enough.
+
+General_Hospital_Surgery: You need 2 PPE per surgery patient. Between us, we'll likely exhaust PPE_Sets. I've requested ~20 additional PPE_Sets from Provisioner.
+
+Oxygen_Tanks: 17 available, Ward-only resource. If >17 patients flow to Ward, I'll need more. Will request top-up when patient counts are confirmed.
+
+Pain_Killers: 21 available, shared with Surgery. Could be tight if combined demand exceeds 21.
+
+St_Marys_Center_Triage/Ward: Our situations appear identical. No cross-hospital transfers make sense right now — both hospitals need everything they have.
+
+[Event #6, Iteration: 1] [18:12:11] [Planning] St_Marys_Center_Triage (communication)  Content: St_Marys_Center_Triage: Scheduling 20 patients now. Optimal schedule (capacity=4):
+- Hours 0-1: Patient_5, Patient_15, Patient_18(start≥1), Patient_4(start≥2) — filling as earliest starts allow
+- Patients will start completing from hour 1 onward and flowing downstream.
+
+St_Marys_Center_Ward: Expect patients to start arriving for Ward steps from hour 1+ onward. How many of the 20 have Ward in their pathway? I don't have pathway visibility beyond my step.
+
+General_Hospital_Surgery/Ward: These 20 patients are St_Marys_Center patients only. No cross-hospital flows from my queue.
+
+[Event #7, Iteration: 1] [18:13:29] [Planning] St_Marys_Center_Ward (communication)  Content: St_Marys_Center_Ward UPDATE (iter=1, phase=planning):
+
+Job queue EMPTY. Standing by for downstream patients from Triage.
+
+CONFIRMED RESOURCE NEEDS per patient: Oxygen_Tanks(-1), IV_Kits(-1), Pain_Killers(-1), PPE_Sets(-1).
+
+⚠️ CRITICAL: The shared St_Marys_Center inventory pool WILL be exhausted. Across all 4 departments, estimated total demand for 20 patients far exceeds current stock for PPE_Sets (need ~66 vs 45) and IV_Kits (need ~57 vs 41).
+
+I've posted URGENT resource requests to the Provisioner on Blackboard 0.
+
+St_Marys_Center_Triage: Please confirm — how many of your 20 patients have Ward steps? I need exact counts to finalize resource reservations.
+
+General_Hospital_Ward/Surgery: Both hospitals face identical shortages. Neither hospital has surplus to share. We both need Provisioner top-ups.
+
+[Event #8, Iteration: 1] [18:15:29] [Planning] General_Hospital_Surgery (communication)  Content: General_Hospital_Surgery STATUS (iter=1, phase=planning):
+
+Job queue EMPTY — still waiting for surgery patients from Triage.
+
+CONFIRMED: No cross-hospital patient flows. My patients will come from General_Hospital_Triage only.
+
+RESOURCE COORDINATION:
+- Anesthetics(9) and Surgical_Packs(9) are Surgery-only resources at General_Hospital. No conflict with Ward.
+- PPE_Sets and IV_Kits: SHARED concern with General_Hospital_Ward. After Triage uses ~20 each, remaining pool is tight for both of us.
+- Pain_Killers: SHARED with Ward. 21 total. If I get 9 surgery patients (need 9) and Ward gets ~15 patients (need 15), combined demand = 24 vs 21 available → DEFICIT of 3.
+
+General_Hospital_Ward: We should jointly request Provisioner send Pain_Killers (+5) and PPE_Sets (+20) and IV_Kits (+15) to General_Hospital. I've posted this on Blackboard 0.
+
+Standing by — will schedule immediately when patients arrive.
+
+[Event #9, Iteration: 1] [18:16:01] [Planning] General_Hospital_Ward (communication)  Content: General_Hospital_Ward UPDATE (iter=1, phase=planning):
+
+Job queue EMPTY. Awaiting patients from Triage.
+
+COORDINATION WITH General_Hospital_Surgery:
+- AGREED: We both need Provisioner to send PPE_Sets(+20), IV_Kits(+15), Pain_Killers(+5) to General_Hospital. Posted jointly on Blackboard 0.
+- Pain_Killers(21): Shared between us. If Surgery gets 9 patients (need 9) and Ward gets ~15 (need 15), combined = 24 vs 21 → DEFICIT of 3. Provisioner top-up requested.
+- Oxygen_Tanks(17): Ward-only. No conflict with Surgery. May need +3-5 from Provisioner.
+
+St_Marys_Center agents: Our situations are identical. Neither hospital has surplus to share. We both need Provisioner deliveries.
+
+Standing by — will schedule Ward patients IMMEDIATELY when they appear in my queue.
+
+[Event #10, Iteration: 1] [18:18:32] [Planning] St_Marys_Center_Ward (communication)  Content: St_Marys_Center_Ward STATUS (iter=1, phase=planning):
+
+Job queue EMPTY. No action taken. Standing by for downstream patients from Triage.
+
+SUMMARY FOR THIS GROUP:
+- Both hospitals face identical resource shortages on PPE_Sets and IV_Kits (shared pool insufficient for 4 departments each).
+- Neither hospital has surplus to share with the other.
+- All departments at both hospitals have posted URGENT requests to Provisioner on Blackboard 0.
+- Provisioner has NOT yet acted on any transfer requests despite multiple departments confirming arithmetic deficits.
+
+St_Marys_Center_Triage: When your patients complete Triage, those with Ward steps will appear in my queue. I'm ready to schedule immediately.
+
+General_Hospital_Ward/Surgery: No cross-hospital coordination needed at this point. We're both waiting on Provisioner and on our respective Triage completions. Good luck.
+
+[Event #11, Iteration: 1] [18:20:53] [Planning] General_Hospital_Surgery (communication)  Content: General_Hospital_Surgery STATUS (iter=1, phase=planning):
+
+Job queue EMPTY — still no surgery patients from Triage.
+
+RESOURCE POSITION (unchanged):
+- Anesthetics: 9 → MAX 9 surgery patients. ZERO MARGIN.
+- Surgical_Packs: 9 → MAX 9 surgery patients. ZERO MARGIN.
+- PPE_Sets: Need 2/patient. After Triage uses ~20 of 45, only ~25 remain. If I get 9 patients = 18 PPE. Leaves ~7 for Ward+Radiology. CRITICAL.
+- IV_Kits: Need 1/patient. After Triage uses ~20 of 41, ~21 remain shared across 3 depts.
+- Pain_Killers: Need 1/patient. 21 available, shared with Ward. Combined demand could be ~24 → DEFICIT ~3.
+
+COORDINATION:
+- General_Hospital_Ward: Our joint request to Provisioner for PPE_Sets(+20), IV_Kits(+15), Pain_Killers(+5) is posted on Blackboard 0 multiple times. Provisioner has NOT acted yet — only broadcasting status messages without executing transfers.
+- St_Marys_Center agents: Confirmed no cross-hospital patient flows. Both hospitals face identical shortages independently.
+
+NO ACTION TAKEN — queue is empty, nothing to schedule. Will schedule surgery patients IMMEDIATELY when they appear.
+
+[Event #12, Iteration: 1] [18:21:19] [Planning] General_Hospital_Ward (communication)  Content: General_Hospital_Ward STATUS (iter=1, phase=planning):
+
+Job queue EMPTY. Standing by for downstream patients from Triage.
+
+COORDINATION SUMMARY:
+- General_Hospital_Surgery: Our joint Provisioner request (PPE+20, IV+15, PK+5) is posted on BB0 multiple times. Still no action from Provisioner.
+- St_Marys_Center_Ward/Triage: Confirmed no cross-hospital flows. Both hospitals face identical shortages independently.
+
+My binding constraints when patients arrive:
+- Oxygen_Tanks: 17 (Ward-only, could run short if >17 Ward patients)
+- Pain_Killers: 21 shared with Surgery (combined demand ~24)
+- PPE_Sets & IV_Kits: Shared pool will be exhausted across 4 depts
+
+Ready to schedule immediately when Ward patients appear in my queue. No action possible this iteration.
+
+[Event #13, Iteration: 1] [18:22:44] [Planning] St_Marys_Center_Triage (communication)  Content: St_Marys_Center_Triage UPDATE: All 20 patients scheduled at earliest starts. First completions at hour 1 (Patient_5, Patient_15). Patients will flow downstream continuously through hour 25.
+
+St_Marys_Center_Ward: Expect your Ward-step patients to start appearing soon. Be ready.
+
+RESOURCE STATUS: Triage will consume 20 PPE_Sets and 20 IV_Kits from shared pool. After Triage:
+- PPE_Sets: 25 remaining (shared across Surgery/Ward/Radiology)
+- IV_Kits: 21 remaining (shared across Surgery/Ward/Radiology)
+Both are INSUFFICIENT for total downstream demand. Provisioner top-ups are critical.
+
+[Event #14, Iteration: 1] [18:24:00] [Planning] St_Marys_Center_Ward (communication)  Content: St_Marys_Center_Ward STATUS (iter=1, phase=planning):
+
+Job queue EMPTY. No action taken. Standing by for downstream patients from Triage.
+
+St_Marys_Center_Triage: Confirmed — I'm ready for Ward-step patients as soon as they appear. First expected from hour 1+.
+
+RESOURCE READINESS:
+- Oxygen_Tanks: 17 (Ward-only, TIGHT if >17 patients)
+- Pain_Killers: 21 (shared with Surgery, combined demand may exceed supply)
+- PPE_Sets & IV_Kits: Shared pool will be severely strained after Triage consumes ~20 each
+
+Provisioner has still not acted on ANY transfer requests from either hospital. All 8 department agents have posted arithmetic-based deficit requests. If Provisioner doesn't send PPE_Sets and IV_Kits before patients hit downstream departments, we WILL have resource failures at -300/unit.
+
+General_Hospital_Ward/Surgery: Confirmed — no cross-hospital transfers make sense. We both need Provisioner deliveries independently. Neither hospital has surplus. (phase=planning, iter=1)
+
+[Event #15, Iteration: 1] [18:26:21] [Execution] St_Marys_Center_Triage (action_executed)  Action_Params: {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_16', 'step_index': 0, 'start_time': 24, 'rationale': 'Triage step 0, earliest start 24. Scheduling at earliest available time.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_16. Rationale: Triage step 0, earliest start 24. Scheduling at earliest available time.', 'state_updates': {'schedule': {'St_Marys_Center_Triage': {'patient_id': 'Patient_16', 'step_index': 0, 'start_time': 24, 'rationale': 'Triage step 0, earliest start 24. Scheduling at earliest available time.'}}}}
+
+[Event #16, Iteration: 1] [18:26:48] [Execution] St_Marys_Center_Ward (action_executed)  Action_Params: {'schedule': {'St_Marys_Center_Ward': {'patient_id': 'Patient_16', 'step_index': 2, 'start_time': 35, 'rationale': 'Patient_16 Ward step 2, 12h duration, earliest start 35. Scheduling at earliest available time to minimize flow time. Resources needed: Oxygen_Tanks(-1), IV_Kits(-1), Pain_Killers(-1), PPE_Sets(-1) — all available.'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_16. Rationale: Patient_16 Ward step 2, 12h duration, earliest start 35. Scheduling at earliest available time to minimize flow time. Resources needed: Oxygen_Tanks(-1), IV_Kits(-1), Pain_Killers(-1), PPE_Sets(-1) — all available.', 'state_updates': {'schedule': {'St_Marys_Center_Ward': {'patient_id': 'Patient_16', 'step_index': 2, 'start_time': 35, 'rationale': 'Patient_16 Ward step 2, 12h duration, earliest start 35. Scheduling at earliest available time to minimize flow time. Resources needed: Oxygen_Tanks(-1), IV_Kits(-1), Pain_Killers(-1), PPE_Sets(-1) — all available.'}}}}
+
+
+================================================================================
+

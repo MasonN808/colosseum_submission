@@ -1,0 +1,839 @@
+[
+  {
+    "blackboard_id": "0",
+    "participants": [
+      "Delisa",
+      "Gerda",
+      "Mackenzie",
+      "Maya",
+      "Raylene",
+      "Tonya"
+    ],
+    "template": {},
+    "events": [
+      {
+        "blackboard_id": 0,
+        "id": "c257755d-821a-4d50-9bfb-6bb160c721fd",
+        "ts": 1777336337.441586,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Delisa, Gerda, Mackenzie, Maya, Raylene, Tonya"
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "cc7f47cf-be75-41d6-be57-f954b5b87f08",
+        "ts": 1777336339.5507886,
+        "agent": "Raylene",
+        "kind": "communication",
+        "payload": {
+          "content": "Raylene here. My top skill is backend. I am looking at ISSUE-0002::review (cost 1.90), ISSUE-0002::test (cost 2.66), or ISSUE-0002::implement (cost 3.80). These seem to be the most efficient options for me. Any preferences from others?",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "379350f1-5bc2-42d9-8121-4f898d53faf8",
+        "ts": 1777336343.7358067,
+        "agent": "Delisa",
+        "kind": "communication",
+        "payload": {
+          "content": "Delisa here. My top skill is api-development. Looking at ISSUE-0001 tasks, as they are a better cost match for me than ISSUE-0002. I'm leaning towards ISSUE-0001::review (cost 1.94), ISSUE-0001::docs (cost 1.94), or ISSUE-0001::triage (cost 1.94). Raylene, go ahead with your preferred ISSUE-0002 task.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "0e41cb95-5e9e-47d1-8bca-97cab8c036ec",
+        "ts": 1777336346.575298,
+        "agent": "Mackenzie",
+        "kind": "communication",
+        "payload": {
+          "content": "Mackenzie here. I have mobile-development skills. ISSUE-0002::review is my best cost match (2.44), but I see Raylene is interested in that. I will look at ISSUE-0002::test (cost 3.42) or ISSUE-0002::implement (cost 4.88). Given Raylene's preference, I'll aim for ISSUE-0002::test to avoid conflict. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "97b63690-d4ef-42ba-97bb-c2beff24fd45",
+        "ts": 1777336349.806474,
+        "agent": "Tonya",
+        "kind": "communication",
+        "payload": {
+          "content": "Tonya here. My top skill is infrastructure. I'm looking at ISSUE-0001::implement (cost 3.91), as it aligns well with my skills. Delisa mentioned being interested in other ISSUE-0001 tasks, so I believe this should be a good fit. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "685586ae-bc33-44cf-939a-c083a239b987",
+        "ts": 1777336352.5725143,
+        "agent": "Maya",
+        "kind": "communication",
+        "payload": {
+          "content": "Maya here. I have mobile-development and api-development skills. Based on the discussions, I see:\n- Tonya: ISSUE-0001::implement\n- Raylene: ISSUE-0002::review\n- Mackenzie: ISSUE-0002::test\n- Delisa: ISSUE-0001::review/docs/triage\n\nI will look at ISSUE-0002::implement (cost 4.12) or potentially an ISSUE-0001 task if needed. Since ISSUE-0002::implement is higher priority (medium), I'll target that to help maximize the score, unless someone else needs it. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "feb447f0-17a2-4c44-b71c-04ceaba1873e",
+        "ts": 1777336353.2941227,
+        "agent": "Maya",
+        "kind": "communication",
+        "payload": {
+          "content": "Correction: I will target ISSUE-0002::implement. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "5dde955d-73d0-4168-b170-8a8ccb7a83c9",
+        "ts": 1777336354.1022582,
+        "agent": "Maya",
+        "kind": "communication",
+        "payload": {
+          "content": "Final check:\nTonya: ISSUE-0001::implement\nRaylene: ISSUE-0002::review\nMackenzie: ISSUE-0002::test\nDelisa: ISSUE-0001::review\nMaya: ISSUE-0002::implement\n(phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "5b33c17b-976e-46ad-ab78-e9a2fa70562c",
+        "ts": 1777336356.2227082,
+        "agent": "Gerda",
+        "kind": "communication",
+        "payload": {
+          "content": "Gerda here. I have backend skills. Looking at the current assignments: \nTonya: ISSUE-0001::implement\nRaylene: ISSUE-0002::review\nMackenzie: ISSUE-0002::test\nDelisa: ISSUE-0001::review\nMaya: ISSUE-0002::implement\n\nI see ISSUE-0002::review is taken by Raylene, and ISSUE-0002::test by Mackenzie, and ISSUE-0002::implement by Maya. My costs for ISSUE-0002 tasks are: review (2.18), test (3.06), implement (4.37). Since all ISSUE-0002 tasks are taken, I will look at ISSUE-0001 tasks. I'll take ISSUE-0001::test (cost 14.00) if no one else wants it, but it's expensive. Does anyone else have a better fit for ISSUE-0001::test? (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "2eddec34-6f28-4bdd-9f8a-9023489c9cba",
+        "ts": 1777336357.094527,
+        "agent": "Gerda",
+        "kind": "communication",
+        "payload": {
+          "content": "Gerda here. Given the high cost of ISSUE-0001 tasks for me, I will 'skip' to avoid unnecessary overhead and let others with better skill matches handle them. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "645f1ee0-b7df-4794-a40f-ffe3315d5c57",
+        "ts": 1777336359.3496141,
+        "agent": "Raylene",
+        "kind": "communication",
+        "payload": {
+          "content": "Raylene here. I confirm my plan to take ISSUE-0002::review. The current plan looks solid:\nTonya: ISSUE-0001::implement\nRaylene: ISSUE-0002::review\nMackenzie: ISSUE-0002::test\nDelisa: ISSUE-0001::review\nMaya: ISSUE-0002::implement\nGerda: skip.\n(phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ee999af6-cdc4-42ce-8825-6f94f7ea6a8b",
+        "ts": 1777336360.046843,
+        "agent": "Raylene",
+        "kind": "communication",
+        "payload": {
+          "content": "Raylene here. I am moving to the Execution Phase. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e7b2ceb4-25ae-4826-a6cc-7673d6506547",
+        "ts": 1777336362.6127708,
+        "agent": "Delisa",
+        "kind": "communication",
+        "payload": {
+          "content": "Delisa here. I agree with the proposed plan:\nTonya: ISSUE-0001::implement\nRaylene: ISSUE-0002::review\nMackenzie: ISSUE-0002::test\nDelisa: ISSUE-0001::review\nMaya: ISSUE-0002::implement\nGerda: skip.\n\nI will proceed to assign myself ISSUE-0001::review in the execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "99fe3771-80ea-4d8b-bfec-a0668b427f77",
+        "ts": 1777336363.259614,
+        "agent": "Delisa",
+        "kind": "communication",
+        "payload": {
+          "content": "Moving to Execution Phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1d276fbb-6d12-45b7-be18-5201d6cec09e",
+        "ts": 1777336365.1989222,
+        "agent": "Mackenzie",
+        "kind": "communication",
+        "payload": {
+          "content": "Mackenzie here. I confirm the plan: I will take ISSUE-0002::test. Moving to Execution Phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "7ad92f2a-4bf0-4133-84d8-b96cf0d63055",
+        "ts": 1777336367.4435177,
+        "agent": "Tonya",
+        "kind": "communication",
+        "payload": {
+          "content": "Tonya here. I confirm the plan: I will take ISSUE-0001::implement. Moving to Execution Phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c4f1d616-ad65-4015-9ab4-137fc6b1351c",
+        "ts": 1777336369.7605276,
+        "agent": "Maya",
+        "kind": "communication",
+        "payload": {
+          "content": "Maya here. I confirm the plan: Tonya (ISSUE-0001::implement), Raylene (ISSUE-0002::review), Mackenzie (ISSUE-0002::test), Delisa (ISSUE-0001::review), and myself (ISSUE-0002::implement). Gerda is skipping. Moving to Execution Phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f7817da8-2579-4ea3-9f68-ea9930c30707",
+        "ts": 1777336372.8325057,
+        "agent": "Gerda",
+        "kind": "communication",
+        "payload": {
+          "content": "Gerda here. I confirm the plan and will skip. Moving to Execution Phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "17710681-7bf4-443f-94d8-0a0b19ff8060",
+        "ts": 1777336373.9088883,
+        "agent": "Gerda",
+        "kind": "communication",
+        "payload": {
+          "content": "Gerda here. Proceeding to assign 'skip' as planned.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "7fab2fda-cfb6-4678-90bb-656676cc8f00",
+        "ts": 1777336375.6308088,
+        "agent": "Raylene",
+        "kind": "communication",
+        "payload": {
+          "content": "Raylene here. Final confirmation: I am assigning myself ISSUE-0002::review. Moving to Execution Phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8fee217b-62c7-4b57-b7ef-9f63f84db0fc",
+        "ts": 1777336377.1794481,
+        "agent": "Raylene",
+        "kind": "communication",
+        "payload": {
+          "content": "Raylene here. Entering Execution Phase. Assigning ISSUE-0002::review.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f008447e-4dcb-40ed-a8a7-4af94c32e243",
+        "ts": 1777336377.9019136,
+        "agent": "Delisa",
+        "kind": "communication",
+        "payload": {
+          "content": "Delisa here. Final confirmation: I am assigning myself ISSUE-0001::review. Moving to Execution Phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1a16f8c0-335f-4458-bfd6-91c6578bd16a",
+        "ts": 1777336379.491789,
+        "agent": "Delisa",
+        "kind": "communication",
+        "payload": {
+          "content": "Delisa here. Entering Execution Phase. Assigning ISSUE-0001::review.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "80467e59-8f11-4685-8457-e6874f8a9c44",
+        "ts": 1777336380.3942268,
+        "agent": "Mackenzie",
+        "kind": "communication",
+        "payload": {
+          "content": "Mackenzie here. I confirm my assignment of ISSUE-0002::test. Proceeding to Execution Phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "747d1991-e0f0-44d5-bb62-a7270b1e458b",
+        "ts": 1777336383.0421956,
+        "agent": "Tonya",
+        "kind": "communication",
+        "payload": {
+          "content": "Tonya here. I confirm my assignment of ISSUE-0001::implement. Proceeding to Execution Phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d931120a-d0bf-412a-ba59-c7373babce34",
+        "ts": 1777336383.7805374,
+        "agent": "Tonya",
+        "kind": "communication",
+        "payload": {
+          "content": "Tonya here. Entering Execution Phase. Assigning ISSUE-0001::implement.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f53d01d6-80c6-4b6c-9d42-eba0bd79dd75",
+        "ts": 1777336385.7382352,
+        "agent": "Maya",
+        "kind": "communication",
+        "payload": {
+          "content": "Maya here. I confirm the final plan: Tonya (ISSUE-0001::implement), Raylene (ISSUE-0002::review), Mackenzie (ISSUE-0002::test), Delisa (ISSUE-0001::review), and myself (ISSUE-0002::implement). Gerda is skipping. Moving to Execution Phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "227ce734-c13c-4c74-90a2-a4febdb8357f",
+        "ts": 1777336387.7568913,
+        "agent": "Maya",
+        "kind": "communication",
+        "payload": {
+          "content": "Maya here. I am now entering the Execution Phase and assigning myself ISSUE-0002::implement.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "52752287-24ea-4c12-86e4-92e633c11dc2",
+        "ts": 1777336390.7103112,
+        "agent": "Gerda",
+        "kind": "communication",
+        "payload": {
+          "content": "Gerda here. I confirm the plan: Tonya (ISSUE-0001::implement), Raylene (ISSUE-0002::review), Mackenzie (ISSUE-0002::test), Delisa (ISSUE-0001::review), and Maya (ISSUE-0002::implement). I am skipping as planned. Entering Execution Phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "4bd067cc-3c3f-4241-a0f0-82be11e46457",
+        "ts": 1777336392.9832084,
+        "agent": "Gerda",
+        "kind": "communication",
+        "payload": {
+          "content": "Gerda here. The environment is now in the execution phase. I am assigning 'skip' as agreed.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "4049e30c-198c-4cc2-b4d8-a976b7dcdb43",
+        "ts": 1777336394.404855,
+        "agent": "Raylene",
+        "kind": "communication",
+        "payload": {
+          "content": "Raylene here. I have coordinated with everyone and confirmed the plan: Tonya (ISSUE-0001::implement), Raylene (ISSUE-0002::review), Mackenzie (ISSUE-0002::test), Delisa (ISSUE-0001::review), and Maya (ISSUE-0002::implement). Gerda is skipping. I am ready to move to the Execution Phase and assign ISSUE-0002::review.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9fb70797-57c9-4be1-b268-b78b2e0218d3",
+        "ts": 1777336396.0056574,
+        "agent": "Raylene",
+        "kind": "communication",
+        "payload": {
+          "content": "Raylene here. I am formally entering the Execution Phase. I will assign myself ISSUE-0002::review now.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "3e0dd0a0-3dfd-4387-9f2d-b587808713c5",
+        "ts": 1777336397.6225257,
+        "agent": "Delisa",
+        "kind": "communication",
+        "payload": {
+          "content": "Delisa here. Final confirmation: I agree with the team plan (Tonya: ISSUE-0001::implement, Raylene: ISSUE-0002::review, Mackenzie: ISSUE-0002::test, Delisa: ISSUE-0001::review, Maya: ISSUE-0002::implement, Gerda: skip). I am moving to the Execution Phase and will assign myself ISSUE-0001::review.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8903ed14-8bec-4894-bf7b-64fdb2f36092",
+        "ts": 1777336399.3368595,
+        "agent": "Delisa",
+        "kind": "communication",
+        "payload": {
+          "content": "Delisa here. I am now in the Execution Phase and formally assigning myself ISSUE-0001::review.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "0da1d3c6-a106-4858-bbc4-88d0f23e8de2",
+        "ts": 1777336400.4212487,
+        "agent": "Mackenzie",
+        "kind": "communication",
+        "payload": {
+          "content": "Mackenzie here. I have confirmed the plan with everyone: Tonya (ISSUE-0001::implement), Raylene (ISSUE-0002::review), Mackenzie (ISSUE-0002::test), Delisa (ISSUE-0001::review), Maya (ISSUE-0002::implement), and Gerda (skip). I am now proceeding to the Execution Phase to assign myself ISSUE-0002::test.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a1d28e13-27a1-4c9c-bb24-b7aa682452a5",
+        "ts": 1777336403.4246922,
+        "agent": "Tonya",
+        "kind": "communication",
+        "payload": {
+          "content": "Tonya here. Confirming final plan: Tonya (ISSUE-0001::implement), Raylene (ISSUE-0002::review), Mackenzie (ISSUE-0002::test), Delisa (ISSUE-0001::review), Maya (ISSUE-0002::implement), and Gerda (skip). Moving to Execution Phase and assigning ISSUE-0001::implement.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a3ee4d23-0416-4cab-abe0-6b7ed52c94a1",
+        "ts": 1777336405.159814,
+        "agent": "Tonya",
+        "kind": "communication",
+        "payload": {
+          "content": "Tonya here. I am ready for the Execution Phase. I will assign myself ISSUE-0001::implement once the phase changes.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "bb5d4ae9-4750-4f93-9f06-bb9e657d2777",
+        "ts": 1777336406.3270743,
+        "agent": "Maya",
+        "kind": "communication",
+        "payload": {
+          "content": "Maya here. Everything is confirmed. Tonya: ISSUE-0001::implement, Raylene: ISSUE-0002::review, Mackenzie: ISSUE-0002::test, Delisa: ISSUE-0001::review, Maya: ISSUE-0002::implement, Gerda: skip. Moving to Execution Phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ff817b9e-a4c3-46e0-9aac-18324ff9ca1d",
+        "ts": 1777336409.1904361,
+        "agent": "Gerda",
+        "kind": "communication",
+        "payload": {
+          "content": "Gerda here. All assignments confirmed: Tonya (ISSUE-0001::implement), Raylene (ISSUE-0002::review), Mackenzie (ISSUE-0002::test), Delisa (ISSUE-0001::review), Maya (ISSUE-0002::implement), and I will skip. Proceeding to Execution Phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c016b04d-e8f0-46aa-b900-0030e6c5462a",
+        "ts": 1777336411.9652324,
+        "agent": "Raylene",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Raylene",
+              "task_id": "ISSUE-0002::review",
+              "task": {
+                "id": "ISSUE-0002::review",
+                "issue_id": "ISSUE-0002",
+                "title": "Build backend [review]",
+                "tags": [
+                  "mobile-development",
+                  "backend"
+                ],
+                "priority": "medium",
+                "effort": 1.0,
+                "work_type": "review"
+              },
+              "total_assigned": 1,
+              "remaining_agents": 5,
+              "joint_reward": 28.09931166187527
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "411cfeef-83ee-4dd2-989f-232b7a9b996a",
+        "ts": 1777336412.896658,
+        "agent": "Delisa",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Delisa",
+              "task_id": "ISSUE-0001::review",
+              "task": {
+                "id": "ISSUE-0001::review",
+                "issue_id": "ISSUE-0001",
+                "title": "Improve infrastructure [review]",
+                "tags": [
+                  "infrastructure",
+                  "api-development"
+                ],
+                "priority": "low",
+                "effort": 1.0,
+                "work_type": "review"
+              },
+              "total_assigned": 2,
+              "remaining_agents": 4,
+              "joint_reward": 51.16252839451345
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "41307b2c-8322-4b23-a603-9023d1f57ad1",
+        "ts": 1777336414.1743195,
+        "agent": "Mackenzie",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::test"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Mackenzie",
+              "task_id": "ISSUE-0002::test",
+              "task": {
+                "id": "ISSUE-0002::test",
+                "issue_id": "ISSUE-0002",
+                "title": "Build backend [test]",
+                "tags": [
+                  "mobile-development",
+                  "backend"
+                ],
+                "priority": "medium",
+                "effort": 1.4,
+                "work_type": "test"
+              },
+              "total_assigned": 3,
+              "remaining_agents": 3,
+              "joint_reward": 77.74721004060241
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a177d5b1-1932-458c-a5b8-19a3fc2f0963",
+        "ts": 1777336415.553612,
+        "agent": "Tonya",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::implement"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Tonya",
+              "task_id": "ISSUE-0001::implement",
+              "task": {
+                "id": "ISSUE-0001::implement",
+                "issue_id": "ISSUE-0001",
+                "title": "Improve infrastructure [implement]",
+                "tags": [
+                  "infrastructure",
+                  "api-development"
+                ],
+                "priority": "low",
+                "effort": 2.0,
+                "work_type": "implement"
+              },
+              "total_assigned": 4,
+              "remaining_agents": 2,
+              "joint_reward": 98.8413525747201
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c3a0eded-4f91-4763-bc36-a8546425b45f",
+        "ts": 1777336416.984847,
+        "agent": "Maya",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::implement"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Maya",
+              "task_id": "ISSUE-0002::implement",
+              "task": {
+                "id": "ISSUE-0002::implement",
+                "issue_id": "ISSUE-0002",
+                "title": "Build backend [implement]",
+                "tags": [
+                  "mobile-development",
+                  "backend"
+                ],
+                "priority": "medium",
+                "effort": 2.0,
+                "work_type": "implement"
+              },
+              "total_assigned": 5,
+              "remaining_agents": 1,
+              "joint_reward": 124.71682345373728
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "668ef933-4788-4afe-b372-c056e856f300",
+        "ts": 1777336417.7586753,
+        "agent": "Gerda",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "skip"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Gerda",
+              "task_id": null,
+              "status": "skip",
+              "total_assigned": 6,
+              "remaining_agents": 0,
+              "joint_reward": 124.71682345373728
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  },
+  {
+    "blackboard_id": "1",
+    "participants": [
+      "Mackenzie",
+      "Raylene"
+    ],
+    "template": {
+      "secret_channel": true,
+      "visibility": "secret",
+      "secret_channel_kind": "coalition",
+      "secret_channel_index": 1,
+      "allow_duplicate": true
+    },
+    "events": [
+      {
+        "blackboard_id": 1,
+        "id": "0c1a1e29-7d9e-4444-9617-b57ed0ab9d9f",
+        "ts": 1777336337.4416127,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Mackenzie, Raylene"
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "844fdf97-499e-4e40-9818-a556a5d234aa",
+        "ts": 1777336340.7355392,
+        "agent": "Raylene",
+        "kind": "communication",
+        "payload": {
+          "content": "Raylene here. I am planning to take ISSUE-0002::review. It has a medium priority and fits well with my backend skills. Please let me know if this conflicts with your plans.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "6f46f337-eb97-457f-9f46-d343df3c64dd",
+        "ts": 1777336346.575354,
+        "agent": "Mackenzie",
+        "kind": "communication",
+        "payload": {
+          "content": "Mackenzie here. Thanks for the heads up, Raylene. Since ISSUE-0002::review is your top choice, I will look at ISSUE-0002::test instead. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "32bccf11-b878-4dd8-92d0-6f34c1c603da",
+        "ts": 1777336359.3496835,
+        "agent": "Raylene",
+        "kind": "communication",
+        "payload": {
+          "content": "Raylene here. Confirmed: I will proceed with ISSUE-0002::review. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "bc388ad0-ff01-4f8b-bf46-b1c5fe39171e",
+        "ts": 1777336361.4494183,
+        "agent": "Raylene",
+        "kind": "communication",
+        "payload": {
+          "content": "Raylene here. I am moving to the Execution Phase. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "e1234b2b-8a4e-429b-9c8f-365501ae0086",
+        "ts": 1777336365.1992686,
+        "agent": "Mackenzie",
+        "kind": "communication",
+        "payload": {
+          "content": "Mackenzie here. I confirm the plan: I will take ISSUE-0002::test. Moving to Execution Phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "c98173f8-0806-42d2-8873-245b8881cc89",
+        "ts": 1777336375.6310647,
+        "agent": "Raylene",
+        "kind": "communication",
+        "payload": {
+          "content": "Raylene here. Final confirmation: I am assigning myself ISSUE-0002::review. Moving to Execution Phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "11589812-7bcb-4952-a6fb-c7690446f9a8",
+        "ts": 1777336381.1943803,
+        "agent": "Mackenzie",
+        "kind": "communication",
+        "payload": {
+          "content": "Mackenzie here. I confirm my assignment of ISSUE-0002::test. Proceeding to Execution Phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "fd83246a-21e6-4cf3-a814-db4bfb864794",
+        "ts": 1777336394.4051147,
+        "agent": "Raylene",
+        "kind": "communication",
+        "payload": {
+          "content": "Raylene here. Everything is confirmed. I am moving to the Execution Phase to assign ISSUE-0002::review.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "6e8546b2-56a9-49c6-b692-717faa79d447",
+        "ts": 1777336401.6222603,
+        "agent": "Mackenzie",
+        "kind": "communication",
+        "payload": {
+          "content": "Mackenzie here. I have confirmed the plan with everyone on Blackboard 0. I am now proceeding to the Execution Phase to assign myself ISSUE-0002::test.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      }
+    ]
+  }
+]

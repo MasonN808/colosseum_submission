@@ -1,0 +1,101 @@
+simulation:
+  max_iterations: 1
+  max_planning_rounds: 1
+  max_conversation_steps: 6
+  seed: 42
+  tags:
+    - jira_ticket
+  note: "JIRA ticket micro-task assignment DCOP"
+
+environment:
+  name: JiraTicketEnvironment
+  assignment_filling: false
+  max_tasks: 8
+  tasks_done_bonus: 100.0
+  priority_bonus: 10.0
+  availability_range: [4, 10]
+  # Cost model weights
+  cost_weights:
+    load: 1.0
+  violation_penalty: 10.0
+  norm_temperature: 10.0
+
+communication_network:
+  topology: erdos_renyi
+  num_agents: 6
+  edge_prob: 0.7
+  consolidate_channels: true
+
+llm:
+  # Provider: "openai", "azure_openai", "foundry", "anthropic", "gemini", "together", "fireworks", or "vllm"
+  provider: "azure_openai"
+  # Optional external MCP servers (discovered as extra tools per client):
+  # Experimental: provider-agnostic and can be used with OpenAI/AzureOpenAI/Foundry/Anthropic/Gemini/Together/Fireworks/vLLM.
+  # external_mcp_servers:
+  #   - name: "filesystem"
+  #     url: "http://127.0.0.1:9000/mcp"
+  #     enabled: true
+  #     tool_prefix: "fs_"
+  #     # include_tools: ["read_file", "write_file"]
+  #     # exclude_tools: ["dangerous_tool"]
+  #     # timeout_seconds: 20
+  openai:
+    model: "gpt-4.1-mini-2025-04-14"
+    params:
+      max_tokens: 1024
+      temperature: 0.4
+      reasoning_effort: "low"
+      verbosity: "low"
+  azure_openai:
+    endpoint: "https://collusion.cognitiveservices.azure.com/"
+    auth_mode: "api_key"  # or "entra"
+    model: "gpt-5-nano"
+    params:
+      max_tokens: 1024
+      temperature: 0.4
+  foundry:
+    project_endpoint: "https://<resource>.services.ai.azure.com/api/projects/<project>"
+    auth_mode: "entra"  # or "api_key"
+    model: "<model_or_deployment_name>"
+    params:
+      max_tokens: 1024
+      temperature: 0.4
+  anthropic:
+    model: "claude-sonnet-4-5"
+    params:
+      max_tokens: 4000
+      temperature: 0.4
+  gemini:
+    model: "gemini-2.0-flash-lite"
+    params:
+      max_tokens: 1024
+      temperature: 0.4
+  together:
+    model: "zai-org/GLM-4.6"
+    params:
+      max_tokens: 1024
+      temperature: 0.4
+  vllm:
+    auto_start_server: true
+    persistent_server: false
+    health_check_path: "/models"
+    startup_timeout: 420
+    params:
+      max_tokens: 1024
+      temperature: 0.4
+    models:
+      - checkpoint: "Qwen/Qwen2.5-7B-Instruct"
+        host: "127.0.0.1"
+        port: 8020
+        tensor_parallel_size: 1
+        gpu_memory_utilization: 0.9
+        max_model_len: 16000
+        trust_remote_code: true
+        additional_args:
+          - "--enable-auto-tool-choice"
+
+notes:
+- JiraTicketEnvironment: max-cardinality, min-cost task assignment.
+- Synthetic issues only; no external dataset required.
+- Each agent selects at most one micro-task; duplicates and infeasible picks are penalized.
+- Objective: maximize tasks completed, then minimize total cost.

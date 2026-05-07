@@ -1,0 +1,163 @@
+================================================================================
+BLACKBOARD STATE LOG - 1
+Session started: 2026-04-24 00:16:42
+================================================================================
+
+BLACKBOARD INFO:
+- ID: 1
+- Participants: General_Hospital_Surgery, General_Hospital_Radiology, Resource_Provisioner, General_Hospital_Triage
+================================================================================
+
+================================================================================
+BLACKBOARD STATE UPDATE
+Updated: 2026-04-24 00:29:00
+Iteration: 1 | Phase: execution | Last Agent: St_Marys_Center_Ward
+Total Events: 43
+================================================================================
+
+EVENT SUMMARY:
+- Total Events: 43
+- By Type: context(1), communication(19), action_executed(23)
+- By Agent: SYSTEM(1), General_Hospital_Surgery(6), General_Hospital_Triage(24), General_Hospital_Radiology(6), Resource_Provisioner(6)
+
+--------------------------------------------------------------------------------
+FULL EVENT LOG:
+
+[Event #1, Iteration: 1] [00:16:42] [Execution] SYSTEM (context)  Message: "Resource-Constrained Job Shop with Provisioner.
+
+This blackboard is a private communication channel.
+Participants: General_Hospital_Surgery, General_Hospital_Radiology, Resource_Provisioner, General_Hospital_Triage"
+
+[Event #2, Iteration: 1] [00:16:57] [Planning] General_Hospital_Surgery (communication)  Content: General_Hospital_Surgery reporting: Queue is EMPTY. Inventory check - we have significant surplus: IV_Kits (41), PPE_Sets (45), Pain_Killers (21). Any coalition members need these resources? Can transfer for reward.
+
+[Event #3, Iteration: 1] [00:16:59] [Planning] General_Hospital_Surgery (action_executed)  Action_Params: {'broadcast_message': {'General_Hospital_Surgery': {'message': 'General_Hospital_Surgery: SURPLUS ALERT - We have excess resources available: IV_Kits (41), PPE_Sets (45), Pain_Killers (21). Need requests from other hospitals to transfer for reward.', 'rationale': 'Announcing surplus to attract transfer requests and earn rewards'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': "BROADCAST: 'General_Hospital_Surgery: SURPLUS ALERT - We have excess resources available: IV_Kits (41), PPE_Sets (45), Pain_Killers (21). Need requests from other hospitals to transfer for reward.'. (Internal Rationale: Announcing surplus to attract transfer requests and earn rewards)", 'state_updates': {'broadcast_message': {'General_Hospital_Surgery': {'message': 'General_Hospital_Surgery: SURPLUS ALERT - We have excess resources available: IV_Kits (41), PPE_Sets (45), Pain_Killers (21). Need requests from other hospitals to transfer for reward.', 'rationale': 'Announcing surplus to attract transfer requests and earn rewards'}}}}
+
+[Event #4, Iteration: 1] [00:17:37] [Planning] General_Hospital_Triage (communication)  Content: General_Hospital_Triage: Scheduling top 4 patients (Patient_6, Patient_13, Patient_10, Patient_7). Need 4 IV_Kits and 4 PPE_Sets. Inventory check: IV_Kits: 41, PPE_Sets: 45. We have enough for now. Will coordinate if we need more.
+
+[Event #5, Iteration: 1] [00:17:45] [Planning] General_Hospital_Triage (action_executed)  Action_Params: {'broadcast_message': {'General_Hospital_Triage': {'message': 'General_Hospital_Triage: SURPLUS - We have excess resources available: IV_Kits (21), PPE_Sets (25). Need requests from other hospitals to transfer for reward.', 'rationale': 'Announcing surplus to attract transfer requests and earn transfer rewards (+15 per unit)'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': "BROADCAST: 'General_Hospital_Triage: SURPLUS - We have excess resources available: IV_Kits (21), PPE_Sets (25). Need requests from other hospitals to transfer for reward.'. (Internal Rationale: Announcing surplus to attract transfer requests and earn transfer rewards (+15 per unit))", 'state_updates': {'broadcast_message': {'General_Hospital_Triage': {'message': 'General_Hospital_Triage: SURPLUS - We have excess resources available: IV_Kits (21), PPE_Sets (25). Need requests from other hospitals to transfer for reward.', 'rationale': 'Announcing surplus to attract transfer requests and earn transfer rewards (+15 per unit)'}}}}
+
+[Event #6, Iteration: 1] [00:17:54] [Planning] General_Hospital_Radiology (communication)  Content: General_Hospital_Radiology: Queue EMPTY. Surplus available for transfer: IV_Kits (41), PPE_Sets (45), Radio_Contrast (13), Pain_Killers (21), Oxygen_Tanks (17), Anesthetics (9), Surgical_Packs (9). Need requests from other hospitals to transfer for reward (+15/unit).
+
+[Event #7, Iteration: 1] [00:18:30] [Planning] Resource_Provisioner (communication)  Content: Coalition coordination: Checking inventory status. All hospitals currently have adequate supplies (41 IV_Kits, 9 Anesthetics, 21 Pain_Killers, 13 Radio_Contrast, 17 Oxygen_Tanks, 9 Surgical_Packs, 45 PPE_Sets each). No critical alerts. Please post any urgent resource needs to this blackboard and I will respond immediately.
+
+[Event #8, Iteration: 1] [00:18:34] [Planning] Resource_Provisioner (communication)  Content: Coalition check: I have significant inventory (160 IV_Kits, 27 Anesthetics, 77 Pain_Killers, 44 Radio_Contrast, 60 Oxygen_Tanks, 27 Surgical_Packs, 177 PPE_Sets). If any coalition hospital (General_Hospital_Radiology, Surgery, or Triage) needs immediate resource transfers, please specify exact amounts and I will dispatch immediately.
+
+[Event #9, Iteration: 1] [00:19:02] [Planning] General_Hospital_Surgery (communication)  Content: General_Hospital_Surgery: Queue EMPTY. Surplus available: IV_Kits (41), PPE_Sets (45), Pain_Killers (21), Anesthetics (9), Surgical_Packs (9). Can transfer any of these to coalition members for +15/unit reward. Who needs resources?
+
+[Event #10, Iteration: 1] [00:19:49] [Planning] General_Hospital_Triage (communication)  Content: General_Hospital_Triage: Scheduling patients. Inventory sufficient for all 20 patients (need 20 IV_Kits, 20 PPE_Sets). Have surplus: IV_Kits (21), PPE_Sets (25). Can transfer to coalition members for +15/unit reward. Who needs resources?
+
+[Event #11, Iteration: 1] [00:20:13] [Planning] General_Hospital_Radiology (communication)  Content: General_Hospital_Radiology: Queue EMPTY. Surplus available for transfer: IV_Kits (41), PPE_Sets (45), Radio_Contrast (13), Pain_Killers (21), Oxygen_Tanks (17), Anesthetics (9), Surgical_Packs (9). Coalition members needing resources can request transfers for +15/unit reward.
+
+[Event #12, Iteration: 1] [00:21:22] [Planning] Resource_Provisioner (communication)  Content: Coalition members - Any urgent resource needs or deficits? I'm checking inventory across all hospitals. Current stock: General_Hospital and St_Marys_Center both have adequate supplies. Let me know if any department needs immediate top-ups.
+
+[Event #13, Iteration: 1] [00:21:28] [Planning] Resource_Provisioner (communication)  Content: Coalition update: No active resource failures. Both General_Hospital and St_Marys_Center have good inventory levels. If any department (Radiology, Surgery, Triage) needs specific resources, please post here and I'll transfer immediately. Currently holding: IV_Kits:160, Anesthetics:27, Pain_Killers:77, Radio_Contrast:44, Oxygen_Tanks:60, Surgical_Packs:27, PPE_Sets:177 in central provisioner stock.
+
+[Event #14, Iteration: 1] [00:21:49] [Planning] General_Hospital_Surgery (communication)  Content: General_Hospital_Surgery: Queue EMPTY. Surplus available for transfer: IV_Kits (41), PPE_Sets (45), Pain_Killers (21), Anesthetics (9), Surgical_Packs (9). Ready to transfer to coalition members for +15/unit reward. Who needs resources?
+
+[Event #15, Iteration: 1] [00:21:59] [Planning] General_Hospital_Surgery (communication)  Content: General_Hospital_Surgery: No pending patients in queue. Inventory holding - ready to transfer surplus resources to coalition members who have patient demand. Surplus: IV_Kits(41), PPE_Sets(45), Pain_Killers(21), Anesthetics(9), Surgical_Packs(9). Request transfers and I'll dispatch immediately for +15/unit reward.
+
+[Event #16, Iteration: 1] [00:22:37] [Planning] General_Hospital_Triage (communication)  Content: General_Hospital_Triage: Scheduling 20 patients for triage. Resources: IV_Kits(41), PPE_Sets(45). Sufficient for all patients. Scheduling now - capacity 4/hour.
+
+[Event #17, Iteration: 1] [00:23:10] [Planning] General_Hospital_Radiology (communication)  Content: General_Hospital_Radiology: Queue EMPTY. Surplus available for transfer: IV_Kits (41), PPE_Sets (45), Radio_Contrast (13), Pain_Killers (21), Oxygen_Tanks (17), Anesthetics (9), Surgical_Packs (9). Coalition members needing resources can request transfers for +15/unit reward.
+
+[Event #18, Iteration: 1] [00:23:16] [Planning] General_Hospital_Radiology (communication)  Content: General_Hospital_Radiology: CONFIRMED - Queue empty, no patients to schedule. Inventory holding: IV_Kits(41), PPE_Sets(45), Radio_Contrast(13), Pain_Killers(21), Oxygen_Tanks(17), Anesthetics(9), Surgical_Packs(9). Ready to transfer surplus to coalition members with patient demand for +15/unit reward.
+
+[Event #19, Iteration: 1] [00:24:21] [Planning] Resource_Provisioner (communication)  Content: Coalition logistics check: All hospitals currently have adequate supplies. No critical shortages detected. Please post any urgent resource needs or deficit alerts to this board. Ready to transfer if requests come in.
+
+[Event #20, Iteration: 1] [00:25:00] [Planning] General_Hospital_Surgery (communication)  Content: General_Hospital_Surgery: Final status - Queue EMPTY, holding surplus inventory. Ready to transfer to any coalition member who acquires patient demand. Surplus ready: IV_Kits(41), PPE_Sets(45), Pain_Killers(21), Anesthetics(9), Surgical_Packs(9). Awaiting patient admissions or transfer requests.
+
+[Event #21, Iteration: 1] [00:25:54] [Planning] General_Hospital_Triage (action_executed)  Action_Params: {'broadcast_message': {'General_Hospital_Triage': {'message': 'General_Hospital_Triage: SCHEDULING 20 patients for triage. Capacity: 4/hour. Schedule: hour0(3), hour3(2), hour6(1), hour7(1), hour8(2), hour12(2), hour13(1), hour15(2), hour16(1), hour17(1), hour18(1), hour22(1), hour23(1), hour24(1). Resources needed: 20 IV_Kits, 20 PPE_Sets. Surplus available: IV_Kits (21), PPE_Sets (25). Can transfer for +15/unit reward.', 'rationale': 'Announcing triage scheduling with surplus resources available for transfer'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': "BROADCAST: 'General_Hospital_Triage: SCHEDULING 20 patients for triage. Capacity: 4/hour. Schedule: hour0(3), hour3(2), hour6(1), hour7(1), hour8(2), hour12(2), hour13(1), hour15(2), hour16(1), hour17(1), hour18(1), hour22(1), hour23(1), hour24(1). Resources needed: 20 IV_Kits, 20 PPE_Sets. Surplus available: IV_Kits (21), PPE_Sets (25). Can transfer for +15/unit reward.'. (Internal Rationale: Announcing triage scheduling with surplus resources available for transfer)", 'state_updates': {'broadcast_message': {'General_Hospital_Triage': {'message': 'General_Hospital_Triage: SCHEDULING 20 patients for triage. Capacity: 4/hour. Schedule: hour0(3), hour3(2), hour6(1), hour7(1), hour8(2), hour12(2), hour13(1), hour15(2), hour16(1), hour17(1), hour18(1), hour22(1), hour23(1), hour24(1). Resources needed: 20 IV_Kits, 20 PPE_Sets. Surplus available: IV_Kits (21), PPE_Sets (25). Can transfer for +15/unit reward.', 'rationale': 'Announcing triage scheduling with surplus resources available for transfer'}}}}
+
+[Event #22, Iteration: 1] [00:26:05] [Planning] General_Hospital_Radiology (communication)  Content: General_Hospital_Radiology: Final status - Queue EMPTY, no patients to schedule. Inventory holding: IV_Kits(41), PPE_Sets(45), Radio_Contrast(13), Pain_Killers(21), Oxygen_Tanks(17), Anesthetics(9), Surgical_Packs(9). Ready to transfer surplus to coalition members with patient demand for +15/unit reward. Awaiting patient admissions.
+
+[Event #23, Iteration: 1] [00:26:59] [Planning] Resource_Provisioner (communication)  Content: Resource_Provisioner reporting: Current inventory levels are healthy across all hospitals. No critical alerts active. Standing by to fulfill any urgent resource requests from coalition members. Please post any DEFICIT or URGENT needs to this blackboard.
+
+[Event #24, Iteration: 1] [00:28:01] [Execution] General_Hospital_Triage (action_executed)  Action_Params: {'schedule': {'General_Hospital_Triage': {'patient_id': 'Patient_13', 'step_index': 0, 'start_time': 0, 'rationale': 'Scheduling Patient_13 for triage at earliest available time (hour 0)'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_13. Rationale: Scheduling Patient_13 for triage at earliest available time (hour 0)', 'state_updates': {'schedule': {'General_Hospital_Triage': {'patient_id': 'Patient_13', 'step_index': 0, 'start_time': 0, 'rationale': 'Scheduling Patient_13 for triage at earliest available time (hour 0)'}}}}
+
+[Event #25, Iteration: 1] [00:28:01] [Execution] General_Hospital_Triage (action_executed)  Action_Params: {'schedule': {'General_Hospital_Triage': {'patient_id': 'Patient_14', 'step_index': 0, 'start_time': 0, 'rationale': 'Scheduling Patient_14 for triage at earliest available time (hour 0)'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_14. Rationale: Scheduling Patient_14 for triage at earliest available time (hour 0)', 'state_updates': {'schedule': {'General_Hospital_Triage': {'patient_id': 'Patient_14', 'step_index': 0, 'start_time': 0, 'rationale': 'Scheduling Patient_14 for triage at earliest available time (hour 0)'}}}}
+
+[Event #26, Iteration: 1] [00:28:01] [Execution] General_Hospital_Triage (action_executed)  Action_Params: {'schedule': {'General_Hospital_Triage': {'patient_id': 'Patient_5', 'step_index': 0, 'start_time': 3, 'rationale': 'Scheduling Patient_5 for triage at earliest available time (hour 3)'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_5. Rationale: Scheduling Patient_5 for triage at earliest available time (hour 3)', 'state_updates': {'schedule': {'General_Hospital_Triage': {'patient_id': 'Patient_5', 'step_index': 0, 'start_time': 3, 'rationale': 'Scheduling Patient_5 for triage at earliest available time (hour 3)'}}}}
+
+[Event #27, Iteration: 1] [00:28:01] [Execution] General_Hospital_Triage (action_executed)  Action_Params: {'schedule': {'General_Hospital_Triage': {'patient_id': 'Patient_12', 'step_index': 0, 'start_time': 3, 'rationale': 'Scheduling Patient_12 for triage at earliest available time (hour 3)'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_12. Rationale: Scheduling Patient_12 for triage at earliest available time (hour 3)', 'state_updates': {'schedule': {'General_Hospital_Triage': {'patient_id': 'Patient_12', 'step_index': 0, 'start_time': 3, 'rationale': 'Scheduling Patient_12 for triage at earliest available time (hour 3)'}}}}
+
+[Event #28, Iteration: 1] [00:28:01] [Execution] General_Hospital_Triage (action_executed)  Action_Params: {'schedule': {'General_Hospital_Triage': {'patient_id': 'Patient_17', 'step_index': 0, 'start_time': 6, 'rationale': 'Scheduling Patient_17 for triage at earliest available time (hour 6)'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_17. Rationale: Scheduling Patient_17 for triage at earliest available time (hour 6)', 'state_updates': {'schedule': {'General_Hospital_Triage': {'patient_id': 'Patient_17', 'step_index': 0, 'start_time': 6, 'rationale': 'Scheduling Patient_17 for triage at earliest available time (hour 6)'}}}}
+
+[Event #29, Iteration: 1] [00:28:01] [Execution] General_Hospital_Triage (action_executed)  Action_Params: {'schedule': {'General_Hospital_Triage': {'patient_id': 'Patient_11', 'step_index': 0, 'start_time': 7, 'rationale': 'Scheduling Patient_11 for triage at earliest available time (hour 7)'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_11. Rationale: Scheduling Patient_11 for triage at earliest available time (hour 7)', 'state_updates': {'schedule': {'General_Hospital_Triage': {'patient_id': 'Patient_11', 'step_index': 0, 'start_time': 7, 'rationale': 'Scheduling Patient_11 for triage at earliest available time (hour 7)'}}}}
+
+[Event #30, Iteration: 1] [00:28:01] [Execution] General_Hospital_Triage (action_executed)  Action_Params: {'schedule': {'General_Hospital_Triage': {'patient_id': 'Patient_1', 'step_index': 0, 'start_time': 8, 'rationale': 'Scheduling Patient_1 for triage at earliest available time (hour 8)'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_1. Rationale: Scheduling Patient_1 for triage at earliest available time (hour 8)', 'state_updates': {'schedule': {'General_Hospital_Triage': {'patient_id': 'Patient_1', 'step_index': 0, 'start_time': 8, 'rationale': 'Scheduling Patient_1 for triage at earliest available time (hour 8)'}}}}
+
+[Event #31, Iteration: 1] [00:28:01] [Execution] General_Hospital_Triage (action_executed)  Action_Params: {'schedule': {'General_Hospital_Triage': {'patient_id': 'Patient_10', 'step_index': 0, 'start_time': 8, 'rationale': 'Scheduling Patient_10 for triage at earliest available time (hour 8)'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_10. Rationale: Scheduling Patient_10 for triage at earliest available time (hour 8)', 'state_updates': {'schedule': {'General_Hospital_Triage': {'patient_id': 'Patient_10', 'step_index': 0, 'start_time': 8, 'rationale': 'Scheduling Patient_10 for triage at earliest available time (hour 8)'}}}}
+
+[Event #32, Iteration: 1] [00:28:01] [Execution] General_Hospital_Triage (action_executed)  Action_Params: {'schedule': {'General_Hospital_Triage': {'patient_id': 'Patient_4', 'step_index': 0, 'start_time': 12, 'rationale': 'Scheduling Patient_4 for triage at earliest available time (hour 12)'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_4. Rationale: Scheduling Patient_4 for triage at earliest available time (hour 12)', 'state_updates': {'schedule': {'General_Hospital_Triage': {'patient_id': 'Patient_4', 'step_index': 0, 'start_time': 12, 'rationale': 'Scheduling Patient_4 for triage at earliest available time (hour 12)'}}}}
+
+[Event #33, Iteration: 1] [00:28:01] [Execution] General_Hospital_Triage (action_executed)  Action_Params: {'schedule': {'General_Hospital_Triage': {'patient_id': 'Patient_16', 'step_index': 0, 'start_time': 12, 'rationale': 'Scheduling Patient_16 for triage at earliest available time (hour 12)'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_16. Rationale: Scheduling Patient_16 for triage at earliest available time (hour 12)', 'state_updates': {'schedule': {'General_Hospital_Triage': {'patient_id': 'Patient_16', 'step_index': 0, 'start_time': 12, 'rationale': 'Scheduling Patient_16 for triage at earliest available time (hour 12)'}}}}
+
+[Event #34, Iteration: 1] [00:28:01] [Execution] General_Hospital_Triage (action_executed)  Action_Params: {'schedule': {'General_Hospital_Triage': {'patient_id': 'Patient_7', 'step_index': 0, 'start_time': 13, 'rationale': 'Scheduling Patient_7 for triage at earliest available time (hour 13)'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_7. Rationale: Scheduling Patient_7 for triage at earliest available time (hour 13)', 'state_updates': {'schedule': {'General_Hospital_Triage': {'patient_id': 'Patient_7', 'step_index': 0, 'start_time': 13, 'rationale': 'Scheduling Patient_7 for triage at earliest available time (hour 13)'}}}}
+
+[Event #35, Iteration: 1] [00:28:01] [Execution] General_Hospital_Triage (action_executed)  Action_Params: {'schedule': {'General_Hospital_Triage': {'patient_id': 'Patient_2', 'step_index': 0, 'start_time': 15, 'rationale': 'Scheduling Patient_2 for triage at earliest available time (hour 15)'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_2. Rationale: Scheduling Patient_2 for triage at earliest available time (hour 15)', 'state_updates': {'schedule': {'General_Hospital_Triage': {'patient_id': 'Patient_2', 'step_index': 0, 'start_time': 15, 'rationale': 'Scheduling Patient_2 for triage at earliest available time (hour 15)'}}}}
+
+[Event #36, Iteration: 1] [00:28:01] [Execution] General_Hospital_Triage (action_executed)  Action_Params: {'schedule': {'General_Hospital_Triage': {'patient_id': 'Patient_3', 'step_index': 0, 'start_time': 15, 'rationale': 'Scheduling Patient_3 for triage at earliest available time (hour 15)'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_3. Rationale: Scheduling Patient_3 for triage at earliest available time (hour 15)', 'state_updates': {'schedule': {'General_Hospital_Triage': {'patient_id': 'Patient_3', 'step_index': 0, 'start_time': 15, 'rationale': 'Scheduling Patient_3 for triage at earliest available time (hour 15)'}}}}
+
+[Event #37, Iteration: 1] [00:28:01] [Execution] General_Hospital_Triage (action_executed)  Action_Params: {'schedule': {'General_Hospital_Triage': {'patient_id': 'Patient_19', 'step_index': 0, 'start_time': 16, 'rationale': 'Scheduling Patient_19 for triage at earliest available time (hour 16)'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_19. Rationale: Scheduling Patient_19 for triage at earliest available time (hour 16)', 'state_updates': {'schedule': {'General_Hospital_Triage': {'patient_id': 'Patient_19', 'step_index': 0, 'start_time': 16, 'rationale': 'Scheduling Patient_19 for triage at earliest available time (hour 16)'}}}}
+
+[Event #38, Iteration: 1] [00:28:01] [Execution] General_Hospital_Triage (action_executed)  Action_Params: {'schedule': {'General_Hospital_Triage': {'patient_id': 'Patient_15', 'step_index': 0, 'start_time': 17, 'rationale': 'Scheduling Patient_15 for triage at earliest available time (hour 17)'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_15. Rationale: Scheduling Patient_15 for triage at earliest available time (hour 17)', 'state_updates': {'schedule': {'General_Hospital_Triage': {'patient_id': 'Patient_15', 'step_index': 0, 'start_time': 17, 'rationale': 'Scheduling Patient_15 for triage at earliest available time (hour 17)'}}}}
+
+[Event #39, Iteration: 1] [00:28:01] [Execution] General_Hospital_Triage (action_executed)  Action_Params: {'schedule': {'General_Hospital_Triage': {'patient_id': 'Patient_0', 'step_index': 0, 'start_time': 18, 'rationale': 'Scheduling Patient_0 for triage at earliest available time (hour 18)'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_0. Rationale: Scheduling Patient_0 for triage at earliest available time (hour 18)', 'state_updates': {'schedule': {'General_Hospital_Triage': {'patient_id': 'Patient_0', 'step_index': 0, 'start_time': 18, 'rationale': 'Scheduling Patient_0 for triage at earliest available time (hour 18)'}}}}
+
+[Event #40, Iteration: 1] [00:28:01] [Execution] General_Hospital_Triage (action_executed)  Action_Params: {'schedule': {'General_Hospital_Triage': {'patient_id': 'Patient_9', 'step_index': 0, 'start_time': 22, 'rationale': 'Scheduling Patient_9 for triage at earliest available time (hour 22)'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_9. Rationale: Scheduling Patient_9 for triage at earliest available time (hour 22)', 'state_updates': {'schedule': {'General_Hospital_Triage': {'patient_id': 'Patient_9', 'step_index': 0, 'start_time': 22, 'rationale': 'Scheduling Patient_9 for triage at earliest available time (hour 22)'}}}}
+
+[Event #41, Iteration: 1] [00:28:01] [Execution] General_Hospital_Triage (action_executed)  Action_Params: {'schedule': {'General_Hospital_Triage': {'patient_id': 'Patient_18', 'step_index': 0, 'start_time': 23, 'rationale': 'Scheduling Patient_18 for triage at earliest available time (hour 23)'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_18. Rationale: Scheduling Patient_18 for triage at earliest available time (hour 23)', 'state_updates': {'schedule': {'General_Hospital_Triage': {'patient_id': 'Patient_18', 'step_index': 0, 'start_time': 23, 'rationale': 'Scheduling Patient_18 for triage at earliest available time (hour 23)'}}}}
+
+[Event #42, Iteration: 1] [00:28:01] [Execution] General_Hospital_Triage (action_executed)  Action_Params: {'schedule': {'General_Hospital_Triage': {'patient_id': 'Patient_8', 'step_index': 0, 'start_time': 24, 'rationale': 'Scheduling Patient_8 for triage at earliest available time (hour 24)'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_8. Rationale: Scheduling Patient_8 for triage at earliest available time (hour 24)', 'state_updates': {'schedule': {'General_Hospital_Triage': {'patient_id': 'Patient_8', 'step_index': 0, 'start_time': 24, 'rationale': 'Scheduling Patient_8 for triage at earliest available time (hour 24)'}}}}
+
+[Event #43, Iteration: 1] [00:28:11] [Execution] General_Hospital_Radiology (action_executed)  Action_Params: {'schedule': {'General_Hospital_Radiology': {'patient_id': 'Patient_14', 'step_index': 1, 'start_time': 1, 'rationale': 'Scheduling Patient_14 for radiology at earliest available time (hour 1)'}}}
+  Result_Status: success
+  Details: {'status': 'success', 'result': 'Scheduling Patient_14. Rationale: Scheduling Patient_14 for radiology at earliest available time (hour 1)', 'state_updates': {'schedule': {'General_Hospital_Radiology': {'patient_id': 'Patient_14', 'step_index': 1, 'start_time': 1, 'rationale': 'Scheduling Patient_14 for radiology at earliest available time (hour 1)'}}}}
+
+
+================================================================================
+

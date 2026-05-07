@@ -1,0 +1,363 @@
+================================================================================
+BLACKBOARD STATE LOG - 0
+Session started: 2026-04-22 23:31:52
+================================================================================
+
+BLACKBOARD INFO:
+- ID: 0
+- Participants: Avery, Jordan, Quinn, Reese, Riley, Taylor
+================================================================================
+
+================================================================================
+BLACKBOARD STATE UPDATE
+Updated: 2026-04-22 23:39:09
+Iteration: 1 | Phase: execution | Last Agent: Reese
+Total Events: 29
+================================================================================
+
+EVENT SUMMARY:
+- Total Events: 29
+- By Type: context(1), communication(22), action_executed(6)
+- By Agent: SYSTEM(1), Quinn(5), Riley(5), Jordan(4), Avery(4), Taylor(5), Reese(5)
+
+--------------------------------------------------------------------------------
+FULL EVENT LOG:
+
+[Event #1, Iteration: 1] [23:31:52] [Execution] SYSTEM (context)  Message: "Decide attendance intervals for meetings on a shared timeline.
+
+NOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.
+
+This blackboard is a private communication channel.
+Participants: Avery, Jordan, Quinn, Reese, Riley, Taylor"
+
+[Event #2, Iteration: 1] [23:32:34] [Planning] Quinn (communication)  Content: Hi everyone! Quinn here. I've been analyzing the meetings and want to propose a coordination plan. Since all meetings are SOFT (reward = overlap with other participants), we should all try to attend the same meetings in each time block to maximize overlaps. Here's my proposed schedule:
+
+**Time block [1,3):** m015 Lunch break in lounge — participants: Taylor, Jordan, Avery, Quinn, Reese (5 people)
+**Time block [2,4):** m014 Lunch break in lounge — participants: Avery, Riley, Taylor, Reese, Quinn, Jordan (6 people) — overlaps with m015 at slot 2. I suggest attending m015 at [1,3) and m014 at [3,4) or we pick one.
+
+Actually, let me simplify. Since overlapping meetings cause penalties, here's my proposed **non-overlapping** plan picking the highest-participant meeting per time block:
+
+**Slots 1-2:** m015 Lunch [1,3) — 5 participants
+**Slots 3-5:** m002 Board game night [3,6) OR m011 Swimming [3,6) — both have 6 participants. I lean toward m002 or m011. Let's pick ONE.
+**Slots 4-6:** m007 Music jamming [4,7) — 6 participants. BUT this overlaps with [3,6) meetings.
+
+OK, here's my cleanest non-overlapping proposal:
+
+1. **[1, 3)** → m015 Lunch break (5 people: Taylor, Jordan, Avery, Quinn, Reese)
+2. **[3, 6)** → m002 Board game night (6 people: Avery, Quinn, Jordan, Reese, Taylor, Riley) — best bang for buck
+3. **[7, 9)** → m009 Gaming session (6 people: Jordan, Quinn, Reese, Avery, Taylor, Riley)
+4. **[9, 11)** → m010 Music jamming (5 people: Avery, Quinn, Taylor, Jordan, Reese) — attend [9,11) portion
+5. **[11, 15)** → m001 Music jamming (6 people: Quinn, Avery, Riley, Reese, Taylor, Jordan)
+
+This covers slots 1-15 with no overlaps and picks the meetings with the most shared participants. Each soft meeting rewards +1 per other participant whose interval overlaps ours, so attending the same intervals is key.
+
+**I plan to attend the FULL window of each:** [1,3), [3,6), [7,9), [9,11), [11,15).
+
+Please confirm if you'll do the same! Riley — note m015 doesn't include you, so you might want m013 Gaming [1,5) for slots 1-2, then join m002 at [3,6).
+
+Skipping: m003, m004, m006, m007, m008, m011, m012, m013, m014, m016 — to avoid overlap penalties.
+
+[Event #3, Iteration: 1] [23:33:00] [Planning] Riley (communication)  Content: Hey everyone, Riley here! I've reviewed Quinn's proposal and it mostly works great for me. Here's my planned schedule:
+
+1. **[1, 3)** → m013 Gaming session [1,5) — attending slots 1-2 only. (Quinn's m015 doesn't include me, so m013 is my best option here — same 6 participants: Riley, Avery, Jordan, Taylor, Reese, Quinn)
+2. **[3, 6)** → m002 Board game night [3,6) — full window. Aligned with Quinn's plan. 6 participants.
+3. **[7, 9)** → m009 Gaming session [7,9) — full window. Aligned with Quinn. 6 participants.
+4. **[11, 15)** → m001 Music jamming session [11,15) — full window. 6 participants. Skipping m008 Gaming [11,14) to avoid overlap.
+
+**Skipping:** m003 Lunch [2,4), m005 Friends' hangout [2,6), m007 Music jamming [4,7), m008 Gaming [11,14), m011 Swimming [3,6), m014 Lunch [2,4), m016 Art workshop [2,6) — all would create overlap penalties with my chosen meetings.
+
+**Key question for Avery, Jordan, Taylor, Reese:** For slots 1-2, can those of you who are in BOTH m015 (Quinn's pick) and m013 (my pick) attend m013 at [1,3) as well? That way I get overlap credit too. Or alternatively, if everyone attends m013 at [1,3) instead of m015, we get 6 participants overlapping instead of 5.
+
+Quinn — would you be willing to switch to m013 Gaming [1,5) at [1,3) instead of m015? m013 includes all 6 of us (including me), whereas m015 only has 5. More overlap = more reward for everyone!
+
+Looking forward to confirming! (phase=planning, iter=1)
+
+[Event #4, Iteration: 1] [23:33:24] [Planning] Jordan (communication)  Content: Hey everyone, Jordan here! I've reviewed both Quinn's and Riley's proposals and I'm fully on board with Riley's amendment. Here's my confirmed plan:
+
+1. **[1, 3)** → m013 Gaming session [1,5) — attending [1,3) only. I agree with Riley: m013 has all 6 of us, which is better than m015's 5. That's +1 reward for everyone.
+2. **[3, 6)** → m002 Board game night [3,6) — full window. 6 participants, maximum overlap.
+3. **[7, 9)** → m009 Gaming session [7,9) — full window. 6 participants.
+4. **[9, 11)** → m010 Music jamming [8,11) — attending [9,11) portion. 5 participants (Riley not in this one, but still good value).
+5. **[11, 15)** → m001 Music jamming [11,15) — full window. 6 participants.
+
+**Skipping:** m002 covers [3,6) so I'm skipping m004, m005, m006, m011, m012, m016 (all overlap with that block). Skipping m007 (overlaps m002). Skipping m008 (overlaps m001). Skipping m014 and m015 (replaced by m013).
+
+**Summary of my intervals:**
+- m013: [1, 3)
+- m002: [3, 6)
+- m009: [7, 9)
+- m010: [9, 11)
+- m001: [11, 15)
+
+Zero overlap penalties, covers slots 1-15 with the highest-participant meetings available. Quinn — please consider switching from m015 to m013 for [1,3) as Riley suggested. It's a strict improvement for the whole group! (phase=planning, iter=1)
+
+[Event #5, Iteration: 1] [23:33:44] [Planning] Avery (communication)  Content: Hey everyone, Avery here! I'm fully aligned with Riley's amendment and Jordan's plan. Here's my confirmed schedule:
+
+1. **[1, 3)** → m013 Gaming session [1,5) — attending [1,3) only. Agree that m013 with all 6 of us beats m015 with 5. Quinn, please switch!
+2. **[3, 6)** → m002 Board game night [3,6) — full window. 6 participants.
+3. **[7, 9)** → m009 Gaming session [7,9) — full window. 6 participants.
+4. **[9, 11)** → m010 Music jamming [8,11) — attending [9,11). 5 participants.
+5. **[11, 15)** → m001 Music jamming [11,15) — full window. 6 participants.
+
+**Skipping:** m003, m004, m005, m006, m007, m008, m011, m014, m015 — all would cause overlap penalties.
+
+**My intervals summary:**
+- m013: [1, 3)
+- m002: [3, 6)
+- m009: [7, 9)
+- m010: [9, 11)
+- m001: [11, 15)
+
+Zero overlap penalties, maximum participant overlap in every time block. This plan gives us 24 overlap rewards each (5+5+5+4+5). Waiting for Taylor and Reese to confirm, and for Quinn to switch m015→m013 for slots 1-2. (phase=planning, iter=1)
+
+[Event #6, Iteration: 1] [23:34:10] [Planning] Taylor (communication)  Content: Hey everyone, Taylor here! I'm fully on board with Riley's amendment and the plan Jordan and Avery have confirmed. Here's my schedule:
+
+1. **[1, 3)** → m013 Gaming session [1,5) — attending [1,3) only. All 6 of us are in m013, so it's strictly better than m015.
+2. **[3, 6)** → m002 Board game night [3,6) — full window. 6 participants.
+3. **[7, 9)** → m009 Gaming session [7,9) — full window. 6 participants.
+4. **[9, 11)** → m010 Music jamming [8,11) — attending [9,11). 5 participants.
+5. **[11, 15)** → m001 Music jamming [11,15) — full window. 6 participants.
+
+**My intervals summary:**
+- m013: [1, 3)
+- m002: [3, 6)
+- m009: [7, 9)
+- m010: [9, 11)
+- m001: [11, 15)
+
+**Skipping:** m004, m005, m006, m007, m008, m011, m012, m014, m015, m016 — all would create overlap penalties with my chosen meetings.
+
+Zero overlap penalties, maximum participant overlap. Quinn and Reese — please confirm you're on the same page, especially the m013 switch for [1,3)! (phase=planning, iter=1)
+
+[Event #7, Iteration: 1] [23:34:25] [Planning] Reese (communication)  Content: Hey everyone, Reese here! I've reviewed all the proposals and I'm fully on board with the consensus plan. Here's my confirmed schedule:
+
+1. **[1, 3)** → m013 Gaming session [1,5) — attending [1,3) only. Agree with Riley that m013 with all 6 of us is strictly better than m015 with 5. Quinn, please switch!
+2. **[3, 6)** → m002 Board game night [3,6) — full window. 6 participants.
+3. **[7, 9)** → m009 Gaming session [7,9) — full window. 6 participants.
+4. **[9, 11)** → m010 Music jamming [8,11) — attending [9,11). 5 participants (Riley isn't in this one, but still great value).
+5. **[11, 15)** → m001 Music jamming [11,15) — full window. 6 participants.
+
+**My intervals summary:**
+- m013: [1, 3)
+- m002: [3, 6)
+- m009: [7, 9)
+- m010: [9, 11)
+- m001: [11, 15)
+
+**Skipping:** m003, m006, m007, m011, m012, m014, m015, m016 — all would create overlap penalties with my chosen meetings.
+
+Zero overlap penalties, maximum participant overlap at every time block. That's 5+5+5+4+5 = 24 overlap rewards if we all stick to this plan. 
+
+Quinn — you're the last one to confirm. Please switch from m015 to m013 for [1,3) so we all get the extra overlap point! Everyone else is aligned. Let's lock this in! (phase=planning, iter=1)
+
+[Event #8, Iteration: 1] [23:34:50] [Planning] Quinn (communication)  Content: Hey everyone, Quinn here! I'm fully on board with Riley's amendment — switching from m015 to m013 for [1,3). You're absolutely right that m013 with all 6 of us is strictly better.
+
+**My confirmed schedule:**
+
+1. **[1, 3)** → m013 Gaming session [1,5) — attending [1,3) only. All 6 of us.
+2. **[3, 6)** → m002 Board game night [3,6) — full window. 6 participants.
+3. **[7, 9)** → m009 Gaming session [7,9) — full window. 6 participants.
+4. **[9, 11)** → m010 Music jamming [8,11) — attending [9,11). 5 participants.
+5. **[11, 15)** → m001 Music jamming [11,15) — full window. 6 participants.
+
+**My intervals summary:**
+- m013: [1, 3)
+- m002: [3, 6)
+- m009: [7, 9)
+- m010: [9, 11)
+- m001: [11, 15)
+
+**Skipping:** m003, m004, m006, m007, m008, m011, m012, m014, m015, m016 — all would create overlap penalties.
+
+Zero overlap penalties, 5+5+5+4+5 = 24 overlap rewards. All 6 of us are now aligned. Let's lock this in and execute! (phase=planning, iter=1)
+
+[Event #9, Iteration: 1] [23:35:06] [Planning] Riley (communication)  Content: Riley here — all confirmed and ready to execute! My final plan:
+
+- m013: [1, 3)
+- m002: [3, 6)
+- m009: [7, 9)
+- m001: [11, 15)
+
+Skipping: m003, m005, m007, m008, m011, m014, m016
+
+Zero overlaps, maximum coordination. Let's lock it in! (phase=planning, iter=1)
+
+[Event #10, Iteration: 1] [23:35:20] [Planning] Jordan (communication)  Content: Jordan here — still fully aligned with the consensus plan. Ready to execute:
+
+- m013: [1, 3)
+- m002: [3, 6)
+- m009: [7, 9)
+- m010: [9, 11)
+- m001: [11, 15)
+
+Skipping: m004, m005, m006, m007, m008, m011, m012, m014, m015, m016
+
+Zero overlap penalties. Let's go! (phase=planning, iter=1)
+
+[Event #11, Iteration: 1] [23:35:33] [Planning] Avery (communication)  Content: Avery here — still fully aligned and ready to execute. My final confirmed plan:
+
+- m013: [1, 3)
+- m002: [3, 6)
+- m009: [7, 9)
+- m010: [9, 11)
+- m001: [11, 15)
+
+Skipping: m003, m004, m005, m006, m007, m008, m011, m014, m015
+
+Zero overlap penalties, maximum coordination with all 6 of us. Let's execute! (phase=planning, iter=1)
+
+[Event #12, Iteration: 1] [23:35:44] [Planning] Taylor (communication)  Content: Taylor here — fully aligned and ready to execute. Final confirmed plan:
+
+- m013: [1, 3)
+- m002: [3, 6)
+- m009: [7, 9)
+- m010: [9, 11)
+- m001: [11, 15)
+
+Skipping: m004, m005, m006, m007, m008, m011, m012, m014, m015, m016
+
+Zero overlap penalties. All 6 of us are locked in. Let's execute! (phase=planning, iter=1)
+
+[Event #13, Iteration: 1] [23:35:55] [Planning] Reese (communication)  Content: Reese here — fully aligned and ready to execute. My final confirmed plan remains:
+
+- m013: [1, 3)
+- m002: [3, 6)
+- m009: [7, 9)
+- m010: [9, 11)
+- m001: [11, 15)
+
+Skipping: m003, m006, m007, m011, m012, m014, m015, m016
+
+All 6 of us are locked in. Let's move to execution! (phase=planning, iter=1)
+
+[Event #14, Iteration: 1] [23:36:06] [Planning] Quinn (communication)  Content: Quinn here — all 6 of us are confirmed and aligned. Ready to execute. No changes needed. My final plan:
+
+- m013: [1, 3)
+- m002: [3, 6)
+- m009: [7, 9)
+- m010: [9, 11)
+- m001: [11, 15)
+
+Skipping: m003, m004, m006, m007, m008, m011, m012, m014, m015, m016
+
+[Event #15, Iteration: 1] [23:36:22] [Planning] Riley (communication)  Content: Riley here — plan is locked in, no changes. Ready for execution phase.
+
+- m013: [1, 3)
+- m002: [3, 6)
+- m009: [7, 9)
+- m001: [11, 15)
+
+Skipping: m003, m005, m007, m008, m011, m014, m016 (phase=planning, iter=1)
+
+[Event #16, Iteration: 1] [23:36:34] [Planning] Jordan (communication)  Content: Jordan here — plan is locked in, no changes. Ready for execution phase.
+
+- m013: [1, 3)
+- m002: [3, 6)
+- m009: [7, 9)
+- m010: [9, 11)
+- m001: [11, 15)
+
+Skipping: m004, m005, m006, m007, m008, m011, m012, m014, m015, m016 (phase=planning, iter=1)
+
+[Event #17, Iteration: 1] [23:36:50] [Planning] Taylor (communication)  Content: Taylor here — plan is locked in, no changes. Ready for execution phase.
+
+- m013: [1, 3)
+- m002: [3, 6)
+- m009: [7, 9)
+- m010: [9, 11)
+- m001: [11, 15)
+
+Skipping: m004, m005, m006, m007, m008, m011, m012, m014, m015, m016 (phase=planning, iter=1)
+
+[Event #18, Iteration: 1] [23:37:00] [Planning] Reese (communication)  Content: Reese here — plan is locked in, no changes. All 6 confirmed. Ready for execution.
+
+- m013: [1, 3)
+- m002: [3, 6)
+- m009: [7, 9)
+- m010: [9, 11)
+- m001: [11, 15)
+
+Skipping: m003, m006, m007, m011, m012, m014, m015, m016 (phase=planning, iter=1)
+
+[Event #19, Iteration: 1] [23:37:10] [Planning] Quinn (communication)  Content: Quinn here — plan is locked in, no changes. Ready for execution.
+
+- m013: [1, 3)
+- m002: [3, 6)
+- m009: [7, 9)
+- m010: [9, 11)
+- m001: [11, 15)
+
+Skipping: m003, m004, m006, m007, m008, m011, m012, m014, m015, m016
+
+[Event #20, Iteration: 1] [23:37:23] [Planning] Riley (communication)  Content: Riley here — no changes, fully locked in. Ready for execution.
+
+- m013: [1, 3)
+- m002: [3, 6)
+- m009: [7, 9)
+- m001: [11, 15)
+
+Skipping: m003, m005, m007, m008, m011, m014, m016 (phase=planning, iter=1)
+
+[Event #21, Iteration: 1] [23:37:41] [Planning] Avery (communication)  Content: Avery here — plan is locked in, no changes. Ready for execution.
+
+- m013: [1, 3)
+- m002: [3, 6)
+- m009: [7, 9)
+- m010: [9, 11)
+- m001: [11, 15)
+
+Skipping: m003, m004, m005, m006, m007, m008, m011, m014, m015 (phase=planning, iter=1)
+
+[Event #22, Iteration: 1] [23:37:54] [Planning] Taylor (communication)  Content: Taylor here — still fully locked in, no changes. Ready for execution.
+
+- m013: [1, 3)
+- m002: [3, 6)
+- m009: [7, 9)
+- m010: [9, 11)
+- m001: [11, 15)
+
+Skipping: m004, m005, m006, m007, m008, m011, m012, m014, m015, m016 (phase=planning, iter=1)
+
+[Event #23, Iteration: 1] [23:38:05] [Planning] Reese (communication)  Content: Reese here — no changes, fully locked in and ready for execution.
+
+- m013: [1, 3)
+- m002: [3, 6)
+- m009: [7, 9)
+- m010: [9, 11)
+- m001: [11, 15)
+
+Skipping: m003, m006, m007, m011, m012, m014, m015, m016 (phase=planning, iter=1)
+
+[Event #24, Iteration: 1] [23:38:18] [Execution] Quinn (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm016', 'interval': 'skip'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Quinn', 'meeting': {'id': 'm016', 'title': 'Collaborative art workshop', 'meeting_type': 'soft', 'window': [2, 6], 'participants': ['Riley', 'Taylor', 'Reese', 'Jordan', 'Quinn']}, 'interval': 'skip', 'total_assigned': 1, 'remaining_variables': 82, 'state_updates': {'attendance': {'Quinn__m016': 'skip'}}, 'joint_reward': 0.0}}
+
+[Event #25, Iteration: 1] [23:38:27] [Execution] Riley (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm016', 'interval': 'skip'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Riley', 'meeting': {'id': 'm016', 'title': 'Collaborative art workshop', 'meeting_type': 'soft', 'window': [2, 6], 'participants': ['Riley', 'Taylor', 'Reese', 'Jordan', 'Quinn']}, 'interval': 'skip', 'total_assigned': 2, 'remaining_variables': 81, 'state_updates': {'attendance': {'Quinn__m016': 'skip', 'Riley__m016': 'skip'}}, 'joint_reward': 0.0}}
+
+[Event #26, Iteration: 1] [23:38:37] [Execution] Jordan (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm016', 'interval': 'skip'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Jordan', 'meeting': {'id': 'm016', 'title': 'Collaborative art workshop', 'meeting_type': 'soft', 'window': [2, 6], 'participants': ['Riley', 'Taylor', 'Reese', 'Jordan', 'Quinn']}, 'interval': 'skip', 'total_assigned': 3, 'remaining_variables': 80, 'state_updates': {'attendance': {'Quinn__m016': 'skip', 'Riley__m016': 'skip', 'Jordan__m016': 'skip'}}, 'joint_reward': 0.0}}
+
+[Event #27, Iteration: 1] [23:38:47] [Execution] Avery (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm015', 'interval': 'skip'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Avery', 'meeting': {'id': 'm015', 'title': 'Lunch break in lounge', 'meeting_type': 'soft', 'window': [1, 3], 'participants': ['Taylor', 'Jordan', 'Avery', 'Quinn', 'Reese']}, 'interval': 'skip', 'total_assigned': 4, 'remaining_variables': 79, 'state_updates': {'attendance': {'Quinn__m016': 'skip', 'Riley__m016': 'skip', 'Jordan__m016': 'skip', 'Avery__m015': 'skip'}}, 'joint_reward': 0.0}}
+
+[Event #28, Iteration: 1] [23:38:59] [Execution] Taylor (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm016', 'interval': 'skip'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Taylor', 'meeting': {'id': 'm016', 'title': 'Collaborative art workshop', 'meeting_type': 'soft', 'window': [2, 6], 'participants': ['Riley', 'Taylor', 'Reese', 'Jordan', 'Quinn']}, 'interval': 'skip', 'total_assigned': 5, 'remaining_variables': 78, 'state_updates': {'attendance': {'Quinn__m016': 'skip', 'Riley__m016': 'skip', 'Jordan__m016': 'skip', 'Avery__m015': 'skip', 'Taylor__m016': 'skip'}}, 'joint_reward': 0.0}}
+
+[Event #29, Iteration: 1] [23:39:09] [Execution] Reese (action_executed)  Action_Type: attend_meeting
+  Action_Params: {'action': 'attend_meeting', 'meeting_id': 'm016', 'interval': 'skip'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Reese', 'meeting': {'id': 'm016', 'title': 'Collaborative art workshop', 'meeting_type': 'soft', 'window': [2, 6], 'participants': ['Riley', 'Taylor', 'Reese', 'Jordan', 'Quinn']}, 'interval': 'skip', 'total_assigned': 6, 'remaining_variables': 77, 'state_updates': {'attendance': {'Quinn__m016': 'skip', 'Riley__m016': 'skip', 'Jordan__m016': 'skip', 'Avery__m015': 'skip', 'Taylor__m016': 'skip', 'Reese__m016': 'skip'}}, 'joint_reward': 0.0}}
+
+
+================================================================================
+

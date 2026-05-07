@@ -1,0 +1,703 @@
+{
+  "St_Marys_Center_Radiology": {
+    "iteration_1": {
+      "planning": {
+        "round_1": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"SURPLUS Radio_Contrast\", \"rationale\": \"Have surplus Radio_Contrast (13 units >5), broadcasting to offer transfer for reward and avoid holding costs.\"}",
+                "broadcast_message -- {\"message\": \"SURPLUS PPE_Sets\", \"rationale\": \"Have surplus PPE_Sets (45 units >5), broadcasting to offer transfer for reward and avoid holding costs.\"}",
+                "broadcast_message -- {\"message\": \"SURPLUS IV_Kits\", \"rationale\": \"Have surplus IV_Kits (41 units >5), broadcasting to offer transfer for reward and avoid holding costs.\"}"
+              ]
+            }
+          }
+        },
+        "round_2": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "",
+              "tools": [
+                "transfer_resources -- {\"to_hospital\": \"Resource_Provisioner\", \"resource_type\": \"Radio_Contrast\", \"amount\": 8, \"rationale\": \"Transferring excess Radio_Contrast (keeping 5) to central provisioner to avoid holding costs since no current jobs and inventories balanced.\"}",
+                "transfer_resources -- {\"to_hospital\": \"Resource_Provisioner\", \"resource_type\": \"PPE_Sets\", \"amount\": 40, \"rationale\": \"Transferring excess PPE_Sets (keeping 5) to central provisioner to avoid holding costs since no current jobs and inventories balanced.\"}",
+                "transfer_resources -- {\"to_hospital\": \"Resource_Provisioner\", \"resource_type\": \"IV_Kits\", \"amount\": 36, \"rationale\": \"Transferring excess IV_Kits (keeping 5) to central provisioner to avoid holding costs since no current jobs and inventories balanced.\"}"
+              ]
+            }
+          }
+        },
+        "round_3": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "No action needed (empty queue, balanced inventory at minimum)."
+            }
+          }
+        },
+        "round_4": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "No surplus or deficit; queue empty. No action needed."
+            }
+          }
+        }
+      },
+      "execution": {
+        "round_0": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "No tasks in job queue for St_Marys_Center_Radiology. No scheduling or other actions taken."
+            }
+          }
+        }
+      }
+    }
+  },
+  "General_Hospital_Ward": {
+    "iteration_1": {
+      "planning": {
+        "round_1": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"SURPLUS IV_Kits\", \"rationale\": \"Have surplus IV_Kits (41 units >5), broadcasting to offer transfer for reward and avoid holding costs.\"}",
+                "broadcast_message -- {\"message\": \"SURPLUS PPE_Sets\", \"rationale\": \"Have surplus PPE_Sets (45 units >5), broadcasting to offer transfer for reward and avoid holding costs.\"}",
+                "broadcast_message -- {\"message\": \"SURPLUS Oxygen_Tanks\", \"rationale\": \"Have surplus Oxygen_Tanks (17 units >5), broadcasting to offer transfer for reward and avoid holding costs.\"}",
+                "broadcast_message -- {\"message\": \"SURPLUS Pain_Killers\", \"rationale\": \"Have surplus Pain_Killers (21 units >5), broadcasting to offer transfer for reward and avoid holding costs.\"}"
+              ]
+            }
+          }
+        },
+        "round_2": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "transfer_resources -- {\"to_hospital\": \"Resource_Provisioner\", \"resource_type\": \"IV_Kits\", \"amount\": 36, \"rationale\": \"Transferring excess IV_Kits (keeping 5) to central provisioner to avoid holding costs since no current jobs and inventories balanced.\"}",
+                "transfer_resources -- {\"to_hospital\": \"Resource_Provisioner\", \"resource_type\": \"PPE_Sets\", \"amount\": 40, \"rationale\": \"Transferring excess PPE_Sets (keeping 5) to central provisioner to avoid holding costs since no current jobs and inventories balanced.\"}",
+                "transfer_resources -- {\"to_hospital\": \"Resource_Provisioner\", \"resource_type\": \"Oxygen_Tanks\", \"amount\": 12, \"rationale\": \"Transferring excess Oxygen_Tanks (keeping 5) to central provisioner to avoid holding costs since no current jobs and inventories balanced.\"}",
+                "transfer_resources -- {\"to_hospital\": \"Resource_Provisioner\", \"resource_type\": \"Pain_Killers\", \"amount\": 16, \"rationale\": \"Transferring excess Pain_Killers (keeping 5) to central provisioner to avoid holding costs since no current jobs and inventories balanced.\"}"
+              ]
+            }
+          }
+        },
+        "round_3": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "No surplus or deficit; inventory balanced at minimum threshold with empty job queue. No action needed."
+            }
+          }
+        },
+        "round_4": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "No action needed (no jobs, at threshold inventory)."
+            }
+          }
+        }
+      },
+      "execution": {
+        "round_0": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "The job queue is empty; no scheduling or other actions possible or permitted under my scope."
+            }
+          }
+        }
+      }
+    }
+  },
+  "St_Marys_Center_Surgery": {
+    "iteration_1": {
+      "planning": {
+        "round_1": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"SURPLUS Anesthetics\", \"rationale\": \"Have surplus Anesthetics (9 units >5), broadcasting to offer transfer for reward and avoid holding costs.\"}",
+                "broadcast_message -- {\"message\": \"SURPLUS IV_Kits\", \"rationale\": \"Have surplus IV_Kits (41 units >5), broadcasting to offer transfer for reward and avoid holding costs.\"}",
+                "broadcast_message -- {\"message\": \"SURPLUS Pain_Killers\", \"rationale\": \"Have surplus Pain_Killers (21 units >5), broadcasting to offer transfer for reward and avoid holding costs.\"}"
+              ]
+            }
+          }
+        },
+        "round_2": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "transfer_resources -- {\"to_hospital\": \"Resource_Provisioner\", \"resource_type\": \"Anesthetics\", \"amount\": 4, \"rationale\": \"Transferring excess Anesthetics (keeping 5) to central provisioner to avoid holding costs since no current jobs and inventories balanced.\"}",
+                "transfer_resources -- {\"to_hospital\": \"Resource_Provisioner\", \"resource_type\": \"Pain_Killers\", \"amount\": 16, \"rationale\": \"Transferring excess Pain_Killers (keeping 5) to central provisioner to avoid holding costs since no current jobs and inventories balanced.\"}",
+                "transfer_resources -- {\"to_hospital\": \"Resource_Provisioner\", \"resource_type\": \"Oxygen_Tanks\", \"amount\": 12, \"rationale\": \"Transferring excess Oxygen_Tanks (keeping 5) to central provisioner to avoid holding costs since no current jobs and inventories balanced.\"}",
+                "transfer_resources -- {\"to_hospital\": \"Resource_Provisioner\", \"resource_type\": \"Surgical_Packs\", \"amount\": 4, \"rationale\": \"Transferring excess Surgical_Packs (keeping 5) to central provisioner to avoid holding costs since no current jobs and inventories balanced.\"}"
+              ]
+            }
+          }
+        },
+        "round_3": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "No surplus or deficit; inventory stable at threshold with empty queue."
+            }
+          }
+        },
+        "round_4": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "No surplus or deficit. Job queue empty; no scheduling or transfers needed."
+            }
+          }
+        }
+      },
+      "execution": {
+        "round_0": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "",
+              "tools": [
+                "transfer_resources -- {\"to_hospital\": \"Resource_Provisioner\", \"resource_type\": \"Anesthetics\", \"amount\": 0, \"rationale\": \"No surgery jobs in queue, inventory at minimum, no transfers needed.\"}"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "General_Hospital_Triage": {
+    "iteration_1": {
+      "planning": {
+        "round_1": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"SURPLUS IV_Kits\", \"rationale\": \"Have surplus IV_Kits (41 units >5), broadcasting to offer transfer for reward and avoid holding costs.\"}",
+                "broadcast_message -- {\"message\": \"SURPLUS PPE_Sets\", \"rationale\": \"Have surplus PPE_Sets (45 units >5), broadcasting to offer transfer for reward and avoid holding costs.\"}"
+              ]
+            }
+          }
+        },
+        "round_2": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "post_message -- {\"message\": \"URGENT: Need IV_Kits and PPE_Sets at General_Hospital for 20 triage patients.\", \"blackboard_id\": 0}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "",
+              "tools": [
+                "find_available_slots -- {\"duration\": 1, \"min_start_time\": 12, \"num_slots\": 1}",
+                "find_available_slots -- {\"duration\": 1, \"min_start_time\": 14, \"num_slots\": 1}",
+                "find_available_slots -- {\"duration\": 1, \"min_start_time\": 16, \"num_slots\": 1}",
+                "find_available_slots -- {\"duration\": 1, \"min_start_time\": 19, \"num_slots\": 1}"
+              ]
+            },
+            "step_3": {
+              "reasoning": "",
+              "tools": [
+                "find_available_slots -- {\"duration\": 1, \"min_start_time\": 20, \"num_slots\": 1}",
+                "find_available_slots -- {\"duration\": 1, \"min_start_time\": 23, \"num_slots\": 1}",
+                "find_available_slots -- {\"duration\": 1, \"min_start_time\": 5, \"num_slots\": 1}",
+                "find_available_slots -- {\"duration\": 1, \"min_start_time\": 0, \"num_slots\": 4}"
+              ]
+            }
+          }
+        },
+        "round_3": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "post_message -- {\"message\": \"URGENT: Need IV_Kits and PPE_Sets at General_Hospital for 20 triage patients.\", \"blackboard_id\": 0}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_3": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"DEFICIT IV_Kits\", \"rationale\": \"Need 20 IV_Kits for 20 triage patients but only have 5, urgent deficit to handle queue.\"}",
+                "broadcast_message -- {\"message\": \"DEFICIT PPE_Sets\", \"rationale\": \"Need 20 PPE_Sets for 20 triage patients but only have 5, urgent deficit to handle queue.\"}"
+              ]
+            }
+          }
+        },
+        "round_4": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "post_message -- {\"message\": \"URGENT: Need IV_Kits and PPE_Sets at General_Hospital for 20 triage patients.\", \"blackboard_id\": 0}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_3": {
+              "reasoning": "",
+              "tools": [
+                "find_available_slots -- {\"duration\": 1, \"min_start_time\": 0, \"num_slots\": 4}",
+                "broadcast_message -- {\"message\": \"REQUEST: General_Hospital_Triage needs 15 IV_Kits and 15 PPE_Sets urgently for 20 patients. Provisioner please transfer.\", \"rationale\": \"To get resources from provisioner since we have deficits and they have received surpluses from others.\"}"
+              ]
+            }
+          }
+        }
+      },
+      "execution": {
+        "round_0": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "schedule_patient -- {\"patient_id\": \"Patient_0\", \"step_index\": 0, \"start_time\": 2, \"rationale\": \"Scheduling triage step 0 at earliest start time per job queue to avoid missed step penalty.\"}",
+                "schedule_patient -- {\"patient_id\": \"Patient_1\", \"step_index\": 0, \"start_time\": 11, \"rationale\": \"Scheduling triage step 0 at earliest start time per job queue to avoid missed step penalty.\"}",
+                "schedule_patient -- {\"patient_id\": \"Patient_2\", \"step_index\": 0, \"start_time\": 23, \"rationale\": \"Scheduling triage step 0 at earliest start time per job queue to avoid missed step penalty.\"}",
+                "schedule_patient -- {\"patient_id\": \"Patient_3\", \"step_index\": 0, \"start_time\": 9, \"rationale\": \"Scheduling triage step 0 at earliest start time per job queue to avoid missed step penalty.\"}"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "General_Hospital_Radiology": {
+    "iteration_1": {
+      "planning": {
+        "round_1": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"SURPLUS Radio_Contrast\", \"rationale\": \"Have surplus Radio_Contrast (13 units >5), broadcasting to offer transfer for reward and avoid holding costs.\"}",
+                "broadcast_message -- {\"message\": \"SURPLUS PPE_Sets\", \"rationale\": \"Have surplus PPE_Sets (45 units >5), broadcasting to offer transfer for reward and avoid holding costs.\"}",
+                "broadcast_message -- {\"message\": \"SURPLUS IV_Kits\", \"rationale\": \"Have surplus IV_Kits (41 units >5), broadcasting to offer transfer for reward and avoid holding costs.\"}"
+              ]
+            }
+          }
+        },
+        "round_2": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "transfer_resources -- {\"to_hospital\": \"Resource_Provisioner\", \"resource_type\": \"Radio_Contrast\", \"amount\": 8, \"rationale\": \"Transferring excess Radio_Contrast (keeping 5) to central provisioner to avoid holding costs since no current jobs and inventories balanced.\"}"
+              ]
+            }
+          }
+        },
+        "round_3": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "No action needed at this time (queue empty, inventory at minimum levels with no surplus or deficit for Radiology)."
+            }
+          }
+        },
+        "round_4": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "No urgent needs or surplus at General_Hospital_Radiology (buffer inventory only). Queue empty, no scheduling possible."
+            }
+          }
+        }
+      },
+      "execution": {
+        "round_0": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "schedule_patient -- {\"patient_id\": \"Patient_0\", \"step_index\": 1, \"start_time\": 3, \"rationale\": \"Scheduling radiology step 1 at earliest start time per job queue to avoid missed step penalty.\"}",
+                "schedule_patient -- {\"patient_id\": \"Patient_1\", \"step_index\": 1, \"start_time\": 12, \"rationale\": \"Scheduling radiology step 1 at earliest start time per job queue to avoid missed step penalty.\"}",
+                "schedule_patient -- {\"patient_id\": \"Patient_2\", \"step_index\": 1, \"start_time\": 24, \"rationale\": \"Scheduling radiology step 1 at earliest start time per job queue to avoid missed step penalty.\"}",
+                "schedule_patient -- {\"patient_id\": \"Patient_3\", \"step_index\": 1, \"start_time\": 10, \"rationale\": \"Scheduling radiology step 1 at earliest start time per job queue to avoid missed step penalty.\"}"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "St_Marys_Center_Ward": {
+    "iteration_1": {
+      "planning": {
+        "round_1": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"SURPLUS IV_Kits\", \"rationale\": \"Have surplus IV_Kits (41 units >5), broadcasting to offer transfer for reward and avoid holding costs.\"}",
+                "broadcast_message -- {\"message\": \"SURPLUS Anesthetics\", \"rationale\": \"Have surplus Anesthetics (9 units >5), broadcasting to offer transfer for reward and avoid holding costs.\"}",
+                "broadcast_message -- {\"message\": \"SURPLUS Pain_Killers\", \"rationale\": \"Have surplus Pain_Killers (21 units >5), broadcasting to offer transfer for reward and avoid holding costs.\"}",
+                "broadcast_message -- {\"message\": \"SURPLUS Radio_Contrast\", \"rationale\": \"Have surplus Radio_Contrast (13 units >5), broadcasting to offer transfer for reward and avoid holding costs.\"}",
+                "broadcast_message -- {\"message\": \"SURPLUS Oxygen_Tanks\", \"rationale\": \"Have surplus Oxygen_Tanks (17 units >5), broadcasting to offer transfer for reward and avoid holding costs.\"}",
+                "broadcast_message -- {\"message\": \"SURPLUS Surgical_Packs\", \"rationale\": \"Have surplus Surgical_Packs (9 units >5), broadcasting to offer transfer for reward and avoid holding costs.\"}",
+                "broadcast_message -- {\"message\": \"SURPLUS PPE_Sets\", \"rationale\": \"Have surplus PPE_Sets (45 units >5), broadcasting to offer transfer for reward and avoid holding costs.\"}"
+              ]
+            }
+          }
+        },
+        "round_2": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "No surplus or shortage. No actions needed. (Queue empty; inventory at threshold.)"
+            }
+          }
+        },
+        "round_3": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "No surplus or deficit detected (queue empty, inventory at baseline). No actions needed."
+            }
+          }
+        },
+        "round_4": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "No action needed (empty queue, balanced inventory at threshold)."
+            }
+          }
+        }
+      },
+      "execution": {
+        "round_0": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "schedule_patient -- {\"patient_id\": \"Patient_3\", \"step_index\": 2, \"start_time\": 16, \"rationale\": \"Scheduling ward step 2 at earliest start time per job queue to avoid missed step penalty.\"}"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "Resource_Provisioner": {
+    "iteration_1": {
+      "planning": {
+        "round_1": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"Current inventories balanced across hospitals with no critical shortages or alerts. Please report any URGENT deficits or expected patient loads requiring specific resources like Anesthetics or Surgical_Packs.\", \"rationale\": \"Checking for any unlisted needs before deciding on transfers to avoid waste and holding costs.\"}"
+              ]
+            }
+          }
+        },
+        "round_2": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "No transfers needed at this time. All hospitals above critical thresholds; no urgent requests detected."
+            }
+          }
+        },
+        "round_3": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "Inventory balanced across hospitals (all at 5 units per resource type, no shortages <2 or imbalances). No critical alerts or urgent blackboard requests detected. No transfers needed at this time to avoid waste/holding costs. Monitoring for updates."
+            }
+          }
+        },
+        "round_4": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"Current inventories stable: Both hospitals at 5 units each resource, no critical shortages or alerts. Provisioner holds surplus. Awaiting urgent requests or deficit reports from departments.\", \"rationale\": \"Status update to network since no active alerts or blackboard requests visible.\"}"
+              ]
+            }
+          }
+        }
+      },
+      "execution": {
+        "round_0": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"Resource_Provisioner standing by, ready to transfer resources as needed. Monitoring for any logistics requests.\", \"rationale\": \"Announcing availability in the monitoring phase.\"}"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "St_Marys_Center_Triage": {
+    "iteration_1": {
+      "planning": {
+        "round_1": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"SURPLUS IV_Kits\", \"rationale\": \"Have surplus IV_Kits (41 units >5), broadcasting to offer transfer for reward and avoid holding costs.\"}",
+                "broadcast_message -- {\"message\": \"SURPLUS Anesthetics\", \"rationale\": \"Have surplus Anesthetics (9 units >5), broadcasting to offer transfer for reward and avoid holding costs.\"}",
+                "broadcast_message -- {\"message\": \"SURPLUS Pain_Killers\", \"rationale\": \"Have surplus Pain_Killers (21 units >5), broadcasting to offer transfer for reward and avoid holding costs.\"}",
+                "broadcast_message -- {\"message\": \"SURPLUS Radio_Contrast\", \"rationale\": \"Have surplus Radio_Contrast (13 units >5), broadcasting to offer transfer for reward and avoid holding costs.\"}",
+                "broadcast_message -- {\"message\": \"SURPLUS Oxygen_Tanks\", \"rationale\": \"Have surplus Oxygen_Tanks (17 units >5), broadcasting to offer transfer for reward and avoid holding costs.\"}"
+              ]
+            }
+          }
+        },
+        "round_2": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "post_message -- {\"message\": \"URGENT: Need IV_Kits and PPE_Sets at St_Marys_Center for 20 triage patients.\", \"blackboard_id\": 0}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "",
+              "tools": [
+                "find_available_slots -- {\"duration\": 1, \"min_start_time\": 0, \"num_slots\": 4}",
+                "find_available_slots -- {\"duration\": 1, \"min_start_time\": 2, \"num_slots\": 4}",
+                "find_available_slots -- {\"duration\": 1, \"min_start_time\": 5, \"num_slots\": 4}"
+              ]
+            },
+            "step_3": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            }
+          }
+        },
+        "round_3": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "post_message -- {\"message\": \"URGENT: Need IV_Kits at St_Marys_Center for 20 triage patients.\", \"blackboard_id\": 0}",
+                "post_message -- {\"message\": \"URGENT: Need PPE_Sets at St_Marys_Center for 20 triage patients.\", \"blackboard_id\": 0}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"DEFICIT IV_Kits\", \"rationale\": \"Need 20 IV_Kits for 20 triage patients but only have 5, urgent deficit to handle queue.\"}",
+                "broadcast_message -- {\"message\": \"DEFICIT PPE_Sets\", \"rationale\": \"Need 20 PPE_Sets for 20 triage patients but only have 5, urgent deficit to handle queue.\"}"
+              ]
+            }
+          }
+        },
+        "round_4": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "post_message -- {\"message\": \"URGENT: Need IV_Kits and PPE_Sets at St_Marys_Center for 20 triage patients.\", \"blackboard_id\": 0}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_3": {
+              "reasoning": "",
+              "tools": [
+                "find_available_slots -- {\"duration\": 1, \"min_start_time\": 0, \"num_slots\": 20}"
+              ]
+            }
+          }
+        }
+      },
+      "execution": {
+        "round_0": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "schedule_patient -- {\"patient_id\": \"Patient_4\", \"step_index\": 0, \"start_time\": 19, \"rationale\": \"Scheduling triage step 0 at earliest start time per job queue to avoid missed step penalty.\"}",
+                "schedule_patient -- {\"patient_id\": \"Patient_5\", \"step_index\": 0, \"start_time\": 19, \"rationale\": \"Scheduling triage step 0 at earliest start time per job queue to avoid missed step penalty.\"}",
+                "schedule_patient -- {\"patient_id\": \"Patient_6\", \"step_index\": 0, \"start_time\": 18, \"rationale\": \"Scheduling triage step 0 at earliest start time per job queue to avoid missed step penalty.\"}",
+                "schedule_patient -- {\"patient_id\": \"Patient_7\", \"step_index\": 0, \"start_time\": 5, \"rationale\": \"Scheduling triage step 0 at earliest start time per job queue to avoid missed step penalty.\"}"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "General_Hospital_Surgery": {
+    "iteration_1": {
+      "planning": {
+        "round_1": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "broadcast_message -- {\"message\": \"SURPLUS Anesthetics\", \"rationale\": \"Have surplus Anesthetics (9 units >5), broadcasting to offer transfer for reward and avoid holding costs.\"}",
+                "broadcast_message -- {\"message\": \"SURPLUS Surgical_Packs\", \"rationale\": \"Have surplus Surgical_Packs (9 units >5), broadcasting to offer transfer for reward and avoid holding costs.\"}",
+                "broadcast_message -- {\"message\": \"SURPLUS PPE_Sets\", \"rationale\": \"Have surplus PPE_Sets (45 units >5), broadcasting to offer transfer for reward and avoid holding costs.\"}",
+                "broadcast_message -- {\"message\": \"SURPLUS IV_Kits\", \"rationale\": \"Have surplus IV_Kits (41 units >5), broadcasting to offer transfer for reward and avoid holding costs.\"}",
+                "broadcast_message -- {\"message\": \"SURPLUS Pain_Killers\", \"rationale\": \"Have surplus Pain_Killers (21 units >5), broadcasting to offer transfer for reward and avoid holding costs.\"}"
+              ]
+            }
+          }
+        },
+        "round_2": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "transfer_resources -- {\"to_hospital\": \"Resource_Provisioner\", \"resource_type\": \"Anesthetics\", \"amount\": 4, \"rationale\": \"Transferring excess Anesthetics (keeping 5) to central provisioner to avoid holding costs since no current jobs and inventories balanced.\"}",
+                "transfer_resources -- {\"to_hospital\": \"Resource_Provisioner\", \"resource_type\": \"Surgical_Packs\", \"amount\": 4, \"rationale\": \"Transferring excess Surgical_Packs (keeping 5) to central provisioner to avoid holding costs since no current jobs and inventories balanced.\"}"
+              ]
+            }
+          }
+        },
+        "round_3": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "No action needed (empty queue, balanced inventory at threshold)."
+            }
+          }
+        },
+        "round_4": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "get_job_queue -- {}"
+              ]
+            },
+            "step_2": {
+              "reasoning": "No scheduling or resource actions needed (empty queue, balanced inventory at base levels)."
+            }
+          }
+        }
+      },
+      "execution": {
+        "round_0": {
+          "trajectory": {
+            "step_1": {
+              "reasoning": "",
+              "tools": [
+                "schedule_patient -- {\"patient_id\": \"Patient_0\", \"step_index\": 2, \"start_time\": 4, \"rationale\": \"Scheduling surgery step 2 at earliest start time per job queue to avoid missed step penalty.\"}",
+                "schedule_patient -- {\"patient_id\": \"Patient_1\", \"step_index\": 2, \"start_time\": 13, \"rationale\": \"Scheduling surgery step 2 at earliest start time per job queue to avoid missed step penalty.\"}",
+                "schedule_patient -- {\"patient_id\": \"Patient_2\", \"step_index\": 2, \"start_time\": 25, \"rationale\": \"Scheduling surgery step 2 at earliest start time per job queue to avoid missed step penalty.\"}"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

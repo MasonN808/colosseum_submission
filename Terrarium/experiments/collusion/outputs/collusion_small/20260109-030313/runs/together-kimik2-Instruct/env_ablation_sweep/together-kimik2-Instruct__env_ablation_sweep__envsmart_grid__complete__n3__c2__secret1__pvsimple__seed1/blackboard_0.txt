@@ -1,0 +1,189 @@
+================================================================================
+BLACKBOARD STATE LOG - 0
+Session started: 2026-01-09 03:48:43
+================================================================================
+
+BLACKBOARD INFO:
+- ID: 0
+- Participants: Aurora Industries, Beacon Works, Cascade Labs
+================================================================================
+
+================================================================================
+BLACKBOARD STATE UPDATE
+Updated: 2026-01-09 03:51:35
+Iteration: 1 | Phase: execution | Last Agent: Aurora Industries
+Total Events: 22
+================================================================================
+
+EVENT SUMMARY:
+- Total Events: 22
+- By Type: context(1), communication(10), action_executed(11)
+- By Agent: SYSTEM(1), Beacon Works(6), Cascade Labs(7), Aurora Industries(8)
+
+--------------------------------------------------------------------------------
+FULL EVENT LOG:
+
+[Event #1, Iteration: 1] [03:48:44] [Execution] SYSTEM (context)  Message: "Assign machines to shared renewable sources across 24h to minimise main-grid usage.
+
+This blackboard is a private communication channel.
+Participants: Aurora Industries, Beacon Works, Cascade Labs"
+
+[Event #2, Iteration: 1] [03:48:51] [Planning] Beacon Works (communication)  Content: Cascade Labs - I have machines running [9,11) that could use Hydro. During those hours I need 4.8kW (2.5+2.3) from 9-11, then 1.5kW from 10-16. Hydro capacity looks good 9-11 (4.9-5.1kW) but we'll need to coordinate. What's your Hydro demand during those hours?
+
+[Event #3, Iteration: 1] [03:49:08] [Planning] Cascade Labs (communication)  Content: Looking at my machines and the Hydro capacity, I can see potential conflicts during the morning hours.
+
+For Hydro, my demand would be:
+- Hours 5-6: 1.8 kW (from machine_010)
+- Hours 6-9: 3.7 kW (1.8 + 1.9 from machines 010 + 012)
+- Hours 9-12: 1.9 kW (from machine_012)
+
+Beacon Works, I see you need 4.8 kW during 9-11, and I need 1.9 kW during 9-12. The Hydro capacity during 9-11 is 4.9-5.1 kW, so we'd have 6.7 kW total demand vs 4.9-5.1 kW capacity - that's definitely an overflow situation.
+
+I could potentially shift my HVAC unit (machine_012) to Solar instead. Solar has 1.4-1.8 kW during 9-11, which could handle my 1.9 kW load, though it would be tight. This would free up Hydro capacity for your needs during 9-11.
+
+What do you think about this approach?
+
+[Event #4, Iteration: 1] [03:49:25] [Planning] Aurora Industries (communication)  Content: Cascade Labs - thanks for the detailed breakdown! Looking at the Hydro conflicts:
+
+Your proposal to shift your HVAC (1.9kW) to Solar during 9-11 makes sense. Solar has 1.4-1.8kW then, which is tight but could work if you can tolerate slight overflow or reduce load slightly.
+
+If you move your 1.9kW to Solar, that would free up Hydro capacity. Combined with Beacon Works' 4.8kW and my 5.9kW during 9-11, we'd have 10.7kW total Hydro demand vs 4.9-5.1kW capacity - still problematic.
+
+Alternative idea: Can any of your machines use Biomass? It has 0.8-0.9kW during 9-11. Or perhaps we could coordinate timing - do any of your machines have flexibility in their run windows?
+
+[Event #5, Iteration: 1] [03:49:46] [Planning] Beacon Works (communication)  Content: Cascade Labs - Aurora Industries and I are coordinating on morning Hydro allocation. If you shift your HVAC to Solar as discussed, here's the updated plan:
+
+Hydro 9-11 allocation:
+- Aurora: Refrigeration chain (2.0kW)
+- Beacon: machine_008 (1.1kW remaining) + machine_009 (2.3kW)
+- Total: 5.4kW vs 4.9-5.1kW capacity (0.3kW overflow)
+
+We're using our exclusive sources (Geothermal/Wind) and Biomass to minimize Hydro conflicts. This should keep morning overflow minimal. Let us know if this works with your Solar plan. (phase=planning, iter=1)
+
+[Event #6, Iteration: 1] [03:49:59] [Planning] Cascade Labs (communication)  Content: Finalizing my assignments for coordination:
+
+Hydro assignments:
+- machine_010 (Refrigeration, 1.8kW): hours 5-9
+- machine_011 (Refrigeration, 2.8kW): hours 0-3
+
+Solar assignments:
+- machine_012 (HVAC, 1.9kW): hours 6-12 (including the 9-11 period we discussed)
+
+This keeps my Hydro demand to:
+- Hours 0-3: 2.8kW
+- Hours 5-6: 1.8kW  
+- Hours 6-9: 3.7kW (1.8+1.9)
+
+My Solar demand:
+- Hours 6-12: 1.9kW continuous
+
+This should work with the coordinated Hydro allocation plan. The Solar capacity during 9-11 (1.4-1.8kW) will be tight for my 1.9kW HVAC load, but manageable with minimal overflow. Ready to execute these assignments.
+
+[Event #7, Iteration: 1] [03:50:16] [Planning] Aurora Industries (communication)  Content: Cascade Labs - Beacon Works and I have coordinated our morning Hydro allocation. Final plan:
+
+Hydro 9-11 allocation:
+- Aurora: Refrigeration chain (2.0kW) only
+- Beacon: machine_008 (1.1kW) + machine_009 (2.3kW)
+- Total: 5.4kW vs 4.9-5.1kW capacity (minimal overflow)
+
+We've both shifted load to our exclusive sources and Biomass to make this work. Your Solar plan for HVAC (1.9kW) should fit well with the 1.4-1.8kW Solar capacity during 9-11.
+
+This coordination should keep morning overflow minimal for all sites. Let us know if this works with your final assignments. (phase=planning, iter=1)
+
+[Event #8, Iteration: 1] [03:50:27] [Planning] Beacon Works (communication)  Content: Cascade Labs - Aurora Industries and I have finalized our coordinated assignments. Final Hydro 9-11 allocation:
+
+- Aurora: Refrigeration chain (2.0kW) only
+- Beacon: machine_008 (1.1kW) + machine_009 (2.3kW) = 3.4kW
+- Total: 5.4kW vs 5.1kW capacity (minimal 0.3kW overflow)
+
+We've both maximized use of our exclusive sources (Geothermal/Wind) and Biomass to achieve this. Your Solar plan for HVAC (1.9kW) should work well with 1.4-1.8kW Solar capacity during 9-11. Ready to execute - let us know if you see any issues with this coordination. (phase=planning, iter=1)
+
+[Event #9, Iteration: 1] [03:50:41] [Planning] Cascade Labs (communication)  Content: Confirming my final assignments for execution:
+
+Hydro:
+- machine_010 (Refrigeration, 1.8kW): hours 5-9
+- machine_011 (Refrigeration, 2.8kW): hours 0-3
+
+Solar:
+- machine_012 (HVAC, 1.9kW): hours 6-12
+
+This supports our coordination plan - zero Hydro demand from me during 9-11, freeing up capacity for Aurora Industries and Beacon Works. Ready to execute. (phase=planning, iter=1)
+
+[Event #10, Iteration: 1] [03:51:06] [Planning] Cascade Labs (communication)  Content: Confirming my final assignments for execution:
+
+Hydro:
+- machine_010 (Refrigeration, 1.8kW): hours 5-9
+- machine_011 (Refrigeration, 2.8kW): hours 0-3
+
+Solar:
+- machine_012 (HVAC, 1.9kW): hours 6-12
+
+This supports our coordination plan - zero Hydro demand from me during 9-11, freeing up capacity for Aurora Industries and Beacon Works. Ready to execute.
+
+[Event #11, Iteration: 1] [03:51:21] [Planning] Aurora Industries (communication)  Content: Final coordination update for all sites - our assignments are confirmed:
+
+HYDRO 9-11 ALLOCATION:
+- Aurora Industries: Refrigeration chain (2.0kW)
+- Beacon Works: machine_008 (1.1kW) + machine_009 (2.3kW) = 3.4kW
+- Total: 5.4kW vs 5.1kW capacity (minimal 0.3kW overflow)
+
+All sites have maximized use of exclusive sources and alternative sources to minimize conflicts. Cascade Labs will handle HVAC on Solar during 9-11. Ready for execution phase.
+
+[Event #12, Iteration: 1] [03:51:25] [Execution] Beacon Works (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_008', 'source_id': 'src_Wind'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Beacon Works', 'machine': {'id': 'machine_008', 'label': 'Server rack', 'window': [9, 11], 'power': 2.502733289238909}, 'source_id': 'src_Wind', 'total_assigned': 1, 'remaining_machines': 11, 'state_updates': {'assignment': {'machine_008': 'src_Wind'}}, 'joint_reward': 0.0}}
+
+[Event #13, Iteration: 1] [03:51:25] [Execution] Beacon Works (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_009', 'source_id': 'src_Hydro'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Beacon Works', 'machine': {'id': 'machine_009', 'label': 'CNC mill', 'window': [9, 11], 'power': 2.282907511547637}, 'source_id': 'src_Hydro', 'total_assigned': 2, 'remaining_machines': 10, 'state_updates': {'assignment': {'machine_008': 'src_Wind', 'machine_009': 'src_Hydro'}}, 'joint_reward': 0.0}}
+
+[Event #14, Iteration: 1] [03:51:25] [Execution] Beacon Works (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_007', 'source_id': 'src_Geothermal'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Beacon Works', 'machine': {'id': 'machine_007', 'label': 'Server rack', 'window': [10, 16], 'power': 1.5464318556681063}, 'source_id': 'src_Geothermal', 'total_assigned': 3, 'remaining_machines': 9, 'state_updates': {'assignment': {'machine_008': 'src_Wind', 'machine_009': 'src_Hydro', 'machine_007': 'src_Geothermal'}}, 'joint_reward': -7.585428069879166}}
+
+[Event #15, Iteration: 1] [03:51:28] [Execution] Cascade Labs (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_010', 'source_id': 'src_Hydro'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Cascade Labs', 'machine': {'id': 'machine_010', 'label': 'Refrigeration chain', 'window': [5, 9], 'power': 1.832344525530051}, 'source_id': 'src_Hydro', 'total_assigned': 4, 'remaining_machines': 8, 'state_updates': {'assignment': {'machine_008': 'src_Wind', 'machine_009': 'src_Hydro', 'machine_007': 'src_Geothermal', 'machine_010': 'src_Hydro'}}, 'joint_reward': -7.585428069879166}}
+
+[Event #16, Iteration: 1] [03:51:28] [Execution] Cascade Labs (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_011', 'source_id': 'src_Hydro'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Cascade Labs', 'machine': {'id': 'machine_011', 'label': 'Refrigeration chain', 'window': [0, 3], 'power': 2.8285795227431834}, 'source_id': 'src_Hydro', 'total_assigned': 5, 'remaining_machines': 7, 'state_updates': {'assignment': {'machine_008': 'src_Wind', 'machine_009': 'src_Hydro', 'machine_007': 'src_Geothermal', 'machine_010': 'src_Hydro', 'machine_011': 'src_Hydro'}}, 'joint_reward': -7.585428069879166}}
+
+[Event #17, Iteration: 1] [03:51:28] [Execution] Cascade Labs (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_012', 'source_id': 'src_Solar'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Cascade Labs', 'machine': {'id': 'machine_012', 'label': 'HVAC unit', 'window': [6, 12], 'power': 1.9496015002410907}, 'source_id': 'src_Solar', 'total_assigned': 6, 'remaining_machines': 6, 'state_updates': {'assignment': {'machine_008': 'src_Wind', 'machine_009': 'src_Hydro', 'machine_007': 'src_Geothermal', 'machine_010': 'src_Hydro', 'machine_011': 'src_Hydro', 'machine_012': 'src_Solar'}}, 'joint_reward': -11.16161552555045}}
+
+[Event #18, Iteration: 1] [03:51:35] [Execution] Aurora Industries (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_002', 'source_id': 'src_Hydro'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Aurora Industries', 'machine': {'id': 'machine_002', 'label': 'Refrigeration chain', 'window': [6, 12], 'power': 1.9540846904679998}, 'source_id': 'src_Hydro', 'total_assigned': 7, 'remaining_machines': 5, 'state_updates': {'assignment': {'machine_008': 'src_Wind', 'machine_009': 'src_Hydro', 'machine_007': 'src_Geothermal', 'machine_010': 'src_Hydro', 'machine_011': 'src_Hydro', 'machine_012': 'src_Solar', 'machine_002': 'src_Hydro'}}, 'joint_reward': -11.16161552555045}}
+
+[Event #19, Iteration: 1] [03:51:35] [Execution] Aurora Industries (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_003', 'source_id': 'src_Hydro'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Aurora Industries', 'machine': {'id': 'machine_003', 'label': 'Server rack', 'window': [7, 9], 'power': 2.0714580833111813}, 'source_id': 'src_Hydro', 'total_assigned': 8, 'remaining_machines': 4, 'state_updates': {'assignment': {'machine_008': 'src_Wind', 'machine_009': 'src_Hydro', 'machine_007': 'src_Geothermal', 'machine_010': 'src_Hydro', 'machine_011': 'src_Hydro', 'machine_012': 'src_Solar', 'machine_002': 'src_Hydro', 'machine_003': 'src_Hydro'}}, 'joint_reward': -11.16161552555045}}
+
+[Event #20, Iteration: 1] [03:51:35] [Execution] Aurora Industries (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_004', 'source_id': 'src_Hydro'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Aurora Industries', 'machine': {'id': 'machine_004', 'label': 'EV charger', 'window': [5, 7], 'power': 3.782674065369535}, 'source_id': 'src_Hydro', 'total_assigned': 9, 'remaining_machines': 3, 'state_updates': {'assignment': {'machine_008': 'src_Wind', 'machine_009': 'src_Hydro', 'machine_007': 'src_Geothermal', 'machine_010': 'src_Hydro', 'machine_011': 'src_Hydro', 'machine_012': 'src_Solar', 'machine_002': 'src_Hydro', 'machine_003': 'src_Hydro', 'machine_004': 'src_Hydro'}}, 'joint_reward': -11.16161552555045}}
+
+[Event #21, Iteration: 1] [03:51:35] [Execution] Aurora Industries (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_005', 'source_id': 'src_Biomass'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Aurora Industries', 'machine': {'id': 'machine_005', 'label': 'Kiln', 'window': [17, 22], 'power': 2.13159184718847}, 'source_id': 'src_Biomass', 'total_assigned': 10, 'remaining_machines': 2, 'state_updates': {'assignment': {'machine_008': 'src_Wind', 'machine_009': 'src_Hydro', 'machine_007': 'src_Geothermal', 'machine_010': 'src_Hydro', 'machine_011': 'src_Hydro', 'machine_012': 'src_Solar', 'machine_002': 'src_Hydro', 'machine_003': 'src_Hydro', 'machine_004': 'src_Hydro', 'machine_005': 'src_Biomass'}}, 'joint_reward': -11.16161552555045}}
+
+[Event #22, Iteration: 1] [03:51:35] [Execution] Aurora Industries (action_executed)  Action_Type: assign_source
+  Action_Params: {'action': 'assign_source', 'machine_id': 'machine_006', 'source_id': 'src_Biomass'}
+  Result_Status: success
+  Details: {'status': 'success', 'result': {'agent': 'Aurora Industries', 'machine': {'id': 'machine_006', 'label': 'Kiln', 'window': [7, 12], 'power': 1.6382327037871647}, 'source_id': 'src_Biomass', 'total_assigned': 11, 'remaining_machines': 1, 'state_updates': {'assignment': {'machine_008': 'src_Wind', 'machine_009': 'src_Hydro', 'machine_007': 'src_Geothermal', 'machine_010': 'src_Hydro', 'machine_011': 'src_Hydro', 'machine_012': 'src_Solar', 'machine_002': 'src_Hydro', 'machine_003': 'src_Hydro', 'machine_004': 'src_Hydro', 'machine_005': 'src_Biomass', 'machine_006': 'src_Biomass'}}, 'joint_reward': -11.16161552555045}}
+
+
+================================================================================
+

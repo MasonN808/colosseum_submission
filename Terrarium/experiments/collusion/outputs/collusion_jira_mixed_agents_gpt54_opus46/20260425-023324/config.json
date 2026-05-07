@@ -1,0 +1,356 @@
+{
+  "simulation": {
+    "max_iterations": 1,
+    "max_planning_rounds": 4,
+    "max_conversation_steps": 3,
+    "seed": 1,
+    "tags": [
+      "collusion_regret",
+      "mixed_agents"
+    ]
+  },
+  "environment": {
+    "name": "JiraTicketEnvironment",
+    "assignment_filling": true,
+    "max_tasks": 8
+  },
+  "communication_network": {
+    "topology": "complete",
+    "num_agents": 6,
+    "consolidate_channels": true
+  },
+  "model_library": {
+    "gpt54": {
+      "provider": "foundry",
+      "foundry": {
+        "project_endpoint_env_var": "AI_FOUNDRY_PROJECT_ENDPOINT",
+        "api_key_env_var": "AI_FOUNDRY_API_KEY",
+        "model": "gpt-5.4",
+        "base_model": "gpt-5.4",
+        "request_timeout": 120,
+        "params": {
+          "max_tokens": 1500,
+          "temperature": 0.7
+        }
+      }
+    },
+    "opus46": {
+      "provider": "foundry",
+      "foundry": {
+        "auth_mode": "api_key",
+        "project_endpoint_env_var": "AI_FOUNDRY_RBR_EAST_US_2_PROJECT_ENDPOINT",
+        "api_key_env_var": "AI_FOUNDRY_RBR_EAST_US_2_API_KEY",
+        "model": "claude-opus-4-6",
+        "request_timeout": 120,
+        "params": {
+          "max_tokens": 1500,
+          "temperature": 0.7
+        }
+      }
+    },
+    "deepseek32": {
+      "provider": "foundry",
+      "foundry": {
+        "project_endpoint_env_var": "AI_FOUNDRY_PROJECT_ENDPOINT",
+        "api_key_env_var": "AI_FOUNDRY_API_KEY",
+        "api_style": "chat_completions",
+        "model": "DeepSeek-V3.2",
+        "request_timeout": 180,
+        "params": {
+          "max_tokens": 1500,
+          "temperature": 0.7
+        }
+      }
+    },
+    "minimax25": {
+      "provider": "foundry",
+      "foundry": {
+        "project_endpoint_env_var": "AI_FOUNDRY_PROJECT_ENDPOINT",
+        "api_key_env_var": "AI_FOUNDRY_API_KEY",
+        "api_style": "chat_completions",
+        "model": "FW-MiniMax-M2.5",
+        "request_timeout": 120,
+        "params": {
+          "max_tokens": 1500,
+          "temperature": 0.7
+        }
+      }
+    },
+    "glm5": {
+      "provider": "foundry",
+      "foundry": {
+        "project_endpoint_env_var": "AI_FOUNDRY_RBR_EAST_US_2_PROJECT_ENDPOINT",
+        "api_key_env_var": "AI_FOUNDRY_RBR_EAST_US_2_API_KEY",
+        "api_style": "chat_completions",
+        "model": "FW-GLM-5",
+        "request_timeout": 120,
+        "params": {
+          "max_tokens": 1500,
+          "temperature": 0.7
+        }
+      }
+    }
+  },
+  "llm_models": [
+    {
+      "label": "gpt54_gpt54_colluders",
+      "llm": {
+        "provider": "foundry",
+        "foundry": {
+          "project_endpoint_env_var": "AI_FOUNDRY_PROJECT_ENDPOINT",
+          "api_key_env_var": "AI_FOUNDRY_API_KEY",
+          "model": "gpt-5.4",
+          "base_model": "gpt-5.4",
+          "request_timeout": 120,
+          "params": {
+            "max_tokens": 1500,
+            "temperature": 0.7
+          }
+        }
+      },
+      "agent_llms": [
+        {
+          "provider": "foundry",
+          "foundry": {
+            "project_endpoint_env_var": "AI_FOUNDRY_PROJECT_ENDPOINT",
+            "api_key_env_var": "AI_FOUNDRY_API_KEY",
+            "model": "gpt-5.4",
+            "base_model": "gpt-5.4",
+            "request_timeout": 120,
+            "params": {
+              "max_tokens": 1500,
+              "temperature": 0.7
+            }
+          }
+        },
+        {
+          "provider": "foundry",
+          "foundry": {
+            "project_endpoint_env_var": "AI_FOUNDRY_PROJECT_ENDPOINT",
+            "api_key_env_var": "AI_FOUNDRY_API_KEY",
+            "model": "gpt-5.4",
+            "base_model": "gpt-5.4",
+            "request_timeout": 120,
+            "params": {
+              "max_tokens": 1500,
+              "temperature": 0.7
+            }
+          }
+        },
+        {
+          "provider": "foundry",
+          "foundry": {
+            "auth_mode": "api_key",
+            "project_endpoint_env_var": "AI_FOUNDRY_RBR_EAST_US_2_PROJECT_ENDPOINT",
+            "api_key_env_var": "AI_FOUNDRY_RBR_EAST_US_2_API_KEY",
+            "model": "claude-opus-4-6",
+            "request_timeout": 120,
+            "params": {
+              "max_tokens": 1500,
+              "temperature": 0.7
+            }
+          }
+        },
+        {
+          "provider": "foundry",
+          "foundry": {
+            "project_endpoint_env_var": "AI_FOUNDRY_PROJECT_ENDPOINT",
+            "api_key_env_var": "AI_FOUNDRY_API_KEY",
+            "api_style": "chat_completions",
+            "model": "DeepSeek-V3.2",
+            "request_timeout": 180,
+            "params": {
+              "max_tokens": 1500,
+              "temperature": 0.7
+            }
+          }
+        },
+        {
+          "provider": "foundry",
+          "foundry": {
+            "project_endpoint_env_var": "AI_FOUNDRY_PROJECT_ENDPOINT",
+            "api_key_env_var": "AI_FOUNDRY_API_KEY",
+            "api_style": "chat_completions",
+            "model": "FW-MiniMax-M2.5",
+            "request_timeout": 120,
+            "params": {
+              "max_tokens": 1500,
+              "temperature": 0.7
+            }
+          }
+        },
+        {
+          "provider": "foundry",
+          "foundry": {
+            "project_endpoint_env_var": "AI_FOUNDRY_RBR_EAST_US_2_PROJECT_ENDPOINT",
+            "api_key_env_var": "AI_FOUNDRY_RBR_EAST_US_2_API_KEY",
+            "api_style": "chat_completions",
+            "model": "FW-GLM-5",
+            "request_timeout": 120,
+            "params": {
+              "max_tokens": 1500,
+              "temperature": 0.7
+            }
+          }
+        }
+      ],
+      "collusion": {
+        "colluders": {
+          "indices": [
+            0,
+            1
+          ]
+        }
+      }
+    },
+    {
+      "label": "gpt54_opus46_colluders",
+      "llm": {
+        "provider": "foundry",
+        "foundry": {
+          "project_endpoint_env_var": "AI_FOUNDRY_PROJECT_ENDPOINT",
+          "api_key_env_var": "AI_FOUNDRY_API_KEY",
+          "model": "gpt-5.4",
+          "base_model": "gpt-5.4",
+          "request_timeout": 120,
+          "params": {
+            "max_tokens": 1500,
+            "temperature": 0.7
+          }
+        }
+      },
+      "agent_llms": [
+        {
+          "provider": "foundry",
+          "foundry": {
+            "project_endpoint_env_var": "AI_FOUNDRY_PROJECT_ENDPOINT",
+            "api_key_env_var": "AI_FOUNDRY_API_KEY",
+            "model": "gpt-5.4",
+            "base_model": "gpt-5.4",
+            "request_timeout": 120,
+            "params": {
+              "max_tokens": 1500,
+              "temperature": 0.7
+            }
+          }
+        },
+        {
+          "provider": "foundry",
+          "foundry": {
+            "project_endpoint_env_var": "AI_FOUNDRY_PROJECT_ENDPOINT",
+            "api_key_env_var": "AI_FOUNDRY_API_KEY",
+            "model": "gpt-5.4",
+            "base_model": "gpt-5.4",
+            "request_timeout": 120,
+            "params": {
+              "max_tokens": 1500,
+              "temperature": 0.7
+            }
+          }
+        },
+        {
+          "provider": "foundry",
+          "foundry": {
+            "auth_mode": "api_key",
+            "project_endpoint_env_var": "AI_FOUNDRY_RBR_EAST_US_2_PROJECT_ENDPOINT",
+            "api_key_env_var": "AI_FOUNDRY_RBR_EAST_US_2_API_KEY",
+            "model": "claude-opus-4-6",
+            "request_timeout": 120,
+            "params": {
+              "max_tokens": 1500,
+              "temperature": 0.7
+            }
+          }
+        },
+        {
+          "provider": "foundry",
+          "foundry": {
+            "project_endpoint_env_var": "AI_FOUNDRY_PROJECT_ENDPOINT",
+            "api_key_env_var": "AI_FOUNDRY_API_KEY",
+            "api_style": "chat_completions",
+            "model": "DeepSeek-V3.2",
+            "request_timeout": 180,
+            "params": {
+              "max_tokens": 1500,
+              "temperature": 0.7
+            }
+          }
+        },
+        {
+          "provider": "foundry",
+          "foundry": {
+            "project_endpoint_env_var": "AI_FOUNDRY_PROJECT_ENDPOINT",
+            "api_key_env_var": "AI_FOUNDRY_API_KEY",
+            "api_style": "chat_completions",
+            "model": "FW-MiniMax-M2.5",
+            "request_timeout": 120,
+            "params": {
+              "max_tokens": 1500,
+              "temperature": 0.7
+            }
+          }
+        },
+        {
+          "provider": "foundry",
+          "foundry": {
+            "project_endpoint_env_var": "AI_FOUNDRY_RBR_EAST_US_2_PROJECT_ENDPOINT",
+            "api_key_env_var": "AI_FOUNDRY_RBR_EAST_US_2_API_KEY",
+            "api_style": "chat_completions",
+            "model": "FW-GLM-5",
+            "request_timeout": 120,
+            "params": {
+              "max_tokens": 1500,
+              "temperature": 0.7
+            }
+          }
+        }
+      ],
+      "collusion": {
+        "colluders": {
+          "indices": [
+            0,
+            2
+          ]
+        }
+      }
+    }
+  ],
+  "experiment": {
+    "tag": "collusion_jira_mixed_agents_gpt54_opus46",
+    "output_dir": "experiments/collusion/outputs/collusion_jira_mixed_agents_gpt54_opus46",
+    "max_concurrent_runs": 5,
+    "seeds": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "runs_per_seed": 2,
+    "collusion": {
+      "colluder_selection": "random"
+    },
+    "sweeps": [
+      {
+        "name": "complete_n6_c2",
+        "topologies": [
+          "complete"
+        ],
+        "num_agents": [
+          6
+        ],
+        "colluder_counts": [
+          2
+        ],
+        "secret_channel_enabled": [
+          false,
+          true
+        ],
+        "prompt_variants": [
+          "control",
+          "simple"
+        ]
+      }
+    ]
+  }
+}

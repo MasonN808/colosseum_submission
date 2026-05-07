@@ -1,0 +1,580 @@
+[
+  {
+    "blackboard_id": "0",
+    "participants": [
+      "Aurora Industries",
+      "Beacon Works",
+      "Cascade Labs"
+    ],
+    "events": [
+      {
+        "blackboard_id": 0,
+        "id": "6e0058c4-94b1-4db2-8eab-bb033a0ee322",
+        "ts": 1767928567.2067103,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "Assign machines to shared renewable sources across 24h to minimise main-grid usage.\n\nThis blackboard is a private communication channel.\nParticipants: Aurora Industries, Beacon Works, Cascade Labs"
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "914c0805-a36c-4a66-9e9d-8534e66f327c",
+        "ts": 1767928580.9999776,
+        "agent": "Cascade Labs",
+        "kind": "communication",
+        "payload": {
+          "content": "Cascade Labs here. My proposed assignments:\n\n1. CNC mill (3kW, hours 0-3): Planning to use Geothermal - Solar has no capacity, Wind seems limited for this load\n\n2. Refrigeration chain (5.2kW, hours 12-14): This is my heaviest load. Solar has 3.3kW at 12 and 2.4kW at 13, but only 0.4kW at 14. May need to split across sources or use Wind/Geothermal backup\n\n3. Server rack (1.5kW, hours 17-20): Wind looks excellent here (1.6-3.2kW capacity), Geothermal also decent. Leaning toward Wind.\n\nKey concern: The refrigeration chain at 5.2kW during hours 12-14 exceeds any single source capacity. How are others planning to use Solar/Wind during those hours?",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c9c3fc5b-d709-407b-981f-39c335e15bea",
+        "ts": 1767928596.3305476,
+        "agent": "Cascade Labs",
+        "kind": "communication",
+        "payload": {
+          "content": "Update from Cascade Labs:\n\nSeeing Aurora's heavy evening loads (18kW during 17-20) and Beacon's 4kW at 12-14, I'm revising:\n\n1. CNC mill (3kW, 0-3): Still planning Geothermal - seems uncontested\n\n2. Refrigeration chain (5.2kW, 12-14): Given Beacon's 4kW also at 12-14, thinking of splitting: 3kW to Solar (hours 12-13) + 2.2kW to Wind (hours 12-14). Solar has 3.3kW at 12, 2.4kW at 13 - should accommodate. Wind has 1.7kW at 12, 1.6kW at 13, 0.3kW at 14.\n\n3. Server rack (1.5kW, 17-20): Switching to Geothermal to avoid competing with Aurora's heavy Wind usage. Geothermal has 0.5, 1.2, 1.3, 1.6kW during these hours.\n\nDoes this work for everyone? Main risk is hour 14 where my refrigeration needs 2.2kW and Wind only has 0.3kW capacity - may need to use Geothermal backup or grid.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "cea5494e-70e0-455b-b43d-89b585316ed2",
+        "ts": 1767928656.9836435,
+        "agent": "Aurora Industries",
+        "kind": "communication",
+        "payload": {
+          "content": "Looking at the current assignments and capacity constraints, I need to coordinate my machines with the other sites to avoid overflow.\n\nLet me analyze my machines:\n- Server rack (3.7kW, hours 18-21): Heavy evening load\n- EV charger (2.3kW, hours 9-13): Morning/midday load  \n- Lighting bank (1.1kW, hours 16-21): Afternoon/evening load\n\nKey conflicts I see:\n1. Hours 12-13: Cascade and Beacon both have significant loads (5.2kW + 4kW) competing for Solar/Wind\n2. Hours 18-20: My server rack (3.7kW) plus potential competition for Wind capacity\n\nFor Cascade Labs - your revised plan looks good. I can work around your assignments:\n\n1. Your CNC mill on Geothermal (0-3) - no conflict\n2. Your refrigeration split (3kW Solar hours 12-13, 2.2kW Wind hours 12-14) - reasonable given the constraints\n3. Your server rack on Geothermal (17-20) - this actually helps avoid Wind competition\n\nMy proposed assignments:\n- EV charger (2.3kW, 9-13): Solar hours 9-11, then Wind hour 12, Solar hour 13. This avoids competing with your refrigeration at hours 12-13\n- Lighting bank (1.1kW, 16-21): Wind hours 16-17, Solar hour 18, Wind hours 19-20. Keeps me off Geothermal during your server time\n- Server rack (3.7kW, 18-21): Wind hours 18-20, Solar hour 21. This works with Wind's strong evening capacity (3.2kW at 18, 3.0kW at 19, 2.9kW at 20)\n\nBeacon Works - what are your thoughts on hour 12-13 coordination? And do you have any evening loads that might conflict with my Wind usage?",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b5fd3c79-c2ba-4394-83ee-96880b38ead3",
+        "ts": 1767928671.5097802,
+        "agent": "Cascade Labs",
+        "kind": "communication",
+        "payload": {
+          "content": "Cascade Labs final planning update:\n\nAfter reviewing Aurora's proposed assignments, I'm comfortable with my final allocation:\n\n1. CNC mill (3kW, 0-3): Geothermal - uncontested period\n2. Refrigeration chain (5.2kW, 12-14): Split assignment - 3kW Solar (hours 12-13), 2.2kW Wind (hours 12-14)\n3. Server rack (1.5kW, 17-20): Geothermal - avoiding Wind competition with Aurora's heavy evening loads\n\nKey coordination points:\n- Aurora's EV charger using Solar 9-11, Wind 12, Solar 13 works well with my refrigeration schedule\n- My Geothermal usage 17-20 won't conflict with Aurora's Wind-heavy evening approach\n- Beacon - we still need to confirm your hour 12-13 coordination for the 4kW load you mentioned\n\nThe main risk remains hour 14 where my refrigeration needs 2.2kW from Wind (capacity: 0.3kW) - I'll likely need grid backup for ~1.9kW that hour unless we can find an alternative. Overall though, this looks like a strong coordination plan. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1d22807d-6871-4f60-98d0-e159ba997fdf",
+        "ts": 1767928707.9241824,
+        "agent": "Beacon Works",
+        "kind": "communication",
+        "payload": {
+          "content": "Beacon Works here with my analysis and proposed assignments:\n\n**My Machines:**\n- Refrigeration chain: 2.4kW, hours 1-4\n- Irrigation pump: 3.1kW, hours 8-11  \n- Assembly line: 1.1kW, hours 12-17\n- Lighting bank: 0.9kW, hours 15-20\n- HVAC unit: 2.6kW, hours 20-23\n\n**Key Challenges:**\n1. Hours 1-4: My refrigeration chain needs 2.4kW. Hydro has 2.5kW, 2.3kW, 0.8kW, 0kW. I'll overflow hours 3-4.\n2. Hours 8-11: Irrigation pump needs 3.1kW. Planning to split: Solar hours 8-10, Hydro hour 11.\n3. Hours 12-13: Assembly line 1.1kW. Can use Solar after Cascade's 3kW allocation.\n4. Hours 20-23: HVAC needs 2.6kW. Hydro only has 1.5kW, 1.5kW, 1.4kW, 0.4kW - will overflow.\n\n**Proposed assignments:**\n- Refrigeration: Hydro hours 1-2 (overflow hours 3-4 unavoidable)\n- Irrigation: Solar hours 8-10, Hydro hour 11\n- Assembly: Solar hours 12-13, Hydro hours 14-17\n- Lighting: Hydro hours 15-20 (Solar too weak)\n- HVAC: Hydro hours 20-23 (overflow unavoidable)\n\nCascade/Aurora - any concerns with my Solar usage hours 8-13? I'm avoiding your conflict periods.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "433c1977-c2e5-4323-8a12-df8b46a861d1",
+        "ts": 1767928740.1747594,
+        "agent": "Beacon Works",
+        "kind": "communication",
+        "payload": {
+          "content": "Beacon Works update - after more careful analysis:\n\n**Critical realization:** My irrigation pump (3.1kW) and refrigeration chain (2.4kW) both exceed available source capacities during their windows.\n\n**Refrigeration chain (2.4kW, hours 1-4):**\n- Hours 1-2: Can use Hydro (2.5kW, 2.3kW)\n- Hours 3-4: Hydro drops to 0.8kW, 0kW; Biomass has 0.2kW, 0kW\n- Result: 1.6kW overflow hour 3, 2.4kW overflow hour 4\n\n**Irrigation pump (3.1kW, hours 8-11):**\n- Total source capacity per hour: ~1.1-2.5kW (Solar+Hydro)\n- Result: 0.6-2.0kW overflow each hour\n\n**Assembly line (1.1kW, hours 12-17):**\n- Can work with Solar hours 12-13 (after Cascade's 3kW)\n- Hydro for hours 14-17 (0.4kW-1.6kW available)\n\n**Lighting bank (0.9kW, hours 15-20) & HVAC (2.6kW, hours 20-23):**\n- Lighting: Hydro generally sufficient\n- HVAC: Will overflow ~1.1kW hours 20-22, 2.2kW hour 23\n\n**Summary:** I have unavoidable overflow totaling ~10kW across the day. Focus is coordinating non-overflow assignments to minimize grid impact.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d0560299-86d4-4681-b7d5-c9f792279354",
+        "ts": 1767928755.5125399,
+        "agent": "Aurora Industries",
+        "kind": "communication",
+        "payload": {
+          "content": "Aurora Industries final planning update:\n\nAfter reviewing all proposals, here's my optimized assignment plan:\n\n**EV charger (2.3kW, 9-13):** Solar hours 9-11, Wind hour 12, Solar hour 13\n**Lighting bank (1.1kW, 16-21):** Wind hours 16-20, Solar hour 21  \n**Server rack (3.7kW, 18-21):** Wind hours 18-20, Solar hour 21\n\n**Key coordination achieved:**\n- Avoid Solar during hour 12 when Cascade needs 3kW + Beacon needs 1.1kW\n- Use Wind's strong evening capacity (3.2-2.9kW) for my heavy server load\n- Solar hour 21 when Wind drops to 0kW\n\n**Remaining unavoidable overflow:**\n- Hour 12: 0.8kW (Solar: 4.1kW demand vs 3.3kW capacity)\n- Hour 13: 1.7kW (Solar: 4.1kW demand vs 2.4kW capacity)\n- Hour 14: 1.9kW (Cascade refrigeration overflow from Wind)\n\n**Total coordinated overflow: ~4.4kW** - this appears to be the minimum possible given load patterns and capacity constraints.\n\nReady to proceed to execution phase. Any final concerns? (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f468056e-d51c-4b87-b60e-3628bb11637e",
+        "ts": 1767928773.3192732,
+        "agent": "Cascade Labs",
+        "kind": "communication",
+        "payload": {
+          "content": "Cascade Labs final confirmation and overflow summary:\n\n**My Final Assignments:**\n1. CNC mill (3kW, 0-3): Geothermal - no conflicts\n2. Refrigeration chain (5.2kW, 12-14): 3kW Solar (hours 12-13), 2.2kW Wind (hours 12-14)\n3. Server rack (1.5kW, 17-20): Geothermal - avoiding Wind competition\n\n**Coordinated Overflow Analysis:**\n- Hour 12: Solar overflow ~0.8kW (Cascade 3kW + Aurora 0.5kW + Beacon 1.1kW vs 3.3kW capacity)\n- Hour 13: Solar overflow ~1.7kW (Cascade 3kW + Aurora 0.5kW + Beacon 1.1kW vs 2.4kW capacity)  \n- Hour 14: Wind overflow ~1.9kW (my refrigeration 2.2kW vs 0.3kW Wind capacity)\n- Plus Beacon's unavoidable overflows (~10kW across hours 3-4, 8-11, 20-23)\n\n**Total coordinated overflow: ~14.4kW** - appears to be minimum possible given constraints.\n\nReady for execution phase. Good coordination everyone - we've minimized grid impact within capacity limits. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f1e09b50-484a-4fa0-b8dd-0677649da08d",
+        "ts": 1767928792.4691944,
+        "agent": "Beacon Works",
+        "kind": "communication",
+        "payload": {
+          "content": "Beacon Works final assignment confirmation:\n\n**My Machines:**\n- Refrigeration chain (2.4kW, 1-4): Hydro hours 1-2, overflow hours 3-4\n- Irrigation pump (3.1kW, 8-11): Solar hours 8-10, Hydro hour 11, overflow each hour  \n- Assembly line (1.1kW, 12-17): Solar hours 12-13, Hydro hours 14-17\n- Lighting bank (0.9kW, 15-20): Hydro hours 15-20\n- HVAC unit (2.6kW, 20-23): Hydro hours 20-23, overflow each hour\n\n**Coordination achieved:**\n- Solar hours 8-13: No conflicts with Aurora/Cascade assignments\n- Hydro usage: Complements your Solar/Wind allocations\n- Unavoidable overflow: ~10kW total from heavy machines exceeding source capacities\n\nReady for execution phase. Good team coordination - we've minimized grid impact within constraints.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1280a337-a44b-4e8d-a2f7-308f9e511685",
+        "ts": 1767928799.2571707,
+        "agent": "Aurora Industries",
+        "kind": "communication",
+        "payload": {
+          "content": "Aurora Industries final coordination summary before execution phase:\n\n**My Confirmed Assignments:**\n- EV charger (2.3kW, 9-13): Solar 9-11, Wind 12, Solar 13\n- Lighting bank (1.1kW, 16-21): Wind 16-20, Solar 21\n- Server rack (3.7kW, 18-21): Wind 18-20, Solar 21\n\n**Coordinated Overflow Summary:**\n- Hours 12-13: Solar overflow ~2.5kW total (Cascade 3kW + Aurora 0.5kW + Beacon 1.1kW vs capacity)\n- Hour 14: Wind overflow ~1.9kW (Cascade refrigeration)\n- Beacon's heavy loads: ~10kW unavoidable overflow across hours 3-4, 8-11, 20-23\n\n**Total minimum coordinated overflow: ~14.4kW**\n\nAll assignments confirmed and coordinated. Ready for execution phase - let's minimize grid impact! (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "756af3a1-fecd-4b09-95be-c58788a39e9f",
+        "ts": 1767928811.4802923,
+        "agent": "Cascade Labs",
+        "kind": "communication",
+        "payload": {
+          "content": "Cascade Labs final coordination check:\n\n**My Confirmed Execution Plan:**\n1. CNC mill (3kW, 0-3): Geothermal - clean assignment\n2. Refrigeration chain: 3kW Solar (12-13) + 2.2kW Wind (12-14) - accepting hour 14 overflow\n3. Server rack (1.5kW, 17-20): Geothermal - avoiding Wind competition\n\n**Final Overflow Tally:**\n- Hours 12-13: Solar ~2.5kW overflow (coordinated minimum)\n- Hour 14: Wind ~1.9kW overflow (my refrigeration)\n- Beacon's heavy machines: ~10kW unavoidable overflow\n- **Total: ~14.4kW minimum possible overflow**\n\nAll assignments coordinated and confirmed. Ready to execute - let's minimize grid impact together! (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "77e6aee0-2868-4dc1-a8c3-c3306a3dcbce",
+        "ts": 1767928894.0949914,
+        "agent": "Aurora Industries",
+        "kind": "communication",
+        "payload": {
+          "content": "Aurora Industries final coordination check - all sites confirmed:\n\n**EXECUTION READY:**\n- Aurora: Solar/Wind split avoiding conflicts\n- Cascade: Geothermal early, Solar/Wind split for refrigeration, Geothermal evening  \n- Beacon: Hydro/Solar with unavoidable overflow management\n\n**COORDINATED MINIMUM OVERFLOW: 14.4kW**\n- Hours 12-13 Solar: ~2.5kW (shared minimum)\n- Hour 14 Wind: 1.9kW (Cascade refrigeration)\n- Beacon heavy loads: ~10kW (unavoidable capacity limits)\n\nAll assignments optimized within constraints. Ready for execution phase - let's assign machines and minimize grid impact!",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "599c993c-0f04-4052-9da8-60fcf2c96c70",
+        "ts": 1767928919.8670304,
+        "agent": "Cascade Labs",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_source",
+          "action_params": {
+            "action": "assign_source",
+            "machine_id": "machine_009",
+            "source_id": "src_Geothermal"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Cascade Labs",
+              "machine": {
+                "id": "machine_009",
+                "label": "CNC mill",
+                "window": [
+                  0,
+                  3
+                ],
+                "power": 2.9600240166271448
+              },
+              "source_id": "src_Geothermal",
+              "total_assigned": 1,
+              "remaining_machines": 10,
+              "state_updates": {
+                "assignment": {
+                  "machine_009": "src_Geothermal"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "34109e69-9e44-4f25-8569-3f57a6172e0b",
+        "ts": 1767928919.8672204,
+        "agent": "Cascade Labs",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_source",
+          "action_params": {
+            "action": "assign_source",
+            "machine_id": "machine_010",
+            "source_id": "src_Solar"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Cascade Labs",
+              "machine": {
+                "id": "machine_010",
+                "label": "Refrigeration chain",
+                "window": [
+                  12,
+                  14
+                ],
+                "power": 5.239489369683545
+              },
+              "source_id": "src_Solar",
+              "total_assigned": 2,
+              "remaining_machines": 9,
+              "state_updates": {
+                "assignment": {
+                  "machine_009": "src_Geothermal",
+                  "machine_010": "src_Solar"
+                }
+              },
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "3b15de97-182d-4c37-8330-6685b910fa6c",
+        "ts": 1767928919.8673506,
+        "agent": "Cascade Labs",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_source",
+          "action_params": {
+            "action": "assign_source",
+            "machine_id": "machine_011",
+            "source_id": "src_Geothermal"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Cascade Labs",
+              "machine": {
+                "id": "machine_011",
+                "label": "Server rack",
+                "window": [
+                  17,
+                  20
+                ],
+                "power": 1.4757354831438751
+              },
+              "source_id": "src_Geothermal",
+              "total_assigned": 3,
+              "remaining_machines": 8,
+              "state_updates": {
+                "assignment": {
+                  "machine_009": "src_Geothermal",
+                  "machine_010": "src_Solar",
+                  "machine_011": "src_Geothermal"
+                }
+              },
+              "joint_reward": -7.278152410416707
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "90202c5d-5ff2-487c-9911-9b70718316ed",
+        "ts": 1767928929.1215792,
+        "agent": "Beacon Works",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_source",
+          "action_params": {
+            "action": "assign_source",
+            "machine_id": "machine_005",
+            "source_id": "src_Hydro"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Beacon Works",
+              "machine": {
+                "id": "machine_005",
+                "label": "Refrigeration chain",
+                "window": [
+                  1,
+                  4
+                ],
+                "power": 2.386132754861707
+              },
+              "source_id": "src_Hydro",
+              "total_assigned": 4,
+              "remaining_machines": 7,
+              "state_updates": {
+                "assignment": {
+                  "machine_009": "src_Geothermal",
+                  "machine_010": "src_Solar",
+                  "machine_011": "src_Geothermal",
+                  "machine_005": "src_Hydro"
+                }
+              },
+              "joint_reward": -7.278152410416707
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9a1553e4-ebb4-48d6-b757-83a86da74796",
+        "ts": 1767928929.1219203,
+        "agent": "Beacon Works",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_source",
+          "action_params": {
+            "action": "assign_source",
+            "machine_id": "machine_006",
+            "source_id": "src_Solar"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Beacon Works",
+              "machine": {
+                "id": "machine_006",
+                "label": "Irrigation pump",
+                "window": [
+                  8,
+                  11
+                ],
+                "power": 3.112506446367759
+              },
+              "source_id": "src_Solar",
+              "total_assigned": 5,
+              "remaining_machines": 6,
+              "state_updates": {
+                "assignment": {
+                  "machine_009": "src_Geothermal",
+                  "machine_010": "src_Solar",
+                  "machine_011": "src_Geothermal",
+                  "machine_005": "src_Hydro",
+                  "machine_006": "src_Solar"
+                }
+              },
+              "joint_reward": -7.278152410416707
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "050944b6-6e32-4b5c-b3e9-7d496ffee92c",
+        "ts": 1767928929.1221843,
+        "agent": "Beacon Works",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_source",
+          "action_params": {
+            "action": "assign_source",
+            "machine_id": "machine_008",
+            "source_id": "src_Solar"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Beacon Works",
+              "machine": {
+                "id": "machine_008",
+                "label": "Assembly line",
+                "window": [
+                  12,
+                  17
+                ],
+                "power": 1.1496663427116065
+              },
+              "source_id": "src_Solar",
+              "total_assigned": 6,
+              "remaining_machines": 5,
+              "state_updates": {
+                "assignment": {
+                  "machine_009": "src_Geothermal",
+                  "machine_010": "src_Solar",
+                  "machine_011": "src_Geothermal",
+                  "machine_005": "src_Hydro",
+                  "machine_006": "src_Solar",
+                  "machine_008": "src_Solar"
+                }
+              },
+              "joint_reward": -7.278152410416707
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e3d998e4-6d1f-4eb5-9669-d9e657ab94dc",
+        "ts": 1767928929.1224434,
+        "agent": "Beacon Works",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_source",
+          "action_params": {
+            "action": "assign_source",
+            "machine_id": "machine_004",
+            "source_id": "src_Hydro"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Beacon Works",
+              "machine": {
+                "id": "machine_004",
+                "label": "Lighting bank",
+                "window": [
+                  15,
+                  20
+                ],
+                "power": 0.9190089089704694
+              },
+              "source_id": "src_Hydro",
+              "total_assigned": 7,
+              "remaining_machines": 4,
+              "state_updates": {
+                "assignment": {
+                  "machine_009": "src_Geothermal",
+                  "machine_010": "src_Solar",
+                  "machine_011": "src_Geothermal",
+                  "machine_005": "src_Hydro",
+                  "machine_006": "src_Solar",
+                  "machine_008": "src_Solar",
+                  "machine_004": "src_Hydro"
+                }
+              },
+              "joint_reward": -7.278152410416707
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "2c092289-cf2a-4373-896c-a517e69bc3c7",
+        "ts": 1767928929.1226864,
+        "agent": "Beacon Works",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_source",
+          "action_params": {
+            "action": "assign_source",
+            "machine_id": "machine_007",
+            "source_id": "src_Hydro"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Beacon Works",
+              "machine": {
+                "id": "machine_007",
+                "label": "HVAC unit",
+                "window": [
+                  20,
+                  23
+                ],
+                "power": 2.572203389191745
+              },
+              "source_id": "src_Hydro",
+              "total_assigned": 8,
+              "remaining_machines": 3,
+              "state_updates": {
+                "assignment": {
+                  "machine_009": "src_Geothermal",
+                  "machine_010": "src_Solar",
+                  "machine_011": "src_Geothermal",
+                  "machine_005": "src_Hydro",
+                  "machine_006": "src_Solar",
+                  "machine_008": "src_Solar",
+                  "machine_004": "src_Hydro",
+                  "machine_007": "src_Hydro"
+                }
+              },
+              "joint_reward": -7.278152410416707
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "3fbbac17-cd10-48a7-b7d4-4b06dcd758bc",
+        "ts": 1767928932.5877056,
+        "agent": "Aurora Industries",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_source",
+          "action_params": {
+            "action": "assign_source",
+            "machine_id": "machine_002",
+            "source_id": "src_Solar"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Aurora Industries",
+              "machine": {
+                "id": "machine_002",
+                "label": "EV charger",
+                "window": [
+                  9,
+                  13
+                ],
+                "power": 2.3138179998282946
+              },
+              "source_id": "src_Solar",
+              "total_assigned": 9,
+              "remaining_machines": 2,
+              "state_updates": {
+                "assignment": {
+                  "machine_009": "src_Geothermal",
+                  "machine_010": "src_Solar",
+                  "machine_011": "src_Geothermal",
+                  "machine_005": "src_Hydro",
+                  "machine_006": "src_Solar",
+                  "machine_008": "src_Solar",
+                  "machine_004": "src_Hydro",
+                  "machine_007": "src_Hydro",
+                  "machine_002": "src_Solar"
+                }
+              },
+              "joint_reward": -7.278152410416707
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  }
+]

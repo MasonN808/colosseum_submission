@@ -1,0 +1,102 @@
+=== Launching vLLM model qwen_qwen2_5_7b_instruct at 2026-01-06 21:44:39 ===
+WARNING 01-06 21:44:45 [argparse_utils.py:354] Found duplicate keys --tool-call-parser, --enable-auto-tool-choice
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:44:45 [api_server.py:1772] vLLM API server version 0.12.0
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:44:45 [utils.py:253] non-default args: {'host': '127.0.0.1', 'port': 8020, 'enable_auto_tool_choice': True, 'tool_call_parser': 'hermes', 'model': 'Qwen/Qwen2.5-7B-Instruct', 'trust_remote_code': True, 'max_model_len': 16000}
+[0;36m(APIServer pid=198160)[0;0m The argument `trust_remote_code` is to be used with Auto classes. It has no effect here and is ignored.
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:44:45 [model.py:637] Resolved architecture: Qwen2ForCausalLM
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:44:45 [model.py:1750] Using max model len 16000
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:44:46 [scheduler.py:228] Chunked prefill is enabled with max_num_batched_tokens=2048.
+[0;36m(EngineCore_DP0 pid=198303)[0;0m INFO 01-06 21:44:51 [core.py:93] Initializing a V1 LLM engine (v0.12.0) with config: model='Qwen/Qwen2.5-7B-Instruct', speculative_config=None, tokenizer='Qwen/Qwen2.5-7B-Instruct', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=True, dtype=torch.bfloat16, max_seq_len=16000, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01), seed=0, served_model_name=Qwen/Qwen2.5-7B-Instruct, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'level': None, 'mode': <CompilationMode.VLLM_COMPILE: 3>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['none'], 'splitting_ops': ['vllm::unified_attention', 'vllm::unified_attention_with_output', 'vllm::unified_mla_attention', 'vllm::unified_mla_attention_with_output', 'vllm::mamba_mixer2', 'vllm::mamba_mixer', 'vllm::short_conv', 'vllm::linear_attention', 'vllm::plamo2_mamba_mixer', 'vllm::gdn_attention_core', 'vllm::kda_attention', 'vllm::sparse_attn_indexer'], 'compile_mm_encoder': False, 'compile_sizes': [], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.FULL_AND_PIECEWISE: (2, 1)>, 'cudagraph_num_of_warmups': 1, 'cudagraph_capture_sizes': [1, 2, 4, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200, 208, 216, 224, 232, 240, 248, 256, 272, 288, 304, 320, 336, 352, 368, 384, 400, 416, 432, 448, 464, 480, 496, 512], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': False, 'fuse_act_quant': False, 'fuse_attn_quant': False, 'eliminate_noops': True, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False}, 'max_cudagraph_capture_size': 512, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>}, 'local_cache_dir': None}
+[0;36m(EngineCore_DP0 pid=198303)[0;0m INFO 01-06 21:44:51 [parallel_state.py:1200] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://10.1.20.234:57809 backend=nccl
+[0;36m(EngineCore_DP0 pid=198303)[0;0m INFO 01-06 21:44:51 [parallel_state.py:1408] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank 0
+[0;36m(EngineCore_DP0 pid=198303)[0;0m INFO 01-06 21:44:51 [gpu_model_runner.py:3467] Starting to load model Qwen/Qwen2.5-7B-Instruct...
+[0;36m(EngineCore_DP0 pid=198303)[0;0m INFO 01-06 21:44:52 [cuda.py:411] Using FLASH_ATTN attention backend out of potential backends: ['FLASH_ATTN', 'FLASHINFER', 'TRITON_ATTN', 'FLEX_ATTENTION']
+[0;36m(EngineCore_DP0 pid=198303)[0;0m Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
+[0;36m(EngineCore_DP0 pid=198303)[0;0m Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:01<00:04,  1.44s/it]
+[0;36m(EngineCore_DP0 pid=198303)[0;0m Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:03<00:03,  1.52s/it]
+[0;36m(EngineCore_DP0 pid=198303)[0;0m Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:04<00:01,  1.56s/it]
+[0;36m(EngineCore_DP0 pid=198303)[0;0m Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:06<00:00,  1.58s/it]
+[0;36m(EngineCore_DP0 pid=198303)[0;0m Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:06<00:00,  1.56s/it]
+[0;36m(EngineCore_DP0 pid=198303)[0;0m 
+[0;36m(EngineCore_DP0 pid=198303)[0;0m INFO 01-06 21:44:59 [default_loader.py:308] Loading weights took 6.28 seconds
+[0;36m(EngineCore_DP0 pid=198303)[0;0m INFO 01-06 21:44:59 [gpu_model_runner.py:3549] Model loading took 14.2488 GiB memory and 7.336405 seconds
+[0;36m(EngineCore_DP0 pid=198303)[0;0m INFO 01-06 21:45:04 [backends.py:655] Using cache directory: /home/smahmud/.cache/vllm/torch_compile_cache/4c9271d085/rank_0_0/backbone for vLLM's torch.compile
+[0;36m(EngineCore_DP0 pid=198303)[0;0m INFO 01-06 21:45:04 [backends.py:715] Dynamo bytecode transform time: 3.88 s
+[0;36m(EngineCore_DP0 pid=198303)[0;0m INFO 01-06 21:45:07 [backends.py:216] Directly load the compiled graph(s) for dynamic shape from the cache, took 2.956 s
+[0;36m(EngineCore_DP0 pid=198303)[0;0m INFO 01-06 21:45:08 [monitor.py:34] torch.compile takes 6.84 s in total
+[0;36m(EngineCore_DP0 pid=198303)[0;0m INFO 01-06 21:45:08 [gpu_worker.py:359] Available KV cache memory: 26.96 GiB
+[0;36m(EngineCore_DP0 pid=198303)[0;0m INFO 01-06 21:45:09 [kv_cache_utils.py:1286] GPU KV cache size: 504,864 tokens
+[0;36m(EngineCore_DP0 pid=198303)[0;0m INFO 01-06 21:45:09 [kv_cache_utils.py:1291] Maximum concurrency for 16,000 tokens per request: 31.55x
+[0;36m(EngineCore_DP0 pid=198303)[0;0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   0%|          | 0/51 [00:00<?, ?it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   4%|▍         | 2/51 [00:00<00:02, 19.50it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   8%|▊         | 4/51 [00:00<00:02, 18.38it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  12%|█▏        | 6/51 [00:00<00:02, 17.75it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  16%|█▌        | 8/51 [00:00<00:02, 17.95it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  22%|██▏       | 11/51 [00:00<00:02, 19.32it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  27%|██▋       | 14/51 [00:00<00:01, 20.02it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  33%|███▎      | 17/51 [00:00<00:01, 20.67it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  39%|███▉      | 20/51 [00:00<00:01, 22.34it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  45%|████▌     | 23/51 [00:01<00:01, 23.94it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  51%|█████     | 26/51 [00:01<00:00, 25.12it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  57%|█████▋    | 29/51 [00:01<00:00, 26.02it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  63%|██████▎   | 32/51 [00:01<00:00, 26.77it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  71%|███████   | 36/51 [00:01<00:00, 27.91it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  76%|███████▋  | 39/51 [00:01<00:00, 27.07it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  84%|████████▍ | 43/51 [00:01<00:00, 28.42it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  92%|█████████▏| 47/51 [00:01<00:00, 28.85it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 51/51 [00:02<00:00, 28.54it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 51/51 [00:02<00:00, 24.78it/s]
+[0;36m(EngineCore_DP0 pid=198303)[0;0m Capturing CUDA graphs (decode, FULL):   0%|          | 0/35 [00:00<?, ?it/s]Capturing CUDA graphs (decode, FULL):   9%|▊         | 3/35 [00:00<00:01, 23.69it/s]Capturing CUDA graphs (decode, FULL):  17%|█▋        | 6/35 [00:00<00:01, 26.60it/s]Capturing CUDA graphs (decode, FULL):  26%|██▌       | 9/35 [00:00<00:00, 27.75it/s]Capturing CUDA graphs (decode, FULL):  37%|███▋      | 13/35 [00:00<00:00, 29.09it/s]Capturing CUDA graphs (decode, FULL):  49%|████▊     | 17/35 [00:00<00:00, 30.19it/s]Capturing CUDA graphs (decode, FULL):  60%|██████    | 21/35 [00:00<00:00, 31.58it/s]Capturing CUDA graphs (decode, FULL):  71%|███████▏  | 25/35 [00:00<00:00, 32.54it/s]Capturing CUDA graphs (decode, FULL):  83%|████████▎ | 29/35 [00:00<00:00, 33.52it/s]Capturing CUDA graphs (decode, FULL):  94%|█████████▍| 33/35 [00:01<00:00, 34.73it/s]Capturing CUDA graphs (decode, FULL): 100%|██████████| 35/35 [00:01<00:00, 32.22it/s]
+[0;36m(EngineCore_DP0 pid=198303)[0;0m INFO 01-06 21:45:12 [gpu_model_runner.py:4466] Graph capturing finished in 4 secs, took 0.54 GiB
+[0;36m(EngineCore_DP0 pid=198303)[0;0m INFO 01-06 21:45:12 [core.py:254] init engine (profile, create kv cache, warmup model) took 12.95 seconds
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:14 [api_server.py:1520] Supported tasks: ['generate']
+[0;36m(APIServer pid=198160)[0;0m WARNING 01-06 21:45:14 [model.py:1576] Default sampling parameters have been overridden by the model's Hugging Face generation config recommended from the model creator. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:14 [serving_responses.py:194] Using default chat sampling params from model: {'repetition_penalty': 1.05, 'temperature': 0.7, 'top_k': 20, 'top_p': 0.8}
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:14 [serving_engine.py:293] "auto" tool choice has been enabled.
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:14 [serving_engine.py:293] "auto" tool choice has been enabled.
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:14 [serving_chat.py:133] Using default chat sampling params from model: {'repetition_penalty': 1.05, 'temperature': 0.7, 'top_k': 20, 'top_p': 0.8}
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:14 [serving_completion.py:73] Using default completion sampling params from model: {'repetition_penalty': 1.05, 'temperature': 0.7, 'top_k': 20, 'top_p': 0.8}
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:14 [serving_engine.py:293] "auto" tool choice has been enabled.
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:14 [serving_chat.py:133] Using default chat sampling params from model: {'repetition_penalty': 1.05, 'temperature': 0.7, 'top_k': 20, 'top_p': 0.8}
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:14 [api_server.py:1847] Starting vLLM API server 0 on http://127.0.0.1:8020
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:14 [launcher.py:38] Available routes are:
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:14 [launcher.py:46] Route: /openapi.json, Methods: GET, HEAD
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:14 [launcher.py:46] Route: /docs, Methods: GET, HEAD
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:14 [launcher.py:46] Route: /docs/oauth2-redirect, Methods: GET, HEAD
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:14 [launcher.py:46] Route: /redoc, Methods: GET, HEAD
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:14 [launcher.py:46] Route: /health, Methods: GET
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:14 [launcher.py:46] Route: /load, Methods: GET
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:14 [launcher.py:46] Route: /pause, Methods: POST
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:14 [launcher.py:46] Route: /resume, Methods: POST
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:14 [launcher.py:46] Route: /is_paused, Methods: GET
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:14 [launcher.py:46] Route: /tokenize, Methods: POST
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:14 [launcher.py:46] Route: /detokenize, Methods: POST
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:14 [launcher.py:46] Route: /v1/models, Methods: GET
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:14 [launcher.py:46] Route: /version, Methods: GET
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:14 [launcher.py:46] Route: /v1/responses, Methods: POST
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:14 [launcher.py:46] Route: /v1/responses/{response_id}, Methods: GET
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:14 [launcher.py:46] Route: /v1/responses/{response_id}/cancel, Methods: POST
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:14 [launcher.py:46] Route: /v1/messages, Methods: POST
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:14 [launcher.py:46] Route: /v1/chat/completions, Methods: POST
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:14 [launcher.py:46] Route: /v1/completions, Methods: POST
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:14 [launcher.py:46] Route: /v1/audio/transcriptions, Methods: POST
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:14 [launcher.py:46] Route: /v1/audio/translations, Methods: POST
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:14 [launcher.py:46] Route: /scale_elastic_ep, Methods: POST
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:14 [launcher.py:46] Route: /is_scaling_elastic_ep, Methods: POST
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:14 [launcher.py:46] Route: /inference/v1/generate, Methods: POST
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:14 [launcher.py:46] Route: /ping, Methods: GET
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:14 [launcher.py:46] Route: /ping, Methods: POST
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:14 [launcher.py:46] Route: /invocations, Methods: POST
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:14 [launcher.py:46] Route: /metrics, Methods: GET
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:14 [launcher.py:46] Route: /classify, Methods: POST
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:14 [launcher.py:46] Route: /v1/embeddings, Methods: POST
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:14 [launcher.py:46] Route: /score, Methods: POST
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:14 [launcher.py:46] Route: /v1/score, Methods: POST
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:14 [launcher.py:46] Route: /rerank, Methods: POST
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:14 [launcher.py:46] Route: /v1/rerank, Methods: POST
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:14 [launcher.py:46] Route: /v2/rerank, Methods: POST
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:14 [launcher.py:46] Route: /pooling, Methods: POST
+[0;36m(APIServer pid=198160)[0;0m INFO:     Started server process [198160]
+[0;36m(APIServer pid=198160)[0;0m INFO:     Waiting for application startup.
+[0;36m(APIServer pid=198160)[0;0m INFO:     Application startup complete.
+[0;36m(APIServer pid=198160)[0;0m INFO:     127.0.0.1:38658 - "GET /v1/models HTTP/1.1" 200 OK
+[0;36m(APIServer pid=198160)[0;0m INFO:     127.0.0.1:38664 - "GET /v1/models HTTP/1.1" 200 OK
+[0;36m(APIServer pid=198160)[0;0m INFO:     127.0.0.1:38676 - "GET /v1/models HTTP/1.1" 200 OK
+[0;36m(APIServer pid=198160)[0;0m INFO:     127.0.0.1:38690 - "GET /v1/models HTTP/1.1" 200 OK
+[0;36m(APIServer pid=198160)[0;0m INFO:     127.0.0.1:38706 - "GET /v1/models HTTP/1.1" 200 OK
+[0;36m(APIServer pid=198160)[0;0m INFO:     127.0.0.1:38722 - "GET /v1/models HTTP/1.1" 200 OK
+[0;36m(APIServer pid=198160)[0;0m INFO:     127.0.0.1:38726 - "GET /v1/models HTTP/1.1" 200 OK
+[0;36m(APIServer pid=198160)[0;0m INFO:     127.0.0.1:38730 - "GET /v1/models HTTP/1.1" 200 OK
+[0;36m(APIServer pid=198160)[0;0m INFO:     127.0.0.1:38742 - "GET /v1/models HTTP/1.1" 200 OK
+[0;36m(APIServer pid=198160)[0;0m INFO:     127.0.0.1:38752 - "GET /v1/models HTTP/1.1" 200 OK
+[0;36m(APIServer pid=198160)[0;0m INFO:     127.0.0.1:38754 - "GET /v1/models HTTP/1.1" 200 OK
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:15 [chat_utils.py:574] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
+[0;36m(APIServer pid=198160)[0;0m INFO 01-06 21:45:15 [launcher.py:110] Shutting down FastAPI HTTP server.
+[0;36m(APIServer pid=198160)[0;0m INFO:     Shutting down
+[0;36m(APIServer pid=198160)[0;0m INFO:     Waiting for connections to close. (CTRL+C to force quit)
+[0;36m(APIServer pid=198160)[0;0m INFO:     Waiting for application shutdown.
+[0;36m(APIServer pid=198160)[0;0m INFO:     Application shutdown complete.
+
+=== Stopping qwen_qwen2_5_7b_instruct ===

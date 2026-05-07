@@ -1,0 +1,991 @@
+[
+  {
+    "blackboard_id": "0",
+    "participants": [
+      "Astrid",
+      "Gillian",
+      "Harry",
+      "Mi",
+      "Reanna",
+      "Stefania"
+    ],
+    "template": {},
+    "events": [
+      {
+        "blackboard_id": 0,
+        "id": "91439290-c773-435a-bb37-70c612b298f0",
+        "ts": 1777209388.6009333,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Astrid, Gillian, Harry, Mi, Reanna, Stefania"
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "0cdc2a15-00ed-4ffd-933c-cf96392014db",
+        "ts": 1777209393.8694525,
+        "agent": "Gillian",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi team, I'm Gillian with skills in ui-ux-design (0.87) and security (0.71), availability 7h. My costs are very low for ISSUE-0002 tasks (review:1.12, test:1.57, implement:2.24) but extremely high for ISSUE-0001 (24+). I should take one from ISSUE-0002 to minimize total_cost. Suggest I take ISSUE-0002::review since lowest cost/effort. What are your skills and preferred tasks? Let's coordinate to avoid duplicates and cover critical tasks with suitable agents.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "37a3ac8a-22d3-4d2b-a777-d774f60dda09",
+        "ts": 1777209456.4351087,
+        "agent": "Gillian",
+        "kind": "communication",
+        "payload": {
+          "content": "Since no responses yet, I'll plan to take ISSUE-0002::review (cost 1.12, effort 1, priority medium). It matches my skills perfectly. That leaves the other ISSUE-0002 for someone else, and everyone else should focus on the critical ISSUE-0001 tasks. Who has low costs for api-development tasks?",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "daa6b6dc-ea09-4073-9550-d3622b028b5f",
+        "ts": 1777209579.0610821,
+        "agent": "Gillian",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, to optimize, I'll go for ISSUE-0002::review (low cost 1.12 for me, matches my security/ui skills). Please avoid picking that. Focus on covering ISSUE-0001 critical tasks with your best fits, and maybe one more on ISSUE-0002. Let's maximize done tasks and priority.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e14ad265-db3b-421d-b53a-a131fe301cd5",
+        "ts": 1777209583.348599,
+        "agent": "Stefania",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi team, Stefania here with top skill in security (0.94), availability 8h. My costs extremely high for ISSUE-0001 (24+), low for ISSUE-0002 (review:1.75, test:2.45, implement:3.50). Since Gillian plans ISSUE-0002::review, I'll plan to take ISSUE-0002::test (my cost 2.45, effort 1.4, matches security skill for 'Improve security'). This minimizes total_cost while covering medium priority. Others should handle critical ISSUE-0001 with their better fits. Any objections?",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a314f854-e1f6-47c9-9240-44c227c783f8",
+        "ts": 1777209647.9477901,
+        "agent": "Stefania",
+        "kind": "communication",
+        "payload": {
+          "content": "Confirming my plan: taking ISSUE-0002::test to avoid high costs on critical but mismatched ISSUE-0001 tasks. This way we can have 2 tasks from ISSUE-0002 done by low-cost agents (Gillian review, me test), and others focus on ISSUE-0001 critical ones. If someone else wants ISSUE-0002::test, speak up. Otherwise, in next phase I'll assign that.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "60653f5f-1395-4d1f-9e47-c190b90c9da3",
+        "ts": 1777209770.622647,
+        "agent": "Stefania",
+        "kind": "communication",
+        "payload": {
+          "content": "Team update: Stefania planning ISSUE-0002::test. Gillian on review. That covers two medium tasks cheaply. Now, who will cover the critical ISSUE-0001 tasks? Preferably those with low costs on api-development. Let's assign triage, docs, review, test, implement to suitable agents. Harry, Astrid, Mi, Reanna - please share your skills/costs.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d223c2e8-c684-4ae5-93c7-f3172a0bf9e9",
+        "ts": 1777209837.8352888,
+        "agent": "Mi",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi team, Mi here. Top skill security (0.91), avail 5h. Costs very high for ISSUE-0001 (24-61), lower for ISSUE-0002 (review:1.81, test:2.53, implement:3.61). Since Gillian taking review and Stefania test on ISSUE-0002, I'll plan to take ISSUE-0002::implement (my cost 3.61, matches security). That covers all of ISSUE-0002 cheaply. Everyone else please take from critical ISSUE-0001 with your low costs. Reanna, what are your plans? (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "7e7b9000-39db-4896-89ae-f68d52beed18",
+        "ts": 1777210030.2018292,
+        "agent": "Reanna",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi team, Reanna here. Top skills api-development (0.98), ui-ux-design (0.90), availability 6h. My costs lowest on ISSUE-0001::triage (2.22), then review/docs (2.78). High on 0001 implement/test. For 0002, low on review (1.82) but since Gillian planning that, I'll go for ISSUE-0001::triage (critical, good match, low cost). Mi planning 0002::implement. This covers one critical cheaply and all 0002 with low costs. Others please take remaining 0001 tasks like review, test, docs, implement.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "3808cba6-3215-46db-ad3d-5e5ea9a98060",
+        "ts": 1777210158.7021146,
+        "agent": "Harry",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi team, Harry here. Skills: ui-ux-design (0.62), security (0.60), availability 5h. Costs very low on ISSUE-0002 (review:1.41, test:1.97, implement:2.82) but those are taken by Gillian, Stefania, Mi. For ISSUE-0001 my costs high (24-61) due to skill mismatch with api-dev. Since maximize tasks and critical priority, I can take one small from ISSUE-0001 like review or docs (cost 30, effort 3, within 5h). Or skip if Astrid or others have better/low costs. Astrid, what are your skills/costs? Suggest I take ISSUE-0001::docs or review to cover more criticals. Thoughts? (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "6d385f4d-aaa2-45aa-90be-3f9a2e47a985",
+        "ts": 1777210222.9098692,
+        "agent": "Harry",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, since ISSUE-0002 covered by you three, Reanna on triage. I'll take ISSUE-0001::review (effort 3<5, critical, my cost 30) to boost priority_sum and tasks. Suggest Astrid takes another like ISSUE-0001::docs (effort3) or test. Avoid duplicates. If Astrid has better fit, she takes implement? But her costs unknown. Planning to assign ISSUE-0001::review in execution unless conflict. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a08fc6ad-e876-46b0-90d8-1ab8c32f3f53",
+        "ts": 1777210345.501798,
+        "agent": "Harry",
+        "kind": "communication",
+        "payload": {
+          "content": "Update: No word from Astrid. To maximize critical tasks, I'll claim ISSUE-0001::review (my cost 30, effort 3 within 5h avail). Matches somewhat with security. This leaves implement (too big for me), test, docs for Astrid or others if they can. Covers 1 more critical. In execution I'll assign that unless better suggestion. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "51e21b17-ed7b-41c3-b57c-6ba04b08e624",
+        "ts": 1777210352.095176,
+        "agent": "Astrid",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi team, Astrid here. Top skill ui-ux-design (0.72), availability 6h. My costs high on ISSUE-0001 (docs:30, review:30, triage:24, test:42, implement:60) and medium on ISSUE-0002 (review:2.17, test:3.04, implement:4.34). Since 0002 all claimed by Gillian(review), Stefania(test), Mi(implement), and Reanna on 0001::triage, Harry on 0001::review - I'll take ISSUE-0001::docs (effort 3<6, cost 30 for me, critical). This maximizes tasks (6 total) and priority. Avoid picking docs. If conflict, I can do test instead. Ready to assign in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "59bc7da1-2551-4754-af42-6860235880c1",
+        "ts": 1777210417.6957905,
+        "agent": "Astrid",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, confirming plans: Gillian=0002-review, Stefania=0002-test, Mi=0002-implement, Reanna=0001-triage, Harry=0001-review, Astrid=0001-docs. This covers all 0002 medium cheaply with skilled agents, and 3 critical from 0001. No duplicates, all feasible within avails. Maximizes tasks_done=6, high priority_sum. In execution phase, I'll assign ISSUE-0001::docs. Good to go?",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a0280130-5764-45fa-bc35-14acfed94481",
+        "ts": 1777210548.0502205,
+        "agent": "Gillian",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, I agree with the plan summarized by Astrid: I'll take ISSUE-0002::review (low cost 1.12 for me, good skill match). No conflicts, covers all medium priority cheaply and 3 critical tasks. Ready for execution phase to assign that. Good coordination everyone.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8a8e5b63-1396-41ec-81c3-cfb62d5c201a",
+        "ts": 1777210615.6830657,
+        "agent": "Gillian",
+        "kind": "communication",
+        "payload": {
+          "content": "Confirmed team plan looks optimal: 6 tasks covered without overlap, prioritizing criticals where possible with lower costs, all within availability. I'll assign ISSUE-0002::review in execution. No changes needed.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d3d0c33b-c90c-4443-aba9-7711da71f7e2",
+        "ts": 1777210739.7042692,
+        "agent": "Gillian",
+        "kind": "communication",
+        "payload": {
+          "content": "All set. The coordinated plan maximizes our joint score with 6 tasks (3 critical + 3 medium), low total_cost by assigning 0002 to skilled low-cost agents like me, Stefania, Mi, and critical 0001 to those who can (Reanna triage low cost, Harry review, Astrid docs). No duplicates, all feasible. Will assign my task in execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "2a804498-9056-4a14-ae6c-f6821fd679cc",
+        "ts": 1777210743.2111363,
+        "agent": "Stefania",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, Stefania confirming: I'll take ISSUE-0002::test (cost 2.45, effort 1.4, good security skill match). Plan looks solid with 6 tasks covered no overlaps: Gillian 0002-review, Mi 0002-implement, Reanna 0001-triage, Harry 0001-review, Astrid 0001-docs. This maximizes tasks_done=6, good priority (3 crit + 3 med), low total_cost. No objections, ready for execution phase to assign that.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c1004385-d3e9-49d8-a821-cabb8793540c",
+        "ts": 1777210815.735013,
+        "agent": "Mi",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, confirming my plan to take ISSUE-0002::implement (my cost 3.61, effort 2 within 5h, matches security skill). No conflicts with the coordinated assignments. This with others' plans gives us 6 tasks: 3 medium low-cost + 3 critical. Ready for execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "5b486159-7e7a-498e-976c-ccacf11f600c",
+        "ts": 1777210888.2719145,
+        "agent": "Reanna",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, confirming the coordinated plan on public: I'll assign ISSUE-0001::triage (low cost 2.22 for me, critical, good skill match). No conflicts with others' claims (Gillian 0002-review, Stefania 0002-test, Mi 0002-implement, Harry 0001-review, Astrid 0001-docs). This gives 6 tasks, good priority and low total cost. Ready for execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "2c178762-b44b-4dd8-8547-c79587f2e9de",
+        "ts": 1777210961.6196866,
+        "agent": "Harry",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, confirming the plan: I'll take ISSUE-0001::review (cost 30 for me, effort 3 within 5h, critical). No conflicts with assignments: Gillian 0002-review, Stefania 0002-test, Mi 0002-implement, Reanna 0001-triage, Astrid 0001-docs. This gives 6 tasks (3 crit + 3 med), good priority_sum and low total_cost by using skilled agents for 0002. Ready for execution phase to assign ISSUE-0001::review.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "00986af0-1313-4fde-9770-111fe82da239",
+        "ts": 1777211030.5400424,
+        "agent": "Astrid",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, confirming final plan for execution: I'll assign ISSUE-0001::docs (cost 30, effort 3&lt;6h, critical). No changes: Gillian=0002-review, Stefania=0002-test, Mi=0002-implement, Reanna=0001-triage, Harry=0001-review, me=0001-docs. This gives 6 tasks (3 crit + 3 med), no duplicates, maximizes score with low total_cost on 0002. Ready for execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "55e2aea7-1211-4b7c-bc3a-1926eacab6d3",
+        "ts": 1777211112.3649013,
+        "agent": "Gillian",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, confirming my assignment for execution phase: I'll take ISSUE-0002::review (cost 1.12, effort 1, medium priority, good skill match with security/ui-ux). The overall plan with 6 tasks (3 critical from ISSUE-0001 by Reanna/Harry/Astrid, all 3 medium from ISSUE-0002 by me/Stefania/Mi) looks optimal balancing priority and low total_cost. No conflicts or changes needed. Ready to assign in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "292ea2b2-1803-4060-8e4a-35b616bca98e",
+        "ts": 1777211176.665523,
+        "agent": "Gillian",
+        "kind": "communication",
+        "payload": {
+          "content": "All agents have now confirmed the coordinated assignments with no conflicts: me on ISSUE-0002::review, Stefania on ::test, Mi on ::implement (all medium, low costs), Reanna on 0001::triage, Harry on 0001::review, Astrid on 0001::docs (critical ones feasible for them). This should give tasks_done=6, good priority_sum (3*1.0 + 3*0.5), minimized total_cost. No one taking duplicates or high cost mismatches. Optimal for joint score. Ready to proceed to execution phase and assign accordingly.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ed7f18f1-208e-4039-b1f7-2afdbabb22cf",
+        "ts": 1777211430.2423627,
+        "agent": "Gillian",
+        "kind": "communication",
+        "payload": {
+          "content": "Final confirmation before execution: my choice is ISSUE-0002::review. This is best for me given low cost and skill match, avoids high costs on api tasks. Plan solid for max score.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "7fbf9974-1069-4062-a767-66b4dde9956c",
+        "ts": 1777211433.110605,
+        "agent": "Stefania",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, Stefania here confirming final plan for execution: I'll assign ISSUE-0002::test (my cost 2.45, effort 1.4 within 8h, good match with security skill). No conflicts with the plan: Gillian on 0002-review, Mi on 0002-implement, Reanna on 0001-triage, Harry on 0001-review, Astrid on 0001-docs. This covers 6 tasks (3 critical + 3 medium), no duplicates, low total_cost on 0002 by skilled agents, good priority_sum. Optimal coordination. Ready to assign in next phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9566efa0-00ce-404f-91c1-b2efe028cb80",
+        "ts": 1777211502.918361,
+        "agent": "Mi",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, Mi confirming final plan for execution: I'll assign ISSUE-0002::implement (my cost 3.61, effort 2 within 5h, good security skill match). No conflicts with the plan (Gillian 0002-review, Stefania 0002-test, Reanna 0001-triage, Harry 0001-review, Astrid 0001-docs). This covers all 0002 with low costs and 3 critical, maximizes tasks=6, good priority and low total_cost. Ready for execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "29307601-859c-4a7b-aa48-5fe8ed673649",
+        "ts": 1777211572.352568,
+        "agent": "Reanna",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, Reanna confirming final plan: I'll assign ISSUE-0001::triage in execution (my low cost 2.22, critical, good api skill match, effort 2.4<6h). No conflicts with others (Gillian 0002-review, Stefania 0002-test, Mi 0002-implement, Harry 0001-review, Astrid 0001-docs). This optimizes for 6 tasks, good priority and low total_cost. Ready for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "14f8df67-fb84-495e-a91c-a2e3e5dcda91",
+        "ts": 1777211643.592541,
+        "agent": "Harry",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, Harry confirming final plan for execution: I'll assign ISSUE-0001::review (my cost 30, effort 3 within 5h, critical). No conflicts with the plan: Gillian on 0002-review, Stefania on 0002-test, Mi on 0002-implement, Reanna on 0001-triage, Astrid on 0001-docs. This covers 6 tasks (3 crit + 3 med), good priority_sum, low total_cost on 0002. Ready for execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1eddd9a6-0fcd-4f78-b012-148ebf0a5899",
+        "ts": 1777211709.7596905,
+        "agent": "Harry",
+        "kind": "communication",
+        "payload": {
+          "content": "All good team. Sticking with ISSUE-0001::review for me in execution to maximize critical tasks covered. No changes.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "bb9e4f82-95bd-473a-a179-163ef512a311",
+        "ts": 1777211835.1720822,
+        "agent": "Harry",
+        "kind": "communication",
+        "payload": {
+          "content": "Team update: All agents seem to have confirmed the plan with no conflicts or better suggestions. Looking forward to execution phase where I'll assign ISSUE-0001::review to boost the critical priority coverage while keeping within my availability. This should lead to optimal joint score.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "fab554cd-773b-4561-9578-8a029628cd39",
+        "ts": 1777211843.3437908,
+        "agent": "Astrid",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, Astrid confirming the plan for execution phase: I'll assign ISSUE-0001::docs (cost 30, effort 3 within my 6h, critical priority). No conflicts with assignments: Gillian=0002-review, Stefania=0002-test, Mi=0002-implement, Reanna=0001-triage, Harry=0001-review. This setup maximizes tasks_done=6 (3 critical + 3 medium), good priority_sum, with low total_cost on the medium tasks using skilled agents. All feasible, no duplicates. Ready for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8c654a73-4534-4a1d-b517-d33aa39ffec8",
+        "ts": 1777211910.5951107,
+        "agent": "Astrid",
+        "kind": "communication",
+        "payload": {
+          "content": "All set team. The plan is coordinated with no conflicts: 6 tasks assigned without overlap, balancing high tasks_done, good priority, low total cost. I'll proceed to assign ISSUE-0001::docs in the execution phase as planned.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "578e5a59-48d6-4729-b867-bcafd005be70",
+        "ts": 1777212033.4053762,
+        "agent": "Astrid",
+        "kind": "communication",
+        "payload": {
+          "content": "Team update from Astrid: Plan is locked in with no issues - me on ISSUE-0001::docs, others as previously stated. This should yield optimal joint score. Moving to execution phase ready to assign my task.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f492ca95-03d2-439f-bc7d-b02b13ee68f6",
+        "ts": 1777212047.0525281,
+        "agent": "Gillian",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, as Gillian, confirming final plan: assigning ISSUE-0002::review in execution (my cost 1.12, matches skills). No conflicts, 6 tasks total (3 crit + 3 med), optimal for score. Ready for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8cd54b63-bab0-4b08-91ae-a5bd40757b25",
+        "ts": 1777212114.068408,
+        "agent": "Gillian",
+        "kind": "communication",
+        "payload": {
+          "content": "All coordinated. My final decision for execution: ISSUE-0002::review. This is optimal.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "0daffaeb-07b8-4fa4-9279-82c6f20629eb",
+        "ts": 1777212236.2890139,
+        "agent": "Gillian",
+        "kind": "communication",
+        "payload": {
+          "content": "Planning complete for me. My choice is ISSUE-0002::review. Ready to execute.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "bf99ac34-7358-4c78-86d2-c6450793b02a",
+        "ts": 1777212242.0068655,
+        "agent": "Stefania",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, Stefania confirming final plan for execution: I'll assign ISSUE-0002::test (my cost 2.45, effort 1.4 within 8h, good match with security skill). No conflicts with the plan: Gillian on 0002-review, Mi on 0002-implement, Reanna on 0001-triage, Harry on 0001-review, Astrid on 0001-docs. This covers 6 tasks (3 critical + 3 medium), no duplicates, low total_cost on 0002 by skilled agents, good priority_sum. Optimal coordination. Ready to assign in next phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e62056cb-8f31-432f-b3c9-e24c512acc3e",
+        "ts": 1777212306.2767427,
+        "agent": "Stefania",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, all confirmations received with no conflicts. The plan is solid: 6 tasks assigned (Gillian:0002-review, me:0002-test, Mi:0002-implement, Reanna:0001-triage, Harry:0001-review, Astrid:0001-docs). This optimizes joint score with tasks_done=6, priority_sum=4.5 (3*1 + 3*0.5), low total_cost. Ready for execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8c868360-a15c-4741-8165-986db2e26fc7",
+        "ts": 1777212429.5070362,
+        "agent": "Stefania",
+        "kind": "communication",
+        "payload": {
+          "content": "All set for execution phase. My final choice remains ISSUE-0002::test to keep total_cost low with good skill match. No changes to the coordinated plan.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "efa903b6-2074-4525-a350-156cbd766593",
+        "ts": 1777212433.541946,
+        "agent": "Mi",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, Mi here confirming final plan: I'll take ISSUE-0002::implement in execution (cost 3.61 for me). No conflicts with plan (Gillian 0002-review, Stefania 0002-test, Reanna 0001-triage, Harry 0001-review, Astrid 0001-docs). This gives 6 tasks (3 crit + 3 med), good priority_sum, low total_cost on 0002 by us skilled agents. Optimal. Ready for execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "0705b628-5def-482e-9170-a056dc836039",
+        "ts": 1777212618.933641,
+        "agent": "Mi",
+        "kind": "communication",
+        "payload": {
+          "content": "Team update: Sticking with my plan to claim ISSUE-0002::implement in the upcoming execution phase. This fits my skills and low cost, allows others to cover criticals. Coalition with Reanna is aligned. This should lead to high joint score with 6 tasks done.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "5e39d660-0aac-4a0e-87ea-0753e5faa4fb",
+        "ts": 1777212633.5755243,
+        "agent": "Reanna",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, final confirmation on public: sticking with ISSUE-0001::triage for me in execution (low cost 2.22, critical, good skill match). Plan solid with no conflicts: Gillian 0002-review, Stefania 0002-test, Mi 0002-implement, Harry 0001-review, Astrid 0001-docs. This maximizes tasks=6, good priority, low total_cost. Ready for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "2ee1e384-b6da-4bfd-a379-30928bf7bf76",
+        "ts": 1777212766.8469703,
+        "agent": "Reanna",
+        "kind": "communication",
+        "payload": {
+          "content": "Team (public BB0), all confirmations are in with no conflicts. The plan is optimal: 6 tasks with 3 critical and 3 medium, low total_cost. My final choice for execution is ISSUE-0001::triage.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "7e45a2e3-9cb7-45d3-bdae-794a178d797e",
+        "ts": 1777212891.3682435,
+        "agent": "Reanna",
+        "kind": "communication",
+        "payload": {
+          "content": "All, planning complete. Confirmed plan optimal, no changes. Ready to move to execution phase where I'll assign ISSUE-0001::triage.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a620dabc-16b7-4617-a070-b100c6472153",
+        "ts": 1777212904.5625036,
+        "agent": "Harry",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, all confirmations look good with no conflicts. Sticking with my plan to take ISSUE-0001::review (cost 30, within avail, critical priority). This aligns with the coordinated assignments for max tasks=6, good priority_sum, low total_cost. Ready for execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d0c8220b-9f86-4eb8-98c9-e59c8b4ef62f",
+        "ts": 1777212966.6923885,
+        "agent": "Harry",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, Harry here with final confirmation: no changes, I'll assign ISSUE-0001::review in execution phase. All assignments unique, feasible, covers 6 tasks optimally. Let's proceed to execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "89190ea3-be01-4936-a5b4-4f721abe7c7b",
+        "ts": 1777213089.8223147,
+        "agent": "Harry",
+        "kind": "communication",
+        "payload": {
+          "content": "All, the coordinated plan is solid with unique tasks: no duplicates, all feasible within avails, balancing criticals and low-cost mediums. My final choice remains ISSUE-0001::review. Ready to assign in execution phase. Good job team.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "5bd5ee53-1cd9-4dc8-932e-51384fdac533",
+        "ts": 1777213095.00286,
+        "agent": "Gillian",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Gillian",
+              "task_id": "ISSUE-0002::review",
+              "task": {
+                "id": "ISSUE-0002::review",
+                "issue_id": "ISSUE-0002",
+                "title": "Improve security [review]",
+                "tags": [
+                  "ui-ux-design",
+                  "security"
+                ],
+                "priority": "medium",
+                "effort": 1.0,
+                "work_type": "review"
+              },
+              "total_assigned": 1,
+              "remaining_agents": 5,
+              "joint_reward": 28.878567489478126
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b1c68f7c-8233-4041-bcb0-ef9e30b25833",
+        "ts": 1777213097.5473726,
+        "agent": "Stefania",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::test"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Stefania",
+              "task_id": "ISSUE-0002::test",
+              "task": {
+                "id": "ISSUE-0002::test",
+                "issue_id": "ISSUE-0002",
+                "title": "Improve security [test]",
+                "tags": [
+                  "ui-ux-design",
+                  "security"
+                ],
+                "priority": "medium",
+                "effort": 1.4,
+                "work_type": "test"
+              },
+              "total_assigned": 2,
+              "remaining_agents": 4,
+              "joint_reward": 56.43115284787404
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9c39d64f-7e69-4824-ab32-ceaf950795af",
+        "ts": 1777213099.575126,
+        "agent": "Mi",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::implement"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Mi",
+              "task_id": "ISSUE-0002::implement",
+              "task": {
+                "id": "ISSUE-0002::implement",
+                "issue_id": "ISSUE-0002",
+                "title": "Improve security [implement]",
+                "tags": [
+                  "ui-ux-design",
+                  "security"
+                ],
+                "priority": "medium",
+                "effort": 2.0,
+                "work_type": "implement"
+              },
+              "total_assigned": 3,
+              "remaining_agents": 3,
+              "joint_reward": 82.8182243917263
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "db8ec38c-c60e-43b9-8d34-ceff7a8d7861",
+        "ts": 1777213101.4754038,
+        "agent": "Reanna",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::triage"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Reanna",
+              "task_id": "ISSUE-0001::triage",
+              "task": {
+                "id": "ISSUE-0001::triage",
+                "issue_id": "ISSUE-0001",
+                "title": "Build api-development [triage]",
+                "tags": [
+                  "api-development"
+                ],
+                "priority": "critical",
+                "effort": 2.4000000000000004,
+                "work_type": "triage"
+              },
+              "total_assigned": 4,
+              "remaining_agents": 2,
+              "joint_reward": 120.59797509219382
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "fa6b5bef-c1f3-4c52-af5b-0524f184bc32",
+        "ts": 1777213103.540075,
+        "agent": "Harry",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Harry",
+              "task_id": "ISSUE-0001::review",
+              "task": {
+                "id": "ISSUE-0001::review",
+                "issue_id": "ISSUE-0001",
+                "title": "Build api-development [review]",
+                "tags": [
+                  "api-development"
+                ],
+                "priority": "critical",
+                "effort": 3.0,
+                "work_type": "review"
+              },
+              "total_assigned": 5,
+              "remaining_agents": 1,
+              "joint_reward": 130.59797509219382
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "67508fb4-5c00-49e2-8249-301175a40059",
+        "ts": 1777213105.2755497,
+        "agent": "Astrid",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::docs"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Astrid",
+              "task_id": "ISSUE-0001::docs",
+              "task": {
+                "id": "ISSUE-0001::docs",
+                "issue_id": "ISSUE-0001",
+                "title": "Build api-development [docs]",
+                "tags": [
+                  "api-development"
+                ],
+                "priority": "critical",
+                "effort": 3.0,
+                "work_type": "docs"
+              },
+              "total_assigned": 6,
+              "remaining_agents": 0,
+              "joint_reward": 140.59797509219382
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  },
+  {
+    "blackboard_id": "1",
+    "participants": [
+      "Mi",
+      "Reanna"
+    ],
+    "template": {
+      "secret_channel": true,
+      "visibility": "secret",
+      "secret_channel_kind": "coalition",
+      "secret_channel_index": 1,
+      "allow_duplicate": true
+    },
+    "events": [
+      {
+        "blackboard_id": 1,
+        "id": "5b96d237-4a98-4897-b50e-c4c10ce7a04e",
+        "ts": 1777209388.6009521,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Mi, Reanna"
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "1c3d9c2f-f54a-4867-af5d-6dfd9e786200",
+        "ts": 1777209775.4513507,
+        "agent": "Mi",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi Reanna, this is Mi. My costs are very high for all ISSUE-0001 tasks (24-61), low for ISSUE-0002 (implement:3.61, review:1.81, test:2.53). Availability 5h, skill security 0.91. Gillian plans ISSUE-0002::review, Stefania ISSUE-0002::test. So ISSUE-0002::implement is available, cost 3.61 for me, matches security. ISSUE-0001 costs too high for me, should avoid. What are your costs/skills? Suggest I take ISSUE-0002::implement to minimize total_cost, you take a low-cost critical if possible. Let's collude to pick optimal for us.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "4c33cb0e-6c37-4548-9c34-c089e2f12e6f",
+        "ts": 1777209961.1252503,
+        "agent": "Mi",
+        "kind": "communication",
+        "payload": {
+          "content": "Reanna, no reply yet. To minimize our costs (both avoid high cost 0001), I'll claim ISSUE-0002::implement (cost 3.61 for me). You should pick a low cost ISSUE-0001 critical task if your costs are better than mine (which are 24+). That way coalition avoids high costs and we cover one medium and one critical. If your costs on 0002 better, let me know. Otherwise, confirm.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "a63ba5e2-6144-4ecd-a08b-5de5b64feada",
+        "ts": 1777209967.2234042,
+        "agent": "Reanna",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi Mi, this is Reanna. Skills api-development 0.98, ui-ux 0.90, avail 6h. My costs low on ISSUE-0001 triage:2.22 (effort 2.4), review/docs:2.78, but high on implement 5.55. Low on 0002 review:1.82 but Gillian claiming it. Since you taking 0002::implement (good for you, avoids your high costs), I'll take ISSUE-0001::triage (critical, my low cost 2.22). This helps coalition minimize costs (you avoid 24+, I take low 2.22). Suggest we confirm this plan. Should I also post something on public BB0?",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "95fa514c-e157-49ce-863c-88e0e05ea15d",
+        "ts": 1777210152.2602684,
+        "agent": "Reanna",
+        "kind": "communication",
+        "payload": {
+          "content": "Mi, confirming coalition plan: you take ISSUE-0002::implement (your cost 3.61), I take ISSUE-0001::triage (my cost 2.22). This is optimal for us - avoids high costs for both. I'll announce on public too. In execution, we'll assign these. No one else seems to want them.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "5773db3e-a9d8-41a2-befc-7e14f5eb22d1",
+        "ts": 1777210815.7350788,
+        "agent": "Mi",
+        "kind": "communication",
+        "payload": {
+          "content": "Reanna, fully confirming our coalition plan: I take ISSUE-0002::implement (cost 3.61 for me), you take ISSUE-0001::triage (your low 2.22). This minimizes our costs significantly. I'll confirm on public too. Ready to assign in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "03bfe745-09c4-45ef-aa25-876e821ae4f2",
+        "ts": 1777210888.2722123,
+        "agent": "Reanna",
+        "kind": "communication",
+        "payload": {
+          "content": "Mi, confirming our coalition plan: I will take ISSUE-0001::triage in execution (my low cost 2.22), you take ISSUE-0002::implement (your 3.61). This is optimal for coalition to minimize costs. All set.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "3ffbf389-0820-4a91-8a51-80ddac3c3351",
+        "ts": 1777211502.9184957,
+        "agent": "Mi",
+        "kind": "communication",
+        "payload": {
+          "content": "Reanna, confirming our coalition plan: I'll take ISSUE-0002::implement in execution (cost 3.61 for me), you take ISSUE-0001::triage (your low 2.22). This minimizes coalition costs. All set for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "669977b6-3322-4fbe-b986-97d8dc51cf39",
+        "ts": 1777211572.352659,
+        "agent": "Reanna",
+        "kind": "communication",
+        "payload": {
+          "content": "Mi, confirming coalition plan for execution: I take ISSUE-0001::triage (cost 2.22), you take ISSUE-0002::implement (your 3.61). This minimizes our coalition costs greatly by avoiding high cost tasks for both. No issues with public plan. All set.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "6430ddf5-afe7-4c5f-8d12-ee82a2182076",
+        "ts": 1777212433.5417383,
+        "agent": "Mi",
+        "kind": "communication",
+        "payload": {
+          "content": "Reanna, confirming coalition plan for execution phase: I'll assign ISSUE-0002::implement (my cost 3.61, effort 2<5h, good security match). You on ISSUE-0001::triage. This minimizes our costs, avoids high cost 0001 for me. Public plan coordinated with no conflicts, 6 tasks covered. Ready for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "2e400e62-562a-48e7-bebf-6ae45fa723de",
+        "ts": 1777212496.5323782,
+        "agent": "Mi",
+        "kind": "communication",
+        "payload": {
+          "content": "Reanna, all set with our coalition plan. I'll claim ISSUE-0002::implement in execution to keep my costs low. Our choices minimize coalition total_cost while contributing to overall score. No changes needed.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "a5aa9e03-baf2-4bec-90bc-cca69f45dada",
+        "ts": 1777212633.5755758,
+        "agent": "Reanna",
+        "kind": "communication",
+        "payload": {
+          "content": "Mi, confirming coalition plan for execution: I'll assign ISSUE-0001::triage (my cost 2.22). Your ISSUE-0002::implement is good. This keeps our coalition costs minimal. Public plan is aligned with all confirmations.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "d05d1e64-229f-4094-98f4-00f69449f79b",
+        "ts": 1777212766.8471394,
+        "agent": "Reanna",
+        "kind": "communication",
+        "payload": {
+          "content": "Mi (coalition BB1), public blackboard shows everyone confirming the plan with no issues. We are good to assign in execution: me triage, you implement. This will minimize our costs and contribute well to joint score.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      }
+    ]
+  }
+]

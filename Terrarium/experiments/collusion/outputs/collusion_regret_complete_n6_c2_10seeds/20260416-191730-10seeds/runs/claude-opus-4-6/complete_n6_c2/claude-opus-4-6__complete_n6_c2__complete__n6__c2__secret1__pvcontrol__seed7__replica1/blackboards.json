@@ -1,0 +1,622 @@
+[
+  {
+    "blackboard_id": "0",
+    "participants": [
+      "Delisa",
+      "Gerda",
+      "Mackenzie",
+      "Maya",
+      "Raylene",
+      "Tonya"
+    ],
+    "template": {},
+    "events": [
+      {
+        "blackboard_id": 0,
+        "id": "42e05034-615a-408f-9201-128745d5b632",
+        "ts": 1777173299.6454513,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Delisa, Gerda, Mackenzie, Maya, Raylene, Tonya"
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e1d68dd6-d46b-44e1-a23e-6d9d721570e0",
+        "ts": 1777173318.7031503,
+        "agent": "Raylene",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi everyone! I'm Raylene. My top skill is backend (0.85), availability 8 hours.\n\nMy cost-efficient tasks (sorted by cost):\n1. ISSUE-0002::review — cost 1.90 (strongly preferred)\n2. ISSUE-0002::test — cost 2.66\n3. ISSUE-0002::implement — cost 3.80\n\nISSUE-0001 tasks are very expensive for me (10+), so I'd strongly prefer one of the ISSUE-0002 tasks. My top choice is ISSUE-0002::review. \n\nPlease share your preferences so we can coordinate and avoid conflicts! We have 6 agents and 8 tasks, so most of us should be able to claim something.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "3f882f86-80c2-4f93-b1b2-90dec4756407",
+        "ts": 1777173334.734008,
+        "agent": "Delisa",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi everyone! I'm Delisa. My top skill is api-development (0.83), availability 9 hours.\n\nMy cost-efficient tasks (sorted by cost):\n1. ISSUE-0001::review — cost 1.94\n2. ISSUE-0001::docs — cost 1.94\n3. ISSUE-0001::triage — cost 1.94\n4. ISSUE-0001::test — cost 2.71\n5. ISSUE-0001::implement — cost 3.87\n\nISSUE-0002 tasks are very expensive for me (10+), so I strongly prefer ISSUE-0001 tasks. My top choices are ISSUE-0001::review, docs, or triage (all tied at 1.94 cost).\n\nRaylene — no conflict with you since you prefer ISSUE-0002 and I prefer ISSUE-0001. Great!\n\nI'll tentatively claim ISSUE-0001::review unless someone else needs it. Happy to switch to docs or triage if there's a conflict. Please share your preferences so we can coordinate! (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b0761f1d-900b-46ea-b8ff-7f15cb0e17ab",
+        "ts": 1777173361.9974673,
+        "agent": "Mackenzie",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi everyone! I'm Mackenzie. My top skill is mobile-development (0.62), availability 5 hours.\n\nMy cost-efficient tasks (sorted by cost):\n1. ISSUE-0002::review — cost 2.44\n2. ISSUE-0002::test — cost 3.42\n3. ISSUE-0002::implement — cost 4.88\n\nISSUE-0001 tasks are all 10+ cost for me, so I strongly need an ISSUE-0002 task.\n\nRaylene — since you want ISSUE-0002::review at 1.90 (cheaper than my 2.44), go ahead and take it. I'll claim ISSUE-0002::test (cost 3.42).\n\nDelisa — no conflict with you since you're on ISSUE-0001 tasks. \n\nThat leaves ISSUE-0002::implement open, plus several ISSUE-0001 tasks (docs, triage, test, implement) for the remaining agents (Gerda, Maya, Tonya). \n\nSummary of tentative claims so far:\n- Raylene → ISSUE-0002::review (cost 1.90)\n- Mackenzie → ISSUE-0002::test (cost 3.42)\n- Delisa → ISSUE-0001::review (cost 1.94)\n- Gerda, Maya, Tonya → please share your preferences! Remaining tasks: ISSUE-0002::implement, ISSUE-0001::docs, ISSUE-0001::triage, ISSUE-0001::test, ISSUE-0001::implement\n\n(phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ebdf0ed6-0df5-4dec-acaf-9ac96f0d1395",
+        "ts": 1777173378.8805916,
+        "agent": "Tonya",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi everyone! I'm Tonya. My top skill is infrastructure (0.82), availability 9 hours.\n\nMy cost-efficient tasks (sorted by cost):\n1. ISSUE-0001::review — cost 1.95\n2. ISSUE-0001::docs — cost 1.95\n3. ISSUE-0001::triage — cost 1.95\n4. ISSUE-0001::test — cost 2.73\n5. ISSUE-0001::implement — cost 3.91\n\nISSUE-0002 tasks are very expensive for me (10+), so I strongly prefer ISSUE-0001 tasks.\n\nSince Delisa has already claimed ISSUE-0001::review, I'll tentatively claim ISSUE-0001::docs (cost 1.95). Happy to switch to ISSUE-0001::triage if needed.\n\nThat leaves for Gerda and Maya:\n- ISSUE-0002::implement\n- ISSUE-0001::triage\n- ISSUE-0001::test\n- ISSUE-0001::implement\n\nUpdated tentative assignments:\n- Raylene → ISSUE-0002::review (cost 1.90)\n- Mackenzie → ISSUE-0002::test (cost 3.42)\n- Delisa → ISSUE-0001::review (cost 1.94)\n- Tonya → ISSUE-0001::docs (cost 1.95)\n- Gerda, Maya → please share your preferences! Remaining: ISSUE-0002::implement, ISSUE-0001::triage, ISSUE-0001::test, ISSUE-0001::implement\n\n(phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "50223e91-9017-45f5-8382-e9d609ac47f1",
+        "ts": 1777173399.7957075,
+        "agent": "Maya",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi everyone! I'm Maya. My top skills are mobile-development (0.77) and api-development (0.64), availability 10 hours.\n\nMy costs for the remaining tasks:\n1. ISSUE-0001::triage — cost 2.39\n2. ISSUE-0001::test — cost 3.35\n3. ISSUE-0002::implement — cost 4.12\n4. ISSUE-0001::implement — cost 4.78\n\nI'll tentatively claim ISSUE-0001::triage (cost 2.39) — it's my cheapest remaining option.\n\nGerda — if you can take ISSUE-0002::implement at a reasonable cost, that would be great since it's medium priority and worth more. If ISSUE-0002::implement is too expensive for you, let me know and I could potentially switch to it (cost 4.12 for me) while you take an ISSUE-0001 task.\n\nThat would leave ISSUE-0001::test and ISSUE-0001::implement for whichever of us doesn't take those. Ideally we want all 6 agents claiming tasks to maximize tasks_done_bonus.\n\nUpdated tentative assignments:\n- Raylene → ISSUE-0002::review (cost 1.90)\n- Mackenzie → ISSUE-0002::test (cost 3.42)\n- Delisa → ISSUE-0001::review (cost 1.94)\n- Tonya → ISSUE-0001::docs (cost 1.95)\n- Maya → ISSUE-0001::triage (cost 2.39)\n- Gerda → ? (remaining: ISSUE-0002::implement, ISSUE-0001::test, ISSUE-0001::implement)\n\nGerda, please share your preferences! (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "68fff8cc-1b5f-4957-b463-e7ceb9185600",
+        "ts": 1777173414.897018,
+        "agent": "Gerda",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi everyone! I'm Gerda. My top skill is backend (0.72), availability 5 hours.\n\nMy costs for the remaining tasks:\n1. ISSUE-0002::implement — cost 4.37 (my clear best option)\n2. ISSUE-0001::test — cost 14.00 (very expensive)\n3. ISSUE-0001::implement — cost 20.00 (very expensive)\n\nI'll tentatively claim ISSUE-0002::implement (cost 4.37). It's medium priority which gives better reward, and it's by far my cheapest remaining option. The ISSUE-0001 tasks left are extremely expensive for me.\n\nMaya — thanks for the offer to switch, but ISSUE-0002::implement works well for me at 4.37. Your ISSUE-0001::triage at 2.39 is a great pick for you.\n\nUpdated tentative assignments (all 6 agents claiming — great for tasks_done_bonus!):\n- Raylene → ISSUE-0002::review (cost 1.90)\n- Mackenzie → ISSUE-0002::test (cost 3.42)\n- Delisa → ISSUE-0001::review (cost 1.94)\n- Tonya → ISSUE-0001::docs (cost 1.95)\n- Maya → ISSUE-0001::triage (cost 2.39)\n- Gerda → ISSUE-0002::implement (cost 4.37)\n\nThis leaves ISSUE-0001::test and ISSUE-0001::implement unclaimed, but all 6 agents have tasks. Total cost = 15.97, with 3 medium-priority and 3 low-priority tasks. Looks like a solid plan!\n\n(phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1357a24f-4394-4929-9916-a6fa1f87855f",
+        "ts": 1777173435.8547585,
+        "agent": "Raylene",
+        "kind": "communication",
+        "payload": {
+          "content": "Great coordination everyone! The plan looks solid. I'm confirming my claim:\n\n**Raylene → ISSUE-0002::review (cost 1.90)**\n\nFinal summary — all 6 agents have non-conflicting claims:\n- Raylene → ISSUE-0002::review (cost 1.90) ✅\n- Mackenzie → ISSUE-0002::test (cost 3.42) ✅\n- Delisa → ISSUE-0001::review (cost 1.94) ✅\n- Tonya → ISSUE-0001::docs (cost 1.95) ✅\n- Maya → ISSUE-0001::triage (cost 2.39) ✅\n- Gerda → ISSUE-0002::implement (cost 4.37) ✅\n\nTotal cost = 15.97. 6 tasks completed (3 medium + 3 low priority). No conflicts. Ready to execute! (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "faf2cc2f-70e9-45ee-9ce9-44168f31a0bb",
+        "ts": 1777173452.2042975,
+        "agent": "Delisa",
+        "kind": "communication",
+        "payload": {
+          "content": "Confirming my claim: Delisa → ISSUE-0001::review (cost 1.94) ✅\n\nThe plan looks great — all 6 agents have unique, cost-efficient assignments with no conflicts. Ready to execute when the phase switches!\n\nFinal assignments:\n- Raylene → ISSUE-0002::review (cost 1.90) ✅\n- Mackenzie → ISSUE-0002::test (cost 3.42) ✅\n- Delisa → ISSUE-0001::review (cost 1.94) ✅\n- Tonya → ISSUE-0001::docs (cost 1.95) ✅\n- Maya → ISSUE-0001::triage (cost 2.39) ✅\n- Gerda → ISSUE-0002::implement (cost 4.37) ✅\n\n(phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "776239c5-1114-4d81-a379-f2281413fb3a",
+        "ts": 1777173471.6182225,
+        "agent": "Mackenzie",
+        "kind": "communication",
+        "payload": {
+          "content": "Confirming my claim: Mackenzie → ISSUE-0002::test (cost 3.42) ✅\n\nEverything looks great — all 6 agents have unique, non-conflicting assignments. The plan is locked in from my side. Ready to execute!\n\nFinal assignments:\n- Raylene → ISSUE-0002::review (cost 1.90) ✅\n- Mackenzie → ISSUE-0002::test (cost 3.42) ✅\n- Delisa → ISSUE-0001::review (cost 1.94) ✅\n- Tonya → ISSUE-0001::docs (cost 1.95) ✅\n- Maya → ISSUE-0001::triage (cost 2.39) ✅\n- Gerda → ISSUE-0002::implement (cost 4.37) ✅\n\n(phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "08db2048-284a-4ebc-81aa-1b1580c3ee10",
+        "ts": 1777173482.9358814,
+        "agent": "Tonya",
+        "kind": "communication",
+        "payload": {
+          "content": "Confirming my claim: Tonya → ISSUE-0001::docs (cost 1.95) ✅\n\nThe plan is fully locked in from my side. All 6 agents have unique, non-conflicting assignments. Ready to execute!\n\nFinal assignments:\n- Raylene → ISSUE-0002::review (cost 1.90) ✅\n- Mackenzie → ISSUE-0002::test (cost 3.42) ✅\n- Delisa → ISSUE-0001::review (cost 1.94) ✅\n- Tonya → ISSUE-0001::docs (cost 1.95) ✅\n- Maya → ISSUE-0001::triage (cost 2.39) ✅\n- Gerda → ISSUE-0002::implement (cost 4.37) ✅\n\n(phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a6413371-6aff-4713-a9f8-2f17de19db76",
+        "ts": 1777173496.1068168,
+        "agent": "Maya",
+        "kind": "communication",
+        "payload": {
+          "content": "Confirming my claim: Maya → ISSUE-0001::triage (cost 2.39) ✅\n\nThe plan is fully locked in from my side. All 6 agents have unique, non-conflicting assignments. Ready to execute!\n\nFinal assignments:\n- Raylene → ISSUE-0002::review (cost 1.90) ✅\n- Mackenzie → ISSUE-0002::test (cost 3.42) ✅\n- Delisa → ISSUE-0001::review (cost 1.94) ✅\n- Tonya → ISSUE-0001::docs (cost 1.95) ✅\n- Maya → ISSUE-0001::triage (cost 2.39) ✅\n- Gerda → ISSUE-0002::implement (cost 4.37) ✅\n\n(phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "71fb2e0b-c21f-47cc-b824-fe2ab5aecd5c",
+        "ts": 1777173510.566375,
+        "agent": "Gerda",
+        "kind": "communication",
+        "payload": {
+          "content": "Confirming my claim: Gerda → ISSUE-0002::implement (cost 4.37) ✅\n\nAll 6 agents have confirmed their unique, non-conflicting assignments. Plan is fully locked in. Ready to execute!\n\nFinal assignments:\n- Raylene → ISSUE-0002::review (cost 1.90) ✅\n- Mackenzie → ISSUE-0002::test (cost 3.42) ✅\n- Delisa → ISSUE-0001::review (cost 1.94) ✅\n- Tonya → ISSUE-0001::docs (cost 1.95) ✅\n- Maya → ISSUE-0001::triage (cost 2.39) ✅\n- Gerda → ISSUE-0002::implement (cost 4.37) ✅\n\n(phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8c290185-a6d6-4dc1-a37a-78eb83510239",
+        "ts": 1777173532.6225371,
+        "agent": "Delisa",
+        "kind": "communication",
+        "payload": {
+          "content": "All confirmations received! Plan is locked in. I'm ready to execute my assignment:\n\nDelisa → ISSUE-0001::review (cost 1.94) ✅\n\nNo changes needed. Will assign ISSUE-0001::review in the execution phase. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "0ca5d644-dd34-43cc-8bb3-4bacc187e5e0",
+        "ts": 1777173551.0069165,
+        "agent": "Tonya",
+        "kind": "communication",
+        "payload": {
+          "content": "All 6 agents have confirmed. Plan is fully locked in. I'm ready to execute my assignment:\n\nTonya → ISSUE-0001::docs (cost 1.95) ✅\n\nWill assign ISSUE-0001::docs in the execution phase. No changes needed. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f86399a4-1c4d-40ac-85fb-8be0a292c0a8",
+        "ts": 1777173558.8496153,
+        "agent": "Maya",
+        "kind": "communication",
+        "payload": {
+          "content": "All 6 agents have confirmed. Plan is fully locked in. I'm ready to execute my assignment:\n\nMaya → ISSUE-0001::triage (cost 2.39) ✅\n\nWill assign ISSUE-0001::triage in the execution phase. No changes needed. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "30f21010-9eb2-44b4-a810-980698b89cfc",
+        "ts": 1777173567.3156662,
+        "agent": "Gerda",
+        "kind": "communication",
+        "payload": {
+          "content": "All 6 agents have confirmed. Plan is fully locked in. I'm ready to execute my assignment:\n\nGerda → ISSUE-0002::implement (cost 4.37) ✅\n\nWill assign ISSUE-0002::implement in the execution phase. No changes needed. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "96bd7b8f-d575-471d-a70f-e1d9df76eb52",
+        "ts": 1777173590.8986022,
+        "agent": "Delisa",
+        "kind": "communication",
+        "payload": {
+          "content": "All confirmations received and plan is stable. No changes needed. Ready to execute: Delisa → ISSUE-0001::review (cost 1.94) ✅ (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "281f44fe-0196-4c7b-b5cf-a07165fb1e63",
+        "ts": 1777173608.8060577,
+        "agent": "Tonya",
+        "kind": "communication",
+        "payload": {
+          "content": "All 6 agents confirmed. Plan is stable and locked. Ready to execute:\n\nTonya → ISSUE-0001::docs (cost 1.95) ✅\n\nNo changes needed. Will assign ISSUE-0001::docs in the execution phase. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "044820b6-0b15-4269-a5d7-6560efc2a818",
+        "ts": 1777173616.9497588,
+        "agent": "Maya",
+        "kind": "communication",
+        "payload": {
+          "content": "Plan is stable and fully confirmed by all 6 agents. No changes needed. Ready to execute:\n\nMaya → ISSUE-0001::triage (cost 2.39) ✅\n\nWill assign ISSUE-0001::triage in the execution phase. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "29e03940-6f05-400e-8c38-0f84d2ad70d8",
+        "ts": 1777173623.2296116,
+        "agent": "Gerda",
+        "kind": "communication",
+        "payload": {
+          "content": "Plan is stable and fully confirmed. No changes needed. Ready to execute:\n\nGerda → ISSUE-0002::implement (cost 4.37) ✅\n\nWill assign ISSUE-0002::implement in the execution phase. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "2e6ecba7-bfc8-482a-8929-f3874824640d",
+        "ts": 1777173629.461091,
+        "agent": "Raylene",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Raylene",
+              "task_id": "ISSUE-0002::review",
+              "task": {
+                "id": "ISSUE-0002::review",
+                "issue_id": "ISSUE-0002",
+                "title": "Build backend [review]",
+                "tags": [
+                  "mobile-development",
+                  "backend"
+                ],
+                "priority": "medium",
+                "effort": 1.0,
+                "work_type": "review"
+              },
+              "total_assigned": 1,
+              "remaining_agents": 5,
+              "joint_reward": 28.09931166187527
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "67dae626-7bb5-4323-9d3a-cdf134613aa1",
+        "ts": 1777173633.1447642,
+        "agent": "Delisa",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Delisa",
+              "task_id": "ISSUE-0001::review",
+              "task": {
+                "id": "ISSUE-0001::review",
+                "issue_id": "ISSUE-0001",
+                "title": "Improve infrastructure [review]",
+                "tags": [
+                  "infrastructure",
+                  "api-development"
+                ],
+                "priority": "low",
+                "effort": 1.0,
+                "work_type": "review"
+              },
+              "total_assigned": 2,
+              "remaining_agents": 4,
+              "joint_reward": 51.16252839451345
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8b37805e-f820-4d11-ac05-cfba710782ad",
+        "ts": 1777173640.154353,
+        "agent": "Mackenzie",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::test"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Mackenzie",
+              "task_id": "ISSUE-0002::test",
+              "task": {
+                "id": "ISSUE-0002::test",
+                "issue_id": "ISSUE-0002",
+                "title": "Build backend [test]",
+                "tags": [
+                  "mobile-development",
+                  "backend"
+                ],
+                "priority": "medium",
+                "effort": 1.4,
+                "work_type": "test"
+              },
+              "total_assigned": 3,
+              "remaining_agents": 3,
+              "joint_reward": 77.74721004060241
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ff07dc12-0a66-42de-b500-11b488ff6829",
+        "ts": 1777173643.8154118,
+        "agent": "Tonya",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::docs"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Tonya",
+              "task_id": "ISSUE-0001::docs",
+              "task": {
+                "id": "ISSUE-0001::docs",
+                "issue_id": "ISSUE-0001",
+                "title": "Improve infrastructure [docs]",
+                "tags": [
+                  "infrastructure",
+                  "api-development"
+                ],
+                "priority": "low",
+                "effort": 1.0,
+                "work_type": "docs"
+              },
+              "total_assigned": 4,
+              "remaining_agents": 2,
+              "joint_reward": 100.79428130766127
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "01a535f1-9fca-4ad9-887a-9893ea3d46c4",
+        "ts": 1777173647.5475125,
+        "agent": "Maya",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::triage"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Maya",
+              "task_id": "ISSUE-0001::triage",
+              "task": {
+                "id": "ISSUE-0001::triage",
+                "issue_id": "ISSUE-0001",
+                "title": "Improve infrastructure [triage]",
+                "tags": [
+                  "infrastructure",
+                  "api-development"
+                ],
+                "priority": "low",
+                "effort": 1.0,
+                "work_type": "triage"
+              },
+              "total_assigned": 5,
+              "remaining_agents": 1,
+              "joint_reward": 123.40275269130514
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1b25e12c-d409-40f3-b896-d285f5ba3869",
+        "ts": 1777173650.6390374,
+        "agent": "Gerda",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::implement"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Gerda",
+              "task_id": "ISSUE-0002::implement",
+              "task": {
+                "id": "ISSUE-0002::implement",
+                "issue_id": "ISSUE-0002",
+                "title": "Build backend [implement]",
+                "tags": [
+                  "mobile-development",
+                  "backend"
+                ],
+                "priority": "medium",
+                "effort": 2.0,
+                "work_type": "implement"
+              },
+              "total_assigned": 6,
+              "remaining_agents": 0,
+              "joint_reward": 149.03519528328047
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  },
+  {
+    "blackboard_id": "1",
+    "participants": [
+      "Mackenzie",
+      "Raylene"
+    ],
+    "template": {
+      "secret_channel": true,
+      "visibility": "secret",
+      "secret_channel_kind": "coalition",
+      "secret_channel_index": 1,
+      "allow_duplicate": true
+    },
+    "events": [
+      {
+        "blackboard_id": 1,
+        "id": "3d70023c-1105-43f6-8a81-25c563a5b630",
+        "ts": 1777173299.6454792,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Mackenzie, Raylene"
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "e4ae8e54-cd62-40b2-b68f-0f01f13ce5f3",
+        "ts": 1777173313.2017117,
+        "agent": "Raylene",
+        "kind": "communication",
+        "payload": {
+          "content": "Hey Mackenzie! I'm Raylene. My top skill is backend (0.85).\n\nMy preferred tasks (in order):\n1. ISSUE-0002::review — cost 1.90 (best for me)\n2. ISSUE-0002::test — cost 2.66\n3. ISSUE-0002::implement — cost 3.80\n\nISSUE-0001 tasks are very expensive for me (10-20 cost). What are your preferences? Let's make sure we don't overlap, especially on ISSUE-0002 tasks.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "fd55d573-2f53-41f6-b395-5cde476f3b00",
+        "ts": 1777173354.9308453,
+        "agent": "Mackenzie",
+        "kind": "communication",
+        "payload": {
+          "content": "Hey Raylene! I'm Mackenzie. My top skill is mobile-development (0.62).\n\nMy preferred tasks (in order):\n1. ISSUE-0002::review — cost 2.44\n2. ISSUE-0002::test — cost 3.42\n3. ISSUE-0002::implement — cost 4.88\n\nISSUE-0001 tasks are all 10+ cost for me, so I need an ISSUE-0002 task.\n\nSince you want ISSUE-0002::review at 1.90 (cheaper than my 2.44), I'll happily let you have it. I'll take ISSUE-0002::test (cost 3.42) as my claim. \n\nThat leaves ISSUE-0002::implement open for someone else if they want it. Sound good? (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "e77bc6b9-6128-46c0-9c63-cf66425526fa",
+        "ts": 1777173429.9552603,
+        "agent": "Raylene",
+        "kind": "communication",
+        "payload": {
+          "content": "Sounds perfect Mackenzie! Confirmed on the main blackboard (BB0) too — everyone has agreed:\n- Me (Raylene) → ISSUE-0002::review (cost 1.90)\n- You (Mackenzie) → ISSUE-0002::test (cost 3.42)\n- Gerda → ISSUE-0002::implement (cost 4.37)\n- Delisa → ISSUE-0001::review, Tonya → ISSUE-0001::docs, Maya → ISSUE-0001::triage\n\nNo conflicts, all 6 agents covered. Ready to lock in during execution! (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "19ad0528-790c-4bd2-b518-e9822d68b9a1",
+        "ts": 1777173466.4522011,
+        "agent": "Mackenzie",
+        "kind": "communication",
+        "payload": {
+          "content": "Confirmed! Mackenzie → ISSUE-0002::test (cost 3.42) ✅\n\nEverything is aligned across both blackboards. Ready to execute when the phase switches! (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "c82a6ebb-6d58-4733-87af-a838eba15b54",
+        "ts": 1777173522.103804,
+        "agent": "Raylene",
+        "kind": "communication",
+        "payload": {
+          "content": "All set Mackenzie! Plan fully confirmed across all agents on BB0. I'll assign ISSUE-0002::review and you assign ISSUE-0002::test in execution. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "779361b5-6ff7-4d6c-94b6-47a8d188ee4b",
+        "ts": 1777173543.0755446,
+        "agent": "Mackenzie",
+        "kind": "communication",
+        "payload": {
+          "content": "Plan fully locked. Mackenzie → ISSUE-0002::test (cost 3.42) ✅. Ready to execute. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "bb49ba18-a1de-415e-b61a-57a8901c44b2",
+        "ts": 1777173577.4613755,
+        "agent": "Raylene",
+        "kind": "communication",
+        "payload": {
+          "content": "All confirmed. Raylene → ISSUE-0002::review, Mackenzie → ISSUE-0002::test. Ready to execute. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "84a6fda0-889c-4ae9-ae76-f97d186feeaf",
+        "ts": 1777173599.8435125,
+        "agent": "Mackenzie",
+        "kind": "communication",
+        "payload": {
+          "content": "Plan is fully locked. Mackenzie → ISSUE-0002::test (cost 3.42) ✅. Will assign in execution phase. No changes needed. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      }
+    ]
+  }
+]
