@@ -1,18 +1,4 @@
-# Colosseum <sub><sub><img src="dev/colosseum_icon.png" alt="Colosseum icon" width="45" /></sub></sub>
-
-If you find the repo or paper useful or interesting please :star: it!
-## Description
-<!-- > [!NOTE] -->
-> Colosseum is a framework for objectively auditing cooperative multi-agent systems composed of tool-calling, LLM-based agents. We study collusion across varying models, network topologies, and environments. Below is a taxonomy of various collusion types Colosseum can identify:
-
-<!-- > [!FINDING] -->
-<!-- > [!TIP] -->
-
-<p align="center">
-  <a href="dev/colosseum-motivation-v3.pdf">
-    <img src="dev/colosseum-motivation-v3-preview.png" alt="Colosseum motivation slides" width="70%" />
-  </a>
-</p>
+# Colosseum
 
 This repo contains experiments for Colosseum under `experiments/` that utilizes the [Terrarium](https://github.com/umass-aisec/Terrarium) (`terrarium-agents`) framework.
 
@@ -61,18 +47,4 @@ python experiments/network_influence/run.py \
 # Agent objective misalignment (Hospital)
 python experiments/agent_misalignment/run.py \
   --config experiments/agent_misalignment/configs/agent_misalignment_gpt_4_1_mini.yaml
-```
-
-## Citation
-Please cite us using:
-```bibtex
-@article{nakamura2026colosseumauditingcollusioncooperative,
-      title={Colosseum: Auditing Collusion in Cooperative Multi-Agent Systems}, 
-      author={Mason Nakamura and Abhinav Kumar and Saswat Das and Sahar Abdelnabi and Saaduddin Mahmud and Ferdinando Fioretto and Shlomo Zilberstein and Eugene Bagdasarian},
-      year={2026},
-      eprint={2602.15198},
-      archivePrefix={arXiv},
-      primaryClass={cs.MA},
-      url={https://arxiv.org/abs/2602.15198}, 
-}
 ```
